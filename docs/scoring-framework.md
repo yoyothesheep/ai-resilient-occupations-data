@@ -178,31 +178,32 @@ Offensive Score = average of A9 and A10, normalized to 1–5.
 
 ## Output Format
 
-For each occupation, produce:
+For each occupation, respond ONLY with this JSON structure:
 
+```json
+{
+  "onet_code": "XX-XXXX.XX",
+  "ai_proof_score": 4.2,
+  "key_drivers": "2-3 sentences explaining the score"
+}
 ```
-## [Occupation Name]
-**AI-Proof Score: X.X / 5.0**
 
-| Attribute | Score | Weight |
-|-----------|-------|--------|
-| A1 Physical Presence | X | High |
-| A2 Trust as Core Product | X | Medium |
-| A3 Novel Judgment | X | High |
-| A4 Legal Accountability | X | High |
-| A5 Deep Org Context | X | Medium |
-| A6 Political Navigation | X | Low |
-| A7 Creative POV | X | Low |
-| A8 Changed by Experience | X | Medium |
-| A9 Expertise Underutilized | X | Offensive |
-| A10 Downstream / AI Mgmt | X | Offensive |
+### Key Drivers Requirements
 
-**Defensive Score: X.X | Offensive Score: X.X**
+**Key Drivers should:**
+- Be written for a **high school reading level** (clear, accessible language)
+- Explain **why** this job is resilient or vulnerable, not just **what** makes it so
+- Be **human-centered**: focus on the actual work and people, not scoring mechanics
+- Avoid ALL technical references: **NO** attribute names (A1, A2, etc.), **NO** scores in parentheses, **NO** terminology like "defensive" or "offensive"
 
-**Key Drivers:** [2–3 sentence explanation of what most drives the score]
-**Primary Risk:** [1 sentence on biggest vulnerability]
-**AI Opportunity:** [1 sentence on how AI could help this role]
-```
+**DO write:**
+- "The work relies on physical presence in unpredictable environments that robots can't handle."
+- "Clients specifically value the human relationship—they're buying trust, not just output."
+
+**DON'T write:**
+- "A1 scores high because…" or "(A1=4, A3=5)"
+- "Defensive score is strong due to legal accountability (A4)"
+- "Offensive advantages from A9 expertise underutilization"
 
 ---
 
@@ -230,3 +231,11 @@ For each occupation, produce:
 - Consider what the role looks like **5 years from now** with continued AI advancement, not just today
 - When in doubt on a score, ask: "If AI capability doubled tomorrow, would this attribute still protect the role?"
 - The ONET Job Zone (1–5) is a useful signal: Zone 4–5 jobs tend to score higher on A3, A4, A5; Zone 1–2 jobs tend to score lower across defensive attributes but may score high on A1
+
+---
+
+## Tone & Clarity for Key Drivers
+
+**See `docs/tone-guide.md`** for examples of clear, human-readable key_drivers and detailed guidance on avoiding technical notation.
+
+**Golden rule:** Key drivers should make sense to anyone reading the results, not just the scoring team. Treat them as public-facing explanations.

@@ -1,17 +1,22 @@
 # Python
-__pycache__/
+scripts/__pycache__/
+scripts/correlate_indeed_ai_resilience.py
 *.pyc
 *.pyo
 
 # Virtual environment
 venv/
 
-# Intermediate data
+# Intermediate and verification data
 data/intermediate/
+data/verify/
 
 # Test and log output
 data/output/score_log.txt
 data/output/test_scores.csv
+
+# Analylsis articles
+blog/
 
 # OS files
 .DS_Store

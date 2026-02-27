@@ -2,6 +2,9 @@
 
 A framework for identifying which jobs are resilient to AI displacement, scored across 10 key attributes that measure both defensive protections (why AI can't take over) and offensive opportunities (how AI can amplify expertise).
 
+Final output is [hosted at this site](https://ai-proof-careers.com).
+
+
 ## Project Structure
 
 ```
@@ -13,15 +16,17 @@ A framework for identifying which jobs are resilient to AI displacement, scored 
 │   └── scoring-framework.md          # Complete scoring rubric & calculation logic
 ├── data/
 │   ├── input/
-│   │   └── All_Occupations_ONET.csv  # O*NET occupation data (enriched with wage & projections)
+│   │   └── All_Occupations_ONET.csv  # O*NET occupation data (raw, from external source)
 │   ├── intermediate/
-│   │   └── onet_enrichment_cache.json # Cached scrape results (resumable)
+│   │   ├── onet_enrichment_cache.json     # Cached scrape results (resumable)
+│   │   ├── onet_enrichment.csv            # Enrichment fields only
+│   │   └── All_Occupations_ONET_enriched.csv # Full dataset with enrichment 
 │   └── output/
 │       ├── ai_resilience_scores.csv  # Scored & ranked occupations
 │       └── score_log.txt             # Progress log for resuming runs
 └── scripts/
     ├── score_occupations.py          # Scores via Claude API + computes final ranking
-    ├── test_scoring.py               # Test run with 10 occupations
+    ├── test_scoring.py               # Quick test with 3 occupations
     └── enrich_onet.py                # Scrapes wage & projection data from O*NET
 ```
 
@@ -58,41 +63,58 @@ The initial occupation list CSV is downloaded from [O*NET Online — All Occupat
 
 ### Enrich Input Data
 
-Scrape wage and projection data from O*NET Online (run once, ~17 min):
+**Required before scoring.** Scrape wage, growth, and job opening data from O*NET Online (run once, ~17 min):
 
 ```bash
 python3 scripts/enrich_onet.py
 ```
 
-This adds three columns to the input CSV:
-- `Median Wage` — e.g. "$39.27 hourly, $81,680 annual"
-- `Projected Growth` — e.g. "Faster than average (5% to 6%)"
-- `Projected Job Openings` — e.g. "124,200"
+**Output files created in `data/intermediate/`:**
+- `All_Occupations_ONET_enriched.csv` — full dataset (all original columns + enrichment)
+  - `Median Wage` — e.g. "$39.27 hourly, $81,680 annual"
+  - `Projected Growth` — e.g. "Faster than average (5% to 6%)"
+  - `Projected Job Openings` — e.g. "124,200"
+  - `Education` — top 2 required education levels with percentages
+- `onet_enrichment.csv` — enrichment fields only (for reference)
+- `onet_enrichment_cache.json` — scraping cache (allows resuming if interrupted)
 
-Progress is cached in `data/intermediate/onet_enrichment_cache.json`, so the script can be interrupted and resumed. Military occupations (55-xxxx codes) have no wage or projection data on O*NET.
+**Note:** Military occupations (55-xxxx codes) have no wage or projection data on O*NET.
 
 ### Score & Rank All Occupations
+
+**Prerequisite:** Run enrichment step first (see above).
 
 ```bash
 python3 scripts/score_occupations.py
 ```
 
 This will:
-1. Load all occupations from `data/input/All_Occupations_ONET.csv`
+1. Load all occupations from `data/intermediate/All_Occupations_ONET_enriched.csv` (enriched dataset)
 2. Batch them (10 per batch by default)
-3. Score each batch via Claude API (`ai_proof_score`)
+3. Score each batch via Claude API (scores all 10 attributes + calculates `ai_proof_score`)
 4. Compute composite `final_ranking` from score + growth + openings
 5. Write results to `data/output/ai_resilience_scores.csv`, sorted by ranking
 
 **If interrupted, just run again** — it resumes from where it left off.
 
+**Implementation Note:** This project uses the [Anthropic Claude API](https://www.anthropic.com/api) to parallelize scoring across occupation batches. Batching 10 occupations per API call reduces latency and improves throughput compared to single-occupation requests. Scoring ~1,000 occupations typically completes in 3–4 hours with built-in rate limiting (2s sleep between batches). The API also enables resumable processing — the script maintains a cache of scored occupations and skips them on subsequent runs.
+
 ### Testing (Optional)
 
-Test with 10 occupations using real data:
+**Prerequisite:** Run enrichment step first (see above).
+
+Test the scoring pipeline with 3 sample occupations using real Claude API:
 ```bash
 python3 scripts/test_scoring.py
 ```
-Output: `data/output/test_scores.csv`
+
+This runs a quick end-to-end test:
+1. Loads the first 3 occupations from the enriched dataset
+2. Scores them via Claude API with full 10-attribute evaluation
+3. Computes final rankings
+4. Outputs results to `data/output/test_scores.csv`
+
+Use this to validate the pipeline before running the full dataset.
 
 
 ## The Scoring Framework
@@ -135,10 +157,6 @@ The `final_ranking` is a weighted composite that combines the AI-proof score wit
 | `Projected Growth` | 30% | Ordinal: Decline=0, Little/none=0.2, Slower=0.4, Average=0.6, Faster=0.8, Much faster=1.0 |
 | `Projected Job Openings` | 20% | Log-transform + min-max scale |
 
-**Adjustments:**
-- **Penalty:** If `ai_proof_score` < 2.0 AND growth is "Decline", ranking capped at 0.20
-- **Boost:** If `ai_proof_score` ≥ 4.0 AND growth is "Faster"/"Much faster", +0.05 bonus
-
 See `docs/scoring-framework.md` for complete rubrics and calculation details.
 
 ## Output Format
@@ -157,7 +175,7 @@ Edit `scripts/score_occupations.py` to adjust:
 - `BATCH_SIZE` — occupations per API call (default: 10)
 - `SLEEP_SEC` — delay between batches (default: 2s)
 - `START_BATCH` — resume from a specific batch number
-- `MODEL` — Claude model to use (default: claude-haiku-4-5-20251001)
+- `MODEL` — Claude model to use (default: claude-opus-4-6)
 
 ## References
 

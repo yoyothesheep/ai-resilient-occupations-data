@@ -17,15 +17,42 @@ import anthropic
 import json
 from score_occupations import (
     load_skill, load_occupations, write_scores_to_csv,
-    parse_response, build_prompt, compute_rankings,
+    parse_response, build_prompt, compute_rankings, SCORE_COLUMNS,
 )
 
-ONET_CSV = "data/input/All_Occupations_ONET.csv"
+ONET_CSV = "data/intermediate/All_Occupations_ONET_enriched.csv"
 SKILL_MD = "docs/scoring-framework.md"
 OUTPUT_CSV = "data/output/test_scores.csv"
-TEST_BATCH_SIZE = 10
+TEST_BATCH_SIZE = 3
 MODEL = "claude-opus-4-6"
 MAX_TOKENS = 4000
+
+def verify_csv_columns(csv_path: str) -> bool:
+    """Verify that output CSV contains all expected columns."""
+    import csv
+    with open(csv_path, "r") as f:
+        reader = csv.DictReader(f)
+        actual_cols = reader.fieldnames or []
+
+    # Expected columns: SCORE_COLUMNS (minus key_drivers which moves) + final_ranking + key_drivers
+    expected_cols = [c for c in SCORE_COLUMNS if c != "key_drivers"] + ["final_ranking", "key_drivers"]
+
+    missing = [c for c in expected_cols if c not in actual_cols]
+    extra = [c for c in actual_cols if c not in expected_cols]
+
+    print(f"\n✓ CSV Column Validation:")
+    print(f"  Expected: {len(expected_cols)} columns")
+    print(f"  Actual: {len(actual_cols)} columns")
+
+    if missing:
+        print(f"  ✗ Missing columns: {missing}")
+        return False
+    if extra:
+        print(f"  ⚠ Extra columns: {extra}")
+
+    print(f"  ✓ All expected columns present!")
+    return True
+
 
 def display_results(results: list[dict]):
     """Display scored results in a formatted table."""
@@ -107,6 +134,10 @@ def main():
     write_scores_to_csv(results, OUTPUT_CSV, source_lookup, append=False)
     compute_rankings(OUTPUT_CSV)
     print(f"✓ Results written to: {OUTPUT_CSV}")
+
+    # Verify all columns are present
+    if not verify_csv_columns(OUTPUT_CSV):
+        return False
 
     # Show CSV contents
     print(f"\n📊 CSV File Preview:")

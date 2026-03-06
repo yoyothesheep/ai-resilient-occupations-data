@@ -39,8 +39,9 @@ MAX_TOKENS     = 16000
 
 SCORE_COLUMNS = [
     "Job Zone", "Code", "Occupation", "Data-level", "url",
-    "Median Wage", "Projected Growth", "Projected Job Openings",
+    "Median Wage", "Projected Growth", "Employment Change, 2024-2034", "Projected Job Openings",
     "Education", "Top Education Level", "Top Education Rate",
+    "Sample Job Titles",
     "ai_proof_score", "final_ranking", "key_drivers"
 ]
 
@@ -49,13 +50,15 @@ W_RESILIENCE = 0.50
 W_GROWTH     = 0.30
 W_OPENINGS   = 0.20
 
+# Growth normalization: prefers numeric "Employment Change, 2024-2034" (log-transformed + min-max).
+# Falls back to "Projected Growth" string via GROWTH_MAP if numeric value is missing.
 GROWTH_MAP = {
-    "Decline (-1% or lower)": 0.0,
-    "Little or no change": 0.2,
-    "Slower than average (1% to 2%)": 0.4,
-    "Average (3% to 4%)": 0.6,
-    "Faster than average (5% to 6%)": 0.8,
-    "Much faster than average (7% or higher)": 1.0,
+    "decline":              0.0,
+    "little or no change":  0.2,
+    "slower than average":  0.4,
+    "average":              0.6,
+    "faster than average":  0.8,
+    "much faster than average": 1.0,
 }
 
 # ── Helper functions ──────────────────────────────────────────────────────────
@@ -129,10 +132,12 @@ def write_scores_to_csv(results: list[dict], output_path: str, source_lookup: di
                 "url": src.get("url", ""),
                 "Median Wage": src.get("Median Wage", ""),
                 "Projected Growth": src.get("Projected Growth", ""),
+                "Employment Change, 2024-2034": src.get("Employment Change, 2024-2034", ""),
                 "Projected Job Openings": src.get("Projected Job Openings", ""),
                 "Education": src.get("Education", ""),
                 "Top Education Level": src.get("Top Education Level", ""),
                 "Top Education Rate": src.get("Top Education Rate", ""),
+                "Sample Job Titles": src.get("Sample Job Titles", ""),
                 "ai_proof_score": result.get("ai_proof_score", result.get("final_score", "")),
                 "key_drivers": result.get("key_drivers", ""),
             })
@@ -157,14 +162,61 @@ def log(msg: str):
         f.write(msg + "\n")
 
 # ── Ranking ──────────────────────────────────────────────────────────────────
+def _growth_from_string(s: str) -> float | None:
+    """Map scraped Projected Growth string to a 0–1 normalized value via GROWTH_MAP."""
+    s_lower = s.lower()
+    for key, val in GROWTH_MAP.items():
+        if key in s_lower:
+            return val
+    return None
+
+
 def compute_rankings(csv_path: str):
-    """Read scored CSV, compute final_ranking, rewrite sorted by ranking."""
+    """Read scored CSV, compute final_ranking, rewrite sorted by ranking.
+
+    Growth normalization: prefers numeric 'Employment Change, 2024-2034' (log-transformed +
+    min-max scaled). Falls back to 'Projected Growth' string via GROWTH_MAP.
+    """
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
 
     if not rows:
         return
+
+    # Collect growth values: numeric where available, None otherwise (string fallback applied later)
+    # sign(x) * log1p(|x|) handles negatives and compresses the -36 to +50 range
+    numeric_growth = []
+    for row in rows:
+        raw = row.get("Employment Change, 2024-2034", "").strip()
+        if raw:
+            try:
+                v = float(raw)
+                numeric_growth.append(math.copysign(math.log1p(abs(v)), v))
+            except ValueError:
+                numeric_growth.append(None)
+        else:
+            numeric_growth.append(None)
+
+    # Compute min/max across numeric values only (for min-max normalization)
+    valid_numeric = [v for v in numeric_growth if v is not None]
+    if valid_numeric:
+        g_min = min(valid_numeric)
+        g_max = max(valid_numeric)
+        g_range = g_max - g_min if g_max != g_min else 1.0
+    else:
+        g_min = 0
+        g_max = 1.0
+        g_range = 1.0
+
+    # Build final growth_values: numeric (normalized) where available, string-mapped as fallback
+    growth_values = []
+    for i, row in enumerate(rows):
+        if numeric_growth[i] is not None:
+            growth_values.append(("numeric", numeric_growth[i]))
+        else:
+            fallback = _growth_from_string(row.get("Projected Growth", ""))
+            growth_values.append(("string", fallback) if fallback is not None else ("none", None))
 
     # Collect log-openings for normalization
     log_openings = []
@@ -188,11 +240,16 @@ def compute_rankings(csv_path: str):
 
     for i, row in enumerate(rows):
         score_str = row.get("ai_proof_score", "")
-        growth_text = row.get("Projected Growth", "")
+        gtype, gval = growth_values[i]
         log_val = log_openings[i]
 
         r_norm = (float(score_str) - 1.0) / 4.0 if score_str else None
-        g_norm = GROWTH_MAP.get(growth_text)
+        if gtype == "numeric":
+            g_norm = (gval - g_min) / g_range  # min-max normalized log-transformed value
+        elif gtype == "string":
+            g_norm = gval  # already 0–1 from GROWTH_MAP
+        else:
+            g_norm = None
         o_norm = (log_val - log_min) / log_range if log_val is not None else None
 
         # Weighted composite (no re-normalization for missing data)
@@ -312,6 +369,69 @@ def main():
     log(f"\n✓ Complete! Results in {OUTPUT_CSV}\n")
     return True
 
+
+def rerank():
+    """
+    Re-generate ai_resilience_scores.csv without calling the LLM.
+
+    Merges existing ai_proof_score + key_drivers from the current output CSV
+    with fresh enrichment data (Projected Growth, Sample Job Titles, etc.)
+    from the enriched intermediate CSV, then recomputes final_ranking.
+
+    Usage:
+        python3 scripts/score_occupations.py --rerank
+    """
+    log("── Reranking: merging existing scores with fresh enrichment data...")
+
+    if not os.path.exists(OUTPUT_CSV):
+        log(f"✗ No existing scores found at {OUTPUT_CSV}")
+        return False
+
+    # Load existing scores (ai_proof_score + key_drivers), keyed by Code
+    with open(OUTPUT_CSV, newline="", encoding="utf-8") as f:
+        existing = {r["Code"]: r for r in csv.DictReader(f)}
+    log(f"  Loaded {len(existing)} existing scores")
+
+    # Load fresh enrichment data, keyed by Code
+    enrichment = load_occupations(ONET_CSV)
+    log(f"  Loaded {len(enrichment)} enriched occupations")
+
+    # Merge: use enrichment for all fields, pull ai_proof_score + key_drivers from existing scores
+    merged = []
+    missing = 0
+    for occ in enrichment:
+        code = occ["Code"]
+        scored = existing.get(code)
+        if not scored or not scored.get("ai_proof_score"):
+            missing += 1
+            continue
+        row = {col: "" for col in SCORE_COLUMNS}
+        for col in SCORE_COLUMNS:
+            if col in ("ai_proof_score", "key_drivers", "final_ranking"):
+                row[col] = scored.get(col, "")
+            else:
+                row[col] = occ.get(col, "")
+        merged.append(row)
+
+    log(f"  Merged {len(merged)} occupations ({missing} skipped — no existing score)")
+
+    # Write merged output (without final_ranking — compute_rankings will add it)
+    os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
+    with open(OUTPUT_CSV, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=SCORE_COLUMNS)
+        writer.writeheader()
+        writer.writerows(merged)
+
+    log(f"\n── Computing final rankings...")
+    compute_rankings(OUTPUT_CSV)
+    log(f"\n✓ Rerank complete! Results in {OUTPUT_CSV}\n")
+    return True
+
+
 if __name__ == "__main__":
-    success = main()
+    import sys
+    if "--rerank" in sys.argv:
+        success = rerank()
+    else:
+        success = main()
     exit(0 if success else 1)

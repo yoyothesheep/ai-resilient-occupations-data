@@ -16,8 +16,8 @@ Score any occupation on a 1–5 AI-proof scale for resilience to AI displacement
 ### AI-Proof Score
 
 The AI-proof score is a **weighted blend of two groups**:
-- **Defensive Score (65% weight):** Attributes 1–8 — why AI can't take over
-- **Offensive Score (35% weight):** Attributes 9–10 — why AI's rise actively helps this role
+- **Resiliency Score (65% weight):** Attributes 1–8 — why AI can't take over
+- **Opportunity Score (35% weight):** Attributes 9–10 — why AI's rise actively helps this role
 
 `ai_proof_score = (Defensive Score × 0.65) + (Offensive Score × 0.35)`
 
@@ -31,12 +31,23 @@ The final ranking combines the AI-proof score with labor market signals into a 0
 
 **Normalization:**
 - `resilience_norm` = (ai_proof_score - 1) / 4
-- `growth_norm` = ordinal map: Decline=0, Little/none=0.2, Slower=0.4, Average=0.6, Faster=0.8, Much faster=1.0
+- `growth_norm` = see below
 - `openings_norm` = log-transform + min-max scale (handles extreme skew in job opening counts)
 
-**Adjustments:**
-- **Penalty:** If ai_proof_score < 2.0 AND growth is "Decline", cap ranking at 0.20
-- **Boost:** If ai_proof_score ≥ 4.0 AND growth is "Faster"/"Much faster", add 0.05 bonus
+**Growth normalization** uses the best available data per occupation:
+
+1. **Preferred — `Employment Change, 2024-2034`** (numeric, from [BLS Employment Projections](https://data.bls.gov/projections/occupationProj)): Apply a sign-preserving log transform — `sign(x) × log1p(|x|)` — to compress the wide variance in percent changes (−36% to +50%). Then min-max scale across all occupations with numeric data to produce a 0–1 value.
+
+2. **Fallback — `Projected Growth`** (category string scraped from O*NET): Used when an occupation isn't listed separately in BLS projections (e.g. specialty subcodes like `29-1141.03` Critical Care Nurses). Mapped ordinally to 0–1:
+
+   | Category | Value |
+   |----------|-------|
+   | Decline | 0.0 |
+   | Little or no change | 0.2 |
+   | Slower than average | 0.4 |
+   | Average | 0.6 |
+   | Faster than average | 0.8 |
+   | Much faster than average | 1.0 |
 
 ---
 
@@ -220,8 +231,7 @@ For each occupation, respond ONLY with this JSON structure:
 4. Apply ceiling/floor rules
 5. ai_proof_score = (Defensive × 0.65) + (Offensive × 0.35)
 6. Round to one decimal place
-7. Compute final_ranking = weighted composite of ai_proof_score (50%), growth (30%), openings (20%)
-8. Apply ranking penalty/boost adjustments
+7. Compute final_ranking = weighted composite of ai_proof_score (50%), growth (30%), openings (20%), using numeric Employment Change where available, falling back to the Projected Growth category string
 
 ---
 

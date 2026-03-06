@@ -16,7 +16,8 @@ Final output is [hosted at this site](https://ai-proof-careers.com).
 │   └── scoring-framework.md          # Complete scoring rubric & calculation logic
 ├── data/
 │   ├── input/
-│   │   └── All_Occupations_ONET.csv  # O*NET occupation data (raw, from external source)
+│   │   ├── All_Occupations_ONET.csv       # O*NET occupation data (raw, from external source)
+│   │   └── Employment Projections.csv     # BLS 2024–2034 employment projections (from data.bls.gov)
 │   ├── intermediate/
 │   │   ├── onet_enrichment_cache.json     # Cached scrape results (resumable)
 │   │   ├── onet_enrichment.csv            # Enrichment fields only
@@ -59,7 +60,8 @@ source ~/.zshrc
 
 ### Input Data
 
-The initial occupation list CSV is downloaded from [O*NET Online — All Occupations](https://www.onetonline.org/find/all) and stored in `data/input/`.
+- **`data/input/All_Occupations_ONET.csv`** — downloaded from [O*NET Online — All Occupations](https://www.onetonline.org/find/all)
+- **`data/input/Employment Projections.csv`** — BLS 2024–2034 employment projections, downloaded from [data.bls.gov/projections/occupationProj](https://data.bls.gov/projections/occupationProj). Provides numeric employment percent change by SOC occupation code.
 
 ### Enrich Input Data
 
@@ -71,14 +73,15 @@ python3 scripts/enrich_onet.py
 
 **Output files created in `data/intermediate/`:**
 - `All_Occupations_ONET_enriched.csv` — full dataset (all original columns + enrichment)
-  - `Median Wage` — e.g. "$39.27 hourly, $81,680 annual"
-  - `Projected Growth` — e.g. "Faster than average (5% to 6%)"
-  - `Projected Job Openings` — e.g. "124,200"
+  - `Median Wage` — e.g. "$39.27 hourly, $81,680 annual" (scraped from O*NET)
+  - `Projected Growth` — e.g. "Faster than average (5% to 6%)" (scraped from O*NET)
+  - `Employment Change, 2024-2034` — numeric percent change, e.g. `4.6` (from BLS Employment Projections CSV). Empty for occupations not listed separately in BLS data (e.g. specialty subcodes like `29-1141.03`).
+  - `Projected Job Openings` — e.g. "124,200" (scraped from O*NET)
   - `Education` — top 2 required education levels with percentages reported by users
-  - `Top Education Level` - the level with highest reporting percentage
-  - `Top Education Rate` - the reporting percentage
-  - `Sample Job Titles` - some real job titles for this occupation
-  - `Job Description` - short description of role
+  - `Top Education Level` — the level with highest reporting percentage
+  - `Top Education Rate` — the reporting percentage
+  - `Sample Job Titles` — some real job titles for this occupation
+  - `Job Description` — short description of role
 - `onet_enrichment.csv` — enrichment fields only (for reference)
 - `onet_enrichment_cache.json` — scraping cache (allows resuming if interrupted)
 
@@ -158,17 +161,23 @@ The `final_ranking` is a weighted composite that combines the AI-proof score wit
 | Input | Weight | Normalization |
 |-------|--------|---------------|
 | `ai_proof_score` | 50% | Linear scale: `(score - 1) / 4` |
-| `Projected Growth` | 30% | Ordinal: Decline=0, Little/none=0.2, Slower=0.4, Average=0.6, Faster=0.8, Much faster=1.0 |
+| Growth | 30% | See below |
 | `Projected Job Openings` | 20% | Log-transform + min-max scale |
+
+**Growth normalization** uses the best available data per occupation:
+1. **`Employment Change, 2024-2034`** (preferred) — numeric percent change from BLS. Sign-preserving log transform (`sign(x) × log1p(|x|)`) applied to compress the wide variance (−36% to +50%), then min-max scaled to 0–1.
+2. **`Projected Growth`** (fallback) — scraped category string from O*NET, mapped ordinally: Decline=0, Little/none=0.2, Slower=0.4, Average=0.6, Faster=0.8, Much faster=1.0. Used for specialty occupations (e.g. `29-1141.03` Critical Care Nurses) not listed separately in BLS projections.
 
 See `docs/scoring-framework.md` for complete rubrics and calculation details.
 
 ## Output Format
 
-The CSV output includes:
-- `Median Wage` — wage data from O*NET
-- `Projected Growth` — BLS growth rate category
-- `Projected Job Openings` — projected openings (2024–2034)
+The CSV output (`data/output/ai_resilience_scores.csv`) includes:
+- `Median Wage` — wage data scraped from O*NET
+- `Projected Growth` — growth category string scraped from O*NET (e.g. "Faster than average (5% to 6%)")
+- `Employment Change, 2024-2034` — numeric BLS percent change (e.g. `4.6`); empty if not in BLS data
+- `Projected Job Openings` — projected openings 2024–2034, scraped from O*NET
+- `Sample Job Titles` — real-world job titles for this occupation
 - `ai_proof_score` — 1.0–5.0 AI resilience rating
 - `final_ranking` — 0.0–1.0 composite ranking (higher = better)
 - `key_drivers` — 2–3 sentence explanation of the score

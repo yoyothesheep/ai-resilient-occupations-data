@@ -16,6 +16,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 INPUT_CSV = Path(__file__).parent.parent / "data" / "input" / "All_Occupations_ONET.csv"
+EMPLOYMENT_PROJECTIONS_CSV = Path(__file__).parent.parent / "data" / "input" / "Employment Projections.csv"
 CACHE_FILE = Path(__file__).parent.parent / "data" / "intermediate" / "onet_enrichment_cache.json"
 ENRICHMENT_ONLY_CSV = Path(__file__).parent.parent / "data" / "intermediate" / "onet_enrichment.csv"
 ENRICHED_CSV = Path(__file__).parent.parent / "data" / "intermediate" / "All_Occupations_ONET_enriched.csv"
@@ -244,6 +245,33 @@ class OnetPageParser(HTMLParser):
         return ""
 
 
+def load_employment_projections() -> dict:
+    """Load Employment Projections.csv and create a lookup of occupation code to growth percent change."""
+    growth_lookup = {}
+    if not EMPLOYMENT_PROJECTIONS_CSV.exists():
+        print(f"Warning: {EMPLOYMENT_PROJECTIONS_CSV} not found. Skipping growth number enrichment.")
+        return growth_lookup
+
+    with open(EMPLOYMENT_PROJECTIONS_CSV, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # Clean occupation code: remove Excel formula syntax (=""...="")
+            raw_code = row.get("Occupation Code", "").strip()
+            # Strip Excel formula wrapper: ="13-2011" → 13-2011
+            if raw_code.startswith('="') and raw_code.endswith('"'):
+                code = raw_code[2:-1]
+            else:
+                code = raw_code
+
+            # Extract growth percent change
+            growth_str = row.get("Employment Percent Change, 2024-2034", "").strip()
+
+            if code and growth_str:
+                growth_lookup[code] = growth_str
+
+    return growth_lookup
+
+
 def extract_top_education(education_str: str) -> tuple:
     """
     Extract top education level and rate from education string.
@@ -317,6 +345,10 @@ def main():
     ENRICHMENT_ONLY_CSV.parent.mkdir(parents=True, exist_ok=True)
     ENRICHED_CSV.parent.mkdir(parents=True, exist_ok=True)
 
+    # Load employment projections for growth numbers
+    growth_lookup = load_employment_projections()
+    print(f"Loaded {len(growth_lookup)} occupation growth projections")
+
     # Load cache if it exists
     enriched_data = {}
     if CACHE_FILE.exists():
@@ -380,22 +412,31 @@ def main():
         time.sleep(DELAY)
 
     # Write enriched CSV (avoid duplicating columns if already enriched)
-    enrichment_cols = ["Median Wage", "Projected Growth", "Projected Job Openings", "Education", "Top Education Level", "Top Education Rate", "Sample Job Titles", "Job Description"]
+    enrichment_cols = ["Median Wage", "Projected Growth", "Employment Change, 2024-2034",
+                       "Projected Job Openings", "Education", "Top Education Level",
+                       "Top Education Rate", "Sample Job Titles", "Job Description"]
     existing = list(rows[0].keys())
     fieldnames = existing + [c for c in enrichment_cols if c not in existing]
 
     # Write enrichment-only CSV (just the new fields)
-    enrichment_fieldnames = ["Code", "Median Wage", "Projected Growth", "Projected Job Openings", "Education", "Top Education Level", "Top Education Rate", "Sample Job Titles", "Job Description"]
+    enrichment_fieldnames = ["Code", "Median Wage", "Projected Growth",
+                             "Employment Change, 2024-2034", "Projected Job Openings",
+                             "Education", "Top Education Level", "Top Education Rate",
+                             "Sample Job Titles", "Job Description"]
     with open(ENRICHMENT_ONLY_CSV, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=enrichment_fieldnames)
         writer.writeheader()
         for row in rows:
             code = row["Code"]
             enriched = enriched_data.get(code, {})
+            percent_change = growth_lookup.get(code, "")
+            if not percent_change and code.endswith(".00"):
+                percent_change = growth_lookup.get(code[:-3], "")
             writer.writerow({
                 "Code": code,
                 "Median Wage": enriched.get("median_wage", ""),
                 "Projected Growth": enriched.get("projected_growth", ""),
+                "Employment Change, 2024-2034": percent_change,
                 "Projected Job Openings": enriched.get("projected_job_openings", ""),
                 "Education": enriched.get("education_top_2", ""),
                 "Top Education Level": enriched.get("top_education_level", ""),
@@ -411,8 +452,12 @@ def main():
         for row in rows:
             code = row["Code"]
             enriched = enriched_data.get(code, {})
+            percent_change = growth_lookup.get(code, "")
+            if not percent_change and code.endswith(".00"):
+                percent_change = growth_lookup.get(code[:-3], "")
             row["Median Wage"] = enriched.get("median_wage", "")
             row["Projected Growth"] = enriched.get("projected_growth", "")
+            row["Employment Change, 2024-2034"] = percent_change
             row["Projected Job Openings"] = enriched.get("projected_job_openings", "")
             row["Education"] = enriched.get("education_top_2", "")
             row["Top Education Level"] = enriched.get("top_education_level", "")

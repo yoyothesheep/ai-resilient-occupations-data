@@ -217,7 +217,7 @@ class OnetPageParser(HTMLParser):
 
         Returns the first matching degree level found, without percentage.
         """
-        text_lower = text.lower()
+        text_lower = text.replace("\u2018", "'").replace("\u2019", "'").lower()
 
         # Check for specific degree mentions (in order of preference)
         degree_patterns = [
@@ -288,6 +288,8 @@ def extract_top_education(education_str: str) -> tuple:
     if not education_str:
         return ("", "")
 
+    # Normalize curly/smart apostrophes to straight apostrophe
+    education_str = education_str.replace("\u2018", "'").replace("\u2019", "'")
     education_str = education_str.strip()
     if not education_str:
         return ("", "")
@@ -432,15 +434,17 @@ def main():
             percent_change = growth_lookup.get(code, "")
             if not percent_change and code.endswith(".00"):
                 percent_change = growth_lookup.get(code[:-3], "")
+            education = enriched.get("education_top_2", "")
+            top_level, top_rate = extract_top_education(education)
             writer.writerow({
                 "Code": code,
                 "Median Wage": enriched.get("median_wage", ""),
                 "Projected Growth": enriched.get("projected_growth", ""),
                 "Employment Change, 2024-2034": percent_change,
                 "Projected Job Openings": enriched.get("projected_job_openings", ""),
-                "Education": enriched.get("education_top_2", ""),
-                "Top Education Level": enriched.get("top_education_level", ""),
-                "Top Education Rate": enriched.get("top_education_rate", ""),
+                "Education": education,
+                "Top Education Level": top_level,
+                "Top Education Rate": top_rate,
                 "Sample Job Titles": enriched.get("sample_job_titles", ""),
                 "Job Description": enriched.get("job_description", ""),
             })
@@ -459,9 +463,11 @@ def main():
             row["Projected Growth"] = enriched.get("projected_growth", "")
             row["Employment Change, 2024-2034"] = percent_change
             row["Projected Job Openings"] = enriched.get("projected_job_openings", "")
-            row["Education"] = enriched.get("education_top_2", "")
-            row["Top Education Level"] = enriched.get("top_education_level", "")
-            row["Top Education Rate"] = enriched.get("top_education_rate", "")
+            education = enriched.get("education_top_2", "")
+            top_level, top_rate = extract_top_education(education)
+            row["Education"] = education
+            row["Top Education Level"] = top_level
+            row["Top Education Rate"] = top_rate
             row["Sample Job Titles"] = enriched.get("sample_job_titles", "")
             row["Job Description"] = enriched.get("job_description", "")
             writer.writerow(row)

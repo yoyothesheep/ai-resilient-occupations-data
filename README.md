@@ -17,7 +17,12 @@ Final output is [hosted at this site](https://ai-proof-careers.com).
 ├── data/
 │   ├── input/
 │   │   ├── All_Occupations_ONET.csv       # O*NET occupation data (raw, from external source)
-│   │   └── Employment Projections.csv     # BLS 2024–2034 employment projections (from data.bls.gov)
+│   │   ├── Employment Projections.csv     # BLS 2024–2034 employment projections (from data.bls.gov)
+│   │   └── onet_db/                       # O*NET 23.1 Database files (Excel, from onetcenter.org)
+│   │       ├── Occupation Data.xlsx       # Job descriptions
+│   │       ├── Sample of Reported Titles.xlsx  # Sample job titles
+│   │       ├── Education Training and Experience.xlsx  # Education levels with %
+│   │       └── ETE Categories.xlsx        # Category ID → education level name mapping
 │   ├── output/
 │   │   └── ai_resilience_scores.csv       # Scored & ranked occupations (all 1,000+ occupations)
 │   └── top_no_degree_careers/             # Curated subset: top AI-resilient careers requiring no bachelor's degree
@@ -62,14 +67,27 @@ source ~/.zshrc
 
 - **`data/input/All_Occupations_ONET.csv`** — downloaded from [O*NET Online — All Occupations](https://www.onetonline.org/find/all)
 - **`data/input/Employment Projections.csv`** — BLS 2024–2034 employment projections, downloaded from [data.bls.gov/projections/occupationProj](https://data.bls.gov/projections/occupationProj). Provides numeric employment percent change by SOC occupation code.
+- **`data/input/onet_db/`** — O*NET 23.1 Database files (Excel), downloaded from [onetcenter.org/database.html](https://www.onetcenter.org/database.html). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+  - `Occupation Data.xlsx` — occupation codes, titles, and descriptions (1,110 rows)
+  - `Sample of Reported Titles.xlsx` — real-world job titles mapped to occupations (9,271 rows)
+  - `Education Training and Experience.xlsx` — education level requirements with survey percentages per occupation (39,693 rows)
+  - `ETE Categories.xlsx` — category-to-label mapping for education levels (e.g., Category 6 = "Bachelor's Degree")
 
 ### Enrich Input Data
 
-**Required before scoring.** Scrape wage, growth, job opening, education, job titles, job description data from O*NET Online (run once, ~17 min):
+**Required before scoring.** Combines O*NET database files + BLS projections + scraped wage/openings data into a single enriched CSV:
 
 ```bash
 python3 scripts/enrich_onet.py
 ```
+
+Data sources per field:
+- **Education levels** — 1st priority: scraped from O*NET Online survey section (`#Education`); 2nd: `onet_db/Education Training and Experience.xlsx` + `ETE Categories.xlsx` (structured DB fallback)
+- **Job Description** — parsed from `onet_db/Occupation Data.xlsx` (structured, no scraping)
+- **Sample Job Titles** — parsed from `onet_db/Sample of Reported Titles.xlsx` (structured, no scraping)
+- **Median Wage** — scraped from O*NET Online pages (not in database)
+- **Projected Growth** — categorical label scraped from O*NET Online pages; numeric `Employment Change, 2024-2034` from BLS CSV
+- **Projected Job Openings** — scraped from O*NET Online pages (not in database)
 
 **Output files created in `data/intermediate/`:**
 - `All_Occupations_ONET_enriched.csv` — full dataset (all original columns + enrichment)
@@ -77,13 +95,11 @@ python3 scripts/enrich_onet.py
   - `Projected Growth` — e.g. "Faster than average (5% to 6%)" (scraped from O*NET)
   - `Employment Change, 2024-2034` — numeric percent change, e.g. `4.6` (from BLS Employment Projections CSV). Empty for occupations not listed separately in BLS data (e.g. specialty subcodes like `29-1141.03`).
   - `Projected Job Openings` — e.g. "124,200" (scraped from O*NET)
-  - `Education` — top 2 required education levels with percentages reported by users
+  - `Education` — top 2 required education levels with percentages from O*NET survey data
   - `Top Education Level` — the level with highest reporting percentage
   - `Top Education Rate` — the reporting percentage
-  - `Sample Job Titles` — some real job titles for this occupation
+  - `Sample Job Titles` — real job titles for this occupation
   - `Job Description` — short description of role
-- `onet_enrichment.csv` — enrichment fields only (for reference)
-- `onet_enrichment_cache.json` — scraping cache (allows resuming if interrupted)
 
 **Note:** Military occupations (55-xxxx codes) have no wage or projection data on O*NET.
 

@@ -1,7 +1,7 @@
 # Career CSV Enrichment Instructions
 
 ## Source File
-`ai_resilience_scores-associates-5.5.csv` — 78 career rows with columns: Job Zone, Code, Occupation, url, Median Wage, Projected Growth, Employment Change, Projected Job Openings, Top Education Level, Sample Job Titles, Job Description, ai_proof_score, final_ranking, key_drivers
+`ai_resilience_scores-associates-5.5.csv` — 77 career rows with columns: Job Zone, Code, Occupation, url, Median Wage, Projected Growth, Employment Change, Projected Job Openings, Top Education Level, Sample Job Titles, Job Description, ai_proof_score, final_ranking, key_drivers
 
 ## Output File
 `ai_resilience_scores-associates-5.5-enriched.csv` — same columns plus new columns below.
@@ -24,6 +24,20 @@ Parsed from the original "Median Wage" string (e.g. `"$49.50 hourly, $102,950 an
 ### Year 1 Income ($)
 First-year earnings in the career pathway (not the median). For careers with paid training (police, fire, ATC, trades apprenticeships), this is academy/apprentice pay. For careers requiring upfront education (dental hygienist, sonographer), this is first-year salary after completing training.
 
+### Unpaid Training Years
+Number of full-time, unpaid training/school years before earning begins. Integer (0, 1, or 2).
+
+**Rules:**
+- Set Yr1 ($) through Yr(N) ($) = `0` where N = unpaid training years
+- Shift all earning years forward by N (e.g., if 2yr school, Yr3 ($) = first-year salary)
+- All tuition/program costs go into **Training Cost ($)** — do NOT subtract them from Yr columns
+- If training is paid (apprenticeships, academies) or done while working (on-the-job, part-time certs), do NOT set any years to $0
+
+**Choosing the shortest path:** When a career has multiple entry paths (e.g., associate degree vs. certificate, formal program vs. OJT), use the **shortest path to earning** for the Yr columns. Note the chosen path in the **10-Year Net Earnings Calculation Model** field. Examples:
+- Dental Assistants: OJT available in many states → 0 unpaid years (not 1yr for the certificate program)
+- Forensic Science Techs: certificate path (6–12 mo) → 1 unpaid year (not 2yr for the associate)
+- Computer Systems Analysts: start in IT support with certs → 0 unpaid years (not 2yr for the associate)
+
 ### Training Cost ($)
 Total out-of-pocket cost to enter the career. Use the most common/affordable pathway:
 - Paid apprenticeships/academies: $0
@@ -34,8 +48,9 @@ Total out-of-pocket cost to enter the career. Use the most common/affordable pat
 ### Yr1 $ through Yr10 $
 10 individual columns with the salary used for each year of the 10-year calculation.
 
-- **Ladder careers**: Manually set each year based on step/promotion research. When a promotion has a range of expected timing (e.g., "3–10 years to make Sergeant"), use the midpoint (e.g., Year 6.5 → round to Year 7).
-- **Linear careers**: Auto-filled by `calc_e10()` using linear interpolation from Year 1 Income to Median Annual Wage.
+- **Unpaid training years**: Set to `0` for any years spent in full-time unpaid school/training. Earning years shift forward accordingly. For example, a 2-year associate degree career: Yr1=$0, Yr2=$0, Yr3=first-year salary, Yr4–Yr10=subsequent years.
+- **Ladder careers**: Manually set each earning year based on step/promotion research. When a promotion has a range of expected timing (e.g., "3–10 years to make Sergeant"), use the midpoint (e.g., Year 6.5 → round to Year 7).
+- **Linear careers**: Earning years auto-filled by `calc_e10()` using linear interpolation from Year 1 Income to Median Annual Wage (same progression rate, just starting later).
 
 #### Ladder Career Salary Realism Rules
 
@@ -71,24 +86,28 @@ The exact year-by-year salary timeline used to compute the 10-Year Net Earnings 
 **Example (Respiratory Therapist, linear):** "($57,000 + $80,450) / 2 × 10 − $18,000 = $669,250"
 
 ### 5. 10-Year Net Earnings Calculation Model
-Short explanation of the earnings trajectory. For salary schedule careers, describe the ladder steps and what impacts salary (e.g., facility level for ATC, certifications for police). For linear careers, note factors that can push above/below the estimate (overtime, specialization, setting).
+Must include **two things**:
 
-**Example (ATC):** "2–4 years developmental training (AG→D1→D2→D3) with incremental checkpoint raises. CPC certification ~Year 5–6 brings major pay jump. Reaches BLS median ($144,580) by Year 9. Level 12 facility CPCs regularly exceed $180K. Highest-ROI career on this list."
+1. **Training description**: What the training/education is, how long it takes, approximate cost, and whether it causes $0 earning years. If the career has multiple entry paths and the shorter path was used for the Yr columns, note which path was chosen.
+2. **Earnings trajectory**: For salary schedule careers, describe the ladder steps and what impacts salary (e.g., facility level for ATC, certifications for police). For linear careers, note factors that can push above/below the estimate (overtime, specialization, setting).
 
-**Example (Police Supervisor):** "Cadet / Academy (Yr 1) → Patrol Officer (Yr 3–5) → Sergeant/Lieutenant (Yr 10). High premiums available for advanced peace officer certifications."
+**Example (ATC):** "FAA Academy in Oklahoma City (3–5 months, paid from day one). 2–4 years developmental training (AG→D1→D2→D3) with incremental checkpoint raises. CPC certification ~Year 5–6 brings major pay jump. Reaches BLS median ($144,580) by Year 9. Level 12 facility CPCs regularly exceed $180K. Highest-ROI career on this list."
+
+**Example (Dental Hygienist, 2yr school):** "2–3 year CODA-accredited dental hygiene associate degree ($15K–$30K) required before earning; 2 years of $0 earnings during school. Linear growth from $65K (entry-level RDH) to BLS median $94,260 over remaining 8 years."
+
+**Example (Dental Assistants, OJT path):** "OJT path: many states allow on-the-job training with no formal program — 0 unpaid years. Salary grows linearly from entry to median over 10 years."
 
 ### 6. Difficulty Score
 `High`, `Medium`, or `Low`
 
 Factors to consider:
-- Competitiveness of entry (acceptance rates, hiring ratios)
-- Length and rigor of training
-- Licensing/certification exam difficulty
+- **Training barriers**: Competitiveness of program admission (acceptance rates), length and rigor of training, licensing/certification exam difficulty and pass rates
+- Competitiveness of hiring (hiring ratios, selection processes)
 - Physical demands and danger
 - Lifestyle demands (travel, irregular hours, emotional toll)
 
 ### 7. Difficulty Score Explanation
-Short explanation of what makes the career easy or hard to enter and stay in. Include specific barriers (exam pass rates, age limits, physical requirements, competitive selection processes).
+Short explanation of what makes the career easy or hard to enter and stay in. Must address the difficulty of getting accepted into and completing the required training/education. Include specific barriers (program acceptance rates, exam pass rates, age limits, physical requirements, competitive selection processes).
 
 ### 8. How to Get There
 Step-by-step training pathway with costs at each step. Include:

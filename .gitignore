@@ -1,7 +1,5 @@
 # Python
 scripts/__pycache__/
-scripts/fill_job_descriptions.py
-scripts/fix_missing_education.py
 *.pyc
 *.pyo
 

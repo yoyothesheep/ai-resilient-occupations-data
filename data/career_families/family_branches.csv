@@ -1,0 +1,23 @@
+from_onet_code,to_onet_code,transition_type,is_primary_path,is_cross_family,min_years_experience_before_transition,training_cost_usd,training_duration_years,can_work_during_training,notes
+31-1131.00,29-1141.00,progression,true,false,0,25000,2,true,CNA → RN via ADN. Most common path. Can work as CNA during school.
+31-1131.00,29-2061.00,progression,false,false,0,15000,1,true,CNA → LPN. Optional intermediate. 1-year diploma program.
+29-2061.00,29-1141.00,progression,true,false,1,20000,1.5,true,LPN → RN via bridge program. 1yr experience typical before bridge.
+29-1141.00,29-1141.01,specialization,false,false,0,2000,0.25,true,RN → Acute Care. On-the-job orientation + PCCN cert. Minimal cost.
+29-1141.00,29-1141.03,specialization,false,false,0,2000,0.25,true,RN → Critical Care. On-the-job orientation + CCRN cert. Minimal cost.
+29-1141.00,29-1171.00,progression,true,false,1,45000,2,true,RN → NP. Master's (MSN). Most programs allow part-time while working.
+29-1141.00,29-1161.00,progression,true,false,1,45000,2,true,RN → Nurse Midwife. Master's (MSN). Similar cost and duration to NP.
+29-1141.00,29-1141.04,progression,true,false,1,45000,2,true,RN → CNS. Master's (MSN). Similar cost and duration to NP.
+29-1141.00,29-1141.02,progression,true,false,1,45000,2,true,RN → Psych NP. Master's (MSN). Mental health specialty track.
+29-1141.00,29-1151.00,progression,false,false,2,80000,3,false,RN → CRNA. Doctoral (DNAP). Requires 2yr general RN exp. Full-time program — cannot work clinically.
+29-1141.03,29-1151.00,progression,true,false,1,80000,3,false,Critical Care RN → CRNA. 1yr ICU exp satisfies prereq. Full-time doctoral program.
+29-1171.00,25-1072.00,lateral,true,false,3,20000,2,true,NP → Nursing Instructor. Most common teaching entry. Master's already held; may need education coursework.
+29-1141.04,25-1072.00,lateral,false,false,3,20000,2,true,CNS → Nursing Instructor. Less common but valid. Similar additional education requirements.
+29-1141.00,25-1072.00,lateral,false,false,3,35000,2,true,RN → Nursing Instructor. Needs Master's if not already held. Rare without advanced practice credential.
+33-3051.00,33-3021.02,specialization,false,false,0,500,0.25,true,Patrol → Records/ID Officer. On-the-job training + forensic coursework. Lower pay ceiling.
+33-3051.00,33-3021.00,progression,true,false,3,2000,0.5,true,Patrol → Detective. Internal promotion. Written exam + interview. No degree required typically.
+33-3051.00,33-1012.00,progression,true,false,5,2000,0.5,true,Patrol → Supervisor. Internal promotion via sergeant exam. Parallel track to detective.
+33-3021.00,33-1012.00,progression,false,false,3,2000,0.25,true,Detective → Supervisor. Less common path; most supervisors come from patrol.
+33-3051.00,33-3052.00,lateral,false,true,2,3000,0.5,true,Patrol → Transit Police. Cross-family lateral. Skills transfer but different agency and academy.
+33-3051.00,33-9021.00,lateral,false,false,5,1000,0.25,true,Patrol → Private Investigator. Career exit. PI license required (~40hr course). Low cost but lower pay.
+33-3021.00,33-9021.00,lateral,true,false,5,1000,0.25,true,Detective → Private Investigator. Most common PI entry. Investigation skills transfer directly.
+33-3051.00,21-1092.00,lateral,false,true,0,30000,4,true,Patrol → Probation Officer. Cross-family lateral. Requires bachelor's if not already held. Different agency — courts/corrections system.

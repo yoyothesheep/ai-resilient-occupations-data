@@ -67,6 +67,7 @@ source ~/.zshrc
 
 - **`data/input/All_Occupations_ONET.csv`** — downloaded from [O*NET Online — All Occupations](https://www.onetonline.org/find/all)
 - **`data/input/Employment Projections.csv`** — BLS 2024–2034 employment projections, downloaded from [data.bls.gov/projections/occupationProj](https://data.bls.gov/projections/occupationProj). Provides numeric employment percent change by SOC occupation code.
+- **`data/input/SimpleJobTitles_altPathurl_202602201636.csv`** — maps SOC codes to AltPath URLs and simplified job titles (`Soc Code`, `URL`, `Simple Title`)
 - **`data/input/onet_db/`** — O*NET 23.1 Database files (Excel), downloaded from [onetcenter.org/database.html](https://www.onetcenter.org/database.html). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
   - `Occupation Data.xlsx` — occupation codes, titles, and descriptions (1,110 rows)
   - `Sample of Reported Titles.xlsx` — real-world job titles mapped to occupations (9,271 rows)
@@ -88,6 +89,7 @@ Data sources per field:
 - **Median Wage** — scraped from O*NET Online pages (not in database)
 - **Projected Growth** — categorical label scraped from O*NET Online pages; numeric `Employment Change, 2024-2034` from BLS CSV
 - **Projected Job Openings** — scraped from O*NET Online pages (not in database)
+- **AltPath URL + Simple Title** — joined from `data/input/SimpleJobTitles_altPathurl_202602201636.csv` by SOC code
 
 **Output files created in `data/intermediate/`:**
 - `All_Occupations_ONET_enriched.csv` — full dataset (all original columns + enrichment)
@@ -114,7 +116,7 @@ python3 scripts/score_occupations.py
 This will:
 1. Load all occupations from `data/intermediate/All_Occupations_ONET_enriched.csv` (enriched dataset)
 2. Batch them (10 per batch by default)
-3. Score each batch via Claude API (scores all 10 attributes + calculates `internal_ai_proof_score`)
+3. Score each batch via Claude API (scores all 10 attributes + calculates `role_resilience_score`)
 4. Compute composite `final_ranking` from score + growth + openings
 5. Write results to `data/output/ai_resilience_scores.csv`, sorted by ranking
 
@@ -163,7 +165,7 @@ Use this to validate the pipeline before running the full dataset.
 ```
 Defensive Score = weighted average of A1–A8 (with attribute-specific weights)
 Offensive Score = average of A9–A10
-internal_ai_proof_score  = (Defensive × 0.65) + (Offensive × 0.35)
+role_resilience_score  = (Defensive × 0.65) + (Offensive × 0.35)
 ```
 
 **Special Rules:**
@@ -176,7 +178,7 @@ The `final_ranking` is a weighted composite that combines the AI-proof score wit
 
 | Input | Weight | Normalization |
 |-------|--------|---------------|
-| `internal_ai_proof_score` | 50% | Linear scale: `(score - 1) / 4` |
+| `role_resilience_score` | 50% | Linear scale: `(score - 1) / 4` |
 | Growth | 30% | See below |
 | `Projected Job Openings` | 20% | Log-transform + min-max scale |
 
@@ -188,15 +190,52 @@ See `docs/scoring-framework.md` for complete rubrics and calculation details.
 
 ## Output Format
 
-The CSV output (`data/output/ai_resilience_scores.csv`) includes:
-- `Median Wage` — wage data scraped from O*NET
-- `Projected Growth` — growth category string scraped from O*NET (e.g. "Faster than average (5% to 6%)")
-- `Employment Change, 2024-2034` — numeric BLS percent change (e.g. `4.6`); empty if not in BLS data
-- `Projected Job Openings` — projected openings 2024–2034, scraped from O*NET
-- `Sample Job Titles` — real-world job titles for this occupation
-- `internal_ai_proof_score` — 1.0–5.0 AI resilience rating
-- `final_ranking` — 0.0–1.0 composite ranking (higher = better)
-- `key_drivers` — 2–3 sentence explanation of the score
+### Main Dataset (`data/output/ai_resilience_scores.csv`)
+
+| Column | Description |
+|--------|-------------|
+| `Job Zone` | O*NET Job Zone (1–5, reflects preparation level) |
+| `Code` | O*NET/SOC occupation code |
+| `Occupation` | Occupation title |
+| `Data-level` | Indicates if row is a broad or detailed O*NET occupation |
+| `url` | O*NET Online URL for the occupation |
+| `Median Wage` | Wage string scraped from O*NET (e.g. "$39.27 hourly, $81,680 annual") |
+| `Projected Growth` | Growth category scraped from O*NET (e.g. "Faster than average (5% to 6%)") |
+| `Employment Change, 2024-2034` | Numeric BLS percent change (e.g. `4.6`); empty for specialty subcodes |
+| `Projected Job Openings` | Projected openings 2024–2034, scraped from O*NET |
+| `Education` | Top 2 education levels with survey percentages |
+| `Top Education Level` | Education level with highest reporting percentage |
+| `Top Education Rate` | Reporting percentage for top education level |
+| `Sample Job Titles` | Real-world job titles for this occupation |
+| `Job Description` | Short description of the role |
+| `role_resilience_score` | 1.0–5.0 AI resilience score |
+| `final_ranking` | 0.0–1.0 composite ranking (higher = better) |
+| `key_drivers` | 2–3 sentence explanation of the score |
+| `altpath url` | AltPath.org career page URL for this occupation |
+| `altpath simple title` | Plain-language job title (e.g. "Transit Police" vs O*NET's formal title) |
+
+### Top No-Degree Careers Subset (`data/top_no_degree_careers/`)
+
+Filtered to `role_resilience_score ≥ 5.5` and `Top Education Level ≤ associate's`. The enriched file adds:
+
+| Column | Description |
+|--------|-------------|
+| `Median Annual Wage ($)` | Parsed integer from `Median Wage` (e.g. `81680`) |
+| `Calculation Type` | `ladder` (step/promotion-based) or `linear` (gradual growth) |
+| `Training Years` | Duration of training before first full earning year |
+| `Training Salary ($)` | Wage paid during training (0 if unpaid) |
+| `Training Cost ($)` | Total out-of-pocket training cost |
+| `Yr1 ($)`–`Yr10 ($)` | Annual salary for each of the 10 modeled years |
+| `10-Year Net Earnings ($)` | `sum(Yr1..Yr10) - Training Cost` |
+| `10-Year Net Earnings Calculation` | Year-by-year formula showing how the total was derived |
+| `10-Year Net Earnings Calculation Model` | Narrative description of training path and earnings trajectory |
+| `Difficulty Score` | `High`, `Medium`, or `Low` entry difficulty |
+| `Difficulty Score Explanation` | What makes the career easy or hard to enter |
+| `How to Get There` | Step-by-step training pathway with costs |
+| `Job Market` | Projected growth, openings, supply/demand dynamics |
+| `Pension` | Retirement benefit details if applicable |
+
+See `data/top_no_degree_careers/ENRICHMENT_INSTRUCTIONS.md` for full schema and `calc_e10()` calculation logic.
 
 ## Configuration
 

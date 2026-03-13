@@ -19,7 +19,7 @@ The AI-proof score is a **weighted blend of two groups**:
 - **Resiliency Score (65% weight):** Attributes 1–8 — why AI can't take over
 - **Opportunity Score (35% weight):** Attributes 9–10 — why AI's rise actively helps this role
 
-`internal_ai_proof_score = (Defensive Score × 0.65) + (Offensive Score × 0.35)`
+`role_resilience_score = (Defensive Score × 0.65) + (Offensive Score × 0.35)`
 
 Normalize to 1.0–5.0 range with one decimal place.
 
@@ -30,7 +30,7 @@ The final ranking combines the AI-proof score with labor market signals into a 0
 `final_ranking = 0.50 × resilience_norm + 0.30 × growth_norm + 0.20 × openings_norm`
 
 **Normalization:**
-- `resilience_norm` = (internal_ai_proof_score - 1) / 4
+- `resilience_norm` = (role_resilience_score - 1) / 4
 - `growth_norm` = see below
 - `openings_norm` = log-transform + min-max scale (handles extreme skew in job opening counts)
 
@@ -181,9 +181,9 @@ Offensive Score = average of A9 and A10, normalized to 1–5.
 
 ## Ceiling & Floor Rules
 
-**Ceiling Rule:** If A1 + A3 + A4 all score ≤ 2, cap internal_ai_proof_score at **2.5** regardless of other scores. A job with no hard defenses is fundamentally exposed.
+**Ceiling Rule:** If A1 + A3 + A4 all score ≤ 2, cap role_resilience_score at **2.5** regardless of other scores. A job with no hard defenses is fundamentally exposed.
 
-**Floor Rule:** If A9 or A10 scores **5**, minimum internal_ai_proof_score is **3.0**. A role that actively expands due to AI's rise has meaningful resilience even with weak defenses.
+**Floor Rule:** If A9 or A10 scores **5**, minimum role_resilience_score is **3.0**. A role that actively expands due to AI's rise has meaningful resilience even with weak defenses.
 
 ---
 
@@ -194,7 +194,7 @@ For each occupation, respond ONLY with this JSON structure:
 ```json
 {
   "onet_code": "XX-XXXX.XX",
-  "internal_ai_proof_score": 4.2,
+  "role_resilience_score": 4.2,
   "key_drivers": "2-3 sentences explaining the score"
 }
 ```
@@ -229,9 +229,9 @@ For each occupation, respond ONLY with this JSON structure:
    - This gives Defensive Score on 1–5 scale
 3. Calculate offensive score: average of A9 and A10
 4. Apply ceiling/floor rules
-5. internal_ai_proof_score = (Defensive × 0.65) + (Offensive × 0.35)
+5. role_resilience_score = (Defensive × 0.65) + (Offensive × 0.35)
 6. Round to one decimal place
-7. Compute final_ranking = weighted composite of internal_ai_proof_score (50%), growth (30%), openings (20%), using numeric Employment Change where available, falling back to the Projected Growth category string
+7. Compute final_ranking = weighted composite of role_resilience_score (50%), growth (30%), openings (20%), using numeric Employment Change where available, falling back to the Projected Growth category string
 
 ---
 

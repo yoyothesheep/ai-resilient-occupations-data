@@ -1,0 +1,19 @@
+onet_code,occupation,family_id,level,is_canonical,typical_years_from_entry,notes
+31-1131.00,Nursing Assistants,nursing,1,true,0,Entry point. CNA certification ~4-12 weeks.
+29-2061.00,Licensed Practical and Licensed Vocational Nurses,nursing,2,true,1,Optional intermediate step. 1-year diploma. Many go CNA→RN directly.
+29-1141.00,Registered Nurses,nursing,3,true,3,Core career destination. ADN (2yr) or BSN (4yr) from entry.
+29-1141.01,Acute Care Nurses,nursing,3,false,3,Specialization of RN. Hospital-based. No extra degree. Inherits RN outbound transitions.
+29-1141.03,Critical Care Nurses,nursing,3,false,3,Specialization of RN. ICU/CCU focus. Adds explicit exception: → CRNA.
+29-1171.00,Nurse Practitioners,nursing,4,true,7,Master's required (~2yr beyond RN).
+29-1161.00,Nurse Midwives,nursing,4,true,7,Master's required. Obstetric focus.
+29-1141.04,Clinical Nurse Specialists,nursing,4,true,7,Master's required. Clinical/systems focus.
+29-1141.02,Advanced Practice Psychiatric Nurses,nursing,4,true,7,Master's required. Mental health track.
+29-1151.00,Nurse Anesthetists,nursing,5,true,10,Doctoral required. Highest-paid nursing role.
+25-1072.00,Nursing Instructors and Teachers Postsecondary,nursing,5,true,10,Teaching track. Master's or Doctoral. Exits clinical practice.
+33-3051.00,Police and Sheriff's Patrol Officers,law-enforcement,1,true,0,Entry point. Police academy ~6 months. Must be hired by a department first.
+33-3021.02,Police Identification and Records Officers,law-enforcement,1,false,0,Specialization of patrol. Forensic/clerical focus. Lower resilience score.
+33-3021.00,Detectives and Criminal Investigators,law-enforcement,2,true,5,Investigative track. Promoted from patrol. No additional degree typically required.
+33-1012.00,First-Line Supervisors of Police and Detectives,law-enforcement,2,true,5,Management track. Promoted from patrol. Parallel to detective track.
+33-3052.00,Transit and Railroad Police,transit-police,1,true,0,Entry point. Transit agency academy. Direct public hire — not a promotion from municipal patrol.
+33-9021.00,Private Detectives and Investigators,law-enforcement,3,true,8,Lateral exit from law enforcement. Private sector. Often ex-detective or ex-patrol.
+21-1092.00,Probation Officers and Correctional Treatment Specialists,law-enforcement,2,true,0,Adjacent lateral entry. Requires bachelor's. Different agency but overlapping career community.

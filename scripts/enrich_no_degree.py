@@ -59,7 +59,8 @@ ENRICHMENT_COLS = [
 OUTPUT_FIELDNAMES = [
     "Job Zone", "Code", "Occupation", "url", "Median Wage", "Projected Growth",
     "Employment Change, 2024-2034", "Projected Job Openings", "Top Education Level",
-    "Sample Job Titles", "Job Description", "internal_ai_proof_score", "final_ranking", "key_drivers",
+    "Sample Job Titles", "Job Description", "role_resilience_score", "final_ranking", "key_drivers",
+    "altpath url", "altpath simple title",
 ] + ENRICHMENT_COLS
 
 

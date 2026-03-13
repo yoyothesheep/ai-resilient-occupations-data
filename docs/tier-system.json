@@ -1,0 +1,68 @@
+{
+  "tiers": [
+    {
+      "id": "high-ground",
+      "label": "High Ground",
+      "range_min": 65,
+      "range_max": 100,
+      "description": "AI amplifies your value. These roles benefit directly from AI handling the low-value work, freeing you to do more of what only a human can do.",
+      "for_current_workers": "Deepen your expertise — AI will amplify you",
+      "for_career_explorers": "Strong entry — commit fully and specialize"
+    },
+    {
+      "id": "solid-ground",
+      "label": "Solid Ground",
+      "range_min": 50,
+      "range_max": 64,
+      "description": "Well-positioned with real protection. These roles have meaningful defenses against automation, though the ceiling isn't unlimited.",
+      "for_current_workers": "Stay current, keep building your edge",
+      "for_career_explorers": "Good choice — level up your skills before you enter"
+    },
+    {
+      "id": "shifting-ground",
+      "label": "Shifting Ground",
+      "range_min": 35,
+      "range_max": 49,
+      "description": "One strong factor, one real threat. These roles have protection in some areas but genuine vulnerability in others — the outcome depends on how you position yourself.",
+      "for_current_workers": "Cross-train now — add adjacent skills before you need them",
+      "for_career_explorers": "Enter with eyes open — build adjacent skills alongside this role"
+    },
+    {
+      "id": "thin-ice",
+      "label": "Thin Ice",
+      "range_min": 20,
+      "range_max": 34,
+      "description": "Automation is already underway. These roles are losing ground to AI and the window to act is narrowing.",
+      "for_current_workers": "Start your pivot while you still have runway",
+      "for_career_explorers": "Look elsewhere unless you have a specific reason to enter"
+    },
+    {
+      "id": "fault-line",
+      "label": "Fault Line",
+      "range_min": 0,
+      "range_max": 19,
+      "description": "These roles may not exist in their current form within a decade. Displacement is already happening in many cases.",
+      "for_current_workers": "Time to move — transition on your terms before circumstances force it",
+      "for_career_explorers": "Skip it — redirect that training investment elsewhere"
+    }
+  ],
+  "scoring": {
+    "role_resilience_score": {
+      "range": "1.0 – 5.0",
+      "description": "Measures how well the role itself resists AI automation across 10 attributes. Scores the job, not the labor market around it.",
+      "weight_in_final_ranking": 0.50
+    },
+    "projected_growth": {
+      "description": "BLS 10-year projected employment growth rate for this occupation.",
+      "weight_in_final_ranking": 0.30
+    },
+    "projected_job_openings": {
+      "description": "BLS annual projected job openings — reflects both new jobs and replacement demand.",
+      "weight_in_final_ranking": 0.20
+    },
+    "final_ranking": {
+      "range": "0.0 – 1.0",
+      "description": "Composite score combining role resilience (50%), projected growth (30%), and job openings (20%). Used to place each occupation into a tier."
+    }
+  }
+}

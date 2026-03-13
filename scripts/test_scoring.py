@@ -64,7 +64,7 @@ def display_results(results: list[dict]):
 
     for result in results:
         code = result.get("onet_code", "")
-        score = result.get("internal_ai_proof_score", "")
+        score = result.get("role_resilience_score", "")
         drivers = result.get("key_drivers", "")
 
         if len(drivers) > 57:

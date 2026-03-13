@@ -1,7 +1,7 @@
 # Career CSV Enrichment Instructions
 
 ## Source File
-`ai_resilience_scores-associates-5.5.csv` — 77 career rows with columns: Job Zone, Code, Occupation, url, Median Wage, Projected Growth, Employment Change, Projected Job Openings, Top Education Level, Sample Job Titles, Job Description, internal_ai_proof_score, final_ranking, key_drivers
+`ai_resilience_scores-associates-5.5.csv` — 77 career rows with columns: Job Zone, Code, Occupation, url, Median Wage, Projected Growth, Employment Change, Projected Job Openings, Top Education Level, Sample Job Titles, Job Description, role_resilience_score, final_ranking, key_drivers
 
 ## Output File
 `ai_resilience_scores-associates-5.5-enriched.csv` — same columns plus new columns below.

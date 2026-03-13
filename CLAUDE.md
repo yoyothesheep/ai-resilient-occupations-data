@@ -34,7 +34,7 @@ Requires `ANTHROPIC_API_KEY` env var.
 ## Scoring Summary
 
 - **10 attributes**: A1–A8 defensive (65%), A9–A10 offensive (35%)
-- **`internal_ai_proof_score`**: 1.0–5.0
+- **`role_resilience_score`**: 1.0–5.0
 - **`final_ranking`**: 0.0–1.0 composite (score 50% + growth 30% + openings 20%)
 - Special rules: ceiling cap at 2.5 if A1+A3+A4 all ≤ 2; floor at 3.0 if A9 or A10 = 5
 
@@ -42,7 +42,7 @@ See `docs/scoring-framework.md` for full rubric.
 
 ## Top No-Degree Careers Sub-Dataset
 
-Subset filtered to `internal_ai_proof_score ≥ 5.5` and `Top Education Level ≤ associate's`.
+Subset filtered to `role_resilience_score ≥ 5.5` and `Top Education Level ≤ associate's`.
 
 - Base: `data/top_no_degree_careers/ai_resilience_scores-associates-5.5.csv`
 - Enriched: `data/top_no_degree_careers/ai_resilience_scores-associates-5.5-enriched.csv`

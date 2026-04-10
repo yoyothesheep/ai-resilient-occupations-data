@@ -271,15 +271,32 @@ def top_tasks(code: str, task_table: dict, n: int = TOP_TASKS) -> list[str]:
     return [r["task_text"] for r in sorted_rows[:n]]
 
 
+JOB_ZONE_TO_LEVEL = {1: 1, 2: 1, 3: 2, 4: 3, 5: 4}
+
+def job_zone_to_level(occ: dict, code: str) -> int:
+    raw = occ.get("Job Zone", "")
+    try:
+        zone = int(float(raw))
+        level = JOB_ZONE_TO_LEVEL.get(zone)
+        if level is None:
+            print(f"  ⚠ Unexpected Job Zone {zone!r} for {code} — defaulting to 2")
+            return 2
+        return level
+    except (ValueError, TypeError):
+        print(f"  ⚠ Missing Job Zone for {code} — defaulting to 2")
+        return 2
+
+
 def format_growth(occ: dict) -> str:
     raw = occ.get("Employment Change, 2024-2034", "").strip()
     if raw:
         try:
             pct = float(raw)
-            return f"+{pct:.0f}%" if pct >= 0 else f"{pct:.0f}%"
+            rounded = round(pct)
+            return f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
         except ValueError:
             pass
-    return occ.get("Projected Growth", "")
+    return "N/A"
 
 
 def format_openings(occ: dict) -> str:
@@ -288,6 +305,19 @@ def format_openings(occ: dict) -> str:
         return f"{int(raw):,}"
     except ValueError:
         return occ.get("Projected Job Openings", "")
+
+
+def format_salary(occ: dict) -> str:
+    import re
+    raw = occ.get("Median Wage", "")
+    m = re.search(r'\$([\d,]+)\s+annual', raw)
+    if m:
+        return f"${int(m.group(1).replace(',', '')):,}"
+    plain = raw.replace(",", "").replace("$", "").strip()
+    try:
+        return f"${int(float(plain)):,}"
+    except (ValueError, TypeError):
+        return ""
 
 
 # ── Prompt ────────────────────────────────────────────────────────────────────
@@ -483,11 +513,12 @@ def process_occupation(source_code: str, scores: dict,
 
         target_list.append({
             "code":         target_code,
-            "title":        target_occ["Occupation"],
+            "title":        target_occ.get("altpath simple title", "").strip() or target_occ["Occupation"],
             "relationship": rel_type,
             "category":     transition_category,
             "training_duration_years": training_duration,
             "score":        round(final_ranking * 100),
+            "salary":       format_salary(target_occ),
             "openings":     format_openings(target_occ),
             "growth":       format_growth(target_occ),
             "fit":          result.get("fit", ""),
@@ -513,21 +544,40 @@ def process_occupation(source_code: str, scores: dict,
         key = node.get("code") or node.get("title")
         cluster_by_key[key] = node
 
+    # Determine which codes are in the same cluster as source
+    source_cluster_id = role_index[source_code]["cluster_id"] if source_code in role_index else None
+
     # Upsert: merge transition data into existing cluster nodes, or add new nodes
     for code, t in transition_by_code.items():
+        target_cluster = role_index.get(code)
+        in_same_cluster = (
+            target_cluster is not None and
+            source_cluster_id is not None and
+            target_cluster["cluster_id"] == source_cluster_id
+        )
+        is_adjacent = not in_same_cluster
+
         if code in cluster_by_key:
             node = cluster_by_key[code]
         else:
-            # Add node from scores data if not already in cluster
-            target_occ = scores.get(code, {})
+            # Resolve level: same-cluster roles use cluster level, cross-cluster use Job Zone
+            if in_same_cluster:
+                resolved_level = int(target_cluster["level"])
+            else:
+                target_occ_data = scores.get(code, {})
+                resolved_level = job_zone_to_level(target_occ_data, code)
             node = {
                 "code": code,
                 "title": t["title"],
-                "level": None,  # unknown without cluster data
+                "level": resolved_level,
                 "isCurrent": False,
             }
             cluster_by_key[code] = node
+
+        if is_adjacent:
+            node["isAdjacent"] = True
         node["relationship"] = t["relationship"]
+        node["salary"]       = t["salary"]
         node["openings"]     = t["openings"]
         node["growth"]       = t["growth"]
         node["fit"]          = t["fit"]

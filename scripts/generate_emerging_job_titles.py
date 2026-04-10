@@ -103,6 +103,11 @@ def generate_titles_for_occupation(client: anthropic.Anthropic, occ: dict) -> li
         messages=[{"role": "user", "content": prompt}],
     )
     raw = msg.content[0].text.strip()
+    if raw.startswith("```"):
+        raw = raw.split("```", 2)[1]
+        if raw.startswith("json"):
+            raw = raw[4:]
+        raw = raw.strip()
     try:
         results = json.loads(raw)
         return [{"onet_code": occ["Code"], "job_title": r["job_title"], "notes": r.get("notes", "")}

@@ -10,7 +10,7 @@ Two modes:
         role_resilience_score 2.5–4.0 → 2 roles  (moderate)
         role_resilience_score > 4.0   → 0 roles  (solid/strong — skip)
 
-  --cluster web-developer
+  --cluster software-technology
       Cluster mode. Generates 2–4 roles for EVERY member of the cluster
       regardless of score tier, using a shared candidate pool for consistency:
         1. Seed pool with existing emerging_roles.csv entries for this cluster
@@ -31,7 +31,7 @@ Results are written to:
 
 Usage:
     python3 scripts/generate_emerging_roles.py --code 15-1254.00
-    python3 scripts/generate_emerging_roles.py --cluster web-developer
+    python3 scripts/generate_emerging_roles.py --cluster software-technology
     python3 scripts/generate_emerging_roles.py --all
 """
 

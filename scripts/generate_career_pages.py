@@ -23,6 +23,7 @@ import sys
 # ── Config ────────────────────────────────────────────────────────────────────
 CARDS_JSONL       = "data/output/occupation_cards.jsonl"
 CLUSTER_ROLES_CSV = "data/career_clusters/cluster_roles.csv"
+CLUSTERS_CSV      = "data/career_clusters/clusters.csv"
 SCORES_CSV        = "data/output/ai_resilience_scores.csv"
 SITE_DIR          = "../ai-resilient-occupations-site"
 CAREERS_DATA_DIR  = os.path.join(SITE_DIR, "src/data/careers")
@@ -62,6 +63,17 @@ def load_scores() -> dict:
         for r in csv.DictReader(f):
             scores[r["Code"]] = r
     return scores
+
+
+def load_clusters() -> dict:
+    """Returns cluster_id → {industry_slug, industry_display_name, ...}"""
+    clusters = {}
+    if not os.path.exists(CLUSTERS_CSV):
+        return clusters
+    with open(CLUSTERS_CSV, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            clusters[r["cluster_id"]] = r
+    return clusters
 
 
 def get_cluster_members(cluster_id: str, cluster_roles: dict) -> list[dict]:
@@ -169,6 +181,9 @@ def build_cluster_node(node: dict, is_current: bool = False, is_emerging: bool =
     if is_emerging:
         lines.append("      isEmerging: true,")
 
+    if node.get("isAdjacent"):
+        lines.append("      isAdjacent: true,")
+
     score = node.get("score")
     if score is not None:
         lines.append(f"      score: {score},")
@@ -176,6 +191,10 @@ def build_cluster_node(node: dict, is_current: bool = False, is_emerging: bool =
     relationship = node.get("relationship")
     if relationship:
         lines.append(f"      relationship: {str_to_tsx_string(relationship)},")
+
+    salary = node.get("salary")
+    if salary:
+        lines.append(f"      salary: {str_to_tsx_string(str(salary))},")
 
     openings = node.get("openings")
     if openings:
@@ -230,7 +249,10 @@ def build_career_cluster(card: dict, cluster_roles: dict, scores: dict) -> str:
     nodes = []
     seen_codes = set()
 
-    # 1. Cluster ladder nodes (all members, current marked)
+    # Build lookup of transition data from adjacent_roles.py output
+    transition_by_code = {n["code"]: n for n in card.get("careerCluster", []) if n.get("code")}
+
+    # 1. Cluster ladder nodes (all members, current marked), merging transition data if available
     if cluster_row:
         cluster_id = cluster_row["cluster_id"]
         members = get_cluster_members(cluster_id, cluster_roles)
@@ -244,6 +266,11 @@ def build_career_cluster(card: dict, cluster_roles: dict, scores: dict) -> str:
                 "title": m_simple if m_simple else m["occupation"],
                 "score": float(m_score) if m_score else None,
             }
+            # Merge transition data (fit, steps, relationship, openings, growth) if available
+            t = transition_by_code.get(m_code, {})
+            for key in ("fit", "steps", "relationship", "salary", "openings", "growth", "isAdjacent"):
+                if t.get(key):
+                    node[key] = t[key]
             nodes.append(build_cluster_node(node, is_current=(m_code == onet_code)))
             seen_codes.add(m_code)
 
@@ -315,7 +342,9 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     openings = card.get("openings", "")
     growth = card.get("growth", "")
     description = card.get("description") or scores.get(onet_code, {}).get("Job Description", "")
+    onet_url = scores.get(onet_code, {}).get("url", "")
     job_titles = card.get("jobTitles", [])
+    emerging_titles = card.get("emergingTitles", [])
     key_drivers = card.get("keyDrivers", "")
     task_intro = card.get("taskIntro", "")
 
@@ -337,8 +366,9 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     task_rows = card.get("taskData", [])
     sources = card.get("sources", [])
 
-    # Build job titles list
+    # Build job titles lists
     titles_str = "\n".join(f"    {str_to_tsx_string(t)}," for t in job_titles)
+    emerging_titles_str = "\n".join(f"    {str_to_tsx_string(t)}," for t in emerging_titles)
 
     # Build task data
     tasks_str = ",\n".join(build_task_row(t) for t in task_rows)
@@ -357,6 +387,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         "",
         f"export const {var_name}: CareerData = {{",
         f"  title: {str_to_tsx_string(title)},",
+        f"  url: {str_to_tsx_string(onet_url)},",
         f"  score: {score},",
         f"  salary: {str_to_tsx_string(salary)},",
         f"  openings: {str_to_tsx_string(openings)},",
@@ -365,6 +396,9 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         f"    {str_to_tsx_string(description)},",
         f"  jobTitles: [",
         titles_str,
+        f"  ],",
+        f"  emergingTitles: [",
+        emerging_titles_str,
         f"  ],",
         f"  keyDrivers: {text_to_jsx_fragment(key_drivers, indent=1)},",
     ]
@@ -413,19 +447,24 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     return "\n".join(lines)
 
 
-def generate_route_file(slug: str, var_name: str, component_name: str) -> str:
+def generate_route_file(slug: str, var_name: str, component_name: str,
+                        industry_slug: str = "", industry_display_name: str = "") -> str:
+    if industry_slug and industry_display_name:
+        props = f'data={{{var_name}}} industrySlug="{industry_slug}" industryName="{industry_display_name}"'
+    else:
+        props = f"data={{{var_name}}}"
     return (
         f'import CareerDetailPage from "@/components/CareerDetailPage";\n'
         f'import {{ {var_name} }} from "@/data/careers/{slug}";\n'
         f"\n"
         f"export default function {component_name}() {{\n"
-        f"  return <CareerDetailPage data={{{var_name}}} />;\n"
+        f"  return <CareerDetailPage {props} />;\n"
         f"}}\n"
     )
 
 
 def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
-                       scores: dict, force: bool = False) -> bool:
+                       scores: dict, clusters: dict, force: bool = False) -> bool:
     card = cards.get(onet_code)
     if not card:
         print(f"  ✗ {onet_code} not found in occupation_cards.jsonl")
@@ -437,6 +476,15 @@ def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
     slug = title_to_slug(title)
     var_name = slug_to_var(slug)
     component_name = slug_to_component(slug)
+
+    # Look up industry breadcrumb from cluster
+    cluster_row = cluster_roles.get(onet_code)
+    industry_slug = ""
+    industry_display_name = ""
+    if cluster_row:
+        cluster_data = clusters.get(cluster_row["cluster_id"], {})
+        industry_slug = cluster_data.get("industry_slug", "").strip()
+        industry_display_name = cluster_data.get("industry_display_name", "").strip()
 
     data_path = os.path.join(CAREERS_DATA_DIR, f"{slug}.tsx")
     route_dir = os.path.join(CAREERS_ROUTE_DIR, slug)
@@ -450,7 +498,7 @@ def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
     print(f"   slug: {slug}")
 
     data_content = generate_data_file(card, cluster_roles, scores, var_name, title=title)
-    route_content = generate_route_file(slug, var_name, component_name)
+    route_content = generate_route_file(slug, var_name, component_name, industry_slug, industry_display_name)
 
     os.makedirs(CAREERS_DATA_DIR, exist_ok=True)
     os.makedirs(route_dir, exist_ok=True)
@@ -481,9 +529,10 @@ def main():
     cards = load_cards()
     cluster_roles = load_cluster_roles()
     scores = load_scores()
+    clusters = load_clusters()
 
     if args.code:
-        process_occupation(args.code, cards, cluster_roles, scores, force=args.force)
+        process_occupation(args.code, cards, cluster_roles, scores, clusters, force=args.force)
 
     elif args.cluster:
         members = [r for r in cluster_roles.values() if r["cluster_id"] == args.cluster]
@@ -493,13 +542,42 @@ def main():
             sys.exit(1)
         print(f"\n══ Cluster: {args.cluster} ({len(members)} roles) ══")
         for m in members:
-            process_occupation(m["onet_code"], cards, cluster_roles, scores, force=args.force)
+            process_occupation(m["onet_code"], cards, cluster_roles, scores, clusters, force=args.force)
 
     elif args.all:
         for code in cards:
-            process_occupation(code, cards, cluster_roles, scores, force=args.force)
+            process_occupation(code, cards, cluster_roles, scores, clusters, force=args.force)
 
+    _regenerate_registry()
     print("\n✓ Done")
+
+
+def _regenerate_registry():
+    """Regenerate careerPageRegistry.ts from existing app/career/ directories.
+
+    TODO: Remove this function (and its call above + the registry file) once all
+    career pages are built. At that point every CareerClusterNode will have a page,
+    so CareerDetailPage can link unconditionally. See docs/pipeline.md for context.
+    """
+    import os
+    career_dir = os.path.join(SITE_DIR, "app", "career")
+    slugs = sorted(
+        d for d in os.listdir(career_dir)
+        if os.path.isdir(os.path.join(career_dir, d))
+    )
+    slug_lines = ",\n  ".join(f'"{s}"' for s in slugs)
+    registry = f"""// AUTO-GENERATED by scripts/generate_career_pages.py — do not edit manually.
+// TODO: Once all career pages are built, this registry can be removed.
+// Replace the slug-lookup in CareerDetailPage with a direct link on every node
+// (since every node will have a page). See docs/pipeline.md for context.
+export const CAREER_PAGE_SLUGS = new Set<string>([
+  {slug_lines},
+]);
+"""
+    registry_path = os.path.join(SITE_DIR, "src", "data", "careerPageRegistry.ts")
+    with open(registry_path, "w") as f:
+        f.write(registry)
+    print(f"   ✓ careerPageRegistry.ts ({len(slugs)} slugs)")
 
 
 if __name__ == "__main__":

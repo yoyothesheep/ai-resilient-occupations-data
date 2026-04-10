@@ -25,14 +25,20 @@ python3 scripts/build_task_table.py   # Stage 3 (can run after Stage 1)
 Expensive (API calls). Run per cluster when building new career/industry pages. Not run on full corpus.
 
 ```bash
-# 1. Populate cluster files (use career-clusters skill)
-# 2. Generate emerging roles + merge job title aliases
+# Stage 4: Populate cluster files (use career-clusters skill)
+# Stage 5: Generate emerging roles
 python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
-python3 scripts/generate_emerging_job_titles.py
-# 3. Generate occupation cards
-python3 scripts/generate_next_steps.py --cluster <cluster_id>   # initial cards
-python3 scripts/adjacent_roles.py --cluster <cluster_id>        # add careerCluster
-python3 scripts/generate_emerging_roles.py --cluster <cluster_id> --update-cards  # add emergingCareers
+# Stage 6: Generate emerging job title aliases
+python3 scripts/generate_emerging_job_titles.py --cluster <cluster_id>
+# Stage 7a: Generate occupation cards (reads emergingTitles from scores CSV)
+python3 scripts/generate_next_steps.py --cluster <cluster_id> --api
+# Stage 7b: Generate adjacent/lateral roles + merge into cards
+for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code; done
+# Stage 7c: Merge emerging roles into cards
+python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
+# Stage 8: Generate career + industry pages in site repo
+python3 scripts/generate_career_pages.py --cluster <cluster_id>
+python3 scripts/generate_industry_page.py --cluster <cluster_id>
 ```
 
 ---
@@ -116,33 +122,48 @@ All weighted metrics use `sum(task_weight × metric) / sum(task_weight)` over AE
 **Writes:** `data/career_clusters/clusters.csv`, `data/career_clusters/cluster_roles.csv`, `data/career_clusters/cluster_branches.csv`  
 **Owns:** curated career ladder topology — which occupations belong to which family, levels, and transitions (including cross-family). Run when adding a new industry group.
 
-### Stage 5 — Emerging Roles & Job Title Aliases (Track B)
-**Scripts:** `scripts/generate_emerging_roles.py`, `scripts/generate_emerging_job_titles.py`  
-**Writes:** `data/emerging_roles/emerging_roles.csv` (AI-adjacent career pivots per occupation), updates `data/output/ai_resilience_scores.csv` (`Emerging Job Titles` column)  
-**Owns:** emerging AI-era job titles generated per occupation based on risk tier (≤2.5 → 4 roles, 2.5–4.0 → 2 roles, >4.0 → skip). Job title aliases map real-world titles (e.g. "Social Media Manager") to existing O*NET codes.
+### Stage 5 — Emerging Roles (Track B)
+**Script:** `scripts/generate_emerging_roles.py`  
+**Writes:** `data/emerging_roles/emerging_roles.csv` — AI-adjacent career pivot roles per occupation.  
+**Owns:** emerging AI-era career pivots, generated per occupation based on risk tier (≤2.5 → 4 roles, 2.5–4.0 → 2 roles, >4.0 → skip). Consumed by Stage 7c which adds `emergingCareers` to occupation cards.
 
-### Stage 6 — Occupation Cards (Track B)
+### Stage 6 — Emerging Job Title Aliases (Track B)
+**Script:** `scripts/generate_emerging_job_titles.py`  
+**Writes:** `data/emerging_roles/emerging_job_titles.csv`, updates `Emerging Job Titles` column in `data/output/ai_resilience_scores.csv`.  
+**Owns:** real-world job title aliases that map how roles are actually listed in job postings (e.g. "Social Media Manager", "Growth Marketer") to existing O*NET codes. Consumed by Stage 7a which passes `emergingTitles` into occupation cards.
+
+### Stage 7 — Occupation Cards (Track B)
 Three scripts write to `data/output/occupation_cards.jsonl` in sequence. Each is idempotent for its own fields.
 
-**6a — `scripts/generate_next_steps.py`**  
-Writes initial card: `score`, `salary`, `taskData`, `taskIntro`, `risks`, `opportunities`, `howToAdapt`, `sources`.  
-Interactive mode (single occupation): reads prompt from stdin — paste response into Claude Code conversation.  
-Batch mode (default): calls Claude API directly.
+**7a — `scripts/generate_next_steps.py`**  
+Writes initial card: `score`, `salary`, `taskData`, `taskIntro`, `risks`, `opportunities`, `howToAdapt`, `sources`, `emergingTitles` (from `Emerging Job Titles` in scores CSV).  
+Flags: `--code <code>` (single), `--cluster <id>` (all in cluster), `--batch N` (next N unprocessed). Add `--api` to call Claude API automatically; omit for interactive stdin mode. Add `--force` to regenerate existing cards.
 
-**6b — `scripts/adjacent_roles.py`**  
+**7b — `scripts/adjacent_roles.py`**  
 Adds `careerCluster` field. Three matching methods in priority order: 1) curated cluster data (`cluster_roles.csv` + `cluster_branches.csv` — branch `notes` injected as ground truth into Claude prompt), 2) Jaccard task overlap (threshold 0.15, weighted by `task_weight`), 3) SOC prefix similarity. Max 6 related careers per occupation. Per (source, target) pair, calls Claude to generate `fit` (one Feynman-style sentence) and `learn` (2–3 concrete skills/credentials).
 
-**6c — `scripts/generate_emerging_roles.py --update-cards`**  
-Adds `emergingCareers` field from `data/emerging_roles/emerging_roles.csv`.
+**7c — `scripts/generate_emerging_roles.py`**  
+Adds `emergingCareers` field from `data/emerging_roles/emerging_roles.csv`. Run after 7a — requires card to exist. Uses card context to generate better candidates.
 
-### Stage 7 — Publish Career Page (Track B)
-**Skill:** `aeo-content-writer` in `../ai-resilient-occupations-site/.claude/skills/`  
-**Requires:** Stage 6 complete for the occupation (`occupation_cards.jsonl` has entry with `careerCluster` + `emergingCareers`)  
-**Writes:** two files in the site repo:
-- `src/data/careers/<slug>.tsx` — CareerData object
-- `app/career/<slug>/page.tsx` — Next.js route (missing = 404)
+### Stage 8 — Publish Career + Industry Pages (Track B)
+**Requires:** Stage 6 complete for all occupations in the cluster.
 
-**After writing:** run `publish-checklist` skill in site repo to validate SEO, URLs, TypeScript, and sitemap before deploying.
+**Career pages** (two files per occupation):
+```bash
+python3 scripts/generate_career_pages.py --cluster <cluster_id>
+```
+Writes `src/data/careers/<slug>.tsx` + `app/career/<slug>/page.tsx` to site repo. Slug derived from `altpath simple title` in `ai_resilience_scores.csv`.
+
+Also auto-regenerates `src/data/careerPageRegistry.ts` — a static set of slugs used by `CareerDetailPage` to show "See full career page →" links in the career map for nodes that have pages. **TODO: Once all career pages are built, remove the registry, the import in `CareerDetailPage.tsx`, and the `_regenerate_registry()` call in `generate_career_pages.py` — then link every career map node unconditionally.**
+
+**Industry page** (two files per cluster):
+```bash
+python3 scripts/generate_industry_page.py --cluster <cluster_id>
+```
+Writes `src/data/industries/<slug>.ts` + `app/industry/<slug>/page.tsx`. Description generated via Claude API (haiku) summarizing AI resilience landscape across the cluster.
+
+**QA:** run `aeo-content-writer` skill in site repo to QA career page content.  
+**Deploy:** run `publish-checklist` skill in site repo to validate SEO, URLs, TypeScript, and sitemap before deploying.
 
 ---
 
@@ -159,8 +180,8 @@ Adds `emergingCareers` field from `data/emerging_roles/emerging_roles.csv`.
 | `data/career_clusters/cluster_roles.csv` | Stage 4 | Occupation → cluster membership + level |
 | `data/career_clusters/cluster_branches.csv` | Stage 4 | From→to career transitions |
 | `data/emerging_roles/emerging_roles.csv` | Stage 5 | Emerging AI-era pivot roles per occupation |
-| `data/emerging_roles/emerging_job_titles.csv` | Stage 5 | Real-world job title aliases for O*NET codes |
-| `data/output/occupation_cards.jsonl` | Stage 6 | Per-occupation career page data (bridge to site) |
+| `data/emerging_roles/emerging_job_titles.csv` | Stage 6 | Real-world job title aliases for O*NET codes |
+| `data/output/occupation_cards.jsonl` | Stage 7 | Per-occupation career page data (bridge to site) |
 
 ---
 

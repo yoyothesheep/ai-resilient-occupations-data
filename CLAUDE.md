@@ -28,11 +28,20 @@ python3 scripts/test_scoring.py       # Quick test with 3 occupations
 
 **Track B — Career page enrichment (per-cluster, on demand):**
 ```bash
-# Use .claude/skills/career-clusters skill to populate cluster files first, then:
+# Stage 4: Use .claude/skills/career-clusters skill to populate cluster files first, then:
+# Stage 5: Generate emerging roles
 python3 scripts/generate_emerging_roles.py --cluster <id>
-python3 scripts/generate_emerging_job_titles.py
-python3 scripts/generate_next_steps.py --cluster <id>
-python3 scripts/adjacent_roles.py --cluster <id>
+# Stage 6: Generate emerging job title aliases
+python3 scripts/generate_emerging_job_titles.py --cluster <id>
+# Stage 7a: Generate occupation cards (reads emergingTitles from scores CSV)
+python3 scripts/generate_next_steps.py --cluster <id> --api
+# Stage 7b: Generate adjacent/lateral roles + merge into cards
+for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code; done
+# Stage 7c: Merge emerging roles into cards
+python3 scripts/generate_emerging_roles.py --cluster <id>
+# Stage 8: Generate career + industry pages in site repo
+python3 scripts/generate_career_pages.py --cluster <id>
+python3 scripts/generate_industry_page.py --cluster <id>
 ```
 
 Requires `ANTHROPIC_API_KEY` env var.
@@ -82,6 +91,7 @@ Career pages live in `../ai-resilient-occupations-site`. Use the `aeo-content-wr
 ## Working Principles
 
 - **Always make fixes generalizable.** When fixing a data or formatting issue for one occupation, fix it in the script so it applies to all. Never patch individual records manually when the root cause is in the pipeline.
+- **`docs/pipeline.md` is the source of truth for the pipeline.** When any script's interface changes (flags, order, new script), update `pipeline.md` first, then sync the Track B bash block in `CLAUDE.md` and the bash commands in `CLUSTER_EXPANSION_TRACKER.md`.
 
 ## generate_next_steps.py Workflow
 
@@ -94,3 +104,8 @@ Subset filtered to `role_resilience_score ≥ 5.5` and `Top Education Level ≤ 
 - Base: `data/top_no_degree_careers/ai_resilience_scores-associates-5.5.csv`
 - Enriched: `data/top_no_degree_careers/ai_resilience_scores-associates-5.5-enriched.csv`
 - Schema + methodology: `data/top_no_degree_careers/ENRICHMENT_INSTRUCTIONS.md`
+
+## Third-Party Integrations (Site)
+
+- **Tally feedback form** — form ID `b58kG2`. Embedded as a popup via `https://tally.so/widgets/embed.js` (loaded in `app/layout.tsx`). Triggered on career pages via `data-tally-open="b58kG2" data-tally-width="400"` on the feedback button in `CareerDetailPage.tsx` (between career map and sources).
+- **Beehiiv email collection** — embed script loaded in `app/layout.tsx` via `https://subscribe-forms.beehiiv.com/embed.js`.

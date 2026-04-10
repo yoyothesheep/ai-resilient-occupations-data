@@ -169,7 +169,7 @@ SHORT_LABELS = {
     "Design, build, or maintain Web sites, using authoring or scripting languages, content creation tools, management tools, and digital media.": "Design/build web sites",
     "Develop and document style guidelines for Web site content.": "Develop style guidelines",
     "Develop new visual design concepts and modify concepts based on stakeholder feedback.": "Develop visual design concepts",
-    # web-developer
+    # software-technology
     "Write supporting code for Web applications or Web sites.": "Write supporting code",
     "Design, build, or maintain Web sites, using authoring or scripting languages, content creation tools, management tools, and digital media.": "Design/build websites",
     "Back up files from Web sites to local directories for instant recovery in case of problems.": "Back up files",
@@ -210,7 +210,7 @@ SLUG_TO_CODE = {
     "software-qa-analyst":                  "15-1253.00",
     "web-administrator":                    "15-1299.01",
     "web-and-digital-interface-designer":   "15-1255.00",
-    "web-developer":                        "15-1254.00",
+    "software-technology":                   "15-1254.00",
 }
 
 def short_label(text: str) -> str:

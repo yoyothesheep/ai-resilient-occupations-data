@@ -34,8 +34,9 @@ SCORES_CSV    = "data/output/ai_resilience_scores.csv"
 TASK_TABLE    = "data/intermediate/onet_economic_index_task_table.csv"
 OCC_METRICS   = "data/intermediate/onet_economic_index_metrics.csv"
 SCORE_LOG     = "data/output/score_log.txt"
-TONE_GUIDE    = "docs/tone_guide_career_pages.md"
-CAREER_SPEC   = "docs/career_page_spec.md"
+TONE_GUIDE       = "docs/tone_guide_career_pages.md"
+CAREER_SPEC      = "docs/career_page_spec.md"
+APPROVED_SOURCES = "docs/approved_sources.md"
 OUTPUT_JSONL  = "data/output/occupation_cards.jsonl"
 
 TOP_N_TASKS   = 10   # tasks to include in taskData
@@ -155,7 +156,7 @@ def build_task_data(onet_code: str, task_rows: list) -> list:
 # ── Prompt builder ────────────────────────────────────────────────────────────
 
 def build_prompt(occ: dict, tasks: list, metrics: dict, a_scores: dict,
-                 tone_guide: str, career_spec: str) -> str:
+                 tone_guide: str, career_spec: str, approved_sources: str = "") -> str:
     code = occ["Code"]
     title = occ["Occupation"]
     score = occ.get("role_resilience_score", "?")
@@ -170,6 +171,10 @@ def build_prompt(occ: dict, tasks: list, metrics: dict, a_scores: dict,
     coverage = m.get("ai_task_coverage_pct", "unknown")
     w_auto   = m.get("weighted_automation_pct", "unknown")
     w_aug    = m.get("weighted_augmentation_pct", "unknown")
+
+    # Compute low data confidence from task data directly
+    tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
+    low_data = len(tasks_with_signal) == 0
 
     task_lines = []
     for t in tasks:
@@ -219,28 +224,33 @@ Top tasks by importance × frequency (with AEI data where available):
 
 === YOUR TASK ===
 
-Search for 1–2 authoritative sources about AI's impact on this occupation ({title}). When searching, use the common job titles listed above, not the formal O*NET name. Prefer sources published within the last 2 years, ranked by credibility for a tech-worker audience:
-1. Big cloud/AI providers: Google Cloud research, AWS reports, GitHub Octoverse, Anthropic, Microsoft
-2. Practitioner surveys: Stack Overflow Developer Survey, CNCF Annual Survey, Linux Foundation
-3. Think tanks / govt: WEF Future of Jobs, BLS, McKinsey, NBER, MIT
-Avoid: Gartner, IDC, Forrester (paywalls, URL rot), vendor blogs, Forbes contributors, undated content, sources older than 2 years.
-Note: BLS salary, openings, and growth data is already included above from our downloaded dataset — cite it as a source without fetching it.
-Only include sources whose URLs you are confident actually resolve — do not invent or guess URLs.
+Search for 2–3 authoritative sources about AI's impact on this occupation ({title}). Use the common job titles listed above when searching, not the formal O*NET name. Select sources from the approved list below — prioritize domain-specific sources for this occupation type over generic ones.
 
+=== APPROVED SOURCES ===
+{approved_sources}
+=== END APPROVED SOURCES ===
+
+Rules:
+- Prefer sources published within the last 2 years. Flag if best available is older than 12 months.
+- BLS salary, openings, and growth data is already in our dataset — cite BLS as a source without fetching it.
+- Always include a real canonical URL for every source. Do not leave url blank. URLs will be validated automatically.
+- Do not cite the same source more than twice across risks and opportunities combined.
+
+{"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (n >= 100). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}
 Then generate the following JSON object. All prose must follow the tone guide.
 
 {{
   "onet_code": "{code}",
   "taskIntro": "1-2 sentences describing how AI activity is distributed across this role's tasks. Keep it pattern-level — do not repeat task names or percentages that are already visible in the task table. CRITICAL ACCURACY RULE: only describe a category of work as having 'no AI activity' if every task in that category explicitly shows null automation and null augmentation in the task data above. If any task in that category has a non-null automation or augmentation rate, do not claim the category is unaffected. Framing rules: (1) If most top-weight tasks have no AEI signal, write: 'The highest-weight tasks in this role have no AI activity recorded. [Note what signal does exist lower in the list.]' (2) If AI activity is concentrated in lower-weight support tasks while high-weight core tasks are untouched, write: 'AI is most active in the [support/documentation/etc] work. The core [type of work] has no AI activity recorded.' (3) If top-weight tasks themselves show high automation, describe the pattern directly. Plain prose, no em dashes, no marketing language. Talk about the job not the worker.",
   "risks": {{
-    "body": "2–3 sentences. Risks means risks to job prospects — specifically from AI automating tasks or reducing demand for this role. Include relevant industry hiring trends. Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers, not bad. Inline citations like [1] where sourced.",
-    "stat": "A single standout number from risks body if a strong one exists, else null. Only use a stat if it directly quantifies AI automation impact or AI-driven job loss/reduction. Do NOT use employment growth rate — slow growth is not a risk. E.g. '25%'",
-    "statLabel": "Short phrase describing the stat, else null. E.g. 'drop in entry-level tech hiring (2024)'"
+    "body": "2–3 sentences. Risks means risks to job prospects — specifically from AI automating tasks or reducing demand for this role. Include relevant industry hiring trends. Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers, not bad. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced.",
+    "stat": "Required. {"LOW DATA: Must be a hiring trend, job growth figure, or platform displacement stat — NOT an automation rate or AI task percentage. The task chart shows no AI activity; citing an automation % here creates a direct contradiction." if low_data else "Pick the single most concrete number — automation rate, hiring decline, or job displacement figure."} Only omit (null) if no quantitative data exists. Do NOT use employment growth rate — slow growth is not a risk. E.g. '25%'",
+    "statLabel": "Required if stat is non-null. Short phrase describing the stat. E.g. 'drop in entry-level tech hiring (2024)'"
   }},
   "opportunities": {{
     "body": "2–3 sentences. Lead with strongest augmentation or durability signal. Inline citations like [1].",
-    "stat": "Single standout number if strong one exists, else null",
-    "statLabel": "Short phrase describing what the stat measures, else null. 5–8 words max. Complete the sentence naturally after the number — e.g. '66%' + 'of developers report X'. Do NOT include a year or date in parentheses — mention it in the body instead."
+    "stat": "Required. Pick the single most concrete number from the opportunities body — augmentation rate, demand growth figure, skill premium, or similar. Only omit (null) if no quantitative data exists anywhere in the opportunities section.",
+    "statLabel": "Required if stat is non-null. 5–8 words max. Complete the sentence naturally after the number — e.g. '66%' + 'of developers report X'. Do NOT include a year or date in parentheses — mention it in the body instead."
   }},
   "howToAdapt": {{
     "alreadyIn": "3–4 sentences structured in two parts. Part 1 (immediate): one concrete action to take now. Part 2 (6-month): where to build depth over time — the areas AI handles worst for this specific role. Inline citations. Do NOT use em dashes.",
@@ -284,7 +294,7 @@ Rules:
 - All [n] inline citations must resolve to an entry in sources
 - stat and statLabel must come from the prose — do not add a stat not mentioned in body
 - Do not use "lean into", "AI is taking over", or other prohibited phrases from the tone guide
-- Quotes: each must be about adaptation or entry strategy, not generic job market stats. All 4 must cover different topics. A growth projection alone is not an adaptation quote — only use it if the quote also says what to DO about it. Do not use static credential requirements ("typically need a bachelor's degree") — these are timeless facts, not adaptation advice. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic.
+- Quotes: each must be about adaptation or entry strategy, not generic job market stats. All 4 must cover different topics. A growth projection alone is not an adaptation quote — only use it if the quote also says what to DO about it. Do not use static credential requirements ("typically need a bachelor's degree") — these are timeless facts, not adaptation advice. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources.
 - Respond ONLY with the JSON object, no other text
 """
 
@@ -383,9 +393,23 @@ def build_passthrough(occ: dict, task_data: list) -> dict:
             rounded = round(pct)
             growth = f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
         except ValueError:
-            growth = occ.get("Projected Growth", "")
+            growth = "N/A"
     else:
-        growth = occ.get("Projected Growth", "")
+        # Fall back to Projected Growth string label
+        _GROWTH_LABEL_MAP = [
+            ("Much faster than average", "+7%"),
+            ("Faster than average",      "+5%"),
+            ("Average",                  "+3%"),
+            ("Slower than average",      "+1%"),
+            ("Little or no change",      "0%"),
+            ("Decline",                  "-1%"),
+        ]
+        pg = occ.get("Projected Growth", "").strip()
+        growth = pg  # keep raw string if no match
+        for key, label in _GROWTH_LABEL_MAP:
+            if pg.startswith(key):
+                growth = label
+                break
 
     # Format openings with comma separator
     openings_raw = occ.get("Projected Job Openings", "").replace(",", "").strip()
@@ -409,14 +433,17 @@ def build_passthrough(occ: dict, task_data: list) -> dict:
     annual_match = re.search(r"(\$[\d,]+)\s+annual", wage_raw)
     salary = annual_match.group(1) if annual_match else wage_raw
 
+    emerging_titles = [t.strip() for t in occ.get("Emerging Job Titles", "").split(";") if t.strip()]
+
     return {
-        "score":      round(final_ranking * 100),
-        "salary":     salary,
-        "openings":   openings,
-        "growth":     growth,
-        "jobTitles":  titles,
-        "keyDrivers": occ.get("key_drivers", ""),
-        "taskData":   task_data,
+        "score":          round(final_ranking * 100),
+        "salary":         salary,
+        "openings":       openings,
+        "growth":         growth,
+        "jobTitles":      titles,
+        "emergingTitles": emerging_titles,
+        "keyDrivers":     occ.get("key_drivers", ""),
+        "taskData":       task_data,
     }
 
 
@@ -469,14 +496,27 @@ def check_url(url: str) -> bool:
         return False
 
 
+TRUSTED_DOMAINS = {
+    "bls.gov", "onetcenter.org", "onetonline.org",
+    "weforum.org", "mckinsey.com", "nber.org",
+    "stackoverflow.co", "survey.stackoverflow.co",
+    "github.blog", "github.com",
+    "anthropic.com", "economicgraph.linkedin.com",
+    "nar.realtor", "realtor.org",
+}
+
 def validate_sources(sources: list) -> list:
     """Check each source URL and date; warn and clear dead URLs; warn on old dates."""
+    import urllib.parse
     cutoff_year = datetime.now().year - 2
     for s in sources:
         url = s.get("url", "")
-        if url and not check_url(url):
-            print(f"  ⚠ Dead URL cleared: {url}")
-            s["url"] = ""
+        if url:
+            domain = urllib.parse.urlparse(url).netloc.lstrip("www.")
+            is_trusted = any(domain == d or domain.endswith("." + d) for d in TRUSTED_DOMAINS)
+            if not is_trusted and not check_url(url):
+                print(f"  ⚠ Dead URL cleared: {url}")
+                s["url"] = ""
         date_str = s.get("date", "")
         if date_str:
             try:
@@ -507,6 +547,12 @@ def append_career_page(card: dict):
             cards[obj["onet_code"]] = obj
             pos += skip + end
     replaced = card["onet_code"] in cards
+    # Preserve fields owned by other pipeline scripts (adjacent_roles.py)
+    if replaced:
+        existing = cards[card["onet_code"]]
+        for preserve_key in ("careerCluster", "adjacentRoles", "careerLadder"):
+            if preserve_key in existing and existing[preserve_key] is not None:
+                card.setdefault(preserve_key, existing[preserve_key])
     cards[card["onet_code"]] = card
     with open(OUTPUT_JSONL, "w", encoding="utf-8") as f:
         for c in cards.values():
@@ -517,8 +563,46 @@ def append_career_page(card: dict):
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
+def verify_generated(generated: dict, low_data: bool):
+    """
+    Verify generated content for known quality issues. Logs warnings and auto-fixes
+    where safe; otherwise prints a clear warning for manual review.
+    """
+    risks = generated.get("risks", {})
+    stat = risks.get("stat") or ""
+    body = risks.get("body") or ""
+
+    # Low-data check: external automation % in risks stat contradicts task chart
+    if low_data and "%" in stat:
+        automation_words = {"automat", "ai task", "task coverage", "of tasks"}
+        label = (risks.get("statLabel") or "").lower()
+        body_lower = body.lower()
+        if any(w in label or w in body_lower for w in automation_words):
+            print(f"  ⚠ VERIFY: low-data occupation but risks.stat looks like an automation rate: '{stat} {risks.get('statLabel')}' — consider rerunning with --force")
+
+    # Citation check: all [n] markers in body/opportunities must resolve to a source
+    sources = {s["id"]: s for s in generated.get("sources", [])}
+    for section_name, text in [
+        ("risks.body", body),
+        ("opportunities.body", (generated.get("opportunities") or {}).get("body") or ""),
+        ("howToAdapt.alreadyIn", (generated.get("howToAdapt") or {}).get("alreadyIn") or ""),
+        ("howToAdapt.thinkingOf", (generated.get("howToAdapt") or {}).get("thinkingOf") or ""),
+    ]:
+        for match in re.findall(r'\[(\d+)\]', str(text)):
+            src_id = f"src-{match}"
+            if src_id not in sources:
+                print(f"  ⚠ VERIFY: {section_name} cites [{match}] but src-{match} not in sources[]")
+
+    # Quote source check
+    for q in (generated.get("howToAdapt") or {}).get("quotes", []):
+        src_id = q.get("sourceId", "")
+        if src_id and src_id not in sources:
+            print(f"  ⚠ VERIFY: quote sourceId '{src_id}' not in sources[]")
+
+
 def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: dict,
                        a_scores: dict, tone_guide: str, career_spec: str,
+                       approved_sources: str = "",
                        print_prompt_only: bool = False, api_mode: bool = False):
     occ = scores.get(code)
     if not occ:
@@ -528,7 +612,7 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     print(f"\n── {occ['Occupation']} ({code})")
 
     tasks = build_task_data(code, task_table.get(code, []))
-    prompt = build_prompt(occ, tasks, occ_metrics, a_scores, tone_guide, career_spec)
+    prompt = build_prompt(occ, tasks, occ_metrics, a_scores, tone_guide, career_spec, approved_sources)
 
     if print_prompt_only:
         print("\n" + "="*80)
@@ -556,6 +640,10 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     if "sources" in generated:
         print("  Validating sources...")
         validate_sources(generated["sources"])
+
+    tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
+    low_data = len(tasks_with_signal) == 0
+    verify_generated(generated, low_data)
 
     passthrough = build_passthrough(occ, tasks)
 
@@ -598,15 +686,16 @@ def main():
     occ_metrics = load_occ_metrics()
     a_scores    = load_a_scores(SCORE_LOG)
     existing    = load_existing_codes()
-    tone_guide  = load_text(TONE_GUIDE)
-    career_spec = load_text(CAREER_SPEC)
+    tone_guide       = load_text(TONE_GUIDE)
+    career_spec      = load_text(CAREER_SPEC)
+    approved_sources = load_text(APPROVED_SOURCES)
 
     if args.code:
         if args.code in existing and not args.print_prompt and not args.force:
             print(f"  Already processed: {args.code}. Use --force to regenerate.")
             return
         process_occupation(args.code, scores, task_table, occ_metrics,
-                           a_scores, tone_guide, career_spec,
+                           a_scores, tone_guide, career_spec, approved_sources,
                            print_prompt_only=args.print_prompt, api_mode=args.api)
     elif args.cluster:
         # Cluster mode: all codes in the cluster
@@ -623,7 +712,7 @@ def main():
         print(f"Cluster '{args.cluster}': {len(to_run)} to process (of {len(cluster_codes)} total)")
         for code in to_run:
             process_occupation(code, scores, task_table, occ_metrics,
-                               a_scores, tone_guide, career_spec,
+                               a_scores, tone_guide, career_spec, approved_sources,
                                print_prompt_only=args.print_prompt, api_mode=args.api)
     else:
         # Batch mode: next N unprocessed, scored occupations
@@ -637,7 +726,7 @@ def main():
         print(f"Batch mode: {len(to_run)} occupations (of {len(candidates)} remaining)")
         for code in to_run:
             process_occupation(code, scores, task_table, occ_metrics,
-                               a_scores, tone_guide, career_spec,
+                               a_scores, tone_guide, career_spec, approved_sources,
                                print_prompt_only=args.print_prompt, api_mode=args.api)
 
     print("\n✓ Done")

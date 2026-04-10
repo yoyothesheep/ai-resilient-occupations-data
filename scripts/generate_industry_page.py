@@ -188,15 +188,7 @@ export const {const_name} = {{
 def generate_route_file(cluster_name: str, page_slug: str, const_name: str,
                         data_slug: str, component_name: str) -> str:
     # Short display name for h1 (split on & or first word)
-    h1_parts = cluster_name.split(" & ")
-    if len(h1_parts) == 2:
-        h1_line1 = h1_parts[0].strip()
-        h1_line2 = h1_parts[1].strip()
-        h1_jsx = f"{h1_line1}<br />&amp; {h1_line2}"
-    else:
-        words = cluster_name.split()
-        mid = len(words) // 2
-        h1_jsx = " ".join(words[:mid]) + "<br />" + " ".join(words[mid:])
+    h1_jsx = cluster_name.replace(" & ", " &amp; ")
 
     career_count = f"{{{{{{const_name}}.careers.length}}}}"
     title = f"{cluster_name} Careers: AI Resilience Guide"
@@ -297,12 +289,12 @@ export default function {component_name}() {{
   const filtered = {const_name}.careers
     .filter((c) => activeFilter === "all" || c.level === activeFilter)
     .sort((a, b) =>
-      sortBy === "score" ? b.score - a.score : a.level - b.level
+      sortBy === "score" ? b.score - a.score : b.level - a.level || b.score - a.score
     );
 
   return (
     <div className="min-h-screen px-3 md:px-6 lg:px-10 py-6">
-      <div className="bg-background rounded-2xl md:rounded-3xl border border-border shadow-lg overflow-hidden flex flex-col lg:flex-row min-h-0">
+      <div className="bg-background rounded-2xl md:rounded-3xl border border-border shadow-lg overflow-hidden flex flex-col lg:flex-row min-h-[calc(100vh-3rem)]">
 
         <aside className="hidden lg:flex lg:w-[340px] lg:shrink-0 lg:border-r border-border flex-col px-8 py-10 fixed top-6 bottom-6 overflow-y-auto" style={{{{ width: 340 }}}}>
           <Link
@@ -313,7 +305,7 @@ export default function {component_name}() {{
             Home
           </Link>
 
-          <h1 className="text-5xl font-extrabold uppercase leading-[0.95] tracking-tight mb-4">
+          <h1 className="text-4xl font-extrabold uppercase leading-[0.95] tracking-tight mb-4">
             {h1_jsx}
           </h1>
 
@@ -321,7 +313,11 @@ export default function {component_name}() {{
             {{{const_name}.description}}
           </p>
 
-          <nav className="flex flex-col gap-2.5 mt-auto pt-6 border-t border-border">
+          <p className="text-sm text-muted-foreground leading-relaxed mb-2">
+            Explore the career pages to see how AI is affecting each role, what skills to build, and how to navigate your next move.
+          </p>
+
+          <nav className="flex flex-col gap-1 mt-auto pt-6 border-t border-border">
             {{FILTER_TABS.map((tab) => {{
               const count = tab.value === "all"
                 ? {const_name}.careers.length
@@ -330,8 +326,8 @@ export default function {component_name}() {{
                 <button
                   key={{tab.value}}
                   onClick={{() => setActiveFilter(tab.value)}}
-                  className="flex items-center justify-between text-left text-sm font-medium transition-colors duration-150 hover:text-foreground"
-                  style={{{{ color: activeFilter === tab.value ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))", background: "none", border: "none", cursor: "pointer", padding: 0 }}}}
+                  className="flex items-center justify-between text-left text-sm font-medium hover:text-foreground rounded-md px-2 py-0.5 -mx-2 hover:bg-foreground/10"
+                  style={{{{ color: activeFilter === tab.value ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))", background: activeFilter === tab.value ? "hsl(var(--foreground) / 0.1)" : undefined, border: "none", cursor: "pointer" }}}}
                 >
                   <span>{{tab.label}}</span>
                   <span className="text-[10px] font-bold tabular-nums" style={{{{ color: "hsl(var(--muted-foreground)/0.5)" }}}}>{{count}}</span>
@@ -435,12 +431,24 @@ def main():
         # Parse growth
         raw_growth = occ.get("Projected Growth", "")
         pct = occ.get("Employment Change, 2024-2034", "")
+        _GROWTH_LABEL_MAP = [
+            ("Much faster than average", "+7%"),
+            ("Faster than average",      "+5%"),
+            ("Average",                  "+3%"),
+            ("Slower than average",      "+1%"),
+            ("Little or no change",      "0%"),
+            ("Decline",                  "-1%"),
+        ]
         try:
             pct_f = float(pct)
             rounded = round(pct_f)
             growth_str = f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
         except (ValueError, TypeError):
-            growth_str = raw_growth or "N/A"
+            growth_str = raw_growth  # keep raw string as fallback
+            for key, label in _GROWTH_LABEL_MAP:
+                if raw_growth.startswith(key):
+                    growth_str = label
+                    break
 
         openings = occ.get("Projected Job Openings", "")
         try:

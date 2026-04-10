@@ -21,18 +21,18 @@ onet_code,occupation,cluster_id,level,is_canonical,typical_years_from_entry,note
 53-2021.00,Air Traffic Controllers,aviation-operations,4,true,2,FAA Academy + facility-specific training (~2yr from entry). Max hire age 31. Mandatory retirement at 56.
 53-6051.01,Aviation Inspectors,aviation-operations,4,true,2,FAA Safety Inspector designation. Parallel advancement from airfield ops. No max hire age.
 53-6032.00,Aircraft Service Attendants,aviation-operations,1,true,0,Entry point. No degree required. Ramp agent work -- marshaling aircraft, de-icing, ground servicing. Direct airfield presence.
-15-1251.00,Computer Programmers,web-developer,1,true,0,Entry point. Junior/associate developer role. Writes and tests code under supervision. Often first job out of bootcamp or CS degree.
-15-1254.00,Web Developers,web-developer,2,true,1,Core role. Builds and maintains websites and web applications. Frontend, backend, or full-stack. 1yr experience typical before advancement.
-15-1255.00,Web and Digital Interface Designers,web-developer,2,true,1,Design specialization. UX/UI focus. Visual design, wireframing, user research. Parallel track to web development.
-15-1299.01,Web Administrators,web-developer,2,false,1,Infrastructure specialization. Server configuration, deployment, uptime, and access management. DevOps-adjacent track.
-15-1253.00,Software Quality Assurance Analysts and Testers,web-developer,2,false,1,QA specialization. Automated and manual testing, CI/CD pipelines, defect tracking. Often starts alongside web dev work.
-15-1252.00,Software Developers,web-developer,3,true,3,Canonical advancement. Broader engineering scope — backend systems, APIs, architecture. Moves beyond web-specific work.
-15-1243.00,Database Architects,web-developer,3,false,3,Data track. Designs and manages database systems. Common specialization for developers with backend/data focus.
-15-1299.08,Computer Systems Engineers/Architects,web-developer,4,true,5,Technical leadership track. Designs full system architectures, infrastructure, and integration strategies.
-15-1212.00,Information Security Analysts,web-developer,4,true,4,Security specialization. Lateral move requiring dedicated security retraining. Very high resilience and demand.
-15-2051.00,Data Scientists,web-developer,4,true,4,Data and ML track. Lateral move into statistical modeling, ML pipelines, and data analysis. Requires retraining in ML/stats.
-15-1299.09,Information Technology Project Managers,web-developer,4,true,5,Management track. Leads engineering teams and delivery. Common exit from senior individual contributor roles.
-15-1221.00,Computer and Information Research Scientists,web-developer,5,true,7,Research track. Doctoral-level applied research in CS, AI, or systems. Terminal academic or industry research role.
+15-1251.00,Computer Programmers,software-technology,1,true,0,Entry point. Junior/associate developer role. Writes and tests code under supervision. Often first job out of bootcamp or CS degree.
+15-1254.00,Web Developers,software-technology,2,true,1,Core role. Builds and maintains websites and web applications. Frontend, backend, or full-stack. 1yr experience typical before advancement.
+15-1255.00,Web and Digital Interface Designers,software-technology,2,true,1,Design specialization. UX/UI focus. Visual design, wireframing, user research. Parallel track to web development.
+15-1299.01,Web Administrators,software-technology,2,false,1,Infrastructure specialization. Server configuration, deployment, uptime, and access management. DevOps-adjacent track.
+15-1253.00,Software Quality Assurance Analysts and Testers,software-technology,2,false,1,QA specialization. Automated and manual testing, CI/CD pipelines, defect tracking. Often starts alongside web dev work.
+15-1252.00,Software Developers,software-technology,3,true,3,Canonical advancement. Broader engineering scope — backend systems, APIs, architecture. Moves beyond web-specific work.
+15-1243.00,Database Architects,software-technology,3,false,3,Data track. Designs and manages database systems. Common specialization for developers with backend/data focus.
+15-1299.08,Computer Systems Engineers/Architects,software-technology,4,true,5,Technical leadership track. Designs full system architectures, infrastructure, and integration strategies.
+15-1212.00,Information Security Analysts,software-technology,3,true,4,Security specialization. Lateral move requiring dedicated security retraining. Very high resilience and demand.
+15-2051.00,Data Scientists,software-technology,4,true,4,Data and ML track. Lateral move into statistical modeling, ML pipelines, and data analysis. Requires retraining in ML/stats.
+15-1299.09,Information Technology Project Managers,software-technology,4,true,5,Management track. Leads engineering teams and delivery. Common exit from senior individual contributor roles.
+15-1221.00,Computer and Information Research Scientists,software-technology,5,true,7,Research track. Doctoral-level applied research in CS, AI, or systems. Terminal academic or industry research role.
 41-2031.00,Retail Salespersons,sales,1,true,0,Lowest-barrier entry. HS diploma typical. High-volume occupation — direct customer sales experience. Canonical general entry point.
 41-3021.00,Insurance Sales Agents,sales,1,true,0,Specialized entry. State insurance license required (pre-licensing course + exam). Bachelor's common but not required. Higher commission ceiling than retail from day one.
 "41-4012.00","Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",sales,2,true,2,Core B2B mid-level role. Cold/warm outreach, account management, quota-driven. Higher ceiling than retail. Canonical L2 role.

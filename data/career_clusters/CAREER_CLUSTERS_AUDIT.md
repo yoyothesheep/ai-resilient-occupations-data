@@ -144,3 +144,69 @@ All defined transitions across all families:
 | Patrol → | Private Investigator | lateral | — | — | 5yr | $1k | 3mo | ✓ |
 | Detective → | Private Investigator | lateral | ✓ | — | 5yr | $1k | 3mo | ✓ |
 | Patrol → | Probation Officer | lateral | — | ✓ | 0yr | $30k | 4yr | ✓ |
+
+---
+
+## Business
+
+### Marketing & Growth (`marketing`)
+
+**Entry:** Market Research Analysts and Marketing Specialists (13-1161.00) — Bachelor's degree | $76,950/yr
+
+```
+[L1] Market Research Analysts         13-1161.00  ★ entry
+      │
+      ├──→ [L2] Search Marketing Strategists  13-1161.01  ★ progression | Google Ads cert | $1.5k | 6mo
+      │         │
+      │         ├──→ [L4] Ad & Promotions Mgr  11-2011.00  lateral | add offline media | $3k | 6mo
+      │         │         │
+      │         │         └──→ [L5] Marketing Manager  11-2021.00  ★ progression | $5k | 1yr
+      │         │
+      │         └──→ [L5] Marketing Manager    11-2021.00  ★ progression | 5yr exp | $5k | 1yr | MBA optional
+      │
+      ├──→ [L3] PR Specialists                27-3031.00  lateral | comms pivot | $2k | 6mo
+      │         │
+      │         ├──→ [L4] Ad & Promotions Mgr  11-2011.00  progression | $3k | 6mo | agency path
+      │         │
+      │         └──→ [L5] Marketing Manager    11-2021.00  progression | 6yr | $5k | 1yr | brand/comms path
+      │
+      └──→ [L5] Marketing Manager              11-2021.00  (long path, 7yr, usually via specialization)
+
+[Sales cluster] Ad Sales Agents        41-3011.00  cross-family entry → Search Marketing (lateral)
+      └──→ [L2] Search Marketing Strategists  13-1161.01  cross-family lateral | $1.5k | 6mo
+
+[L3] Writers and Authors              27-3043.00  content branch
+      │
+      └──→ [L3] Editors                        27-3041.00  ★ progression | 3yr | $1k | 6mo
+                │
+                └──→ [L5] Marketing Manager    11-2021.00  lateral | 6yr | $5k | 1yr | content→demand gen
+```
+
+**Level summary:**
+
+| Level | Role | O*NET | Yrs from Entry | Primary Path? |
+|-------|------|-------|---------------|---------------|
+| 1 | Market Research Analysts | 13-1161.00 | 0 | ✓ entry |
+| 2 | Search Marketing Strategists | 13-1161.01 | 2 | ✓ canonical |
+| 3 | Public Relations Specialists | 27-3031.00 | 3 | PR branch |
+| 3 | Writers and Authors | 27-3043.00 | 3 | content branch |
+| 3 | Editors | 27-3041.00 | 4 | content/editorial |
+| 4 | Advertising & Promotions Managers | 11-2011.00 | 5 | campaign leadership |
+| 5 | Marketing Managers | 11-2021.00 | 8 | ✓ canonical |
+
+**Transition reference:**
+
+| From | To | Type | Primary? | Min Exp | Cost | Duration | Work During? |
+|------|----|------|----------|---------|------|----------|--------------|
+| Market Research → | Search Marketing | progression | ✓ | 2yr | $1.5k | 6mo | ✓ |
+| Market Research → | PR Specialist | lateral | — | 2yr | $2k | 6mo | ✓ |
+| Market Research → | Marketing Manager | progression | — | 7yr | $8k | 2yr | ✓ |
+| Ad Sales Agent → | Search Marketing | lateral (cross-family) | ✓ | 2yr | $1.5k | 6mo | ✓ |
+| Ad Sales Agent → | Ad & Promotions Mgr | progression (cross-family) | — | 5yr | $3k | 6mo | ✓ |
+| Search Marketing → | Marketing Manager | progression | ✓ | 5yr | $5k | 1yr | ✓ |
+| Search Marketing → | Ad & Promotions Mgr | lateral | — | 4yr | $3k | 6mo | ✓ |
+| PR Specialist → | Marketing Manager | progression | — | 6yr | $5k | 1yr | ✓ |
+| PR Specialist → | Ad & Promotions Mgr | progression | ✓ | 5yr | $3k | 6mo | ✓ |
+| Writer → | Editor | progression | ✓ | 3yr | $1k | 6mo | ✓ |
+| Editor → | Marketing Manager | lateral | — | 6yr | $5k | 1yr | ✓ |
+| Ad & Promotions Mgr → | Marketing Manager | progression | ✓ | 3yr | $5k | 1yr | ✓ |

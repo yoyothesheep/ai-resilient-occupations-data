@@ -32,13 +32,17 @@ python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
 python3 scripts/generate_emerging_job_titles.py --cluster <cluster_id>
 # Stage 7a: Generate occupation cards (reads emergingTitles from scores CSV)
 python3 scripts/generate_next_steps.py --cluster <cluster_id> --api
-# Stage 7b: Generate adjacent/lateral roles + merge into cards
-for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code; done
+# Stage 7b: Generate adjacent/lateral roles + merge into cards (--print-prompts for no-API-key mode)
+for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code --print-prompts --skip-existing; done
 # Stage 7c: Merge emerging roles into cards
 python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
 # Stage 8: Generate career + industry pages in site repo
 python3 scripts/generate_career_pages.py --cluster <cluster_id>
 python3 scripts/generate_industry_page.py --cluster <cluster_id>
+
+# Stage 9: Data integrity check — run AFTER generate_career_pages.py, before publishing
+pytest scripts/test_data_integrity.py -q -k "not url_reachable"   # structure + TSX drift checks (fast)
+pytest scripts/test_data_integrity.py -m network -v               # + live URL validation (final pre-publish step)
 ```
 
 ---
@@ -140,7 +144,16 @@ Writes initial card: `score`, `salary`, `taskData`, `taskIntro`, `risks`, `oppor
 Flags: `--code <code>` (single), `--cluster <id>` (all in cluster), `--batch N` (next N unprocessed). Add `--api` to call Claude API automatically; omit for interactive stdin mode. Add `--force` to regenerate existing cards.
 
 **7b — `scripts/adjacent_roles.py`**  
-Adds `careerCluster` field. Three matching methods in priority order: 1) curated cluster data (`cluster_roles.csv` + `cluster_branches.csv` — branch `notes` injected as ground truth into Claude prompt), 2) Jaccard task overlap (threshold 0.15, weighted by `task_weight`), 3) SOC prefix similarity. Max 6 related careers per occupation. Per (source, target) pair, calls Claude to generate `fit` (one Feynman-style sentence) and `learn` (2–3 concrete skills/credentials).
+Adds `careerCluster` field. Three matching methods in priority order: 1) curated cluster data (`cluster_roles.csv` + `cluster_branches.csv` — branch `notes` injected as ground truth into Claude prompt), 2) Jaccard task overlap (threshold 0.15, weighted by `task_weight`), 3) SOC prefix similarity. Max 6 related careers per occupation. Includes roles 1 level below (tagged `less_trained`); skips roles 2+ levels below. Per (source, target) pair, calls Claude to generate `fit` (one Feynman-style sentence) and `steps` (2–3 concrete skills/credentials).
+
+Flags:
+- `--code <code>` — single occupation
+- `--all` — all occupations in scores CSV
+- `--interactive` — print prompts to stdout, read JSON responses from stdin (no API key needed)
+- `--print-prompts` — print all prompts to stdout without waiting for input (Claude Code inline workflow: paste prompts here, respond with JSON, write directly to JSONL)
+- `--skip-existing` — skip pairs that already have `fit`+`steps` data (use when patching missing pairs only)
+
+**`altpath simple title` rule:** this field in `ai_resilience_scores.csv` must be a short human-readable alias (e.g. "IT Project Manager", "Software QA Analyst"). The slug and page display title both derive from it. If it's blank or too long, the full O*NET title is used as fallback — which produces unacceptably long slugs.
 
 **7c — `scripts/generate_emerging_roles.py`**  
 Adds `emergingCareers` field from `data/emerging_roles/emerging_roles.csv`. Run after 7a — requires card to exist. Uses card context to generate better candidates.
@@ -160,9 +173,10 @@ Also auto-regenerates `src/data/careerPageRegistry.ts` — a static set of slugs
 ```bash
 python3 scripts/generate_industry_page.py --cluster <cluster_id>
 ```
+The careers array in the industry page is generated from `ai_resilience_scores.csv` (titles, slugs, scores, growth, openings). **Whenever `altpath simple title` changes for any occupation in a cluster, rerun `generate_industry_page.py` for that cluster** — otherwise the industry page will show stale titles and broken slugs.
 Writes `src/data/industries/<slug>.ts` + `app/industry/<slug>/page.tsx`. Description generated via Claude API (haiku) summarizing AI resilience landscape across the cluster.
 
-**QA:** run `aeo-content-writer` skill in site repo to QA career page content.  
+**QA:** run `pytest scripts/test_data_integrity.py -q -k "not url_reachable"` after generating career and industry pages (covers both).  
 **Deploy:** run `publish-checklist` skill in site repo to validate SEO, URLs, TypeScript, and sitemap before deploying.
 
 ---

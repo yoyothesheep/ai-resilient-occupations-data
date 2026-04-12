@@ -5,8 +5,19 @@ Generate career page content for each occupation.
 For each occupation, produces: risks, opportunities, howToAdapt, sources.
 Passes through: score, salary, openings, growth, jobTitles, keyDrivers, taskData.
 
-Run interactively: the script prints a prompt, you paste it into Claude,
-then paste the JSON response back. The career page data is saved to occupation_cards.jsonl.
+Modes:
+  Interactive (default): script prints a prompt, you paste it into Claude,
+    then paste the JSON response back.
+  --print-prompt: script prints the prompt and exits immediately (no API call,
+    no stdin read). Claude Code reads the prompt output and authors the JSON
+    directly, writing it to occupation_cards.jsonl via the Write tool.
+  --api: script calls the Claude API automatically. Requires ANTHROPIC_API_KEY.
+
+Inline workflow (Claude Code, no API key):
+    python3 scripts/generate_next_steps.py --code 15-1254.00 --print-prompt
+    # Claude Code reads the printed prompt, authors JSON, appends to JSONL.
+    python3 scripts/generate_next_steps.py --code 15-1254.00 --print-prompt --force
+    # --force re-generates even if the code already has a card.
 
 Usage:
     python3 scripts/generate_next_steps.py --code 15-1254.00
@@ -40,6 +51,8 @@ APPROVED_SOURCES = "docs/approved_sources.md"
 OUTPUT_JSONL  = "data/output/occupation_cards.jsonl"
 
 TOP_N_TASKS   = 10   # tasks to include in taskData
+
+STANDARD_TASK_INTRO = "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building."
 
 # ── Loaders ───────────────────────────────────────────────────────────────────
 
@@ -234,49 +247,49 @@ Rules:
 - Prefer sources published within the last 2 years. Flag if best available is older than 12 months.
 - BLS salary, openings, and growth data is already in our dataset — cite BLS as a source without fetching it.
 - Always include a real canonical URL for every source. Do not leave url blank. URLs will be validated automatically.
-- Do not cite the same source more than twice across risks and opportunities combined.
+- Do not cite the same source more than twice across the entire card (risks, opportunities, howToAdapt combined). Each section (risks.body, opportunities.body, howToAdapt.alreadyIn, howToAdapt.thinkingOf) must use at least 2 distinct sources internally — never repeat the same [N] more than once within a single section.
+- NEVER cite: Gartner, IDC, Forrester, MarketsandMarkets — these are paywalled analyst firms with inflated projections and URL rot. Use the approved sources list instead.
 
 {"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (n >= 100). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}
 Then generate the following JSON object. All prose must follow the tone guide.
 
 {{
   "onet_code": "{code}",
-  "taskIntro": "1-2 sentences describing how AI activity is distributed across this role's tasks. Keep it pattern-level — do not repeat task names or percentages that are already visible in the task table. CRITICAL ACCURACY RULE: only describe a category of work as having 'no AI activity' if every task in that category explicitly shows null automation and null augmentation in the task data above. If any task in that category has a non-null automation or augmentation rate, do not claim the category is unaffected. Framing rules: (1) If most top-weight tasks have no AEI signal, write: 'The highest-weight tasks in this role have no AI activity recorded. [Note what signal does exist lower in the list.]' (2) If AI activity is concentrated in lower-weight support tasks while high-weight core tasks are untouched, write: 'AI is most active in the [support/documentation/etc] work. The core [type of work] has no AI activity recorded.' (3) If top-weight tasks themselves show high automation, describe the pattern directly. Plain prose, no em dashes, no marketing language. Talk about the job not the worker.",
   "risks": {{
-    "body": "2–3 sentences. Risks means risks to job prospects — specifically from AI automating tasks or reducing demand for this role. Include relevant industry hiring trends. Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers, not bad. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced.",
-    "stat": "Required. {"LOW DATA: Must be a hiring trend, job growth figure, or platform displacement stat — NOT an automation rate or AI task percentage. The task chart shows no AI activity; citing an automation % here creates a direct contradiction." if low_data else "Pick the single most concrete number — automation rate, hiring decline, or job displacement figure."} Only omit (null) if no quantitative data exists. Do NOT use employment growth rate — slow growth is not a risk. E.g. '25%'",
+    "body": "2–3 sentences. Risks means risks to job prospects — specifically from AI automating tasks or reducing demand for this role. Include relevant industry hiring trends. Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers, not bad. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced. NEVER mention task weight values or write phrases like '(weight 20.9)' — weight is an internal metric, not user-facing content.",
+    "stat": "Pick the single most concrete, surprising number from the risks body. Set to null if no strong non-redundant stat exists. {"LOW DATA: Must NOT be an automation rate or AI task percentage — the task chart shows no AI activity and they will directly contradict." if low_data else ""} STAT SELECTION RULES — AVOID these (redundant with other page sections): task automation/augmentation %, employment growth %, salary figures. PREFER (in priority order): (1) Hiring trend shifts — YoY change in job postings, time-to-fill changes. (2) AI adoption rates among practitioners in THIS specific role. (3) Productivity/time impact of AI tools on this role. (4) Displacement signals — layoffs, role consolidation, posting declines. (5) Industry spend on AI in this domain. (6) Contract/freelance ratio shifts. (7) Career transition rates out of this role. It is OK to set stat to null rather than use a redundant stat type.",
     "statLabel": "Required if stat is non-null. Short phrase describing the stat. E.g. 'drop in entry-level tech hiring (2024)'"
   }},
   "opportunities": {{
-    "body": "2–3 sentences. Lead with strongest augmentation or durability signal. Inline citations like [1].",
-    "stat": "Required. Pick the single most concrete number from the opportunities body — augmentation rate, demand growth figure, skill premium, or similar. Only omit (null) if no quantitative data exists anywhere in the opportunities section.",
+    "body": "2–3 sentences. Lead with strongest augmentation or durability signal. Inline citations like [1]. NEVER mention numeric task weight values (e.g. 'weight 20.9') — say 'most important task' or 'core task' instead.",
+    "stat": "Pick the single most concrete number from the opportunities body. Set to null if no strong non-redundant stat exists. MUST be completely different from the stat used in the risks section. Do not reuse the same statistic. STAT SELECTION RULES — AVOID these (redundant with other page sections): task automation/augmentation %, employment growth %, salary figures. PREFER (in priority order): (1) Skill or certification salary premiums. (2) Client/consumer trust or preference for human practitioners. (3) Downstream demand creation or market expansion driven by AI. (4) Regulatory or licensing barriers that structurally limit automation. (5) AI adoption rates showing human-AI collaboration patterns. (6) Industry investment in AI for this domain. (7) Productivity multipliers from AI tools in this role. It is OK to set stat to null rather than use a redundant stat type.",
     "statLabel": "Required if stat is non-null. 5–8 words max. Complete the sentence naturally after the number — e.g. '66%' + 'of developers report X'. Do NOT include a year or date in parentheses — mention it in the body instead."
   }},
   "howToAdapt": {{
     "alreadyIn": "3–4 sentences structured in two parts. Part 1 (immediate): one concrete action to take now. Part 2 (6-month): where to build depth over time — the areas AI handles worst for this specific role. Inline citations. Do NOT use em dashes.",
-    "thinkingOf": "3–4 sentences for someone considering entering this field. Concrete portfolio or credential advice specific to this role — not generic 'learn AI tools' advice. Do NOT repeat statistics already cited in the risks section. Inline citations. Do NOT use em dashes.",
+    "thinkingOf": "3–4 sentences for someone considering entering this field. Concrete portfolio or credential advice specific to this role — not generic 'learn AI tools' advice. Do NOT repeat statistics already cited in the risks section. Inline citations. Do NOT use em dashes. Do NOT cite the same source more than once within this section — each inline citation must reference a different source.",
     "quotes": [
       {{
         "persona": "alreadyIn",
-        "quote": "A quote about HOW to adapt in this role — a specific skill shift, tool adoption, or strategic move. Must reinforce the alreadyIn advice above. Must come from sources[]. NOT a generic job market stat or growth projection.",
-        "attribution": "Person's name and title, or publication name if unattributed",
+        "quote": "A real quote from a named practitioner, industry leader, or research report about HOW to adapt in this role — a specific skill shift, tool adoption, or strategic move. Must reinforce the alreadyIn advice above. Must come from sources[]. QUOTE QUALITY RULES: (1) Prefer quotes from named individuals (practitioners, executives, researchers) over paraphrased data points. (2) NEVER manufacture a 'quote' by restating a BLS statistic or O*NET task description in quotation marks — that is not a quote. (3) Good sources for real quotes: HBR interviews, MIT Sloan, practitioner blogs (Pragmatic Engineer, InfoQ), industry association reports with practitioner commentary, major newspapers (NYT, WSJ) interviewing professionals. (4) If no real practitioner quote exists, use a key finding from a research report — but attribute it to the report, not to a person.",
+        "attribution": "Person's name and title (preferred), or 'Report Title, Publisher' if no named person",
         "sourceId": "src-N"
       }},
       {{
         "persona": "alreadyIn",
-        "quote": "A SECOND quote covering a DIFFERENT adaptation angle than the first (e.g. first = tool adoption, second = skill shift). Omit entirely if no meaningfully different second angle exists.",
+        "quote": "A SECOND quote covering a DIFFERENT adaptation angle than the first (e.g. first = tool adoption, second = skill shift). Same quality rules as above. Omit entirely if no meaningfully different second angle exists.",
         "attribution": "...",
         "sourceId": "src-N"
       }},
       {{
         "persona": "thinkingOf",
-        "quote": "A quote about HOW to enter or position yourself in this field — credentials, portfolio approach, or entry strategy. NOT a generic growth stat.",
+        "quote": "A real quote about HOW to enter or position yourself in this field — credentials, portfolio approach, or entry strategy. NOT a generic growth stat. Same quality rules: prefer named practitioners, never manufacture quotes from BLS/O*NET data.",
         "attribution": "...",
         "sourceId": "src-N"
       }},
       {{
         "persona": "thinkingOf",
-        "quote": "A SECOND quote covering a DIFFERENT entry angle than the first. Omit if no meaningfully different second angle exists.",
+        "quote": "A SECOND quote covering a DIFFERENT entry angle than the first. Same quality rules. Omit if no meaningfully different second angle exists.",
         "attribution": "...",
         "sourceId": "src-N"
       }}
@@ -292,9 +305,9 @@ Then generate the following JSON object. All prose must follow the tone guide.
 
 Rules:
 - All [n] inline citations must resolve to an entry in sources
-- stat and statLabel must come from the prose — do not add a stat not mentioned in body
+- statLabel must end with a source citation like [n] matching a source in sources[]. The stat does NOT need to appear in the body text — it is displayed separately as a pull-stat callout above the prose.
 - Do not use "lean into", "AI is taking over", or other prohibited phrases from the tone guide
-- Quotes: each must be about adaptation or entry strategy, not generic job market stats. All 4 must cover different topics. A growth projection alone is not an adaptation quote — only use it if the quote also says what to DO about it. Do not use static credential requirements ("typically need a bachelor's degree") — these are timeless facts, not adaptation advice. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources.
+- Quotes: each must be about adaptation or entry strategy, not generic job market stats. All 4 must cover different topics. A growth projection alone is not an adaptation quote — only use it if the quote also says what to DO about it. Do not use static credential requirements ("typically need a bachelor's degree") — these are timeless facts, not adaptation advice. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources. NEVER restate a BLS statistic or O*NET task description in quotation marks and call it a "quote" — quotes must be real quotes from real people or key findings from research reports. Prefer practitioner voices: HBR, MIT Sloan, Pragmatic Engineer, InfoQ, industry association reports with named commentators, NYT/WSJ interviews.
 - Respond ONLY with the JSON object, no other text
 """
 
@@ -479,14 +492,28 @@ _SOFT_404_PHRASES = [
 
 
 def check_url(url: str) -> bool:
-    """Return True if URL is reachable and not a soft 404, False otherwise."""
+    """Return True if URL is reachable and not a soft 404 or cross-domain redirect."""
+    import urllib.parse
     if not url:
         return False
     try:
+        original_domain = urllib.parse.urlparse(url).netloc
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         resp = urllib.request.urlopen(req, timeout=10)
         if not (200 <= resp.status < 300):
             return False
+        # Check if redirected — verify final URL is not a homepage or different domain
+        final_url = resp.url
+        if final_url != url:
+            parsed_orig  = urllib.parse.urlparse(url)
+            parsed_final = urllib.parse.urlparse(final_url)
+            if parsed_final.netloc and parsed_final.netloc != parsed_orig.netloc:
+                print(f"  ⚠ Cross-domain redirect: {url} → {final_url}")
+                return False
+            # Same-domain redirect: flag if final path is much shorter (likely homepage)
+            if len(parsed_final.path.strip("/")) < len(parsed_orig.path.strip("/")) // 2:
+                print(f"  ⚠ Redirect to shorter path (possible homepage): {url} → {final_url}")
+                return False
         snippet = resp.read(4096).decode("utf-8", errors="replace").lower()
         for phrase in _SOFT_404_PHRASES:
             if phrase in snippet:
@@ -506,7 +533,12 @@ TRUSTED_DOMAINS = {
 }
 
 def validate_sources(sources: list) -> list:
-    """Check each source URL and date; warn and clear dead URLs; warn on old dates."""
+    """Check each source URL and date; warn and clear dead URLs; warn on old dates.
+
+    Trusted domains (BLS, etc.) are still checked, but 403s are tolerated since
+    these sites block headless requests. Other failures (404, bad redirects) are
+    caught even for trusted domains.
+    """
     import urllib.parse
     cutoff_year = datetime.now().year - 2
     for s in sources:
@@ -514,9 +546,13 @@ def validate_sources(sources: list) -> list:
         if url:
             domain = urllib.parse.urlparse(url).netloc.lstrip("www.")
             is_trusted = any(domain == d or domain.endswith("." + d) for d in TRUSTED_DOMAINS)
-            if not is_trusted and not check_url(url):
-                print(f"  ⚠ Dead URL cleared: {url}")
-                s["url"] = ""
+            if not check_url(url):
+                if is_trusted:
+                    # Trusted domains often return 403 to bots — warn but keep URL
+                    print(f"  ℹ Trusted domain URL not verifiable (likely bot-blocked): {url}")
+                else:
+                    print(f"  ⚠ Dead URL cleared: {url}")
+                    s["url"] = ""
         date_str = s.get("date", "")
         if date_str:
             try:
@@ -569,6 +605,7 @@ def verify_generated(generated: dict, low_data: bool):
     where safe; otherwise prints a clear warning for manual review.
     """
     risks = generated.get("risks", {})
+    opportunities = generated.get("opportunities", {})
     stat = risks.get("stat") or ""
     body = risks.get("body") or ""
 
@@ -581,23 +618,63 @@ def verify_generated(generated: dict, low_data: bool):
             print(f"  ⚠ VERIFY: low-data occupation but risks.stat looks like an automation rate: '{stat} {risks.get('statLabel')}' — consider rerunning with --force")
 
     # Citation check: all [n] markers in body/opportunities must resolve to a source
+    # Also flag sections that repeat the same source without variety
     sources = {s["id"]: s for s in generated.get("sources", [])}
-    for section_name, text in [
+    sections = [
         ("risks.body", body),
         ("opportunities.body", (generated.get("opportunities") or {}).get("body") or ""),
         ("howToAdapt.alreadyIn", (generated.get("howToAdapt") or {}).get("alreadyIn") or ""),
         ("howToAdapt.thinkingOf", (generated.get("howToAdapt") or {}).get("thinkingOf") or ""),
-    ]:
-        for match in re.findall(r'\[(\d+)\]', str(text)):
+    ]
+    for section_name, text in sections:
+        citations = re.findall(r'\[(\d+)\]', str(text))
+        for match in citations:
             src_id = f"src-{match}"
             if src_id not in sources:
                 print(f"  ⚠ VERIFY: {section_name} cites [{match}] but src-{match} not in sources[]")
+        unique = set(citations)
+        if len(citations) >= 2 and len(unique) == 1:
+            print(f"  ⚠ VERIFY: {section_name} repeats the same source [{citations[0]}] for all citations — needs a second source")
+
+    # Redundant stat check: flag stats that duplicate info already on the page
+    # Also check if risks and opportunities have exactly the same stat and label
+    r_stat = (risks.get("stat") or "").lower()
+    o_stat = (opportunities.get("stat") or "").lower()
+    r_label = (risks.get("statLabel") or "").lower()
+    o_label = (opportunities.get("statLabel") or "").lower()
+    
+    if r_stat and o_stat and r_stat == o_stat and r_label == o_label:
+        print(f"  ⚠ VERIFY: risks and opportunities have the exact same stat: '{r_stat} {r_label}'. Consider rerunning.")
+    _REDUNDANT_PATTERNS = {
+        "automation rate", "augmentation rate", "automatable", "weighted automation",
+        "projected employment", "employment growth", "job growth through",
+        "projected job growth", "median annual", "median salary",
+    }
+    for section_key in ("risks", "opportunities"):
+        sec = generated.get(section_key) or {}
+        s_label = (sec.get("statLabel") or "").lower()
+        s_stat = (sec.get("stat") or "").lower()
+        combined = f"{s_stat} {s_label}"
+        for pat in _REDUNDANT_PATTERNS:
+            if pat in combined:
+                print(f"  ⚠ VERIFY: {section_key}.stat looks redundant with page data ('{pat}'): "
+                      f"'{sec.get('stat')} {sec.get('statLabel')}' — prefer hiring trends, adoption rates, or skill premiums")
+                break
 
     # Quote source check
     for q in (generated.get("howToAdapt") or {}).get("quotes", []):
         src_id = q.get("sourceId", "")
         if src_id and src_id not in sources:
             print(f"  ⚠ VERIFY: quote sourceId '{src_id}' not in sources[]")
+
+    # Quote source diversity check
+    for persona in ("alreadyIn", "thinkingOf"):
+        pq = [q for q in (generated.get("howToAdapt") or {}).get("quotes", [])
+              if q.get("persona") == persona]
+        if len(pq) >= 2:
+            ids = [q.get("sourceId") for q in pq if q.get("sourceId")]
+            if len(ids) >= 2 and len(set(ids)) == 1:
+                print(f"  ⚠ VERIFY: howToAdapt quotes[{persona}] all cite {ids[0]} — each quote needs a different source")
 
 
 def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: dict,
@@ -629,12 +706,19 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     # Apply short labels from the interactive response
     task_labels = {k.strip(): v for k, v in generated.pop("taskLabels", {}).items()}
     for t in tasks:
-        if t["full"].strip() in task_labels:
-            t["task"] = task_labels[t["full"].strip()]
-        elif t["task"] == t["full"]:
-            # Fallback: first 5 words, truncated with ellipsis
-            words = t["full"].split()
-            t["task"] = " ".join(words[:5]).rstrip(".,;") + ("…" if len(words) > 5 else "")
+        full = t["full"].strip()
+        if full in task_labels:
+            t["task"] = task_labels[full]
+        else:
+            # Fuzzy match: find a key that starts with the first 30 chars of full text
+            prefix = full[:30].lower()
+            match = next((v for k, v in task_labels.items() if k.lower().startswith(prefix[:20])), None)
+            if match:
+                t["task"] = match
+            elif t["task"] == t["full"]:
+                # Last resort: first 5 words — should not happen if Claude returns taskLabels correctly
+                words = t["full"].split()
+                t["task"] = " ".join(words[:5]).rstrip(".,;") + ("…" if len(words) > 5 else "")
 
     # Validate source URLs and dates
     if "sources" in generated:
@@ -652,6 +736,7 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
         "title":     occ["Occupation"],
         **passthrough,
         **generated,
+        "taskIntro": STANDARD_TASK_INTRO,
     }
 
     # Pretty-print for review

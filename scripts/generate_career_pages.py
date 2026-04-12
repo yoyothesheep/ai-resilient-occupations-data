@@ -13,6 +13,7 @@ Usage:
     python3 scripts/generate_career_pages.py --code 41-2031.00 --force
 """
 
+from __future__ import annotations
 import argparse
 import csv
 import json
@@ -220,7 +221,21 @@ def build_cluster_node(node: dict, is_current: bool = False, is_emerging: bool =
 
     core_tools = node.get("core_tools")
     if core_tools:
-        lines.append(f"      core_tools: {str_to_tsx_string(str(core_tools))},")
+        # Normalize list repr to comma-separated string (Claude sometimes returns a list)
+        if isinstance(core_tools, list):
+            core_tools = ", ".join(str(v).strip() for v in core_tools)
+        else:
+            s = str(core_tools).strip()
+            if s.startswith("[") and s.endswith("]"):
+                import ast as _ast
+                try:
+                    parsed = _ast.literal_eval(s)
+                    if isinstance(parsed, list):
+                        s = ", ".join(str(v).strip() for v in parsed)
+                except Exception:
+                    pass
+                core_tools = s
+        lines.append(f"      core_tools: {str_to_tsx_string(core_tools)},")
 
     stat = node.get("stat")
     if stat and isinstance(stat, dict) and stat.get("text"):
@@ -454,8 +469,11 @@ def generate_route_file(slug: str, var_name: str, component_name: str,
     else:
         props = f"data={{{var_name}}}"
     return (
+        f'import {{ getCareerMetadata }} from "@/lib/careerUtils";\n'
         f'import CareerDetailPage from "@/components/CareerDetailPage";\n'
         f'import {{ {var_name} }} from "@/data/careers/{slug}";\n'
+        f"\n"
+        f'export const metadata = getCareerMetadata({var_name}, "{slug}");\n'
         f"\n"
         f"export default function {component_name}() {{\n"
         f"  return <CareerDetailPage {props} />;\n"
@@ -500,8 +518,16 @@ def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
     data_content = generate_data_file(card, cluster_roles, scores, var_name, title=title)
     route_content = generate_route_file(slug, var_name, component_name, industry_slug, industry_display_name)
 
-    os.makedirs(CAREERS_DATA_DIR, exist_ok=True)
-    os.makedirs(route_dir, exist_ok=True)
+    if not os.path.exists(CAREERS_DATA_DIR):
+        try:
+            os.makedirs(CAREERS_DATA_DIR, exist_ok=True)
+        except Exception:
+            pass
+    if not os.path.exists(route_dir):
+        try:
+            os.makedirs(route_dir, exist_ok=True)
+        except Exception:
+            pass
 
     with open(data_path, "w", encoding="utf-8") as f:
         f.write(data_content)

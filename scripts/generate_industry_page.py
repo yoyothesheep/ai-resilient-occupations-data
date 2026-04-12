@@ -96,7 +96,7 @@ def cluster_to_data_slug(cluster_id: str, cluster_name: str) -> str:
 # ── Description generation ────────────────────────────────────────────────────
 
 def generate_description(client: anthropic.Anthropic, cluster_name: str,
-                         careers: list[dict], tone_guide: str) -> str:
+                         careers: list[dict], tone_guide: str, is_inline: bool = False) -> str:
     """Generate a 1-2 sentence description summarizing AI impact across the cluster."""
     career_lines = "\n".join(
         f"- {c['title']} (AI resilience tier {c['score']}/100, growth {c['growth']}, level {c['level']})"
@@ -129,6 +129,17 @@ Good example: "Routine transactional sales work is the most exposed to AI, while
 
 Respond ONLY with the description, no preamble."""
 
+    if is_inline:
+        print("\n" + "="*80)
+        print(prompt)
+        print("="*80 + "\n")
+        print("Paste the description text below, then press Enter + Ctrl-D:")
+        try:
+            return sys.stdin.read().strip()
+        except KeyboardInterrupt:
+            print("\nAborted.")
+            sys.exit(130)
+
     response = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
@@ -143,7 +154,7 @@ def generate_data_file(cluster_id: str, cluster_name: str, description: str,
                        careers: list[dict], const_name: str) -> str:
     career_lines = []
     current_level = None
-    level_labels = {1: "Entry", 2: "Mid-Level", 3: "Senior", 4: "Lead / Specialist", 5: "Principal"}
+    level_labels = {1: "Entry", 2: "Mid-Level", 3: "Senior", 4: "Lead or Specialist", 5: "Principal"}
 
     for c in careers:
         lvl = c["level"]
@@ -170,7 +181,7 @@ export const LEVEL_LABELS: Record<number, string> = {{
   1: "Entry",
   2: "Mid-Level",
   3: "Senior",
-  4: "Lead / Specialist",
+  4: "Lead or Specialist",
   5: "Principal",
 }};
 
@@ -392,6 +403,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate industry page for a career cluster")
     parser.add_argument("--cluster", required=True, help="Cluster ID (e.g. sales)")
     parser.add_argument("--force", action="store_true", help="Overwrite existing files")
+    parser.add_argument("--inline", action="store_true", help="Run interactively via stdin without API")
     args = parser.parse_args()
 
     cluster_id = args.cluster
@@ -472,11 +484,11 @@ def main():
             "level": int(m.get("level", 1)),
         })
 
-    # Generate description via Claude
+    # Generate description via Claude or inline
     print(f"\nGenerating description for '{cluster_name}' cluster...")
     try:
-        client = anthropic.Anthropic()
-        description = generate_description(client, cluster_name, careers, tone_guide)
+        client = None if args.inline else anthropic.Anthropic()
+        description = generate_description(client, cluster_name, careers, tone_guide, is_inline=args.inline)
         print(f"  → {description}")
     except Exception as e:
         print(f"  ✗ Claude error: {e}")
@@ -486,8 +498,15 @@ def main():
     data_content = generate_data_file(cluster_id, cluster_name, description, careers, const_name)
     route_content = generate_route_file(cluster_name, page_slug, const_name, data_slug, component_name)
 
-    os.makedirs(INDUSTRIES_DIR, exist_ok=True)
-    os.makedirs(route_dir, exist_ok=True)
+    try:
+        os.makedirs(INDUSTRIES_DIR, exist_ok=True)
+    except FileExistsError:
+        pass
+
+    try:
+        os.makedirs(route_dir, exist_ok=True)
+    except FileExistsError:
+        pass
 
     with open(data_path, "w", encoding="utf-8") as f:
         f.write(data_content)

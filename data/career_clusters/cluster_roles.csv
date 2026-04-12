@@ -40,3 +40,23 @@ onet_code,occupation,cluster_id,level,is_canonical,typical_years_from_entry,note
 41-9021.00,Real Estate Brokers,sales,3,true,5,Broker license upgrade from agent. Additional state broker exam + ~2yr experience as agent required. Can operate independently or manage other agents.
 41-9031.00,Sales Engineers,sales,3,true,3,Technical sales track. Explains and sells complex technical products. Typically lateral entry from an engineering or technical field rather than internal promotion from sales reps. High resilience due to domain expertise requirement.
 11-2022.00,Sales Managers,sales,4,true,7,Leadership destination. Manages sales team strategy, quotas, hiring, and forecasting. Most commonly promoted from senior B2B sales reps or sales engineers.
+43-3031.00,Bookkeeping Accounting and Auditing Clerks,finance,1,true,0,Entry point. No degree required. Bookkeeping certificate or associate's common.
+13-2082.00,Tax Preparers,finance,1,false,0,Alternate entry. IRS AFSP or CPA exam path. Certificate-level barrier.
+13-2011.00,Accountants and Auditors,finance,2,true,2,Core mid-level. CPA credential accelerates advancement. Requires bachelor's.
+13-2072.00,Loan Officers,finance,3,false,4,Lending specialization. NMLS license required for mortgage. Bachelor's typical.
+13-2041.00,Credit Analysts,finance,3,false,3,Credit risk specialization. Bank/corporate credit analysis. Natural feeder to Financial Risk Specialist. Bachelor's typical; CFA valued.
+13-2052.00,Personal Financial Advisors,finance,3,false,4,Wealth/planning specialization. CFP credential preferred. Series 65/66 common.
+13-2054.00,Financial Risk Specialists,finance,3,false,5,Risk analytics branch. FRM credential valued. Quant skills required.
+13-2071.00,Credit Counselors,finance,3,false,4,Consumer credit branch. Nonprofit sector common. NFCC certification available.
+13-2053.00,Insurance Underwriters,finance,3,false,4,Underwriting specialization. CPCU or AU designations for advancement.
+13-2099.04,Fraud Examiners Investigators and Analysts,finance,4,false,5,Investigative/forensic branch. CFE credential standard. High offensive score — AI/ML for anomaly detection boosts the role rather than replacing it.
+13-2061.00,Financial Examiners,finance,4,true,6,Senior regulatory/compliance role. Federal/state agency or bank examiner. Highest resilience in cluster.
+11-3031.00,Financial Managers,finance,5,true,8,Leadership destination. CFO track. $162k median. Oversees all financial operations.
+13-1161.00,Market Research Analysts and Marketing Specialists,marketing,1,true,0,Entry point. Data-driven marketing research. Bachelor's typical. Shared with analysts cluster.
+41-3011.00,Advertising Sales Agents,sales,1,false,0,Specialized entry. Advertising/media sales. Commission-based. Cross-family lateral to marketing cluster (Search Marketing Strategist).
+13-1161.01,Search Marketing Strategists,marketing,2,true,2,Core digital role. Google Ads + Analytics certs. Natural progression from market research.
+27-3031.00,Public Relations Specialists,marketing,3,false,3,PR/comms specialization branch. Bachelor's in PR or comms typical. Media relations focus.
+27-3043.00,Writers and Authors,marketing,3,false,3,Content specialization branch. Freelance or in-house. Portfolio-driven. Low barrier but competitive.
+27-3041.00,Editors,marketing,3,false,4,Content/editorial branch. Manages content quality and strategy. Common at media and content-heavy firms.
+11-2011.00,Advertising and Promotions Managers,marketing,4,false,5,Campaign leadership. Broadens from digital to full media mix. Often from search marketing track.
+11-2021.00,Marketing Managers,marketing,5,true,8,Leadership destination. Full marketing strategy ownership. $161k median. CMO feeder role.

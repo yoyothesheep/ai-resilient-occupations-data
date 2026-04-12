@@ -132,12 +132,16 @@ def derive_related_from_cluster(source_code: str,
                                 branch_index: dict,
                                 scores: dict) -> list[tuple[str, str, str]]:
     """
-    Returns (onet_code, relationship_type, notes) for roles in the same career cluster,
-    excluding lower-level roles and the source itself. Sorted by final_ranking desc.
+    Returns (onet_code, relationship_type, notes) for roles related via career cluster,
+    including same-cluster members, outbound cross-family branches, and inbound
+    cross-family branches (entry points). Sorted by final_ranking desc.
 
     relationship_type priority:
       1. cluster_branches.csv transition_type if an explicit branch exists
       2. level-based fallback: higher level → "progression", same level → "specialization"
+
+    For inbound cross-family branches, relationship_type is "entry_from" — the target
+    role commonly feeds into the source role.
 
     notes: curated transition guidance from cluster_branches.csv, or "" if no branch exists.
     """
@@ -149,24 +153,51 @@ def derive_related_from_cluster(source_code: str,
     cluster = cluster_roles.get(source["cluster_id"], [])
 
     candidates = []
+    seen_codes = set()
     for role in cluster:
         code = role["onet_code"]
         if code == source_code:
             continue
         level = int(role["level"])
-        if level < source_level:
-            continue  # skip less-trained roles
+        if level < source_level - 1:
+            continue  # skip roles 2+ levels below; 1 level below allowed as less_trained
 
         branch = branch_index.get((source_code, code))
         if branch:
             rel_type = branch["transition_type"]
             notes = branch.get("notes", "")
         else:
-            rel_type = "progression" if level > source_level else "specialization"
+            if level > source_level:
+                rel_type = "progression"
+            elif level == source_level:
+                rel_type = "specialization"
+            else:  # level == source_level - 1
+                rel_type = "less_trained"
             notes = ""
 
         ranking = float(scores.get(code, {}).get("final_ranking", 0) or 0)
         candidates.append((ranking, code, rel_type, notes))
+        seen_codes.add(code)
+
+    # Outbound cross-family branches: source → target in a different cluster
+    for (from_code, to_code), branch in branch_index.items():
+        if from_code != source_code or branch.get("is_cross_family") != "true":
+            continue
+        if to_code in seen_codes:
+            continue
+        ranking = float(scores.get(to_code, {}).get("final_ranking", 0) or 0)
+        candidates.append((ranking, to_code, branch["transition_type"], branch.get("notes", "")))
+        seen_codes.add(to_code)
+
+    # Inbound cross-family branches: external role → source (entry points into this role)
+    for (from_code, to_code), branch in branch_index.items():
+        if to_code != source_code or branch.get("is_cross_family") != "true":
+            continue
+        if from_code in seen_codes:
+            continue
+        ranking = float(scores.get(from_code, {}).get("final_ranking", 0) or 0)
+        candidates.append((ranking, from_code, "entry_from", branch.get("notes", "")))
+        seen_codes.add(from_code)
 
     candidates.sort(reverse=True)
     # No cap: include all curated cluster roles regardless of MAX_RELATED
@@ -296,6 +327,19 @@ def format_growth(occ: dict) -> str:
             return f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
         except ValueError:
             pass
+    # Fall back to qualitative Projected Growth label
+    _GROWTH_LABEL_MAP = [
+        ("Much faster than average", "+7%"),
+        ("Faster than average",      "+5%"),
+        ("Average",                  "+3%"),
+        ("Slower than average",      "+1%"),
+        ("Little or no change",      "0%"),
+        ("Decline",                  "-1%"),
+    ]
+    pg = occ.get("Projected Growth", "").strip()
+    for key, label in _GROWTH_LABEL_MAP:
+        if pg.startswith(key):
+            return label
     return "N/A"
 
 
@@ -372,22 +416,45 @@ Rules for steps:
 Respond ONLY with the JSON object."""
 
 
-# ── API call ──────────────────────────────────────────────────────────────────
+# ── Generation (API or interactive) ──────────────────────────────────────────
 
-def generate_fit_learn(client: anthropic.Anthropic,
+def _parse_fit_learn_response(text: str) -> dict:
+    text = re.sub(r"```json\s*", "", text)
+    text = re.sub(r"```\s*", "", text)
+    return json.loads(text.strip())
+
+
+def generate_fit_learn(client,
                        source_occ: dict, source_tasks: list,
                        target_occ: dict, target_tasks: list,
-                       rel_type: str = "related", notes: str = "") -> dict:
+                       rel_type: str = "related", notes: str = "",
+                       interactive: bool = False,
+                       print_prompts: bool = False) -> dict | None:
+    """
+    Returns parsed dict, or None if print_prompts=True (caller must collect responses separately).
+    """
     prompt = build_prompt(source_occ, source_tasks, target_occ, target_tasks, rel_type, notes)
+    if print_prompts:
+        print("\n" + "="*80)
+        print(f"PROMPT — {source_occ['Occupation']} → {target_occ['Occupation']}")
+        print("="*80)
+        print(prompt)
+        return None
+    if interactive:
+        print("\n" + "="*80)
+        print(f"PROMPT — {source_occ['Occupation']} → {target_occ['Occupation']}")
+        print("="*80)
+        print(prompt)
+        print("="*80)
+        print("\nPaste JSON response, then Enter + Ctrl-D:")
+        text = sys.stdin.read().strip()
+        return _parse_fit_learn_response(text)
     response = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
         messages=[{"role": "user", "content": prompt}],
     )
-    text = response.content[0].text
-    text = re.sub(r"```json\s*", "", text)
-    text = re.sub(r"```\s*", "", text)
-    return json.loads(text.strip())
+    return _parse_fit_learn_response(response.content[0].text)
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
@@ -395,7 +462,10 @@ def generate_fit_learn(client: anthropic.Anthropic,
 def process_occupation(source_code: str, scores: dict,
                        task_table: dict, overlap_index: dict,
                        cards: dict, role_index: dict, cluster_roles: dict,
-                       branch_index: dict, client: anthropic.Anthropic) -> bool:
+                       branch_index: dict, client,
+                       interactive: bool = False,
+                       skip_existing: bool = False,
+                       print_prompts: bool = False) -> bool:
     source_occ = scores.get(source_code)
     if not source_occ:
         print(f"  ✗ {source_code} not found in scores CSV")
@@ -475,6 +545,13 @@ def process_occupation(source_code: str, scores: dict,
         print(f"  ✗ No related careers remain after filtering")
         return False
 
+    # Build existing node index to support skip_existing
+    existing_nodes_by_code = {
+        node["code"]: node
+        for node in (cards.get(source_code, {}).get("careerCluster") or [])
+        if node.get("code")
+    }
+
     realistic_careers = []
     aspirational_careers = []
     for target_code, rel_type, notes in pairs:
@@ -483,17 +560,48 @@ def process_occupation(source_code: str, scores: dict,
             print(f"  ✗ Target {target_code} not in scores CSV — skipping")
             continue
 
+        # Skip if this pair already has generated fit+steps data
+        if skip_existing:
+            existing = existing_nodes_by_code.get(target_code)
+            if existing and existing.get("fit") and existing.get("steps"):
+                print(f"  ↩ {target_occ['Occupation']} ({target_code}) — already generated, skipping")
+                continue
+
         note_indicator = f" [note: {notes[:60]}…]" if notes else ""
         print(f"  → {target_occ['Occupation']} ({target_code}) [{rel_type}]{note_indicator}")
         target_tasks = top_tasks(target_code, task_table)
-        result = generate_fit_learn(client, source_occ, source_tasks,
-                                    target_occ, target_tasks, rel_type, notes)
+
+        # For entry_from: the target_code is the feeder role that transitions INTO
+        # source. Swap source/target in the prompt so it reads "helping someone who
+        # works as {feeder} move into {source}". Use the branch's transition_type.
+        if rel_type == "entry_from":
+            branch_row = branch_index.get((target_code, source_code), {})
+            prompt_rel_type = branch_row.get("transition_type", "lateral")
+            result = generate_fit_learn(client, target_occ, target_tasks,
+                                        source_occ, source_tasks, prompt_rel_type, notes,
+                                        interactive=interactive,
+                                        print_prompts=print_prompts)
+        else:
+            result = generate_fit_learn(client, source_occ, source_tasks,
+                                        target_occ, target_tasks, rel_type, notes,
+                                        interactive=interactive,
+                                        print_prompts=print_prompts)
+        if print_prompts:
+            continue  # don't process result — just printing
         final_ranking = float(target_occ.get("final_ranking", 0) or 0)
 
+        # Look up branch — check both directions for cross-family
         branch = branch_index.get((source_code, target_code))
+        if not branch:
+            branch = branch_index.get((target_code, source_code))
         training_duration = float(branch.get("training_duration_years", 0) or 0) if branch else 0.0
-        
-        target_cluster_level = int(role_index[target_code]["level"]) if target_code in role_index else None
+        is_cross_family = branch.get("is_cross_family") == "true" if branch else False
+
+        target_cluster_entry = role_index.get(target_code)
+        if target_cluster_entry:
+            target_cluster_level = int(target_cluster_entry["level"])
+        else:
+            target_cluster_level = None
         level_jump = (target_cluster_level - source_cluster_level) if (source_cluster_level is not None and target_cluster_level is not None) else 0
 
         try:
@@ -503,8 +611,11 @@ def process_occupation(source_code: str, scores: dict,
         except (ValueError, TypeError):
             zone_jump = 0
 
-        # It's realistic if the training is <= 1 year AND neither cluster level nor Job Zone jump is 2+
-        if training_duration <= 1.0 and level_jump <= 1 and zone_jump <= 1:
+        # Cross-family: cluster levels are in different reference frames, use Job Zone only
+        effective_level_jump = zone_jump if is_cross_family else level_jump
+
+        # It's realistic if the training is <= 1 year AND neither level nor Job Zone jump is 2+
+        if training_duration <= 1.0 and effective_level_jump <= 1 and zone_jump <= 1:
             transition_category = "realistic"
             target_list = realistic_careers
         else:
@@ -560,8 +671,11 @@ def process_occupation(source_code: str, scores: dict,
         if code in cluster_by_key:
             node = cluster_by_key[code]
         else:
-            # Resolve level: same-cluster roles use cluster level, cross-cluster use Job Zone
+            # Resolve level: same-cluster uses cluster level; cross-cluster uses
+            # target's own cluster level if available, else Job Zone fallback
             if in_same_cluster:
+                resolved_level = int(target_cluster["level"])
+            elif target_cluster:
                 resolved_level = int(target_cluster["level"])
             else:
                 target_occ_data = scores.get(code, {})
@@ -576,6 +690,8 @@ def process_occupation(source_code: str, scores: dict,
 
         if is_adjacent:
             node["isAdjacent"] = True
+        if t["relationship"] == "entry_from":
+            node["isEntryPoint"] = True
         node["relationship"] = t["relationship"]
         node["salary"]       = t["salary"]
         node["openings"]     = t["openings"]
@@ -594,6 +710,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--code", help="Single O*NET code to process")
     parser.add_argument("--all",  action="store_true", help="Process all codes in scores CSV")
+    parser.add_argument("--interactive", action="store_true",
+                        help="Print prompts to stdout and read JSON responses from stdin (no API key needed)")
+    parser.add_argument("--print-prompts", action="store_true",
+                        help="Print all prompts to stdout without waiting for responses (for Claude Code inline workflow)")
+    parser.add_argument("--skip-existing", action="store_true",
+                        help="Skip pairs that already have fit+steps data in careerCluster")
     args = parser.parse_args()
 
     if not args.code and not args.all:
@@ -610,17 +732,26 @@ def main():
     print("Building task overlap index...")
     overlap_index = build_task_overlap_index(task_table)
 
-    try:
-        client = anthropic.Anthropic()
-    except Exception as e:
-        print(f"✗ Anthropic client error: {e}")
-        sys.exit(1)
+    print_prompts = getattr(args, "print_prompts", False)
+
+    client = None
+    if not args.interactive and not print_prompts:
+        try:
+            client = anthropic.Anthropic()
+        except Exception as e:
+            print(f"✗ Anthropic client error: {e}")
+            sys.exit(1)
 
     codes = list(scores.keys()) if args.all else [args.code]
 
+    skip_existing = getattr(args, "skip_existing", False)
+
     for code in codes:
         process_occupation(code, scores, task_table, overlap_index,
-                           cards, role_index, cluster_roles, branch_index, client)
+                           cards, role_index, cluster_roles, branch_index, client,
+                           interactive=args.interactive,
+                           skip_existing=skip_existing,
+                           print_prompts=print_prompts)
 
     print("\n✓ Done")
 

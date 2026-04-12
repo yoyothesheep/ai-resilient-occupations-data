@@ -26,5 +26,24 @@ script_test_gemini.py
 # Analylsis articles
 blog/
 
+# Temporary root-level JSON files (one-off debugging/exploration)
+/*.json
+
+# One-off fix/patch/ingest scripts (not part of the pipeline)
+scripts/fix_*
+scripts/patch_*
+scripts/_*
+scripts/ingest_*
+scripts/print_*
+scripts/generate_adjacent_json.py
+
+# Trackers and plans (internal progress docs)
+*TRACKER*
+*PLAN*
+
+# Claude memory (keep skills, ignore personal memory)
+.claude/memory/
+.claude/settings.json
+
 # OS files
 .DS_Store

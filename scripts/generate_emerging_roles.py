@@ -149,6 +149,23 @@ def save_jsonl(cards: dict):
 
 # ── Claude helpers ────────────────────────────────────────────────────────────
 
+def _normalize_tools(value) -> str:
+    """Normalize core_tools to a comma-separated string regardless of input type."""
+    if isinstance(value, list):
+        return ", ".join(str(v).strip() for v in value)
+    s = str(value).strip()
+    # Handle Python list repr: ['LangChain', 'OpenAI API']
+    if s.startswith("[") and s.endswith("]"):
+        import ast
+        try:
+            parsed = ast.literal_eval(s)
+            if isinstance(parsed, list):
+                return ", ".join(str(v).strip() for v in parsed)
+        except Exception:
+            pass
+    return s
+
+
 def parse_json(text: str):
     text = re.sub(r"```json\s*", "", text)
     text = re.sub(r"```\s*", "", text)
@@ -200,14 +217,26 @@ _SOFT_404_PHRASES = [
 
 
 def check_url(url: str) -> bool:
-    """Return True if URL is reachable and not a soft 404, False otherwise."""
+    """Return True if URL is reachable and not a soft 404 or cross-domain redirect."""
+    import urllib.parse
     if not url:
         return False
     try:
+        original_domain = urllib.parse.urlparse(url).netloc
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         resp = urllib.request.urlopen(req, timeout=10)
         if not (200 <= resp.status < 300):
             return False
+        final_url = resp.url
+        if final_url != url:
+            parsed_orig  = urllib.parse.urlparse(url)
+            parsed_final = urllib.parse.urlparse(final_url)
+            if parsed_final.netloc and parsed_final.netloc != parsed_orig.netloc:
+                print(f"  ⚠ Cross-domain redirect: {url} → {final_url}")
+                return False
+            if len(parsed_final.path.strip("/")) < len(parsed_orig.path.strip("/")) // 2:
+                print(f"  ⚠ Redirect to shorter path (possible homepage): {url} → {final_url}")
+                return False
         snippet = resp.read(4096).decode("utf-8", errors="replace").lower()
         for phrase in _SOFT_404_PHRASES:
             if phrase in snippet:
@@ -233,6 +262,91 @@ def _card_context_snippet(card: dict | None) -> str:
     if len(combined) > 800:
         combined = combined[:797] + "..."
     return f"\n\nContext from this occupation's career page (use this to surface roles that are consistent with trends already discussed):\n{combined}"
+
+
+def build_combined_prompt(occupation: str, n: int,
+                          cluster_level: int | None = None,
+                          card: dict | None = None) -> str:
+    """Build a single combined prompt that generates candidates, selects top n, and produces
+    fit/steps — collapsing the 3-call API workflow into one prompt for inline Claude Code use."""
+    level_map = {1: "entry-level (0-2yr)", 2: "junior-mid (1-3yr)",
+                 3: "mid-level (3-5yr)", 4: "senior (5-10yr)", 5: "expert (10+yr)"}
+    level_hint = ""
+    if cluster_level is not None:
+        allowed = allowed_experience_levels(cluster_level)
+        allowed_str = " or ".join(str(x) for x in sorted(allowed))
+        level_hint = (
+            f"\n\nThis occupation sits at career level {cluster_level} "
+            f"({level_map.get(cluster_level, '')}). Only include roles where "
+            f"experience_level is {allowed_str} — same level or one step up."
+        )
+    card_hint = _card_context_snippet(card)
+
+    return f"""You are an expert AI career strategist. Generate exactly {n} emerging AI-adjacent career roles that a {occupation} could pivot into within 2–5 years. Focus on roles that are genuinely being hired for today.{level_hint}{card_hint}
+
+For each role, return a JSON object with ALL of these fields:
+- "emerging_title": The new job title
+- "description": 1–2 sentences of day-to-day work
+- "core_tools": 2–3 specific AI tools or platforms (comma-separated string)
+- "search_query": Exact query to find job postings (e.g. '"AI Risk Analyst" jobs 2025')
+- "stat_text": One compelling market stat about demand or growth for this role
+- "stat_source": Organization that published the stat (e.g. "LinkedIn Economic Graph")
+- "stat_title": Report or article title
+- "stat_date": "Mon YYYY" — must be within the last 2 years, or omit entirely
+- "stat_url": Real verifiable URL only; omit if uncertain. Prefer BLS/WEF/GitHub/Stack Overflow. Never Gartner/IDC/Forrester.
+- "experience_level": Integer 1–5 (1=Entry, 2=Mid, 3=Senior, 4=Lead, 5=Principal)
+- "fit": One sentence — what carries over from {occupation} and what new paradigm they must shift into. Plain language.
+- "steps": Array of 2–3 short action phrases, each naming a specific credential, tool, or project
+
+The {n} roles must span at least 2 different experience_level values.
+Return ONLY a valid JSON array of {n} objects."""
+
+
+def print_prompts_for_cluster(cluster_id: str, scores: dict,
+                               emerging_rows: dict, cards: dict) -> None:
+    """Print combined prompts for each occupation in a cluster (inline Claude Code workflow).
+
+    Claude Code reads each printed prompt, authors a JSON array, then writes
+    the rows to emerging_roles.csv and the cards to occupation_cards.jsonl
+    using save_emerging_csv() and save_jsonl() directly.
+    """
+    cluster_roles = load_cluster_roles(cluster_id)
+    if not cluster_roles:
+        print(f"✗ No roles found for cluster '{cluster_id}'")
+        return
+
+    cluster_codes = {r["onet_code"] for r in cluster_roles}
+
+    print(f"\n══ Cluster: {cluster_id} ({len(cluster_roles)} roles) — PRINT-PROMPTS MODE ══")
+    print("Author JSON arrays for each occupation below, then call save_emerging_csv/save_jsonl.")
+
+    for role in cluster_roles:
+        source_code   = role["onet_code"]
+        occupation    = role["occupation"]
+        cluster_level = int(role.get("level", 3))
+
+        occ = scores.get(source_code)
+        if not occ:
+            print(f"\n  ✗ {source_code} not found in scores — skipping")
+            continue
+
+        # Skip if already have enough entries
+        cached = [r for (code, _), r in emerging_rows.items() if code == source_code]
+        if len(cached) >= CLUSTER_TARGET_COUNT:
+            print(f"\n  ✓ {occupation} ({source_code}) — already has {len(cached)} rows, skipping")
+            continue
+
+        existing_card = cards.get(source_code)
+        prompt = build_combined_prompt(occupation, CLUSTER_TARGET_COUNT,
+                                       cluster_level=cluster_level, card=existing_card)
+
+        print(f"\n{'='*80}")
+        print(f"── {occupation} ({source_code})  level={cluster_level}")
+        print(f"{'='*80}")
+        print(prompt)
+        print(f"{'='*80}")
+
+    print(f"\n✓ Done printing prompts for cluster '{cluster_id}'.")
 
 
 def generate_candidates(client: anthropic.Anthropic, occupation: str, n: int,
@@ -396,7 +510,7 @@ def _candidate_to_row(source_code: str, candidate: dict, fit: str, steps: list) 
         "onet_code":        source_code,
         "emerging_title":   candidate.get("emerging_title", "Unknown Role"),
         "description":      candidate.get("description", ""),
-        "core_tools":       candidate.get("core_tools", ""),
+        "core_tools":       _normalize_tools(candidate.get("core_tools", "")),
         "stat_text":        candidate.get("stat_text", ""),
         "stat_source":      candidate.get("stat_source", ""),
         "stat_title":       candidate.get("stat_title", ""),
@@ -468,7 +582,8 @@ def process_occupation(source_code: str, scores: dict,
         return True
 
     # Use cached rows if we already have enough and not forced
-    cached = [r for (code, _), r in emerging_rows.items() if code == source_code]
+    cached = [r for (code, _), r in emerging_rows.items()
+              if code == source_code and r.get("stat_text", "").strip()]
     if len(cached) >= n:
         print(f"  → Using {len(cached)} cached rows from emerging_roles.csv")
         emerging_list = _rows_to_output(cached)
@@ -747,6 +862,9 @@ def main():
     parser.add_argument("--code",    help="Single O*NET code to process")
     parser.add_argument("--cluster", help="Process all roles in a career cluster (e.g. web-developer)")
     parser.add_argument("--all",     action="store_true", help="Process all codes in scores CSV")
+    parser.add_argument("--print-prompts", action="store_true",
+                        help="Print combined prompts to stdout without calling the API "
+                             "(inline Claude Code workflow — use with --cluster)")
     args = parser.parse_args()
 
     if not args.code and not args.cluster and not args.all:
@@ -757,6 +875,13 @@ def main():
     scores        = load_scores()
     emerging_rows = load_emerging_csv()
     cards         = load_jsonl()
+
+    if args.print_prompts:
+        if not args.cluster:
+            print("--print-prompts requires --cluster")
+            sys.exit(1)
+        print_prompts_for_cluster(args.cluster, scores, emerging_rows, cards)
+        return
 
     try:
         client = anthropic.Anthropic()

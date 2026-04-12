@@ -75,9 +75,97 @@ Used by `generate_next_steps.py` to guide source selection in the prompt.
 
 ---
 
+## Labor Market Analytics (all domains)
+
+- Lightcast (formerly Burning Glass / EMSI) — job posting analytics, skill demand data
+- Indeed Hiring Lab — hiring trend research (NOT Indeed editorial/career advice)
+- CompTIA — tech workforce reports, Cyberstates, IT Industry Outlook
+- ISC2 — cybersecurity workforce studies
+- Robert Half — salary guides, hiring trend surveys (data tables only, not editorial)
+- Dice — tech salary reports
+
+---
+
+## Design / Creative
+
+- AIGA — design industry surveys, design census
+- Adobe — Creative Economy reports, State of Create
+- Figma research reports
+
+---
+
+## Management / General Business
+
+- Deloitte Insights — State of AI, CIO Survey, tech trend reports
+- PwC — AI Predictions, CEO Survey
+- Harvard Business Review (data-backed pieces only)
+- PMI (Project Management Institute) — Pulse of the Profession
+
+---
+
+## Consumer Trust & Public Attitudes
+
+- Pew Research Center — AI attitudes surveys, public trust in technology
+- Edelman Trust Barometer — institutional and technology trust data
+- Gallup — profession trust polls, workplace surveys
+- KPMG — Trust in AI reports
+
+---
+
+## Regulatory & Licensing
+
+- National Conference of State Legislatures (NCSL) — AI regulation tracking, licensing requirements
+- FINRA — financial services licensing, compliance requirements
+- CFPB (Consumer Financial Protection Bureau) — fintech regulation, consumer protection data
+- CMS (Centers for Medicare & Medicaid Services) — healthcare staffing requirements, patient safety mandates
+- Joint Commission — healthcare accreditation standards, staffing requirements
+
+---
+
+## Freelance & Workforce Structure
+
+- Upwork Research Institute — Freelance Forward reports, freelance workforce data
+- MBO Partners — State of Independence report, independent workforce trends
+
+---
+
+## Practitioner Voices & Interviews (for howToAdapt quotes)
+
+These sources feature named professionals discussing how their roles are changing. Prefer these for howToAdapt quotes over data-only sources like BLS or O*NET.
+
+**Technology:**
+- The Pragmatic Engineer (Gergely Orosz) — engineering career insights
+- InfoQ — practitioner interviews, conference talks
+- ACM Queue / Communications of the ACM — practitioner perspectives
+- ThoughtWorks Technology Radar — practitioner assessments
+
+**Business / Cross-industry:**
+- Harvard Business Review — interviews and practitioner case studies (not op-eds)
+- MIT Sloan Management Review — practitioner research
+- Fast Company — technology and workplace features (data-backed only)
+
+**Healthcare:**
+- Health Affairs — practitioner perspectives on AI in clinical settings
+- Nursing Times — practitioner interviews on technology adoption
+
+**Creative / Design:**
+- Eye on Design (AIGA) — designer interviews
+- It's Nice That — practitioner features
+- A List Apart — web design practitioner essays
+
+**Sales / Business:**
+- Sales Hacker / Pavilion — practitioner interviews
+- Revenue Collective — practitioner case studies
+
+**Real Estate:**
+- Inman News — real estate practitioner perspectives
+- RISMedia — broker and agent interviews
+
+---
+
 ## Avoid (all domains)
 
-- Gartner, IDC, Forrester — paywalled, URL rot
+- Gartner, IDC, Forrester, MarketsandMarkets — paywalled, inflated projections, URL rot
 - Forbes contributor network, The New Stack — low editorial bar
 - Vendor blogs (e.g. Salesforce blog ≠ Salesforce State of Sales report)
 - Career advice sites: Indeed editorial, LinkedIn Learning blog, Glassdoor editorial

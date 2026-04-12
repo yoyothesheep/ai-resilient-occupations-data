@@ -127,6 +127,35 @@ def append_titles(new_rows: list[dict]):
         writer.writerows(new_rows)
 
 
+def print_prompts_for_occupations(occupations: list[dict], existing: dict[str, list[str]]):
+    """Print all prompts to stdout without calling the API (inline Claude Code workflow).
+
+    For each occupation not already in existing, prints the prompt wrapped in
+    delimiters so Claude Code can read them and author JSON responses directly.
+    Claude Code then writes the resulting rows to the CSV via append_titles().
+    """
+    skipped = 0
+    printed = 0
+    for occ in occupations:
+        code = occ["Code"]
+        if code in existing:
+            skipped += 1
+            continue
+        prompt = PROMPT_TEMPLATE.format(
+            occupation=occ["Occupation"],
+            onet_code=code,
+            sample_titles=occ.get("Sample Job Titles", "").strip() or "(none listed)",
+        )
+        print(f"\n{'='*80}")
+        print(f"── {occ['Occupation']} ({code})")
+        print(f"{'='*80}")
+        print(prompt)
+        print(f"{'='*80}")
+        printed += 1
+    print(f"\n✓ Done. {printed} prompts printed. {skipped} skipped (already have entries).")
+    print("Author JSON arrays for each occupation above, then call append_titles() to save.")
+
+
 def generate(occupations: list[dict], existing: dict[str, list[str]]):
     client = anthropic.Anthropic()
     skipped = 0
@@ -188,6 +217,8 @@ def main():
     group.add_argument("--cluster", help="Generate titles for all occupations in a cluster")
     group.add_argument("--code", help="Generate titles for a single O*NET code")
     group.add_argument("--all", action="store_true", help="Generate titles for all occupations")
+    parser.add_argument("--print-prompts", action="store_true",
+                        help="Print all prompts to stdout without calling the API (inline Claude Code workflow)")
     args = parser.parse_args()
 
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -218,6 +249,10 @@ def main():
     else:
         parser.print_help()
         sys.exit(1)
+
+    if args.print_prompts:
+        print_prompts_for_occupations(occupations, existing)
+        return
 
     generate(occupations, existing)
     print("\nMerging into scores CSV...")

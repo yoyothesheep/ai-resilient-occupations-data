@@ -35,8 +35,8 @@ python3 scripts/generate_emerging_roles.py --cluster <id>
 python3 scripts/generate_emerging_job_titles.py --cluster <id>
 # Stage 7a: Generate occupation cards (reads emergingTitles from scores CSV)
 python3 scripts/generate_next_steps.py --cluster <id> --api
-# Stage 7b: Generate adjacent/lateral roles + merge into cards
-for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code; done
+# Stage 7b: Generate adjacent/lateral roles + merge into cards (--print-prompts for no-API-key mode)
+for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code --print-prompts --skip-existing; done
 # Stage 7c: Merge emerging roles into cards
 python3 scripts/generate_emerging_roles.py --cluster <id>
 # Stage 8: Generate career + industry pages in site repo

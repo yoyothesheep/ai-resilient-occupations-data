@@ -24,7 +24,7 @@ data/output/test_enrichment.csv
 script_test_gemini.py
 backup/
 
-# Analylsis articles
+# Analysis articles
 blog/
 
 # Temporary root-level JSON files (one-off debugging/exploration)

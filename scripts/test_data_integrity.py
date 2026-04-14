@@ -159,6 +159,76 @@ def test_openings_format(code):
         assert OPENINGS_RE.match(openings), f"{code}: malformed openings '{openings}'"
 
 
+# ── JSONL: risks/opportunities stat format ────────────────────────────────────
+# stat must be a bare number/value (e.g. "-4%", "+27%", "2.4x", "$12k")
+# not a full sentence. statLabel carries the descriptive text.
+# A stat is prose if it contains 4+ words (spaces separating word chars)
+STAT_PROSE_RE = re.compile(r"(\b\w+\b\s+){4,}\b\w+\b")
+
+@pytest.mark.parametrize("code", CARD_IDS)
+def test_stat_format(code):
+    card = next(c for c in CARDS if c["onet_code"] == code)
+    for section in ("risks", "opportunities"):
+        s = card.get(section, {})
+        stat = s.get("stat")
+        if stat is None:
+            continue
+        assert not STAT_PROSE_RE.search(str(stat).strip()), (
+            f"{code} {section}.stat is prose, not a bare value: {stat!r}\n"
+            f"  Fix: put the number only in 'stat' (e.g. '-4%'), move description to 'statLabel'"
+        )
+        stat_label = s.get("statLabel")
+        assert stat_label, (
+            f"{code} {section}.stat={stat!r} but statLabel is missing"
+        )
+        # statLabel should not start with the stat value itself (duplication)
+        assert not str(stat_label).startswith(str(stat)), (
+            f"{code} {section}.statLabel repeats the stat value: {stat_label!r}"
+        )
+        # statLabel must not contain inline citations like [1], [2]
+        assert not re.search(r"\[\d+\]", str(stat_label)), (
+            f"{code} {section}.statLabel contains inline citation: {stat_label!r}\n"
+            f"  Fix: rerun generate_next_steps.py --code {code} --section risks,opportunities"
+        )
+        # statLabel must be at least 3 words (catches truncated fragments)
+        label_words = str(stat_label).split()
+        assert len(label_words) >= 3, (
+            f"{code} {section}.statLabel too short to be a complete phrase: {stat_label!r}"
+        )
+        # statLabel must not end with a dangling linking word (sentence cut off)
+        _DANGLING = {"and", "or", "the", "a", "an", "of", "in", "for", "to",
+                     "with", "by", "that", "which", "as", "at", "from", "but"}
+        last_word = label_words[-1].rstrip(".,;:").lower()
+        assert last_word not in _DANGLING, (
+            f"{code} {section}.statLabel ends with linking word '{last_word}' — phrase cut off: {stat_label!r}"
+        )
+        # stat + statLabel must not contain date-range fragments like "through 2033"
+        combined = f"{stat} {stat_label}"
+        assert not re.search(r"\bthrough\s+20\d\d\b", combined, re.IGNORECASE), (
+            f"{code} {section}: stat+statLabel contains date-range fragment: {combined!r}"
+        )
+        # stat sign must be consistent with statLabel wording
+        stat_str = str(stat).strip()
+        label_lower = str(stat_label).lower()
+        m_pct = re.match(r"^([+-]?\d+)%$", stat_str)
+        if m_pct:
+            val = int(m_pct.group(1))
+            _NEGATIVE_WORDS = {"decline", "shrink", "fewer", "loss", "drop", "decrease", "down", "fell", "lost"}
+            _POSITIVE_WORDS = {"growth", "increase", "gain", "grew", "rise", "expand", "added", "more"}
+            label_has_neg = any(w in label_lower for w in _NEGATIVE_WORDS)
+            label_has_pos = any(w in label_lower for w in _POSITIVE_WORDS) and not label_has_neg
+            if val > 0 and label_has_neg:
+                assert False, (
+                    f"{code} {section}: positive stat {stat!r} but label implies decline: {stat_label!r}\n"
+                    f"  Fix: stat is probably missing a minus sign, or label wording is wrong"
+                )
+            if val < 0 and label_has_pos:
+                assert False, (
+                    f"{code} {section}: negative stat {stat!r} but label implies growth: {stat_label!r}\n"
+                    f"  Fix: stat sign is wrong, or label wording is wrong"
+                )
+
+
 # ── JSONL: inline citation refs match sources ─────────────────────────────────
 
 @pytest.mark.parametrize("code", CARD_IDS)
@@ -407,7 +477,12 @@ def test_no_blocked_sources_in_emerging_roles_csv():
             combined = (row.get("stat_url","") + row.get("stat_source","")).lower()
             if any(b in combined for b in BLOCKED_SOURCE_DOMAINS):
                 bad.append(f"{row['onet_code']} {row['emerging_title']}: {row['stat_source']} {row['stat_url']}")
-    assert not bad, "Blocked sources found in emerging_roles.csv:\n" + "\n".join(bad)
+    assert not bad, (
+        "Blocked sources found in emerging_roles.csv:\n" + "\n".join(bad)
+        + "\n\nFix: edit data/emerging_roles/emerging_roles.csv — replace the blocked source "
+        "(Gartner/IDC/Forrester/MarketsandMarkets) with an approved source from docs/approved_sources.md, "
+        "then rerun: python3 scripts/generate_emerging_roles.py --cluster <cluster_id>"
+    )
 
 
 def test_emerging_roles_core_tools_not_list_repr():
@@ -447,7 +522,10 @@ def test_howToAdapt_quotes_present():
             quotes = (d.get("howToAdapt") or {}).get("quotes") or []
             if len(quotes) < 2:
                 bad.append(f"{d['onet_code']} {d.get('title', '')} — howToAdapt.quotes has {len(quotes)} entries (need ≥2)")
-    assert not bad, "Cards missing howToAdapt quotes (regenerate via generate_next_steps.py):\n" + "\n".join(bad)
+    assert not bad, (
+        "Cards missing howToAdapt quotes (need ≥2):\n" + "\n".join(bad)
+        + "\n\nFix: python3 scripts/generate_next_steps.py --code <code> --section howToAdapt --api"
+    )
 
 
 def test_tsx_howToAdapt_quotes_present():
@@ -457,7 +535,11 @@ def test_tsx_howToAdapt_quotes_present():
         content = tsx.read_text()
         if "howToAdapt:" in content and "quotes:" not in content:
             bad.append(tsx.stem)
-    assert not bad, "TSX files have howToAdapt but no quotes (re-run generate_career_pages.py --force):\n" + "\n".join(bad)
+    assert not bad, (
+        "TSX files have howToAdapt but no quotes:\n" + "\n".join(bad)
+        + "\n\nFix: first ensure the card JSON has quotes — python3 scripts/generate_next_steps.py --code <code> --section howToAdapt --api"
+        "\nThen regenerate TSX: python3 scripts/generate_career_pages.py --cluster <cluster> --force"
+    )
 
 
 def test_howToAdapt_quotes_diverse_sources():
@@ -473,7 +555,11 @@ def test_howToAdapt_quotes_diverse_sources():
                     src_ids = [q.get("sourceId") for q in persona_quotes if q.get("sourceId")]
                     if len(src_ids) >= 2 and len(set(src_ids)) == 1:
                         bad.append(f"{d['onet_code']} howToAdapt.quotes[{persona}]: all {len(src_ids)} quotes cite {src_ids[0]}")
-    assert not bad, "howToAdapt quotes all from same source (regenerate via generate_next_steps.py):\n" + "\n".join(bad) + "\n\nTip: You must find a new, relevant quote from a new source. You cannot just change the source number but keep everything else the same!"
+    assert not bad, (
+        "howToAdapt quotes all from same source:\n" + "\n".join(bad)
+        + "\n\nFix: python3 scripts/generate_next_steps.py --code <code> --section howToAdapt --api"
+        "\nEach persona's quotes must cite different sources. Don't just change the sourceId — find a genuinely different quote from a different source."
+    )
 
 
 def test_emerging_roles_stat_has_title_and_date():
@@ -500,8 +586,9 @@ def test_emerging_roles_stat_text_not_empty():
             if not row.get("stat_text", "").strip():
                 bad.append(f"{row['onet_code']} {row['emerging_title']}: missing stat_text")
     assert not bad, (
-        "Emerging roles missing stat_text (re-run generate_emerging_roles.py for affected clusters):\n"
-        + "\n".join(bad)
+        "Emerging roles missing stat_text in CSV:\n" + "\n".join(bad)
+        + "\n\nFix: python3 scripts/generate_emerging_roles.py --cluster <cluster_id>"
+        "\nThis populates stat_text in data/emerging_roles/emerging_roles.csv."
     )
 
 
@@ -516,6 +603,8 @@ def test_emerging_roles_stat_text_not_empty_in_jsonl():
                     bad.append(f"{d['onet_code']} {e.get('title','?')}: missing stat.text")
     assert not bad, (
         "Emerging careers in JSONL missing stat.text:\n" + "\n".join(bad)
+        + "\n\nFix: python3 scripts/generate_emerging_roles.py --cluster <cluster_id>"
+        "\nThis regenerates emergingCareers in the card JSON including stat.text fields."
     )
 
 
@@ -544,6 +633,8 @@ def test_no_redundant_pull_stats():
     assert not bad, (
         "Redundant pull stats (duplicate task table or hero grid data):\n"
         + "\n".join(bad)
+        + "\n\nFix: python3 scripts/generate_next_steps.py --code <code> --section risks,opportunities --api"
+        "\nThe stat should be a non-redundant signal — see stat selection priority list in scripts/prompts.py."
     )
 
 
@@ -613,7 +704,11 @@ def test_no_redundant_pull_stats_in_tsx():
                 if pat in label:
                     bad.append(f"{tsx.stem}: statLabel '{m.group(1)}' matches redundant pattern '{pat}'")
                     break
-    assert not bad, "Redundant pull stats in TSX:\n" + "\n".join(bad)
+    assert not bad, (
+        "Redundant pull stats in TSX:\n" + "\n".join(bad)
+        + "\n\nFix: first fix the card JSON — python3 scripts/generate_next_steps.py --code <code> --section risks,opportunities --api"
+        "\nThen regenerate TSX: python3 scripts/generate_career_pages.py --cluster <cluster> --force"
+    )
 
 
 def test_no_stat_repeated_across_risks_and_opportunities():

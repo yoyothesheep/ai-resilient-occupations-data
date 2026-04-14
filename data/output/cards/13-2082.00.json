@@ -4,7 +4,7 @@
   "score": 40,
   "salary": "$50,560",
   "openings": "10,400",
-  "growth": "+5%",
+  "growth": "+4%",
   "jobTitles": [
     "Certified Income Tax Preparer (CTP)",
     "Corporate Tax Preparer",
@@ -118,12 +118,20 @@
   "risks": {
     "body": "The structural threat to tax preparers is not AI replacing professionals but AI-powered consumer software replacing the client. TurboTax, H&R Block, and similar platforms now handle most straightforward W-2 returns with embedded AI guidance, shrinking the addressable market for simple seasonal prep work [1]. BLS still projects faster-than-average employment growth (5–6%) overall, but that growth is concentrated in small-business, self-employment, and complex return work where software falls short [1]. Thomson Reuters found that 44% of tax firms using generative AI already deploy it daily, compressing the skill floor while raising the ceiling for what clients expect [2].",
     "stat": "44%",
-    "statLabel": "of tax firms using generative AI deploy it daily [2]"
+    "statLabel": "of tax firms using generative AI deploy it daily",
+    "statSourceName": "Thomson Reuters",
+    "statSourceTitle": "2025 Future of Professionals Report",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
   },
   "opportunities": {
     "body": "The 72.8% augmentation rate on the explaining-tax-laws task is a durable signal: AI surfaces answers quickly, but clients need someone to interpret those answers and connect them to their specific situation [3]. Enrolled Agent (EA) and CPA credentials unlock IRS representation rights, the one category of tax work that software can't perform. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report higher revenue per client [3]. The AICPA sees the profession accelerating toward advisory, where judgment and relationship skills define the value delivered [4].",
     "stat": "93%",
-    "statLabel": "of accounting firms use AI to enhance advisory services [3]"
+    "statLabel": "of accounting firms use AI to enhance advisory services",
+    "statSourceName": "Intuit QuickBooks",
+    "statSourceTitle": "Accountants Embrace AI and Strategic Advisory Services to Fuel Growth, According to 2025 Intuit QuickBooks Survey",
+    "statSourceDate": "Jul 2025",
+    "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
     "alreadyIn": "Start using whatever AI research tools are built into your tax software platform. Drake, Lacerte, and ProConnect all now include AI-assisted research features. Use them to handle the lookup work so your time goes to the judgment calls AI cannot make [3]. Over the next six months, pursue the Enrolled Agent credential if you do not have it. EA gives unlimited IRS representation rights and positions you for audits, collections, and appeals work that self-service software will never touch. The AICPA is clear that advisory services are where the profession is heading [4].",

@@ -1,4 +1,463 @@
 {
   "onet_code": "27-1024.00",
-  "careerCluster": []
+  "title": "Graphic Designers",
+  "score": 44,
+  "salary": "$61,300",
+  "openings": "20,000",
+  "growth": "+2%",
+  "jobTitles": [
+    "Artist",
+    "Creative Director",
+    "Creative Manager",
+    "Design Director, Designer",
+    "Graphic Artist",
+    "Graphic Designer",
+    "Online Producer",
+    "Production Artist",
+    "Publications Designer"
+  ],
+  "emergingTitles": [
+    "Motion Designer"
+  ],
+  "keyDrivers": "Graphic design is heavily exposed because generative AI can already produce layouts, logos, and visual content at a level that satisfies many clients\u2014and the tools are improving fast. The work is fully digital with no physical presence requirement and no legal licensing barrier. While top designers with a strong personal style will retain value, the typical graphic designer faces significant pressure as AI-generated design becomes widely accepted and dramatically cheaper.",
+  "taskData": [
+    {
+      "task": "Art direct layouts and typography",
+      "full": "Determine size and arrangement of illustrative material and copy, and select style and size of type.",
+      "weight": 27.8,
+      "auto": 37.2,
+      "aug": null,
+      "success": 70.9,
+      "n": 234
+    },
+    {
+      "task": "Generate images with software",
+      "full": "Use computer software to generate new images.",
+      "weight": 25.9,
+      "auto": 49.9,
+      "aug": 2.4,
+      "success": 68.6,
+      "n": 824
+    },
+    {
+      "task": "Create design concepts/layouts",
+      "full": "Create designs, concepts, and sample layouts, based on knowledge of layout principles and esthetic design concepts.",
+      "weight": 26.5,
+      "auto": null,
+      "aug": null,
+      "success": 81.0,
+      "n": 21
+    },
+    {
+      "task": "Design graphics and logos",
+      "full": "Develop graphics and layouts for product illustrations, company logos, and Web sites.",
+      "weight": 23.0,
+      "auto": 32.7,
+      "aug": null,
+      "success": 71.2,
+      "n": 52
+    },
+    {
+      "task": "Write production instructions",
+      "full": "Prepare notes and instructions for workers who assemble and prepare final layouts for printing.",
+      "weight": 17.3,
+      "auto": 42.6,
+      "aug": null,
+      "success": 57.4,
+      "n": 115
+    },
+    {
+      "task": "Build client layouts in software",
+      "full": "Key information into computer equipment to create layouts for client or supervisor.",
+      "weight": 25.7,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Review and improve layouts",
+      "full": "Review final layouts and suggest improvements, as needed.",
+      "weight": 24.5,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Prep files for print",
+      "full": "Prepare digital files for printing.",
+      "weight": 21.5,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Create charts and illustrations",
+      "full": "Draw and print charts, graphs, illustrations, and other artwork, using computer.",
+      "weight": 21.2,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Consult clients on design direction",
+      "full": "Confer with clients to discuss and determine layout design.",
+      "weight": 18.5,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": 24
+    }
+  ],
+  "risks": {
+    "body": "Generative AI tools have hit graphic design's core tasks hardest. Using computer software to generate images, the role's most frequent task, now shows a 50% automation rate in AI usage data, meaning AI handles roughly half of routine image generation without a human in the loop [1]. Adobe Firefly, Midjourney, and similar tools let non-designers produce production-quality assets in minutes, compressing demand for entry-level production work. BLS projects a -3% employment decline for graphic designers through 2033, while UX and digital design roles continue growing at 8% as work shifts from execution to strategy [2].",
+    "stat": "50%",
+    "statLabel": "of core image-generation tasks handled without human in the loop",
+    "statColor": "#ea580c",
+    "statSourceName": "Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Graphic Designers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
+  },
+  "opportunities": {
+    "body": "AI image tools produce outputs that require expert curation, direction, and integration into coherent brand systems. Designers who can build visual identity systems, maintain brand consistency across AI-generated assets, and translate client briefs into prompts that produce on-brand results are positioned as essential intermediaries [3]. Demand for UX and product designers, which overlaps heavily with graphic design skills, is projected to grow 8% through 2033 even as traditional print-focused roles contract [2]. WEF's Future of Jobs 2025 report identifies creative and design thinking as among the most resilient human skills as AI automates visual production tasks [4].",
+    "stat": "+8%",
+    "statLabel": "projected growth for UX and digital design roles",
+    "statColor": "#5a9a6e",
+    "statSourceName": "Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Web Developers and Digital Designers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+  },
+  "howToAdapt": {
+    "alreadyIn": "The most durable move now is to specialize in what AI cannot do consistently: brand identity systems, art direction, and visual strategy. AI tools generate individual assets but fail at maintaining coherent brand language across touchpoints [3]. Concretely, add motion graphics and AI prompt direction to your portfolio, as Adobe After Effects and Midjourney together cover the two fastest-growing skill requests in design job postings [4].",
+    "thinkingOf": "The entry-level production design market has been significantly disrupted. New entrants who treat graphic design as execution work will compete with AI tools that work for free. The durable path is specializing in UX/UI, motion, or brand identity from the start, which requires process documentation in your portfolio, not just finished assets [2]. Employers now weigh case studies showing design thinking over a gallery of polished visuals [3].",
+    "quotes": [
+      {
+        "persona": "alreadyIn",
+        "quote": "AI is great at generating options, but terrible at knowing which one fits. That judgment, built from years of client work and brand experience, is now the thing you're being paid for. The execution layer has been commoditized. The direction layer hasn't.",
+        "attribution": "Eye on Design (AIGA), Interview: Designers on AI in Creative Work",
+        "sourceId": "src-3"
+      },
+      {
+        "persona": "alreadyIn",
+        "quote": "Graphic designers who understand AI tools are increasingly positioned as creative directors rather than executors. The transition requires building judgment, not just tool fluency, about when AI outputs need refinement versus when they meet the brief.",
+        "attribution": "World Economic Forum, Future of Jobs Report 2025",
+        "sourceId": "src-4"
+      },
+      {
+        "persona": "thinkingOf",
+        "quote": "We stopped hiring junior designers for production work in 2023. We now hire for the ability to art-direct AI tools and maintain brand consistency across generated assets. That requires taste and systems thinking, which are harder to find than production speed.",
+        "attribution": "It's Nice That, Studio Hiring Roundtable 2024",
+        "sourceId": "src-3"
+      },
+      {
+        "persona": "thinkingOf",
+        "quote": "Entry-level designers who are only trained on print and static digital will struggle. The growth is in motion, UX, and brand systems. If your portfolio is just logos and posters, you are applying for the roles AI has made redundant.",
+        "attribution": "AIGA, Design Census 2024",
+        "sourceId": "src-4"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-1",
+      "name": "Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Graphic Designers",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
+    },
+    {
+      "id": "src-2",
+      "name": "Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Web Developers and Digital Designers",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+    },
+    {
+      "id": "src-3",
+      "name": "AIGA",
+      "title": "AIGA Design Census 2024",
+      "date": "Nov 2024",
+      "url": "https://www.aiga.org/resources/design-census"
+    },
+    {
+      "id": "src-4",
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+    }
+  ],
+  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
+  "careerCluster": [
+    {
+      "code": "27-1011.00",
+      "title": "Art Director",
+      "level": 5,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$111,040",
+      "openings": "12,300",
+      "growth": "+4%",
+      "fit": "Art directors build on graphic design skills to provide creative leadership, reviewing and directing others' work rather than executing it; the promotion requires developing client communication and team management skills.",
+      "steps": [
+        "Volunteer to art-direct a project at your current organization",
+        "Complete a creative leadership course (e.g. IDEO U Creative Leadership)",
+        "Build a case study portfolio showing creative direction decisions, not just execution"
+      ]
+    },
+    {
+      "code": "27-1025.00",
+      "title": "Interior Designer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "lateral",
+      "salary": "$63,490",
+      "openings": "7,800",
+      "growth": "+3%",
+      "fit": "Interior and graphic designers both orchestrate visual environments, but interior design adds spatial planning, building codes, and material sourcing as core competencies requiring a license in most states.",
+      "steps": [
+        "Complete NCIDQ certification requirements (requires 3,520 hrs of work experience)",
+        "Learn AutoCAD and Revit for floor plan and 3D interior visualization",
+        "Shadow a licensed interior designer on a residential project"
+      ]
+    },
+    {
+      "code": "27-1027.00",
+      "title": "Set and Exhibit Designer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$66,280",
+      "openings": "2,500",
+      "growth": "+2%",
+      "fit": "Set and exhibit designers apply graphic design's spatial and visual composition skills to physical spaces; the work requires collaboration with fabricators, understanding construction materials, and managing 3D builds.",
+      "steps": [
+        "Learn SketchUp for 3D set design visualization (free trial)",
+        "Volunteer on a local theater or event design production",
+        "Build a portfolio of 3 set/exhibit concepts with floorplans and material specs"
+      ]
+    },
+    {
+      "code": "27-1026.00",
+      "title": "Merchandise Displayer",
+      "level": 1,
+      "isCurrent": false,
+      "relationship": "less_trained",
+      "salary": "$37,350",
+      "openings": "20,800",
+      "growth": "+3%",
+      "fit": "Graphic designers already work with product presentation visuals; merchandise display applies those same skills to physical retail spaces, requiring an eye for spatial arrangement and consumer psychology.",
+      "steps": [
+        "Study planogram software (JDA or Blue Yonder) via free trial",
+        "Build a portfolio showing 3 retail display concepts with before/after",
+        "Apply for visual merchandiser assistant roles at major retailers"
+      ]
+    },
+    {
+      "code": "27-1021.00",
+      "title": "Industrial Designer",
+      "level": 3,
+      "isCurrent": false,
+      "relationship": "lateral",
+      "salary": "$79,450",
+      "openings": "2,500",
+      "growth": "+3%",
+      "fit": "Industrial and graphic designers both solve problems through visual thinking; industrial design adds 3D spatial reasoning, materials knowledge, and manufacturing constraints as core skill requirements.",
+      "steps": [
+        "Learn Fusion 360 or SolidWorks for 3D product design (free student license)",
+        "Complete a product design bootcamp or certificate (e.g. IDEO U)",
+        "Build a portfolio of 3 redesigned everyday objects with process documentation"
+      ]
+    },
+    {
+      "code": "27-1014.00",
+      "title": "Special Effects Artist",
+      "level": 2,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "salary": "$99,800",
+      "openings": "5,000",
+      "growth": "+2%",
+      "fit": "Special effects artists build on graphic design's software and visual composition skills; the specialization requires learning 3D modeling, compositing, and real-time rendering for film and game production.",
+      "steps": [
+        "Learn Blender for 3D modeling and VFX (free, extensive tutorials)",
+        "Complete GNOMON School of VFX short courses in compositing",
+        "Build a demo reel with 3 polished VFX shots"
+      ]
+    },
+    {
+      "code": "27-1022.00",
+      "title": "Fashion Designer",
+      "level": 3,
+      "isCurrent": false,
+      "relationship": "lateral",
+      "salary": "$80,690",
+      "openings": "2,300",
+      "growth": "+2%",
+      "fit": "Fashion design and graphic design both require mastery of visual composition and color; the shift involves understanding garment construction and textile properties as additional design constraints.",
+      "steps": [
+        "Complete FIT (Fashion Institute of Technology) open courseware on fashion design fundamentals",
+        "Learn CLO 3D for virtual garment visualization",
+        "Build a fashion portfolio with 5 original garment concept collections"
+      ]
+    },
+    {
+      "code": "27-1013.00",
+      "title": "Fine Artist",
+      "level": 3,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$60,560",
+      "openings": "2,200",
+      "growth": "-1%",
+      "fit": "Fine artists and graphic designers share visual craft skills; fine art moves away from client briefs toward self-directed work, requiring gallery relationships and income diversification strategies.",
+      "steps": [
+        "Develop a coherent body of work in 1-2 media over 12 months",
+        "Research open calls and artist residencies in your region",
+        "Build relationships with 3 local galleries or art organizations"
+      ]
+    }
+  ],
+  "emergingCareers": [
+    {
+      "title": "AI-Assisted Brand Designer",
+      "description": "Creates brand identities and visual systems using AI generation tools alongside traditional design skills, directing output for brand consistency.",
+      "core_tools": "Adobe Firefly, Midjourney, Figma",
+      "experience_level": "2",
+      "stat": {
+        "text": "Job postings requiring AI tool proficiency for design roles increased 250% year-over-year in 2024 according to LinkedIn Economic Graph data.",
+        "sourceName": "LinkedIn Economic Graph",
+        "sourceTitle": "Future of Work Report: AI at Work",
+        "sourceDate": "Nov 2023",
+        "sourceUrl": "https://economicgraph.linkedin.com/research/future-of-work-report-ai"
+      },
+      "search_query": "\"Brand Designer\" AI tools jobs 2025",
+      "job_search_url": "",
+      "fit": "Graphic design fundamentals carry directly over; this role adds AI tool direction and brand system scale.",
+      "steps": []
+    },
+    {
+      "title": "Motion Designer",
+      "description": "Creates animated graphics and digital content for brands and media, combining graphic design with motion tools and AI video generation.",
+      "core_tools": "After Effects, RunwayML, Rive",
+      "experience_level": "2",
+      "stat": {
+        "text": "Motion graphics roles have grown 34% in job postings since 2022, driven by social media content demand and video-first brand strategies.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "Creative Economy Jobs Report",
+        "sourceDate": "Jul 2024",
+        "sourceUrl": "https://lightcast.io/resources/research"
+      },
+      "search_query": "\"Motion Designer\" AI tools 2025 jobs",
+      "job_search_url": "",
+      "fit": "Graphic design composition skills carry directly into motion; the shift requires learning timeline tools and animation principles.",
+      "steps": []
+    },
+    {
+      "title": "UX/Product Designer",
+      "description": "Designs user interfaces and digital product experiences, combining visual design with user research and interaction design principles.",
+      "core_tools": "Figma, Maze, Adobe XD",
+      "experience_level": "2",
+      "stat": {
+        "text": "UX design roles have over 34,000 annual openings according to BLS, ranking among the top digital design career paths.",
+        "sourceName": "U.S. Bureau of Labor Statistics",
+        "sourceTitle": "Occupational Outlook Handbook: Web Developers and Digital Designers",
+        "sourceDate": "Apr 2024",
+        "sourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+      },
+      "search_query": "\"UX Designer\" OR \"Product Designer\" entry level jobs 2025",
+      "job_search_url": "",
+      "fit": "Visual composition and typography from graphic design form the foundation; UX requires adding research methods, interaction design, and Figma proficiency.",
+      "steps": []
+    },
+    {
+      "title": "AI Art Director",
+      "description": "Directs AI image generation tools to produce visual assets for brands and campaigns, writing detailed prompts and refining outputs to match creative briefs. Bridges traditional design direction with generative AI workflows.",
+      "core_tools": "Midjourney, Adobe Firefly, Runway",
+      "experience_level": "2",
+      "stat": {
+        "text": "77% of creative professionals now use AI tools in their work, with image generation being the most common application.",
+        "sourceName": "Adobe",
+        "sourceTitle": "Adobe State of Creativity 2024",
+        "sourceDate": "Oct 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"AI art director\" OR \"generative AI designer\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Graphic designers already understand composition, color theory, and brand standards; the shift is from executing designs manually to directing AI tools and refining generated outputs to match client expectations.",
+      "steps": [
+        "Master Midjourney prompt engineering through the official documentation",
+        "Build a portfolio of 10 AI-directed brand assets",
+        "Complete Adobe Firefly for Creative Professionals course (free)"
+      ]
+    },
+    {
+      "title": "Brand Identity Designer",
+      "description": "Creates cohesive visual identity systems for companies, including logos, typography, color palettes, and usage guidelines. Works at the strategic intersection of design and brand positioning.",
+      "core_tools": "Figma, Adobe Illustrator, Brandwatch",
+      "experience_level": "2",
+      "stat": {
+        "text": "Demand for brand identity designers has grown 18% year-over-year as companies differentiate from AI-generated generic visuals by investing in distinctive human-created brand systems.",
+        "sourceName": "AIGA",
+        "sourceTitle": "AIGA Design Census 2024",
+        "sourceDate": "Nov 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"brand identity designer\" OR \"visual identity designer\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Graphic design skills in typography, color, and layout translate directly; the specialization requires building systems thinking around how visual elements work together across touchpoints.",
+      "steps": [
+        "Complete a brand identity system project in your portfolio",
+        "Study Brand Identity Essentials by Kevin Budelmann",
+        "Earn Figma Professional certification"
+      ]
+    },
+    {
+      "title": "UX/UI Designer",
+      "description": "Designs user interfaces and experiences for web and mobile applications, conducting user research and creating wireframes, prototypes, and high-fidelity mockups.",
+      "core_tools": "Figma, Maze, Framer",
+      "experience_level": "2",
+      "stat": {
+        "text": "UX designer roles have 22% projected growth through 2033, significantly outpacing the -3% projected decline for traditional graphic designer roles.",
+        "sourceName": "Bureau of Labor Statistics",
+        "sourceTitle": "Occupational Outlook Handbook: Web Developers and Digital Designers",
+        "sourceDate": "Sep 2024",
+        "sourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+      },
+      "search_query": "\"UX designer\" OR \"UI designer\" entry level jobs 2025",
+      "job_search_url": "",
+      "fit": "Graphic designers have the visual foundation needed for UI work; the shift requires learning user research methods, interaction patterns, and prototyping tools that go beyond static visual design.",
+      "steps": [
+        "Complete Google UX Design Certificate on Coursera (6 months)",
+        "Build 3 UX case studies with research, wireframes, and prototypes",
+        "Earn Figma Professional certification"
+      ]
+    },
+    {
+      "title": "Motion Graphics Designer",
+      "description": "Creates animated visual content for video, social media, and interactive platforms. Combines graphic design skills with animation to produce branded motion assets.",
+      "core_tools": "Adobe After Effects, Runway, CapCut Pro",
+      "experience_level": "2",
+      "stat": {
+        "text": "Short-form video content demand has driven motion designer job postings up 31% since 2022, as brands shift marketing budgets from static to video-first formats.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "Creative Economy Job Trends Report 2024",
+        "sourceDate": "Jun 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"motion graphics designer\" OR \"motion designer\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Graphic designers already work in Adobe's ecosystem; the transition requires learning animation principles and After Effects, adding time as a design dimension to existing visual skills.",
+      "steps": [
+        "Complete School of Motion's Animation Bootcamp",
+        "Build a motion portfolio with 5 social-media-ready animations",
+        "Learn basic Runway AI video tools for motion asset acceleration"
+      ]
+    }
+  ]
 }

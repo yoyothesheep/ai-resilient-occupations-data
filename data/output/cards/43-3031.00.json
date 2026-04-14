@@ -4,7 +4,7 @@
   "score": 28,
   "salary": "$49,210",
   "openings": "170,000",
-  "growth": "-1%",
+  "growth": "-6%",
   "jobTitles": [
     "Account Clerk",
     "Accounting Assistant",
@@ -119,12 +119,20 @@
   "risks": {
     "body": "BLS projects bookkeeping clerk employment to decline 6% over the next decade, a loss of roughly 100,000 positions, as accounting software increasingly handles data entry, reconciliation, and basic reporting [1]. The WEF Future of Jobs Report names accounting and bookkeeping clerks among the fastest-declining roles globally, driven by AI and automation performing the structured, repetitive work that defines the occupation [2]. The financial calculations task already shows 57.7% automation in AI usage data, and that task represents the analytical core of the role.",
     "stat": "95%",
-    "statLabel": "of accounting firms adopted automation technologies in the past year [3]"
+    "statLabel": "of accounting firms adopted automation technologies in the past year",
+    "statSourceName": "Intuit QuickBooks",
+    "statSourceTitle": "Accountants Embrace AI and Strategic Advisory Services to Fuel Growth, According to 2025 Intuit QuickBooks Survey",
+    "statSourceDate": "Jul 2025",
+    "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "opportunities": {
     "body": "The Intuit QuickBooks 2025 survey found that 81% of accountants report AI boosts their productivity, with firms using automation reporting near-unanimous improvements in accuracy (98%) and efficiency (97%) [3]. This creates demand for bookkeepers who can operate AI-powered tools and interpret results rather than just enter data. The AICPA reports that AI is accelerating the shift from compliance-focused bookkeeping toward strategic advisory services, a transition that opens new value for clerks willing to move up the skill ladder [4].",
     "stat": "81%",
-    "statLabel": "of accountants report AI boosts their productivity [3]"
+    "statLabel": "of accountants report AI boosts their productivity",
+    "statSourceName": "Intuit QuickBooks",
+    "statSourceTitle": "Accountants Embrace AI and Strategic Advisory Services to Fuel Growth, According to 2025 Intuit QuickBooks Survey",
+    "statSourceDate": "Jul 2025",
+    "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
     "alreadyIn": "Learn the AI features in whatever accounting platform you use daily. QuickBooks, Xero, and Sage all now offer automated categorization, anomaly flagging, and reconciliation. Start there rather than chasing a separate AI certification [3]. Over the next six months, build advisory skills: interpreting reports for clients, spotting cash flow trends, and communicating financial insights. The AICPA notes that the profession is shifting from transaction processing to strategic advising, and bookkeepers who can bridge both sides are in the strongest position [4].",

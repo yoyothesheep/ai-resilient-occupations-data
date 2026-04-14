@@ -118,12 +118,20 @@
   "risks": {
     "body": "The tasks with the clearest AI signal, analyzing business trends and maintaining accounting systems, already show automation rates near 40%. BLS still projects faster-than-average employment growth (6%) for accountants and auditors through 2034, but that headline number masks a shift toward higher-complexity work as software handles routine analysis [1]. Thomson Reuters found that 44% of tax and accounting firms using AI deploy it daily, accelerating the compression of routine analytical work that occupies much of the mid-level accountant role [2].",
     "stat": "44%",
-    "statLabel": "of tax and accounting firms using AI deploy it daily [2]"
+    "statLabel": "of tax and accounting firms using AI deploy it daily",
+    "statSourceName": "Thomson Reuters",
+    "statSourceTitle": "2025 Future of Professionals Report",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
   },
   "opportunities": {
     "body": "Audit judgment, fraud detection, and internal controls assessment sit in the no-AI-signal bucket, and there is a structural reason: these tasks carry personal legal accountability that cannot be delegated to software. CPA licensure creates a credential barrier that self-service tools cannot cross. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report both efficiency gains and higher revenue per engagement [3]. The AICPA reports that AI is accelerating the profession's shift from transaction processing to advisory work, a transition that amplifies the value of accounting credentials rather than undermining them [4].",
     "stat": "93%",
-    "statLabel": "of accounting firms use AI to enhance advisory services [3]"
+    "statLabel": "of accounting firms use AI to enhance advisory services",
+    "statSourceName": "Intuit QuickBooks",
+    "statSourceTitle": "The Future of Accounting: How Intuit's AI Innovations Are Reshaping the Profession",
+    "statSourceDate": "Aug 2025",
+    "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
     "alreadyIn": "Focus your development on the tasks where AI signal is absent: audit judgment, internal controls review, fraud detection, and management reporting. These are your durable edges. In the near term, use AI-assisted tools for financial statement analysis and reconciliation so more time goes to the judgment work [3]. Over the next six months, pick a specialization, ESG reporting, cybersecurity audit, or forensic accounting, where the complexity is high enough that AI is a tool rather than a substitute. The AICPA notes that credentialed accountants who specialize are positioned above the automation floor [4].",

@@ -4,7 +4,7 @@
   "score": 63,
   "salary": "$140,910",
   "openings": "3,200",
-  "growth": "+7%",
+  "growth": "+20%",
   "jobTitles": [
     "Computer Scientist",
     "Computer Specialist",
@@ -109,12 +109,20 @@
   "risks": {
     "body": "Weighted automation across observed tasks runs at 38.9% - meaningful signal that AI is handling portions of the code writing, data analysis, and model evaluation work that researchers do alongside their primary investigations [1]. The risk is concentrated at the entry level: research assistants and junior scientists who spend the majority of their time on data processing and literature review face the most direct competition from AI tools that can handle those tasks. BLS projects 20% employment growth but notes that most opportunities will favor those with doctoral degrees and demonstrated research output [2].",
     "stat": "1 in 4",
-    "statLabel": "AI research papers now list an LLM as co-author or contributor [3]"
+    "statLabel": "AI research papers now list an LLM as co-author or contributor",
+    "statSourceName": "Stanford HAI",
+    "statSourceTitle": "AI Index Report 2024",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://aiindex.stanford.edu/report/"
   },
   "opportunities": {
     "body": "This role scores a 5 out of 5 on novel judgment - the highest possible rating - reflecting that original scientific contribution, hypothesis generation, and working at knowledge frontiers are structurally resistant to automation [2]. Mathematical modeling and analysis shows 38.6% augmentation even as automation rises, indicating AI works as a research accelerator in the core work rather than displacing it entirely [1]. A10 scores a 5, meaning this role is well-positioned to direct and benefit from AI tools as they improve - researchers who use AI to run more experiments and test more hypotheses faster are producing more output with the same effort.",
     "stat": "5x",
-    "statLabel": "more AI research papers published in 2024 vs. 2020, expanding demand for original researchers [3]"
+    "statLabel": "more AI research papers published in 2024 vs. 2020, expanding demand for original researchers",
+    "statSourceName": "Stanford HAI",
+    "statSourceTitle": "AI Index Report 2024",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://aiindex.stanford.edu/report/"
   },
   "howToAdapt": {
     "alreadyIn": "The research work most protected from displacement is the part that requires genuine originality - identifying novel problems, designing experiments that test real unknowns, and interpreting ambiguous results in context of the field. Start using AI tools to accelerate the literature review and initial modeling phases, which frees more time for the creative and judgment-intensive work at the frontier [1]. Over the next year, build depth in AI research itself or in domain-specific applications of machine learning, since those intersections carry both higher demand and stronger protections than generalist computer science research.",

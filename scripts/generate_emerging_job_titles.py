@@ -219,6 +219,8 @@ def main():
     group.add_argument("--all", action="store_true", help="Generate titles for all occupations")
     parser.add_argument("--print-prompts", action="store_true",
                         help="Print all prompts to stdout without calling the API (inline Claude Code workflow)")
+    parser.add_argument("--interactive", action="store_true",
+                        help="Print prompt, read JSON from stdin, save (use with --code)")
     args = parser.parse_args()
 
     os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -252,6 +254,45 @@ def main():
 
     if args.print_prompts:
         print_prompts_for_occupations(occupations, existing)
+        return
+
+    if args.interactive:
+        if not args.code:
+            print("--interactive requires --code")
+            sys.exit(1)
+        occ = occupations[0]
+        code = occ["Code"]
+        if code in existing:
+            print(f"  ✓ {occ['Occupation']} ({code}) — already has titles, skipping")
+            merge()
+            return
+        prompt = PROMPT_TEMPLATE.format(
+            occupation=occ["Occupation"],
+            onet_code=code,
+            sample_titles=occ.get("Sample Job Titles", "").strip() or "(none listed)",
+        )
+        print(f"\n{'='*80}")
+        print(f"── {occ['Occupation']} ({code})")
+        print(f"{'='*80}")
+        print(prompt)
+        print(f"{'='*80}")
+        print(f"\nPaste JSON array of job titles, then Enter + Ctrl-D:")
+        try:
+            text = sys.stdin.read().strip()
+        except KeyboardInterrupt:
+            print("\nAborted.")
+            sys.exit(130)
+        try:
+            new_rows = json.loads(text)
+        except json.JSONDecodeError as e:
+            print(f"  ✗ JSON parse error: {e}")
+            sys.exit(1)
+        if new_rows:
+            append_titles(new_rows)
+            print(f"  ✓ {len(new_rows)} titles added: {[r['job_title'] for r in new_rows]}")
+        else:
+            print("  ✓ 0 titles (O*NET sample titles sufficient)")
+        merge()
         return
 
     generate(occupations, existing)

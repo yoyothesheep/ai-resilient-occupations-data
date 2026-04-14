@@ -4,14 +4,22 @@
   "risks": {
     "body": "AI is changing financial examination methodology rather than threatening the occupation. Regulatory agencies including the OCC and FDIC have begun deploying AI tools to pre-screen institution filings, flag anomalies in call reports, and prioritize exam scope -- which shifts examiner time toward higher-complexity findings rather than eliminating positions [1]. Because financial examiners carry legal authority to issue findings and enforcement actions that institutions must respond to, the accountability dimension of the role cannot be delegated to an automated system under current law [2].",
     "stat": "50%",
-    "statLabel": "potential productivity optimization [2]",
-    "statColor": "#ea580c"
+    "statLabel": "potential productivity optimization",
+    "statColor": "#ea580c",
+    "statSourceName": "Office of the Comptroller of the Currency",
+    "statSourceTitle": "Artificial Intelligence in Banking: A Supervisory Perspective",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://www.occ.gov/publications-and-resources/publications/banker-education/files/ai-banking-supervisory-perspective.pdf"
   },
   "opportunities": {
     "body": "This role has some of the strongest structural protections in the finance cluster: A3=4 (complex regulatory problem-solving) and A4=4 (critical evaluation of financial evidence) reflect work that requires both subject matter expertise and legal authority [1]. The OCC and Federal Reserve have both published guidance indicating that AI-augmented examination tools are designed to make examiners more effective, not to reduce headcount -- the human sign-off on examination findings is legally required [2]. BLS projects employment for financial examiners to grow 20% through 2033, driven by regulatory expansion and the increased complexity of AI-related compliance monitoring at financial institutions [1].",
     "stat": "20%",
-    "statLabel": "future job market expansion growth for financial examiners through 2033 [1]",
-    "statColor": "#5a9a6e"
+    "statLabel": "projected growth for financial examiners",
+    "statColor": "#5a9a6e",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Financial Examiners",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/financial-examiners.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Regulators are increasingly expecting examiners to be fluent with AI-assisted exam tools -- the OCC's SupTech (supervisory technology) initiatives and the Fed's data analytics platforms are the most relevant to get familiar with now [2]. Over the next six months, build depth in AI model risk examination -- validating how financial institutions are using AI in credit decisions, fraud detection, and compliance monitoring is one of the fastest-growing examination specialties and is mandated by SR 11-7 model risk management guidance [3].",
@@ -387,7 +395,7 @@
   "score": 3.3,
   "salary": "$90,400",
   "openings": "5,700",
-  "growth": "+7%",
+  "growth": "+18%",
   "taskData": [
     {
       "task": "Meet with bank leadership",

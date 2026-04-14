@@ -4,7 +4,7 @@
   "score": 59,
   "salary": "$60,370",
   "openings": "47,000",
-  "growth": "+3%",
+  "growth": "+4%",
   "jobTitles": [
     "Account Executive",
     "Account Manager",
@@ -114,12 +114,20 @@
   "risks": {
     "body": "Direct-to-consumer insurance platforms like Lemonade, Policygenius, and embedded insurance at point of sale are compressing the role of the traditional agent in personal lines. McKinsey estimates that personal-lines distribution could see agent headcount decline as carriers shift to digital-first channels [1]. BLS projects just 6% growth for insurance sales agents through 2033, slower than the average for all occupations [2]. The biggest pressure point is simple, standardized products like auto and renters insurance, where comparison tools and AI-driven quoting engines let customers skip the agent entirely.",
     "stat": "37%",
-    "statLabel": "of personal-lines insurance purchases projected to be fully digital by 2025 [4]"
+    "statLabel": "of personal-lines insurance purchases projected to be fully digital by 2025",
+    "statSourceName": "LIMRA",
+    "statSourceTitle": "2024 Insurance Barometer Study",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/"
   },
   "opportunities": {
     "body": "Complex commercial lines, life insurance, and high-net-worth personal coverage still depend heavily on relationship-driven advising that AI tools struggle to replicate. Salesforce's 2024 State of Sales report found that 83% of sales representatives using AI tools reported revenue growth in the prior year, suggesting agents who adopt AI for prospecting and quoting can sell more, not less [3]. LIMRA research shows that the \"advice gap\" in life insurance remains wide: roughly 102 million U.S. adults say they need more life insurance coverage than they have, a demand pool that favors human advisors who can navigate underwriting complexity and emotional buying decisions [4].",
     "stat": "102M",
-    "statLabel": "U.S. adults say they need more life insurance [5]"
+    "statLabel": "U.S. adults say they need more life insurance",
+    "statSourceName": "LIMRA",
+    "statSourceTitle": "2024 Insurance Barometer Study",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI-powered quoting and lead-scoring tools now. Platforms like Salesforce Einstein and carrier-specific CRM integrations can automate routine quote comparisons and flag high-intent prospects, freeing up time for consultative selling [3]. Over the next six months, build deeper expertise in complex product lines (commercial, life, umbrella) where the advisory relationship matters most. These are the areas where AI handles the least: understanding a client's full risk picture, navigating multi-carrier underwriting, and guiding emotionally loaded decisions like life insurance.",

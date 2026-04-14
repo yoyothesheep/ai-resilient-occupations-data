@@ -32,9 +32,7 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-SCORES_CSV       = "data/output/ai_resilience_scores.csv"
-TASK_TABLE       = "data/intermediate/onet_economic_index_task_table.csv"
-CLUSTER_ROLES    = "data/career_clusters/cluster_roles.csv"
+from loaders import load_scores, load_task_table, SCORES_CSV, TASK_TABLE, CLUSTER_ROLES
 CLUSTER_BRANCHES = "data/career_clusters/cluster_branches.csv"
 
 MAX_RELATED      = 6    # max related careers to show per occupation
@@ -57,19 +55,7 @@ STOPWORDS = {
 }
 
 # ── Loaders ───────────────────────────────────────────────────────────────────
-
-def load_scores() -> dict:
-    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
-        return {r["Code"]: r for r in csv.DictReader(f)}
-
-
-def load_task_table() -> dict:
-    table: dict[str, list] = {}
-    with open(TASK_TABLE, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            table.setdefault(row["onet_code"], []).append(row)
-    return table
-
+# load_scores() and load_task_table() imported from loaders.py above.
 
 def load_cluster_data() -> tuple[dict, dict]:
     """

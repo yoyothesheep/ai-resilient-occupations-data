@@ -112,12 +112,20 @@
   "risks": {
     "body": "The two most important tasks in this role, answering customer questions and recommending products, already show automation rates of 37% and 33% respectively. That's significant because those tasks are the core of inside and routine sales work. AI-powered product configurators, chatbots, and CRM-driven recommendation engines are handling a growing share of what used to require a rep on the phone or in an email thread. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with lead qualification and customer communications among the top use cases [1]. The broader pattern: routine order-taking and informational sales calls are increasingly self-service, which compresses demand for reps whose value is primarily transactional.",
     "stat": "81%",
-    "statLabel": "of sales teams using or piloting generative AI [3]"
+    "statLabel": "of sales teams using or piloting generative AI",
+    "statSourceName": "McKinsey & Company",
+    "statSourceTitle": "The future of B2B sales: The big reframe",
+    "statSourceDate": "Feb 2024",
+    "statSourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-b2b-sales-the-big-reframe"
   },
   "opportunities": {
     "body": "The augmentation signal on answering customer questions is 42%, the highest of any task with sufficient data in this role. That means AI is frequently used as a co-pilot rather than a replacement, helping reps pull up specs, pricing history, and competitive comparisons in real time. HubSpot's 2024 State of Sales report found that sales professionals using AI tools save roughly two hours per day on manual tasks like data entry and note-taking, freeing time for relationship-building and complex deal negotiation [2]. The tasks with no AI signal, negotiating contracts, managing retail merchandising relationships, and in-person client work, are structurally harder to automate because they depend on reading a room, building trust over time, and handling ambiguity. Reps who spend most of their time on consultative and relationship-driven selling are in a fundamentally different position than those doing transactional order fulfillment.",
     "stat": "35%",
-    "statLabel": "increase in meetings booked per rep using AI-assisted outreach tools [3]"
+    "statLabel": "increase in meetings booked per rep using AI-assisted outreach tools",
+    "statSourceName": "McKinsey & Company",
+    "statSourceTitle": "The future of B2B sales: The big reframe",
+    "statSourceDate": "Feb 2024",
+    "statSourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-b2b-sales-the-big-reframe"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI tools for pre-call research and proposal drafting now. CRM platforms like Salesforce and HubSpot already embed generative AI for call summaries, email drafts, and deal scoring, and reps who use them report saving roughly two hours a day on administrative work [2]. Over the next six months, focus on deepening consultative selling skills: complex multi-stakeholder negotiations, custom solution design, and in-person relationship management. These are the tasks where AI has no recorded activity and where the structural barriers to automation, reading body language, navigating politics, building trust, are highest.",

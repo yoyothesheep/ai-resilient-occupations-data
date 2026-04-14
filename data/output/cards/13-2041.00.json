@@ -4,7 +4,7 @@
   "score": 34,
   "salary": "$80,970",
   "openings": "3,700",
-  "growth": "-1%",
+  "growth": "-4%",
   "jobTitles": [
     "Analyst",
     "Credit Administrator",
@@ -114,14 +114,22 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "BLS employment projections show credit analyst headcount declining as automated underwriting and machine learning credit models take over the structured portions of the job: financial ratio generation, pattern-based scoring, and standard risk assessments [1]. The WEF Future of Jobs Report names financial analysis roles among the fastest-declining globally, driven by AI and automation performing the data-intensive decision support that defined the occupation [2]. The core vulnerability is at the routine end: straightforward credit decisions on standardized products are increasingly handled without a human analyst in the loop.",
-    "stat": "50%",
-    "statLabel": "potential productivity optimization [2]"
+    "body": "AI underwriting platforms like Zest AI and Upstart now automate credit decisions across consumer and small-business loan categories that previously required analyst review, compressing demand for entry-level credit roles at fintech and digital-first lenders [1]. BLS projects -4% employment decline for credit analysts through 2033, driven by continued automation of routine financial analysis and loan processing [2].",
+    "stat": "-4%",
+    "statLabel": "projected decline in credit analyst employment",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Financial Analysts",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
   },
   "opportunities": {
-    "body": "Complex credit analysis, where the borrower's situation doesn't fit the model, remains human territory. Distressed debt, private credit, project finance, and cross-border lending all involve judgment and negotiation that scoring algorithms are not built for. The CFA credential is recognized as a meaningful differentiator. CFA Institute research shows chartered financial analysts consistently earn above-median compensation in financial services, reflecting market demand for deep quantitative judgment [3]. The AICPA notes the profession is shifting toward advisory and complex analysis as automation handles the routine tier, a pattern that applies directly to credit work [4].",
-    "stat": "X%",
-    "statLabel": "placeholder to pass test [3]"
+    "body": "Complex credit situations, distressed debt, cross-border lending, project finance, and borrowers with non-standard financials, require judgment that automated scoring models are not built for, and carry higher margins precisely because they do [1]. The CFA credential signals the analytical depth required for this tier of work. McKinsey research on financial services AI adoption finds the human role in credit is concentrating in structuring, exception handling, and relationship-intensive deals as AI absorbs volume underwriting [2].",
+    "stat": null,
+    "statLabel": null,
+    "statSourceName": null,
+    "statSourceTitle": null,
+    "statSourceDate": null,
+    "statSourceUrl": null
   },
   "howToAdapt": {
     "alreadyIn": "Focus on the credit analysis work that doesn't fit a standard scorecard: covenant-heavy commercial deals, acquisition financing, distressed situations. These are the cases where your judgment adds value that a model cannot replicate. Use AI-assisted tools for ratio generation and data gathering so more time goes to structuring and client dialogue [4]. Over the next six months, pursue the CFA designation if you haven't started. Level I alone demonstrates quantitative depth and opens doors to roles in private credit, risk management, and institutional lending where the work is less exposed to automation.",
@@ -156,31 +164,17 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Occupational Outlook Handbook: Credit Analysts",
-      "date": "Sep 2024",
-      "url": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
+      "name": "Deloitte Insights",
+      "title": "AI and the Future of Credit Risk Management",
+      "date": "Mar 2024",
+      "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-credit-risk-management.html"
     },
     {
       "id": "src-2",
-      "name": "Thomson Reuters",
-      "title": "2025 Future of Professionals Report",
-      "date": "Jun 2025",
-      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
-    },
-    {
-      "id": "src-3",
-      "name": "CFA Institute",
-      "title": "Value of the CFA Charter",
-      "date": "2025",
-      "url": "https://www.cfainstitute.org/en/programs/cfa"
-    },
-    {
-      "id": "src-4",
-      "name": "CPA.com / AICPA",
-      "title": "CPA.com Issues 2025 AI in Accounting Report",
-      "date": "Jun 2025",
-      "url": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Financial Analysts",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
     }
   ],
   "emergingCareers": [

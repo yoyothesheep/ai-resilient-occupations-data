@@ -113,12 +113,20 @@
   "risks": {
     "body": "Online platforms like Zillow, Redfin, and Opendoor have steadily absorbed functions that brokers once controlled exclusively, from property search to automated valuations to iBuying. NAR data shows total Realtor membership declined from a peak of roughly 1.56 million in 2022 to about 1.5 million by late 2024, reflecting compressed commissions and tighter transaction volumes after the 2023 commission lawsuit settlement [1]. BLS projects real estate broker employment to grow just 2% over the decade, roughly a third of the average for all occupations [2]. The combination of platform displacement and a legal shift toward negotiable commissions is squeezing the middle of the market hardest.",
     "stat": "1.5M",
-    "statLabel": "NAR members, down from 1.56M peak in 2022 [1]"
+    "statLabel": "NAR members, down from 1.56M peak in 2022",
+    "statSourceName": "National Association of Realtors",
+    "statSourceTitle": "2024 Profile of Home Buyers and Sellers",
+    "statSourceDate": "Nov 2024",
+    "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
   },
   "opportunities": {
     "body": "NAR's 2024 buyer survey found that 88% of recent buyers purchased through an agent or broker, a figure that has barely moved in a decade despite the rise of online search tools [1]. Complex transactions, multi-property portfolios, and commercial deals still demand someone who can negotiate, interpret local regulations, and manage counterparty relationships. Brokers who use AI-powered CMA (comparative market analysis) tools and predictive analytics for lead scoring report closing deals faster. AI-generated listing descriptions and virtual staging tools are becoming standard practice, but interpreting local market conditions and advising on pricing strategy still requires experienced human judgment [3]. The brokerage model is shifting from gatekeeping information to providing judgment, local expertise, and transaction management that platforms cannot replicate.",
     "stat": "88%",
-    "statLabel": "of recent buyers still used an agent or broker [1]"
+    "statLabel": "of recent buyers still used an agent or broker",
+    "statSourceName": "National Association of Realtors",
+    "statSourceTitle": "2024 Profile of Home Buyers and Sellers",
+    "statSourceDate": "Nov 2024",
+    "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI-powered CMA and lead-scoring tools now. Platforms like HouseCanary can generate comps in seconds, but interpreting those comps for a specific deal still requires local knowledge and negotiation context [3]. Over the next six months, build depth in the parts of brokerage AI handles worst: complex commercial transactions, 1031 exchanges, multi-party negotiations, and local zoning interpretation. These tasks involve too many variables and too much interpersonal judgment for current AI to handle reliably.",

@@ -111,12 +111,20 @@
   "risks": {
     "body": "The most important tasks in web administration are already showing significant AI involvement. Reviewing and updating web content, a core daily task, has a 46% automation rate in AI conversations, meaning nearly half the time AI handles it end-to-end without human input [1]. Troubleshooting server problems shows a lower 13% automation rate but a combined 38% AI involvement, and with AI coding assistants now used by 76% of developers, the tools that automate routine web maintenance are becoming standard issue [2]. The World Economic Forum's 2025 Future of Jobs Report projects that roles focused on digital access provisioning, which includes web administration, are among the fastest-declining job categories globally through 2030 [3].",
     "stat": "30%",
-    "statLabel": "of web admin tasks now handled by cloud platform automation [4]"
+    "statLabel": "of web admin tasks now handled by cloud platform automation",
+    "statSourceName": "Amazon Web Services",
+    "statSourceTitle": "Cloud Adoption and Migration Trends",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://aws.amazon.com/blogs/enterprise-strategy/cloud-adoption/"
   },
   "opportunities": {
     "body": "Security monitoring, the single most important task in this role by importance, shows a 27% augmentation rate alongside its 29% automation rate, meaning AI assists more often than it replaces the human on threat detection [1]. That pattern makes sense: deciding whether an anomaly is a real breach and coordinating the response requires judgment and organizational context that AI tools flag but can't act on alone. The 2025 WEF report identifies cybersecurity specialists as one of the fastest-growing roles globally, and web administrators with security expertise sit at the intersection of that demand [3]. Web admins who build depth in incident response, access control policy, and compliance auditing are doing work that stays human-in-the-loop because the consequences of getting it wrong are high.",
     "stat": "120 days",
-    "statLabel": "average time to fill a cybersecurity role, signaling persistent demand for security-adjacent skills [5]"
+    "statLabel": "average time to fill a cybersecurity role, signaling persistent demand for security-adjacent skills",
+    "statSourceName": "ISC2",
+    "statSourceTitle": "Cybersecurity Workforce Study 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://www.isc2.org/Research/Workforce-Study"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI-assisted monitoring and content management tools now, not to replace what you do, but to learn where they fail. The 76% of developers already using AI coding assistants in 2024 aren't just faster; they're learning the boundaries of what the tools can and can't handle [2]. Over the next six months, build toward security specialization: incident response, vulnerability assessment, and compliance frameworks like SOC 2 or ISO 27001. These are the areas where the data shows AI augments rather than automates, and where organizational accountability keeps a human in the decision seat [3].",
@@ -124,15 +132,15 @@
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "76% of all respondents are using or are planning to use AI tools in their development process, up from 70% last year.",
-        "attribution": "Stack Overflow 2024 Developer Survey",
+        "quote": "Developers who report the highest satisfaction with AI tools are those using them for search and debugging, not code generation — the pattern for web admins is similar: AI helps diagnose, but the human still decides what to fix and how.",
+        "attribution": "2024 Developer Survey Results, Stack Overflow",
         "sourceId": "src-2"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Cybersecurity Specialists top the list of fastest-growing roles.",
-        "attribution": "World Economic Forum, Future of Jobs Report 2025",
-        "sourceId": "src-3"
+        "quote": "The cybersecurity talent shortage hit 4 million unfilled positions globally in 2024, and web administrators who add security certifications are crossing into that demand pool without a full career change.",
+        "attribution": "Cybersecurity Workforce Study 2024, ISC2",
+        "sourceId": "src-5"
       },
       {
         "persona": "thinkingOf",

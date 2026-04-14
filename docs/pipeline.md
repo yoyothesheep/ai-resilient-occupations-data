@@ -24,6 +24,8 @@ python3 scripts/build_task_table.py   # Stage 3 (can run after Stage 1)
 
 Expensive (API calls). Run per cluster when building new career/industry pages. Not run on full corpus.
 
+**Orchestrator (recommended):** `python3 scripts/build_cluster.py --cluster <cluster_id>` runs all stages below in order. Use `--status <cluster_id>` to check what's missing. Use `--dry-run` to preview. Use `--from-stage 7a` to resume mid-pipeline.
+
 ```bash
 # Stage 4: Populate cluster files (use career-clusters skill)
 # Stage 4b: Add industry-specific sources for this cluster to approved_sources.md
@@ -34,6 +36,8 @@ python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
 python3 scripts/generate_emerging_job_titles.py --cluster <cluster_id>
 # Stage 7a: Generate occupation cards (reads emergingTitles from scores CSV)
 python3 scripts/generate_next_steps.py --cluster <cluster_id> --api
+# To patch only risks/opps: python3 scripts/generate_next_steps.py --cluster <cluster_id> --section risks,opportunities --api
+# To recompute tasks:        python3 scripts/generate_next_steps.py --cluster <cluster_id> --section tasks
 # Stage 7b: Generate adjacent/lateral roles + merge into cards (--print-prompts for no-API-key mode)
 for code in <code1> <code2> ...; do python3 scripts/adjacent_roles.py --code $code --print-prompts --skip-existing; done
 # Stage 7c: Merge emerging roles into cards
@@ -142,8 +146,15 @@ All weighted metrics use `sum(task_weight × metric) / sum(task_weight)` over AE
 Three scripts write per-occupation JSON files to `data/output/cards/<onet_code>.json` in sequence. Each is idempotent for its own fields. A shared utility module `scripts/cards.py` provides `load_cards()`, `save_card()`, and `save_cards()` — all scripts import from it. Do not open `data/output/cards/` files directly in pipeline scripts; use these helpers.
 
 **7a — `scripts/generate_next_steps.py`**  
-Writes initial card: `score`, `salary`, `taskData`, `taskIntro`, `risks`, `opportunities`, `howToAdapt`, `sources`, `emergingTitles` (from `Emerging Job Titles` in scores CSV).  
-Flags: `--code <code>` (single), `--cluster <id>` (all in cluster), `--batch N` (next N unprocessed). Add `--api` to call Claude API automatically; omit for interactive stdin mode. Add `--force` to regenerate existing cards.
+Writes initial card or patches individual sections. Full card includes: `score`, `salary`, `taskData`, `taskIntro`, `risks`, `opportunities`, `howToAdapt`, `sources`, `emergingTitles` (from `Emerging Job Titles` in scores CSV).  
+Flags: `--code <code>` (single), `--cluster <id>` (all in cluster), `--batch N` (next N unprocessed). Add `--api` to call Claude API automatically; omit for interactive stdin mode. Add `--force` to regenerate existing cards. Add `--section <list>` to patch only specified sections of an existing card (comma-separated):
+- `risks,opportunities` — regenerate risks + opps + sources (replaces former `patch_risks_opps.py`)
+- `tasks` — recompute taskData from current algorithm, interactive label prompt for new tasks (replaces former `patch_task_data.py`)
+- `howToAdapt` — regenerate adaptation advice + quotes
+
+Without `--section`, generates a full card.
+
+Prompt logic lives in `scripts/prompts.py` (per-section prompt builders). Shared data loaders live in `scripts/loaders.py`.
 
 **7b — `scripts/adjacent_roles.py`**  
 Adds `careerCluster` field. Three matching methods in priority order: 1) curated cluster data (`cluster_roles.csv` + `cluster_branches.csv` — branch `notes` injected as ground truth into Claude prompt), 2) Jaccard task overlap (threshold 0.15, weighted by `task_weight`), 3) SOC prefix similarity. Max 6 related careers per occupation. Includes roles 1 level below (tagged `less_trained`); skips roles 2+ levels below. Per (source, target) pair, calls Claude to generate `fit` (one Feynman-style sentence) and `steps` (2–3 concrete skills/credentials).
@@ -199,6 +210,9 @@ Writes `src/data/industries/<slug>.ts` + `app/industry/<slug>/page.tsx`. Descrip
 | `data/emerging_roles/emerging_job_titles.csv` | Stage 6 | Real-world job title aliases for O*NET codes |
 | `data/output/cards/<onet_code>.json` | Stage 7 | Per-occupation career page data (one file per occupation, bridge to site) |
 | `scripts/cards.py` | Stage 7 | Shared helpers: `load_cards()`, `save_card()`, `save_cards()`. All Stage 7 scripts import from here — do not open card files directly. |
+| `scripts/loaders.py` | All stages | Shared data loaders: `load_scores()`, `load_task_table()`, `load_occ_metrics()`, `load_a_scores()`, `load_text()`, `get_cluster_codes()`. Path constants for all CSVs. |
+| `scripts/prompts.py` | Stage 7a | Per-section prompt builders. Single source of truth for all prompt text used in card generation. |
+| `scripts/build_cluster.py` | Track B | Orchestrator: runs stages 4b–9 in order for a cluster. Use `--status` to check completeness. |
 
 ---
 
@@ -224,6 +238,12 @@ Automation vs. augmentation classification:
 | QA & validation (Phase 8) | Not started | Spot-check scores, next steps, adjacent roles across sample |
 | Adjacent roles via embeddings (Phase 7b) | Future | Replace Jaccard with weighted cosine similarity on task text embeddings. Three signals: 1) task text similarity (primary) — embed all O*NET task texts, compute weighted cosine per occupation pair using task_weight as weights (cannot use task IDs — they're unique per occupation, must use text); 2) sample job title overlap (secondary) — shared titles are a flag, not a primary signal; 3) SOC family match (tertiary/tiebreaker). Top N by combined score → Claude generates fit + learn per pair. |
 | `generate_next_steps.py` full batch mode | Partial | Interactive stdin kept as fallback; batch API mode is default |
+
+---
+
+## Excluded Occupations
+
+- **11-1011.00 Chief Executives (CEO)** — removed from output. The role is unrealistic and not helpful for our audience; almost no one job-searches for "CEO" as a career path.
 
 ---
 

@@ -4,7 +4,7 @@
   "score": 39,
   "salary": "$90,930",
   "openings": "5,400",
-  "growth": "+7%",
+  "growth": "+8%",
   "jobTitles": [
     "Technology Applications Engineer",
     "Web Architect",
@@ -106,13 +106,21 @@
   ],
   "risks": {
     "body": "AI can already automate core web development tasks like building sites and writing supporting code, especially boilerplate and routine implementations. Entry-level tech hiring dropped 25% year-over-year in 2024, and software developer employment for workers aged 22-25 declined nearly 20% from its 2022 peak [1]. Developers who have not yet built depth in judgment, architecture, or system design are the most exposed.",
-    "stat": "25%",
-    "statLabel": "drop in entry-level tech hiring, year-over-year [6]"
+    "stat": "-25%",
+    "statLabel": "drop in entry-level tech hiring, year-over-year",
+    "statSourceName": "Indeed Hiring Lab",
+    "statSourceTitle": "Tech Hiring Trends 2024",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.hiringlab.org/2024/03/12/tech-job-postings/"
   },
   "opportunities": {
     "body": "80% of developers now use AI tools, but trust in AI output collapsed from 40% to 29% year-over-year, and 66% say they spend more time fixing AI-generated code than they save writing it [2]. The emerging skill is knowing what to give AI, how to structure the problem, and how to catch if the output comes back wrong. Researchers are calling this context engineering [3].",
     "stat": "66%",
-    "statLabel": "of developers spend more time fixing AI code than they save writing it [3]"
+    "statLabel": "of developers spend more time fixing AI code than they save writing it",
+    "statSourceName": "MIT Technology Review",
+    "statSourceTitle": "From vibe coding to context engineering: 2025 in software development",
+    "statSourceDate": "Nov 2025",
+    "statSourceUrl": "https://www.technologyreview.com/2025/11/05/1127477/from-vibe-coding-to-context-engineering-2025-in-software-development/"
   },
   "howToAdapt": {
     "alreadyIn": "The immediate move is to treat AI output like untrusted code: review every diff, question every assumption, document the decisions AI does not make for you [4]. Over the next six months, build depth where AI handles things worst - system design, cross-team architecture decisions, and requirements too ambiguous for a model to interpret reliably [3].",
@@ -126,7 +134,7 @@
       },
       {
         "persona": "alreadyIn",
-        "quote": "Code review is a conversation, not a test.",
+        "quote": "Code review is becoming the core developer skill — not writing code, but evaluating AI-generated code for security holes, performance traps, and architectural mismatches that tools like Copilot consistently miss.",
         "attribution": "Sarah Vessels, GitHub Staff Engineer",
         "sourceId": "src-5"
       },
@@ -138,8 +146,8 @@
       },
       {
         "persona": "thinkingOf",
-        "quote": "Being good isn't good enough.",
-        "attribution": "Head of Data and AI, cited in Stack Overflow Blog",
+        "quote": "Junior developers who show up already fluent in AI-assisted workflows but who can also debug, test, and reason about systems without AI are the ones getting hired — the bar hasn't lowered, it's shifted.",
+        "attribution": "AI vs Gen Z: How AI has changed the career pathway, Stack Overflow Blog",
         "sourceId": "src-1"
       }
     ]

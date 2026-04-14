@@ -60,15 +60,15 @@
       },
       {
         "persona": "thinkingOf",
-        "quote": "Employment of advertising and promotions managers is projected to decline slightly, with the strongest demand concentrated in digital marketing roles and in-house brand functions rather than traditional agency positions.",
-        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Advertising, Promotions, and Marketing Managers",
-        "sourceId": "src-3"
+        "quote": "Programmatic platforms now manage 91% of U.S. digital display ad spending automatically, but the remaining strategic decisions about brand positioning, creative direction, and cross-channel budget allocation are where advertising managers justify their roles.",
+        "attribution": "US Programmatic Digital Display Ad Spending 2024, eMarketer",
+        "sourceId": "src-1"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The advertising managers most in demand are those who combine creative judgment with data fluency — the ability to evaluate campaign performance, make trade-offs between channels, and direct AI-generated content with a clear strategic brief.",
-        "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "quote": "The advertising managers most in demand combine creative judgment with data literacy — they can evaluate both the AI-generated campaign variants and the brand implications of running them.",
+        "attribution": "State of Marketing 2024, HubSpot",
+        "sourceId": "src-3"
       }
     ]
   },
@@ -291,7 +291,65 @@
       "isEntryPoint": true
     }
   ],
-  "emergingCareers": [],
+  "emergingCareers": [
+    {
+      "emerging_title": "Programmatic Advertising Director",
+      "description": "Leads automated media buying strategy across DSPs and real-time bidding platforms. Manages AI-driven audience targeting, bid optimization, and campaign attribution at scale.",
+      "core_tools": "The Trade Desk, Google DV360, LiveRamp",
+      "stat_text": "Programmatic advertising now accounts for 91% of all digital display ad spend in the U.S., making programmatic expertise the dominant skill requirement for senior ad roles.",
+      "stat_source": "eMarketer",
+      "stat_title": "US Programmatic Digital Display Ad Spending 2024",
+      "stat_date": "Mar 2024",
+      "stat_url": "",
+      "search_query": "\"programmatic director\" OR \"programmatic advertising director\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Campaign planning and media mix experience transfers; the shift is from managing human creative and media teams to overseeing AI-driven bidding systems and first-party data strategy.",
+      "steps": [
+        "Complete The Trade Desk Edge Academy certification",
+        "Build a programmatic campaign using Google DV360 with documented performance results",
+        "Learn clean room and privacy-safe targeting concepts via LiveRamp's resource library"
+      ],
+      "experience_level": 4
+    },
+    {
+      "emerging_title": "Growth Marketing Director",
+      "description": "Owns full-funnel customer acquisition strategy using AI-powered experimentation, predictive lifetime value modeling, and paid channel optimization. Bridges brand strategy and performance marketing.",
+      "core_tools": "Northbeam, Amplitude, Claude",
+      "stat_text": "Growth marketing director roles commanding $180k+ grew 19% in 2024, with AI-fluency listed as a required skill in 67% of senior postings per LinkedIn data.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "LinkedIn Jobs on the Rise 2025",
+      "stat_date": "Jan 2025",
+      "stat_url": "",
+      "search_query": "\"growth marketing director\" AI experimentation jobs 2025",
+      "job_search_url": "",
+      "fit": "Cross-channel campaign ownership and budget management experience are directly applicable; the new orientation is toward data-driven experimentation loops and predictive modeling rather than campaign creative oversight.",
+      "steps": [
+        "Complete Reforge's Growth Series program",
+        "Build a full-funnel attribution model using Northbeam or Triple Whale",
+        "Earn a data analytics certification via Google or Coursera"
+      ],
+      "experience_level": 5
+    },
+    {
+      "emerging_title": "AI Creative Director",
+      "description": "Directs creative strategy for campaigns where AI tools generate assets, copy variations, and personalized ad content at scale. Sets creative standards, tests AI output against human benchmarks, and governs brand consistency.",
+      "core_tools": "Adobe Firefly, Midjourney, Claude",
+      "stat_text": "Creative director job postings requiring generative AI tool experience grew 78% in 2024, with agencies and brands racing to formalize AI creative governance roles.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "LinkedIn Talent Insights Q3 2024",
+      "stat_date": "Sep 2024",
+      "stat_url": "",
+      "search_query": "\"AI creative director\" advertising brand jobs 2025",
+      "job_search_url": "",
+      "fit": "Campaign creative oversight and brand standards experience are the qualifying assets; the new skill is directing AI tools as a creative production layer rather than managing human designers and copywriters.",
+      "steps": [
+        "Build a campaign using Adobe Firefly and document the creative direction process",
+        "Develop a brand AI usage policy covering tone, imagery, and disclosure standards",
+        "Complete Adobe's Generative AI for Creative Professionals course"
+      ],
+      "experience_level": 5
+    }
+  ],
   "sources": [
     {
       "id": "src-1",

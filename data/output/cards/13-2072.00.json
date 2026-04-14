@@ -4,7 +4,7 @@
   "score": 56,
   "salary": "$74,180",
   "openings": "20,300",
-  "growth": "+1%",
+  "growth": "+2%",
   "jobTitles": [
     "Branch Manager",
     "Business Banking Officer",
@@ -118,12 +118,20 @@
   "risks": {
     "body": "Automated underwriting systems from Fannie Mae and Freddie Mac already handle the bulk of conforming loan decisions algorithmically, and a 2025 STRATMOR Group survey found 38% of lenders now use some form of AI or machine learning in origination, up from 15% in 2023 [2]. Document classification and indexing, core administrative tasks for loan officers, are being automated at 63% of AI-using lenders [2]. BLS projects slower-than-average employment growth for loan officers (1–2%), reflecting this headcount pressure even as total mortgage volume fluctuates [1].",
     "stat": "38%",
-    "statLabel": "of mortgage lenders now use AI in origination, up from 15% in 2023 [2]"
+    "statLabel": "of mortgage lenders now use AI in origination, up from 15% in 2023",
+    "statSourceName": "STRATMOR Group",
+    "statSourceTitle": "Artificial Intelligence in Mortgage Lending",
+    "statSourceDate": "Nov 2025",
+    "statSourceUrl": "https://www.stratmorgroup.com/artificial-intelligence-in-mortgage-lending/"
   },
   "opportunities": {
     "body": "Loan approval requires a licensed officer under NMLS regulation and carries fiduciary accountability, two barriers that automated systems cannot cross for final decisions. The AEI data shows that the explanation and advisory work is where AI augments rather than replaces: 58% augmentation on explaining loan options means AI helps officers communicate, not substitute for them [3]. Research on the future of financial services professionals consistently finds advisory roles anchored in client relationships more resilient than transactional ones, precisely because trust and compliance accountability cannot be delegated to automated systems [4].",
     "stat": "58%",
-    "statLabel": "AI efficiency gain on explaining loan options to clients [3]"
+    "statLabel": "AI efficiency gain on explaining loan options to clients",
+    "statSourceName": "CPA.com / AICPA",
+    "statSourceTitle": "CPA.com Issues 2025 AI in Accounting Report",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI tools built into your LOS for document processing and application review so that capacity goes to client-facing relationship work. STRATMOR data shows lenders deploying AI inside the workflow, not just adjacent to it, see measurably better throughput [2]. Over the next six months, build depth in purchase mortgage advising and small-business lending, these are the segments where complexity and relationship trust create the most defensible position against automated approval platforms. Renewing NMLS credits in compliance and fair lending is also worth prioritizing as AI raises regulatory scrutiny in lending.",

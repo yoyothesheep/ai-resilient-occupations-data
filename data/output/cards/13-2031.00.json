@@ -5,7 +5,11 @@
     "body": "Budget analysts spend a significant portion of their time on work that AI is already handling well: variance analysis, data aggregation, and report generation. Microsoft Copilot for Finance and similar tools can now produce first-draft budget narratives, flag anomalies, and build scenario models in minutes [1][2]. The broader structural risk is that as FP&A tools become more powerful, organizations will consolidate analyst headcount around a smaller number of higher-judgment roles — business partners and FP&A leads — and reduce the number of dedicated budget analysts required [2].",
     "stat": "43%",
     "statLabel": "of budget analyst tasks have meaningful AI exposure [2]",
-    "statColor": "#ea580c"
+    "statColor": "#ea580c",
+    "statSourceName": "Association for Financial Professionals",
+    "statSourceTitle": "Treasury & Finance in the Age of AI",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.afponline.org/ideas-inspiration/resources/articles/Details/treasury-finance-ai"
   },
   "opportunities": {
     "body": "The protective factors here are institutional knowledge and stakeholder relationships — understanding why a department is over budget requires context that AI cannot learn from a spreadsheet [1]. Analysts who shift from compliance-oriented budget review toward forward-looking scenario planning and business partnership are well-positioned: finance organizations are actively restructuring around FP&A skill sets, and those roles require the data literacy this occupation already provides combined with stronger communication skills [2].",
@@ -272,5 +276,6 @@
         "Earn a project management fundamentals certificate (PMI CAPM or equivalent)"
       ]
     }
-  ]
+  ],
+  "growth": "+1%"
 }

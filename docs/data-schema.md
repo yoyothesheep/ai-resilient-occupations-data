@@ -5,7 +5,7 @@ Defines the structure and purpose of every output file. The CSV is the scoring i
 ## Output file strategy
 
 - **`ai_resilience_scores.csv`** — flat index for sorting, filtering, leaderboards. No long-form text except `key_drivers`.
-- **`data/output/cards/{onet_code}.json`** — one JSON file per occupation (e.g. `11-2011.00.json`). Current production format. Written by `generate_next_steps.py`, `patch_risks_opps.py`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`.
+- **`data/output/cards/{onet_code}.json`** — one JSON file per occupation (e.g. `11-2011.00.json`). Current production format. Written by `generate_next_steps.py`, `generate_next_steps.py --section risks,opportunities`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`.
 - **`data/emerging_roles/emerging_roles.csv`** — AI-era pivot roles. Single source of truth for emerging career suggestions per occupation.
 
 The site never reads the CSV directly. `generate_career_pages.py` reads the per-code JSON cards and scores CSV, then writes `.tsx` files into the site repo.
@@ -43,7 +43,7 @@ The main scoring index. One row per occupation. Used for sorting, filtering, lea
 
 ## 2. `data/output/cards/{onet_code}.json`
 
-One JSON file per occupation (e.g. `data/output/cards/27-3043.00.json`). Written by `generate_next_steps.py` (initial card), then patched by `patch_risks_opps.py`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`. Consumed by `generate_career_pages.py` to produce site `.tsx` files.
+One JSON file per occupation (e.g. `data/output/cards/27-3043.00.json`). Written by `generate_next_steps.py` (initial card), then patched by `generate_next_steps.py --section risks,opportunities`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`. Consumed by `generate_career_pages.py` to produce site `.tsx` files.
 
 ```jsonc
 {
@@ -191,7 +191,7 @@ Single source of truth for AI-era career pivot suggestions per occupation. Writt
 
 ## 4. `data/output/score_log.txt`
 
-Human-readable log written by `score_occupations.py`. One block per occupation. Parsed by `patch_risks_opps.py` and other scripts to extract per-occupation A1–A10 attribute scores, which are not stored in the CSV.
+Human-readable log written by `score_occupations.py`. One block per occupation. Parsed by `generate_next_steps.py --section risks,opportunities` and other scripts to extract per-occupation A1–A10 attribute scores, which are not stored in the CSV.
 
 Format per occupation block:
 ```
@@ -204,7 +204,7 @@ Format per occupation block:
     → final_ranking: 0.61
 ```
 
-Parsed via regex in `load_a_scores()` in `patch_risks_opps.py`.
+Parsed via regex in `load_a_scores()` in `scripts/loaders.py`.
 
 ---
 

@@ -22,9 +22,8 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-CLUSTER_ROLES_CSV = "data/career_clusters/cluster_roles.csv"
+from loaders import load_scores, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
 CLUSTERS_CSV      = "data/career_clusters/clusters.csv"
-SCORES_CSV        = "data/output/ai_resilience_scores.csv"
 SITE_DIR          = "../ai-resilient-occupations-site"
 CAREERS_DATA_DIR  = os.path.join(SITE_DIR, "src/data/careers")
 CAREERS_ROUTE_DIR = os.path.join(SITE_DIR, "app/career")
@@ -48,12 +47,7 @@ def load_cluster_roles() -> dict:
     return roles
 
 
-def load_scores() -> dict:
-    scores = {}
-    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            scores[r["Code"]] = r
-    return scores
+# load_scores() imported from loaders.py above.
 
 
 def load_clusters() -> dict:
@@ -305,6 +299,8 @@ def build_career_cluster(card: dict, cluster_roles: dict, scores: dict) -> str:
             level = 2
         node = dict(ec)
         node["level"] = level
+        if "title" not in node:
+            node["title"] = node.get("emerging_title", "")
         nodes.append(build_cluster_node(node, is_current=False, is_emerging=True))
 
     return "[\n" + ",\n".join(nodes) + "\n  ]"

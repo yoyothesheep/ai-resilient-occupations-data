@@ -4,7 +4,7 @@
   "score": 69,
   "salary": "$171,200",
   "openings": "55,600",
-  "growth": "+7%",
+  "growth": "+15%",
   "jobTitles": [
     "Application Development Director",
     "Computing Services Director",
@@ -114,12 +114,20 @@
   "risks": {
     "body": "As AI handles more of the technical work managed below this role - automated testing, code generation, infrastructure monitoring - IT department headcounts are shrinking, which can create pressure on management layers above them [2]. Consulting with users on computing needs shows 15.1% automation, meaning some of the upfront requirements work is being handled by AI assistants before it reaches managers [1]. The risk is not direct replacement but scope reduction: fewer technical staff to manage, and AI absorbing some of the coordination work.",
     "stat": "38%",
-    "statLabel": "of CIOs plan to reduce IT headcount through AI-driven automation [4]"
+    "statLabel": "of CIOs plan to reduce IT headcount through AI-driven automation",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "2024 Global Technology Leadership Study",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "opportunities": {
     "body": "This role scores a 5 out of 5 on both interpersonal complexity and managing complex human systems - the decisions that move organizations forward involve trade-offs that require reading people and politics, not just processing data [2]. Consulting and vendor coordination work shows 53.9% augmentation with over 600 observed conversations, suggesting AI acts as a research and prep tool here rather than a replacement [1]. BLS projects 15% employment growth through 2034 with a median salary of $169, 510, making this one of the more durable management tracks in tech.",
     "stat": "91%",
-    "statLabel": "of AI initiatives require executive-level coordination to move from pilot to production [4]"
+    "statLabel": "of AI initiatives require executive-level coordination to move from pilot to production",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "2024 Global Technology Leadership Study",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "howToAdapt": {
     "alreadyIn": "The decisions holding up best are the ones requiring organizational judgment - evaluating which AI tools to adopt, managing teams through workflow changes, and owning the security and reliability of systems that run on AI infrastructure. Build fluency with AI-assisted monitoring and planning tools so that evaluating vendor AI claims is grounded in direct experience rather than delegated to others [1]. Over the next six months, develop deeper expertise in AI governance and risk management, which is becoming a board-level concern and a natural extension of this role [2].",

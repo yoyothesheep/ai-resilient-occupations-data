@@ -4,7 +4,7 @@
   "score": 23,
   "salary": "$98,670",
   "openings": "5,500",
-  "growth": "-1%",
+  "growth": "-6%",
   "jobTitles": [
     "Analyst Programmer",
     "Application Programmer Analyst",
@@ -118,13 +118,21 @@
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
     "body": "The core of this job, writing and maintaining code, already shows 33% automation in real AI usage data across over 14,000 observed conversations. Revising and expanding existing programs runs even higher at 36% automation. GitHub's 2024 research found that developers using Copilot completed tasks 55% faster, which means fewer programmer-hours needed per project [1]. BLS projects computer programmer employment to decline 10% from 2023 to 2033, a loss of roughly 12,400 jobs, as companies consolidate programming work into broader software developer roles and offshore routine coding [2].",
-    "stat": "10%",
-    "statLabel": "employment expected to shrink over the next decade [2]"
+    "stat": "-10%",
+    "statLabel": "employment expected to shrink over the next decade",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Computer Programmers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm"
   },
   "opportunities": {
     "body": "The strongest augmentation signal sits in consulting with teams to resolve problems in running programs: 77% augmentation rate across 747 conversations. AI acts as a diagnostic partner here, but the human still drives the fix. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or planning to use AI tools, but only 43% trust the accuracy of the output [3]. That trust gap is where experienced programmers add value: reviewing AI-generated code, catching subtle logic errors, and understanding system context that AI misses. Roles that combine programming skill with domain knowledge, like systems analysis or DevOps, are growing even as pure coding positions shrink.",
     "stat": "17%",
-    "statLabel": "projected growth in software developer roles that programmers can transition into [2]"
+    "statLabel": "projected growth in software developer roles that programmers can transition into",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Computer Programmers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI code-generation tools (GitHub Copilot, Claude, or similar) on real production tasks now, and track where they fail. The 2024 Stack Overflow survey found 43% of developers don't trust AI output accuracy [3], which means the ability to audit, debug, and correct AI-generated code is immediately valuable. Over the next six months, build depth in areas AI handles worst for this role: cross-team troubleshooting, understanding legacy system context, and translating business requirements into technical specs. Those collaborative, context-heavy tasks show the highest augmentation rates and lowest automation rates in the data.",

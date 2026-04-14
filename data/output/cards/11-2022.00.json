@@ -114,12 +114,20 @@
   "risks": {
     "body": "The one task with meaningful AI data, resolving customer complaints, shows a 28% automation rate. That's notable because AI-powered chatbots and CRM tools are already handling front-line complaint triage and routing, reducing the volume of issues that require a manager's direct involvement [1]. Salesforce reports that 81% of sales teams are either experimenting with or have implemented AI, with lead qualification and pipeline forecasting among the most common use cases [2]. As those tools mature, the analytical and reporting side of sales management, reviewing records, projecting sales, tracking profitability, faces real compression. The broader concern isn't job elimination but role thinning: fewer managers needed per sales team when AI handles forecasting, territory optimization, and performance dashboards automatically.",
     "stat": "81%",
-    "statLabel": "of sales teams experimenting with or using AI [1]"
+    "statLabel": "of sales teams experimenting with or using AI",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Sales Managers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/management/sales-managers.htm"
   },
   "opportunities": {
     "body": "The core of this role, directing people, building customer relationships, negotiating complex deals, and coaching teams, has almost no AI footprint. Harvard Business Review found that while AI tools improve customer intelligence and pipeline analytics, closing deals and managing team relationships remain fundamentally human tasks that AI handles poorly [3]. Sales managers who use AI for pipeline analytics and lead scoring report spending more time on strategic selling and team development, not less time working [2]. The management and coordination tasks that dominate this role's core work, staffing, training, cross-department planning, require the kind of contextual judgment and accountability that AI handles poorly.",
     "stat": "66%",
-    "statLabel": "of salespeople say AI improves customer understanding [1]"
+    "statLabel": "of salespeople say AI improves customer understanding",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Sales Managers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/management/sales-managers.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start by getting fluent in the AI tools the sales team is already using or about to adopt. CRM-embedded AI features like Salesforce Einstein or HubSpot's predictive lead scoring are the fastest way to see what the data actually shows versus what reps report anecdotally [2]. Over six months, build depth in the areas AI handles worst: coaching underperformers through slumps, negotiating custom enterprise deals, and reading the political dynamics inside a client's buying committee. These tasks barely register in AI usage data because they require real-time social judgment that no model replicates well.",

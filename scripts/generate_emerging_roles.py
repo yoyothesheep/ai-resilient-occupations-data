@@ -47,9 +47,8 @@ import urllib.request
 import urllib.error
 
 # ── Config ────────────────────────────────────────────────────────────────────
-SCORES_CSV        = "data/output/ai_resilience_scores.csv"
+from loaders import load_scores, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
 EMERGING_CSV      = "data/emerging_roles/emerging_roles.csv"
-CLUSTER_ROLES_CSV = "data/career_clusters/cluster_roles.csv"
 
 MODEL      = "claude-haiku-4-5-20251001"
 MAX_TOKENS = 2048
@@ -78,10 +77,7 @@ def emerging_count(score: float) -> int:
 
 # ── I/O helpers ───────────────────────────────────────────────────────────────
 
-def load_scores() -> dict:
-    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
-        return {r["Code"]: r for r in csv.DictReader(f)}
-
+# load_scores() imported from loaders.py above.
 
 def load_cluster_roles(cluster_id: str) -> list[dict]:
     """Return list of cluster role dicts for the given cluster, ordered by level."""
@@ -280,6 +276,75 @@ For each role, return a JSON object with ALL of these fields:
 
 The {n} roles must span at least 2 different experience_level values.
 Return ONLY a valid JSON array of {n} objects."""
+
+
+def interactive_mode_for_code(source_code: str, scores: dict,
+                              emerging_rows: dict, cards: dict) -> bool:
+    """Print combined prompt for one occupation, read JSON from stdin, save.
+
+    Interactive inline workflow: prints the prompt, reads a JSON array from
+    stdin (paste response + Ctrl-D), validates, and saves to CSV + JSONL.
+    """
+    occ = scores.get(source_code)
+    if not occ:
+        print(f"  ✗ {source_code} not found in scores CSV")
+        return False
+
+    occupation = occ["Occupation"]
+    cluster_row = lookup_cluster_role(source_code)
+    cluster_level = int(cluster_row["level"]) if cluster_row else None
+
+    try:
+        score = float(occ.get("role_resilience_score") or 0)
+    except ValueError:
+        score = 0.0
+    n = emerging_count(score)
+    if n == 0:
+        print(f"  ✓ {occupation} — strong occupation, no emerging roles needed")
+        return True
+
+    existing_card = cards.get(source_code)
+    prompt = build_combined_prompt(occupation, n, cluster_level=cluster_level, card=existing_card)
+
+    print(f"\n{'='*80}")
+    print(f"── {occupation} ({source_code})  level={cluster_level}  → {n} roles needed")
+    print(f"{'='*80}")
+    print(prompt)
+    print(f"{'='*80}")
+    print(f"\nPaste JSON array of {n} emerging roles, then Enter + Ctrl-D:")
+
+    try:
+        text = sys.stdin.read().strip()
+    except KeyboardInterrupt:
+        print("\nAborted.")
+        return False
+
+    try:
+        candidates = json.loads(text)
+    except json.JSONDecodeError as e:
+        print(f"  ✗ JSON parse error: {e}")
+        return False
+
+    if not isinstance(candidates, list):
+        print("  ✗ Expected a JSON array")
+        return False
+
+    emerging_list = []
+    for candidate in candidates[:n]:
+        fit   = candidate.get("fit", "")
+        steps = candidate.get("steps", [])
+        row = _candidate_to_row(source_code, candidate, fit, steps)
+        emerging_rows[(source_code, candidate.get("emerging_title", ""))] = row
+        emerging_list.append(_row_to_output(row))
+
+    if source_code not in cards:
+        cards[source_code] = {"onet_code": source_code}
+    cards[source_code]["emergingCareers"] = emerging_list
+
+    save_emerging_csv(emerging_rows)
+    save_jsonl(cards)
+    print(f"\n  ✓ Saved {len(emerging_list)} emerging roles for {occupation}")
+    return True
 
 
 def print_prompts_for_cluster(cluster_id: str, scores: dict,
@@ -485,7 +550,22 @@ Respond ONLY with the JSON object."""
 
 # ── Candidate → row/output helpers ───────────────────────────────────────────
 
+_BLOCKED_SOURCES = {"gartner", "idc", "forrester", "marketsandmarkets"}
+
+
+def _warn_blocked_source(source_code: str, candidate: dict):
+    """Warn if a generated emerging role cites a blocked source."""
+    combined = (candidate.get("stat_source", "") + " " + candidate.get("stat_url", "")).lower()
+    for blocked in _BLOCKED_SOURCES:
+        if blocked in combined:
+            title = candidate.get("emerging_title", "?")
+            print(f"  ⚠ BLOCKED SOURCE: {source_code} {title} cites {blocked} — "
+                  f"replace with an approved source from docs/approved_sources.md")
+            return
+
+
 def _candidate_to_row(source_code: str, candidate: dict, fit: str, steps: list) -> dict:
+    _warn_blocked_source(source_code, candidate)
     return {
         "onet_code":        source_code,
         "emerging_title":   candidate.get("emerging_title", "Unknown Role"),
@@ -845,6 +925,8 @@ def main():
     parser.add_argument("--print-prompts", action="store_true",
                         help="Print combined prompts to stdout without calling the API "
                              "(inline Claude Code workflow — use with --cluster)")
+    parser.add_argument("--interactive", action="store_true",
+                        help="Print prompt, read JSON from stdin, save (use with --code)")
     args = parser.parse_args()
 
     if not args.code and not args.cluster and not args.all:
@@ -862,6 +944,13 @@ def main():
             sys.exit(1)
         print_prompts_for_cluster(args.cluster, scores, emerging_rows, cards)
         return
+
+    if args.interactive:
+        if not args.code:
+            print("--interactive requires --code")
+            sys.exit(1)
+        success = interactive_mode_for_code(args.code, scores, emerging_rows, cards)
+        sys.exit(0 if success else 1)
 
     try:
         client = anthropic.Anthropic()

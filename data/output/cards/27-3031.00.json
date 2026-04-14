@@ -290,7 +290,65 @@
       ]
     }
   ],
-  "emergingCareers": [],
+  "emergingCareers": [
+    {
+      "emerging_title": "AI Communications Strategist",
+      "description": "Helps organizations communicate AI adoption, model risk, and algorithmic decisions to public and media audiences. Manages narratives around AI-related incidents and builds trust frameworks for AI product launches.",
+      "core_tools": "Claude, Meltwater, Brandwatch",
+      "stat_text": "Corporate communications teams at Fortune 500 companies added AI-focused communications roles at 3x the rate of general PR roles in 2024.",
+      "stat_source": "PRWeek",
+      "stat_title": "State of the PR Industry 2024",
+      "stat_date": "Mar 2024",
+      "stat_url": "",
+      "search_query": "\"AI communications\" OR \"responsible AI communications\" strategist jobs 2025",
+      "job_search_url": "",
+      "fit": "Media relations and crisis communications skills transfer directly; the new domain is AI ethics, model transparency, and stakeholder trust.",
+      "steps": [
+        "Complete MIT Sloan's AI for Leaders online course",
+        "Build a portfolio of AI product launch or incident response case studies",
+        "Follow AI policy publications including WIRED and MIT Technology Review"
+      ],
+      "experience_level": 3
+    },
+    {
+      "emerging_title": "Brand Narrative Strategist",
+      "description": "Develops long-form brand storytelling strategies that differentiate from AI-generated content at scale. Works with editorial and content teams to define voice, authenticity signals, and human-authored content frameworks.",
+      "core_tools": "Claude, Contently, BuzzSumo",
+      "stat_text": "72% of consumers say they can identify AI-generated content and trust human-authored brand stories significantly more, per Edelman's 2024 Trust Barometer.",
+      "stat_source": "Edelman",
+      "stat_title": "2024 Edelman Trust Barometer",
+      "stat_date": "Jan 2024",
+      "stat_url": "https://www.edelman.com/trust/2024/trust-barometer",
+      "search_query": "\"brand narrative\" OR \"content strategy\" human authenticity jobs 2025",
+      "job_search_url": "",
+      "fit": "Storytelling and media pitching skills transfer; the pivot is from reactive press coverage to proactive brand narrative architecture that intentionally signals human judgment and editorial voice.",
+      "steps": [
+        "Build a brand voice audit methodology using 3 client examples",
+        "Complete a content strategy certification via Contently or Copyblogger",
+        "Study narrative differentiation frameworks from Duarte or StoryBrand"
+      ],
+      "experience_level": 3
+    },
+    {
+      "emerging_title": "Crisis and Reputation Intelligence Lead",
+      "description": "Uses AI monitoring tools to detect reputational threats in real time and leads response protocols across social, media, and executive channels. Manages the intersection of automated signal detection and human crisis judgment.",
+      "core_tools": "Meltwater Radarly, Brandwatch, Sprinklr",
+      "stat_text": "Corporate demand for senior crisis communications professionals with AI monitoring platform experience grew 28% in 2024, per LinkedIn Talent Insights.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "LinkedIn Talent Insights Report Q4 2024",
+      "stat_date": "Dec 2024",
+      "stat_url": "",
+      "search_query": "\"reputation intelligence\" OR \"crisis communications\" AI monitoring lead jobs 2025",
+      "job_search_url": "",
+      "fit": "Crisis response and media relations experience is the core asset; the new layer is configuring AI monitoring tools and developing decision trees for when human escalation is required versus automated response.",
+      "steps": [
+        "Get certified in Meltwater or Brandwatch platform operations",
+        "Develop a documented crisis response playbook with AI-trigger thresholds",
+        "Complete PRSA's Crisis Communications Certificate program"
+      ],
+      "experience_level": 4
+    }
+  ],
   "sources": [
     {
       "id": "src-1",

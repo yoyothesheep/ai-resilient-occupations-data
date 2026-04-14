@@ -4,14 +4,22 @@
   "risks": {
     "body": "The analytical core of this role has meaningful AI exposure. Recommending financial products — one of the top tasks by importance — shows a 34.7% automation rate [1]. Market monitoring, another high-weight task, is 37.4% automated [1]. Deloitte found that AI-driven wealth management tools are compressing the number of advisors needed at the lower end of the AUM spectrum, as robo-advisory platforms handle routine portfolio rebalancing and basic planning at scale [2].",
     "stat": "37%",
-    "statLabel": "of financial advisor market monitoring tasks show automation patterns [1]",
-    "statColor": "#ea580c"
+    "statLabel": "of financial advisor market monitoring tasks show automation patterns",
+    "statColor": "#ea580c",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Personal Financial Advisors",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm"
   },
   "opportunities": {
     "body": "The strongest durability signal is in client communication: answering client questions shows a 49.1% augmentation rate [1], the highest of any task in this role — meaning AI is helping advisors be more thorough and responsive, not replacing the conversation. Fiduciary accountability and the CFP credential create structural barriers: the SEC and FINRA require a licensed human in the advisory relationship for most investment decisions [3]. McKinsey research on AI in wealth management found that the highest-value advisors are using AI to expand their client capacity, not reduce it [2].",
-    "stat": "49%",
-    "statLabel": "efficiency gain [1] the highest",
-    "statColor": "#5a9a6e"
+    "stat": "73%",
+    "statLabel": "of investors prefer human advisor for major decisions",
+    "statColor": "#5a9a6e",
+    "statSourceName": "CFP Board",
+    "statSourceTitle": "Consumer Survey on Financial Planning and AI",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://www.cfp.net/knowledge/reports-and-statistics/consumer-research"
   },
   "howToAdapt": {
     "alreadyIn": "Start by integrating an AI planning tool — platforms like eMoney Advisor or MoneyGuidePro now include AI-assisted scenario modeling — to handle routine projection work faster [2]. Over the next six months, invest in the areas AI handles worst for this role: the trust-building conversations, estate planning complexity, and behavioral coaching that require human judgment and licensure. Advisors who can manage more clients with AI support while maintaining personalized service will have a structural advantage [3].",
@@ -291,7 +299,7 @@
   "score": 2.9,
   "salary": "$102,140",
   "openings": "24,100",
-  "growth": "+7%",
+  "growth": "+10%",
   "taskData": [
     {
       "task": "Manage client portfolios",

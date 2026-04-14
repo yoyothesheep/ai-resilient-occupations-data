@@ -4,7 +4,7 @@
   "score": 62,
   "salary": "$112,590",
   "openings": "23,400",
-  "growth": "+7%",
+  "growth": "+34%",
   "jobTitles": [
     "Data Scientist",
     "Machine Learning Engineer",
@@ -109,12 +109,20 @@
   "risks": {
     "body": "Exploratory data analysis, feature engineering, and initial model selection - work that junior data scientists and analysts spend significant time on - are tasks that AI tools now handle reliably and quickly [2]. AutoML platforms and AI-assisted analysis tools are automating the mechanical parts of the data science workflow, which concentrates demand at the senior end of the role where domain expertise and business judgment drive the work. BLS projects 34% employment growth, but hiring patterns suggest that demand is shifting toward data scientists who can translate complex model outputs into organizational decisions, not those who optimize model parameters.",
     "stat": "60%",
-    "statLabel": "of data prep and feature engineering now handled by AutoML tools [4]"
+    "statLabel": "of data prep and feature engineering now handled by AutoML tools",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "State of AI in the Enterprise",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/digital-technology/state-of-ai-in-the-enterprise.html"
   },
   "opportunities": {
     "body": "This role scores a 5 out of 5 on directing AI tools - the highest rating - reflecting that data scientists who use AI to run faster experiments, test more hypotheses, and explore larger datasets are producing more output than those doing the same work manually [2]. Domain expertise in healthcare, finance, climate science, or other specialized fields is what differentiates senior data scientists from AI tools and from each other. BLS projects 34% employment growth through 2034, among the strongest projections for any occupation, driven by organizations needing people who can interpret data model outputs and make consequential decisions based on them.",
     "stat": "23,400",
-    "statLabel": "annual job openings, among the highest of any STEM occupation [2]"
+    "statLabel": "annual job openings, among the highest of any STEM occupation",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Data Scientists",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.bls.gov/ooh/math/data-scientists.htm"
   },
   "howToAdapt": {
     "alreadyIn": "The parts of this role most resistant to displacement are problem formulation and decision translation - identifying which questions are worth asking with data, and communicating what model outputs actually mean for business or research decisions. Build depth in a specific domain (healthcare, finance, climate, operations) so that your value comes from understanding the context of the data, not just the mechanics of the analysis [2]. Over the next six months, get comfortable using AI tools to accelerate the EDA and preprocessing work, which frees more time for the judgment-intensive interpretation and stakeholder communication that AI does not handle well.",

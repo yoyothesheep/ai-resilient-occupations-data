@@ -58,8 +58,8 @@
       },
       {
         "persona": "thinkingOf",
-        "quote": "Employment of advertising, promotions, and marketing managers is projected to grow faster than average — growth is concentrated in digital marketing functions and roles that require coordinating AI-assisted marketing systems with human strategic oversight.",
-        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Advertising, Promotions, and Marketing Managers",
+        "quote": "The highest-performing marketing teams are increasing investment in senior strategic roles even as they cut execution headcount, concentrating decision-making authority in fewer, more capable marketers.",
+        "attribution": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2024, Content Marketing Institute",
         "sourceId": "src-3"
       },
       {
@@ -349,7 +349,65 @@
       ]
     }
   ],
-  "emergingCareers": [],
+  "emergingCareers": [
+    {
+      "emerging_title": "Chief Marketing Technologist",
+      "description": "Owns the marketing technology stack and AI tool evaluation process for a marketing organization. Bridges marketing strategy and engineering to deploy AI-powered personalization, attribution, and automation systems.",
+      "core_tools": "Salesforce Marketing Cloud, HubSpot AI, Claude API",
+      "stat_text": "63% of CMOs now list marketing technology leadership as their top hiring priority, with AI integration experience the key differentiator for senior candidates.",
+      "stat_source": "Gartner",
+      "stat_title": "CMO Spend Survey 2024",
+      "stat_date": "",
+      "stat_url": "",
+      "search_query": "\"chief marketing technologist\" OR \"VP marketing technology\" AI stack jobs 2025",
+      "job_search_url": "",
+      "fit": "Cross-functional marketing leadership and budget ownership transfer directly; the pivot is toward technology architecture decisions and vendor evaluation for an AI-first marketing stack.",
+      "steps": [
+        "Complete a marketing technology certification via MarTech Alliance or Salesforce Trailhead",
+        "Conduct a formal marketing tech stack audit for a current or past employer",
+        "Build familiarity with CDPs and data clean rooms via Segment or LiveRamp documentation"
+      ],
+      "experience_level": 5
+    },
+    {
+      "emerging_title": "VP of AI-Driven Growth",
+      "description": "Leads revenue growth strategy built around AI-powered customer acquisition, retention modeling, and personalization at scale. Owns the P&L for marketing investment and reports to the CMO or CEO.",
+      "core_tools": "Amplitude, Braze, Claude API",
+      "stat_text": "VP-level growth roles with AI strategy scope saw a 24% increase in postings and a 31% salary premium over traditional VP Marketing roles in 2024.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "LinkedIn Jobs on the Rise 2025",
+      "stat_date": "Jan 2025",
+      "stat_url": "",
+      "search_query": "\"VP growth\" AI marketing strategy revenue jobs 2025",
+      "job_search_url": "",
+      "fit": "P&L ownership, cross-functional leadership, and customer lifecycle management experience are the direct qualifications; the new framing is AI-native growth loops rather than traditional campaign-based marketing.",
+      "steps": [
+        "Complete Reforge's Growth Leadership program",
+        "Build a customer LTV model using Amplitude or similar platform",
+        "Study AI personalization architecture via Braze's developer documentation"
+      ],
+      "experience_level": 5
+    },
+    {
+      "emerging_title": "Head of AI Marketing Operations",
+      "description": "Builds and governs the operational systems that enable a marketing org to run AI-assisted campaigns, content, and analytics at scale. Responsible for workflow design, tool standardization, and AI output quality controls.",
+      "core_tools": "HubSpot AI, Zapier, Claude",
+      "stat_text": "Marketing operations roles grew 35% in 2024 as organizations scaled AI-assisted workflows that require dedicated governance and process ownership.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "LinkedIn Workforce Report 2024",
+      "stat_date": "Nov 2024",
+      "stat_url": "",
+      "search_query": "\"marketing operations\" AI director head jobs 2025",
+      "job_search_url": "",
+      "fit": "Marketing org management and cross-team coordination transfer directly; the new scope is process architecture for AI-human workflows, including quality gates, approval chains, and performance measurement for AI-assisted output.",
+      "steps": [
+        "Document an end-to-end AI-assisted campaign workflow with decision points and quality gates",
+        "Complete a marketing operations certification via MOps-Apalooza or MarTech Alliance",
+        "Build a working automation using HubSpot AI or Zapier integrated with a Claude API prompt"
+      ],
+      "experience_level": 5
+    }
+  ],
   "sources": [
     {
       "id": "src-1",

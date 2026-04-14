@@ -4,14 +4,22 @@
   "risks": {
     "body": "Creating debt management plans and budgets, the most important task in this role by weight, shows a 24% automation rate -- AI is beginning to handle the mechanical construction of these plans [1]. Fintech platforms offering automated debt management and budgeting tools (like Tally, Bright, or YNAB's AI features) are capturing some of the lower-complexity counseling volume that previously flowed to nonprofit credit agencies [2]. The CFPB has documented a shift in consumer financial behavior toward digital self-service tools for debt repayment planning, which may reduce demand for entry-level counseling intake work over time [3].",
     "stat": "24%",
-    "statLabel": "efficiency substitution AI is beginning [1]",
-    "statColor": "#ea580c"
+    "statLabel": "efficiency substitution AI is beginning",
+    "statColor": "#ea580c",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Credit Counselors",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/credit-counselors.htm"
   },
   "opportunities": {
     "body": "The strongest durability signal in this role is in client education: explaining financial concepts to clients shows a 79% augmentation rate -- among the highest of any task in the finance cluster -- indicating AI is helping counselors explain complex topics more clearly, not replacing the conversation [1]. Counselors who use AI tools to generate personalized budget projections, debt payoff timelines, and scenario analyses in real time during sessions are providing a service that fully automated apps cannot match [2]. The trust and accountability dimension of credit counseling -- especially for clients navigating bankruptcy, foreclosure, or crisis debt -- requires a licensed human counselor in most regulatory contexts, and the NFCC reports sustained demand for counselors certified in housing and bankruptcy counseling [4].",
     "stat": "79%",
-    "statLabel": "efficiency gain among the highest [1]",
-    "statColor": "#5a9a6e"
+    "statLabel": "efficiency gain among the highest",
+    "statColor": "#5a9a6e",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Credit Counselors",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/credit-counselors.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start integrating AI budget modeling tools -- platforms like Monarch Money's advisor API or eMoney Advisor -- into your client sessions so you can generate live scenarios faster and spend more time on the behavioral side of the conversation [2]. Over the next six months, build depth in the areas AI handles worst: behavioral financial coaching, crisis intervention, and navigating the human complexity of debt situations involving job loss, medical debt, or relationship changes. These require empathy and judgment that automated tools consistently fail at [4].",

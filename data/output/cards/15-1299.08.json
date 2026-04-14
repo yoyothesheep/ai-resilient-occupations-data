@@ -114,12 +114,20 @@
   "risks": {
     "body": "The maintenance and installation side of this role shows real automation pressure. Routine hardware and software maintenance tasks have a 44% automation rate in AI conversations, meaning AI tools are already handling a meaningful share of patching, upgrades, and configuration work without human involvement. Infrastructure-as-code platforms and AI-assisted provisioning tools are accelerating this trend. GitHub's 2024 Octoverse report found that AI-generated code now accounts for a growing share of commits in infrastructure repositories, with Copilot adoption among DevOps and infrastructure engineers rising sharply [1]. The broader systems engineering labor market is projected to grow just 3% over the next decade according to BLS data [2], which is slower than average and suggests muted new-job creation even as existing roles shift.",
     "stat": "77%",
-    "statLabel": "of organizations adopted infrastructure-as-code, automating routine system maintenance [4]"
+    "statLabel": "of organizations adopted infrastructure-as-code, automating routine system maintenance",
+    "statSourceName": "Stack Overflow",
+    "statSourceTitle": "Stack Overflow Developer Survey 2024",
+    "statSourceDate": "May 2024",
+    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "opportunities": {
     "body": "Technical guidance and troubleshooting is the strongest augmentation signal in this role. That task shows a 63% augmentation rate across over 1,500 AI conversations, meaning engineers are using AI as a research and diagnostic partner rather than handing off the work entirely [1]. This pattern fits: designing and debugging complex distributed systems requires contextual judgment that AI assists but can't own. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or plan to use AI tools in their workflow, but only 43% trust AI output for architectural decisions [3]. Systems architecture work, where the role involves evaluating tradeoffs across security, scalability, and cost, scores high on specialized expertise (A9: 3) and AI-direction capability (A10: 5), both durable advantages.",
     "stat": "31,300",
-    "statLabel": "annual job openings across computer systems roles, driven by cloud migration complexity [2]"
+    "statLabel": "annual job openings across computer systems roles, driven by cloud migration complexity",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Computer and Information Technology Occupations",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI coding assistants for infrastructure-as-code reviews and troubleshooting workflows now. The data shows AI is already a strong partner for technical guidance tasks, with a 63% augmentation rate [1]. Over the next six months, build depth in the areas AI handles worst for this role: cross-system architecture tradeoff analysis, security posture evaluation, and stakeholder requirement translation. These tasks involve ambiguity and organizational context that AI tools consistently struggle with.",

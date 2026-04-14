@@ -112,12 +112,20 @@
   "risks": {
     "body": "The product recommendation task, one of the heaviest in the role, already shows a 43% automation rate in AI usage data. AI-powered recommendation engines and conversational shopping assistants are handling a meaningful share of the \"help the customer find what they want\" workflow, which is the core of retail selling. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with customer-facing product guidance among the top use cases [1]. Meanwhile, BLS projects retail salesperson employment to decline 2% over the next decade, a loss of roughly 86,000 positions, as self-checkout, e-commerce, and AI chat tools reduce headcount needs [2].",
     "stat": "85%",
-    "statLabel": "of consumer product searches now start online, not in store [4]"
+    "statLabel": "of consumer product searches now start online, not in store",
+    "statSourceName": "Salesforce",
+    "statSourceTitle": "State of the Connected Customer 2024",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/"
   },
   "opportunities": {
     "body": "Describing merchandise and explaining product use, operation, and care shows a 43% augmentation rate, the highest in the role. This is the consultative, hands-on side of retail selling: demonstrating a product, troubleshooting fit, explaining compatibility. AI can surface specs and comparisons, but the in-person explanation still relies on a human. NRF's 2024 State of Retailing Online report found that retailers investing in AI-assisted clienteling tools see higher average transaction values, because reps spend less time on inventory lookups and more on consultative selling [3]. Answering store and merchandise questions also shows a 29% augmentation rate, suggesting AI is supplementing product knowledge rather than replacing the interaction.",
     "stat": "78%",
-    "statLabel": "of salespeople say AI frees time for selling [3]"
+    "statLabel": "of salespeople say AI frees time for selling",
+    "statSourceName": "National Retail Federation",
+    "statSourceTitle": "State of Retailing Online 2024",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://nrf.com/research-insights/state-retailing-online"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI product-lookup tools (chatbots, internal knowledge bases) to answer routine inventory and spec questions faster, so more floor time goes to hands-on demos and consultative conversations. Over the next six months, build depth in the areas AI handles worst in this role: live product demonstration, fitting and compatibility troubleshooting, and post-sale relationship building. NRF data shows retailers combining AI product-lookup tools with in-person consultative selling see stronger conversion rates than either channel alone [3].",

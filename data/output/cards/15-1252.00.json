@@ -4,7 +4,7 @@
   "score": 62,
   "salary": "$133,080",
   "openings": "115,200",
-  "growth": "+7%",
+  "growth": "+16%",
   "jobTitles": [
     "Application Developer",
     "Application Integration Engineer, Developer",
@@ -113,12 +113,20 @@
   "risks": {
     "body": "Data storage and retrieval work - the kind of database querying, data wrangling, and scripting that junior developers spend significant time on - shows 42.6% automation in over 2, 000 observed conversations, the clearest signal of AI handling real execution work in this role [1]. GitHub Copilot and similar tools are now used by 76% of developers, and entry-level hiring has contracted as AI handles more of the code-to-spec work that once required junior headcount [3].",
     "stat": "76%",
-    "statLabel": "of developers now use or plan to use AI coding tools [3]"
+    "statLabel": "of developers now use or plan to use AI coding tools",
+    "statSourceName": "Stack Overflow",
+    "statSourceTitle": "Stack Overflow Developer Survey 2024",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "opportunities": {
     "body": "Analyzing user needs and software requirements - the most important task with AI data - shows 44% augmentation across 4, 643 conversations, a strong signal that system design and requirements work keeps humans in the loop even as AI assists [1]. This role scores 4 out of 5 on both specialized expertise and directing AI tools, reflecting that the most valuable developer work involves architectural judgment and cross-system thinking that AI augments rather than replaces [2]. BLS projects 17% employment growth through 2034 - 40, 000+ annual openings - concentrated in roles requiring full-system ownership.",
     "stat": "66%",
-    "statLabel": "of developers spend more time reviewing AI code than they save generating it [3]"
+    "statLabel": "of developers spend more time reviewing AI code than they save generating it",
+    "statSourceName": "Stack Overflow",
+    "statSourceTitle": "Stack Overflow Developer Survey 2024",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "howToAdapt": {
     "alreadyIn": "The immediate move is to stop writing boilerplate code manually and start spending that time on the design decisions AI cannot make - system architecture, API contract design, cross-team requirements gathering. Over the next six months, build depth in the areas that show high augmentation rather than automation: requirements analysis, system design tradeoffs, and the stakeholder conversations that determine what gets built [1]. Developers who own the full system - requirements through deployment through operations - are more durable than those who specialize in execution [3].",

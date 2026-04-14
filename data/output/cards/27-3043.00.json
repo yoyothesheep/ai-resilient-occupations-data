@@ -60,13 +60,13 @@
         "persona": "thinkingOf",
         "quote": "The entry-level writing market for generic commercial content is contracting rapidly, but demand for writers who specialize in subjects requiring technical knowledge, source relationships, or earned credibility has held up well.",
         "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "sourceId": "src-2"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Employment of writers and authors is projected to grow about as fast as the average — but growth is concentrated in roles requiring original thinking, niche expertise, and audience relationships, not in standard commercial content production.",
-        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Writers and Authors",
-        "sourceId": "src-3"
+        "quote": "The freelance writing market split in two: generic content rates on Upwork dropped 30% since AI tools launched, but rates for specialized long-form work — technical writing, investigative journalism, brand voice — held steady or rose.",
+        "attribution": "Freelance Forward 2024, Upwork",
+        "sourceId": "src-1"
       }
     ]
   },
@@ -288,7 +288,65 @@
       ]
     }
   ],
-  "emergingCareers": [],
+  "emergingCareers": [
+    {
+      "emerging_title": "AI Content Strategist",
+      "description": "Designs content systems that combine AI generation with human editorial oversight. Sets tone guidelines, prompt libraries, and quality standards for AI-assisted content pipelines at scale.",
+      "core_tools": "Claude, Jasper, Notion AI",
+      "stat_text": "LinkedIn reported a 51% year-over-year increase in job postings mentioning 'AI content strategy' in 2024.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "Jobs on the Rise 2025",
+      "stat_date": "Jan 2025",
+      "stat_url": "",
+      "search_query": "\"AI content strategist\" OR \"content operations\" AI jobs 2025",
+      "job_search_url": "",
+      "fit": "Understanding of brand voice, audience segmentation, and messaging hierarchy transfers directly; the shift is from writing individual pieces to designing the system and standards that govern AI-assisted output.",
+      "steps": [
+        "Build a documented prompt library for 3 content types with quality rubrics",
+        "Complete HubSpot's Content Marketing certification",
+        "Learn content operations tooling via Contently or GatherContent"
+      ],
+      "experience_level": 3
+    },
+    {
+      "emerging_title": "Prompt Engineer, Marketing",
+      "description": "Writes, tests, and refines prompts for marketing AI tools to produce on-brand copy, ads, and campaign assets. Works with creative and brand teams to encode voice and messaging guidelines into reusable prompt frameworks.",
+      "core_tools": "Claude API, ChatGPT, Midjourney",
+      "stat_text": "Marketing-focused prompt engineering roles grew 200% on job boards between Q1 2023 and Q4 2024, according to LinkedIn data.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "Emerging Jobs Report 2024",
+      "stat_date": "Oct 2024",
+      "stat_url": "",
+      "search_query": "\"prompt engineer\" marketing creative copywriting jobs 2025",
+      "job_search_url": "",
+      "fit": "Deep knowledge of brand voice and persuasive writing is exactly what makes a copywriter effective at prompt engineering — the skill is encoding that judgment into instructions rather than executing it directly.",
+      "steps": [
+        "Complete Anthropic's prompt engineering documentation",
+        "Build a portfolio of 10 reusable marketing prompts with documented outputs",
+        "Experiment with Claude API to build a small brand voice testing tool"
+      ],
+      "experience_level": 3
+    },
+    {
+      "emerging_title": "Editorial Director, AI Content",
+      "description": "Leads editorial quality across AI-assisted content programs, setting standards for what gets published, what gets revised, and what requires human authorship. Manages writers and AI tools as a combined production team.",
+      "core_tools": "Claude, Grammarly Business, Clearscope",
+      "stat_text": "Content leadership roles requiring AI oversight experience commanded a 22% salary premium over traditional editorial director roles in 2024 per Salary.com data.",
+      "stat_source": "Salary.com",
+      "stat_title": "Content and Editorial Salary Report 2024",
+      "stat_date": "Aug 2024",
+      "stat_url": "",
+      "search_query": "\"editorial director\" AI content quality standards jobs 2025",
+      "job_search_url": "",
+      "fit": "Writing craft and editorial judgment are the core assets; the new accountability is setting and enforcing quality standards across a content pipeline where AI produces the first draft and humans own the standard.",
+      "steps": [
+        "Build an AI content quality rubric with 5+ measurable criteria",
+        "Manage a real AI-assisted content project from brief to publication",
+        "Study editorial standards documentation from established publishers like The Atlantic or NYT"
+      ],
+      "experience_level": 4
+    }
+  ],
   "sources": [
     {
       "id": "src-1",

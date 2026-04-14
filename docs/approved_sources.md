@@ -177,6 +177,10 @@ These sources feature named professionals discussing how their roles are changin
 
 ---
 
+## Sales & Business Development
+
+
+
 ## Avoid (all domains)
 
 - Gartner, IDC, Forrester, MarketsandMarkets — paywalled, inflated projections, URL rot

@@ -22,9 +22,9 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-CLUSTER_ROLES_CSV = "data/career_clusters/cluster_roles.csv"
+from loaders import load_scores, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
 CLUSTERS_CSV      = "data/career_clusters/clusters.csv"
-SCORES_CSV        = "data/output/ai_resilience_scores.csv"
+CARDS_DIR         = "data/output/cards"
 TONE_GUIDE        = "docs/tone_guide_career_pages.md"
 SITE_DIR          = "../ai-resilient-occupations-site"
 INDUSTRIES_DIR    = os.path.join(SITE_DIR, "src/data/industries")
@@ -54,12 +54,7 @@ def load_cluster_members(cluster_id: str) -> list[dict]:
     return members
 
 
-def load_scores() -> dict:
-    scores = {}
-    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
-        for r in csv.DictReader(f):
-            scores[r["Code"]] = r
-    return scores
+# load_scores() imported from loaders.py above.
 
 
 # ── Slug helpers ──────────────────────────────────────────────────────────────
@@ -271,9 +266,7 @@ def main():
         occ = scores.get(code, {})
         slug = career_slug(code, m["occupation"], scores)
 
-        # Parse growth
-        raw_growth = occ.get("Projected Growth", "")
-        pct = occ.get("Employment Change, 2024-2034", "")
+        # Parse growth — same logic as generate_next_steps.py
         _GROWTH_LABEL_MAP = [
             ("Much faster than average", "+7%"),
             ("Faster than average",      "+5%"),
@@ -282,14 +275,19 @@ def main():
             ("Little or no change",      "0%"),
             ("Decline",                  "-1%"),
         ]
-        try:
-            pct_f = float(pct)
-            rounded = round(pct_f)
-            growth_str = f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
-        except (ValueError, TypeError):
-            growth_str = raw_growth  # keep raw string as fallback
+        growth_raw = occ.get("Employment Change, 2024-2034", "").strip()
+        if growth_raw:
+            try:
+                pct_f = float(growth_raw)
+                rounded = round(pct_f)
+                growth_str = f"+{rounded}%" if rounded > 0 else ("0%" if rounded == 0 else f"{rounded}%")
+            except ValueError:
+                growth_str = "N/A"
+        else:
+            pg = occ.get("Projected Growth", "").strip()
+            growth_str = pg
             for key, label in _GROWTH_LABEL_MAP:
-                if raw_growth.startswith(key):
+                if pg.startswith(key):
                     growth_str = label
                     break
 
@@ -317,13 +315,19 @@ def main():
 
     # Generate description via Claude or inline
     print(f"\nGenerating description for '{cluster_name}' cluster...")
-    try:
-        client = None if args.inline else anthropic.Anthropic()
-        description = generate_description(client, cluster_name, careers, tone_guide, is_inline=args.inline)
+    if args.inline:
+        description = generate_description(None, cluster_name, careers, tone_guide, is_inline=True)
         print(f"  → {description}")
-    except Exception as e:
-        print(f"  ✗ Claude error: {e}")
-        description = f"Compare {cluster_name.lower()} careers by AI resilience score, growth, and career level."
+    else:
+        try:
+            client = anthropic.Anthropic()
+            description = generate_description(client, cluster_name, careers, tone_guide, is_inline=False)
+            print(f"  → {description}")
+        except Exception as e:
+            print(f"  ✗ Claude API error: {e}")
+            print("  Falling back to inline mode...")
+            description = generate_description(None, cluster_name, careers, tone_guide, is_inline=True)
+            print(f"  → {description}")
 
     # Write files
     data_content = generate_data_file(cluster_id, cluster_name, description, careers, const_name)

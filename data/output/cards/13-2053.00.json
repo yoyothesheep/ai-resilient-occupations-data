@@ -3,15 +3,23 @@
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
     "body": "AI has made more documented contact with insurance underwriting than with almost any other financial role. BLS projects employment for insurance underwriters to decline 3% through 2033, and major carriers including Zurich, Allianz, and Prudential have publicly attributed headcount reductions to AI-driven straight-through processing that handles standard personal lines policies without human review [1]. Deloitte found that AI models now handle the majority of auto and home underwriting decisions at leading carriers, with human underwriters increasingly focused on commercial, specialty, and complex accounts [2].",
-    "stat": "3%",
-    "statLabel": "through 2033 and major carriers [1]",
-    "statColor": "#ea580c"
+    "stat": "-3%",
+    "statLabel": "projected decline for insurance underwriters",
+    "statColor": "#ea580c",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Insurance Underwriters",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/insurance-underwriters.htm"
   },
   "opportunities": {
     "body": "The automation pressure is real but concentrated: it is heaviest in personal lines (auto, home, standard life) and lightest in specialty and commercial lines, where risk complexity still requires human judgment [2]. LIMRA research shows that group benefits, excess and surplus (E&S) lines, and large commercial accounts are growing as a share of underwriting activity, and these segments are the least automated [3]. Underwriters who develop expertise in complex commercial risk, cyber liability, or climate-exposed property will be working on accounts that AI models cannot price reliably [3].",
     "stat": "50%",
-    "statLabel": "potential productivity optimization [2]",
-    "statColor": "#5a9a6e"
+    "statLabel": "potential productivity optimization",
+    "statColor": "#5a9a6e",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "AI in Insurance Underwriting: The Human-Machine Balance",
+    "statSourceDate": "Mar 2024",
+    "statSourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-insurance-underwriting.html"
   },
   "howToAdapt": {
     "alreadyIn": "The most direct near-term move is to shift your focus toward complex commercial, specialty, or E&S lines if you are currently in personal lines -- those segments are growing relative to standard lines, and they are where human judgment still drives decisions [2]. Over the next six months, build familiarity with the AI-driven underwriting platforms your firm uses (applied AI systems like Attune, Bold Penguin, or similar tools) so you understand what they can and cannot evaluate. Underwriters who can override or augment AI decisions credibly -- explaining why a nonstandard account warrants approval -- are in a structurally different position from those who just process volume [3].",
@@ -281,7 +289,7 @@
   "score": 2.4,
   "salary": "$79,880",
   "openings": "8,200",
-  "growth": "-1%",
+  "growth": "-3%",
   "taskData": [
     {
       "task": "Assess risk documents",

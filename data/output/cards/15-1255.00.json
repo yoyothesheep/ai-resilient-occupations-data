@@ -107,13 +107,21 @@
   ],
   "risks": {
     "body": "AEI task data shows that core deliverables for this role - building and maintaining websites and developing style guidelines - face automation rates of 41-45%, meaning a meaningful share of routine production work can now be generated without a designer in the loop [1]. Generative design tools are compressing the time required to produce initial wireframes, style sheets, and basic UI components, which tends to reduce the number of junior and mid-level seats needed per project. BLS projects only 9,100 annual openings against a field that has grown quickly, leaving the entry-level job market tighter than the headline +8% growth rate suggests [2].",
-    "stat": "25%",
-    "statLabel": "drop in entry-level web design job postings year-over-year [4]"
+    "stat": "-25%",
+    "statLabel": "drop in entry-level web design job postings year-over-year",
+    "statSourceName": "Indeed Hiring Lab",
+    "statSourceTitle": "Tech Hiring Trends 2024",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.hiringlab.org/2024/03/12/tech-job-postings/"
   },
   "opportunities": {
     "body": "The strongest durability signal for this role is collaboration: tasks involving working with management on strategy and coordinating with development teams show augmentation rates above 36%, meaning AI assists rather than replaces the judgment calls that happen at the intersection of business goals and user needs [1]. Designers who own the brief - conducting user research, interpreting stakeholder feedback, and setting accessibility standards - are doing work that requires contextual reasoning and accountability that AI tools still handle poorly. The Stack Overflow 2024 Developer Survey found that 63% of developers cite 'AI tools lack context of codebase' as a key obstacle, a gap that a designer with deep product knowledge can fill [3].",
     "stat": "60%",
-    "statLabel": "of developers cite design-to-dev handoff as their top friction point [5]"
+    "statLabel": "of developers cite design-to-dev handoff as their top friction point",
+    "statSourceName": "Figma",
+    "statSourceTitle": "Bridging the gap between design and code",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.figma.com/reports/bridging-design-and-code/"
   },
   "howToAdapt": {
     "alreadyIn": "The immediate priority is shifting time toward the tasks AI cannot compress: user research sessions, accessibility audits, and cross-functional facilitation. Learning to use AI generation tools (Figma AI, Midjourney, v0) as a starting point rather than a finishing line - then critically editing and validating output against real user data - is the difference between being replaced by the tools and directing them. Over six months, building depth in design systems governance and component documentation creates a track record that is harder to replicate with prompts alone. Roles that bridge design and engineering, such as design technologist or product designer with front-end fluency, are holding up better in hiring than pure visual production roles.",

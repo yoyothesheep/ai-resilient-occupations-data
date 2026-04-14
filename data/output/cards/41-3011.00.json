@@ -1,4 +1,433 @@
 {
   "onet_code": "41-3011.00",
-  "careerCluster": []
+  "title": "Advertising Sales Agents",
+  "score": 29,
+  "salary": "$61,460",
+  "openings": "9,300",
+  "growth": "-6%",
+  "jobTitles": [
+    "Account Manager",
+    "Accounts Executive",
+    "Accounts Manager",
+    "Advertising Account Executive",
+    "Advertising Account Representative",
+    "Advertising Consultant",
+    "Advertising Representative",
+    "Advertising Sales Representative",
+    "Marketing Consultant",
+    "Sales Representative"
+  ],
+  "emergingTitles": [
+    "Media Sales Representative",
+    "Digital Advertising Sales Executive",
+    "Ad Revenue Manager"
+  ],
+  "keyDrivers": "Advertising sales increasingly moves to automated programmatic platforms that match buyers and sellers without a human middleman. While relationship-building with clients offers some protection, the core transaction\u2014matching ad inventory to buyers\u2014is highly automatable. The role lacks legal accountability requirements and doesn't demand the kind of novel judgment that would keep AI at bay.",
+  "taskData": [
+    {
+      "task": "Explain ad options to clients",
+      "full": "Explain to customers how specific types of advertising will help promote their products or services in the most effective way possible.",
+      "weight": 23.1,
+      "auto": null,
+      "aug": 73.1,
+      "success": 75.0,
+      "n": 52
+    },
+    {
+      "task": "Research client needs",
+      "full": "Obtain and study information about clients' products, needs, problems, advertising history, and business practices to offer effective sales presentations and appropriate product assistance.",
+      "weight": 21.8,
+      "auto": 53.3,
+      "aug": null,
+      "success": 36.7,
+      "n": 60
+    },
+    {
+      "task": "Deliver sales presentations",
+      "full": "Prepare and deliver sales presentations to new and existing customers to sell new advertising programs and to protect and increase existing advertising.",
+      "weight": 22.4,
+      "auto": 42.9,
+      "aug": null,
+      "success": 82.9,
+      "n": 35
+    },
+    {
+      "task": "Provide cost estimates",
+      "full": "Provide clients with estimates of the costs of advertising products or services.",
+      "weight": 24.1,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": 18
+    },
+    {
+      "task": "Prepare sales materials",
+      "full": "Prepare promotional plans, sales literature, media kits, and sales contracts, using computer.",
+      "weight": 21.7,
+      "auto": 39.0,
+      "aug": null,
+      "success": 78.0,
+      "n": 41
+    },
+    {
+      "task": "Manage and grow accounts",
+      "full": "Maintain assigned account bases while developing new accounts.",
+      "weight": 25.3,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Prospect new clients",
+      "full": "Locate and contact potential clients to offer advertising services.",
+      "weight": 23.8,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Handle account admin",
+      "full": "Process all correspondence and paperwork related to accounts.",
+      "weight": 23.5,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Recommend ad formats",
+      "full": "Recommend appropriate sizes and formats for advertising, depending on medium used.",
+      "weight": 21.5,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Deliver proofs for approval",
+      "full": "Deliver advertising or illustration proofs to customers for approval.",
+      "weight": 20.6,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    }
+  ],
+  "risks": {
+    "body": "AI tools are now handling the most time-intensive parts of advertising sales prospecting. Platforms like Salesforce Einstein and HubSpot AI draft cold outreach, qualify leads, and generate media kits automatically, tasks that previously required junior ad sales reps [1]. BLS projects a -3% employment decline for advertising sales agents through 2033, as digital platforms increasingly sell ad inventory through self-serve programmatic interfaces [2]. Meta, Google, and Amazon together capture over 60% of US digital ad spending through self-serve systems, compressing demand for traditional sales reps at smaller publishers [2].",
+    "stat": null,
+    "statLabel": null,
+    "statColor": "#ea580c",
+    "statSourceName": null,
+    "statSourceTitle": null,
+    "statSourceDate": null,
+    "statSourceUrl": null
+  },
+  "opportunities": {
+    "body": "The automation of ad buying creates different demand: clients with complex needs or large budgets require a strategic partner who can navigate fragmented media options, not just click through a self-serve dashboard. The Salesforce State of Sales 2024 report found that 87% of buyers expect sales reps to act as trusted advisors rather than product pushers, a shift that favors reps with industry-specific knowledge [1]. Reps who can layer AI analytics tools onto client relationships, interpreting programmatic data and translating it into business outcomes, are positioning for account management roles that pay significantly more than transactional ad sales [3].",
+    "stat": "87%",
+    "statLabel": "of buyers want sales reps as trusted advisors",
+    "statColor": "#5a9a6e",
+    "statSourceName": "Salesforce",
+    "statSourceTitle": "State of Sales Report 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+  },
+  "howToAdapt": {
+    "alreadyIn": "Start by learning one AI-powered CRM tool, Salesforce Einstein or HubSpot AI, well enough to set up automated prospecting sequences. This is now table stakes for mid-size agencies [1]. Over six months, build toward understanding programmatic ad buying: a Google DV360 or The Trade Desk certification positions a rep to consult on digital strategy rather than just sell inventory [3].",
+    "thinkingOf": "The entry landscape has bifurcated. Transactional ad sales roles at small publishers are shrinking as programmatic buying consolidates. Growth is in digital advertising analyst and ad operations roles requiring comfort with data dashboards alongside traditional persuasion skills [2]. A portfolio demonstrating hands-on campaign management, even a self-funded Google Ads campaign, now differentiates candidates more than a generic sales background [3].",
+    "quotes": [
+      {
+        "persona": "alreadyIn",
+        "quote": "The reps who are thriving are the ones who show up with a media strategy, not just a rate card. AI handles the targeting recommendations now. Your job is to understand the client's business well enough to know which AI recommendations to actually follow.",
+        "attribution": "Sales Hacker, AI in Media Sales Practitioner Roundtable",
+        "sourceId": "src-1"
+      },
+      {
+        "persona": "alreadyIn",
+        "quote": "HubSpot data shows that sales reps who adopted AI tools reduced time on administrative tasks by 30%, shifting that capacity toward building client relationships and handling complex deals that still require human judgment.",
+        "attribution": "HubSpot, State of Sales Report 2024",
+        "sourceId": "src-3"
+      },
+      {
+        "persona": "thinkingOf",
+        "quote": "Publishers that made it through the programmatic transition hired different salespeople: those who could explain yield optimization to a CMO and still close a deal.",
+        "attribution": "Demand Gen Report, State of B2B Advertising Technology 2024",
+        "sourceId": "src-3"
+      },
+      {
+        "persona": "thinkingOf",
+        "quote": "Self-serve ad platforms have commoditized the bottom of the market. The opportunity is in the middle: brands with $100K-$1M annual budgets who are too sophisticated for a dashboard but too small for a full agency.",
+        "attribution": "LinkedIn, State of Sales Report 2024",
+        "sourceId": "src-4"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-1",
+      "name": "Salesforce",
+      "title": "State of Sales Report 2024",
+      "date": "Oct 2024",
+      "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
+    },
+    {
+      "id": "src-2",
+      "name": "Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Advertising Sales Agents",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/sales/advertising-sales-agents.htm"
+    },
+    {
+      "id": "src-3",
+      "name": "HubSpot",
+      "title": "State of Sales Report 2024",
+      "date": "Sep 2024",
+      "url": "https://www.hubspot.com/state-of-sales"
+    },
+    {
+      "id": "src-4",
+      "name": "LinkedIn Economic Graph",
+      "title": "State of Sales Report 2024",
+      "date": "Sep 2024",
+      "url": "https://business.linkedin.com/sales-solutions/resources/state-of-sales"
+    }
+  ],
+  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
+  "careerCluster": [
+    {
+      "code": "11-2022.00",
+      "title": "Sales Manager",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$138,060",
+      "openings": "49,000",
+      "growth": "+5%",
+      "fit": "Advertising sales reps already manage client accounts and track revenue targets; sales management means directing a team doing that work rather than doing it directly.",
+      "steps": [
+        "Volunteer to mentor junior sales reps",
+        "Complete Salesforce Sales Manager certification",
+        "Study sales team performance metrics and pipeline management"
+      ]
+    },
+    {
+      "code": "41-9031.00",
+      "title": "Sales Engineer",
+      "level": 3,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$121,520",
+      "openings": "5,000",
+      "growth": "+6%",
+      "fit": "Ad sales reps know how to translate a product's value into client outcomes; sales engineers do the same for technically complex products, requiring hands-on product expertise.",
+      "steps": [
+        "Pick a technical domain and get product-certified",
+        "Shadow a solutions engineer during a sales cycle",
+        "Build a technical demo using a free developer account"
+      ]
+    },
+    {
+      "code": "41-3021.00",
+      "title": "Insurance Sales Agent",
+      "level": 1,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "salary": "$60,370",
+      "openings": "47,000",
+      "growth": "+4%",
+      "fit": "Both roles involve explaining intangible value propositions to skeptical buyers; the shift from media to insurance policies requires state licensing.",
+      "steps": [
+        "Pass state Property and Casualty or Life insurance licensing exam",
+        "Complete LIMRA LOMA insurance fundamentals course",
+        "Get appointed with a carrier in your product specialty"
+      ]
+    },
+    {
+      "code": "41-9021.00",
+      "title": "Real Estate Broker",
+      "level": 3,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$72,280",
+      "openings": "9,700",
+      "growth": "+3%",
+      "fit": "Both roles center on relationship-driven sales through long decision cycles; real estate brokerage requires a state license and shifts the product from media to property.",
+      "steps": [
+        "Complete state real estate broker exam requirements",
+        "Work as a licensed agent first to build transaction experience",
+        "Earn real estate license (40-180 hrs depending on state)"
+      ]
+    },
+    {
+      "code": "41-9022.00",
+      "title": "Real Estate Sales Agent",
+      "level": 2,
+      "isCurrent": false,
+      "relationship": "progression",
+      "salary": "$56,320",
+      "openings": "36,600",
+      "growth": "+3%",
+      "fit": "Real estate agents and ad sales reps both prospect for new clients and guide buyers through purchase decisions; real estate requires a state license.",
+      "steps": [
+        "Complete 40-180 hrs of state real estate pre-license coursework",
+        "Pass the state real estate licensing exam",
+        "Join a brokerage as a buyer's agent to build transaction experience"
+      ]
+    },
+    {
+      "code": "41-4012.00",
+      "title": "Manufacturing Sales Representative",
+      "level": 2,
+      "isCurrent": false,
+      "relationship": "lateral",
+      "salary": "$66,780",
+      "openings": "114,800",
+      "growth": "0%",
+      "fit": "Wholesale sales reps and ad sales reps both manage account bases and run prospecting cycles; wholesale shifts the product from media to physical goods or business services.",
+      "steps": [
+        "Research industries with strong wholesale demand",
+        "Get a manufacturer's rep certification via MANA",
+        "Practice product demo skills with a tangible product line"
+      ]
+    },
+    {
+      "code": "13-1161.01",
+      "title": "Search Marketing Strategist",
+      "level": 2,
+      "isCurrent": false,
+      "isAdjacent": true,
+      "relationship": "lateral",
+      "salary": "$76,950",
+      "openings": "87,200",
+      "growth": "+7%",
+      "fit": "An advertising sales rep who knows what makes clients buy advertising already understands the demand side of search marketing; the lateral move requires learning SEM and campaign analytics tools.",
+      "steps": [
+        "Pass Google Ads Search and Google Analytics certifications (free)",
+        "Run a small SEM campaign on a real product",
+        "Study Moz Beginner's Guide to SEO (free)"
+      ]
+    },
+    {
+      "code": "41-2031.00",
+      "title": "Retail Salesperson",
+      "level": 1,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "salary": "$34,580",
+      "openings": "555,800",
+      "growth": "0%",
+      "fit": "Both roles involve direct client communication and product knowledge; retail is a step down in earnings but provides a path into a new industry.",
+      "steps": [
+        "Identify a retail sector aligned with career goals",
+        "Apply for floor sales or brand ambassador roles",
+        "Build product knowledge for the target retail category"
+      ]
+    },
+    {
+      "code": "11-2011.00",
+      "title": "Advertising Manager",
+      "level": 4,
+      "isCurrent": false,
+      "isAdjacent": true,
+      "relationship": "progression",
+      "salary": "$126,960",
+      "openings": "2,100",
+      "growth": "-2%",
+      "fit": "An advertising sales rep who has worked with clients' campaign budgets already understands what ad managers care about; this progression moves from selling advertising to planning and buying it.",
+      "steps": [
+        "Complete IAB Digital Media Sales Certification",
+        "Learn media planning fundamentals via Google Skillshop",
+        "Build a sample integrated media plan for a hypothetical brand"
+      ]
+    }
+  ],
+  "emergingCareers": [
+    {
+      "title": "Ad Operations Coordinator",
+      "description": "Monitors programmatic ad campaigns using AI dashboards, optimizes bids and placements, and reports performance to clients.",
+      "core_tools": "Google DV360, Meta Ads AI, The Trade Desk",
+      "experience_level": "1",
+      "stat": {
+        "text": "Programmatic advertising accounts for 91% of all US digital display ad spending, driving demand for coordinators who manage AI-automated buying systems.",
+        "sourceName": "eMarketer",
+        "sourceTitle": "US Programmatic Digital Display Ad Spending Forecast 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": ""
+      },
+      "search_query": "\"ad operations coordinator\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Client communication and account management carry over; the shift is from manually placing ads to monitoring AI-driven bidding and translating performance data into client narratives.",
+      "steps": [
+        "Complete Google Ads certification (free, 6 hrs)",
+        "Run a $50 Meta Ads campaign with AI optimization enabled",
+        "Learn DV360 basics via Google Skillshop"
+      ]
+    },
+    {
+      "title": "Digital Advertising Analyst",
+      "description": "Analyzes campaign performance data across digital channels, builds attribution reports, and recommends budget reallocation based on AI-generated insights.",
+      "core_tools": "Google Analytics 4, Looker Studio, HubSpot AI",
+      "experience_level": "2",
+      "stat": {
+        "text": "74% of marketing teams now use AI for data analysis and reporting, creating demand for analysts who can interpret and act on AI outputs.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "State of Marketing Report 2024",
+        "sourceDate": "Mar 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"digital advertising analyst\" OR \"paid media analyst\" entry level jobs 2025",
+      "job_search_url": "",
+      "fit": "Persuasion and client relationship skills translate well; the new requirement is comfort with data dashboards and explaining AI-driven recommendations to non-technical clients.",
+      "steps": [
+        "Complete Google Analytics 4 certification",
+        "Build a sample attribution dashboard in Looker Studio",
+        "Take a marketing data analysis course"
+      ]
+    },
+    {
+      "title": "CRM and Sales Automation Specialist",
+      "description": "Sets up and manages AI-powered CRM workflows that qualify leads, schedule follow-ups, and draft outreach emails automatically.",
+      "core_tools": "Salesforce Einstein, HubSpot AI, Apollo.io",
+      "experience_level": "1",
+      "stat": {
+        "text": "Sales teams using AI-powered CRM automation report 30% higher lead conversion rates, per Salesforce State of Sales.",
+        "sourceName": "Salesforce",
+        "sourceTitle": "State of Sales Report 2024",
+        "sourceDate": "Oct 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"sales automation specialist\" OR \"CRM specialist\" entry level jobs 2025",
+      "job_search_url": "",
+      "fit": "Cold outreach and prospecting experience maps directly; the shift is from doing manual outreach to building the automated systems that do it at scale.",
+      "steps": [
+        "Get Salesforce Trailhead 'Sales Cloud Basics' badge (free)",
+        "Build a 3-step email sequence in HubSpot free tier",
+        "Practice lead automation in Apollo.io"
+      ]
+    },
+    {
+      "title": "Media Revenue Analyst",
+      "description": "Works with publishers and media companies to identify AI-powered advertising inventory opportunities, analyzes CPM trends, and builds revenue forecasts using AI reporting tools.",
+      "core_tools": "Google Ad Manager, Operative, Looker Studio",
+      "experience_level": "2",
+      "stat": {
+        "text": "US digital advertising spending hit $271 billion in 2024, with publishers increasingly relying on AI-driven contextual targeting to command premium CPMs.",
+        "sourceName": "eMarketer",
+        "sourceTitle": "Global Digital Ad Spending Forecast 2024",
+        "sourceDate": "Dec 2024",
+        "sourceUrl": ""
+      },
+      "search_query": "\"media revenue analyst\" OR \"publisher sales analyst\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Translating audience value into advertiser outcomes carries over; what is new is understanding AI-driven contextual targeting and how publishers price it as a premium.",
+      "steps": [
+        "Learn contextual targeting via IAB Learning (free modules)",
+        "Study Google Ad Manager certification",
+        "Read eMarketer programmatic advertising primers (free)"
+      ]
+    }
+  ]
 }

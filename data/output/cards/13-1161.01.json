@@ -292,7 +292,65 @@
       "isEntryPoint": true
     }
   ],
-  "emergingCareers": [],
+  "emergingCareers": [
+    {
+      "emerging_title": "AI Search Optimization Specialist",
+      "description": "Optimizes content and campaigns for AI-powered search experiences including Google AI Overviews and Bing Copilot. Develops strategies for zero-click search environments where traditional ranking signals are shifting.",
+      "core_tools": "Google Search Console, Semrush Copilot, ChatGPT",
+      "stat_text": "Google's AI Overviews now appear in over 25% of U.S. search queries, fundamentally changing how marketers must approach organic visibility.",
+      "stat_source": "SparkToro",
+      "stat_title": "AI Overviews & Zero-Click Search: 2024 Data",
+      "stat_date": "Nov 2024",
+      "stat_url": "",
+      "search_query": "\"AI search optimization\" OR \"SGE specialist\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Keyword and campaign expertise transfers directly, but the shift is from ranking pages to influencing AI-generated answers through structured content and entity optimization.",
+      "steps": [
+        "Complete Google's AI-Powered Performance Ads certification",
+        "Build a portfolio of AI Overview optimization case studies",
+        "Learn structured data markup via Schema.org documentation"
+      ],
+      "experience_level": 2
+    },
+    {
+      "emerging_title": "Performance Marketing Analyst",
+      "description": "Uses AI-powered analytics platforms to attribute revenue across channels and model campaign ROI. Translates data into budget allocation recommendations for marketing leadership.",
+      "core_tools": "Northbeam, Triple Whale, Google Analytics 4",
+      "stat_text": "Demand for marketing analysts with data attribution skills grew 34% year-over-year on LinkedIn in 2024.",
+      "stat_source": "LinkedIn Economic Graph",
+      "stat_title": "Jobs on the Rise 2025",
+      "stat_date": "Jan 2025",
+      "stat_url": "",
+      "search_query": "\"performance marketing analyst\" AI attribution jobs 2025",
+      "job_search_url": "",
+      "fit": "Campaign measurement and A/B testing experience carries over directly; the new requirement is comfort with multi-touch attribution modeling and predictive budget tools.",
+      "steps": [
+        "Earn Google Analytics 4 certification",
+        "Complete a Triple Whale or Northbeam platform training",
+        "Build a attribution model comparison project using real campaign data"
+      ],
+      "experience_level": 3
+    },
+    {
+      "emerging_title": "Conversational Marketing Strategist",
+      "description": "Designs and optimizes AI chatbot and voice assistant flows for lead generation and customer acquisition. Works at the intersection of paid media, CRM, and conversational AI platforms.",
+      "core_tools": "Drift, Intercom, Claude API",
+      "stat_text": "The conversational marketing platform market is projected to reach $49.9 billion by 2030, with demand for specialists outpacing supply.",
+      "stat_source": "Grand View Research",
+      "stat_title": "Conversational AI Market Report 2024",
+      "stat_date": "",
+      "stat_url": "",
+      "search_query": "\"conversational marketing\" chatbot strategist jobs 2025",
+      "job_search_url": "",
+      "fit": "Understanding of funnel stages and conversion optimization transfers directly; the new skill is designing dialogue flows and prompt engineering for lead qualification bots.",
+      "steps": [
+        "Complete HubSpot's Conversational Marketing certification",
+        "Build a working lead-gen chatbot using Intercom or Drift",
+        "Learn prompt engineering basics via Anthropic's documentation"
+      ],
+      "experience_level": 3
+    }
+  ],
   "sources": [
     {
       "id": "src-1",

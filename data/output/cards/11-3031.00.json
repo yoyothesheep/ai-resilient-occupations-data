@@ -4,14 +4,22 @@
   "risks": {
     "body": "The analytical core of financial management is under real automation pressure. Developing and analyzing financial status information -- a top task by weight -- shows a 52% automation rate in AI usage data [1]. McKinsey estimates that AI can automate 60 to 70% of the time finance teams currently spend on data processing, analysis, and reporting, compressing the analyst and associate headcount that financial managers traditionally oversee [2]. This means fewer subordinates to manage and more pressure on financial managers to personally own the judgment and strategy work that AI cannot handle.",
     "stat": "52%",
-    "statLabel": "efficiency substitution in AI usage [1]",
-    "statColor": "#ea580c"
+    "statLabel": "efficiency substitution in AI usage",
+    "statColor": "#ea580c",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Financial Managers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/management/financial-managers.htm"
   },
   "opportunities": {
     "body": "The durability of this role comes from its highest-weighted work: establishing and maintaining customer and business relationships, directing branch or department activities, and making final credit and loan decisions [1]. These require the combination of accountability, local judgment, and organizational authority that automated systems cannot hold. A5=4 (interpersonal influence) and A6=4 (leadership and coordination) are structural strengths -- the decisions a financial manager is paid to make require buy-in from stakeholders that a model cannot generate [3]. Deloitte's 2024 CFO survey found that CFOs and financial managers who effectively deployed AI tools reported 25 to 35% capacity gains, enabling them to take on broader strategic scope without adding headcount [2].",
     "stat": "25-35%",
-    "statLabel": "capacity gains for financial managers deploying AI tools, per Deloitte CFO survey [2]",
-    "statColor": "#5a9a6e"
+    "statLabel": "capacity gains for financial managers deploying AI tools, per Deloitte CFO survey",
+    "statColor": "#5a9a6e",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "2024 CFO Survey: AI and the Finance Function",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www2.deloitte.com/us/en/insights/topics/leadership/cfo-survey-ai-finance-function.html"
   },
   "howToAdapt": {
     "alreadyIn": "The most concrete near-term move is to get hands-on with the AI-enabled FP&A (financial planning and analysis) tools your organization uses -- Workday Adaptive Planning, Anaplan, or similar platforms -- so you can evaluate their outputs critically rather than accepting them at face value [2]. Over the next six months, build depth in the oversight and strategic framing skills that AI surfaces demand for: synthesizing AI-generated financial analysis into board-ready narratives, identifying where AI model assumptions break down, and making capital allocation decisions in ambiguous situations where the data is incomplete [3].",
@@ -218,7 +226,7 @@
   "score": 3.3,
   "salary": "$161,700",
   "openings": "74,600",
-  "growth": "+7%",
+  "growth": "+15%",
   "taskData": [
     {
       "task": "Manage customer relationships",

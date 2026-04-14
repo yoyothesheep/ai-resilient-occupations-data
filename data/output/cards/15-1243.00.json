@@ -4,7 +4,7 @@
   "score": 50,
   "salary": "$135,980",
   "openings": "4,000",
-  "growth": "+7%",
+  "growth": "+9%",
   "jobTitles": [
     "Data Architect",
     "Data Engineer",
@@ -114,12 +114,20 @@
   "risks": {
     "body": "The tasks with the highest automation signals are the hands-on technical ones: designing interfaces and data transfer mechanisms (23% automation, ~1,000 conversations) and developing data models (21% automation). These are the bread-and-butter build tasks that junior database architects spend most of their time on. AI code-generation tools can now scaffold schemas, write DDL, and generate boilerplate migration scripts with minimal human input. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or planning to use AI tools in their workflow [1], and database work is squarely in the sweet spot for these tools. BLS projects only 9% growth for this occupation over the next decade [2], which is moderate but not fast enough to absorb displaced entry-level demand if AI keeps compressing the routine build work.",
     "stat": "72%",
-    "statLabel": "of organizations now use managed database services, reducing hands-on DBA work [4]"
+    "statLabel": "of organizations now use managed database services, reducing hands-on DBA work",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "2024 Global Technology Leadership Study",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "opportunities": {
     "body": "The strongest signal here is augmentation, not automation. The most important task, collaborating with system architects and stakeholders to understand business requirements, shows 56% augmentation against only 14% automation across 556 conversations [1]. Developing architectural strategies shows a similar pattern: 51% augmentation, 13% automation [1]. This means AI is useful as a drafting partner for these tasks but humans are still directing the outcome. Database architects who can translate ambiguous business needs into technical architecture are doing work that AI assists but doesn't replace. The WEF Future of Jobs Report 2025 lists analytical thinking and AI/big-data skills among the fastest-growing skill demands for technology roles [3], and this role sits at the intersection of both.",
     "stat": "4,000",
-    "statLabel": "annual job openings, concentrated in roles requiring business-to-technical translation [2]"
+    "statLabel": "annual job openings, concentrated in roles requiring business-to-technical translation",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Database Administrators and Architects",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI assistants for schema generation and migration scripting now. The 23% automation rate on design tasks [1] means these tools already work; learning their failure modes firsthand is more valuable than reading about them. Over the next six months, build depth in the areas AI handles worst for this role: translating vague business requirements into architectural decisions, and designing for cross-system integration where the constraints are organizational, not technical. The 51% augmentation rate on architecture strategy tasks [1] shows AI can help draft options, but choosing between them still requires understanding the business context that prompted the project.",

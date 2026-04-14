@@ -115,12 +115,20 @@
   "risks": {
     "body": "The long-term structural risk is not AI automation of the controller role but a shrinking pipeline of available positions. BLS projects employment to decline slightly as some ground coordination work is automated and operational efficiency improvements reduce staffing requirements at smaller facilities [2]. The career entry barrier is among the highest of any occupation: FAA Academy training is required, most hiring occurs before age 31, and the path runs almost exclusively through FAA or military experience.",
     "stat": "1,000",
-    "statLabel": "fewer ATC positions projected by 2034 as NextGen automation consolidates ground coordination [2]"
+    "statLabel": "fewer ATC positions projected by 2034 as NextGen automation consolidates ground coordination",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Air Traffic Controllers",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.bls.gov/ooh/transportation-and-material-moving/air-traffic-controllers.htm"
   },
   "opportunities": {
     "body": "Air traffic control scores a 5 out of 5 on both novel real-time judgment and real-time response requirements - every traffic situation involves unique combinations of aircraft, weather, and runway conditions that require split-second decisions with no tolerance for error. FAA regulations require human controllers to be the final authority on aircraft separation, and there is no regulatory pathway for AI to operate in this role without human oversight. Federal employment with strong union protections and a median salary above $137, 000 reflects the difficulty of replacing this work [2].",
     "stat": "99%",
-    "statLabel": "of ATC decisions require real-time human judgment with no AI override [3]"
+    "statLabel": "of ATC decisions require real-time human judgment with no AI override",
+    "statSourceName": "Federal Aviation Administration",
+    "statSourceTitle": "NextGen Implementation Plan",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.faa.gov/nextgen"
   },
   "howToAdapt": {
     "alreadyIn": "The core skill - maintaining situational awareness across multiple simultaneous aircraft movements and making real-time separation decisions - is the most structurally protected work in this occupation and shows no AI footprint in usage data. Build proficiency with the NextGen automation tools that handle flight data and ground coordination, so that the human workload stays focused on the judgment layer rather than data processing [2]. Over the next several years, controller experience in high-traffic facilities or TRACON environments carries the most career leverage as smaller facilities see more automation of procedural work.",

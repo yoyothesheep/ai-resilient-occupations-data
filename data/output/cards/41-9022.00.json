@@ -112,12 +112,20 @@
   "risks": {
     "body": "The tasks AI hits hardest are the ones agents spend the most time on. Property matching (generating lists for buyers) shows 49% automation, marketing and listing promotion shows 41%, and answering client questions about financing and repairs shows 42%. These are core daily activities, not back-office busywork. NAR's 2024 member profile found that 35% of Realtors already use AI tools in their business, up from near zero two years prior [1]. Zillow and similar platforms are increasingly offering AI-powered home valuations and instant property recommendations directly to consumers, compressing the information advantage that agents have traditionally held [2].",
     "stat": "1.5M",
-    "statLabel": "active Realtors nationally, a saturated field where AI compresses agent differentiation [1]"
+    "statLabel": "active Realtors nationally, a saturated field where AI compresses agent differentiation",
+    "statSourceName": "National Association of Realtors",
+    "statSourceTitle": "2024 Member Profile",
+    "statSourceDate": "Mar 2025",
+    "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile"
   },
   "opportunities": {
     "body": "Negotiation, the task where agents act as intermediaries between buyers and sellers, shows a 29% automation rate That's the lowest automation rate among the core tasks with enough data, and the task itself depends on reading people, managing emotions, and navigating one-off deal structures that AI handles poorly. NAR data shows 88% of buyers purchased their home through an agent in 2024, and the top reason cited was help negotiating terms [1]. The augmentation signal on client Q&A (22%) suggests AI is useful as a research assistant for agents fielding questions about financing and appraisals, but clients still want a human explaining what it means for their specific situation. Transaction complexity also works in agents' favor: coordinating escrow, inspections, lenders, and pest control across a closing timeline involves real-time judgment calls that resist automation.",
     "stat": "88%",
-    "statLabel": "of buyers used an agent to purchase a home [1]"
+    "statLabel": "of buyers used an agent to purchase a home",
+    "statSourceName": "National Association of Realtors",
+    "statSourceTitle": "2024 Member Profile",
+    "statSourceDate": "Mar 2025",
+    "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI tools for the property-matching and CMA (comparative market analysis) work that already shows high automation rates. Agents who let AI handle the initial search filtering and pricing comps can spend that time on the parts AI handles worst: face-to-face negotiation, reading client anxiety during walkthroughs, and managing the multi-party coordination of a closing. NAR found that agents using AI tools reported spending more time on client relationships and less on administrative tasks [1]. Over six months, building deeper expertise in complex transactions like multi-offer situations, 1031 exchanges, or investment property analysis creates a niche that automated platforms can't replicate.",

@@ -4,7 +4,7 @@
   "score": 69,
   "salary": "$124,910",
   "openings": "16,000",
-  "growth": "+7%",
+  "growth": "+28%",
   "jobTitles": [
     "Information Security Officer",
     "Information Security Specialist",
@@ -112,12 +112,20 @@
   "risks": {
     "body": "Security policy documentation shows 41.2% automation in observed AI usage - the most direct signal that AI is handling a real slice of the written output work in this role [1]. The bigger structural risk is at the entry level: AI-assisted SIEM platforms and automated triage tools are absorbing tier-1 alert monitoring, which has historically been the on-ramp into the field [2].",
     "stat": "3.5M",
-    "statLabel": "unfilled cybersecurity jobs globally in 2024 [4]"
+    "statLabel": "unfilled cybersecurity jobs globally in 2024",
+    "statSourceName": "ISC2",
+    "statSourceTitle": "Cybersecurity Workforce Study 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://www.isc2.org/Research/Workforce-Study"
   },
   "opportunities": {
     "body": "Risk assessment and encryption work shows strong augmentation patterns - 47.9% and 58.7% respectively - with thousands of observed conversations where analysts stay firmly in the loop [1]. The role scores a 5 out of 5 on directing AI tools, and every security breach carries regulatory and legal consequences that organizations cannot delegate to automated systems [2]. BLS projects 28% employment growth through 2034, driven by demand for analysts who can interpret AI-flagged threats and respond to novel attack patterns.",
     "stat": "16,800",
-    "statLabel": "annual job openings, driven by expanding attack surfaces and regulatory requirements [2]"
+    "statLabel": "annual job openings, driven by expanding attack surfaces and regulatory requirements",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Information Security Analysts",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start logging time against AI-assisted detection tools - specifically learning to configure and tune SIEM alert thresholds rather than just monitoring outputs. Over the next six months, build depth in incident response and threat hunting, the work that sits above automated triage and requires judgment under real operational pressure [2]. Analysts who can direct AI tools and own the investigation layer are pulling ahead of those whose value was in manual alert review [1].",

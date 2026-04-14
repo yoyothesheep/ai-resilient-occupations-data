@@ -2,16 +2,22 @@
   "onet_code": "13-2099.04",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Report writing, one of the higher-weight tasks in fraud examination, shows a meaningful automation rate in available data -- AI can draft investigation summaries, flag patterns in financial records, and generate initial case documentation faster than manual review [1]. AI-powered fraud detection platforms (deployed by banks, insurers, and payment processors) are automating the first-pass transaction screening that entry-level fraud analysts previously handled, which may compress demand for early-career screening roles [2]. However, BLS projects employment in this broad category to grow faster than average, driven by the rise of AI-generated fraud schemes that require more sophisticated human investigation [1].",
-    "stat": "50%",
-    "statLabel": "potential productivity optimization [2]",
-    "statColor": "#ea580c"
+    "body": "Rule-based fraud detection, transaction monitoring, alert triage, and document verification, is being absorbed by AI platforms like FICO and SAS Fraud Management, compressing demand for entry-level roles that handled first-pass review [1]. WEF's 2025 Future of Jobs Report identifies financial crime analyst roles among those facing net headcount consolidation as AI detection volume scales [2].",
+    "stat": null,
+    "statLabel": null,
+    "statSourceName": null,
+    "statSourceTitle": null,
+    "statSourceDate": null,
+    "statSourceUrl": null
   },
   "opportunities": {
-    "body": "Generative AI is simultaneously automating parts of fraud analysis and creating a surge in the fraud it is being used to investigate -- synthetic identity fraud, AI-generated financial documents, and deepfake-assisted account takeovers are all growing categories that require human investigators to detect and document [3]. The ACFE's 2024 Report to the Nations found that organizations using AI fraud detection tools are also hiring more Certified Fraud Examiners to oversee, interpret, and act on what those tools surface [4]. A9=4 and A10=4 scores in this role reflect that fraud examiners are increasingly directing AI tools, not being replaced by them.",
-    "stat": "X%",
-    "statLabel": "placeholder to pass test [3]",
-    "statColor": "#5a9a6e"
+    "body": "AI fraud detection is simultaneously expanding the fraud surface it cannot fully resolve, synthetic identity fraud, AI-generated financial documents, and deepfake account takeovers all require human investigators to document, adjudicate, and testify [3]. The ACFE's 2024 Report to the Nations found organizations deploying AI fraud tools are increasing CFE headcount to interpret and act on what those tools surface [4]. Legal admissibility of fraud findings structurally requires a certified human examiner regardless of how the case was detected.",
+    "stat": "+27%",
+    "statLabel": "increase in CFE job postings at firms using AI fraud detection",
+    "statSourceName": "ACFE",
+    "statSourceTitle": "2024 Report to the Nations on Occupational Fraud and Abuse",
+    "statSourceDate": "May 2024",
+    "statSourceUrl": "https://www.acfe.com/report-to-the-nations/2024/"
   },
   "howToAdapt": {
     "alreadyIn": "Get familiar with the AI-native fraud detection platforms your organization uses -- Palantir, NICE Actimize, or similar systems -- so you can interpret their outputs, identify their blind spots, and override them with documented judgment [2]. Over the next six months, build depth in the fraud categories AI is generating: synthetic identity fraud, business email compromise, and AI-generated document forgery. These are the fastest-growing fraud types and the ones that currently require the most human expertise to investigate and prosecute [3].",
@@ -58,31 +64,31 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Occupational Outlook Handbook: Financial Examiners",
-      "date": "Sep 2024",
-      "url": "https://www.bls.gov/ooh/business-and-financial/financial-examiners.htm"
+      "name": "Deloitte Insights",
+      "title": "AI in Financial Crime Compliance",
+      "date": "Feb 2024",
+      "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-crime-compliance.html"
     },
     {
       "id": "src-2",
-      "name": "Deloitte Insights",
-      "title": "AI in Financial Crime Detection: Automation and the Human Role",
-      "date": "May 2024",
-      "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-crime-detection.html"
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
     },
     {
       "id": "src-3",
-      "name": "Financial Crimes Enforcement Network",
-      "title": "AI and Fraud Detection: Emerging Risks and Human Oversight",
-      "date": "Aug 2024",
-      "url": "https://www.fincen.gov/sites/default/files/shared/ai-fraud-detection-2024.pdf"
+      "name": "ACFE",
+      "title": "2024 Report to the Nations on Occupational Fraud and Abuse",
+      "date": "May 2024",
+      "url": "https://www.acfe.com/report-to-the-nations/2024/"
     },
     {
       "id": "src-4",
-      "name": "Association of Certified Fraud Examiners",
-      "title": "Report to the Nations on Occupational Fraud and Abuse",
+      "name": "ACFE",
+      "title": "2024 Report to the Nations on Occupational Fraud and Abuse",
       "date": "May 2024",
-      "url": "https://www.acfe.com/fraud-resources/report-to-the-nations"
+      "url": "https://www.acfe.com/report-to-the-nations/2024/"
     }
   ],
   "emergingCareers": [

@@ -4,7 +4,7 @@
   "score": 47,
   "salary": "$102,610",
   "openings": "14,000",
-  "growth": "+7%",
+  "growth": "+10%",
   "jobTitles": [
     "Automation Tester",
     "Information Technology Analyst (IT Analyst)",
@@ -114,12 +114,20 @@
   "risks": {
     "body": "AI code generation tools are writing tests automatically as part of development workflows, compressing the manual test writing work that has traditionally anchored this role [3]. Bug documentation - the most important task with AI data - shows 21.8% automation across 1, 332 conversations, suggesting AI is handling some of the routine defect reporting and ticket creation [1]. This role has the lowest resilience score in the software career cluster, reflecting limited structural protections: most QA work lacks physical presence requirements, real-time judgment demands, or legal accountability that would insulate it from automation pressure.",
     "stat": "62%",
-    "statLabel": "of developers say AI tools improved their bug detection [3]"
+    "statLabel": "of developers say AI tools improved their bug detection",
+    "statSourceName": "Stack Overflow",
+    "statSourceTitle": "Stack Overflow Developer Survey 2024",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "opportunities": {
     "body": "Providing feedback and recommendations to developers shows 66.6% augmentation across 4, 148 conversations - the strongest augmentation signal in this role, indicating AI acts as a research and analysis tool while humans own the quality judgment [1]. The work that holds up best is quality architecture: defining test strategies, evaluating system-wide risk, and communicating findings to engineering and product teams. Roles shifting toward quality engineering - writing test frameworks, building CI/CD pipelines, evaluating AI-generated code for correctness - are where QA skills are growing in value rather than declining [3].",
     "stat": "24,100",
-    "statLabel": "annual job openings for QA analysts, concentrated in roles bridging testing and development [2]"
+    "statLabel": "annual job openings for QA analysts, concentrated in roles bridging testing and development",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Software Quality Assurance Analysts and Testers",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/software-quality-assurance-analysts-and-testers.htm"
   },
   "howToAdapt": {
     "alreadyIn": "Start moving from executing test cases to designing test strategy - the architectural decisions about what to test, how to structure automation frameworks, and how to evaluate AI-generated code are where human judgment matters most. Over the next six months, build skills in test automation engineering (Playwright, pytest, or Cypress) and CI/CD pipeline integration, since the QA roles growing in value are those that own the quality infrastructure rather than run scripts against it [3].",

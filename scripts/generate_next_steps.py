@@ -1,30 +1,38 @@
 #!/usr/bin/env python3
-"""
-Generate career page content for each occupation.
+"""Generate or patch occupation card sections.
 
-For each occupation, produces: risks, opportunities, howToAdapt, sources.
-Passes through: score, salary, openings, growth, jobTitles, keyDrivers, taskData.
+Generates career page content for each occupation. Can produce a full card
+or regenerate individual sections of an existing card.
+
+Full card generates: risks, opportunities, howToAdapt, sources, taskData,
+taskLabels, plus passthrough fields (score, salary, growth, jobTitles,
+emergingTitles, keyDrivers).
+
+Section mode (--section) regenerates only the specified section(s) of an
+existing card, preserving all other fields. This replaces the former
+patch_risks_opps.py and patch_task_data.py scripts.
 
 Modes:
-  Interactive (default): script prints a prompt, you paste it into Claude,
-    then paste the JSON response back.
-  --print-prompt: script prints the prompt and exits immediately (no API call,
-    no stdin read). Claude Code reads the prompt output and authors the JSON
-    directly, writing it to occupation_cards.jsonl via the Write tool.
-  --api: script calls the Claude API automatically. Requires ANTHROPIC_API_KEY.
+  Interactive (default): prints prompt, reads JSON from stdin.
+  --print-prompt: prints prompt and exits (Claude Code inline workflow).
+  --api: calls Claude API automatically. Requires ANTHROPIC_API_KEY.
 
-Inline workflow (Claude Code, no API key):
-    python3 scripts/generate_next_steps.py --code 15-1254.00 --print-prompt
-    # Claude Code reads the printed prompt, authors JSON, appends to JSONL.
-    python3 scripts/generate_next_steps.py --code 15-1254.00 --print-prompt --force
-    # --force re-generates even if the code already has a card.
+Section mode:
+  --section risks,opportunities   Regenerate only risks + opps
+  --section tasks                 Recompute taskData (no API call)
+  --section howToAdapt            Regenerate only howToAdapt + quotes
 
 Usage:
-    python3 scripts/generate_next_steps.py --code 15-1254.00
-    python3 scripts/generate_next_steps.py --batch 3   # next 3 unprocessed
+    # Full card
+    python3 scripts/generate_next_steps.py --code 15-1254.00 --api
+    python3 scripts/generate_next_steps.py --cluster marketing --api
 
-Output:
-    data/output/occupation_cards.jsonl  — one JSON object per line
+    # Patch single section
+    python3 scripts/generate_next_steps.py --code 27-3043.00 --section risks,opportunities --api
+    python3 scripts/generate_next_steps.py --cluster marketing --section tasks
+
+    # Print section prompt only (Claude Code workflow)
+    python3 scripts/generate_next_steps.py --code 27-3043.00 --section risks,opportunities --print-prompt
 """
 
 import argparse
@@ -37,79 +45,26 @@ import urllib.request
 import urllib.error
 from datetime import datetime
 
+from loaders import (
+    load_scores, load_task_table, load_occ_metrics, load_a_scores, load_text,
+    get_cluster_codes,
+    SCORES_CSV, SCORE_LOG, TONE_GUIDE, CAREER_SPEC, APPROVED_SOURCES,
+)
+from prompts import build_full_prompt, build_section_prompt
+
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 API_MODEL = "claude-opus-4-6"
 
-# ── Config ────────────────────────────────────────────────────────────────────
-SCORES_CSV    = "data/output/ai_resilience_scores.csv"
-TASK_TABLE    = "data/intermediate/onet_economic_index_task_table.csv"
-OCC_METRICS   = "data/intermediate/onet_economic_index_metrics.csv"
-SCORE_LOG     = "data/output/score_log.txt"
-TONE_GUIDE       = "docs/tone_guide_career_pages.md"
-CAREER_SPEC      = "docs/career_page_spec.md"
-APPROVED_SOURCES = "docs/approved_sources.md"
-
 TOP_N_TASKS   = 10   # tasks to include in taskData
+MIN_LABEL_LEN = 15   # task labels shorter than this are considered missing/generic
 
 STANDARD_TASK_INTRO = "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building."
-
-# ── Loaders ───────────────────────────────────────────────────────────────────
-
-def load_scores() -> dict:
-    """Load scores CSV keyed by onet_code."""
-    with open(SCORES_CSV, newline="", encoding="utf-8") as f:
-        return {r["Code"]: r for r in csv.DictReader(f)}
-
-
-def load_task_table() -> dict:
-    """Load task table keyed by onet_code → list of task rows."""
-    table: dict[str, list] = {}
-    with open(TASK_TABLE, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            code = row["onet_code"]
-            table.setdefault(code, []).append(row)
-    return table
-
-
-def load_occ_metrics() -> dict:
-    """Load occupation-level AEI metrics keyed by onet_code."""
-    with open(OCC_METRICS, newline="", encoding="utf-8") as f:
-        return {r["onet_code"]: r for r in csv.DictReader(f)}
-
-
-def load_a_scores(log_path: str) -> dict:
-    """
-    Parse score_log.txt to extract A1-A10 per occupation.
-    Returns dict: onet_code -> {a1: int, ..., a10: int}
-    """
-    a_scores: dict[str, dict] = {}
-    pattern_occ = re.compile(r"^\s+(.+?)\s+\((\d{2}-\d{4}\.\d{2})\)")
-    pattern_attr = re.compile(r"^\s+A(\d+)\s+.+?:\s+(\d+)")
-    current_code = None
-
-    with open(log_path, encoding="utf-8") as f:
-        for line in f:
-            m = pattern_occ.match(line)
-            if m:
-                current_code = m.group(2)
-                a_scores[current_code] = {}
-                continue
-            if current_code:
-                m2 = pattern_attr.match(line)
-                if m2:
-                    a_scores[current_code][f"a{m2.group(1)}"] = int(m2.group(2))
-    return a_scores
 
 
 def load_existing_codes() -> set:
     """Return set of onet_codes already saved as individual card files."""
     from cards import load_existing_codes as _load
     return _load()
-
-
-def load_text(path: str) -> str:
-    with open(path, encoding="utf-8") as f:
-        return f.read()
 
 
 # ── Task data builder ─────────────────────────────────────────────────────────
@@ -163,158 +118,77 @@ def build_task_data(onet_code: str, task_rows: list) -> list:
     return result
 
 
-# ── Prompt builder ────────────────────────────────────────────────────────────
+# ── Prompt builder (delegates to prompts.py) ─────────────────────────────────
 
 def build_prompt(occ: dict, tasks: list, metrics: dict, a_scores: dict,
                  tone_guide: str, career_spec: str, approved_sources: str = "") -> str:
-    code = occ["Code"]
-    title = occ["Occupation"]
-    score = occ.get("role_resilience_score", "?")
-    final_ranking = occ.get("final_ranking", "")
+    """Build the full card prompt. Thin wrapper around prompts.build_full_prompt()."""
+    return build_full_prompt(occ, tasks, metrics, a_scores, tone_guide, career_spec, approved_sources)
 
-    a = a_scores.get(code, {})
-    a_block = "\n".join(
-        f"  A{i}: {a.get(f'a{i}', '?')}" for i in range(1, 11)
-    )
 
-    m = metrics.get(code, {})
-    coverage = m.get("ai_task_coverage_pct", "unknown")
-    w_auto   = m.get("weighted_automation_pct", "unknown")
-    w_aug    = m.get("weighted_augmentation_pct", "unknown")
 
-    # Compute low data confidence from task data directly
-    tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
-    low_data = len(tasks_with_signal) == 0
+# ── Task label helpers (absorbed from patch_task_data.py) ─────────────────────
 
-    task_lines = []
-    for t in tasks:
-        if t["n"] is not None:
-            task_lines.append(
-                f"  - {t['full']}\n"
-                f"    weight={t.get('weight','?')} | auto={t['auto']}% aug={t['aug']}% "
-                f"success={t['success']}% n={t['n']}"
-            )
-        else:
-            task_lines.append(f"  - {t['full']}\n    weight=? | no AEI data")
+def needs_label(t: dict) -> bool:
+    """True if a task dict is missing a proper short label."""
+    return t["task"] == t["full"] or len(t["task"]) < MIN_LABEL_LEN or t["task"].endswith("…")
 
-    task_block = "\n".join(task_lines)
 
-    # Build common names line from sample job titles
-    sample_titles = occ.get("Sample Job Titles", "").strip()
-    if sample_titles:
-        common_names_line = f"Also known as: {sample_titles}\n"
-    else:
-        common_names_line = ""
+def build_label_prompt(tasks_needing_labels: list[dict]) -> str:
+    """Build a prompt for Claude to author short task labels.
 
-    return f"""You are generating career page content for ai-proof-careers.com.
+    tasks_needing_labels: list of {code, occupation, full} dicts.
+    Returns a prompt string.
+    """
+    lines = []
+    for i, item in enumerate(tasks_needing_labels, 1):
+        lines.append(f'{i}. [{item["code"]} — {item["occupation"]}]\n   Full: "{item["full"]}"')
 
-Below are your style rules. Follow them exactly.
+    return f"""You are writing short task label names for a career information site.
 
-=== TONE GUIDE ===
-{tone_guide}
+For each task below, write a SHORT label (3–6 words, title case, no period) that:
+- Captures the core action and subject matter
+- Is specific enough to distinguish from other tasks
+- Reads naturally as a table row label
 
-=== CAREER PAGE SPEC ===
-{career_spec}
+Tasks:
+{chr(10).join(lines)}
 
-=== OCCUPATION DATA ===
-Title: {title}
-{common_names_line}O*NET Code: {code}
-Role Resilience Score: {score} / 5.0
-Final Ranking: {final_ranking} (0–1 scale)
+Respond with a JSON array of short labels in the same order:
+["Label One", "Label Two", ...]"""
 
-Attribute Scores (1–5):
-{a_block}
 
-AEI Coverage: {coverage}% of tasks observed in AI usage data
-Weighted automation %: {w_auto}
-Weighted augmentation %: {w_aug}
+def prompt_for_labels(tasks_needing_labels: list[dict]) -> dict:
+    """Print label prompt, read JSON from stdin.
 
-Top tasks by importance × frequency (with AEI data where available):
-{task_block}
+    Returns {full_task_text: short_label} mapping.
+    """
+    prompt = build_label_prompt(tasks_needing_labels)
 
-=== YOUR TASK ===
+    print("\n" + "="*80)
+    print("TASK LABEL PROMPT — paste into Claude Code and respond with JSON:")
+    print("="*80)
+    print(prompt)
+    print("="*80)
+    print("\nPaste the JSON array response below, then press Enter + Ctrl-D (or Ctrl-Z on Windows):")
 
-Search for 2–3 authoritative sources about AI's impact on this occupation ({title}). Use the common job titles listed above when searching, not the formal O*NET name. Select sources from the approved list below — prioritize domain-specific sources for this occupation type over generic ones.
+    text = sys.stdin.read().strip()
+    text = re.sub(r"```json\s*", "", text)
+    text = re.sub(r"```\s*", "", text)
+    labels = json.loads(text)
 
-=== APPROVED SOURCES ===
-{approved_sources}
-=== END APPROVED SOURCES ===
+    if len(labels) != len(tasks_needing_labels):
+        raise ValueError(f"Expected {len(tasks_needing_labels)} labels, got {len(labels)}")
 
-Rules:
-- Prefer sources published within the last 2 years. Flag if best available is older than 12 months.
-- BLS salary, openings, and growth data is already in our dataset — cite BLS as a source without fetching it.
-- Always include a real canonical URL for every source. Do not leave url blank. URLs will be validated automatically.
-- Do not cite the same source more than twice across the entire card (risks, opportunities, howToAdapt combined). Each section (risks.body, opportunities.body, howToAdapt.alreadyIn, howToAdapt.thinkingOf) must use at least 2 distinct sources internally — never repeat the same [N] more than once within a single section.
-- NEVER cite: Gartner, IDC, Forrester, MarketsandMarkets — these are paywalled analyst firms with inflated projections and URL rot. Use the approved sources list instead.
+    return {item["full"]: label for item, label in zip(tasks_needing_labels, labels)}
 
-{"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (n >= 100). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}
-Then generate the following JSON object. All prose must follow the tone guide.
 
-{{
-  "onet_code": "{code}",
-  "risks": {{
-    "body": "2–3 sentences about why AI is a genuine threat to this specific role's job prospects — not 'AI is advancing' but what specifically is being automated, commoditized, or consolidated in THIS occupation. Include a concrete displacement signal (posting decline, layoffs, role consolidation, or a specific task now handled by AI tools). Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced. NEVER mention task weight values or write phrases like '(weight 20.9)' — weight is an internal metric, not user-facing content. NEVER cite the number of AI conversations or interactions (e.g. 'across 2,800 AI interactions', 'n=702 observations') — these are internal dataset counts, not user-facing evidence. If citing AEI task automation rates, summarize the pattern in one sentence rather than listing rates per individual task; PREFER leading with an external displacement signal (posting trends, layoffs, platform consolidation) over AEI percentages — use AEI data as supporting color, not the headline. AVOID: vague 'AI will transform this field' framing, generic white-collar displacement narratives, repeating the role score. PREFER: name a specific task or workflow AI handles well in this role, cite a concrete displacement signal, connect it to what practitioners in THIS role actually experience.",
-    "stat": "Pick the single most concrete, surprising number from the risks body. Set to null if no strong non-redundant stat exists. {"LOW DATA: Must NOT be an automation rate or AI task percentage — the task chart shows no AI activity and they will directly contradict." if low_data else ""} STAT SELECTION RULES — AVOID these (redundant with other page sections): task automation/augmentation %, employment growth %, salary figures. PREFER (in priority order): (1) Hiring trend shifts — YoY change in job postings, time-to-fill changes (Lightcast, Indeed Hiring Lab). (2) AI tool adoption rates among practitioners in THIS specific role (HubSpot State of Marketing, CMI, Stack Overflow Survey, etc). (3) Productivity/output impact — e.g. content volume increase, time-to-draft reduction. (4) Displacement signals — layoffs, role consolidation, posting declines, freelance rate compression (Upwork Research Institute). (5) WEF Future of Jobs net decline ranking or projected job loss figure. (6) Industry ad spend or budget shift away from human production toward AI tools. (7) Contract/freelance ratio shifts. (8) Career transition rates out of this role. LAST RESORT: BLS projected growth/decline % for this occupation — always available, always citable, acceptable when nothing better exists. It is OK to set stat to null rather than use a redundant stat type.",
-    "statLabel": "Required if stat is non-null. Short phrase describing the stat. E.g. 'drop in entry-level tech hiring (2024)'",
-    "statSourceName": "Required if stat is non-null. Publisher name, e.g. 'Lightcast' or 'World Economic Forum'.",
-    "statSourceTitle": "Required if stat is non-null. Full article or report title.",
-    "statSourceDate": "Required if stat is non-null. Publication date as 'Mon YYYY', e.g. 'Jan 2025'.",
-    "statSourceUrl": "Required if stat is non-null. Canonical URL. Must be a real, verifiable URL."
-  }},
-  "opportunities": {{
-    "body": "2–3 sentences about why a skilled practitioner in this role is harder to replace than the risks section suggests — what tasks require human judgment, relationship, or accountability that AI cannot replicate, and what that means economically for practitioners who lean into it. Inline citations like [1]. NEVER mention numeric task weight values (e.g. 'weight 20.9') — say 'most important task' or 'core task' instead. NEVER cite the number of AI conversations or interactions (e.g. 'across 2,800 AI interactions', 'n=702 observations') — these are internal dataset counts, not user-facing evidence. If citing AEI augmentation or low-automation rates, summarize the pattern in one sentence rather than listing rates per task; PREFER leading with an external durability signal (trust requirements, regulatory constraints, client relationship data) over AEI percentages — use AEI data as supporting color, not the headline. AVOID: generic 'use AI as a tool' framing, vague upskilling advice, restating what the risks section already said, citing AI adoption rates without connecting to practitioner outcomes. PREFER: identify the specific tasks or client interactions where human judgment is irreplaceable in this role, name a concrete economic upside (premium, expanded scope, or a market the role now serves that it couldn't before), make it specific enough that a practitioner in this field would recognize it.",
-    "stat": "Pick the single most concrete number from the opportunities body. Set to null if no strong non-redundant stat exists. MUST be completely different from the stat used in the risks section. Do not reuse the same statistic. STAT SELECTION RULES — AVOID these (redundant with other page sections): task automation/augmentation %, employment growth %, salary figures. PREFER (in priority order): (1) Skill or certification salary premiums. (2) Client/consumer trust or preference for human-produced content/advice (Pew, Edelman, Reuters Institute, Kantar). (3) Downstream demand creation or market expansion driven by AI — e.g. content volume growth creating more editorial/strategy need. (4) Regulatory or licensing barriers that structurally limit automation. (5) AI tool adoption rates showing human-AI collaboration patterns (HubSpot, CMI, Influencer Marketing Hub). (6) Industry investment in AI for this domain, or budget growth for AI-augmented roles. (7) Productivity multipliers from AI tools in this role — output per practitioner gains. (8) Demand growth for senior/strategic roles as AI handles execution-layer work. LAST RESORT: BLS projected growth/decline % for this occupation — always available, always citable, acceptable when nothing else fits. It is OK to set stat to null rather than use a redundant stat type.",
-    "statLabel": "Required if stat is non-null. 5–8 words max. Complete the sentence naturally after the number — e.g. '66%' + 'of developers report X'. Do NOT include a year or date in parentheses — mention it in the body instead.",
-    "statSourceName": "Required if stat is non-null. Publisher name.",
-    "statSourceTitle": "Required if stat is non-null. Full article or report title.",
-    "statSourceDate": "Required if stat is non-null. Publication date as 'Mon YYYY'.",
-    "statSourceUrl": "Required if stat is non-null. Canonical URL. Must be a real, verifiable URL."
-  }},
-  "howToAdapt": {{
-    "alreadyIn": "3–4 sentences structured in two parts. Part 1 (immediate): one concrete action to take now. Part 2 (6-month): where to build depth over time — the areas AI handles worst for this specific role. Inline citations. Do NOT use em dashes.",
-    "thinkingOf": "3–4 sentences for someone considering entering this field. Concrete portfolio or credential advice specific to this role — not generic 'learn AI tools' advice. Do NOT repeat statistics already cited in the risks section. Inline citations. Do NOT use em dashes. Do NOT cite the same source more than once within this section — each inline citation must reference a different source.",
-    "quotes": [
-      {{
-        "persona": "alreadyIn",
-        "quote": "A real quote from a named practitioner, industry leader, or research report about HOW to adapt in this role — a specific skill shift, tool adoption, or strategic move. Must reinforce the alreadyIn advice above. Must come from sources[]. QUOTE QUALITY RULES: (1) Prefer quotes from named individuals (practitioners, executives, researchers) over paraphrased data points. (2) NEVER manufacture a 'quote' by restating a BLS statistic or O*NET task description in quotation marks — that is not a quote. (3) Good sources for real quotes: HBR interviews, MIT Sloan, practitioner blogs (Pragmatic Engineer, InfoQ), industry association reports with practitioner commentary, major newspapers (NYT, WSJ) interviewing professionals. (4) If no real practitioner quote exists, use a key finding from a research report — but attribute it to the report, not to a person.",
-        "attribution": "Person's name and title (preferred), or 'Report Title, Publisher' if no named person",
-        "sourceId": "src-N"
-      }},
-      {{
-        "persona": "alreadyIn",
-        "quote": "A SECOND quote covering a DIFFERENT adaptation angle than the first (e.g. first = tool adoption, second = skill shift). Same quality rules as above. Omit entirely if no meaningfully different second angle exists.",
-        "attribution": "...",
-        "sourceId": "src-N"
-      }},
-      {{
-        "persona": "thinkingOf",
-        "quote": "A real quote about HOW to enter or position yourself in this field — credentials, portfolio approach, or entry strategy. NOT a generic growth stat. Same quality rules: prefer named practitioners, never manufacture quotes from BLS/O*NET data.",
-        "attribution": "...",
-        "sourceId": "src-N"
-      }},
-      {{
-        "persona": "thinkingOf",
-        "quote": "A SECOND quote covering a DIFFERENT entry angle than the first. Same quality rules. Omit if no meaningfully different second angle exists.",
-        "attribution": "...",
-        "sourceId": "src-N"
-      }}
-    ]
-  }},
-  "taskLabels": {{
-    "Full task text here...": "3-5 word short label. Verb + object style. Use / for combined verbs (Write/analyze programs). Condense, don't truncate — capture the meaning, not the first N words."
-  }},
-  "sources": [
-    {{"id": "src-1", "name": "Publisher name", "title": "Article or report title", "date": "Mon YYYY", "url": "https://..."}}
-  ]
-}}
+# ── Removed: old build_prompt() body ─────────────────────────────────────────
+# Prompt building now lives in scripts/prompts.py. The build_prompt() wrapper
+# above delegates to prompts.build_full_prompt().
+# For section-only prompts, use prompts.build_section_prompt().
 
-Rules:
-- All [n] inline citations must resolve to an entry in sources
-- statLabel must end with a source citation like [n] matching a source in sources[]. The stat does NOT need to appear in the body text — it is displayed separately as a pull-stat callout above the prose.
-- Do not use "lean into", "AI is taking over", or other prohibited phrases from the tone guide
-- Quotes: each must be about adaptation or entry strategy, not generic job market stats. All 4 must cover different topics. A growth projection alone is not an adaptation quote — only use it if the quote also says what to DO about it. Do not use static credential requirements ("typically need a bachelor's degree") — these are timeless facts, not adaptation advice. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources. NEVER restate a BLS statistic or O*NET task description in quotation marks and call it a "quote" — quotes must be real quotes from real people or key findings from research reports. Prefer practitioner voices: HBR, MIT Sloan, Pragmatic Engineer, InfoQ, industry association reports with named commentators, NYT/WSJ interviews.
-- Respond ONLY with the JSON object, no other text
-"""
+
 
 
 # ── Interactive (inline) generation ──────────────────────────────────────────
@@ -669,7 +543,14 @@ def verify_generated(generated: dict, low_data: bool):
 def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: dict,
                        a_scores: dict, tone_guide: str, career_spec: str,
                        approved_sources: str = "",
-                       print_prompt_only: bool = False, api_mode: bool = False):
+                       print_prompt_only: bool = False, api_mode: bool = False,
+                       sections: list[str] | None = None):
+    """Generate or patch one occupation card.
+
+    sections=None generates a full card (all sections).
+    sections=["risks", "opportunities"] patches only those sections of an
+    existing card. sections=["tasks"] recomputes taskData without a prompt.
+    """
     occ = scores.get(code)
     if not occ:
         print(f"  ✗ Code {code} not found in scores CSV")
@@ -678,7 +559,40 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     print(f"\n── {occ['Occupation']} ({code})")
 
     tasks = build_task_data(code, task_table.get(code, []))
-    prompt = build_prompt(occ, tasks, occ_metrics, a_scores, tone_guide, career_spec, approved_sources)
+
+    # ── Section mode: tasks (no prompt, purely computational) ─────────
+    if sections and sections == ["tasks"]:
+        from cards import load_cards, save_card
+        existing_cards = load_cards()
+        if code not in existing_cards:
+            print(f"  ✗ No existing card for {code} — run full generation first")
+            return
+        card = existing_cards[code]
+
+        # Preserve existing good labels
+        old_tasks = {t["full"]: t.get("task") for t in card.get("taskData", [])}
+        for t in tasks:
+            prior = old_tasks.get(t["full"])
+            if prior and prior != t["full"] and len(prior) >= MIN_LABEL_LEN:
+                t["task"] = prior
+
+        # Collect tasks needing labels — will be batched across codes in main()
+        card["_new_task_data"] = tasks
+        card["_needs_labels"] = [
+            {"code": code, "occupation": occ["Occupation"], "full": t["full"]}
+            for t in tasks if needs_label(t)
+        ]
+        return card  # caller handles label prompt + save
+
+    # ── Section mode: content sections (risks, opportunities, howToAdapt) ─
+    if sections:
+        prompt = build_section_prompt(
+            sections, occ, tasks, occ_metrics, a_scores,
+            tone_guide, career_spec, approved_sources
+        )
+    else:
+        prompt = build_prompt(occ, tasks, occ_metrics, a_scores,
+                              tone_guide, career_spec, approved_sources)
 
     if print_prompt_only:
         print("\n" + "="*80)
@@ -692,22 +606,23 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     else:
         generated = generate_career_page_interactive(prompt)
 
-    # Apply short labels from the interactive response
-    task_labels = {k.strip(): v for k, v in generated.pop("taskLabels", {}).items()}
-    for t in tasks:
-        full = t["full"].strip()
-        if full in task_labels:
-            t["task"] = task_labels[full]
-        else:
-            # Fuzzy match: find a key that starts with the first 30 chars of full text
-            prefix = full[:30].lower()
-            match = next((v for k, v in task_labels.items() if k.lower().startswith(prefix[:20])), None)
-            if match:
-                t["task"] = match
-            elif t["task"] == t["full"]:
-                # Last resort: first 5 words — should not happen if Claude returns taskLabels correctly
-                words = t["full"].split()
-                t["task"] = " ".join(words[:5]).rstrip(".,;") + ("…" if len(words) > 5 else "")
+    generated = sanitize(generated)
+
+    # Apply short labels from the interactive response (full card mode only)
+    if not sections:
+        task_labels = {k.strip(): v for k, v in generated.pop("taskLabels", {}).items()}
+        for t in tasks:
+            full = t["full"].strip()
+            if full in task_labels:
+                t["task"] = task_labels[full]
+            else:
+                prefix = full[:30].lower()
+                match = next((v for k, v in task_labels.items() if k.lower().startswith(prefix[:20])), None)
+                if match:
+                    t["task"] = match
+                elif t["task"] == t["full"]:
+                    words = t["full"].split()
+                    t["task"] = " ".join(words[:5]).rstrip(".,;") + ("…" if len(words) > 5 else "")
 
     # Validate source URLs and dates
     if "sources" in generated:
@@ -718,90 +633,193 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
     low_data = len(tasks_with_signal) == 0
     verify_generated(generated, low_data)
 
-    passthrough = build_passthrough(occ, tasks)
+    if sections:
+        # Section mode: merge into existing card
+        from cards import load_cards, save_card
+        existing_cards = load_cards()
+        if code not in existing_cards:
+            print(f"  ✗ No existing card for {code} — run full generation first")
+            return
+        card = existing_cards[code]
 
-    card = {
-        "onet_code": code,
-        "title":     occ["Occupation"],
-        **passthrough,
-        **generated,
-        "taskIntro": STANDARD_TASK_INTRO,
-    }
+        # Overwrite only the requested sections
+        if "risks" in sections or "opportunities" in sections:
+            card["risks"] = generated.get("risks", {})
+            card["opportunities"] = generated.get("opportunities", {})
+        if "howToAdapt" in sections:
+            card["howToAdapt"] = generated.get("howToAdapt", {})
 
-    # Pretty-print for review
-    print("\n  Generated content:")
-    print(f"  risks.stat:   {generated.get('risks', {}).get('stat')} — {generated.get('risks', {}).get('statLabel')}")
-    print(f"  opps.stat:    {generated.get('opportunities', {}).get('stat')} — {generated.get('opportunities', {}).get('statLabel')}")
-    print(f"  sources:      {len(generated.get('sources', []))} found")
-    for s in generated.get("sources", []):
-        print(f"    [{s['id']}] {s['name']}")
-    print(f"\n  taskIntro:\n    {generated.get('taskIntro', '')}")
-    print(f"\n  risks.body:\n    {generated.get('risks', {}).get('body', '')}")
-    print(f"\n  opportunities.body:\n    {generated.get('opportunities', {}).get('body', '')}")
-    print(f"\n  howToAdapt.alreadyIn:\n    {generated.get('howToAdapt', {}).get('alreadyIn', '')}")
-    print(f"\n  howToAdapt.thinkingOf:\n    {generated.get('howToAdapt', {}).get('thinkingOf', '')}")
+        # Always update sources when patching content sections
+        new_sources = generated.get("sources", [])
+        if new_sources:
+            card["sources"] = new_sources
 
-    append_career_page(sanitize(card))
+        save_card(card)
+        r_stat = card.get("risks", {}).get("stat")
+        o_stat = card.get("opportunities", {}).get("stat")
+        print(f"  ✓ Patched {code} — risks.stat={r_stat!r} opps.stat={o_stat!r}")
+    else:
+        # Full card mode
+        passthrough = build_passthrough(occ, tasks)
+        card = {
+            "onet_code": code,
+            "title":     occ["Occupation"],
+            **passthrough,
+            **generated,
+            "taskIntro": STANDARD_TASK_INTRO,
+        }
+
+        # Pretty-print for review
+        print("\n  Generated content:")
+        print(f"  risks.stat:   {generated.get('risks', {}).get('stat')} — {generated.get('risks', {}).get('statLabel')}")
+        print(f"  opps.stat:    {generated.get('opportunities', {}).get('stat')} — {generated.get('opportunities', {}).get('statLabel')}")
+        print(f"  sources:      {len(generated.get('sources', []))} found")
+        for s in generated.get("sources", []):
+            print(f"    [{s['id']}] {s['name']}")
+        print(f"\n  risks.body:\n    {generated.get('risks', {}).get('body', '')}")
+        print(f"\n  opportunities.body:\n    {generated.get('opportunities', {}).get('body', '')}")
+        print(f"\n  howToAdapt.alreadyIn:\n    {generated.get('howToAdapt', {}).get('alreadyIn', '')}")
+        print(f"\n  howToAdapt.thinkingOf:\n    {generated.get('howToAdapt', {}).get('thinkingOf', '')}")
+
+        append_career_page(card)
+
+
+# ── Section: tasks batch handler ─────────────────────────────────────────────
+
+def process_tasks_batch(codes: list[str], scores: dict, task_table: dict):
+    """Recompute taskData for multiple codes, batch-prompting for missing labels.
+
+    Absorbed from the former patch_task_data.py. Three phases:
+    1. Compute new task data for all codes, collecting tasks needing labels
+    2. Interactive prompt for all missing labels at once
+    3. Apply labels and save
+    """
+    from cards import save_card
+
+    all_cards = {}       # code -> card (with _new_task_data and _needs_labels)
+    all_missing = []     # flat list of {code, occupation, full}
+
+    for code in codes:
+        result = process_occupation(
+            code, scores, task_table, {}, {}, "", "",
+            sections=["tasks"]
+        )
+        if result is None:
+            continue
+        all_cards[code] = result
+        all_missing.extend(result.pop("_needs_labels", []))
+
+    # Phase 2: interactive label prompt
+    label_map = {}
+    if all_missing:
+        print(f"\n{len(all_missing)} tasks need short labels across {len(all_cards)} cards.")
+        label_map = prompt_for_labels(all_missing)
+
+    # Phase 3: apply labels and save
+    print()
+    changed = 0
+    for code, card in all_cards.items():
+        new_task_data = card.pop("_new_task_data")
+        for t in new_task_data:
+            if needs_label(t) and t["full"] in label_map:
+                t["task"] = label_map[t["full"]]
+
+        old_tasks = [t["full"] for t in card.get("taskData", [])]
+        new_tasks = [t["full"] for t in new_task_data]
+        task_changed = old_tasks != new_tasks
+
+        card["taskData"] = new_task_data
+        save_card(card)
+
+        status = "CHANGED" if task_changed else "updated"
+        print(f"  {status} {code} ({len(old_tasks)} → {len(new_task_data)} tasks)")
+        if task_changed:
+            changed += 1
+
+    print(f"\nDone. {changed}/{len(all_cards)} cards had task order changes.")
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--code",  help="Single O*NET code to process, e.g. 15-1254.00")
-    parser.add_argument("--cluster", help="Process all codes in this cluster (from cluster_roles.csv)")
-    parser.add_argument("--batch", type=int, default=1, help="Number of unprocessed occupations to run")
-    parser.add_argument("--print-prompt", action="store_true", help="Print the prompt and exit (for use with Claude.ai)")
-    parser.add_argument("--api", action="store_true", help="Use Claude API instead of interactive stdin")
-    parser.add_argument("--force", action="store_true", help="Regenerate even if already in JSONL")
+    parser = argparse.ArgumentParser(
+        description="Generate or patch occupation card sections"
+    )
+    parser.add_argument("--code", help="Single O*NET code to process")
+    parser.add_argument("--cluster", help="All codes in this cluster (from cluster_roles.csv)")
+    parser.add_argument("--batch", type=int, default=1,
+                        help="Number of unprocessed occupations to run")
+    parser.add_argument("--print-prompt", action="store_true",
+                        help="Print the prompt and exit (Claude Code workflow)")
+    parser.add_argument("--api", action="store_true",
+                        help="Use Claude API instead of interactive stdin")
+    parser.add_argument("--force", action="store_true",
+                        help="Regenerate even if card already exists")
+    parser.add_argument("--section",
+                        help="Patch only specified sections (comma-separated): "
+                             "risks,opportunities | tasks | howToAdapt")
     args = parser.parse_args()
+
+    # Parse sections
+    sections = None
+    if args.section:
+        sections = [s.strip() for s in args.section.split(",")]
+        valid = {"risks", "opportunities", "tasks", "howToAdapt"}
+        invalid = set(sections) - valid
+        if invalid:
+            print(f"Invalid section(s): {invalid}. Valid: {valid}")
+            sys.exit(1)
 
     print("Loading data...")
     scores      = load_scores()
     task_table  = load_task_table()
     occ_metrics = load_occ_metrics()
-    a_scores    = load_a_scores(SCORE_LOG)
+    a_scores    = load_a_scores()
     existing    = load_existing_codes()
     tone_guide       = load_text(TONE_GUIDE)
     career_spec      = load_text(CAREER_SPEC)
     approved_sources = load_text(APPROVED_SOURCES)
 
+    # Resolve codes
     if args.code:
-        if args.code in existing and not args.print_prompt and not args.force:
-            print(f"  Already processed: {args.code}. Use --force to regenerate.")
-            return
-        process_occupation(args.code, scores, task_table, occ_metrics,
-                           a_scores, tone_guide, career_spec, approved_sources,
-                           print_prompt_only=args.print_prompt, api_mode=args.api)
+        codes = [args.code]
     elif args.cluster:
-        # Cluster mode: all codes in the cluster
-        cluster_roles_path = "data/career_clusters/cluster_roles.csv"
-        with open(cluster_roles_path, newline="", encoding="utf-8") as f:
-            cluster_codes = [
-                r["onet_code"] for r in csv.DictReader(f)
-                if r.get("cluster_id") == args.cluster
-            ]
-        if not cluster_codes:
+        codes = get_cluster_codes(args.cluster)
+        if not codes:
             print(f"No codes found for cluster '{args.cluster}'")
-            return
-        to_run = cluster_codes if args.force else [c for c in cluster_codes if c not in existing]
-        print(f"Cluster '{args.cluster}': {len(to_run)} to process (of {len(cluster_codes)} total)")
-        for code in to_run:
-            process_occupation(code, scores, task_table, occ_metrics,
-                               a_scores, tone_guide, career_spec, approved_sources,
-                               print_prompt_only=args.print_prompt, api_mode=args.api)
+            sys.exit(1)
+        print(f"Cluster '{args.cluster}': {len(codes)} codes")
     else:
-        # Batch mode: next N unprocessed, scored occupations
+        # Batch mode: next N unprocessed
         candidates = [
             r["Code"] for r in csv.DictReader(open(SCORES_CSV))
             if r["Code"] not in existing
             and r.get("role_resilience_score")
             and r.get("Data-level") == "Y"
         ]
-        to_run = candidates[:args.batch]
-        print(f"Batch mode: {len(to_run)} occupations (of {len(candidates)} remaining)")
-        for code in to_run:
-            process_occupation(code, scores, task_table, occ_metrics,
-                               a_scores, tone_guide, career_spec, approved_sources,
-                               print_prompt_only=args.print_prompt, api_mode=args.api)
+        codes = candidates[:args.batch]
+        print(f"Batch mode: {len(codes)} occupations (of {len(candidates)} remaining)")
+
+    # Filter for --force in full-card mode (sections always re-process)
+    if not sections and not args.force and not args.print_prompt:
+        codes = [c for c in codes if c not in existing]
+        if not codes:
+            print("All codes already processed. Use --force to regenerate.")
+            return
+
+    # Special batch handling for tasks section
+    if sections == ["tasks"]:
+        process_tasks_batch(codes, scores, task_table)
+        print("\n✓ Done")
+        return
+
+    # Process each code
+    for code in codes:
+        process_occupation(
+            code, scores, task_table, occ_metrics, a_scores,
+            tone_guide, career_spec, approved_sources,
+            print_prompt_only=args.print_prompt,
+            api_mode=args.api,
+            sections=sections,
+        )
 
     print("\n✓ Done")
 

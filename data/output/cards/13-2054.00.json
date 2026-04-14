@@ -4,14 +4,22 @@
   "risks": {
     "body": "The quantitative core of risk analysis is where AI is making the most contact. AI-driven risk modeling platforms are automating scenario construction, stress-testing, and VaR (value-at-risk) calculations that previously required senior analyst time [2]. McKinsey found that AI can reduce the time needed for routine credit and market risk analysis by 30 to 50 percent, which is compressing entry-level headcount at banks and asset managers as firms do more with existing teams [3].",
     "stat": "50%",
-    "statLabel": "potential productivity optimization [2]",
-    "statColor": "#ea580c"
+    "statLabel": "potential productivity optimization",
+    "statColor": "#ea580c",
+    "statSourceName": "Deloitte Insights",
+    "statSourceTitle": "AI and the Future of Financial Risk Management",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-risk-management.html"
   },
   "opportunities": {
     "body": "This role's structural strengths are concentrated in specialized expertise (A9=4) and AI direction (A10=4) — two of the highest scores in the scoring framework, indicating that risk specialists are increasingly valued for interpreting, validating, and challenging AI-generated risk signals rather than just producing them [1]. Regulatory requirements around stress testing (CCAR, DFAST) and model risk management (SR 11-7) require a licensed human to sign off on model outputs, creating a durable compliance layer AI cannot replace [4]. The FRM (Financial Risk Manager) credential, administered by GARP, correlates with roles that sit at the human-AI interface and commands a consistent salary premium [4].",
     "stat": "20%",
-    "statLabel": "salary premium for AI model risk expertise [4]",
-    "statColor": "#5a9a6e"
+    "statLabel": "salary premium for AI model risk expertise",
+    "statColor": "#5a9a6e",
+    "statSourceName": "GARP Risk Intelligence",
+    "statSourceTitle": "AI in Risk Management: Governance Imperatives",
+    "statSourceDate": "Nov 2024",
+    "statSourceUrl": "https://www.garp.org/risk-intelligence/technology/ai-risk-management-governance-2024"
   },
   "howToAdapt": {
     "alreadyIn": "The most concrete immediate action is to get fluent with at least one AI-native risk platform — Bloomberg's PORT Analytics, Moody's RiskCalc, or similar tools your firm uses — so you understand what the models are and aren't capturing [2]. Over the next six months, build depth in model risk governance: validating AI model assumptions, documenting limitations, and communicating risk to non-technical stakeholders. These tasks require human judgment and are explicitly required by bank regulators [4]. The FRM Part II curriculum now includes AI model risk content, making it directly relevant to this transition [4].",
@@ -291,7 +299,7 @@
   "score": 3.0,
   "salary": "$106,000",
   "openings": "4,800",
-  "growth": "+7%",
+  "growth": "+6%",
   "taskData": [
     {
       "task": "Analyze organizational risk",

@@ -4,7 +4,7 @@
   "score": 62,
   "salary": "$121,520",
   "openings": "5,000",
-  "growth": "+5%",
+  "growth": "+6%",
   "jobTitles": [
     "Account Executive",
     "Account Manager",
@@ -116,12 +116,20 @@
   "risks": {
     "body": "The tasks where AI shows the strongest automation signal are proposal development (29% automation rate) and sales-team collaboration (44% automation rate), both core activities in the role. AI tools can now draft initial proposal responses, generate competitive comparisons, and pull together technical specs without a human starting from scratch. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with the most common use cases being content generation for proposals and email outreach [1]. The broader sales engineering function still requires deep product knowledge and live customer interaction, but the prep work that used to fill much of a sales engineer's week is shrinking.",
     "stat": "81%",
-    "statLabel": "of sales teams using or piloting generative AI [1]"
+    "statLabel": "of sales teams using or piloting generative AI",
+    "statSourceName": "Salesforce",
+    "statSourceTitle": "State of Sales, 6th Edition",
+    "statSourceDate": "Nov 2024",
+    "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
   },
   "opportunities": {
     "body": "The strongest augmentation signal sits in needs assessment conversations with customers and engineers, where 42% of AI interactions show augmentation patterns and success rates reach 65% [2]. This means AI is helping sales engineers prepare better for technical discovery calls, not replacing the calls themselves. Harvard Business Review found that sales teams using AI for customer research and demo preparation report stronger win rates, particularly in technical sales where personalized presentations are the core differentiator [3]. The ability to translate complex engineering constraints into business value during live conversations remains structurally hard to automate because it requires reading a room, adapting on the fly, and holding accountability for the recommendation.",
     "stat": "65%",
-    "statLabel": "success rate on AI-assisted needs assessment conversations [1]"
+    "statLabel": "success rate on AI-assisted needs assessment conversations",
+    "statSourceName": "Salesforce",
+    "statSourceTitle": "State of Sales, 6th Edition",
+    "statSourceDate": "Nov 2024",
+    "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
   },
   "howToAdapt": {
     "alreadyIn": "Start using AI tools to draft proposal responses and competitive analyses now. The 29% automation rate on proposal work means these tools are already good enough to produce a solid first draft, freeing up time for the parts AI handles worst. Over the next six months, invest that reclaimed time in deepening live technical consultation skills, especially complex multi-stakeholder discovery sessions where the sales engineer has to synthesize engineering constraints with business goals in real time [2]. That's where the augmentation signal is strongest and where human judgment stays essential.",

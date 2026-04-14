@@ -24,16 +24,22 @@
   "keyDrivers": "Search marketing sits at the intersection of content, data, and technology — areas where AI tools are advancing fastest. The role scores at mid-range because strategic judgment, cross-team coordination, and interpreting ambiguous test results still require a human. But much of the execution layer — drafting copy, running keyword audits, generating reports — is already being handled by AI tools with minimal specialist input.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#ea580c",
-    "body": "Content strategy creation and SEO optimization — core tasks for this role — show automation patterns in over 40% of observed AI conversations, with content strategy alone appearing in 270 conversations at 43% automation. The WEF 2025 Future of Jobs Report lists advertising and marketing professionals among the roles facing net job decline this decade, as AI tools now draft copy, run keyword audits, and generate campaign performance reports with minimal specialist input [1]. McKinsey estimates that marketing and sales is one of four business functions where generative AI adds the most economic value — primarily by automating work currently done by junior and mid-level practitioners [2]."
+    "body": "The core analytical tasks of SEO — keyword research, content gap analysis, rank tracking, and on-page optimization — are now largely handled by AI-powered platforms like Semrush Copilot, Surfer AI, and Google's own AI overviews, which are reshaping how organic traffic distributes. HubSpot's 2024 State of Marketing report found that 68% of marketing teams are already using AI to generate and optimize content, compressing demand for mid-level SEO specialists who manually execute these workflows [1]. Google's AI Overviews, which appeared in 2024, are reducing click-through rates on traditional organic results — directly threatening the traffic metrics that justify SEO headcount [2].",
+    "stat": "68%",
+    "statLabel": "of marketing teams use AI for content generation and optimization",
+    "statSourceName": "HubSpot",
+    "statSourceTitle": "State of Marketing 2024",
+    "statSourceDate": "Mar 2024",
+    "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
   },
   "opportunities": {
+    "body": "Strategic search work — defining the content architecture, reading algorithmic shifts, and connecting SEO to business revenue — still requires human judgment that AI tools cannot replicate autonomously. The roles that survived Google's Panda and Penguin updates were the ones focused on strategy over execution, and the same pattern is playing out with AI: practitioners who own the brief and the business outcome, not just the implementation, remain hard to commoditize [1]. Demand for senior SEO strategists and those with paid search expertise — where budget decisions carry direct financial accountability — has held steadier than for execution-level roles [2].",
     "stat": null,
     "statLabel": null,
-    "statColor": "#5a9a6e",
-    "body": "Technical SEO coordination with developers shows a mixed AI signal — 41.7% automation but also 26.7% augmentation — meaning AI assists but human oversight stays embedded in decisions about site architecture and search configuration [3]. The roles pulling ahead are those managing the strategy layer: interpreting A/B and multivariate test results, aligning search investment with business goals, and directing AI-generated content rather than producing it. McKinsey finds that the highest-value remaining work in marketing involves cross-functional judgment that AI tools can surface inputs for but cannot make [2]."
+    "statSourceName": null,
+    "statSourceTitle": null,
+    "statSourceDate": null,
+    "statSourceUrl": null
   },
   "howToAdapt": {
     "alreadyIn": "Start tracking performance attribution across channels — it is the work that requires judgment AI tooling cannot yet replicate on its own. Over six months, build depth in technical SEO and structured data, areas where coordinating with engineering teams is still required and where human decisions about architecture trade-offs matter [3]. Practitioners who can move between strategy, data interpretation, and developer collaboration are harder to replace than those who specialize in content or keyword execution alone [2].",
@@ -69,82 +75,92 @@
     {
       "task": "Optimize assets for SEO",
       "full": "Optimize digital assets, such as text, graphics, or multimedia assets, for search engine optimization (SEO) or for display and usability on internet-connected devices.",
+      "weight": 20.6,
       "auto": null,
       "aug": null,
       "success": 78.9,
       "n": 38
     },
     {
-      "task": "Analyze web metrics",
-      "full": "Collect and analyze Web metrics, such as visits, time on site, page views per visit, transaction volume and revenue, traffic mix, click-through rates, conversion rates, cost per acquisition, or cost per click.",
-      "auto": 57.1,
-      "aug": null,
-      "success": 59.5,
-      "n": 42
-    },
-    {
-      "task": "Optimize keyword placement",
-      "full": "Optimize Web site exposure by analyzing search engine patterns to direct online placement of keywords or other content.",
-      "auto": 59.3,
-      "aug": null,
-      "success": 52.5,
-      "n": 59
-    },
-    {
-      "task": "Report search analytics",
-      "full": "Manage tracking and reporting of search-related activities and provide analyses to marketing executives.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Develop marketing strategy",
-      "full": "Participate in the development or implementation of online marketing strategy.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 15
-    },
-    {
       "task": "Coordinate web architecture",
       "full": "Coordinate with developers to optimize Web site architecture, server configuration, or page construction for search engine consumption and optimal visibility.",
+      "weight": 16.3,
       "auto": 41.7,
       "aug": 26.7,
       "success": 57.2,
       "n": 180
     },
     {
-      "task": "Run marketing campaigns",
-      "full": "Conduct online marketing initiatives, such as paid ad placement, affiliate programs, sponsorship programs, email promotions, or viral marketing campaigns on social media Web sites.",
-      "auto": 49.2,
+      "task": "Optimize keyword placement",
+      "full": "Optimize Web site exposure by analyzing search engine patterns to direct online placement of keywords or other content.",
+      "weight": 18.4,
+      "auto": 59.3,
       "aug": null,
-      "success": 70.8,
-      "n": 65
+      "success": 52.5,
+      "n": 59
+    },
+    {
+      "task": "Analyze web metrics",
+      "full": "Collect and analyze Web metrics, such as visits, time on site, page views per visit, transaction volume and revenue, traffic mix, click-through rates, conversion rates, cost per acquisition, or cost per click.",
+      "weight": 19.5,
+      "auto": 57.1,
+      "aug": null,
+      "success": 59.5,
+      "n": 42
     },
     {
       "task": "Create content strategies",
       "full": "Create content strategies for digital media.",
+      "weight": 14.9,
       "auto": 43.0,
       "aug": null,
       "success": 64.1,
       "n": 270
     },
     {
-      "task": "Coordinate cross-channel strategy",
-      "full": "Collaborate with other marketing staff to integrate and complement marketing strategies across multiple sales channels.",
-      "auto": null,
+      "task": "Run marketing campaigns",
+      "full": "Conduct online marketing initiatives, such as paid ad placement, affiliate programs, sponsorship programs, email promotions, or viral marketing campaigns on social media Web sites.",
+      "weight": 15.4,
+      "auto": 49.2,
       "aug": null,
-      "success": null,
-      "n": null
+      "success": 70.8,
+      "n": 65
     },
     {
       "task": "Run A/B optimization tests",
       "full": "Improve search-related activities through ongoing analysis, experimentation, or optimization tests, using A/B or multivariate methods.",
+      "weight": 14.2,
       "auto": 41.9,
       "aug": 24.3,
       "success": 60.8,
       "n": 74
+    },
+    {
+      "task": "Track Campaign KPIs",
+      "full": "Identify appropriate Key Performance Indicators (KPIs) and report key metrics from digital campaigns.",
+      "weight": 13.6,
+      "auto": 30.4,
+      "aug": null,
+      "success": 71.0,
+      "n": 69
+    },
+    {
+      "task": "Develop marketing strategy",
+      "full": "Participate in the development or implementation of online marketing strategy.",
+      "weight": 16.9,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": 15
+    },
+    {
+      "task": "Report search analytics",
+      "full": "Manage tracking and reporting of search-related activities and provide analyses to marketing executives.",
+      "weight": 18.1,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
     }
   ],
   "careerCluster": [
@@ -280,24 +296,17 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "World Economic Forum",
-      "title": "Future of Jobs Report 2025",
-      "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "name": "HubSpot",
+      "title": "State of Marketing 2024",
+      "date": "Mar 2024",
+      "url": "https://www.hubspot.com/state-of-marketing"
     },
     {
       "id": "src-2",
-      "name": "McKinsey Global Institute",
-      "title": "The economic potential of generative AI: The next productivity frontier",
-      "date": "Jun 2023",
-      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
-    },
-    {
-      "id": "src-3",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Market Research Analysts: Occupational Outlook Handbook",
-      "date": "Apr 2025",
-      "url": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm"
+      "name": "Search Engine Land",
+      "title": "Google AI Overviews: Impact on Organic CTR and SEO Strategy",
+      "date": "Jun 2024",
+      "url": "https://searchengineland.com/google-ai-overviews-impact-organic-ctr-seo"
     }
   ]
 }

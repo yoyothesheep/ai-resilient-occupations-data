@@ -352,18 +352,26 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     emerging_titles = card.get("emergingTitles") or [
         t.strip() for t in scores.get(onet_code, {}).get("Emerging Job Titles", "").split(";") if t.strip()
     ]
-    key_drivers = card.get("keyDrivers", "")
+    key_drivers = scores.get(onet_code, {}).get("key_drivers", "") or card.get("keyDrivers", "")
     task_intro = card.get("taskIntro", "")
 
     risks = card.get("risks", {})
     risks_body = risks.get("body", "")
     risks_stat = nullable_string(risks.get("stat"))
     risks_stat_label = nullable_string(risks.get("statLabel"))
+    risks_stat_source_name  = nullable_string(risks.get("statSourceName"))
+    risks_stat_source_title = nullable_string(risks.get("statSourceTitle"))
+    risks_stat_source_date  = nullable_string(risks.get("statSourceDate"))
+    risks_stat_source_url   = nullable_string(risks.get("statSourceUrl"))
 
     opps = card.get("opportunities", {})
     opps_body = opps.get("body", "")
     opps_stat = nullable_string(opps.get("stat"))
     opps_stat_label = nullable_string(opps.get("statLabel"))
+    opps_stat_source_name  = nullable_string(opps.get("statSourceName"))
+    opps_stat_source_title = nullable_string(opps.get("statSourceTitle"))
+    opps_stat_source_date  = nullable_string(opps.get("statSourceDate"))
+    opps_stat_source_url   = nullable_string(opps.get("statSourceUrl"))
 
     how = card.get("howToAdapt", {})
     already_in = how.get("alreadyIn", "")
@@ -371,7 +379,21 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     quotes = how.get("quotes", [])
 
     task_rows = card.get("taskData", [])
-    sources = card.get("sources", [])
+    sources = list(card.get("sources", []))
+
+    # Merge stat sources into sources list (dedup by url)
+    existing_urls = {s.get("url") for s in sources}
+    for section, key in [(risks, "risks"), (opps, "opportunities")]:
+        url = section.get("statSourceUrl")
+        if url and url not in existing_urls:
+            sources.append({
+                "id": f"src-stat-{key}",
+                "name": section.get("statSourceName", ""),
+                "title": section.get("statSourceTitle", ""),
+                "date": section.get("statSourceDate", ""),
+                "url": url,
+            })
+            existing_urls.add(url)
 
     # Build job titles lists
     titles_str = "\n".join(f"    {str_to_tsx_string(t)}," for t in job_titles)
@@ -413,19 +435,40 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     if task_intro:
         lines.append(f"  taskIntro: {str_to_tsx_string(task_intro)},")
 
-    lines += [
+    risks_lines = [
         f"  risks: {{",
         f"    stat: {risks_stat},",
         f"    statLabel: {risks_stat_label},",
         f'    statColor: "#ea580c",',
-        f"    body: {text_to_jsx_fragment(risks_body, indent=2)},",
-        f"  }},",
+    ]
+    if risks.get("statSourceUrl"):
+        risks_lines += [
+            f"    statSourceName: {risks_stat_source_name},",
+            f"    statSourceTitle: {risks_stat_source_title},",
+            f"    statSourceDate: {risks_stat_source_date},",
+            f"    statSourceUrl: {risks_stat_source_url},",
+        ]
+    risks_lines.append(f"    body: {text_to_jsx_fragment(risks_body, indent=2)},")
+    risks_lines.append(f"  }},")
+
+    opps_lines = [
         f"  opportunities: {{",
         f"    stat: {opps_stat},",
         f"    statLabel: {opps_stat_label},",
         f'    statColor: "#5a9a6e",',
-        f"    body: {text_to_jsx_fragment(opps_body, indent=2)},",
-        f"  }},",
+    ]
+    if opps.get("statSourceUrl"):
+        opps_lines += [
+            f"    statSourceName: {opps_stat_source_name},",
+            f"    statSourceTitle: {opps_stat_source_title},",
+            f"    statSourceDate: {opps_stat_source_date},",
+            f"    statSourceUrl: {opps_stat_source_url},",
+        ]
+    opps_lines.append(f"    body: {text_to_jsx_fragment(opps_body, indent=2)},")
+    opps_lines.append(f"  }},")
+
+    lines += risks_lines + opps_lines
+    lines += [
         f"  howToAdapt: {{",
         f"    alreadyIn: {text_to_jsx_fragment(already_in, indent=2)},",
         f"    thinkingOf: {text_to_jsx_fragment(thinking_of, indent=2)},",

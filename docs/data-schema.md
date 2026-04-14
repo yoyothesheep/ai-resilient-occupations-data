@@ -5,10 +5,10 @@ Defines the structure and purpose of every output file. The CSV is the scoring i
 ## Output file strategy
 
 - **`ai_resilience_scores.csv`** — flat index for sorting, filtering, leaderboards. No long-form text except `key_drivers`.
-- **`occupation_cards.jsonl`** — pipeline file. One JSON object per line, one occupation per line. Easy to regenerate one occupation, run in batches, and audit with grep. This is the working format during Phase 5–9.
-- **`occupation_cards.json`** — site export. Converted from JSONL as a final build step. Either a single JSON array (for client-side indexing) or split into per-file by the site build process if Next.js static generation requires it.
+- **`data/output/cards/{onet_code}.json`** — one JSON file per occupation (e.g. `11-2011.00.json`). Current production format. Written by `generate_next_steps.py`, `patch_risks_opps.py`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`.
+- **`data/emerging_roles/emerging_roles.csv`** — AI-era pivot roles. Single source of truth for emerging career suggestions per occupation.
 
-The site should never read the CSV directly. It consumes `occupation_cards.json`.
+The site never reads the CSV directly. `generate_career_pages.py` reads the per-code JSON cards and scores CSV, then writes `.tsx` files into the site repo.
 
 ---
 
@@ -31,7 +31,8 @@ The main scoring index. One row per occupation. Used for sorting, filtering, lea
 | `Projected Job Openings` | int | Projected annual job openings |
 | `role_resilience_score` | float | AI resilience score, 1.0–5.0 (higher = more resilient) |
 | `final_ranking` | float | Composite ranking, 0.0–1.0 (score 50% + growth 30% + openings 20%) |
-| `key_drivers` | string | 2–3 sentence plain-English explanation of what drives the score |
+| `key_drivers` | string | 2–3 sentence plain-English explanation of what drives the score. Authoritative source for `keyDrivers` in occupation cards — always used over any card-level value. |
+| `Emerging Job Titles` | string | Semicolon-separated real-world job title aliases (e.g. "Growth Marketer; Digital Strategist"). Written by `generate_emerging_job_titles.py`. Consumed by `generate_next_steps.py` as `emergingTitles` in cards. |
 | `url` | string | O*NET occupation detail URL |
 | `altpath url` | string | Alternative path / simplified career page URL |
 | `Sample Job Titles` | string | Common job titles for this occupation |
@@ -40,137 +41,174 @@ The main scoring index. One row per occupation. Used for sorting, filtering, lea
 
 ---
 
-## 2. `data/output/occupation_cards.jsonl` → `data/output/occupation_cards.json`
+## 2. `data/output/cards/{onet_code}.json`
 
-Pipeline working file is `occupation_cards.jsonl` — one JSON object per line, one occupation per line. A final export step converts it to `occupation_cards.json` (single array) for the site. The site build may further split into per-file if needed by Next.js static generation.
-
-Each occupation object contains everything the site needs to render a full career page. Fields marked with `*` are repeated from the CSV for self-contained lookup — the site should not need to cross-reference.
+One JSON file per occupation (e.g. `data/output/cards/27-3043.00.json`). Written by `generate_next_steps.py` (initial card), then patched by `patch_risks_opps.py`, `adjacent_roles.py`, `generate_emerging_roles.py`. Read via `scripts/cards.py`. Consumed by `generate_career_pages.py` to produce site `.tsx` files.
 
 ```jsonc
 {
-  // Identity *
-  "onet_code": "29-2061.00",
-  "occupation_title": "Licensed Practical and Licensed Vocational Nurses",
-  "simple_title": "LPN / Licensed Practical Nurse",
+  // Identity — from scores CSV
+  "onet_code": "27-3043.00",
+  "title": "Copywriter",              // altpath simple title from scores CSV
+  "score": 49,                        // final_ranking × 100, rounded int
+  "salary": "$72,270",                // formatted median wage
+  "openings": "13,400",              // formatted projected annual openings
+  "growth": "+4%",                   // formatted employment change %
 
-  // Scores *
-  "role_resilience_score": 3.6,
-  "final_ranking": 0.74,
-  "tier": {
-    "number": 3,
-    "label": "..."           // tier label from tier system
-  },
+  // Job titles
+  "jobTitles": ["Copywriter", "Ad Agency Copywriter", ...],   // from Sample Job Titles
+  "emergingTitles": ["Copywriter", "Content Writer"],          // from Emerging Job Titles in scores CSV
 
-  // Attribute scores (from score_log.txt)
-  "a_scores": {
-    "A1_physical_presence": 4,
-    "A2_trust_core_product": 4,
-    "A3_novel_judgment": 3,
-    "A4_legal_accountability": 4,
-    "A5_deep_org_context": 3,
-    "A6_political_navigation": 2,
-    "A7_creative_pov": 1,
-    "A8_changed_by_experience": 3,
-    "A9_expertise_underutilized": 4,
-    "A10_downstream_ai_mgmt": 4
-  },
+  // Key drivers — always sourced from key_drivers in ai_resilience_scores.csv
+  // (never regenerated here; pipeline writes it during scoring)
+  "keyDrivers": "2–3 sentence plain-English explanation of score drivers.",
 
-  // Labor market *
-  "median_wage": 55000,
-  "projected_growth": "Average",
-  "annual_openings": 56000,
-  "top_education_level": "Postsecondary nondegree award",
+  // Task chart intro — displayed above the task chart on career page
+  "taskIntro": "...",
 
-  // AEI metrics
-  "ai_task_coverage_pct": 9.1,
-  "weighted_automation_pct": 53.8,
-  "weighted_augmentation_pct": null,
-  "weighted_task_success_pct": 78.2,
-  "weighted_speedup_factor": 7.7,
-  "low_data_confidence": true,    // true if ai_task_coverage_pct < 20%
-
-  // Key drivers (existing)
-  "key_drivers": "...",
-
-  // Career page content (Phase 5)
-  // Inline citation markers like [1], [2] refer to entries in the sources array below.
-  // sections[] is optional — present only when the content warrants named subsections.
-  // Section titles are free-form and will vary by occupation (not predefined).
+  // Risks section
   "risks": {
-    "summary": "Very little risk from AI. The core responsibilities — observing patients, measuring vital signs, administering medications — are done in person and require expert-level clinical judgment. AI is not expected to replace these in the near future. BLS projects 3% job growth through 2034 [1].",
-    "sections": []               // optional; empty array or omitted if no subsections needed
+    "body": "2–3 sentences. Inline citations like [1].",
+    "stat": "-21%",                          // null if no strong stat
+    "statLabel": "YoY decline in freelance writing job postings on Upwork",
+    "statSourceName": "Upwork",
+    "statSourceTitle": "Freelance Forward 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://..."
   },
+
+  // Opportunities section
   "opportunities": {
-    "summary": "AI is starting to take on the administrative and documentation side of nursing [2]. For LPNs, that means less paperwork and more time on the clinical work that defines the role.",
-    "sections": [                // optional; titles are free-form
+    "body": "2–3 sentences. Inline citations like [1].",
+    "stat": "72%",                           // null if no strong stat; must differ from risks.stat
+    "statLabel": "of top-performing content teams use humans for brand voice",
+    "statSourceName": "Content Marketing Institute",
+    "statSourceTitle": "B2B Content Marketing 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://..."
+  },
+
+  // How to adapt section
+  "howToAdapt": {
+    "alreadyIn": "3–4 sentences for someone currently in the role.",
+    "thinkingOf": "3–4 sentences for someone considering entering.",
+    "quotes": [
       {
-        "title": "Using AI tools in clinical settings",
-        "body": "Nurses who get comfortable with AI-assisted charting and remote monitoring tools early will be better positioned as these become standard [2]."
+        "persona": "alreadyIn",          // or "thinkingOf"
+        "quote": "Real quote from named practitioner or research report.",
+        "attribution": "Person Name, Organization / Report Title",
+        "sourceId": "src-1"             // matches id in sources[]
       }
+      // 2 quotes per persona (4 total)
     ]
   },
 
-  // Task highlights (derived from task table)
-  // tasks[]: unified list of top tasks by weight, for the "How AI Is Changing This Role" chart.
-  // Includes all tasks (AEI-matched or not). Sorted by task_weight descending.
-  // automation_pct and augmentation_pct are null for tasks with no AEI coverage.
-  // onet_task_count < 100 tasks excluded. Suggested max: top 10 by weight.
-  "tasks": [
-    { "task_text": "Write supporting code for Web applications or Web sites.", "task_weight": 23.9, "automation_pct": 39.5, "augmentation_pct": 9.7 },
-    { "task_text": "Design, build, or maintain Web sites...",                   "task_weight": 22.7, "automation_pct": 45.1, "augmentation_pct": 4.4 },
-    { "task_text": "Back up files from Web sites to local directories...",      "task_weight": 20.1, "automation_pct": null,  "augmentation_pct": null }
-  ],
-
-  // Convenience subsets derived from tasks[] — kept for prose generation in Phase 5.
-  // Do not use these for the chart; use tasks[] instead.
-  "top_automated_tasks": [
-    // Top tasks by weight where automation_pct > 0 and onet_task_count >= 100. Max 3.
-    { "task_text": "Record food and fluid intake and output", "automation_pct": 53.8, "task_weight": 20.9 }
-  ],
-  "top_augmented_tasks": [
-    // Top tasks by weight where augmentation_pct > 0 and onet_task_count >= 100. Max 3.
-    { "task_text": "...", "augmentation_pct": 0.0, "task_weight": 0.0 }
-  ],
-  "untouched_high_priority_tasks": [
-    // Top tasks by weight where in_aei = false. Max 3.
-    { "task_text": "Observe patients, charting and reporting changes in patients' conditions...", "task_weight": 25.7 },
-    { "task_text": "Measure and record patients' vital signs...", "task_weight": 24.8 },
-    { "task_text": "Administer prescribed medications or start intravenous fluids...", "task_weight": 24.5 }
-  ],
-
-  // Related careers (from adjacent_roles.py)
-  // Up to 6 related careers per occupation, sorted by score descending.
-  "relatedCareers": [
+  // Task data — top 10 tasks by weight, for the task chart
+  "taskData": [
     {
-      "code":         "29-1141.00",   // O*NET code
-      "title":        "Registered Nurses",
-      "relationship": "progression",  // "progression" | "specialization" | "lateral" | "adjacent"
-      "score":        78,             // final_ranking × 100, rounded
-      "openings":     "189,100",      // annual projected openings, formatted
-      "growth":       "+5%",          // employment change % or BLS label
-      "fit":          "...",          // one-sentence Feynman-style explanation
-      "steps":        ["NCLEX-RN exam", "LPN-to-RN bridge program (ADN or BSN)", "..."]
-      // 2–3 concrete steps to make the move: credentials, courses, certs, or practical actions.
-      // Anchored by curated cluster_branches.csv notes when a direct branch exists.
+      "task": "Short label",            // display label
+      "full": "Full O*NET task text.",
+      "auto": 47.7,                     // automation_pct; null if no AEI data or n < 100
+      "aug": null,                      // augmentation_pct; null if no AEI data or n < 100
+      "success": 61.5,                  // task_success_pct; null if no AEI data
+      "n": 65                           // AEI conversation count; null if no AEI data
+    }
+  ],
+
+  // Career cluster — populated by adjacent_roles.py
+  // Up to 6–8 related careers. Sorted by level then score.
+  "careerCluster": [
+    {
+      "level": 3,
+      "code": "27-3043.00",
+      "title": "Copywriter",
+      "isCurrent": true,               // true for exactly one entry (the current role)
+      "score": 2.4                     // role_resilience_score from CSV
+    },
+    {
+      "level": 4,
+      "code": "11-2011.00",
+      "title": "Advertising Manager",
+      "isCurrent": false,
+      "score": 2.5,
+      "relationship": "progression",   // "progression" | "specialization" | "lateral" | "adjacent"
+      "salary": "$126,960",
+      "openings": "2,100",
+      "growth": "-2%",
+      "fit": "One Feynman-style sentence explaining the connection.",
+      "steps": ["Step 1", "Step 2", "Step 3"]   // 2–3 concrete credentials or actions
+      // less_trained roles (one level below current) get relationship tagged "less_trained"
     }
   ],
   // relationship values:
-  //   "progression"    — step up in credential, scope, or seniority (from cluster_branches or level diff)
-  //   "specialization" — same level, narrower focus or specific setting
-  //   "lateral"        — different track or field, similar standing
-  //   "adjacent"       — shares task overlap but no direct cluster path (methods 2 or 3)
+  //   "progression"    — step up in level (from cluster_branches or level diff)
+  //   "specialization" — same level, narrower focus
+  //   "lateral"        — different track, similar standing
+  //   "adjacent"       — task overlap but no direct cluster path
+  //   "less_trained"   — one level below current (shown for context, not recommended next step)
 
-  // Sources — enumerated to match inline [n] markers in risks/opportunities prose
+  // Emerging careers — populated by generate_emerging_roles.py from emerging_roles.csv
+  "emergingCareers": [],   // array of emerging role objects; empty if none generated yet
+
+  // Sources — cited in risks.body, opportunities.body, howToAdapt prose
+  // stat sources (statSourceName etc.) are merged into this array by generate_career_pages.py
   "sources": [
-    { "id": 1, "label": "BLS Occupational Outlook Handbook — LPN", "url": "https://www.bls.gov/ooh/healthcare/licensed-practical-and-licensed-vocational-nurses.htm" },
-    { "id": 2, "label": "American Nurses Association — AI in Nursing Practice (2025)", "url": "https://ojin.nursingworld.org/table-of-contents/volume-30-2025/number-2-may-2025/artificial-intelligence-in-nursing-practice-decisional-support-clinical-integration-and-future-directions/" }
+    {
+      "id": "src-1",        // referenced as [1] in body prose; "src-N" format
+      "name": "Upwork",
+      "title": "Freelance Forward 2024",
+      "date": "Oct 2024",
+      "url": "https://..."
+    }
   ]
 }
 ```
 
 ---
 
-## 3. `data/intermediate/onet_economic_index_task_table.csv`
+## 3. `data/emerging_roles/emerging_roles.csv`
+
+Single source of truth for AI-era career pivot suggestions per occupation. Written by `generate_emerging_roles.py`. Consumed by the same script to merge `emergingCareers` into occupation cards.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `onet_code` | string | Source occupation O*NET code |
+| `emerging_title` | string | Title of the emerging role |
+| `description` | string | 1–2 sentence role description |
+| `core_tools` | string | Comma-separated key tools/platforms |
+| `stat_text` | string | Supporting market stat (plain text) |
+| `stat_source` | string | Stat publisher name |
+| `stat_title` | string | Stat source title |
+| `stat_date` | string | Stat publication date |
+| `stat_url` | string | Stat source URL |
+| `search_query` | string | Job board search string used to verify postings exist |
+| `job_search_url` | string | URL to live job search results |
+| `fit` | string | One sentence on why this role is a natural pivot |
+| `steps_json` | string | JSON array of 2–3 concrete transition steps |
+| `experience_level` | int | Seniority level 1–5 relative to source occupation |
+
+---
+
+## 4. `data/output/score_log.txt`
+
+Human-readable log written by `score_occupations.py`. One block per occupation. Parsed by `patch_risks_opps.py` and other scripts to extract per-occupation A1–A10 attribute scores, which are not stored in the CSV.
+
+Format per occupation block:
+```
+  Occupation Title (XX-XXXX.XX)
+    A1 Physical Presence: 4
+    A2 Trust as Core Product: 3
+    ...
+    A10 Downstream AI Management: 2
+    → role_resilience_score: 3.2
+    → final_ranking: 0.61
+```
+
+Parsed via regex in `load_a_scores()` in `patch_risks_opps.py`.
+
+---
+
+## 5. `data/intermediate/onet_economic_index_task_table.csv`
 
 Full task-level table. 18,796 rows, one per O*NET task. Used to generate occupation-level metrics and task highlights in the JSON cards. Not consumed directly by the site.
 
@@ -195,7 +233,7 @@ Full task-level table. 18,796 rows, one per O*NET task. Used to generate occupat
 
 ---
 
-## 4. `data/intermediate/onet_economic_index_metrics.csv`
+## 6. `data/intermediate/onet_economic_index_metrics.csv`
 
 Occupation-level AEI rollups. 923 occupations. Weighted means over AEI-matched tasks only.
 
@@ -210,6 +248,48 @@ Occupation-level AEI rollups. 923 occupations. Weighted means over AEI-matched t
 | `weighted_task_success_pct` | float | Weighted mean task success % across AEI tasks |
 | `weighted_ai_autonomy_mean` | float | Weighted mean AI autonomy score across AEI tasks |
 | `weighted_speedup_factor` | float | Weighted mean speedup factor across AEI tasks |
+
+---
+
+## 7. Career Cluster Files (`data/career_clusters/`)
+
+Three CSV files define the career ladder topology used to populate career pages.
+
+### `clusters.csv`
+One row per cluster.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `cluster_id` | string | Slug identifier, e.g. `marketing` |
+| `cluster_name` | string | Display name, e.g. `Marketing & Growth` |
+| `industry_slug` | string | URL slug for the industry page |
+| `industry_display_name` | string | Display name for the industry page |
+
+### `cluster_roles.csv`
+One row per occupation. **Invariant: each `onet_code` must appear in exactly one cluster.** Cross-cluster visibility is handled via `cluster_branches.csv` with `is_cross_family=true`, never by listing a role in two clusters.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `onet_code` | string | O*NET code — unique across the entire file |
+| `occupation` | string | O*NET occupation title |
+| `cluster_id` | string | FK → `clusters.csv` |
+| `level` | int | Career level 1–5 (1=entry, 5=principal) |
+| `is_canonical` | bool | Whether this is a primary/representative role in the cluster |
+| `typical_years_from_entry` | int | Typical years experience to reach this level |
+| `notes` | string | Context injected into Claude prompt for adjacent-role generation |
+
+### `cluster_branches.csv`
+One row per from→to career transition.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `from_onet_code` | string | Source role — must exist in `cluster_roles.csv` |
+| `to_onet_code` | string | Target role — must exist in `cluster_roles.csv` unless `is_cross_family=true` |
+| `transition_type` | string | `progression` (step up) or `lateral` (peer-level pivot) |
+| `is_cross_family` | bool | True when target is in a different cluster |
+| `notes` | string | Ground truth for "how to make the move" steps in adjacent-role generation |
+
+**Design rule:** when a role's best next move is in a different cluster, use a cross-family branch rather than duplicating the role. The integrity check in `.claude/skills/career-clusters/SKILL.md` enforces the uniqueness constraint.
 
 ---
 

@@ -26,16 +26,22 @@
   "keyDrivers": "Editing sits in a difficult position: the core task of rewriting and improving copy has the highest AI usage volume of any task in this role — over 13,000 observed conversations — with 30.9% automation patterns. Editors who focus on mechanical correction are the most exposed. The role's durability comes from editorial judgment: deciding what to publish, shaping narratives, managing authors, and maintaining publication standards — work that requires institutional knowledge and contextual reasoning AI tools cannot yet replicate reliably.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#ea580c",
-    "body": "The single highest-signal task in AI usage data for this role is rewriting and editing copy — over 13,000 observed conversations with a 30.9% automation pattern. This is one of the clearest AI displacement signals in any media or communications occupation. The WEF 2025 Future of Jobs Report lists editors among media and communications roles facing above-average displacement as AI tools take on more copy editing, headline writing, and content optimization work [1]. As AI handles more of the mechanical editing workload, team sizes at digital publishers and content operations have contracted [2]."
+    "body": "Copy editing, proofreading, and headline writing — tasks that have historically anchored entry-level editorial jobs — are now handled reliably by AI tools, accelerating the newsroom consolidation already underway. NiemanLab's 2024 coverage of editorial industry trends documents that US newsrooms shed more than 2,900 jobs in 2023, with AI-assisted production cited by publishers as a direct factor in not backfilling those positions [1]. The Reuters Institute Digital News Report 2024 found that 28% of news organizations are now using AI for content production tasks, with copy editing and summarization among the first functions automated [2].",
+    "stat": "2,900+",
+    "statLabel": "US newsroom jobs cut in 2023, with AI cited in hiring freezes",
+    "statSourceName": "NiemanLab",
+    "statSourceTitle": "The State of News Industry Jobs 2024",
+    "statSourceDate": "Mar 2024",
+    "statSourceUrl": "https://www.niemanlab.org/2024/03/the-news-industry-shed-thousands-of-jobs-in-2023/"
   },
   "opportunities": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#5a9a6e",
-    "body": "Substantive editing — evaluating manuscripts, working with authors on structure and argument, making decisions about what to publish — shows almost no AI automation signal, because it requires contextual judgment and institutional relationships that AI tools cannot replicate. The weighted augmentation signal (18.1%) suggests editors are using AI as a support tool for mechanical tasks while retaining decision authority on what actually matters editorially [1]. McKinsey notes that content roles requiring evaluation of ambiguous quality criteria, author relationship management, and strategic publication decisions are among the most durable as automation advances [2]."
+    "body": "Editors who shape editorial strategy, manage contributor relationships, and make judgment calls about what a publication should cover are not doing work that AI can replicate autonomously. Reuters Institute found that 63% of readers say they trust AI-generated news content less than human-edited journalism, which means publications competing on credibility still need visible human editorial accountability [1]. The role is shrinking at the volume-content end and holding — or growing — at the strategy and judgment end, particularly at brands where editorial voice is a differentiator.",
+    "stat": "63%",
+    "statLabel": "of readers trust AI-generated news less than human-edited content",
+    "statSourceName": "Reuters Institute",
+    "statSourceTitle": "Digital News Report 2024",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
   },
   "howToAdapt": {
     "alreadyIn": "Use AI tools for mechanical editing tasks now — proofreading, readability improvements, headline variants — to free up time for the substantive editorial work that actually requires judgment. Over six months, build depth in the areas AI handles worst: acquisitions, author relationships, and editorial strategy decisions that require understanding an audience at an institutional level [2]. Editors who can also manage freelance contributor networks and production processes are more valuable than those who focus on copy editing alone [1].",
@@ -69,16 +75,45 @@
   },
   "taskData": [
     {
-      "task": "Proofread copy",
+      "task": "Rewrite/edit copy",
+      "full": "Prepare, rewrite and edit copy to improve readability, or supervise others who do this work.",
+      "weight": 21.8,
+      "auto": 30.9,
+      "aug": 3.3,
+      "success": 81.0,
+      "n": 13512
+    },
+    {
+      "task": "Proofread and Correct Copy",
       "full": "Read copy or proof to detect and correct errors in spelling, punctuation, and syntax.",
+      "weight": 25.6,
       "auto": null,
       "aug": null,
       "success": null,
       "n": 16
     },
     {
+      "task": "Develop story ideas",
+      "full": "Develop story or content ideas, considering reader or audience appeal.",
+      "weight": 21.6,
+      "auto": 34.5,
+      "aug": null,
+      "success": 72.7,
+      "n": 55
+    },
+    {
+      "task": "Review and Approve Proofs",
+      "full": "Review and approve proofs submitted by composing room prior to publication production.",
+      "weight": 15.6,
+      "auto": 23.4,
+      "aug": 37.2,
+      "success": 62.3,
+      "n": 478
+    },
+    {
       "task": "Edit and confer with authors",
       "full": "Read, evaluate and edit manuscripts or other materials submitted for publication, and confer with authors regarding changes in content, style or organization, or publication.",
+      "weight": 23.2,
       "auto": null,
       "aug": null,
       "success": null,
@@ -87,6 +122,7 @@
     {
       "task": "Verify facts/statistics",
       "full": "Verify facts, dates, and statistics, using standard reference sources.",
+      "weight": 23.0,
       "auto": null,
       "aug": null,
       "success": null,
@@ -95,30 +131,7 @@
     {
       "task": "Monitor news gathering",
       "full": "Monitor news-gathering operations to ensure utilization of all news sources, such as press releases, telephone contacts, radio, television, wire services, and other reporters.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Rewrite/edit copy",
-      "full": "Prepare, rewrite and edit copy to improve readability, or supervise others who do this work.",
-      "auto": 30.9,
-      "aug": 3.3,
-      "success": 81.0,
-      "n": 13512
-    },
-    {
-      "task": "Develop story ideas",
-      "full": "Develop story or content ideas, considering reader or audience appeal.",
-      "auto": 34.5,
-      "aug": null,
-      "success": 72.7,
-      "n": 55
-    },
-    {
-      "task": "Supervise reporters/editors",
-      "full": "Supervise and coordinate work of reporters and other editors.",
+      "weight": 21.9,
       "auto": null,
       "aug": null,
       "success": null,
@@ -127,26 +140,29 @@
     {
       "task": "Oversee publication production",
       "full": "Oversee publication production, including artwork, layout, computer typesetting, and printing, ensuring adherence to deadlines and budget requirements.",
+      "weight": 20.1,
       "auto": null,
       "aug": null,
       "success": null,
       "n": 15
     },
     {
-      "task": "Select news items",
-      "full": "Select local, state, national, and international news items received from wire services, based on assessment of items' significance and interest value.",
+      "task": "Supervise reporters/editors",
+      "full": "Supervise and coordinate work of reporters and other editors.",
+      "weight": 20.9,
       "auto": null,
       "aug": null,
       "success": null,
       "n": null
     },
     {
-      "task": "Confer with editorial staff",
-      "full": "Confer with management and editorial staff members regarding placement and emphasis of developing news stories.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Recommend Manuscript Decisions",
+      "full": "Make manuscript acceptance or revision recommendations to the publisher.",
+      "weight": 13.8,
+      "auto": 31.2,
+      "aug": 19.8,
+      "success": 65.6,
+      "n": 96
     }
   ],
   "careerCluster": [
@@ -279,24 +295,17 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "World Economic Forum",
-      "title": "Future of Jobs Report 2025",
-      "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "name": "NiemanLab",
+      "title": "The State of News Industry Jobs 2024",
+      "date": "Mar 2024",
+      "url": "https://www.niemanlab.org/2024/03/the-news-industry-shed-thousands-of-jobs-in-2023/"
     },
     {
       "id": "src-2",
-      "name": "McKinsey Global Institute",
-      "title": "The economic potential of generative AI: The next productivity frontier",
-      "date": "Jun 2023",
-      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
-    },
-    {
-      "id": "src-3",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Editors: Occupational Outlook Handbook",
-      "date": "Apr 2025",
-      "url": "https://www.bls.gov/ooh/media-and-communication/editors.htm"
+      "name": "Reuters Institute",
+      "title": "Digital News Report 2024",
+      "date": "Jun 2024",
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
     }
   ]
 }

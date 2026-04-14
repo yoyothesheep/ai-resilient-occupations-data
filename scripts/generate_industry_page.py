@@ -199,203 +199,33 @@ export const {const_name} = {{
 
 def generate_route_file(cluster_name: str, page_slug: str, const_name: str,
                         data_slug: str, component_name: str) -> str:
-    # Short display name for h1 (split on & or first word)
-    h1_jsx = cluster_name.replace(" & ", " &amp; ")
-
-    career_count = f"{{{{{{const_name}}.careers.length}}}}"
     title = f"{cluster_name} Careers: AI Resilience Guide"
-    meta_desc = f"Compare {cluster_name.lower()} careers by AI resilience, growth, and career level — from entry-level to senior specialist roles."
+    meta_desc = (
+        f"Compare {cluster_name.lower()} careers by AI resilience, growth, and career level"
+        " — from entry-level to principal roles."
+    )
     canonical = f"https://ai-proof-careers.com/industry/{page_slug}"
 
-    return f'''"use client";
+    lines = [
+        f'import {{ IndustryPageLayout }} from "@/components/IndustryPageLayout";',
+        f'import {{ {const_name} }} from "@/data/industries/{data_slug}";',
+        "",
+        f"export default function {component_name}() {{",
+        "  return (",
+        "    <IndustryPageLayout",
+        f'      cluster={{{const_name}}}',
+        "      meta={{",
+        f'        title: "{title}",',
+        f'        description: "{meta_desc}",',
+        f'        canonical: "{canonical}",',
+        "      }}",
+        "    />",
+        "  );",
+        "}",
+        "",
+    ]
+    return "\n".join(lines)
 
-import {{ useState }} from "react";
-import Link from "next/link";
-import {{ {const_name}, LEVEL_LABELS, type IndustryCareer }} from "@/data/industries/{data_slug}";
-import {{ getTier }} from "@/lib/careerUtils";
-import {{ ArrowLeft }} from "lucide-react";
-import {{ usePageMeta }} from "@/hooks/usePageMeta";
-
-const TIER_BG: Record<string, string> = {{
-  Strong:   `${{`#225560`}}0f`,
-  Solid:    `${{`#5a9a6e`}}0f`,
-  Shifting: `${{`#d97706`}}0f`,
-  Exposed:  `${{`#ea580c`}}0f`,
-  Risky:    `${{`#dc2626`}}0f`,
-}};
-
-type LevelFilter = "all" | 1 | 2 | 3 | 4 | 5;
-type SortBy = "score" | "level";
-
-const FILTER_TABS: {{ label: string; value: LevelFilter }}[] = [
-  {{ label: "All Levels",      value: "all" }},
-  {{ label: "Entry",           value: 1 }},
-  {{ label: "Mid-Level",       value: 2 }},
-  {{ label: "Senior",          value: 3 }},
-  {{ label: "Lead",            value: 4 }},
-  {{ label: "Principal",       value: 5 }},
-];
-
-function CareerCard({{ career }}: {{ career: IndustryCareer }}) {{
-  const tier = getTier(career.score);
-  const tierBg = TIER_BG[tier.label] ?? "#f5f5f5";
-
-  return (
-    <Link
-      href={{`/career/${{career.slug}}`}}
-      className="group flex items-center justify-between gap-6 rounded-2xl px-6 py-5 bg-white border border-border hover:border-foreground/20 hover:shadow-md transition-all duration-150"
-    >
-      <div className="flex-1 min-w-0">
-        <h3 className="text-base font-extrabold text-foreground uppercase tracking-tight leading-none mb-2.5 truncate">
-          {{career.title}}
-        </h3>
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white border border-border text-foreground/70">
-            {{LEVEL_LABELS[career.level]}}
-          </span>
-          <span
-            className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest border"
-            style={{{{ color: tier.color, borderColor: `${{tier.color}}30`, background: tierBg }}}}
-          >
-            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{{{ background: tier.color }}}} />
-            {{tier.label}}
-          </span>
-        </div>
-      </div>
-
-      <div className="hidden sm:flex items-center gap-8 text-right shrink-0">
-        <div className="flex flex-col gap-0.5 min-w-[80px]">
-          <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">Growth</span>
-          <span
-            className="text-sm font-black tabular-nums"
-            style={{{{ color: career.growth.startsWith("+") && career.growth !== "+0%" ? "#225560" : "#ea580c" }}}}
-          >
-            {{career.growth}}
-          </span>
-        </div>
-        <div className="flex flex-col gap-0.5 min-w-[100px]">
-          <span className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground">Openings/yr</span>
-          <span className="text-sm font-black tabular-nums text-foreground">{{career.openings}}</span>
-        </div>
-      </div>
-
-      <div className="w-8 h-8 rounded-full bg-white border border-border flex items-center justify-center shrink-0 transition-transform duration-150 group-hover:translate-x-0.5 shadow-sm">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </div>
-    </Link>
-  );
-}}
-
-export default function {component_name}() {{
-  usePageMeta({{
-    title: "{title}",
-    description: "{meta_desc}",
-    canonical: "{canonical}",
-  }});
-
-  const [activeFilter, setActiveFilter] = useState<LevelFilter>("all");
-  const [sortBy, setSortBy] = useState<SortBy>("score");
-
-  const filtered = {const_name}.careers
-    .filter((c) => activeFilter === "all" || c.level === activeFilter)
-    .sort((a, b) =>
-      sortBy === "score" ? b.score - a.score : b.level - a.level || b.score - a.score
-    );
-
-  return (
-    <div className="min-h-screen px-3 md:px-6 lg:px-10 py-6">
-      <div className="bg-background rounded-2xl md:rounded-3xl border border-border shadow-lg overflow-hidden flex flex-col lg:flex-row min-h-[calc(100vh-3rem)]">
-
-        <aside className="hidden lg:flex lg:w-[340px] lg:shrink-0 lg:border-r border-border flex-col px-8 py-10 fixed top-6 bottom-6 overflow-y-auto" style={{{{ width: 340 }}}}>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground/70 hover:text-foreground transition-colors group mb-10"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
-            Home
-          </Link>
-
-          <h1 className="text-4xl font-extrabold uppercase leading-[0.95] tracking-tight mb-4">
-            {h1_jsx}
-          </h1>
-
-          <p className="text-sm text-muted-foreground leading-relaxed mb-2">
-            {{{const_name}.description}}
-          </p>
-
-          <p className="text-sm text-muted-foreground leading-relaxed mb-2">
-            Explore the career pages to see how AI is affecting each role, what skills to build, and how to navigate your next move.
-          </p>
-
-          <nav className="flex flex-col gap-1 mt-auto pt-6 border-t border-border">
-            {{FILTER_TABS.map((tab) => {{
-              const count = tab.value === "all"
-                ? {const_name}.careers.length
-                : {const_name}.careers.filter(c => c.level === tab.value).length;
-              return (
-                <button
-                  key={{tab.value}}
-                  onClick={{() => setActiveFilter(tab.value)}}
-                  className="flex items-center justify-between text-left text-sm font-medium hover:text-foreground rounded-md px-2 py-0.5 -mx-2 hover:bg-foreground/10"
-                  style={{{{ color: activeFilter === tab.value ? "hsl(var(--foreground))" : "hsl(var(--muted-foreground))", background: activeFilter === tab.value ? "hsl(var(--foreground) / 0.1)" : undefined, border: "none", cursor: "pointer" }}}}
-                >
-                  <span>{{tab.label}}</span>
-                  <span className="text-[10px] font-bold tabular-nums" style={{{{ color: "hsl(var(--muted-foreground)/0.5)" }}}}>{{count}}</span>
-                </button>
-              );
-            }})}}
-          </nav>
-        </aside>
-
-        <main className="flex-1 min-w-0 px-6 lg:px-10 py-8 lg:ml-[340px]">
-
-          <div className="lg:hidden flex gap-2 overflow-x-auto pb-2 mb-6">
-            {{FILTER_TABS.map((tab) => (
-              <button
-                key={{tab.value}}
-                onClick={{() => setActiveFilter(tab.value)}}
-                className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-150 border"
-                style={{{{
-                  backgroundColor: activeFilter === tab.value ? "hsl(var(--foreground))" : "transparent",
-                  color: activeFilter === tab.value ? "hsl(var(--background))" : "hsl(var(--muted-foreground))",
-                  borderColor: activeFilter === tab.value ? "hsl(var(--foreground))" : "hsl(var(--border))",
-                  cursor: "pointer",
-                }}}}
-              >
-                {{tab.label}}
-              </button>
-            ))}}
-          </div>
-
-          <div className="flex items-center justify-between mb-5">
-            <span className="text-xs text-muted-foreground">
-              {{filtered.length}} career{{filtered.length !== 1 ? "s" : ""}}
-            </span>
-            <button
-              onClick={{() => setSortBy(s => s === "score" ? "level" : "score")}}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-full border border-border bg-secondary hover:bg-muted cursor-pointer"
-            >
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 6h18M7 12h10M11 18h2" />
-              </svg>
-              Sort: {{sortBy === "score" ? "Resilience" : "Level"}}
-            </button>
-          </div>
-
-          <div className="flex flex-col gap-2.5">
-            {{filtered.map((career) => (
-              <CareerCard key={{career.slug}} career={{career}} />
-            ))}}
-          </div>
-        </main>
-
-      </div>
-    </div>
-  );
-}}
-'''
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────

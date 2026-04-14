@@ -52,7 +52,7 @@ onet_code,occupation,cluster_id,level,is_canonical,typical_years_from_entry,note
 13-2099.04,Fraud Examiners Investigators and Analysts,finance,4,false,5,Investigative/forensic branch. CFE credential standard. High offensive score — AI/ML for anomaly detection boosts the role rather than replacing it.
 13-2061.00,Financial Examiners,finance,4,true,6,Senior regulatory/compliance role. Federal/state agency or bank examiner. Highest resilience in cluster.
 11-3031.00,Financial Managers,finance,5,true,8,Leadership destination. CFO track. $162k median. Oversees all financial operations.
-13-1161.00,Market Research Analysts and Marketing Specialists,marketing,1,true,0,Entry point. Data-driven marketing research. Bachelor's typical. Shared with analysts cluster.
+13-1161.00,Market Research Analysts and Marketing Specialists,marketing,1,true,0,Entry point. Data-driven marketing research. Bachelor's typical.
 41-3011.00,Advertising Sales Agents,sales,1,false,0,Specialized entry. Advertising/media sales. Commission-based. Cross-family lateral to marketing cluster (Search Marketing Strategist).
 13-1161.01,Search Marketing Strategists,marketing,2,true,2,Core digital role. Google Ads + Analytics certs. Natural progression from market research.
 27-3031.00,Public Relations Specialists,marketing,3,false,3,PR/comms specialization branch. Bachelor's in PR or comms typical. Media relations focus.
@@ -69,8 +69,7 @@ onet_code,occupation,cluster_id,level,is_canonical,typical_years_from_entry,note
 27-1025.00,Interior Designers,design,4,false,4,Space design specialization. 2-4yr interior design program + NCIDQ exam for licensure. Strongest demand in residential, hospitality, and commercial sectors.
 27-1027.00,Set and Exhibit Designers,design,4,false,4,Environment/experiential design specialization. Theater, film, or museum track. Spatial visualization + production design portfolio required.
 27-1011.00,Art Directors,design,5,true,5,Canonical top of design cluster. Creative leadership of visual projects and campaigns. Senior designer → AD promotion is standard in agencies and in-house teams. $111k median.
-13-1161.00,Market Research Analysts and Marketing Specialists,analysts,1,true,0,Entry point. Broad analyst track. Shared with marketing cluster. Data analysis and research foundation.
-13-2031.00,Budget Analysts,analysts,2,true,2,Government/corporate budget track. BA in finance or accounting. Audit and cost analysis focus.
+13-2031.00,Budget Analysts,analysts,1,true,2,Government/corporate budget track. BA in finance or accounting. Audit and cost analysis focus.
 13-1111.00,Management Analysts,analysts,3,true,3,Core mid-level. Strategy consulting and process improvement. MBA or 3yr consulting track typical.
 13-2051.00,Financial and Investment Analysts,analysts,3,false,3,Financial/investment track. CFA Level 1 is the signal. Common in corporate finance and banking.
 13-1041.00,Compliance Officers,analysts,3,false,3,Regulatory/compliance track. Industry-specific certifications (CRCM, CHC). Research skills transfer.

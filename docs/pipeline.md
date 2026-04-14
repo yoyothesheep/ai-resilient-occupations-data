@@ -26,6 +26,8 @@ Expensive (API calls). Run per cluster when building new career/industry pages. 
 
 ```bash
 # Stage 4: Populate cluster files (use career-clusters skill)
+# Stage 4b: Add industry-specific sources for this cluster to approved_sources.md
+python3 scripts/add_cluster_sources.py --cluster <cluster_id>
 # Stage 5: Generate emerging roles
 python3 scripts/generate_emerging_roles.py --cluster <cluster_id>
 # Stage 6: Generate emerging job title aliases

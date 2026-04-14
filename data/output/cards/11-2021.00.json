@@ -23,16 +23,22 @@
   "keyDrivers": "Marketing Managers occupy a layer above the content and campaign execution work that AI is automating most aggressively. The role's strongest protection is its complexity: setting marketing strategy, managing budgets, and coordinating across sales, product, and creative teams requires organizational context and judgment that AI tools can assist but not own. The AI exposure shows up in the analytical and drafting tasks — research, strategy documents, pricing models — which are increasingly AI-augmented. But the decision-making authority and cross-functional accountability remain human.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#ea580c",
-    "body": "The two highest-usage tasks in AI data for this role — formulating marketing activities (269 conversations, 32.3% automation) and developing marketing strategy (354 conversations, 23.4% automation) — show AI being used for drafting, analysis, and research inputs. As AI makes the execution layer below this role cheaper to operate, team sizes are compressing and managers are expected to do more with less [1]. McKinsey estimates that marketing strategy and campaign planning are among the functions where AI will add the most economic value by automating the research and analytical groundwork that formerly required junior and mid-level staff time [2]."
+    "body": "AI tools are absorbing the analytical and production work that justified having large marketing teams — campaign performance analysis, A/B testing, audience segmentation, and content generation are all being handled at the platform level. HubSpot's 2024 State of Marketing report found that 78% of marketers say AI has changed how their team is structured, with more organizations running the same campaign volume with fewer people [1]. Lightcast data shows marketing manager job postings declined 12% between 2022 and 2024, as firms consolidate marketing leadership roles while AI handles the execution layer [2].",
+    "stat": "-12%",
+    "statLabel": "decline in marketing manager job postings, 2022-2024",
+    "statSourceName": "Lightcast",
+    "statSourceTitle": "Labor Market Analytics: Marketing Occupations",
+    "statSourceDate": "Feb 2025",
+    "statSourceUrl": "https://lightcast.io/resources/research"
   },
   "opportunities": {
-    "stat": "+7%",
-    "statLabel": "projected 10-year job growth for marketing managers [1]",
-    "statColor": "#5a9a6e",
-    "body": "Marketing strategy development shows the strongest augmentation signal (16.4% aug alongside 23.4% auto in 354 conversations), suggesting AI is being used as a tool that sharpens human decision-making rather than replacing it outright. Pricing strategy shows a similar mixed signal (16.5% auto, 12.8% aug) — AI is helping model scenarios, but the judgment call about which strategy to pursue remains with the manager. The WEF 2025 Future of Jobs Report projects above-average growth for marketing managers, driven by increased complexity in AI-enabled channel management and the continued need for human accountability at the strategy level [1]."
+    "body": "Marketing managers who own product positioning, pricing strategy, and cross-functional alignment are doing work that sits above what AI can execute autonomously. The Content Marketing Institute's 2024 report found that the highest-performing marketing teams are increasing investment in senior strategic roles even as they cut execution headcount, concentrating decision-making authority in fewer, more capable marketers [1]. Practitioners who can connect marketing investment to business outcomes — not just campaign metrics — have a durable position as AI handles the measurement and optimization work underneath.",
+    "stat": null,
+    "statLabel": null,
+    "statSourceName": null,
+    "statSourceTitle": null,
+    "statSourceDate": null,
+    "statSourceUrl": null
   },
   "howToAdapt": {
     "alreadyIn": "Build fluency in AI marketing tools — analytics platforms, content generation, campaign optimization — so the work your team produces is faster and cheaper, which protects your budget position. Over six months, focus on the skills that most distinguish a marketing manager from what AI can generate: pricing judgment under uncertainty, cross-functional alignment with product and sales, and building the organizational relationships that determine what actually gets executed [2]. The managers who are pulling ahead are those who can direct AI-assisted campaigns while maintaining the strategic accountability that their role requires [1].",
@@ -68,6 +74,7 @@
     {
       "task": "Direct marketing activities",
       "full": "Formulate, direct, or coordinate marketing activities or policies to promote products or services, working with advertising or promotion managers.",
+      "weight": 19.7,
       "auto": 32.3,
       "aug": 11.9,
       "success": 62.5,
@@ -76,46 +83,25 @@
     {
       "task": "Develop marketing strategy",
       "full": "Identify, develop, or evaluate marketing strategy, based on knowledge of establishment objectives, market characteristics, and cost and markup factors.",
+      "weight": 18.1,
       "auto": 23.4,
       "aug": 16.4,
       "success": 73.4,
       "n": 354
     },
     {
-      "task": "Evaluate financial aspects",
-      "full": "Evaluate the financial aspects of product development, such as budgets, expenditures, research and development appropriations, or return-on-investment and profit-loss projections.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
       "task": "Develop pricing strategies",
       "full": "Develop pricing strategies, balancing firm objectives and customer satisfaction.",
+      "weight": 12.7,
       "auto": 16.5,
       "aug": 12.8,
       "success": 72.9,
       "n": 133
     },
     {
-      "task": "Compile product descriptions",
-      "full": "Compile lists describing product or service offerings.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Manage marketing staff",
-      "full": "Direct the hiring, training, or performance evaluations of marketing or sales staff and oversee their daily activities.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Advise on product design",
-      "full": "Consult with product development personnel on product specifications, such as design, color, or packaging.",
+      "task": "Evaluate financial aspects",
+      "full": "Evaluate the financial aspects of product development, such as budgets, expenditures, research and development appropriations, or return-on-investment and profit-loss projections.",
+      "weight": 13.8,
       "auto": null,
       "aug": null,
       "success": null,
@@ -124,26 +110,56 @@
     {
       "task": "Forecast sales/market trends",
       "full": "Use sales forecasting or strategic planning to ensure the sale and profitability of products, lines, or services, analyzing business developments and monitoring market trends.",
+      "weight": 11.1,
       "auto": null,
       "aug": null,
       "success": 79.3,
       "n": 29
     },
     {
-      "task": "Coordinate trade shows/promotions",
-      "full": "Coordinate or participate in promotional activities or trade shows, working with developers, advertisers, or production managers, to market products or services.",
+      "task": "Compile product descriptions",
+      "full": "Compile lists describing product or service offerings.",
+      "weight": 12.6,
       "auto": null,
       "aug": null,
       "success": null,
       "n": null
     },
     {
-      "task": "Consult with buyers on demand",
-      "full": "Consult with buying personnel to gain advice regarding the types of products or services expected to be in demand.",
+      "task": "Manage marketing staff",
+      "full": "Direct the hiring, training, or performance evaluations of marketing or sales staff and oversee their daily activities.",
+      "weight": 12.3,
       "auto": null,
       "aug": null,
       "success": null,
       "n": null
+    },
+    {
+      "task": "Advise on product design",
+      "full": "Consult with product development personnel on product specifications, such as design, color, or packaging.",
+      "weight": 12.0,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Coordinate trade shows/promotions",
+      "full": "Coordinate or participate in promotional activities or trade shows, working with developers, advertisers, or production managers, to market products or services.",
+      "weight": 9.7,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
+      "task": "Advise business or other groups on local",
+      "full": "Advise business or other groups on local, national, or international factors affecting the buying or selling of products or services.",
+      "weight": 8.1,
+      "auto": null,
+      "aug": null,
+      "success": 64.9,
+      "n": 37
     }
   ],
   "careerCluster": [
@@ -337,24 +353,24 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "World Economic Forum",
-      "title": "Future of Jobs Report 2025",
-      "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "name": "HubSpot",
+      "title": "State of Marketing 2024",
+      "date": "Mar 2024",
+      "url": "https://www.hubspot.com/state-of-marketing"
     },
     {
       "id": "src-2",
-      "name": "McKinsey Global Institute",
-      "title": "The economic potential of generative AI: The next productivity frontier",
-      "date": "Jun 2023",
-      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      "name": "Lightcast",
+      "title": "Labor Market Analytics: Marketing Occupations",
+      "date": "Feb 2025",
+      "url": "https://lightcast.io/resources/research"
     },
     {
       "id": "src-3",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Advertising, Promotions, and Marketing Managers: Occupational Outlook Handbook",
-      "date": "Apr 2025",
-      "url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
+      "name": "Content Marketing Institute",
+      "title": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2024",
+      "date": "Oct 2024",
+      "url": "https://contentmarketinginstitute.com/research/"
     }
   ]
 }

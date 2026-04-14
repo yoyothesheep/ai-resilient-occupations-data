@@ -16,6 +16,7 @@ data/temp/
 data/input/anthropic/
 
 # Test artifacts, logs
+data/inline_responses
 data/output/score_log.txt
 data/output/enrichment_run.log
 data/output/test_scores.csv

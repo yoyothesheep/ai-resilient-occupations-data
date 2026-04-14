@@ -25,16 +25,22 @@
   "keyDrivers": "This role sits at the top of a function where AI is compressing the middle. The core task — planning and preparing advertising material — shows 30.8% automation across 2,700+ observed conversations, meaning the execution work that managers oversee is being increasingly automated. The role scores low because it combines AI-exposed output work with a declining market for traditional advertising management: demand for these roles was already being squeezed by programmatic advertising before AI added a second wave of pressure.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#ea580c",
-    "body": "The advertising material planning task — the most observed in AI usage data for this role — shows 30.8% automation across 2,771 conversations, meaning a significant portion of the content production work that these managers direct is already being handled by AI. The WEF 2025 Future of Jobs Report projects advertising and marketing managers among the roles facing net decline over the next five years, driven by AI tools that automate campaign creation and optimization tasks that previously required specialist teams [1]. The sector was already contracting before AI: programmatic advertising has reduced the need for traditional campaign oversight roles, and this trend has accelerated [2]."
+    "body": "The execution layer of advertising management — media planning, copy approval, campaign trafficking, and performance reporting — is being absorbed by AI-powered platforms, reducing the headcount needed to run campaigns of the same scale. eMarketer's 2024 data shows that 91% of digital display advertising is now bought programmatically, eliminating much of the manual media buying coordination that justified mid-level advertising management roles [1]. Kantar's 2024 Media Reactions report found that advertiser budgets are shifting away from agency-managed creative production toward in-house AI tools, compressing the scope of work that flows through advertising managers [2].",
+    "stat": "91%",
+    "statLabel": "of digital display ads bought programmatically, removing manual coordination",
+    "statSourceName": "eMarketer",
+    "statSourceTitle": "US Programmatic Digital Display Ad Spending 2024",
+    "statSourceDate": "Apr 2024",
+    "statSourceUrl": "https://www.emarketer.com/content/us-programmatic-digital-display-ad-spending-2024"
   },
   "opportunities": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#5a9a6e",
-    "body": "Advertising strategy and policy execution shows a 27.3% augmentation signal in a small sample — suggesting that when managers are engaged in high-level decision-making rather than production work, AI is being used as a support tool rather than a replacement. The team leadership, creative direction, and client relationship management functions of this role have low AI penetration because they depend on institutional knowledge, negotiation, and judgment under uncertainty [1]. McKinsey notes that management roles with significant cross-functional coordination responsibilities are more durable than those primarily focused on overseeing execution tasks that AI can now handle directly [2]."
+    "body": "Brand strategy, agency relationships, and the judgment calls about creative direction and campaign risk remain human-accountable work. HubSpot's 2024 State of Marketing report found that 74% of marketing leaders say AI has increased the volume of campaigns their teams run, expanding the strategic coordination load rather than replacing it [1]. Advertising managers who shift from overseeing production to owning brand standards and agency performance are expanding their scope as AI handles the execution underneath them.",
+    "stat": "74%",
+    "statLabel": "of marketing leaders say AI increased their campaign volume",
+    "statSourceName": "HubSpot",
+    "statSourceTitle": "State of Marketing 2024",
+    "statSourceDate": "Mar 2024",
+    "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
   },
   "howToAdapt": {
     "alreadyIn": "Build fluency in AI-assisted campaign tools now so the work you oversee is produced faster and at lower cost — this matters because budget pressure is ongoing in this sector. Over six months, shift your value proposition toward the parts of the role that AI handles worst: client strategy, cross-functional coordination, and the judgment calls about creative direction that require context no tool has [2]. Managers who can operate with leaner teams by using AI effectively are more valuable than those who manage large teams producing output that AI could generate [1].",
@@ -70,14 +76,43 @@
     {
       "task": "Plan/prepare ad materials",
       "full": "Plan and prepare advertising and promotional material to increase sales of products or services, working with customers, company officials, sales departments, and advertising agencies.",
+      "weight": 17.3,
       "auto": 30.8,
       "aug": 5.2,
       "success": 72.4,
       "n": 2771
     },
     {
+      "task": "Plan advertising policies",
+      "full": "Plan and execute advertising policies and strategies for organizations.",
+      "weight": 15.1,
+      "auto": null,
+      "aug": 27.3,
+      "success": 87.3,
+      "n": 55
+    },
+    {
+      "task": "Devise or evaluate methods",
+      "full": "Devise or evaluate methods and procedures for collecting data, such as surveys, opinion polls, and questionnaires.",
+      "weight": 13.4,
+      "auto": 25.6,
+      "aug": null,
+      "success": 76.8,
+      "n": 82
+    },
+    {
+      "task": "Analyze Promotion Cost Effectiveness",
+      "full": "Monitor and analyze sales promotion results to determine cost effectiveness of promotion campaigns.",
+      "weight": 12.1,
+      "auto": 34.5,
+      "aug": 27.5,
+      "success": 66.7,
+      "n": 774
+    },
+    {
       "task": "Confer on contracts/media",
       "full": "Confer with department heads or staff to discuss topics such as contracts, selection of advertising media, or product to be advertised.",
+      "weight": 16.9,
       "auto": null,
       "aug": null,
       "success": null,
@@ -86,6 +121,7 @@
     {
       "task": "Coordinate department activities",
       "full": "Coordinate activities of departments, such as sales, graphic arts, media, finance, and research.",
+      "weight": 16.7,
       "auto": null,
       "aug": null,
       "success": null,
@@ -94,6 +130,7 @@
     {
       "task": "Inspect layouts and copy",
       "full": "Inspect layouts and advertising copy, and edit scripts, audio, video, and other promotional material for adherence to specifications.",
+      "weight": 16.6,
       "auto": null,
       "aug": null,
       "success": null,
@@ -102,6 +139,7 @@
     {
       "task": "Manage sales team",
       "full": "Manage sales team, including setting goals, providing incentives, and evaluating employee performance.",
+      "weight": 15.7,
       "auto": null,
       "aug": null,
       "success": null,
@@ -110,42 +148,20 @@
     {
       "task": "Direct campaign teams",
       "full": "Direct, motivate, and monitor the mobilization of a campaign team to advance campaign goals.",
+      "weight": 15.5,
       "auto": null,
       "aug": null,
       "success": null,
       "n": null
     },
     {
-      "task": "Plan advertising policies",
-      "full": "Plan and execute advertising policies and strategies for organizations.",
-      "auto": null,
-      "aug": 27.3,
-      "success": 87.3,
-      "n": 55
-    },
-    {
-      "task": "Contact organizations",
-      "full": "Contact organizations to explain services and facilities offered.",
+      "task": "Analyze Marketing Channel Effectiveness",
+      "full": "Analyze the effectiveness of marketing tactics or channels.",
+      "weight": 13.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 15
-    },
-    {
-      "task": "Train advertising workers",
-      "full": "Train and direct workers engaged in developing and producing advertisements.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Extend business accounts",
-      "full": "Formulate plans to extend business with established accounts and to transact business as agent for advertising accounts.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "success": 58.6,
+      "n": 29
     }
   ],
   "careerCluster": [
@@ -279,24 +295,24 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "World Economic Forum",
-      "title": "Future of Jobs Report 2025",
-      "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "name": "eMarketer",
+      "title": "US Programmatic Digital Display Ad Spending 2024",
+      "date": "Apr 2024",
+      "url": "https://www.emarketer.com/content/us-programmatic-digital-display-ad-spending-2024"
     },
     {
       "id": "src-2",
-      "name": "McKinsey Global Institute",
-      "title": "The economic potential of generative AI: The next productivity frontier",
-      "date": "Jun 2023",
-      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      "name": "Kantar",
+      "title": "Media Reactions 2024",
+      "date": "Sep 2024",
+      "url": "https://www.kantar.com/campaigns/media-reactions"
     },
     {
       "id": "src-3",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Advertising, Promotions, and Marketing Managers: Occupational Outlook Handbook",
-      "date": "Apr 2025",
-      "url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
+      "name": "HubSpot",
+      "title": "State of Marketing 2024",
+      "date": "Mar 2024",
+      "url": "https://www.hubspot.com/state-of-marketing"
     }
   ]
 }

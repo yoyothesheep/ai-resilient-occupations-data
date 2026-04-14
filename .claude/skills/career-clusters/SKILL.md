@@ -12,7 +12,7 @@ Populates the three cluster CSV files for a new industry group.
 All three files live in `data/career_clusters/`:
 
 1. **`clusters.csv`** — one row per cluster (append, don't overwrite)
-2. **`cluster_roles.csv`** — one row per occupation in the cluster (append)
+2. **`cluster_roles.csv`** — one row per occupation in the cluster (append). **Each onet_code must appear in exactly one cluster.** Cross-cluster visibility is handled via `cluster_branches.csv` with `is_cross_family=true`, not by duplicating a role in two clusters.
 3. **`cluster_branches.csv`** — one row per from→to transition (append)
 
 Schemas are in `data/career_clusters/CAREER_CLUSTERS_SCHEMA.md`. Read it before proceeding.
@@ -144,6 +144,15 @@ roles = list(csv.DictReader(open('data/career_clusters/cluster_roles.csv')))
 branches = list(csv.DictReader(open('data/career_clusters/cluster_branches.csv')))
 role_codes = {r['onet_code'] for r in roles}
 
+# each onet_code must appear in exactly one cluster (one career, one cluster — transitions handled via branches)
+from collections import defaultdict
+code_clusters = defaultdict(list)
+for r in roles:
+    code_clusters[r['onet_code']].append(r['cluster_id'])
+dupes = {code: cls for code, cls in code_clusters.items() if len(cls) > 1}
+if dupes:
+    print('BAD duplicate onet_codes (must be in exactly one cluster):', dupes)
+
 # cluster_roles must reference valid cluster_ids
 bad_clusters = [r for r in roles if r['cluster_id'] not in clusters]
 if bad_clusters:
@@ -160,7 +169,7 @@ if bad_to:
     print('BAD to_onet_code (not in cluster_roles and not cross-family):', [b['to_onet_code'] for b in bad_to])
 
 cross_family = [b for b in branches if b.get('is_cross_family') == 'true']
-if not bad_clusters and not bad_from and not bad_to:
+if not dupes and not bad_clusters and not bad_from and not bad_to:
     print(f'OK: {len(clusters)} clusters, {len(roles)} roles, {len(branches)} branches ({len(cross_family)} cross-family) — no ref errors')
 "
 ```

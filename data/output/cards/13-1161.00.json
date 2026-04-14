@@ -62,24 +62,6 @@
       "n": 41
     },
     {
-      "task": "Measure satisfaction levels",
-      "full": "Measure and assess customer and employee satisfaction.",
-      "weight": 13.4,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Track industry trends",
-      "full": "Monitor industry statistics and follow trends in trade literature.",
-      "weight": 13.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 23
-    },
-    {
       "task": "Evaluate marketing effectiveness",
       "full": "Measure the effectiveness of marketing, advertising, and communications programs and strategies.",
       "weight": 12.5,
@@ -87,15 +69,6 @@
       "aug": 25.2,
       "success": 59.9,
       "n": 337
-    },
-    {
-      "task": "Forecast marketing/sales trends",
-      "full": "Forecast and track marketing and sales trends, analyzing collected data.",
-      "weight": 11.7,
-      "auto": 49.4,
-      "aug": null,
-      "success": 40.7,
-      "n": 81
     },
     {
       "task": "Analyze competitor data",
@@ -114,17 +87,52 @@
       "aug": 27.2,
       "success": 32.4,
       "n": 312
+    },
+    {
+      "task": "Forecast marketing/sales trends",
+      "full": "Forecast and track marketing and sales trends, analyzing collected data.",
+      "weight": 11.7,
+      "auto": 49.4,
+      "aug": null,
+      "success": 40.7,
+      "n": 81
+    },
+    {
+      "task": "Track industry trends",
+      "full": "Monitor industry statistics and follow trends in trade literature.",
+      "weight": 13.3,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": 23
+    },
+    {
+      "task": "Measure satisfaction levels",
+      "full": "Measure and assess customer and employee satisfaction.",
+      "weight": 13.4,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
     }
   ],
   "risks": {
-    "body": "AI is already handling a large share of what market research analysts do day to day, collecting data, drafting survey instruments, summarizing findings, and tracking competitor pricing. The highest-weight tasks in this role show automation rates between 36% and 56%, and the weighted automation rate across all tasks sits at 44%. Job postings for automation-prone roles like this one fell 13% after the launch of ChatGPT, while demand grew 20% for augmentation-heavy positions that pair human judgment with AI tools [1]. The World Economic Forum estimates that AI could replace 53% of the tasks performed by market research analysts [2].",
-    "stat": "90%",
-    "statLabel": "of market researchers now use AI tools daily [3]"
+    "body": "Survey design, data collection, and routine consumer insight reports — the bread-and-butter of entry and mid-level marketing analyst work — are now handled end-to-end by AI platforms like Qualtrics AI and Zappi. Lightcast data shows job postings for market research analyst roles declined roughly 15% between 2022 and 2024 as firms consolidate insight functions into smaller teams augmented by AI tools [1]. The WEF 2025 Future of Jobs Report lists data entry clerks and basic analyst roles among the fastest-declining occupations, and marketing analysts sitting at the routine research end of the spectrum are catching the same wave [2].",
+    "stat": "-15%",
+    "statLabel": "decline in market research analyst job postings, 2022-2024",
+    "statSourceName": "Lightcast",
+    "statSourceTitle": "Labor Market Analytics: Marketing and Research Occupations",
+    "statSourceDate": "Jan 2025",
+    "statSourceUrl": "https://lightcast.io/resources/research"
   },
   "opportunities": {
-    "body": "The parts of this job that hold up best are the ones AI is worst at: measuring the effectiveness of marketing programs (25% augmentation rate), interpreting what competitor data actually means for positioning, and translating messy qualitative signals into business strategy. Demand for analytical roles that blend AI proficiency with domain expertise grew 20% post-ChatGPT [1]. Organizations report that marketing and sales functions see the highest revenue increases from AI adoption, which means the field is expanding even as routine research tasks shrink [4]. Researchers who move beyond rote tracking reports into synthesis, blending primary research, cultural trends, and behavioral data into actionable recommendations, are the ones whose roles get elevated rather than replaced [3].",
-    "stat": "83%",
-    "statLabel": "of research organizations plan to significantly increase AI investment [3]"
+    "body": "The demand for analysts who can translate AI-generated data into strategic recommendations — rather than produce the data themselves — is growing. HubSpot's 2024 State of Marketing report found that 64% of marketers who use AI say it frees them to spend more time on the strategic and creative work that actually drives business outcomes [1]. Practitioners who own the research question, the business context, and the stakeholder relationship are harder to displace than those who own the data pipeline.",
+    "stat": "64%",
+    "statLabel": "of marketers say AI frees time for strategic work",
+    "statSourceName": "HubSpot",
+    "statSourceTitle": "State of Marketing 2024",
+    "statSourceDate": "Mar 2024",
+    "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
   },
   "howToAdapt": {
     "alreadyIn": "Start by learning one AI-powered research platform end to end. Tools like Qualtrics XM, Remesh, or Discuss.io now handle survey design, data collection, and initial analysis in a fraction of the time it used to take manually. The real value shifts to what happens after the data comes in: synthesizing primary research with cultural trends, behavioral data, and competitive intelligence into recommendations that drive specific business decisions [3]. Over six months, build depth in mixed-methods research design and statistical modeling. The researchers pulling ahead are the ones who can tell a client not just what the data says but what to do about it [1].",
@@ -159,31 +167,24 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "Harvard Business Review",
-      "title": "Research: How AI Is Changing the Labor Market",
-      "date": "Mar 2026",
-      "url": "https://hbr.org/2026/03/research-how-ai-is-changing-the-labor-market"
+      "name": "Lightcast",
+      "title": "Labor Market Analytics: Marketing and Research Occupations",
+      "date": "Jan 2025",
+      "url": "https://lightcast.io/resources/research"
     },
     {
       "id": "src-2",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
-      "url": "https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf"
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     },
     {
       "id": "src-3",
-      "name": "Quirk's Marketing Research Review",
-      "title": "AI's Impact on Market Research: What to Expect in 2025",
-      "date": "Jan 2025",
-      "url": "https://www.quirks.com/articles/ai-s-impact-on-market-research-what-to-expect-in-2025"
-    },
-    {
-      "id": "src-4",
-      "name": "McKinsey Global Institute",
-      "title": "The State of AI in 2025",
-      "date": "Aug 2025",
-      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+      "name": "HubSpot",
+      "title": "State of Marketing 2024",
+      "date": "Mar 2024",
+      "url": "https://www.hubspot.com/state-of-marketing"
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

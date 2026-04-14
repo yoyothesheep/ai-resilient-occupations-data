@@ -86,6 +86,20 @@ Used by `generate_next_steps.py` to guide source selection in the prompt.
 
 ---
 
+## Marketing / Advertising / Content / PR
+
+- HubSpot State of Marketing (annual practitioner survey) — AI tool adoption, team size, budget shifts
+- Content Marketing Institute (CMI) annual report — content volume, AI usage, publishing trends
+- Influencer Marketing Hub — AI marketing tool adoption surveys
+- Reuters Institute Digital News Report — editorial headcount, AI in newsrooms, trust in AI content
+- NiemanLab — journalism/editorial industry trends, AI in content production
+- PRSA (Public Relations Society of America) — PR industry surveys, practitioner data
+- Kantar Media Reactions — advertising spend, media channel shifts
+- eMarketer / Insider Intelligence — digital ad spend, programmatic advertising data (public reports only)
+- LinkedIn Marketing Solutions Blog (research posts with data only, not editorial)
+- Demand Gen Report — B2B marketing automation adoption, pipeline data
+- Upwork Research Institute — freelance writing/design rate trends, demand shifts
+
 ## Design / Creative
 
 - AIGA — design industry surveys, design census

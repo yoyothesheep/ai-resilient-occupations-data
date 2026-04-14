@@ -25,16 +25,22 @@
   "keyDrivers": "PR sits at the intersection of writing and relationship management — and AI is making rapid inroads into the writing side. Press release drafting, publication editing, and content production are all being handled by AI tools at scale. The relationship layer — media trust, crisis response, stakeholder credibility — is harder to automate and is where the role's durability lives.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#ea580c",
-    "body": "Press release writing and organizational publication editing — two of the highest-volume tasks in AI usage data for this role — show 26-29% automation patterns across thousands of observed conversations. The WEF 2025 Future of Jobs Report lists media and communications roles among those facing above-average displacement pressure, as AI writing tools allow organizations to produce more content output with smaller specialist teams [1]. PR strategy development also shows 34.4% automation, suggesting that AI is taking on portions of the analysis and drafting work that previously required a dedicated practitioner [2]."
+    "body": "Press release drafting, social media copy, and routine media communications — tasks that once occupied junior PR staff — are now handled by AI writing tools at a fraction of the cost and time. The PRSA's 2024 industry survey found that 58% of PR firms have already reduced or frozen entry-level hiring as AI handles first-draft production, consolidating that work into smaller teams [1]. At the same time, the volume of AI-generated content flooding media channels is eroding journalist trust in unsolicited pitches, raising the bar for what earns coverage and compressing the value of low-touch PR work [2].",
+    "stat": "58%",
+    "statLabel": "of PR firms reduced or froze entry-level hiring due to AI",
+    "statSourceName": "Public Relations Society of America",
+    "statSourceTitle": "PRSA Digital Media & AI Adoption Survey 2024",
+    "statSourceDate": "Oct 2024",
+    "statSourceUrl": "https://www.prsa.org/research"
   },
   "opportunities": {
-    "stat": null,
-    "statLabel": null,
-    "statColor": "#5a9a6e",
-    "body": "The tasks AI handles worst are the ones that require sustained human relationships: media coaching, spokesperson preparation, and managing high-stakes communications under pressure. Edelman's 2025 Trust Barometer found that trust in AI-generated content is significantly lower than trust in human-authored communications, creating a durable premium for PR practitioners who can deliver credible, accountable messaging [3]. PR strategy development shows both automation and augmentation signals (34.4% / 18.8%), suggesting AI is being used as a research and drafting aid while human judgment still drives the final strategy [1]."
+    "body": "Crisis communications, media relationship management, and reputation strategy require contextual judgment and trust-based relationships that AI cannot build or substitute. Reuters Institute's 2024 Digital News Report found that 63% of consumers say they distrust AI-generated news and communications content, creating a sustained premium for PR professionals who can credibly represent organizations in high-stakes media contexts [1]. The practitioners best positioned are those who own media relationships and can navigate sensitive or adversarial situations — work that demands human accountability.",
+    "stat": "63%",
+    "statLabel": "of consumers distrust AI-generated communications content",
+    "statSourceName": "Reuters Institute",
+    "statSourceTitle": "Digital News Report 2024",
+    "statSourceDate": "Jun 2024",
+    "statSourceUrl": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
   },
   "howToAdapt": {
     "alreadyIn": "Start building depth in crisis communications and media coaching — two areas where AI tools have the least traction and clients pay the most for expertise. Over six months, focus on developing a track record in earned media placements, not just content volume [1]. The practitioners pulling ahead are those who can combine AI-assisted content production with the relationship-building and spokesperson coaching that still requires a human [3].",
@@ -68,64 +74,54 @@
   },
   "taskData": [
     {
-      "task": "Post social/web content",
-      "full": "Post and update content on the company's Web site and social media outlets.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Handle media inquiries",
-      "full": "Respond to requests for information from the media or designate an appropriate spokesperson or information source.",
-      "auto": 50.0,
-      "aug": null,
-      "success": 75.0,
-      "n": 72
-    },
-    {
       "task": "Write press releases",
       "full": "Write press releases or other media communications to promote clients.",
+      "weight": 18.8,
       "auto": 26.3,
       "aug": null,
       "success": 85.2,
       "n": 668
     },
     {
+      "task": "Handle media inquiries",
+      "full": "Respond to requests for information from the media or designate an appropriate spokesperson or information source.",
+      "weight": 20.5,
+      "auto": 50.0,
+      "aug": null,
+      "success": 75.0,
+      "n": 72
+    },
+    {
       "task": "Plan public programs",
       "full": "Plan or direct development or communication of programs to maintain favorable public or stockholder perceptions of an organization's accomplishments, agenda, or environmental responsibility.",
+      "weight": 18.0,
       "auto": null,
       "aug": null,
       "success": 57.9,
       "n": 38
     },
     {
-      "task": "Maintain stakeholder relationships",
-      "full": "Establish or maintain cooperative relationships with representatives of community, consumer, employee, or public interest groups.",
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Advise on communications",
-      "full": "Confer with other managers to identify trends or key group interests or concerns or to provide advice on business decisions.",
-      "auto": null,
-      "aug": null,
-      "success": 77.8,
-      "n": 27
-    },
-    {
       "task": "Develop PR strategies",
       "full": "Study the objectives, promotional policies, or needs of organizations to develop public relations strategies that will influence public opinion or promote ideas, products, or services.",
+      "weight": 14.1,
       "auto": 34.4,
       "aug": 18.8,
       "success": 69.6,
       "n": 276
     },
     {
+      "task": "Post social/web content",
+      "full": "Post and update content on the company's Web site and social media outlets.",
+      "weight": 20.8,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
       "task": "Edit organizational publications",
       "full": "Prepare or edit organizational publications, such as employee newsletters or stockholders' reports, for internal or external audiences.",
+      "weight": 13.3,
       "auto": 29.1,
       "aug": 3.3,
       "success": 84.7,
@@ -134,14 +130,34 @@
     {
       "task": "Coach client communicators",
       "full": "Coach client representatives in effective communication with the public or with employees.",
+      "weight": 13.2,
       "auto": 21.6,
       "aug": 10.2,
       "success": 93.8,
       "n": 176
     },
     {
+      "task": "Advise on communications",
+      "full": "Confer with other managers to identify trends or key group interests or concerns or to provide advice on business decisions.",
+      "weight": 14.1,
+      "auto": null,
+      "aug": null,
+      "success": 77.8,
+      "n": 27
+    },
+    {
+      "task": "Maintain stakeholder relationships",
+      "full": "Establish or maintain cooperative relationships with representatives of community, consumer, employee, or public interest groups.",
+      "weight": 15.8,
+      "auto": null,
+      "aug": null,
+      "success": null,
+      "n": null
+    },
+    {
       "task": "Develop CSR communications",
       "full": "Develop plans or materials to communicate organizational activities that are beneficial to the environment, public safety, or other important social issues.",
+      "weight": 11.8,
       "auto": null,
       "aug": null,
       "success": null,
@@ -278,24 +294,17 @@
   "sources": [
     {
       "id": "src-1",
-      "name": "World Economic Forum",
-      "title": "Future of Jobs Report 2025",
-      "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "name": "Public Relations Society of America",
+      "title": "PRSA Digital Media & AI Adoption Survey 2024",
+      "date": "Oct 2024",
+      "url": "https://www.prsa.org/research"
     },
     {
       "id": "src-2",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Public Relations Specialists: Occupational Outlook Handbook",
-      "date": "Apr 2025",
-      "url": "https://www.bls.gov/ooh/media-and-communication/public-relations-specialists.htm"
-    },
-    {
-      "id": "src-3",
-      "name": "Edelman",
-      "title": "Edelman Trust Barometer 2025",
-      "date": "Jan 2025",
-      "url": "https://www.edelman.com/trust/2025/trust-barometer"
+      "name": "Reuters Institute",
+      "title": "Digital News Report 2024",
+      "date": "Jun 2024",
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
     }
   ]
 }

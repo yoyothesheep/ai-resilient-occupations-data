@@ -115,7 +115,7 @@
   "low_data_confidence": true,
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI is moving into documentation and charting work - the administrative layer of nursing that sits around direct patient care - which reduces time burden but also starts to overlap with some of what LPNs do between patient interactions [2]. Remote patient monitoring tools are automating some aspects of vital sign tracking and early deterioration alerts, which were traditionally LPN responsibilities in long-term care settings. The structural risk is not job elimination but role compression: as AI handles more paperwork and monitoring, the work that remains is increasingly the hands-on care that requires physical presence.",
+    "body": "AI is moving into documentation and charting work - the administrative layer of nursing that sits around direct patient care - which reduces time burden but also starts to overlap with some of what LPNs do between patient interactions [U.S. Bureau of Labor Statistics, Sep 2025]. Remote patient monitoring tools are automating some aspects of vital sign tracking and early deterioration alerts, which were traditionally LPN responsibilities in long-term care settings. The structural risk is not job elimination but role compression: as AI handles more paperwork and monitoring, the work that remains is increasingly the hands-on care that requires physical presence.",
     "stat": "64%",
     "statLabel": "of healthcare facilities now use AI-assisted documentation tools",
     "statSourceName": "American Nurses Association",
@@ -124,7 +124,7 @@
     "statSourceUrl": "https://www.nursingworld.org/practice-policy/nursing-excellence/official-position-statements/id/artificial-intelligence/"
   },
   "opportunities": {
-    "body": "This role scores a 4 out of 5 on physical presence requirements - medication administration, wound care, catheterization, and direct patient observation require someone in the room [2]. The physical care delivery tasks that define LPN work have no observed AI activity, and there is no credible near-term path for AI to perform them. BLS projects 6% employment growth through 2034, driven by aging population demand for long-term care and home health services where LPNs are the primary workforce.",
+    "body": "This role scores a 4 out of 5 on physical presence requirements - medication administration, wound care, catheterization, and direct patient observation require someone in the room [U.S. Bureau of Labor Statistics, Sep 2025]. The physical care delivery tasks that define LPN work have no observed AI activity, and there is no credible near-term path for AI to perform them. BLS projects 6% employment growth through 2034, driven by aging population demand for long-term care and home health services where LPNs are the primary workforce.",
     "stat": "55,900",
     "statLabel": "projected annual job openings for LPNs",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -133,73 +133,71 @@
     "statSourceUrl": "https://www.bls.gov/ooh/healthcare/licensed-practical-and-licensed-vocational-nurses.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "The work most protected from AI is hands-on patient care - the physical tasks that require presence, touch, and real-time clinical judgment during a patient interaction. Build depth in patient assessment skills and complex care settings (long-term care, home health, rehabilitation) where LPN demand is growing fastest and AI tools are least embedded [2]. Over the next six months, get comfortable using AI-assisted documentation tools to reduce charting time - not because the skill is threatened, but because freeing time from paperwork means more patient-facing hours.",
-    "thinkingOf": "LPN programs typically take 12 to 18 months and lead directly to licensure - it is one of the faster pathways into clinical healthcare [2]. The role is in highest demand in long-term care facilities, home health agencies, and physician offices, and the aging population creates structural tailwinds that are independent of AI trends. Clinical skills, not credential stacking, are what hiring managers want to see - prioritize programs with strong hands-on clinical hours.",
+    "alreadyIn": "The work most protected from AI is hands-on patient care - the physical tasks that require presence, touch, and real-time clinical judgment during a patient interaction. Build depth in patient assessment skills and complex care settings (long-term care, home health, rehabilitation) where LPN demand is growing fastest and AI tools are least embedded [U.S. Bureau of Labor Statistics, Sep 2025]. Over the next six months, get comfortable using AI-assisted documentation tools to reduce charting time - not because the skill is threatened, but because freeing time from paperwork means more patient-facing hours.",
+    "thinkingOf": "LPN programs typically take 12 to 18 months and lead directly to licensure - it is one of the faster pathways into clinical healthcare [U.S. Bureau of Labor Statistics, Sep 2025]. The role is in highest demand in long-term care facilities, home health agencies, and physician offices, and the aging population creates structural tailwinds that are independent of AI trends. Clinical skills, not credential stacking, are what hiring managers want to see - prioritize programs with strong hands-on clinical hours.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The nurses who thrive as AI tools come into clinical workflows are the ones who stay anchored in what AI can't replicate — physical assessment, therapeutic presence, and patient advocacy. Document with the tools, but own the clinical picture yourself.",
         "attribution": "Health Affairs, 'AI in Nursing: Frontline Perspectives on Clinical Decision Support'",
-        "sourceId": "src-health-affairs"
+        "sourceUrl": "https://www.healthaffairs.org/topic/technology",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "The nursing workforce needs to develop competencies in evaluating AI-generated clinical recommendations, understanding algorithm limitations, and advocating for patients when automated systems produce outputs that conflict with bedside observation.",
         "attribution": "American Nurses Association",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.nursingworld.org/practice-policy/nursing-excellence/official-position-statements/id/artificial-intelligence/",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "LPN programs are one of the fastest entry points into clinical healthcare — and the facilities hiring most aggressively are long-term care and home health, where the patient population is growing and the work is deeply hands-on. Start there, build clinical hours, and credential up from a position of practice.",
         "attribution": "American Nurse Journal, 'Workforce Pathways in Long-Term Care'",
-        "sourceId": "src-nurse-journal"
+        "sourceUrl": "https://www.myamericannurse.com/",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "ANA emphasizes that foundational nursing competencies — caring presence, clinical judgment, patient advocacy — are the durable core of the profession, and that new entrants who combine these with comfort using AI documentation and monitoring tools will be most competitive as facilities modernize.",
         "attribution": "American Nurses Association",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.nursingworld.org/practice-policy/nursing-excellence/official-position-statements/id/artificial-intelligence/",
+        "sourceDate": "2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Anthropic / O*NET",
       "title": "Anthropic Economic Index - Task-level automation and augmentation estimates",
       "date": "Jan 2026",
       "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Licensed Practical and Licensed Vocational Nurses",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/healthcare/licensed-practical-and-licensed-vocational-nurses.htm"
     },
     {
-      "id": "src-3",
       "name": "American Nurses Association",
       "title": "Artificial Intelligence in Nursing Practice",
       "date": "2023",
       "url": "https://www.nursingworld.org/practice-policy/nursing-excellence/official-position-statements/id/artificial-intelligence/"
     },
     {
-      "id": "src-4",
       "name": "American Nurses Association",
       "title": "Artificial Intelligence in Nursing Practice",
       "date": "2024",
       "url": "https://www.nursingworld.org/practice-policy/nursing-excellence/official-position-statements/id/artificial-intelligence/"
     },
     {
-      "id": "src-health-affairs",
       "name": "Health Affairs",
       "url": "https://www.healthaffairs.org/topic/technology",
       "title": "AI in Nursing: Frontline Perspectives on Clinical Decision Support",
       "date": "2024"
     },
     {
-      "id": "src-nurse-journal",
       "name": "American Nurse Journal",
       "url": "https://www.myamericannurse.com/",
       "title": "Workforce Pathways in Long-Term Care",

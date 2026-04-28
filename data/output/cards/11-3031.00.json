@@ -2,7 +2,7 @@
   "onet_code": "11-3031.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The analytical core of financial management is under real automation pressure. Developing and analyzing financial status information -- a top task by weight -- shows a 52% automation rate in AI usage data [1]. McKinsey estimates that AI can automate 60 to 70% of the time finance teams currently spend on data processing, analysis, and reporting, compressing the analyst and associate headcount that financial managers traditionally oversee [2]. This means fewer subordinates to manage and more pressure on financial managers to personally own the judgment and strategy work that AI cannot handle.",
+    "body": "The analytical core of financial management is under real automation pressure. Developing and analyzing financial status information -- a top task by weight -- shows a 52% automation rate in AI usage data [U.S. Bureau of Labor Statistics, Sep 2024]. McKinsey estimates that AI can automate 60 to 70% of the time finance teams currently spend on data processing, analysis, and reporting, compressing the analyst and associate headcount that financial managers traditionally oversee [Deloitte Insights, Sep 2024]. This means fewer subordinates to manage and more pressure on financial managers to personally own the judgment and strategy work that AI cannot handle.",
     "stat": "52%",
     "statLabel": "efficiency substitution in AI usage",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/management/financial-managers.htm"
   },
   "opportunities": {
-    "body": "The durability of this role comes from its highest-weighted work: establishing and maintaining customer and business relationships, directing branch or department activities, and making final credit and loan decisions [1]. These require the combination of accountability, local judgment, and organizational authority that automated systems cannot hold. A5=4 (interpersonal influence) and A6=4 (leadership and coordination) are structural strengths -- the decisions a financial manager is paid to make require buy-in from stakeholders that a model cannot generate [3]. Deloitte's 2024 CFO survey found that CFOs and financial managers who effectively deployed AI tools reported 25 to 35% capacity gains, enabling them to take on broader strategic scope without adding headcount [2].",
+    "body": "The durability of this role comes from its highest-weighted work: establishing and maintaining customer and business relationships, directing branch or department activities, and making final credit and loan decisions [U.S. Bureau of Labor Statistics, Sep 2024]. These require the combination of accountability, local judgment, and organizational authority that automated systems cannot hold. A5=4 (interpersonal influence) and A6=4 (leadership and coordination) are structural strengths -- the decisions a financial manager is paid to make require buy-in from stakeholders that a model cannot generate [McKinsey Global Institute, May 2024]. Deloitte's 2024 CFO survey found that CFOs and financial managers who effectively deployed AI tools reported 25 to 35% capacity gains, enabling them to take on broader strategic scope without adding headcount [Deloitte Insights, Sep 2024].",
     "stat": "25-35%",
     "statLabel": "capacity gains for financial managers deploying AI tools, per Deloitte CFO survey",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www2.deloitte.com/us/en/insights/topics/leadership/cfo-survey-ai-finance-function.html"
   },
   "howToAdapt": {
-    "alreadyIn": "The most concrete near-term move is to get hands-on with the AI-enabled FP&A (financial planning and analysis) tools your organization uses -- Workday Adaptive Planning, Anaplan, or similar platforms -- so you can evaluate their outputs critically rather than accepting them at face value [2]. Over the next six months, build depth in the oversight and strategic framing skills that AI surfaces demand for: synthesizing AI-generated financial analysis into board-ready narratives, identifying where AI model assumptions break down, and making capital allocation decisions in ambiguous situations where the data is incomplete [3].",
-    "thinkingOf": "The CFA (Chartered Financial Analyst) and CPA credentials remain the clearest entry signals for financial manager roles, particularly in investment management, banking, and corporate finance [1]. Candidates entering now should demonstrate fluency with FP&A platforms and financial modeling tools -- being able to build and interrogate a financial model in Excel, Python, or a dedicated FP&A platform is increasingly an expectation at the associate level, before a manager title is in reach [2]. The roles that lead to financial manager positions are evolving toward analytics-heavy tracks -- building experience in business intelligence, variance analysis, and scenario modeling will matter more than traditional bookkeeping backgrounds [3].",
+    "alreadyIn": "The most concrete near-term move is to get hands-on with the AI-enabled FP&A (financial planning and analysis) tools your organization uses -- Workday Adaptive Planning, Anaplan, or similar platforms -- so you can evaluate their outputs critically rather than accepting them at face value [Deloitte Insights, Sep 2024]. Over the next six months, build depth in the oversight and strategic framing skills that AI surfaces demand for: synthesizing AI-generated financial analysis into board-ready narratives, identifying where AI model assumptions break down, and making capital allocation decisions in ambiguous situations where the data is incomplete [McKinsey Global Institute, May 2024].",
+    "thinkingOf": "The CFA (Chartered Financial Analyst) and CPA credentials remain the clearest entry signals for financial manager roles, particularly in investment management, banking, and corporate finance [U.S. Bureau of Labor Statistics, Sep 2024]. Candidates entering now should demonstrate fluency with FP&A platforms and financial modeling tools -- being able to build and interrogate a financial model in Excel, Python, or a dedicated FP&A platform is increasingly an expectation at the associate level, before a manager title is in reach [Deloitte Insights, Sep 2024]. The roles that lead to financial manager positions are evolving toward analytics-heavy tracks -- building experience in business intelligence, variance analysis, and scenario modeling will matter more than traditional bookkeeping backgrounds [McKinsey Global Institute, May 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The finance function is not shrinking -- it is reorienting. The time that used to go into pulling data and building reports is going into interpretation and decision support. Financial managers who make that shift are doing more valuable work. Those who don't are being replaced by tools.",
         "attribution": "Deloitte Insights, '2024 CFO Survey: AI and the Finance Function' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/topics/leadership/cfo-survey-ai-finance-function.html",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI is giving financial managers access to analysis that used to require a team of analysts. The constraint is no longer getting the numbers -- it's knowing what questions to ask of them and communicating the answers to people who need to act on them.",
-        "attribution": "McKinsey Global Institute, 'The State of AI in Finance' (2024)",
-        "sourceId": "src-3"
+        "attribution": "McKinsey Global Institute, 'The economic potential of generative AI'",
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The CFA remains the gold standard for investment-side financial management, but increasingly candidates who combine the CFA with data fluency -- knowing how to work with large financial datasets, build models, and interpret AI-generated analysis -- are standing out in competitive hiring processes.",
-        "attribution": "CFA Institute, '2024 Financial Skills Report'",
-        "sourceId": "src-4"
+        "quote": "Finance professionals most exposed to AI displacement are those whose work is primarily data retrieval and report generation. Those whose value is judgment under uncertainty, interpreting ambiguous financial signals, navigating client relationships through volatile conditions, remain in strong demand.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Entry-level candidates who understand FP&A tools and can connect data to business decisions are in a different category than those who learned finance through traditional accounting tracks. The financial manager of the future is a translator between AI-generated analysis and business strategy.",
         "attribution": "Deloitte Insights, '2024 CFO Survey: AI and the Finance Function' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/topics/leadership/cfo-survey-ai-finance-function.html",
+        "sourceDate": "Sep 2024"
       }
     ]
   },
@@ -65,32 +69,28 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Financial Managers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/management/financial-managers.htm"
     },
     {
-      "id": "src-2",
       "name": "Deloitte Insights",
       "title": "2024 CFO Survey: AI and the Finance Function",
       "date": "Sep 2024",
       "url": "https://www2.deloitte.com/us/en/insights/topics/leadership/cfo-survey-ai-finance-function.html"
     },
     {
-      "id": "src-3",
       "name": "McKinsey Global Institute",
-      "title": "The State of AI in Finance",
-      "date": "May 2024",
-      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/the-state-of-ai-in-finance-2024"
+      "title": "The economic potential of generative AI: The next productivity frontier",
+      "date": "Jun 2023",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
     },
     {
-      "id": "src-4",
-      "name": "CFA Institute",
-      "title": "2024 Financial Skills Report",
-      "date": "Mar 2024",
-      "url": "https://www.cfainstitute.org/research/financial-skills-report-2024"
+      "name": "Thomson Reuters",
+      "title": "Future of Professionals Report 2025",
+      "date": "2025",
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     }
   ],
   "emergingCareers": [
@@ -336,5 +336,23 @@
     "Controller",
     "CFO",
     "VP of Finance"
+  ],
+  "faqs": [
+    {
+      "question": "Is financial management a strong career as AI tools handle more financial analysis and reporting?",
+      "answer": "Financial Manager scores 69/100 on AI exposure, one of the strongest in finance, with 74,600 annual openings and 15% projected growth. AI tools have accelerated financial reporting and data analysis, but capital allocation decisions, investor relations, board-level financial communication, and strategic planning still require senior human judgment. Deloitte CFO survey data shows financial managers deploying AI tools are seeing 25 to 35% capacity gains, which is being reinvested in higher-value strategic work rather than headcount reduction."
+    },
+    {
+      "question": "What does a financial manager earn, and what drives pay to the top of the range?",
+      "answer": "The median salary is $161,700, with CFOs at mid-size public companies typically earning $300,000 to $700,000 in total compensation including equity. Controllers, treasury managers, and FP&A directors at large corporations earn $150,000 to $250,000. The biggest compensation jump comes from moving from a functional finance role into a business-partnering or CFO role with P&L ownership; CPA and CFA credentials are common at the top, but leadership track record and executive presence drive the highest packages."
+    },
+    {
+      "question": "Which financial management tasks is AI handling, and what stays with the CFO?",
+      "answer": "AI tools now generate variance analyses, forecast models, and management reports from ERP data with minimal manual input. What requires the financial manager is interpreting those outputs for a board that needs to make acquisitions, divestitures, or financing decisions, and maintaining the relationships with banks, auditors, and investors who base their confidence on trust in leadership. Regulatory filings and earnings calls require human accountability that cannot be delegated to an automated system."
+    },
+    {
+      "question": "What credentials and skills help financial managers advance to CFO-level roles?",
+      "answer": "CPA is the most common credential among CFOs at public companies; CFA is common among those with an investment or treasury background. Financial managers who develop operational finance experience, specifically owning a P&L and working directly with business unit leaders, advance faster than those who stay in corporate reporting functions. FP&A experience with modern planning tools like Anaplan or Workday Adaptive is increasingly required for VP Finance and CFO roles at growth-stage companies."
+    }
   ]
 }

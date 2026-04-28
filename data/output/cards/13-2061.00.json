@@ -2,7 +2,7 @@
   "onet_code": "13-2061.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI is changing financial examination methodology rather than threatening the occupation. Regulatory agencies including the OCC and FDIC have begun deploying AI tools to pre-screen institution filings, flag anomalies in call reports, and prioritize exam scope -- which shifts examiner time toward higher-complexity findings rather than eliminating positions [1]. Because financial examiners carry legal authority to issue findings and enforcement actions that institutions must respond to, the accountability dimension of the role cannot be delegated to an automated system under current law [2].",
+    "body": "AI is changing financial examination methodology rather than threatening the occupation. Regulatory agencies including the OCC and FDIC have begun deploying AI tools to pre-screen institution filings, flag anomalies in call reports, and prioritize exam scope -- which shifts examiner time toward higher-complexity findings rather than eliminating positions [U.S. Bureau of Labor Statistics, Sep 2024]. Because financial examiners carry legal authority to issue findings and enforcement actions that institutions must respond to, the accountability dimension of the role cannot be delegated to an automated system under current law [Office of the Comptroller of the Currency, Jun 2024].",
     "stat": "50%",
     "statLabel": "potential productivity optimization",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www.occ.gov/publications-and-resources/publications/banker-education/files/ai-banking-supervisory-perspective.pdf"
   },
   "opportunities": {
-    "body": "This role has some of the strongest structural protections in the finance cluster: A3=4 (complex regulatory problem-solving) and A4=4 (critical evaluation of financial evidence) reflect work that requires both subject matter expertise and legal authority [1]. The OCC and Federal Reserve have both published guidance indicating that AI-augmented examination tools are designed to make examiners more effective, not to reduce headcount -- the human sign-off on examination findings is legally required [2]. BLS projects employment for financial examiners to grow 20% through 2033, driven by regulatory expansion and the increased complexity of AI-related compliance monitoring at financial institutions [1].",
+    "body": "This role has some of the strongest structural protections in the finance cluster: A3=4 (complex regulatory problem-solving) and A4=4 (critical evaluation of financial evidence) reflect work that requires both subject matter expertise and legal authority [U.S. Bureau of Labor Statistics, Sep 2024]. The OCC and Federal Reserve have both published guidance indicating that AI-augmented examination tools are designed to make examiners more effective, not to reduce headcount -- the human sign-off on examination findings is legally required [Office of the Comptroller of the Currency, Jun 2024]. BLS projects employment for financial examiners to grow 20% through 2033, driven by regulatory expansion and the increased complexity of AI-related compliance monitoring at financial institutions [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": "20%",
     "statLabel": "projected growth for financial examiners",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/financial-examiners.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Regulators are increasingly expecting examiners to be fluent with AI-assisted exam tools -- the OCC's SupTech (supervisory technology) initiatives and the Fed's data analytics platforms are the most relevant to get familiar with now [2]. Over the next six months, build depth in AI model risk examination -- validating how financial institutions are using AI in credit decisions, fraud detection, and compliance monitoring is one of the fastest-growing examination specialties and is mandated by SR 11-7 model risk management guidance [3].",
-    "thinkingOf": "Entry into financial examination typically goes through federal or state regulatory agencies -- the OCC, FDIC, Federal Reserve, NCUA, or state banking departments [1]. A background in accounting or finance combined with the CFE or CPA credential is the strongest entry profile; many agencies prefer candidates with both [2]. Candidates who can demonstrate familiarity with model risk concepts -- how to evaluate an institution's AI-driven credit scoring model, for example -- will be positioned for the examination specialties that are growing fastest as AI adoption in banking accelerates [3].",
+    "alreadyIn": "Regulators are increasingly expecting examiners to be fluent with AI-assisted exam tools -- the OCC's SupTech (supervisory technology) initiatives and the Fed's data analytics platforms are the most relevant to get familiar with now [Office of the Comptroller of the Currency, Jun 2024]. Over the next six months, build depth in AI model risk examination -- validating how financial institutions are using AI in credit decisions, fraud detection, and compliance monitoring is one of the fastest-growing examination specialties and is mandated by SR 11-7 model risk management guidance [Federal Reserve, Nov 2024].",
+    "thinkingOf": "Entry into financial examination typically goes through federal or state regulatory agencies -- the OCC, FDIC, Federal Reserve, NCUA, or state banking departments [U.S. Bureau of Labor Statistics, Sep 2024]. A background in accounting or finance combined with the CFE or CPA credential is the strongest entry profile; many agencies prefer candidates with both [Office of the Comptroller of the Currency, Jun 2024]. Candidates who can demonstrate familiarity with model risk concepts -- how to evaluate an institution's AI-driven credit scoring model, for example -- will be positioned for the examination specialties that are growing fastest as AI adoption in banking accelerates [Federal Reserve, Nov 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The examination function is inherently human -- you're making legal determinations about whether an institution is safe and sound, and those determinations have to be defensible in court if challenged. AI can help us prioritize where to look, but it cannot sign the findings.",
         "attribution": "Office of the Comptroller of the Currency, 'Artificial Intelligence in Banking: A Supervisory Perspective' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.occ.gov/publications-and-resources/publications/banker-education/files/ai-banking-supervisory-perspective.pdf",
+        "sourceDate": "Jun 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "SupTech tools are changing how we scope exams -- we can analyze an entire call report database in hours rather than weeks. What that means is examiners can spend less time on data gathering and more time on the judgment calls that actually require their expertise.",
         "attribution": "Federal Reserve, 'Supervision and Regulation Report' (Nov 2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.federalreserve.gov/publications/supervision-and-regulation-report.htm",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The demand for examiners who understand AI model risk is outpacing supply. Every major institution is deploying AI in credit, fraud, and compliance, and every one of those systems needs to be examined under existing model risk management guidance.",
         "attribution": "Office of the Comptroller of the Currency, 'Artificial Intelligence in Banking: A Supervisory Perspective' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.occ.gov/publications-and-resources/publications/banker-education/files/ai-banking-supervisory-perspective.pdf",
+        "sourceDate": "Jun 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Examiner candidates who enter with both financial analysis skills and a working understanding of statistical modeling are well-positioned. The exam work is increasingly about evaluating the models institutions use -- and you can't do that effectively without knowing how the models work.",
         "attribution": "Federal Reserve, 'Supervision and Regulation Report' (Nov 2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.federalreserve.gov/publications/supervision-and-regulation-report.htm",
+        "sourceDate": "Nov 2024"
       }
     ]
   },
@@ -65,21 +69,18 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Financial Examiners",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/financial-examiners.htm"
     },
     {
-      "id": "src-2",
       "name": "Office of the Comptroller of the Currency",
       "title": "Artificial Intelligence in Banking: A Supervisory Perspective",
       "date": "Jun 2024",
       "url": "https://www.occ.gov/publications-and-resources/publications/banker-education/files/ai-banking-supervisory-perspective.pdf"
     },
     {
-      "id": "src-3",
       "name": "Federal Reserve",
       "title": "Supervision and Regulation Report",
       "date": "Nov 2024",
@@ -504,5 +505,23 @@
   "emergingTitles": [
     "Bank Examiner",
     "Compliance Examiner"
+  ],
+  "faqs": [
+    {
+      "question": "Is financial examination a strong career with stable government and regulatory demand?",
+      "answer": "Financial Examiner scores 64/100 on AI exposure, one of the stronger scores in finance, with 5,700 annual openings and 18% projected growth, among the fastest in the financial sector. Regulatory oversight of banks, credit unions, and financial institutions is a mandated function that cannot be fully automated; the judgment required to assess institutional risk, evaluate management, and determine regulatory action requires licensed examiners. The growth is driven by expanding regulatory scope, including oversight of fintech companies and AI-driven financial products."
+    },
+    {
+      "question": "What does a financial examiner earn, and how do government and private sector roles compare?",
+      "answer": "The median salary is $90,400, with federal examiners at the OCC, FDIC, and Federal Reserve earning $85,000 to $140,000 depending on grade level, and private sector compliance officers and regulatory affairs specialists with examination backgrounds earning $120,000 to $180,000. The most common career path is to spend 5 to 10 years as a government examiner building regulatory expertise, then move to a regulated institution's compliance team at a significant salary premium. CPA or CFA combined with examination experience is the profile that reaches the highest compensation in private sector regulatory roles."
+    },
+    {
+      "question": "Which examination tasks is AI handling, and where does examiner judgment remain essential?",
+      "answer": "AI tools now help examiners screen transaction data for compliance exceptions, analyze loan portfolio concentrations, and identify anomalies in call report data faster than manual sampling. Where human examiners remain essential is evaluating management quality, assessing whether a bank's risk culture matches its stated policies, and making the judgment calls on enforcement actions that carry significant legal and economic consequences. Regulatory accountability means AI outputs are inputs to examiner judgment, not substitutes for it."
+    },
+    {
+      "question": "What credentials and skills help financial examiners advance?",
+      "answer": "Federal examination commissioning, through programs at the OCC, FDIC, or Fed, provides the most recognized baseline credential; it requires passing standardized exams and accumulating supervised examination hours. CPA licensure accelerates promotion within government examination agencies and is often preferred for roles focused on accounting and capital adequacy. Examiners who develop expertise in emerging risk areas, model risk management, BSA/AML compliance, or fintech supervision, are in demand at both agencies and the private-sector compliance teams that need staff who understand regulatory expectations firsthand."
+    }
   ]
 }

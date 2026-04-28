@@ -111,7 +111,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Online platforms like Zillow, Redfin, and Opendoor have steadily absorbed functions that brokers once controlled exclusively, from property search to automated valuations to iBuying. NAR data shows total Realtor membership declined from a peak of roughly 1.56 million in 2022 to about 1.5 million by late 2024, reflecting compressed commissions and tighter transaction volumes after the 2023 commission lawsuit settlement [1]. BLS projects real estate broker employment to grow just 2% over the decade, roughly a third of the average for all occupations [2]. The combination of platform displacement and a legal shift toward negotiable commissions is squeezing the middle of the market hardest.",
+    "body": "Online platforms like Zillow, Redfin, and Opendoor have steadily absorbed functions that brokers once controlled exclusively, from property search to automated valuations to iBuying. NAR data shows total Realtor membership declined from a peak of roughly 1.56 million in 2022 to about 1.5 million by late 2024, reflecting compressed commissions and tighter transaction volumes after the 2023 commission lawsuit settlement [National Association of Realtors, Nov 2024]. BLS projects real estate broker employment to grow just 2% over the decade, roughly a third of the average for all occupations [U.S. Bureau of Labor Statistics, Sep 2024]. The combination of platform displacement and a legal shift toward negotiable commissions is squeezing the middle of the market hardest.",
     "stat": "1.5M",
     "statLabel": "NAR members, down from 1.56M peak in 2022",
     "statSourceName": "National Association of Realtors",
@@ -120,7 +120,7 @@
     "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
   },
   "opportunities": {
-    "body": "NAR's 2024 buyer survey found that 88% of recent buyers purchased through an agent or broker, a figure that has barely moved in a decade despite the rise of online search tools [1]. Complex transactions, multi-property portfolios, and commercial deals still demand someone who can negotiate, interpret local regulations, and manage counterparty relationships. Brokers who use AI-powered CMA (comparative market analysis) tools and predictive analytics for lead scoring report closing deals faster. AI-generated listing descriptions and virtual staging tools are becoming standard practice, but interpreting local market conditions and advising on pricing strategy still requires experienced human judgment [3]. The brokerage model is shifting from gatekeeping information to providing judgment, local expertise, and transaction management that platforms cannot replicate.",
+    "body": "NAR's 2024 buyer survey found that 88% of recent buyers purchased through an agent or broker, a figure that has barely moved in a decade despite the rise of online search tools [National Association of Realtors, Nov 2024]. Complex transactions, multi-property portfolios, and commercial deals still demand someone who can negotiate, interpret local regulations, and manage counterparty relationships. Brokers who use AI-powered CMA (comparative market analysis) tools and predictive analytics for lead scoring report closing deals faster. AI-generated listing descriptions and virtual staging tools are becoming standard practice, but interpreting local market conditions and advising on pricing strategy still requires experienced human judgment [MIT Technology Review, Mar 2025]. The brokerage model is shifting from gatekeeping information to providing judgment, local expertise, and transaction management that platforms cannot replicate.",
     "stat": "88%",
     "statLabel": "of recent buyers still used an agent or broker",
     "statSourceName": "National Association of Realtors",
@@ -129,59 +129,59 @@
     "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI-powered CMA and lead-scoring tools now. Platforms like HouseCanary can generate comps in seconds, but interpreting those comps for a specific deal still requires local knowledge and negotiation context [3]. Over the next six months, build depth in the parts of brokerage AI handles worst: complex commercial transactions, 1031 exchanges, multi-party negotiations, and local zoning interpretation. These tasks involve too many variables and too much interpersonal judgment for current AI to handle reliably.",
-    "thinkingOf": "The post-settlement commission landscape means new brokers need to demonstrate clear value from day one. Focus on a geographic niche or property type (luxury, multifamily, land) where deep local knowledge is a genuine differentiator rather than competing on volume in a commoditized residential market [1]. Getting a broker's license is table stakes. What separates successful entrants now is fluency with transaction technology, CRM systems, and data-driven pricing, combined with a network built through actual deal experience, not just coursework.",
+    "alreadyIn": "Start using AI-powered CMA and lead-scoring tools now. Platforms like HouseCanary can generate comps in seconds, but interpreting those comps for a specific deal still requires local knowledge and negotiation context [MIT Technology Review, Mar 2025]. Over the next six months, build depth in the parts of brokerage AI handles worst: complex commercial transactions, 1031 exchanges, multi-party negotiations, and local zoning interpretation. These tasks involve too many variables and too much interpersonal judgment for current AI to handle reliably.",
+    "thinkingOf": "The post-settlement commission landscape means new brokers need to demonstrate clear value from day one. Focus on a geographic niche or property type (luxury, multifamily, land) where deep local knowledge is a genuine differentiator rather than competing on volume in a commoditized residential market [National Association of Realtors, Nov 2024]. Getting a broker's license is table stakes. What separates successful entrants now is fluency with transaction technology, CRM systems, and data-driven pricing, combined with a network built through actual deal experience, not just coursework.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Technology is raising the bar for what consumers expect. Brokers who adopt AI tools for CMA generation, lead scoring, and listing optimization handle more transactions with the same headcount — but the differentiation is moving to the judgment layer: deal structuring, agent coaching, and managing complex multi-party negotiations.",
         "attribution": "National Association of Realtors",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI-enhanced listing descriptions generate meaningfully more saves on average, suggesting that the visual and content presentation layer of brokerage is already being commoditized. The durable broker advantage is in market interpretation and the trust-intensive work of guiding clients through high-stakes decisions under uncertainty.",
         "attribution": "MIT Technology Review",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.technologyreview.com/2025/03/01/1111478/the-download-ai-in-real-estate/",
+        "sourceDate": "Mar 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "The post-settlement commission landscape means new brokers need to demonstrate clear value from the first client conversation. Geographic specialization — knowing every sale, zoning decision, and school boundary change in a defined area — is a more defensible position than generalist coverage, especially as AI tools give buyers access to the same listings data brokers once controlled.",
         "attribution": "National Association of Realtors",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Real estate still generates roughly 37,000 openings a year — mostly from turnover, not growth. The brokers building durable businesses are the ones developing specialization: specific neighborhoods, property types, or buyer demographics. Generalist production-volume models are much more vulnerable to platform competition.",
         "attribution": "Inman News, 'The Broker Business Model in the AI Era'",
-        "sourceId": "src-inman"
+        "sourceUrl": "https://www.inman.com/",
+        "sourceDate": "2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "National Association of Realtors",
       "title": "2024 Profile of Home Buyers and Sellers",
       "date": "Nov 2024",
       "url": "https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Real Estate Brokers and Sales Agents",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/sales/real-estate-brokers-and-sales-agents.htm"
     },
     {
-      "id": "src-3",
       "name": "MIT Technology Review",
       "title": "The Download: AI in Real Estate",
       "date": "Mar 2025",
       "url": "https://www.technologyreview.com/2025/03/01/1111478/the-download-ai-in-real-estate/"
     },
     {
-      "id": "src-inman",
       "name": "Inman News",
       "url": "https://www.inman.com/",
       "title": "The Broker Business Model in the AI Era",
@@ -322,7 +322,7 @@
         "sourceName": "WEF",
         "sourceTitle": "Future of Jobs Report 2025",
         "sourceDate": "Jan 2025",
-        "sourceUrl": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
       },
       "search_query": "\"property valuation\" OR \"AVM\" \"machine learning\" jobs 2025",
       "job_search_url": "",
@@ -343,7 +343,7 @@
         "sourceName": "WEF",
         "sourceTitle": "Future of Jobs Report 2025",
         "sourceDate": "Jan 2025",
-        "sourceUrl": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
       },
       "search_query": "\"real estate data analyst\" machine learning AI jobs",
       "job_search_url": "",
@@ -353,6 +353,24 @@
         "Build a neighborhood trend prediction project using public housing datasets",
         "Learn Tableau or Power BI through real estate-specific dashboard tutorials"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is real estate brokerage a strong career as the industry faces commission structure changes?",
+      "answer": "Real Estate Broker scores 59/100 on AI exposure, in solid territory, with 9,700 annual openings and 3% projected growth. The NAR settlement changes in 2024 altered buyer-agent compensation structures, creating uncertainty in the short term but also creating an opportunity for brokers who clearly articulate their value to command direct compensation. The 88% of buyers who still used an agent in recent transactions suggests the market has not moved away from professional representation, even as fee structures evolve."
+    },
+    {
+      "question": "What does a real estate broker earn compared to a sales agent?",
+      "answer": "The median salary is $72,280, with top-producing brokers and broker-owners earning $200,000 to $1 million or more depending on transaction volume and team size. Broker-owners earn on splits from affiliated agents in addition to their own production, which creates a leverage model that individual agents do not have. Independent brokers who run small boutique firms with 5 to 15 agents in high-value markets typically earn more than associates at large national franchise operations."
+    },
+    {
+      "question": "Which brokerage tasks is AI handling, and where does experienced broker judgment matter most?",
+      "answer": "AI tools now handle property valuation, listing syndication, contract management checklists, and transaction coordination for standard residential deals with less broker involvement. Where experienced broker judgment stays essential is advising agents through complex transactions, managing disputes, ensuring regulatory compliance, and making the judgment calls that protect clients from legal and financial risk. Brokers who run teams also add value through recruiting, coaching, and building the culture that attracts and retains producing agents."
+    },
+    {
+      "question": "What credentials and strategies help real estate brokers build a durable business?",
+      "answer": "Broker licensure is the baseline; designations like CRS, ABR, and SRES signal depth in specific transaction types. Brokers who build a team and invest in systems, particularly a strong CRM and consistent lead generation, can grow a business that is less dependent on any individual's production cycle. The NAR settlement environment rewards brokers who can clearly articulate their value in writing and who coach their agents to do the same; brokerage businesses built on referral reputation and community relationships are more defensible than those built on portal leads."
     }
   ]
 }

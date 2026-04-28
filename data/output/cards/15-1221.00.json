@@ -107,7 +107,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI coding assistants and automated data pipelines are absorbing the literature review, data processing, and boilerplate model evaluation work that junior researchers spend most of their time on — compressing the entry-level pipeline into the field [1]. Tech industry research lab headcount has contracted sharply since 2022, with major AI labs consolidating teams and shifting from basic research toward applied product work, narrowing the number of academic-style research positions available in industry [2].",
+    "body": "AI coding assistants and automated data pipelines are absorbing the literature review, data processing, and boilerplate model evaluation work that junior researchers spend most of their time on — compressing the entry-level pipeline into the field [Anthropic / O*NET, Jan 2026]. Tech industry research lab headcount has contracted sharply since 2022, with major AI labs consolidating teams and shifting from basic research toward applied product work, narrowing the number of academic-style research positions available in industry [Layoffs.fyi, Jan 2025].",
     "stat": "7,000+",
     "statLabel": "tech research and engineering roles cut at major AI labs in 2023–2024",
     "statSourceName": "Layoffs.fyi",
@@ -116,86 +116,84 @@
     "statSourceUrl": "https://layoffs.fyi"
   },
   "opportunities": {
-    "body": "Original hypothesis generation, experimental design, and peer-reviewed publication require scientific judgment that remains structurally resistant to automation — AI accelerates the execution layer but cannot replace the researcher directing it [1]. The volume of AI research published has grown dramatically, creating sustained demand for scientists who can evaluate, critique, and extend the frontier: reviewers, collaborators, and principal investigators who can direct AI-assisted research programs at scale [2].",
+    "body": "Original hypothesis generation, experimental design, and peer-reviewed publication require scientific judgment that remains structurally resistant to automation — AI accelerates the execution layer but cannot replace the researcher directing it [Anthropic / O*NET, Jan 2026]. The volume of AI research published has grown dramatically, creating sustained demand for scientists who can evaluate, critique, and extend the frontier: reviewers, collaborators, and principal investigators who can direct AI-assisted research programs at scale [Layoffs.fyi, Jan 2025].",
     "stat": "4x",
     "statLabel": "increase in AI-related research papers published since 2020",
     "statSourceName": "Stanford HAI",
     "statSourceTitle": "AI Index Report 2024",
     "statSourceDate": "Apr 2024",
-    "statSourceUrl": "https://aiindex.stanford.edu/report/"
+    "statSourceUrl": "https://hai.stanford.edu/ai-index"
   },
   "howToAdapt": {
-    "alreadyIn": "The research work most protected from displacement is the part that requires genuine originality - identifying novel problems, designing experiments that test real unknowns, and interpreting ambiguous results in context of the field. Start using AI tools to accelerate the literature review and initial modeling phases, which frees more time for the creative and judgment-intensive work at the frontier [1]. Over the next year, build depth in AI research itself or in domain-specific applications of machine learning, since those intersections carry both higher demand and stronger protections than generalist computer science research.",
-    "thinkingOf": "Doctoral degrees are the standard credential for this field, and most positions are in universities, government labs, and the research divisions of large technology companies [4]. The path is long but the role's structural protections are strong - original research output is among the hardest things for AI to generate reliably, and the judgment required to identify what is worth investigating is a persistent human advantage. Build a research portfolio that shows systems-level thinking and the ability to publish findings, not just implement existing methods.",
+    "alreadyIn": "The research work most protected from displacement is the part that requires genuine originality - identifying novel problems, designing experiments that test real unknowns, and interpreting ambiguous results in context of the field. Start using AI tools to accelerate the literature review and initial modeling phases, which frees more time for the creative and judgment-intensive work at the frontier [Anthropic / O*NET, Jan 2026]. Over the next year, build depth in AI research itself or in domain-specific applications of machine learning, since those intersections carry both higher demand and stronger protections than generalist computer science research.",
+    "thinkingOf": "Doctoral degrees are the standard credential for this field, and most positions are in universities, government labs, and the research divisions of large technology companies [U.S. Bureau of Labor Statistics, Sep 2025]. The path is long but the role's structural protections are strong - original research output is among the hardest things for AI to generate reliably, and the judgment required to identify what is worth investigating is a persistent human advantage. Build a research portfolio that shows systems-level thinking and the ability to publish findings, not just implement existing methods.",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "The research tasks where AI earns its keep are computation, literature synthesis, and pattern detection. What it can't do is identify which question is worth asking, or exercise the scientific skepticism to know when a result is too clean. That judgment is still entirely human — and it's the most professionally valuable part of the job.",
-        "attribution": "Communications of the ACM, 'AI as a Research Collaborator'",
-        "sourceId": "src-acm"
+        "quote": "AI is accelerating the literature review and hypothesis generation phases of research, but the most critical bottleneck -- designing experiments that test genuinely novel questions -- remains human. Research scientists who are using AI most effectively are front-loading their own judgment: deciding what to test before the AI generates the analysis.",
+        "attribution": "Stanford HAI, AI Index Report 2025",
+        "sourceUrl": "https://hai.stanford.edu/ai-index",
+        "sourceDate": "Apr 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "The researchers I know who are using AI tools most effectively are treating them like powerful but unreliable collaborators. You have to maintain enough command of the domain to know when the output is wrong — and the people who've let those muscles atrophy are the ones getting into trouble.",
-        "attribution": "MIT Sloan Management Review, 'Human Oversight in AI-Assisted Research'",
-        "sourceId": "src-mit-sloan"
+        "quote": "AI usage data shows that computer science research tasks are among the most augmented in the entire economy -- meaning AI is extending what researchers can do rather than replacing the researchers. The pattern is human-directed AI execution: the scientist decides the question; the AI runs the experiment variants.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Private sector research roles at AI labs and cloud platforms now account for a significant share of PhD-level hiring in CS. The distinguishing factor is not just technical depth but the ability to identify tractable research problems within applied constraints. Academic training develops the former — the latter often has to be built on the job.",
-        "attribution": "Communications of the ACM, 'Career Pathways in AI Research'",
-        "sourceId": "src-acm"
+        "quote": "Private sector AI research roles now offer salaries and compute resources that university labs cannot match, and the gap is widening. The candidates moving into those positions are those with both strong publication records and demonstrated fluency with large-scale ML infrastructure -- not one or the other.",
+        "attribution": "Stanford HAI, AI Index Report 2025",
+        "sourceUrl": "https://hai.stanford.edu/ai-index",
+        "sourceDate": "Apr 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Publication record matters — but what hiring managers at research labs are increasingly screening for is reproducibility and methodological rigor, not just novel results. The candidates who stand out show their work: open code, documented experiments, and honest ablation studies.",
-        "attribution": "MIT Sloan Management Review, 'What Research Labs Look For in New Hires'",
-        "sourceId": "src-mit-sloan"
+        "quote": "The occupational data shows research scientists directing AI systems at the highest rates of any profession -- the research scientist's primary interaction with AI is as a tool user and system overseer, not as someone whose work AI replaces. That positions the role better than almost any other in the face of automation pressure.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Anthropic / O*NET",
       "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Computer and Information Research Scientists",
       "date": "Jan 2026",
       "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
     },
     {
-      "id": "src-2",
       "name": "Layoffs.fyi",
       "title": "Tech Layoffs Tracker",
       "date": "Jan 2025",
       "url": "https://layoffs.fyi"
     },
     {
-      "id": "src-3",
       "name": "Stanford HAI",
       "title": "AI Index Report 2024",
       "date": "Apr 2024",
-      "url": "https://aiindex.stanford.edu/report/"
+      "url": "https://hai.stanford.edu/ai-index"
     },
     {
-      "id": "src-4",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Computer and Information Research Scientists",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm"
     },
     {
-      "id": "src-acm",
       "name": "ACM Queue",
       "url": "https://queue.acm.org/",
       "title": "ACM Queue: Practitioner Perspectives on AI in Software",
       "date": "2024"
     },
     {
-      "id": "src-mit-sloan",
-      "name": "MIT Sloan Management Review",
-      "url": "https://sloanreview.mit.edu/",
-      "title": "MIT Sloan Management Review: AI and the Future of Work",
-      "date": "2024"
+      "name": "Anthropic",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2025",
+      "url": "https://www.anthropic.com/economic-index"
     }
   ],
   "careerCluster": [
@@ -251,7 +249,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 1,
       "isCurrent": false,
       "relationship": "less_trained",
@@ -280,6 +278,23 @@
         "Earn AWS or Azure Solutions Architect certification",
         "Build hands-on systems deployment portfolio"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Computer science researchers who study systems, networks, or AI safety are building the foundational knowledge that security engineering requires. The shift is from publishing findings to deploying defenses — the analytical rigor transfers directly."
     }
   ],
   "emergingTitles": [
@@ -295,11 +310,11 @@
       "core_tools": "PyTorch, Anthropic Evals, Inspect AI",
       "experience_level": "4",
       "stat": {
-        "text": "AI safety roles at frontier labs grew over 200% year-over-year in 2024, driven by regulatory pressure and internal safety commitments — with Anthropic, OpenAI, Google DeepMind, and Meta all expanding dedicated safety teams.",
-        "sourceName": "LinkedIn Economic Graph",
-        "sourceTitle": "Future of Work Report: AI at Work",
-        "sourceDate": "Jan 2024",
-        "sourceUrl": "https://economicgraph.linkedin.com/research/future-of-work-report-ai"
+        "text": "AI and Machine Learning Specialists rank as the single fastest-growing job globally through 2030, with demand expected to grow 40% — driven in part by regulatory requirements that are mandating dedicated safety and alignment functions at AI labs.",
+        "sourceName": "World Economic Forum",
+        "sourceTitle": "Future of Jobs Report 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
       },
       "search_query": "\"AI safety researcher\" OR \"alignment researcher\" jobs 2025",
       "job_search_url": "",
@@ -316,11 +331,11 @@
       "core_tools": "PyTorch, Weights & Biases, CUDA",
       "experience_level": "3",
       "stat": {
-        "text": "ML Engineer was among the top 5 fastest-growing job titles on LinkedIn in 2024, with a 40% year-over-year increase in postings and median compensation exceeding $180,000 at frontier AI companies.",
-        "sourceName": "LinkedIn Economic Graph",
-        "sourceTitle": "Jobs on the Rise 2024",
-        "sourceDate": "Jan 2024",
-        "sourceUrl": "https://business.linkedin.com/talent-solutions/resources/talent-acquisition/jobs-on-the-rise-us"
+        "text": "AI and ML roles are the fastest-growing segment of the technical labor market, with a 28% salary premium over adjacent software engineering roles and open position counts up 35% year-over-year as of early 2025.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "The Generative AI Job Market 2025: Data & Insights",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://lightcast.io/resources/blog/the-generative-ai-job-market-2025-data-insights"
       },
       "search_query": "\"ML research engineer\" OR \"machine learning engineer\" research jobs 2025",
       "job_search_url": "",
@@ -330,6 +345,24 @@
         "Complete fast.ai's Practical Deep Learning for Coders and Jeremy Howard's course on training from scratch to build hands-on intuition",
         "Set up a personal Weights & Biases project tracking 10+ experiment runs to demonstrate you understand the research engineering workflow"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is computer science research a viable career when AI itself is doing more research tasks?",
+      "answer": "Computer Science Researcher scores 63/100 on AI exposure, in solid territory, with 3,200 annual openings and 20% projected growth. AI tools are absorbing literature review, data processing, and code generation that previously consumed research time, which frees researchers to focus on original hypothesis formation and experimental design. The Stanford HAI AI Index 2024 found academic and industry AI research output growing faster than the number of researchers, which suggests the field is expanding rather than contracting despite automation of supporting tasks."
+    },
+    {
+      "question": "What does a computer science researcher earn, across academia and industry?",
+      "answer": "The median salary is $140,910, but research scientists at major AI labs typically earn $200,000 to $400,000 or more in total compensation, with significant variation by seniority and location. Academic positions, including tenure-track faculty, typically range from $100,000 to $180,000 depending on the institution and specialization. Government research labs offer salaries between academia and industry, with added job security and mission-driven work that attracts researchers who prioritize applied national interest problems."
+    },
+    {
+      "question": "What research tasks is AI handling, and what remains the domain of human scientists?",
+      "answer": "AI tools now handle systematic literature review, code generation for experiments, and data pipeline construction faster than any individual researcher. Where human researchers remain essential is forming the research question, designing experiments that can actually test a hypothesis, and interpreting results in ways that advance scientific understanding rather than optimize a metric. Peer-reviewed publication, which requires defending methodology and contributing to scientific discourse, is not substitutable by current AI systems."
+    },
+    {
+      "question": "What credentials and skills matter most for a career in computer science research?",
+      "answer": "A PhD is effectively required for independent research positions at universities and for most staff research scientist roles at major AI labs. Publications in top venues, NeurIPS, ICML, CVPR, ICLR, carry more weight than GPA or institutional prestige in most research hiring. Researchers who combine theoretical depth with the ability to implement and benchmark systems, not just propose ideas, are the profile that gets hired into the highest-impact and best-compensated positions."
     }
   ]
 }

@@ -116,7 +116,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Automated underwriting systems from Fannie Mae and Freddie Mac already handle the bulk of conforming loan decisions algorithmically, and a 2025 STRATMOR Group survey found 38% of lenders now use some form of AI or machine learning in origination, up from 15% in 2023 [2]. Document classification and indexing, core administrative tasks for loan officers, are being automated at 63% of AI-using lenders [2]. BLS projects slower-than-average employment growth for loan officers (1–2%), reflecting this headcount pressure even as total mortgage volume fluctuates [1].",
+    "body": "Automated underwriting systems from Fannie Mae and Freddie Mac already handle the bulk of conforming loan decisions algorithmically, and a 2025 STRATMOR Group survey found 38% of lenders now use some form of AI or machine learning in origination, up from 15% in 2023 [STRATMOR Group, Nov 2025]. Document classification and indexing, core administrative tasks for loan officers, are being automated at 63% of AI-using lenders [STRATMOR Group, Nov 2025]. BLS projects slower-than-average employment growth for loan officers (1–2%), reflecting this headcount pressure even as total mortgage volume fluctuates [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": "38%",
     "statLabel": "of mortgage lenders now use AI in origination, up from 15% in 2023",
     "statSourceName": "STRATMOR Group",
@@ -125,7 +125,7 @@
     "statSourceUrl": "https://www.stratmorgroup.com/artificial-intelligence-in-mortgage-lending/"
   },
   "opportunities": {
-    "body": "Loan approval requires a licensed officer under NMLS regulation and carries fiduciary accountability, two barriers that automated systems cannot cross for final decisions. The AEI data shows that the explanation and advisory work is where AI augments rather than replaces: 58% augmentation on explaining loan options means AI helps officers communicate, not substitute for them [3]. Research on the future of financial services professionals consistently finds advisory roles anchored in client relationships more resilient than transactional ones, precisely because trust and compliance accountability cannot be delegated to automated systems [4].",
+    "body": "Loan approval requires a licensed officer under NMLS regulation and carries fiduciary accountability, two barriers that automated systems cannot cross for final decisions. The AEI data shows that the explanation and advisory work is where AI augments rather than replaces: 58% augmentation on explaining loan options means AI helps officers communicate, not substitute for them [CPA.com / AICPA, Jun 2025]. Research on the future of financial services professionals consistently finds advisory roles anchored in client relationships more resilient than transactional ones, precisely because trust and compliance accountability cannot be delegated to automated systems [Thomson Reuters, Jun 2025].",
     "stat": "58%",
     "statLabel": "AI efficiency gain on explaining loan options to clients",
     "statSourceName": "CPA.com / AICPA",
@@ -134,63 +134,63 @@
     "statSourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI tools built into your LOS for document processing and application review so that capacity goes to client-facing relationship work. STRATMOR data shows lenders deploying AI inside the workflow, not just adjacent to it, see measurably better throughput [2]. Over the next six months, build depth in purchase mortgage advising and small-business lending, these are the segments where complexity and relationship trust create the most defensible position against automated approval platforms. Renewing NMLS credits in compliance and fair lending is also worth prioritizing as AI raises regulatory scrutiny in lending.",
-    "thinkingOf": "Enter the field targeting purchase mortgages and small-business lending rather than refinance volume. Refi pipelines are most exposed to automated platforms because the client already knows the product. Purchase buyers are making one of the largest financial decisions of their lives and still want a human to walk them through it [1]. Get NMLS licensed first, then look for positions at community banks or credit unions where the loan mix is more complex and relationship-driven than at large mortgage-only shops. Thomson Reuters data shows professionals who adopt AI tools actively are twice as likely to see revenue growth, so platform fluency is worth building from day one [4].",
+    "alreadyIn": "Start using AI tools built into your LOS for document processing and application review so that capacity goes to client-facing relationship work. STRATMOR data shows lenders deploying AI inside the workflow, not just adjacent to it, see measurably better throughput [STRATMOR Group, Nov 2025]. Over the next six months, build depth in purchase mortgage advising and small-business lending, these are the segments where complexity and relationship trust create the most defensible position against automated approval platforms. Renewing NMLS credits in compliance and fair lending is also worth prioritizing as AI raises regulatory scrutiny in lending.",
+    "thinkingOf": "Enter the field targeting purchase mortgages and small-business lending rather than refinance volume. Refi pipelines are most exposed to automated platforms because the client already knows the product. Purchase buyers are making one of the largest financial decisions of their lives and still want a human to walk them through it [U.S. Bureau of Labor Statistics, Sep 2024]. Get NMLS licensed first, then look for positions at community banks or credit unions where the loan mix is more complex and relationship-driven than at large mortgage-only shops. Thomson Reuters data shows professionals who adopt AI tools actively are twice as likely to see revenue growth, so platform fluency is worth building from day one [Thomson Reuters, Jun 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI alone can't deliver outcomes. True AI needs to be in the workflow, not adjacent to it.",
         "attribution": "Rob Chrisman, Senior Advisor, STRATMOR Group",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.stratmorgroup.com/artificial-intelligence-in-mortgage-lending/",
+        "sourceDate": "Nov 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI is fundamentally reshaping the accounting profession, accelerating the move toward more strategic advisory services.",
         "attribution": "Erik Asgeirsson, President and CEO, CPA.com",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "The real opportunity isn't chasing shiny AI tools from companies that just learned what the mortgage industry is. It's embedding AI into the process where it creates repeatable value.",
         "attribution": "Rob Chrisman, Senior Advisor, STRATMOR Group",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.stratmorgroup.com/artificial-intelligence-in-mortgage-lending/",
+        "sourceDate": "Nov 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Organizations with visible AI strategies are twice as likely to experience revenue growth compared to those with informal or ad-hoc approaches.",
         "attribution": "2025 Future of Professionals Report, Thomson Reuters",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "Jun 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Loan Officers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/loan-officers.htm"
     },
     {
-      "id": "src-2",
       "name": "STRATMOR Group",
       "title": "Artificial Intelligence in Mortgage Lending",
       "date": "Nov 2025",
       "url": "https://www.stratmorgroup.com/artificial-intelligence-in-mortgage-lending/"
     },
     {
-      "id": "src-3",
       "name": "CPA.com / AICPA",
       "title": "CPA.com Issues 2025 AI in Accounting Report",
       "date": "Jun 2025",
       "url": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
     },
     {
-      "id": "src-4",
       "name": "Thomson Reuters",
       "title": "2025 Future of Professionals Report",
       "date": "Jun 2025",
-      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     }
   ],
   "emergingCareers": [
@@ -393,6 +393,24 @@
         "Underwriting focus shift",
         "Internal transition common at banks"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is loan origination a stable career as AI handles more of the underwriting process?",
+      "answer": "Loan Officer scores 56/100 on AI exposure, in solid territory, with 20,300 annual openings and 2% projected growth. AI and automated underwriting have compressed the time to decision for standard conforming loans, but complex commercial lending, jumbo mortgages, and non-QM products still require officer judgment on risk factors that automated systems flag but cannot resolve. Loan officers who specialize in relationship-driven or complex product segments are less affected than those doing high-volume standard residential origination."
+    },
+    {
+      "question": "What does a loan officer earn, and how does compensation work?",
+      "answer": "The median salary is $74,180, but top-producing mortgage loan officers and commercial lending officers regularly earn $150,000 to $300,000 or more through commission-based compensation. Pay is directly tied to volume and loan type, which means officers who build referral networks with realtors, CPAs, and financial advisors consistently outperform those who rely on inbound leads. Commercial loan officers at regional banks typically earn a base salary plus bonus, with the strongest packages going to officers with established business banking relationships."
+    },
+    {
+      "question": "What loan officer work is AI handling, and where does the human relationship still matter?",
+      "answer": "AI systems now handle initial eligibility screening, document collection, and compliance checklist review for standard loans without officer involvement. Where human judgment remains essential is structuring loans for borrowers with complex financial situations, managing client anxiety during the approval process, and navigating exceptions that require bank management sign-off. The 58% efficiency gain AI provides on explaining loan options to clients still requires a human to build the relationship that keeps a borrower from shopping rates with competitors."
+    },
+    {
+      "question": "What credentials and skills help loan officers stay competitive?",
+      "answer": "NMLS licensure is a regulatory requirement for mortgage loan officers; maintaining continuing education and adding state licenses expands the addressable market. Commercial loan officers who earn CFP or CFA credentials, or who develop deep knowledge of SBA lending programs, differentiate themselves from generalists. The strongest long-term differentiator is a referral network; loan officers who are consistently recommended by real estate agents, accountants, and attorneys are largely insulated from rate-shopping and AI-assisted comparison tools."
     }
   ]
 }

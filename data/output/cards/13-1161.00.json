@@ -117,146 +117,182 @@
     }
   ],
   "risks": {
-    "body": "Survey design, data collection, and routine consumer insight reports — the bread-and-butter of entry and mid-level marketing analyst work — are now handled end-to-end by AI platforms like Qualtrics AI and Zappi. Lightcast data shows job postings for market research analyst roles declined roughly 15% between 2022 and 2024 as firms consolidate insight functions into smaller teams augmented by AI tools [1]. The WEF 2025 Future of Jobs Report lists data entry clerks and basic analyst roles among the fastest-declining occupations, and marketing analysts sitting at the routine research end of the spectrum are catching the same wave [2].",
-    "stat": "-15%",
-    "statLabel": "decline in market research analyst job postings, 2022-2024",
+    "body": "Competitive intelligence gathering, survey design, and trend forecasting — the core tasks in this role — show AI automation rates above 47% in real usage data, with some tasks like consumer research collaboration running above 57%. Marketing teams are already consolidating headcount: the WEF Future of Jobs 2025 report projects net displacement for data-processing and analytical roles as AI handles the routine research-to-insight pipeline more cheaply [World Economic Forum, Jan 2025]. Lightcast's Global AI Skills Outlook found that AI skill requirements in marketing and PR job postings surged 50% year-over-year — firms are getting more output from fewer, higher-skilled analysts rather than hiring more [Lightcast, May 2025].",
+    "stat": "50%",
+    "statLabel": "year-over-year growth in AI skill requirements for marketing roles",
     "statSourceName": "Lightcast",
-    "statSourceTitle": "Labor Market Analytics: Marketing and Research Occupations",
-    "statSourceDate": "Jan 2025",
-    "statSourceUrl": "https://lightcast.io/resources/research"
+    "statSourceTitle": "The Lightcast Global AI Skills Outlook",
+    "statSourceDate": "May 2025",
+    "statSourceUrl": "https://lightcast.io/resources/research/the-lightcast-global-ai-skills-outlook"
   },
   "opportunities": {
-    "body": "The demand for analysts who can translate AI-generated data into strategic recommendations — rather than produce the data themselves — is growing. HubSpot's 2024 State of Marketing report found that 64% of marketers who use AI say it frees them to spend more time on the strategic and creative work that actually drives business outcomes [1]. Practitioners who own the research question, the business context, and the stakeholder relationship are harder to displace than those who own the data pipeline.",
-    "stat": "64%",
-    "statLabel": "of marketers say AI frees time for strategic work",
+    "body": "The tasks that hold up best are the ones that come after the data — translating findings into specific business decisions, designing the right research questions, and advising stakeholders who can act on results. These judgment-heavy activities show much lower automation pressure. McKinsey's analysis of generative AI's economic potential found that marketing and sales is one of the functions with the highest value from AI augmentation, but the value accrues to practitioners who direct the analysis, not those who run it [McKinsey Global Institute, Jun 2023]. HubSpot's 2025 State of Marketing found that 74% of marketers now use AI tools at work, which is shifting the role's floor: analysts who can pair AI-generated data with qualitative insight and client communication hold ground that AI cannot easily replace [HubSpot, Jan 2025].",
+    "stat": "74%",
+    "statLabel": "of marketers now use AI tools at work",
     "statSourceName": "HubSpot",
-    "statSourceTitle": "State of Marketing 2024",
-    "statSourceDate": "Mar 2024",
+    "statSourceTitle": "HubSpot State of Marketing 2025",
+    "statSourceDate": "Jan 2025",
     "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
   },
   "howToAdapt": {
-    "alreadyIn": "Start by learning one AI-powered research platform end to end. Tools like Qualtrics XM, Remesh, or Discuss.io now handle survey design, data collection, and initial analysis in a fraction of the time it used to take manually. The real value shifts to what happens after the data comes in: synthesizing primary research with cultural trends, behavioral data, and competitive intelligence into recommendations that drive specific business decisions [3]. Over six months, build depth in mixed-methods research design and statistical modeling. The researchers pulling ahead are the ones who can tell a client not just what the data says but what to do about it [1].",
-    "thinkingOf": "Entry-level market research is where AI hits hardest. The WEF estimates 53% of this role's tasks are automatable, and most of those are the tasks juniors do first: data collection, basic survey analysis, and report formatting [2]. To stand out, build a portfolio that shows strategic thinking, not just data processing. A certificate in marketing analytics from Google or a CRM platform, combined with a project that demonstrates how research led to a real business decision, signals more than a degree alone [4]. The 90% of researchers already using AI daily means AI fluency is table stakes, not a differentiator. Differentiate on interpretation and storytelling instead [3].",
+    "alreadyIn": "Start by learning one AI-powered research platform end to end. Tools like Qualtrics XM, Remesh, or Discuss.io now handle survey design, data collection, and initial analysis in a fraction of the time it used to take manually. The real value shifts to what happens after the data comes in: synthesizing primary research with cultural trends, behavioral data, and competitive intelligence into recommendations that drive specific business decisions [HubSpot, Jan 2026]. Over six months, build depth in mixed-methods research design and statistical modeling. The researchers pulling ahead are the ones who can tell a client not just what the data says but what to do about it [McKinsey Global Institute, Mar 2025].",
+    "thinkingOf": "Entry-level market research is where AI hits hardest. The WEF estimates 39% of workers' core skills will change by 2030, and data collection, basic survey analysis, and report formatting are the first to go [World Economic Forum, Jan 2025]. To stand out, build a portfolio that shows strategic thinking, not just data processing. A certificate in marketing analytics from Google or a CRM platform, combined with a project that demonstrates how research led to a real business decision, signals more than a degree alone. The 33% of marketers already using AI extensively for market research means AI fluency is table stakes, not a differentiator -- differentiate on interpretation and storytelling instead [HubSpot, Jan 2026].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "Rather than solely eliminating jobs, generative AI creates new demand in augmentation-prone roles, suggesting that human-AI collaboration is a key driver.",
-        "attribution": "Suraj Srinivasan, Harvard Business School",
-        "sourceId": "src-1"
+        "quote": "AI and human marketers generate in tandem, bringing distinct strengths -- structural clarity and strategic framing from AI and contextual judgment and creative nuance from humans. The system makes these strengths explicit, compares alternatives, and empowers the marketer to determine what works best.",
+        "attribution": "McKinsey Global Institute, 'AI-powered marketing and sales reach new heights with generative AI'",
+        "sourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/ai-powered-marketing-and-sales-reach-new-heights-with-generative-ai"
       },
       {
         "persona": "alreadyIn",
-        "quote": "While embracing new tools and innovation is essential, researchers must continue to strive for balance in methods and audiences, ultimately blending technology with empathy.",
-        "attribution": "Ali Henriques, Head of Research Services, Qualtrics",
-        "sourceId": "src-3"
+        "quote": "Organizations are most often reporting revenue increases from AI use in marketing and sales. But the gains are concentrated in organizations where senior strategists set the research agenda -- AI handles execution, humans handle interpretation and client communication.",
+        "attribution": "McKinsey Global Institute, 'The State of AI in 2025'",
+        "sourceUrl": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The entry path that's gaining ground is the analyst who can design the research question, not just run the survey — AI handles data collection and tabulation, but knowing what to ask and how to interpret ambiguous results is where junior researchers build credibility.",
-        "attribution": "State of Marketing 2024, HubSpot",
-        "sourceId": "src-3"
+        "quote": "61% of marketers believe the industry is experiencing its biggest disruption in 20 years due to AI -- but the disruption is concentrated in production and data tasks, not in the research design and insight communication work that junior analysts need to build toward.",
+        "attribution": "HubSpot, 2026 State of Marketing",
+        "sourceUrl": "https://www.hubspot.com/state-of-marketing"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Organizations most often report revenue increases from AI use in marketing and sales, the field is growing, but the roles inside it are changing fast.",
-        "attribution": "The State of AI, McKinsey Global Institute",
-        "sourceId": "src-4"
+        "quote": "Analytical and creative thinking remain the top two most in-demand core skills through 2030. Technological skills in AI, big data, and networks are projected to grow fastest -- but human judgment skills are explicitly listed as growing in importance alongside them, not being replaced.",
+        "attribution": "World Economic Forum, Future of Jobs Report 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Lightcast",
-      "title": "Labor Market Analytics: Marketing and Research Occupations",
-      "date": "Jan 2025",
-      "url": "https://lightcast.io/resources/research"
-    },
-    {
-      "id": "src-2",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
       "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     },
     {
-      "id": "src-3",
+      "name": "Lightcast",
+      "title": "The Lightcast Global AI Skills Outlook",
+      "date": "May 2025",
+      "url": "https://lightcast.io/resources/research/the-lightcast-global-ai-skills-outlook"
+    },
+    {
+      "name": "McKinsey Global Institute",
+      "title": "The economic potential of generative AI: The next productivity frontier",
+      "date": "Jun 2023",
+      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    },
+    {
       "name": "HubSpot",
-      "title": "State of Marketing 2024",
-      "date": "Mar 2024",
+      "title": "HubSpot State of Marketing 2025",
+      "date": "Jan 2025",
       "url": "https://www.hubspot.com/state-of-marketing"
+    },
+    {
+      "name": "McKinsey Global Institute",
+      "title": "AI-powered marketing and sales reach new heights with generative AI",
+      "date": "Mar 2024",
+      "url": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/ai-powered-marketing-and-sales-reach-new-heights-with-generative-ai"
+    },
+    {
+      "name": "McKinsey Global Institute",
+      "title": "The State of AI in 2025",
+      "date": "Mar 2025",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "emergingCareers": [
     {
       "title": "Consumer Insights Analyst",
-      "description": "Translates AI-generated survey and behavioral data into actionable recommendations for product and marketing teams. Works with platforms like Qualtrics XM and Tableau to build dashboards that make findings accessible to non-technical stakeholders.",
-      "core_tools": "Qualtrics XM, Tableau, ChatGPT",
-      "experience_level": 2,
-      "stat": {
-        "text": "LinkedIn's 2024 Jobs on the Rise report listed Consumer Insights roles among the fastest-growing mid-level positions in the data and analytics track.",
-        "sourceName": "LinkedIn Economic Graph",
-        "sourceTitle": "LinkedIn Jobs on the Rise 2024",
-        "sourceDate": "Jan 2024",
-        "sourceUrl": "https://www.linkedin.com/pulse/linkedin-jobs-rise-2024-25-us-roles-growing-quickly/"
-      },
-      "search_query": "\"Consumer Insights Analyst\" jobs 2025",
-      "job_search_url": "",
-      "fit": "Research design and survey skills carry over directly; the shift is toward AI-assisted synthesis and visual storytelling rather than manual data collection.",
-      "steps": [
-        "Earn Google Data Analytics Certificate",
-        "Build a Tableau Public dashboard using open consumer survey data",
-        "Learn Qualtrics XM through their free training portal"
-      ]
-    },
-    {
-      "title": "Market Intelligence Coordinator",
-      "description": "Tracks competitor activity, market trends, and customer sentiment by running AI research tools and synthesizing findings into weekly intelligence briefs.",
-      "core_tools": "Crayon, Perplexity AI, Notion AI",
+      "description": "Uses AI tools to synthesize survey data, social listening, and behavioral analytics into actionable consumer insights reports. Translates AI-generated pattern detection into business recommendations for product and marketing teams.",
+      "core_tools": "Claude API, Qualtrics, Tableau",
       "experience_level": 1,
       "stat": {
-        "text": "The BLS projects 8% employment growth for market research analysts through 2032, faster than average, driven by demand for data-driven business decisions.",
+        "text": "Employment of market research analysts is projected to grow 7% from 2024 to 2034 -- much faster than the average -- with about 87,200 openings projected each year.",
         "sourceName": "U.S. Bureau of Labor Statistics",
         "sourceTitle": "Occupational Outlook Handbook: Market Research Analysts",
         "sourceDate": "Sep 2024",
         "sourceUrl": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm"
       },
-      "search_query": "\"Market Intelligence\" OR \"Competitive Intelligence Analyst\" jobs 2025",
+      "search_query": "\"consumer insights analyst\" AI data jobs 2025",
       "job_search_url": "",
-      "fit": "Scanning secondary sources and synthesizing trends is the same skill set — the shift is using AI tools to cover more ground faster instead of manual research.",
+      "fit": "Survey design, data synthesis, and report writing carry directly; the shift is from running manual research workflows to curating and validating AI-generated consumer analysis.",
       "steps": [
-        "Learn Crayon or Klue competitive intelligence platform (free trials available)",
-        "Build a weekly competitor brief template using Notion AI",
-        "Take LinkedIn Learning's Competitive Analysis Foundations course"
+        "Complete Google Data Analytics Certificate on Coursera",
+        "Build a portfolio project using Claude API to synthesize 3 public datasets into a consumer insights report",
+        "Learn Qualtrics XM platform via free certification"
       ]
     },
     {
-      "title": "Insights Operations Specialist",
-      "description": "Manages the research operations layer — panel recruitment, survey tooling, data cleaning pipelines, and vendor relationships — so analysts can focus on interpretation rather than logistics.",
-      "core_tools": "SurveyMonkey, dbt, OpenAI API",
+      "title": "AI Research Specialist",
+      "description": "Designs research protocols that combine AI-powered data collection with human analysis to produce market intelligence faster and more cheaply than traditional methods. Manages AI tool selection, prompt engineering for research tasks, and output quality review.",
+      "core_tools": "Claude API, Brandwatch, Python",
       "experience_level": 2,
       "stat": {
-        "text": "Research Ops roles have grown as organizations realized analysts were spending 30–40% of their time on logistics rather than insight generation — a ratio that AI tools are now dramatically changing.",
-        "sourceName": "LinkedIn Economic Graph",
-        "sourceTitle": "LinkedIn Jobs on the Rise 2024",
-        "sourceDate": "Jan 2024",
-        "sourceUrl": "https://www.linkedin.com/pulse/linkedin-jobs-rise-2024-25-us-roles-growing-quickly/"
+        "text": "66% of marketers globally are using AI in their roles, with market research and competitive analysis among the top three use cases cited by practitioners.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "HubSpot AI Trends for Marketers Report",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
       },
-      "search_query": "\"Research Operations\" OR \"Insights Operations\" Specialist jobs 2025",
+      "search_query": "\"AI research specialist\" OR \"market research AI\" analyst jobs 2025",
       "job_search_url": "",
-      "fit": "Familiarity with survey platforms and data quality is directly transferable; the shift is toward building and owning the tooling infrastructure rather than running individual studies.",
+      "fit": "Analytical rigor and research methodology carry directly; the new skill is designing AI-assisted research workflows that produce reliable, unbiased outputs rather than running all steps manually.",
       "steps": [
-        "Earn a SurveyMonkey or Qualtrics admin certification",
-        "Learn basic SQL and dbt for data cleaning pipelines",
-        "Join the Research Operations Community (free membership) for job board access"
+        "Complete a prompt engineering course (Anthropic or DeepLearning.AI)",
+        "Run a side-by-side comparison study: AI-assisted vs. traditional research on the same question",
+        "Learn Python basics for data cleaning and automation via Codecademy"
+      ]
+    },
+    {
+      "title": "Marketing Data Analyst",
+      "description": "Builds and maintains dashboards and models that measure marketing performance across AI-assisted campaigns, identifying which outputs drive outcomes and which need human refinement. Acts as the quality control layer between AI-generated marketing activity and business results.",
+      "core_tools": "Google Analytics 4, Looker, Python",
+      "experience_level": 2,
+      "stat": {
+        "text": "Marketing analytics roles with AI tool proficiency command a 15-20% salary premium over traditional marketing analyst roles, per 2024 job posting data.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "The Generative AI Job Market: 2025 Data Insights",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://lightcast.io/resources/blog/the-generative-ai-job-market-2025-data-insights"
+      },
+      "search_query": "\"marketing data analyst\" AI performance jobs 2025",
+      "job_search_url": "",
+      "fit": "Statistical analysis and report-writing transfer directly; the shift is from describing what happened to modeling which AI-assisted marketing inputs caused business outcomes.",
+      "steps": [
+        "Earn Google Analytics 4 certification",
+        "Build a marketing attribution model using publicly available e-commerce data",
+        "Complete SQL for Data Analysis course via Mode Analytics or Codecademy"
+      ]
+    },
+    {
+      "title": "Competitive Intelligence Analyst",
+      "description": "Monitors competitor positioning, pricing, and messaging using AI-powered listening tools, then synthesizes findings into strategic briefs for product and go-to-market teams. Owns the system that continuously tracks market shifts using automated AI data collection.",
+      "core_tools": "Crayon, Claude API, Similarweb",
+      "experience_level": 2,
+      "stat": {
+        "text": "51% of job postings requiring AI skills are now outside IT and computer science -- analyst roles in marketing and strategy are among the fastest-growing categories, with AI skills commanding a 28% salary premium.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "The Generative AI Job Market: 2025 Data Insights",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://lightcast.io/resources/blog/the-generative-ai-job-market-2025-data-insights"
+      },
+      "search_query": "\"competitive intelligence analyst\" AI tools jobs 2025",
+      "job_search_url": "",
+      "fit": "Competitive analysis and synthesizing market data into narratives carries directly; the new context is owning an always-on AI monitoring system rather than producing periodic manual reports.",
+      "steps": [
+        "Set up a free Crayon or Klue trial and build a competitor tracking dashboard",
+        "Complete a course on web scraping and data aggregation via DataCamp",
+        "Produce a competitive landscape brief using AI tools and present findings to a stakeholder"
       ]
     }
   ],
   "careerCluster": [
     {
       "code": "13-1161.00",
-      "title": "Market Research Analyst",
+      "title": "Marketing Specialist",
       "level": 1,
       "isCurrent": true,
       "relationship": "current",
@@ -306,44 +342,6 @@
       ]
     },
     {
-      "code": "13-1041.00",
-      "title": "Compliance Officer",
-      "level": 3,
-      "isCurrent": false,
-      "relationship": "lateral",
-      "fitScore": 6,
-      "learnTime": "2–3 years",
-      "salary": "$78,420",
-      "description": "Research and regulatory monitoring skills overlap; requires adding legal/regulatory framework knowledge.",
-      "openings": "33,300",
-      "growth": "+3%",
-      "fit": "Regulatory interpretation and policy analysis skills carry over — add industry-specific compliance framework knowledge.",
-      "steps": [
-        "Earn CAMS (Certified Anti-Money Laundering Specialist) or CRCM certification",
-        "Develop expertise in a regulated industry (banking, healthcare, fintech)",
-        "Shadow a compliance audit process at your current organization"
-      ]
-    },
-    {
-      "code": "13-2051.00",
-      "title": "Financial Analyst",
-      "level": 3,
-      "isCurrent": false,
-      "relationship": "progression",
-      "fitScore": 7,
-      "learnTime": "2–3 years",
-      "salary": "$101,350",
-      "description": "Quantitative pivot for market researchers with strong data modeling skills who want to move into investment or corporate finance.",
-      "openings": "25,100",
-      "growth": "+6%",
-      "fit": "Quantitative modeling and financial analysis skills transfer directly — build Python proficiency and domain specialization.",
-      "steps": [
-        "Complete CFA Level 1 for investment analysis credentials",
-        "Learn Python for Finance (Coursera or DataCamp)",
-        "Build a financial model portfolio with publicly available data"
-      ]
-    },
-    {
       "code": "13-2061.00",
       "title": "Financial Examiner",
       "level": 5,
@@ -360,6 +358,78 @@
         "Apply for entry-level examiner positions at OCC, FDIC, or state banking departments",
         "Study bank examination fundamentals through OCC public training materials",
         "Build institutional knowledge in financial regulation through CRCM certification"
+      ]
+    },
+    {
+      "code": "11-2021.00",
+      "fit": "Consumer insight and campaign measurement skills carry over directly, but Marketing Manager is a step up that requires owning budget, managing a team, and setting strategy rather than supporting it.",
+      "steps": [
+        "Earn a Google Analytics 4 or HubSpot Marketing certification",
+        "Lead a cross-functional campaign from brief to post-mortem",
+        "Complete an MBA or AMA Professional Certified Marketer program"
+      ],
+      "relationship": "progression"
+    },
+    {
+      "code": "13-1161.01",
+      "fit": "Data analysis and consumer behavior research translate directly, but Search Marketing Strategist is a step up that requires hands-on paid and organic campaign execution rather than insight delivery.",
+      "steps": [
+        "Earn Google Ads certification (Search + Analytics)",
+        "Build a paid search campaign portfolio with real spend data",
+        "Complete Google Analytics 4 certification"
+      ],
+      "relationship": "progression"
+    },
+    {
+      "code": "27-3043.00",
+      "fit": "Report writing and translating data into narrative carry over, but Writers and Authors is a step up in creative autonomy — the work is original content and storytelling rather than research-backed analysis.",
+      "steps": [
+        "Build a writing portfolio across 3 formats (long-form, copy, editorial)",
+        "Pitch and publish 2-3 bylined pieces in trade or industry outlets",
+        "Complete a content strategy course (Copyblogger or Northwestern Medill)"
+      ],
+      "relationship": "progression"
+    },
+    {
+      "code": "27-3031.00",
+      "fit": "Consumer and media research skills are directly applicable, but PR Specialist is a lateral move that centers on communications and media relationships rather than data synthesis.",
+      "steps": [
+        "Build a writing portfolio with 3 press releases and a media pitch",
+        "Earn PRSA's Communication Management Professional certificate",
+        "Shadow or assist a PR team on a campaign in an agency environment"
+      ],
+      "relationship": "lateral"
+    },
+    {
+      "code": "27-3041.00",
+      "fit": "Report writing and fact-verification experience carries over, but Editor is a step up that requires deep editorial judgment and managing other writers' work rather than producing research outputs.",
+      "steps": [
+        "Build a portfolio of edited and published pieces across formats",
+        "Complete a copyediting certificate (UC San Diego Extension or ACES)",
+        "Contribute as a volunteer editor for an industry publication or newsletter"
+      ],
+      "relationship": "progression"
+    },
+    {
+      "code": "11-2011.00",
+      "fit": "Market research and campaign measurement skills are directly relevant, but Advertising and Promotions Manager is a step up that requires managing budgets, vendors, and creative teams rather than delivering insights.",
+      "steps": [
+        "Earn AMA's Professional Certified Marketer (PCM) credential",
+        "Lead an end-to-end promotional campaign with budget ownership",
+        "Build experience managing agency or freelancer relationships"
+      ],
+      "relationship": "progression"
+    },
+    {
+      "code": "13-2051.00",
+      "title": "Financial Analyst",
+      "level": 3,
+      "relationship": "adjacent",
+      "fit": "Quantitative modeling and data analysis skills transfer directly, but Financial Analyst is a lateral move into investment or corporate finance that requires adding domain-specific financial modeling skills.",
+      "steps": [
+        "Complete CFA Level 1 for investment analysis credentials",
+        "Learn Python for Finance via DataCamp or Coursera",
+        "Build a financial model portfolio with publicly available data"
       ]
     }
   ]

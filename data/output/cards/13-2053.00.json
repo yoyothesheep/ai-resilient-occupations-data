@@ -2,7 +2,7 @@
   "onet_code": "13-2053.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI has made more documented contact with insurance underwriting than with almost any other financial role. BLS projects employment for insurance underwriters to decline 3% through 2033, and major carriers including Zurich, Allianz, and Prudential have publicly attributed headcount reductions to AI-driven straight-through processing that handles standard personal lines policies without human review [1]. Deloitte found that AI models now handle the majority of auto and home underwriting decisions at leading carriers, with human underwriters increasingly focused on commercial, specialty, and complex accounts [2].",
+    "body": "AI has made more documented contact with insurance underwriting than with almost any other financial role. BLS projects employment for insurance underwriters to decline 3% through 2033, and major carriers including Zurich, Allianz, and Prudential have publicly attributed headcount reductions to AI-driven straight-through processing that handles standard personal lines policies without human review [U.S. Bureau of Labor Statistics, Sep 2024]. Deloitte found that AI models now handle the majority of auto and home underwriting decisions at leading carriers, with human underwriters increasingly focused on commercial, specialty, and complex accounts [Deloitte Insights, Mar 2024].",
     "stat": "-3%",
     "statLabel": "projected decline for insurance underwriters",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/insurance-underwriters.htm"
   },
   "opportunities": {
-    "body": "The automation pressure is real but concentrated: it is heaviest in personal lines (auto, home, standard life) and lightest in specialty and commercial lines, where risk complexity still requires human judgment [2]. LIMRA research shows that group benefits, excess and surplus (E&S) lines, and large commercial accounts are growing as a share of underwriting activity, and these segments are the least automated [3]. Underwriters who develop expertise in complex commercial risk, cyber liability, or climate-exposed property will be working on accounts that AI models cannot price reliably [3].",
+    "body": "The automation pressure is real but concentrated: it is heaviest in personal lines (auto, home, standard life) and lightest in specialty and commercial lines, where risk complexity still requires human judgment [Deloitte Insights, Mar 2024]. LIMRA research shows that group benefits, excess and surplus (E&S) lines, and large commercial accounts are growing as a share of underwriting activity, and these segments are the least automated [LIMRA, Oct 2024]. Underwriters who develop expertise in complex commercial risk, cyber liability, or climate-exposed property will be working on accounts that AI models cannot price reliably [LIMRA, Oct 2024].",
     "stat": "50%",
     "statLabel": "potential productivity optimization",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-insurance-underwriting.html"
   },
   "howToAdapt": {
-    "alreadyIn": "The most direct near-term move is to shift your focus toward complex commercial, specialty, or E&S lines if you are currently in personal lines -- those segments are growing relative to standard lines, and they are where human judgment still drives decisions [2]. Over the next six months, build familiarity with the AI-driven underwriting platforms your firm uses (applied AI systems like Attune, Bold Penguin, or similar tools) so you understand what they can and cannot evaluate. Underwriters who can override or augment AI decisions credibly -- explaining why a nonstandard account warrants approval -- are in a structurally different position from those who just process volume [3].",
-    "thinkingOf": "Entering insurance underwriting today means positioning specifically for the segments AI is not yet handling well: large commercial accounts, cyber risk, environmental liability, and construction projects [2]. The CPCU (Chartered Property Casualty Underwriter) designation is the strongest credential signal in the field, particularly for commercial lines, and firms hiring for complex accounts continue to treat it as a differentiator [3]. Candidates who combine CPCU coursework with experience reading loss runs, engineering reports, and financial statements will be prepared for the segment of underwriting that is most durable [1].",
+    "alreadyIn": "The most direct near-term move is to shift your focus toward complex commercial, specialty, or E&S lines if you are currently in personal lines -- those segments are growing relative to standard lines, and they are where human judgment still drives decisions [Deloitte Insights, Mar 2024]. Over the next six months, build familiarity with the AI-driven underwriting platforms your firm uses (applied AI systems like Attune, Bold Penguin, or similar tools) so you understand what they can and cannot evaluate. Underwriters who can override or augment AI decisions credibly -- explaining why a nonstandard account warrants approval -- are in a structurally different position from those who just process volume [LIMRA, Oct 2024].",
+    "thinkingOf": "Entering insurance underwriting today means positioning specifically for the segments AI is not yet handling well: large commercial accounts, cyber risk, environmental liability, and construction projects [Deloitte Insights, Mar 2024]. The CPCU (Chartered Property Casualty Underwriter) designation is the strongest credential signal in the field, particularly for commercial lines, and firms hiring for complex accounts continue to treat it as a differentiator [LIMRA, Oct 2024]. Candidates who combine CPCU coursework with experience reading loss runs, engineering reports, and financial statements will be prepared for the segment of underwriting that is most durable [U.S. Bureau of Labor Statistics, Sep 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The personal lines underwriter of the future is a machine. The commercial lines underwriter of the future is a human with better tools. The industry is bifurcating, and which side of that you're on matters enormously for career planning.",
         "attribution": "Deloitte Insights, 'AI in Insurance Underwriting: The Human-Machine Balance' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-insurance-underwriting.html",
+        "sourceDate": "Mar 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "Carriers are not eliminating underwriting expertise -- they are concentrating it. The firms that are investing in AI are also investing in senior underwriters who can handle the accounts that fall outside the model's training data, which is where the real risk lives.",
         "attribution": "LIMRA, 'InsurTech and the Future of Underwriting' (2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/insurtech-and-the-future-of-underwriting/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The CPCU is still the clearest signal in commercial underwriting. It tells hiring managers that a candidate understands risk at a technical level that goes beyond workflow processing, which is exactly what distinguishes the accounts AI cannot price.",
         "attribution": "LIMRA, 'InsurTech and the Future of Underwriting' (2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/insurtech-and-the-future-of-underwriting/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Candidates who enter underwriting focused on specialty lines -- cyber, construction, excess casualty -- are entering the part of the market that is least automated and most actively growing. That's a different career trajectory than starting in personal auto.",
         "attribution": "Deloitte Insights, 'AI in Insurance Underwriting: The Human-Machine Balance' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-insurance-underwriting.html",
+        "sourceDate": "Mar 2024"
       }
     ]
   },
@@ -62,21 +66,18 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Insurance Underwriters",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/insurance-underwriters.htm"
     },
     {
-      "id": "src-2",
       "name": "Deloitte Insights",
       "title": "AI in Insurance Underwriting: The Human-Machine Balance",
       "date": "Mar 2024",
       "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-insurance-underwriting.html"
     },
     {
-      "id": "src-3",
       "name": "LIMRA",
       "title": "InsurTech and the Future of Underwriting",
       "date": "Oct 2024",
@@ -371,5 +372,23 @@
   "emergingTitles": [
     "Commercial Lines Underwriter",
     "Specialty Lines Underwriter"
+  ],
+  "faqs": [
+    {
+      "question": "Is insurance underwriting a stable career as AI automates more risk assessment?",
+      "answer": "Insurance Underwriter scores 36/100 on AI exposure, and BLS projects a 3% employment decline through 2033. Automated underwriting now handles personal lines decisions, such as standard auto and homeowners policies, with minimal human involvement. The openings that remain, 8,200 annually, are concentrated in commercial, specialty, and complex risk lines where human judgment on non-standard risks is still essential. Underwriters who shift toward excess and surplus lines, reinsurance, or emerging risk categories are better positioned than those in personal lines."
+    },
+    {
+      "question": "What does an insurance underwriter earn, and how does specialization affect pay?",
+      "answer": "The median salary is $79,880, with senior commercial underwriters and those specializing in complex lines like cyber, D&O, or construction typically earning $110,000 to $150,000. Underwriters at Lloyd's syndicates and specialty excess-and-surplus carriers earn a significant premium over standard market roles. CPCU designation is the most recognized credential in property-casualty underwriting; AU and ARe designations are common in commercial and reinsurance tracks."
+    },
+    {
+      "question": "Which underwriting tasks is AI handling, and where does human judgment remain essential?",
+      "answer": "AI systems now perform initial risk scoring, flag eligibility issues, and generate preliminary quotes for standard personal and small commercial risks without underwriter review. Where human underwriters stay essential is assessing non-standard risks, such as complex commercial properties, high-value specialty items, or emerging exposures like AI liability, where the loss history is sparse and the risk factors are qualitative. Reinsurance treaty underwriting, which involves portfolio-level risk transfer decisions, also relies heavily on relationship and judgment that automated systems cannot replicate."
+    },
+    {
+      "question": "What skills help insurance underwriters stay competitive as automation takes over standard risks?",
+      "answer": "Transitioning to specialty and excess-surplus lines is the clearest path to roles where automation pressure is lower; these segments require broader industry knowledge and more case-by-case judgment. CPCU coursework provides the technical foundation for commercial underwriting roles; adding a specialty designation like CRIS for contractors or AU for commercial lines signals depth to carriers hiring for non-standard books. Underwriters who develop direct broker relationships and can explain their risk appetite clearly have a competitive advantage that automated pricing models cannot replicate."
+    }
   ]
 }

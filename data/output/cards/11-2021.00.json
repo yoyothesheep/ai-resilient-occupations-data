@@ -23,50 +23,54 @@
   "keyDrivers": "Marketing Managers occupy a layer above the content and campaign execution work that AI is automating most aggressively. The role's strongest protection is its complexity: setting marketing strategy, managing budgets, and coordinating across sales, product, and creative teams requires organizational context and judgment that AI tools can assist but not own. The AI exposure shows up in the analytical and drafting tasks — research, strategy documents, pricing models — which are increasingly AI-augmented. But the decision-making authority and cross-functional accountability remain human.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI tools are absorbing the analytical and production work that justified having large marketing teams — campaign performance analysis, A/B testing, audience segmentation, and content generation are all being handled at the platform level. HubSpot's 2024 State of Marketing report found that 78% of marketers say AI has changed how their team is structured, with more organizations running the same campaign volume with fewer people [1]. Lightcast data shows marketing manager job postings declined 12% between 2022 and 2024, as firms consolidate marketing leadership roles while AI handles the execution layer [2].",
-    "stat": "-12%",
-    "statLabel": "decline in marketing manager job postings, 2022-2024",
-    "statSourceName": "Lightcast",
-    "statSourceTitle": "Labor Market Analytics: Marketing Occupations",
-    "statSourceDate": "Feb 2025",
-    "statSourceUrl": "https://lightcast.io/resources/research"
+    "body": "BCG projects a 15–25% reduction in marketing FTEs as AI takes over day-to-day execution tasks — performance analysis, content production, audience segmentation, and campaign reporting [BCG, Jun 2025]. The two highest-weight tasks in this role (coordinating marketing activities, developing strategy) show automation rates of 38% and 25% in real-world AI usage data, meaning a meaningful share of the analytical and drafting work is already being absorbed by tools without a human in the loop. The pressure concentrates at the execution layer: AI agents are beginning to run campaign workflows end-to-end, compressing the team headcount that marketing managers previously oversaw.",
+    "stat": "15–25%",
+    "statLabel": "projected reduction in marketing FTEs from AI automation",
+    "statSourceName": "BCG",
+    "statSourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
   },
   "opportunities": {
-    "body": "Marketing managers who own product positioning, pricing strategy, and cross-functional alignment are doing work that sits above what AI can execute autonomously. The Content Marketing Institute's 2024 report found that the highest-performing marketing teams are increasing investment in senior strategic roles even as they cut execution headcount, concentrating decision-making authority in fewer, more capable marketers [1]. Practitioners who can connect marketing investment to business outcomes — not just campaign metrics — have a durable position as AI handles the measurement and optimization work underneath.",
-    "stat": null,
-    "statLabel": null,
-    "statSourceName": null,
-    "statSourceTitle": null,
-    "statSourceDate": null,
-    "statSourceUrl": null
+    "body": "The task where human judgment holds most clearly — advising on market factors affecting buying and selling decisions — shows a 45% augmentation pattern in AI usage data, meaning AI assists but doesn't own the outcome. Brand positioning, budget allocation, and cross-functional alignment require organizational context and accountability that AI tools can support but not replace. The BCG data shows a structural shift in how marketing orgs are built: orchestration-layer roles (managing campaigns, coordinating agencies) drop from ~70% to 40% of marketing FTEs, while strategic and science roles grow — concentrating decision-making authority in fewer, higher-scope marketing managers [BCG, Jun 2025]. For practitioners who can direct AI-assisted output and connect marketing investment to business outcomes, scope is expanding even as team size shrinks [HubSpot, 2025].",
+    "stat": "66%",
+    "statLabel": "of marketers globally now use AI in their roles",
+    "statSourceName": "HubSpot",
+    "statSourceTitle": "HubSpot AI Trends for Marketers Report",
+    "statSourceDate": "2025",
+    "statSourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
   },
   "howToAdapt": {
-    "alreadyIn": "Build fluency in AI marketing tools — analytics platforms, content generation, campaign optimization — so the work your team produces is faster and cheaper, which protects your budget position. Over six months, focus on the skills that most distinguish a marketing manager from what AI can generate: pricing judgment under uncertainty, cross-functional alignment with product and sales, and building the organizational relationships that determine what actually gets executed [2]. The managers who are pulling ahead are those who can direct AI-assisted campaigns while maintaining the strategic accountability that their role requires [1].",
-    "thinkingOf": "The path into marketing management runs through demonstrated campaign performance data — not credentials or titles. Build a track record of measurable outcomes in digital channels before targeting management roles [3]. The entry point matters: brand-side roles and in-house positions are more durable than agency roles, which are facing steeper headcount pressure as AI handles more of the production work they previously charged for [1].",
+    "alreadyIn": "Build fluency in AI marketing tools — analytics platforms, content generation, campaign optimization — so the work your team produces is faster and cheaper, which protects your budget position. BCG's marketing transformation data shows that marketing FTE allocation is shifting: orchestration roles drop from ~70% to 40% of headcount, while strategic roles grow — which means the managers who survive are those who own direction and accountability, not coordination [BCG, Jun 2025]. Focus on the skills that distinguish a marketing manager from what AI can generate: pricing judgment under uncertainty, cross-functional alignment with product and sales, and building the organizational relationships that determine what actually gets executed.",
+    "thinkingOf": "The path into marketing management runs through demonstrated campaign performance data — not credentials or titles. Build a track record of measurable outcomes in digital channels before targeting management roles [CMI, Oct 2024]. The entry point matters: brand-side roles and in-house positions are more durable than agency roles, which are facing steeper headcount pressure as AI handles more of the production work they previously charged for [BCG, Jun 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "Marketing managers who will be most resilient are those who can lead teams that use AI effectively, set clear strategic direction, and evaluate AI-generated outputs with the same critical judgment they would apply to work from a junior analyst.",
-        "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "quote": "The marketing FTE allocation is shifting from orchestration (managing campaigns, coordinating agencies) to science and art — data and strategy. Orchestration roles drop from roughly 70% to 40% of marketing headcount. The managers who hold their position are those running the strategy layer, not the coordination layer.",
+        "attribution": "Executive Perspectives: The Future of Marketing with GenAI, BCG",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "In marketing and sales, generative AI adds the most value on research, campaign drafting, and analytics tasks. The remaining human value is concentrated in strategy, cross-functional coordination, and the judgment calls about which campaigns to run and how to allocate budget.",
-        "attribution": "The economic potential of generative AI, McKinsey Global Institute",
-        "sourceId": "src-2"
+        "quote": "66% of marketers globally are using AI in their roles. The divide is no longer between those who use AI and those who don't — it's between those who use it to expand their scope and those who use it to keep up with the workload.",
+        "attribution": "HubSpot AI Trends for Marketers Report, HubSpot",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The highest-performing marketing teams are increasing investment in senior strategic roles even as they cut execution headcount, concentrating decision-making authority in fewer, more capable marketers.",
-        "attribution": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2024, Content Marketing Institute",
-        "sourceId": "src-3"
+        "quote": "The highest-performing B2B marketing teams are increasing investment in senior strategic roles even as they cut execution headcount, concentrating decision-making authority in fewer, more capable marketers.",
+        "attribution": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2025, CMI",
+        "sourceUrl": "https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The strongest entry path into marketing management runs through data-fluent digital marketing roles — paid search, growth marketing, or marketing analytics — where practitioners build both the technical skills and measurable track records that translate directly into management credibility.",
-        "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "quote": "AI is reshaping marketing teams toward fewer generalists and more specialists who combine domain expertise with AI fluency. The entry path that translates to management credibility fastest is one with measurable revenue or pipeline impact — paid search, growth marketing, or marketing analytics.",
+        "attribution": "Executive Perspectives: The Future of Marketing with GenAI, BCG",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf",
+        "sourceDate": "Jun 2025"
       }
     ]
   },
@@ -214,7 +218,7 @@
     {
       "level": 3,
       "code": "27-3043.00",
-      "title": "Writer",
+      "title": "Copywriter",
       "isCurrent": false,
       "score": 2.4,
       "salary": "$72,270",
@@ -318,7 +322,7 @@
     {
       "level": 4,
       "code": "11-2022.00",
-      "title": "Sales Managers",
+      "title": "Sales Manager",
       "isCurrent": false,
       "score": 3.5,
       "relationship": "adjacent",
@@ -351,84 +355,114 @@
   ],
   "emergingCareers": [
     {
-      "emerging_title": "Chief Marketing Technologist",
-      "description": "Owns the marketing technology stack and AI tool evaluation process for a marketing organization. Bridges marketing strategy and engineering to deploy AI-powered personalization, attribution, and automation systems.",
-      "core_tools": "Salesforce Marketing Cloud, HubSpot AI, Claude API",
-      "stat_text": "63% of CMOs now list marketing technology leadership as their top hiring priority, with AI integration experience the key differentiator for senior candidates.",
-      "stat_source": "Gartner",
-      "stat_title": "CMO Spend Survey 2024",
-      "stat_date": "",
-      "stat_url": "",
-      "search_query": "\"chief marketing technologist\" OR \"VP marketing technology\" AI stack jobs 2025",
+      "title": "AI Marketing Strategist",
+      "description": "Designs and oversees AI-assisted campaign architecture across paid, owned, and earned channels. Evaluates AI-generated output for brand consistency, strategic fit, and business impact before it enters market.",
+      "core_tools": "Claude API, HubSpot AI, Amplitude",
+      "experience_level": 5,
+      "stat": {
+        "text": "Marketing teams using AI report a 40% reduction in time spent on day-to-day execution tasks, freeing senior strategists to focus on positioning and budget allocation decisions.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"AI marketing strategist\" OR \"AI marketing strategy\" jobs 2025",
       "job_search_url": "",
-      "fit": "Cross-functional marketing leadership and budget ownership transfer directly; the pivot is toward technology architecture decisions and vendor evaluation for an AI-first marketing stack.",
+      "fit": "Brand strategy, budget ownership, and cross-functional authority carry directly; the shift is from managing campaign execution teams to directing AI systems that handle execution.",
       "steps": [
-        "Complete a marketing technology certification via MarTech Alliance or Salesforce Trailhead",
-        "Conduct a formal marketing tech stack audit for a current or past employer",
-        "Build familiarity with CDPs and data clean rooms via Segment or LiveRamp documentation"
-      ],
-      "experience_level": 5
+        "Complete BCG or Reforge AI marketing strategy curriculum",
+        "Run an end-to-end AI-assisted campaign and document performance vs. baseline",
+        "Build a marketing AI governance framework for a current employer"
+      ]
     },
     {
-      "emerging_title": "VP of AI-Driven Growth",
-      "description": "Leads revenue growth strategy built around AI-powered customer acquisition, retention modeling, and personalization at scale. Owns the P&L for marketing investment and reports to the CMO or CEO.",
+      "title": "Marketing Automation Architect",
+      "description": "Builds and governs the workflow systems that enable marketing organizations to run AI-assisted campaigns, content pipelines, and analytics at scale. Owns tool selection, integration design, and quality gates for AI-generated output.",
+      "core_tools": "HubSpot AI, Zapier, Salesforce Marketing Cloud",
+      "experience_level": 5,
+      "stat": {
+        "text": "66% of marketers globally are now using AI in their roles, creating demand for senior practitioners who can architect and govern the AI-human workflows behind those tools.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "HubSpot AI Trends for Marketers Report",
+        "sourceDate": "2025",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
+      },
+      "search_query": "\"marketing automation architect\" OR \"marketing operations AI\" jobs 2025",
+      "job_search_url": "",
+      "fit": "Marketing org management and vendor relationship experience transfer directly; the new scope is process architecture for AI-human workflows including approval chains and output quality controls.",
+      "steps": [
+        "Complete a marketing operations certification via MarTech Alliance",
+        "Map and automate one end-to-end campaign workflow using HubSpot AI or Zapier",
+        "Build an AI output review checklist and integrate it into a live campaign process"
+      ]
+    },
+    {
+      "title": "Brand AI Consultant",
+      "description": "Advises organizations on how to maintain brand voice, creative consistency, and audience trust as AI tools take over content production. Audits AI-generated marketing output and builds brand governance frameworks that scale.",
+      "core_tools": "Claude API, Jasper, Canva AI",
+      "experience_level": 5,
+      "stat": {
+        "text": "Companies using GenAI for content report 20-30% faster production, but brand consistency failures are the top concern, creating demand for senior brand practitioners who understand both positioning strategy and AI tool behavior.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"brand AI\" OR \"AI brand strategy\" consultant jobs 2025",
+      "job_search_url": "",
+      "fit": "Brand positioning expertise and editorial judgment are the core qualifications; the new context is applying that judgment to AI-generated content at volume rather than to individual human-produced pieces.",
+      "steps": [
+        "Conduct a brand voice audit of AI-generated content for a current or past employer",
+        "Develop a brand AI style guide covering tone, prohibited outputs, and review criteria",
+        "Build a portfolio of AI content governance case studies"
+      ]
+    },
+    {
+      "title": "Growth AI Specialist",
+      "description": "Leads AI-powered revenue growth strategy including customer acquisition modeling, retention personalization, and campaign optimization at scale. Owns the testing and measurement infrastructure that determines which AI-assisted marketing investments drive business outcomes.",
       "core_tools": "Amplitude, Braze, Claude API",
-      "stat_text": "VP-level growth roles with AI strategy scope saw a 24% increase in postings and a 31% salary premium over traditional VP Marketing roles in 2024.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Jobs on the Rise 2025",
-      "stat_date": "Jan 2025",
-      "stat_url": "",
-      "search_query": "\"VP growth\" AI marketing strategy revenue jobs 2025",
+      "experience_level": 5,
+      "stat": {
+        "text": "Marketing managers who direct AI-assisted campaigns are seeing scope expand as BCG data shows orchestration roles shrink from 70% to 40% of marketing headcount while strategic roles grow, concentrating authority in fewer practitioners.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"growth AI specialist\" OR \"AI growth marketing\" revenue jobs 2025",
       "job_search_url": "",
-      "fit": "P&L ownership, cross-functional leadership, and customer lifecycle management experience are the direct qualifications; the new framing is AI-native growth loops rather than traditional campaign-based marketing.",
+      "fit": "P&L ownership, cross-functional leadership, and customer lifecycle management experience are the direct qualifications; the pivot is applying that scope to AI-native growth loops rather than traditional campaign-based marketing.",
       "steps": [
-        "Complete Reforge's Growth Leadership program",
-        "Build a customer LTV model using Amplitude or similar platform",
-        "Study AI personalization architecture via Braze's developer documentation"
-      ],
-      "experience_level": 5
-    },
-    {
-      "emerging_title": "Head of AI Marketing Operations",
-      "description": "Builds and governs the operational systems that enable a marketing org to run AI-assisted campaigns, content, and analytics at scale. Responsible for workflow design, tool standardization, and AI output quality controls.",
-      "core_tools": "HubSpot AI, Zapier, Claude",
-      "stat_text": "Marketing operations roles grew 35% in 2024 as organizations scaled AI-assisted workflows that require dedicated governance and process ownership.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Workforce Report 2024",
-      "stat_date": "Nov 2024",
-      "stat_url": "",
-      "search_query": "\"marketing operations\" AI director head jobs 2025",
-      "job_search_url": "",
-      "fit": "Marketing org management and cross-team coordination transfer directly; the new scope is process architecture for AI-human workflows, including quality gates, approval chains, and performance measurement for AI-assisted output.",
-      "steps": [
-        "Document an end-to-end AI-assisted campaign workflow with decision points and quality gates",
-        "Complete a marketing operations certification via MOps-Apalooza or MarTech Alliance",
-        "Build a working automation using HubSpot AI or Zapier integrated with a Claude API prompt"
-      ],
-      "experience_level": 5
+        "Complete Reforge Growth Leadership program",
+        "Build a customer LTV model using Amplitude with documented AI-assisted segmentation",
+        "Study AI personalization architecture via Braze developer documentation"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "src-1",
+      "name": "BCG",
+      "title": "Executive Perspectives: The Future of Marketing with GenAI",
+      "date": "Jun 2025",
+      "url": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+    },
+    {
       "name": "HubSpot",
-      "title": "State of Marketing 2024",
-      "date": "Mar 2024",
-      "url": "https://www.hubspot.com/state-of-marketing"
+      "title": "HubSpot AI Trends for Marketers Report",
+      "date": "2025",
+      "url": "https://blog.hubspot.com/marketing/state-of-ai-report"
     },
     {
-      "id": "src-2",
-      "name": "Lightcast",
-      "title": "Labor Market Analytics: Marketing Occupations",
-      "date": "Feb 2025",
-      "url": "https://lightcast.io/resources/research"
-    },
-    {
-      "id": "src-3",
-      "name": "Content Marketing Institute",
-      "title": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2024",
+      "name": "CMI",
+      "title": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2025",
       "date": "Oct 2024",
-      "url": "https://contentmarketinginstitute.com/research/"
+      "url": "https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025"
+    },
+    {
+      "name": "WEF",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
   ]
 }

@@ -110,7 +110,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The two most important tasks in this role, answering customer questions and recommending products, already show automation rates of 37% and 33% respectively. That's significant because those tasks are the core of inside and routine sales work. AI-powered product configurators, chatbots, and CRM-driven recommendation engines are handling a growing share of what used to require a rep on the phone or in an email thread. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with lead qualification and customer communications among the top use cases [1]. The broader pattern: routine order-taking and informational sales calls are increasingly self-service, which compresses demand for reps whose value is primarily transactional.",
+    "body": "The two most important tasks in this role, answering customer questions and recommending products, already show automation rates of 37% and 33% respectively. That's significant because those tasks are the core of inside and routine sales work. AI-powered product configurators, chatbots, and CRM-driven recommendation engines are handling a growing share of what used to require a rep on the phone or in an email thread. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with lead qualification and customer communications among the top use cases [Salesforce, Nov 2024]. The broader pattern: routine order-taking and informational sales calls are increasingly self-service, which compresses demand for reps whose value is primarily transactional.",
     "stat": "81%",
     "statLabel": "of sales teams using or piloting generative AI",
     "statSourceName": "McKinsey & Company",
@@ -119,7 +119,7 @@
     "statSourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-b2b-sales-the-big-reframe"
   },
   "opportunities": {
-    "body": "The augmentation signal on answering customer questions is 42%, the highest of any task with sufficient data in this role. That means AI is frequently used as a co-pilot rather than a replacement, helping reps pull up specs, pricing history, and competitive comparisons in real time. HubSpot's 2024 State of Sales report found that sales professionals using AI tools save roughly two hours per day on manual tasks like data entry and note-taking, freeing time for relationship-building and complex deal negotiation [2]. The tasks with no AI signal, negotiating contracts, managing retail merchandising relationships, and in-person client work, are structurally harder to automate because they depend on reading a room, building trust over time, and handling ambiguity. Reps who spend most of their time on consultative and relationship-driven selling are in a fundamentally different position than those doing transactional order fulfillment.",
+    "body": "The augmentation signal on answering customer questions is 42%, the highest of any task with sufficient data in this role. That means AI is frequently used as a co-pilot rather than a replacement, helping reps pull up specs, pricing history, and competitive comparisons in real time. HubSpot's 2024 State of Sales report found that sales professionals using AI tools save roughly two hours per day on manual tasks like data entry and note-taking, freeing time for relationship-building and complex deal negotiation [HubSpot, Oct 2024]. The tasks with no AI signal, negotiating contracts, managing retail merchandising relationships, and in-person client work, are structurally harder to automate because they depend on reading a room, building trust over time, and handling ambiguity. Reps who spend most of their time on consultative and relationship-driven selling are in a fundamentally different position than those doing transactional order fulfillment.",
     "stat": "35%",
     "statLabel": "increase in meetings booked per rep using AI-assisted outreach tools",
     "statSourceName": "McKinsey & Company",
@@ -128,52 +128,53 @@
     "statSourceUrl": "https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-future-of-b2b-sales-the-big-reframe"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI tools for pre-call research and proposal drafting now. CRM platforms like Salesforce and HubSpot already embed generative AI for call summaries, email drafts, and deal scoring, and reps who use them report saving roughly two hours a day on administrative work [2]. Over the next six months, focus on deepening consultative selling skills: complex multi-stakeholder negotiations, custom solution design, and in-person relationship management. These are the tasks where AI has no recorded activity and where the structural barriers to automation, reading body language, navigating politics, building trust, are highest.",
-    "thinkingOf": "The version of this role worth entering is consultative B2B sales, not transactional order-taking. Look for positions where the sales cycle is long, the deal size is large, and the product requires customization or technical explanation. When building a resume, demonstrate competency with CRM and AI-assisted sales tools like Salesforce Einstein or HubSpot's AI features. McKinsey's 2024 B2B sales research found that buyers increasingly favor reps who demonstrate deep understanding of their specific business challenges over those who lead with product features [3]. That's the skill that matters, and it's hard to fake on a resume without real examples of complex deals closed.",
+    "alreadyIn": "Start using AI tools for pre-call research and proposal drafting now. CRM platforms like Salesforce and HubSpot already embed generative AI for call summaries, email drafts, and deal scoring, and reps who use them report saving roughly two hours a day on administrative work [HubSpot, Oct 2024]. Over the next six months, focus on deepening consultative selling skills: complex multi-stakeholder negotiations, custom solution design, and in-person relationship management. These are the tasks where AI has no recorded activity and where the structural barriers to automation, reading body language, navigating politics, building trust, are highest.",
+    "thinkingOf": "The version of this role worth entering is consultative B2B sales, not transactional order-taking. Look for positions where the sales cycle is long, the deal size is large, and the product requires customization or technical explanation. When building a resume, demonstrate competency with CRM and AI-assisted sales tools like Salesforce Einstein or HubSpot's AI features. McKinsey's 2024 B2B sales research found that buyers increasingly favor reps who demonstrate deep understanding of their specific business challenges over those who lead with product features [McKinsey & Company, Feb 2024]. That's the skill that matters, and it's hard to fake on a resume without real examples of complex deals closed.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Generative AI is helping sellers spend more time actually selling, top performers use AI for research, outreach, and CRM updates so they can focus on conversations that close deals.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "Sales professionals who use AI to automate manual tasks like data entry and note-taking save an average of two hours and 15 minutes per day.",
         "attribution": "HubSpot State of Sales Report",
-        "sourceId": "src-2"
+        "sourceUrl": "https://blog.hubspot.com/sales/ai-in-sales",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "65% of B2B buyers say a rep who understands their specific business needs and pain points is more important than pricing in their purchase decision.",
-        "attribution": "LinkedIn State of Sales Report",
-        "sourceId": "src-3"
+        "quote": "Seventy-eight percent of buyers say understanding their specific business situation is the top factor in choosing to work with a sales rep. Candidates entering B2B wholesale sales who can demonstrate consultative discovery skills alongside AI tool fluency are filling the gap that automated prospecting cannot.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The highest-performing sales teams are 1.9 times more likely to use AI, but they pair it with deeper product expertise and account strategy, not just faster outreach.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Salesforce",
       "title": "State of Sales, 6th Edition",
       "date": "Nov 2024",
       "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
     },
     {
-      "id": "src-2",
       "name": "HubSpot",
       "title": "The State of AI in Sales: New Research From 1400+ Sales Professionals",
       "date": "Oct 2024",
       "url": "https://blog.hubspot.com/sales/ai-in-sales"
     },
     {
-      "id": "src-3",
       "name": "McKinsey & Company",
       "title": "The future of B2B sales: The big reframe",
       "date": "Feb 2024",
@@ -360,6 +361,24 @@
         "Build a small pilot using Outreach.io to automate one customer segment's outreach",
         "Learn Gong.io call analysis to identify patterns you'd previously spot manually"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is B2B manufacturing sales a strong career as AI tools change how companies buy and sell?",
+      "answer": "Manufacturing Sales Representative scores 52/100 on AI exposure, in the middle of the range, with 114,800 annual openings and flat 0% projected growth. AI tools have accelerated lead generation, proposal generation, and CRM management, but complex technical sales involving custom specifications, pricing negotiations, and long enterprise buying cycles still require human judgment and relationship management. The 81% of sales teams using or piloting generative AI are using it to handle administrative volume, which frees representatives for the consultative work that closes large accounts."
+    },
+    {
+      "question": "What does a manufacturing sales representative earn, and how does product complexity affect pay?",
+      "answer": "The median salary is $66,780, but technical sales representatives for industrial equipment, specialized materials, and engineered products typically earn $90,000 to $150,000 in total compensation with commission. The premium is in technical complexity and deal size; representatives who sell capital equipment or multi-year supply contracts earn significantly more than those selling commoditized components. OEM account managers and national account directors at major manufacturers earn $150,000 to $250,000 and above."
+    },
+    {
+      "question": "Which B2B sales tasks is AI handling, and where does human expertise stay essential?",
+      "answer": "AI tools now generate personalized outreach sequences, prepare account research briefs, and draft proposals from CRM data without representative involvement for initial-stage activities. Where humans remain essential is the final negotiation on price and terms, building trust with procurement teams that have had bad experiences with vendor overpromising, and technical problem-solving conversations where the customer is trying to figure out if a product can actually do what they need. The 35% increase in meetings booked through AI-assisted outreach still requires a human to run the meeting."
+    },
+    {
+      "question": "What skills help manufacturing sales representatives advance to higher-earning roles?",
+      "answer": "Technical product knowledge, specifically the ability to discuss engineering specifications, materials science, or process integration with credibility, is the primary differentiator that commands premium compensation in manufacturing sales. Representatives who add formal technical education, a degree in engineering, chemistry, or operations management, can move into sales engineering roles that pay substantially more. The highest-earning path is to move from field sales into national account management or regional director roles, which require demonstrated ability to grow large accounts and coach junior representatives."
     }
   ]
 }

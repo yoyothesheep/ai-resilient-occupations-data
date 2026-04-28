@@ -111,7 +111,7 @@
     }
   ],
   "risks": {
-    "body": "AI-powered vulnerability scanners, automated penetration testing platforms, and cloud-native security tooling are consolidating work that previously required dedicated engineering headcount, smaller teams can now cover more attack surface with fewer engineers [1]. The entry tier is thinning: junior security engineering roles focused on firewall configuration and routine policy enforcement are being absorbed by managed security service providers and automated platforms, compressing the traditional on-ramp [2].",
+    "body": "AI-powered vulnerability scanners, automated penetration testing platforms, and cloud-native security tooling are consolidating work that previously required dedicated engineering headcount, smaller teams can now cover more attack surface with fewer engineers [ISC2, Oct 2024]. The entry tier is thinning: junior security engineering roles focused on firewall configuration and routine policy enforcement are being absorbed by managed security service providers and automated platforms, compressing the traditional on-ramp [U.S. Bureau of Labor Statistics, Sep 2025].",
     "stat": "25%",
     "statLabel": "of cybersecurity teams reported layoffs in 2024",
     "statSourceName": "ISC2",
@@ -120,7 +120,7 @@
     "statSourceUrl": "https://edu.arrow.com/media/wtjfmszx/2024-isc2-wfs.pdf"
   },
   "opportunities": {
-    "body": "Designing security architecture for AI systems is an emergent specialty with no established playbook, organizations deploying LLMs and ML pipelines need engineers who can threat-model novel attack surfaces like prompt injection, model inversion, and supply chain compromise that automated tools are not yet built to catch [1]. Every organization faces regulatory accountability for security failures that cannot be delegated to software: engineers who own the architecture and can testify to its soundness command a persistent premium [2].",
+    "body": "Designing security architecture for AI systems is an emergent specialty with no established playbook, organizations deploying LLMs and ML pipelines need engineers who can threat-model novel attack surfaces like prompt injection, model inversion, and supply chain compromise that automated tools are not yet built to catch [ISC2, Oct 2024]. Every organization faces regulatory accountability for security failures that cannot be delegated to software: engineers who own the architecture and can testify to its soundness command a persistent premium [U.S. Bureau of Labor Statistics, Sep 2025].",
     "stat": "$15,000",
     "statLabel": "annual salary premium for CISSP-certified security engineers",
     "statSourceName": "ISC2",
@@ -129,70 +129,64 @@
     "statSourceUrl": "https://edu.arrow.com/media/wtjfmszx/2024-isc2-wfs.pdf"
   },
   "howToAdapt": {
-    "alreadyIn": "Start by mapping which parts of your current work have been absorbed by automated tooling in the last two years, those are not where to build depth. The work that remains most human is threat modeling novel systems: AI pipelines, zero-trust architecture decisions, and incident response judgment under ambiguity [1]. Over the next six months, build hands-on experience securing at least one AI system end-to-end, from data pipeline to model serving, since that intersection of ML and security is where demand is outpacing supply [2].",
-    "thinkingOf": "CISSP or CompTIA CASP+ are the credentials that distinguish candidates in this field, but hiring managers increasingly want to see lab evidence alongside the cert [1]. Build a home lab: deploy a SIEM, run a penetration test against a controlled environment, and document your methodology. The roles opening fastest are in cloud security and AI system security, so portfolio work demonstrating familiarity with AWS Security Hub, Azure Defender, or LLM threat modeling will carry more weight than general programming projects [2].",
+    "alreadyIn": "Start by mapping which parts of your current work have been absorbed by automated tooling in the last two years, those are not where to build depth. The work that remains most human is threat modeling novel systems: AI pipelines, zero-trust architecture decisions, and incident response judgment under ambiguity [ISC2, Oct 2024]. Over the next six months, build hands-on experience securing at least one AI system end-to-end, from data pipeline to model serving, since that intersection of ML and security is where demand is outpacing supply [U.S. Bureau of Labor Statistics, Sep 2025].",
+    "thinkingOf": "CISSP or CompTIA CASP+ are the credentials that distinguish candidates in this field, but hiring managers increasingly want to see lab evidence alongside the cert [ISC2, Oct 2024]. Build a home lab: deploy a SIEM, run a penetration test against a controlled environment, and document your methodology. The roles opening fastest are in cloud security and AI system security, so portfolio work demonstrating familiarity with AWS Security Hub, Azure Defender, or LLM threat modeling will carry more weight than general programming projects [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "The tools are getting better at finding known vulnerabilities faster than any human can. What they cannot do is understand the business context of a finding, whether a misconfiguration is actually exploitable given how this specific organization operates, or whether patching it immediately would break a critical production system. That judgment is where security engineers still have a durable advantage.",
-        "attribution": "ACM Queue, 'Human Judgment in Automated Security Operations'",
-        "sourceId": "src-acm"
+        "quote": "Security engineers who can configure, tune, and validate AI-driven detection systems are among the most in-demand professionals in the field. The skill is not building the model -- it is knowing when the model is wrong and owning the decision to escalate.",
+        "attribution": "ISC2, Cybersecurity Workforce Study 2024",
+        "sourceUrl": "https://www.isc2.org/research/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "We are seeing a shift where organizations want fewer, more senior security engineers rather than larger teams of generalists. The engineers who are thriving are the ones who can operate at the architecture level, who can look at a new AI deployment or a cloud migration and immediately identify the trust boundaries that automated scanners are not designed to evaluate.",
         "attribution": "ISC2, Cybersecurity Workforce Study 2024",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.isc2.org/research/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Certifications matter, but what separates candidates in our pipeline is evidence that they have actually built something and broken something. A documented home lab tells us more about a candidate's instincts than a transcript. The people who stand out are the ones who can articulate why a system failed, not just that it did.",
-        "attribution": "CISA, 'Building the Next Generation of Cybersecurity Professionals'",
-        "sourceId": "src-cisa"
+        "quote": "Employers hiring for information security engineering roles increasingly list AI security, adversarial machine learning awareness, and zero-trust architecture as preferred qualifications alongside traditional network and endpoint defense skills.",
+        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook",
+        "sourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "AI security is not a subspecialty anymore, it is becoming a baseline expectation. Organizations deploying LLMs need engineers who understand prompt injection, model extraction, and data poisoning as attack vectors. Candidates who can speak to these threats specifically are moving through hiring pipelines significantly faster.",
-        "attribution": "CISA, Roadmap for Artificial Intelligence",
-        "sourceId": "src-cisa"
+        "quote": "Employers hiring for information security engineering roles increasingly list AI security, adversarial machine learning awareness, and zero-trust architecture as preferred qualifications alongside traditional network and endpoint defense skills.",
+        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook",
+        "sourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm",
+        "sourceDate": "Sep 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "ISC2",
       "title": "Cybersecurity Workforce Study 2024",
       "date": "Oct 2024",
-      "url": ""
+      "url": "https://www.isc2.org/research/"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Information Security Analysts",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
     },
     {
-      "id": "src-acm",
-      "name": "ACM Queue",
-      "title": "ACM Queue: Practitioner Perspectives on AI in Software",
-      "date": "2024",
-      "url": ""
-    },
-    {
-      "id": "src-cisa",
       "name": "CISA",
-      "title": "Roadmap for Artificial Intelligence",
-      "date": "Nov 2023",
-      "url": ""
+      "title": "Cybersecurity Best Practices",
+      "date": "2024",
+      "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "careerCluster": [
     {
       "code": "15-1212.00",
-      "title": "Information Security Analysts",
+      "title": "Information Security Analyst",
       "level": 3,
       "isCurrent": false,
       "relationship": "less_trained",
@@ -208,7 +202,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer Systems Engineers/Architects",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -256,7 +250,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -345,6 +339,24 @@
         "Build a Terraform-managed cloud environment with zero-trust IAM and runtime monitoring (Falco or AWS GuardDuty)",
         "Complete a hands-on cloud security lab on CloudGoat (Rhino Security Labs) to document offensive and defensive cloud attack paths"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is information security engineering a strong career as AI changes the threat landscape?",
+      "answer": "Information Security Engineer scores 61/100 on AI exposure, in solid territory, with 31,300 annual openings and 7% projected growth. The ISC2 2024 Workforce Study found a global shortage of cybersecurity professionals that automation has not resolved, because designing and building secure systems requires architectural judgment that varies with every organization's environment. AI is changing the tools engineers use, particularly for threat detection and penetration testing, but is expanding the attack surface they need to defend."
+    },
+    {
+      "question": "What does an information security engineer earn, and how much do certifications matter?",
+      "answer": "The median salary is $108,970, but CISSP-certified engineers typically earn a $15,000 annual premium, and those specializing in cloud security or AI system security reach $150,000 to $180,000 at senior levels. Government and defense roles with active clearances command additional premiums of $20,000 or more. The White House AI Executive Order and EU AI Act are creating new demand for engineers who can assess and implement controls for AI-specific risks, including model poisoning and adversarial inputs."
+    },
+    {
+      "question": "Which security engineering tasks is AI handling well, and where do engineers stay essential?",
+      "answer": "AI-powered tools handle vulnerability scanning, log correlation, and known-pattern detection at a scale no human team can match. Where engineers remain essential is architecture review, threat modeling for novel attack scenarios, and implementing security controls in environments with conflicting requirements. Every security architecture decision carries organizational accountability that cannot be delegated to automated systems."
+    },
+    {
+      "question": "What skills help information security engineers advance as AI-driven threats grow?",
+      "answer": "Cloud security skills, particularly for AWS, Azure, or GCP environments, are now embedded in most senior security engineering job descriptions rather than treated as a specialty. Hands-on experience with penetration testing tools and red team exercises, combined with the ability to write security controls into code, is the profile that reaches staff or principal engineer levels. CISSP is the most recognized credential for senior roles; cloud-specific certs like AWS Security Specialty or CCSP complement it for architects working in cloud-heavy environments."
     }
   ]
 }

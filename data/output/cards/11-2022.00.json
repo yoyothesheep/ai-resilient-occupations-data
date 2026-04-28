@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The one task with meaningful AI data, resolving customer complaints, shows a 28% automation rate. That's notable because AI-powered chatbots and CRM tools are already handling front-line complaint triage and routing, reducing the volume of issues that require a manager's direct involvement [1]. Salesforce reports that 81% of sales teams are either experimenting with or have implemented AI, with lead qualification and pipeline forecasting among the most common use cases [2]. As those tools mature, the analytical and reporting side of sales management, reviewing records, projecting sales, tracking profitability, faces real compression. The broader concern isn't job elimination but role thinning: fewer managers needed per sales team when AI handles forecasting, territory optimization, and performance dashboards automatically.",
+    "body": "The one task with meaningful AI data, resolving customer complaints, shows a 28% automation rate. That's notable because AI-powered chatbots and CRM tools are already handling front-line complaint triage and routing, reducing the volume of issues that require a manager's direct involvement [U.S. Bureau of Labor Statistics, Sep 2024]. Salesforce reports that 81% of sales teams are either experimenting with or have implemented AI, with lead qualification and pipeline forecasting among the most common use cases [Salesforce, Sep 2024]. As those tools mature, the analytical and reporting side of sales management, reviewing records, projecting sales, tracking profitability, faces real compression. The broader concern isn't job elimination but role thinning: fewer managers needed per sales team when AI handles forecasting, territory optimization, and performance dashboards automatically.",
     "stat": "81%",
     "statLabel": "of sales teams experimenting with or using AI",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/management/sales-managers.htm"
   },
   "opportunities": {
-    "body": "The core of this role, directing people, building customer relationships, negotiating complex deals, and coaching teams, has almost no AI footprint. Harvard Business Review found that while AI tools improve customer intelligence and pipeline analytics, closing deals and managing team relationships remain fundamentally human tasks that AI handles poorly [3]. Sales managers who use AI for pipeline analytics and lead scoring report spending more time on strategic selling and team development, not less time working [2]. The management and coordination tasks that dominate this role's core work, staffing, training, cross-department planning, require the kind of contextual judgment and accountability that AI handles poorly.",
+    "body": "The core of this role, directing people, building customer relationships, negotiating complex deals, and coaching teams, has almost no AI footprint. Harvard Business Review found that while AI tools improve customer intelligence and pipeline analytics, closing deals and managing team relationships remain fundamentally human tasks that AI handles poorly [Harvard Business Review, May 2024]. Sales managers who use AI for pipeline analytics and lead scoring report spending more time on strategic selling and team development, not less time working [Salesforce, Sep 2024]. The management and coordination tasks that dominate this role's core work, staffing, training, cross-department planning, require the kind of contextual judgment and accountability that AI handles poorly.",
     "stat": "66%",
     "statLabel": "of salespeople say AI improves customer understanding",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -130,52 +130,53 @@
     "statSourceUrl": "https://www.bls.gov/ooh/management/sales-managers.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start by getting fluent in the AI tools the sales team is already using or about to adopt. CRM-embedded AI features like Salesforce Einstein or HubSpot's predictive lead scoring are the fastest way to see what the data actually shows versus what reps report anecdotally [2]. Over six months, build depth in the areas AI handles worst: coaching underperformers through slumps, negotiating custom enterprise deals, and reading the political dynamics inside a client's buying committee. These tasks barely register in AI usage data because they require real-time social judgment that no model replicates well.",
-    "thinkingOf": "The path into sales management almost always runs through a few years as an individual contributor first. When building that track record, focus on complex or consultative sales (enterprise software, medical devices, industrial equipment) rather than transactional sales, since transactional pipelines are the first to get AI-automated [2]. Demonstrating that you can run a forecast, diagnose why a deal stalled, and coach a junior rep through it is more valuable than any single certification. Familiarity with CRM analytics and AI-driven pipeline tools is table stakes for new managers now, so get hands-on with them as a rep, not after promotion [3].",
+    "alreadyIn": "Start by getting fluent in the AI tools the sales team is already using or about to adopt. CRM-embedded AI features like Salesforce Einstein or HubSpot's predictive lead scoring are the fastest way to see what the data actually shows versus what reps report anecdotally [Salesforce, Sep 2024]. Over six months, build depth in the areas AI handles worst: coaching underperformers through slumps, negotiating custom enterprise deals, and reading the political dynamics inside a client's buying committee. These tasks barely register in AI usage data because they require real-time social judgment that no model replicates well.",
+    "thinkingOf": "The path into sales management almost always runs through a few years as an individual contributor first. When building that track record, focus on complex or consultative sales (enterprise software, medical devices, industrial equipment) rather than transactional sales, since transactional pipelines are the first to get AI-automated [Salesforce, Sep 2024]. Demonstrating that you can run a forecast, diagnose why a deal stalled, and coach a junior rep through it is more valuable than any single certification. Familiarity with CRM analytics and AI-driven pipeline tools is table stakes for new managers now, so get hands-on with them as a rep, not after promotion [Harvard Business Review, May 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Sales leaders are now expected to interpret AI-generated insights, not just review dashboards, and translate them into coaching moments for their teams.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "The top-performing salespeople don't just use AI to save time, they use the time saved to deepen relationships and handle more complex deals.",
-        "attribution": "HubSpot State of Sales",
-        "sourceId": "src-3"
+        "quote": "Sales teams using AI report 81% of reps now use AI in some capacity, and the highest performers are 2x as likely to use AI across their full workflow — from prospecting to close. For managers, the shift means coaching teams on how to use AI outputs critically, not just coaching on technique.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Reps who actively use AI tools for prospecting and pipeline management are promoted to management roles faster, because they already think in terms of data-driven strategy rather than gut instinct.",
-        "attribution": "HubSpot State of Sales",
-        "sourceId": "src-3"
+        "quote": "High-performing sales organizations are investing in AI fluency alongside traditional relationship skills. Candidates who can demonstrate CRM proficiency, AI-assisted pipeline management, and a track record of data-driven coaching decisions are standing out in manager hiring.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "As AI automates routine pipeline tasks, the premium shifts to managers who can handle ambiguity, reading a room, structuring a creative deal, motivating a demoralized team.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Sep 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Sales Managers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/management/sales-managers.htm"
     },
     {
-      "id": "src-2",
       "name": "Salesforce",
       "title": "State of Sales, 6th Edition",
       "date": "Sep 2024",
       "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
     },
     {
-      "id": "src-3",
       "name": "Harvard Business Review",
       "title": "Where AI Delivers Real Value in Sales",
       "date": "May 2024",
@@ -315,6 +316,24 @@
         "Build a basic Python script analyzing sales call transcripts",
         "Lead a pilot project translating one AI insight into team coaching"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is sales management a strong career as AI tools change how sales teams operate?",
+      "answer": "Sales Manager scores 66/100 on AI exposure, one of the stronger scores in sales, with 49,000 annual openings and 5% projected growth. AI tools handle pipeline forecasting, performance dashboards, and outreach personalization, but coaching individual representatives, running the strategic planning process, and maintaining key customer relationships at the executive level still require an experienced sales leader. The 81% of sales teams experimenting with AI are generating more data about what works, which makes the manager's role in interpreting that data and coaching to it more important, not less."
+    },
+    {
+      "question": "What does a sales manager earn, and how does industry affect compensation?",
+      "answer": "The median salary is $138,060, with sales directors and VPs at technology companies and financial services firms regularly earning $200,000 to $400,000 in total compensation including equity and bonus. Sales managers who own a named-account or enterprise segment consistently earn more than those managing inside or transactional sales teams, because the deals are larger and the strategic impact is higher. The fastest path to the top of the range is demonstrating a track record of growing a team's revenue, not just managing a stable book."
+    },
+    {
+      "question": "Which sales management tasks is AI handling, and what still requires senior leadership?",
+      "answer": "AI tools now generate weekly pipeline reports, flag at-risk deals, and recommend next-best-actions for representatives working their book. What still requires a sales manager is the judgment call on which deals to resource for a push, which representatives need coaching versus support, and how to manage a key customer relationship when something goes wrong. The 66% of salespeople who say AI improves their understanding of customers still need a manager who sets the strategy for how to use that understanding to win."
+    },
+    {
+      "question": "What credentials and skills help sales managers advance into VP and C-suite roles?",
+      "answer": "A consistent track record of meeting or exceeding quota as an individual contributor is still the primary prerequisite for sales leadership; most VPs of Sales were top-performing account executives first. MBA from a business school with a strong sales and marketing program accelerates advancement in some industries, particularly enterprise software and financial services. Sales managers who develop skills in sales methodology design, territory planning, and compensation plan construction are competitive for director-level and above roles where the work shifts from managing deals to managing systems."
     }
   ]
 }

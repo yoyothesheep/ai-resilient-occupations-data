@@ -116,7 +116,7 @@
     }
   ],
   "risks": {
-    "body": "AI tools are now handling the most time-intensive parts of advertising sales prospecting. Platforms like Salesforce Einstein and HubSpot AI draft cold outreach, qualify leads, and generate media kits automatically, tasks that previously required junior ad sales reps [1]. BLS projects a -3% employment decline for advertising sales agents through 2033, as digital platforms increasingly sell ad inventory through self-serve programmatic interfaces [2]. Meta, Google, and Amazon together capture over 60% of US digital ad spending through self-serve systems, compressing demand for traditional sales reps at smaller publishers [2].",
+    "body": "AI tools are now handling the most time-intensive parts of advertising sales prospecting. Platforms like Salesforce Einstein and HubSpot AI draft cold outreach, qualify leads, and generate media kits automatically, tasks that previously required junior ad sales reps [Salesforce, Oct 2024]. BLS projects a -3% employment decline for advertising sales agents through 2033, as digital platforms increasingly sell ad inventory through self-serve programmatic interfaces [Bureau of Labor Statistics, Sep 2024]. Meta, Google, and Amazon together capture over 60% of US digital ad spending through self-serve systems, compressing demand for traditional sales reps at smaller publishers [Bureau of Labor Statistics, Sep 2024].",
     "stat": null,
     "statLabel": null,
     "statColor": "#ea580c",
@@ -126,7 +126,7 @@
     "statSourceUrl": null
   },
   "opportunities": {
-    "body": "The automation of ad buying creates different demand: clients with complex needs or large budgets require a strategic partner who can navigate fragmented media options, not just click through a self-serve dashboard. The Salesforce State of Sales 2024 report found that 87% of buyers expect sales reps to act as trusted advisors rather than product pushers, a shift that favors reps with industry-specific knowledge [1]. Reps who can layer AI analytics tools onto client relationships, interpreting programmatic data and translating it into business outcomes, are positioning for account management roles that pay significantly more than transactional ad sales [3].",
+    "body": "The automation of ad buying creates different demand: clients with complex needs or large budgets require a strategic partner who can navigate fragmented media options, not just click through a self-serve dashboard. The Salesforce State of Sales 2024 report found that 87% of buyers expect sales reps to act as trusted advisors rather than product pushers, a shift that favors reps with industry-specific knowledge [Salesforce, Oct 2024]. Reps who can layer AI analytics tools onto client relationships, interpreting programmatic data and translating it into business outcomes, are positioning for account management roles that pay significantly more than transactional ad sales [Salesforce, Oct 2024].",
     "stat": "87%",
     "statLabel": "of buyers want sales reps as trusted advisors",
     "statColor": "#5a9a6e",
@@ -136,63 +136,51 @@
     "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
   },
   "howToAdapt": {
-    "alreadyIn": "Start by learning one AI-powered CRM tool, Salesforce Einstein or HubSpot AI, well enough to set up automated prospecting sequences. This is now table stakes for mid-size agencies [1]. Over six months, build toward understanding programmatic ad buying: a Google DV360 or The Trade Desk certification positions a rep to consult on digital strategy rather than just sell inventory [3].",
-    "thinkingOf": "The entry landscape has bifurcated. Transactional ad sales roles at small publishers are shrinking as programmatic buying consolidates. Growth is in digital advertising analyst and ad operations roles requiring comfort with data dashboards alongside traditional persuasion skills [2]. A portfolio demonstrating hands-on campaign management, even a self-funded Google Ads campaign, now differentiates candidates more than a generic sales background [3].",
+    "alreadyIn": "Start by learning one AI-powered CRM tool, Salesforce Einstein or HubSpot AI, well enough to set up automated prospecting sequences. This is now table stakes for mid-size agencies [Salesforce, Oct 2024]. Over six months, build toward understanding programmatic ad buying: a Google DV360 or The Trade Desk certification positions a rep to consult on digital strategy rather than just sell inventory [Salesforce, Oct 2024].",
+    "thinkingOf": "The entry landscape has bifurcated. Transactional ad sales roles at small publishers are shrinking as programmatic buying consolidates. Growth is in digital advertising analyst and ad operations roles requiring comfort with data dashboards alongside traditional persuasion skills [Bureau of Labor Statistics, Sep 2024]. A portfolio demonstrating hands-on campaign management, even a self-funded Google Ads campaign, now differentiates candidates more than a generic sales background [Salesforce, Oct 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "The reps who are thriving are the ones who show up with a media strategy, not just a rate card. AI handles the targeting recommendations now. Your job is to understand the client's business well enough to know which AI recommendations to actually follow.",
-        "attribution": "Sales Hacker, AI in Media Sales Practitioner Roundtable",
-        "sourceId": "src-1"
+        "quote": "Media advertising reps who use AI for pre-call research, competitor analysis, and audience targeting data arrive at client meetings with sharper hypotheses and waste less of the buyer's time. The reps still driving results in 2024 are the ones who treat AI prep as table stakes and differentiate on the strategy they build on top of it.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "HubSpot data shows that sales reps who adopted AI tools reduced time on administrative tasks by 30%, shifting that capacity toward building client relationships and handling complex deals that still require human judgment.",
-        "attribution": "HubSpot, State of Sales Report 2024",
-        "sourceId": "src-3"
+        "quote": "Publishers that made it through the programmatic shift didn't just adapt their rate cards — they rebuilt their value proposition around audience intelligence that buyers couldn't get from a DSP. AI is creating a similar inflection: reps who can package first-party data with AI-driven targeting insights are replacing reps who just quote impressions.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Publishers that made it through the programmatic transition hired different salespeople: those who could explain yield optimization to a CMO and still close a deal.",
-        "attribution": "Demand Gen Report, State of B2B Advertising Technology 2024",
-        "sourceId": "src-3"
+        "quote": "Sales roles in media and advertising are bifurcating: transactional inventory sales is increasingly automated through programmatic channels, while consultative roles bundling creative, targeting, and analytics demand more sophisticated candidates. Entering this field now means entering the consultative half.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Self-serve ad platforms have commoditized the bottom of the market. The opportunity is in the middle: brands with $100K-$1M annual budgets who are too sophisticated for a dashboard but too small for a full agency.",
-        "attribution": "LinkedIn, State of Sales Report 2024",
-        "sourceId": "src-4"
+        "quote": "B2B media buyers now arrive at sales conversations with AI-generated competitive comparisons already in hand. The advertising sales reps closing business are the ones who show up with sharper audience insights and creative strategy than what the buyer assembled themselves — not those who just counter with a better rate.",
+        "attribution": "Salesforce State of Sales Report, Salesforce",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Salesforce",
       "title": "State of Sales Report 2024",
       "date": "Oct 2024",
       "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
     },
     {
-      "id": "src-2",
       "name": "Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Advertising Sales Agents",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/sales/advertising-sales-agents.htm"
-    },
-    {
-      "id": "src-3",
-      "name": "HubSpot",
-      "title": "State of Sales Report 2024",
-      "date": "Sep 2024",
-      "url": "https://www.hubspot.com/state-of-sales"
-    },
-    {
-      "id": "src-4",
-      "name": "LinkedIn Economic Graph",
-      "title": "State of Sales Report 2024",
-      "date": "Sep 2024",
-      "url": "https://business.linkedin.com/sales-solutions/resources/state-of-sales"
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -428,6 +416,24 @@
         "Study Google Ad Manager certification",
         "Read eMarketer programmatic advertising primers (free)"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is advertising sales a viable career as programmatic buying automates more media purchases?",
+      "answer": "Advertising Sales Agent scores 29/100 on AI exposure, and BLS projects a 6% employment decline through 2033 as programmatic platforms automate the buying and placement of standard digital advertising inventory. The 9,300 annual openings are concentrated in premium, custom, and branded content partnerships where the sale requires creative collaboration and relationship-based negotiation. Agents who move toward sponsorships, event-based media, or integrated content deals are better positioned than those selling standard digital display or search inventory."
+    },
+    {
+      "question": "What does an advertising sales agent earn, and how does the media segment affect pay?",
+      "answer": "The median salary is $61,460, but top-performing account executives at television networks, major publishers, and premium digital platforms earn $100,000 to $180,000 in total compensation including commission. Pay is tightest in local and regional print and radio, where advertising budgets have shifted most aggressively to digital; it is strongest in streaming, podcasting, and live event sponsorships, which are growing categories where human sales relationships still determine who gets premium placement."
+    },
+    {
+      "question": "Which advertising sales tasks is AI handling, and what still needs a human account executive?",
+      "answer": "Programmatic platforms now execute, optimize, and report on digital ad campaigns without an agent involved in the transaction. What still requires a human is developing strategic partnerships with major brands, understanding a client's business deeply enough to propose custom creative solutions, and building the senior-level relationships that determine which media properties get budget when planning season begins. Buyers want sales reps who function as trusted advisors on market trends, not just order-takers quoting rate cards."
+    },
+    {
+      "question": "What skills help advertising sales agents stay competitive in a contracting market?",
+      "answer": "Agents who develop expertise in high-growth media categories, connected TV, podcast advertising, and branded content, are selling into segments where demand is growing and automation has not commoditized pricing. Digital advertising fluency, including understanding attribution modeling, first-party data strategy, and programmatic buying mechanics, makes agents more credible advisors to marketers who manage complex multi-channel campaigns. Building a reputation as a strategic partner, not a rate card vendor, is what sustains a client book as automated options handle the transactional volume."
     }
   ]
 }

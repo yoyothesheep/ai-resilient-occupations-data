@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Direct-to-consumer insurance platforms like Lemonade, Policygenius, and embedded insurance at point of sale are compressing the role of the traditional agent in personal lines. McKinsey estimates that personal-lines distribution could see agent headcount decline as carriers shift to digital-first channels [1]. BLS projects just 6% growth for insurance sales agents through 2033, slower than the average for all occupations [2]. The biggest pressure point is simple, standardized products like auto and renters insurance, where comparison tools and AI-driven quoting engines let customers skip the agent entirely.",
+    "body": "Direct-to-consumer insurance platforms like Lemonade, Policygenius, and embedded insurance at point of sale are compressing the role of the traditional agent in personal lines. McKinsey estimates that personal-lines distribution could see agent headcount decline as carriers shift to digital-first channels [McKinsey & Company, Mar 2025]. BLS projects just 6% growth for insurance sales agents through 2033, slower than the average for all occupations [U.S. Bureau of Labor Statistics, Apr 2024]. The biggest pressure point is simple, standardized products like auto and renters insurance, where comparison tools and AI-driven quoting engines let customers skip the agent entirely.",
     "stat": "37%",
     "statLabel": "of personal-lines insurance purchases projected to be fully digital by 2025",
     "statSourceName": "LIMRA",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/"
   },
   "opportunities": {
-    "body": "Complex commercial lines, life insurance, and high-net-worth personal coverage still depend heavily on relationship-driven advising that AI tools struggle to replicate. Salesforce's 2024 State of Sales report found that 83% of sales representatives using AI tools reported revenue growth in the prior year, suggesting agents who adopt AI for prospecting and quoting can sell more, not less [3]. LIMRA research shows that the \"advice gap\" in life insurance remains wide: roughly 102 million U.S. adults say they need more life insurance coverage than they have, a demand pool that favors human advisors who can navigate underwriting complexity and emotional buying decisions [4].",
+    "body": "Complex commercial lines, life insurance, and high-net-worth personal coverage still depend heavily on relationship-driven advising that AI tools struggle to replicate. Salesforce's 2024 State of Sales report found that 83% of sales representatives using AI tools reported revenue growth in the prior year, suggesting agents who adopt AI for prospecting and quoting can sell more, not less [Salesforce, Nov 2024]. LIMRA research shows that the \"advice gap\" in life insurance remains wide: roughly 102 million U.S. adults say they need more life insurance coverage than they have, a demand pool that favors human advisors who can navigate underwriting complexity and emotional buying decisions [LIMRA, Apr 2024].",
     "stat": "102M",
     "statLabel": "U.S. adults say they need more life insurance",
     "statSourceName": "LIMRA",
@@ -130,66 +130,65 @@
     "statSourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI-powered quoting and lead-scoring tools now. Platforms like Salesforce Einstein and carrier-specific CRM integrations can automate routine quote comparisons and flag high-intent prospects, freeing up time for consultative selling [3]. Over the next six months, build deeper expertise in complex product lines (commercial, life, umbrella) where the advisory relationship matters most. These are the areas where AI handles the least: understanding a client's full risk picture, navigating multi-carrier underwriting, and guiding emotionally loaded decisions like life insurance.",
-    "thinkingOf": "The strongest entry path is through commercial lines or life insurance, not personal auto or renters, where digital platforms are already dominant. Earning a state license is the baseline, but stacking a Chartered Property Casualty Underwriter (CPCU) or Certified Insurance Counselor (CIC) designation signals specialization that sets candidates apart. LIMRA's research on the advice gap shows that demand for human advisors is concentrated among clients with complex needs, so building a book in that space from the start is a better long-term bet than volume-based personal lines [4].",
+    "alreadyIn": "Start using AI-powered quoting and lead-scoring tools now. Platforms like Salesforce Einstein and carrier-specific CRM integrations can automate routine quote comparisons and flag high-intent prospects, freeing up time for consultative selling [Salesforce, Nov 2024]. Over the next six months, build deeper expertise in complex product lines (commercial, life, umbrella) where the advisory relationship matters most. These are the areas where AI handles the least: understanding a client's full risk picture, navigating multi-carrier underwriting, and guiding emotionally loaded decisions like life insurance.",
+    "thinkingOf": "The strongest entry path is through commercial lines or life insurance, not personal auto or renters, where digital platforms are already dominant. Earning a state license is the baseline, but stacking a Chartered Property Casualty Underwriter (CPCU) or Certified Insurance Counselor (CIC) designation signals specialization that sets candidates apart. LIMRA's research on the advice gap shows that demand for human advisors is concentrated among clients with complex needs, so building a book in that space from the start is a better long-term bet than volume-based personal lines [LIMRA, Apr 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Sales reps who use AI tools for lead prioritization and administrative tasks are 1.3× more likely to have seen revenue increase, the advantage comes from reinvesting that time in complex client conversations.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "As insurers accelerate digital-direct channels for standard products, agents who reposition toward advisory roles in commercial and specialty lines capture higher commissions and stickier client relationships.",
         "attribution": "McKinsey & Company",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance",
+        "sourceDate": "Mar 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "There are 102 million American adults who say they don't have enough life insurance, the need for knowledgeable advisors to close that gap isn't shrinking, it's growing.",
         "attribution": "LIMRA",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The shift to digital quoting in personal lines means new agents should build their initial book around commercial accounts and complex personal coverage, where the advisory relationship is the product.",
         "attribution": "McKinsey & Company",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance",
+        "sourceDate": "Mar 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "McKinsey & Company",
       "title": "Insurance 2030: The Impact of AI on the Future of Insurance",
       "date": "Mar 2025",
       "url": "https://www.mckinsey.com/industries/financial-services/our-insights/insurance-2030-the-impact-of-ai-on-the-future-of-insurance"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Insurance Sales Agents",
       "date": "Apr 2024",
       "url": "https://www.bls.gov/ooh/sales/insurance-sales-agents.htm"
     },
     {
-      "id": "src-3",
       "name": "Salesforce",
       "title": "State of Sales Report, 6th Edition",
       "date": "Nov 2024",
       "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
     },
     {
-      "id": "src-4",
       "name": "LIMRA",
       "title": "2024 Insurance Barometer Study",
       "date": "Apr 2024",
       "url": "https://www.limra.com/en/research/research-abstracts-public/2024/2024-insurance-barometer-study/"
     },
     {
-      "id": "src-5",
       "name": "LIMRA",
       "title": "2024 Insurance Barometer Study",
       "date": "2024",
@@ -312,7 +311,7 @@
         "sourceName": "WEF",
         "sourceTitle": "Future of Jobs Report 2025",
         "sourceDate": "Jan 2025",
-        "sourceUrl": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
       },
       "search_query": "\"Insurance AI Risk Analyst\" OR \"AI Risk Analyst\" insurance jobs 2025",
       "job_search_url": "",
@@ -343,6 +342,24 @@
         "Build a customer segmentation project in dbt using real CRM data",
         "Learn SQL basics through a focused 4-week course"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is insurance sales a strong career as direct-to-consumer digital platforms grow?",
+      "answer": "Insurance Sales Agent scores 59/100 on AI exposure, in solid territory, with 47,000 annual openings and 4% projected growth. Digital platforms have taken market share in simple personal lines, but complex commercial coverage, life insurance with financial planning integration, and clients who have had a claim and want an advocate are still best served by human agents. The 102 million U.S. adults who report needing more life insurance represent a market that direct-to-consumer platforms have not converted, largely because the purchase requires a conversation about mortality and financial planning that most people avoid without prompting."
+    },
+    {
+      "question": "What does an insurance sales agent earn, and how does the compensation model work?",
+      "answer": "The median salary is $60,370, but top-producing agents at captive carriers and independent agencies regularly earn $100,000 to $200,000 or more through renewal commissions that compound over time. The key to high income in insurance sales is building a book of business with high retention; an agent with strong retention earns renewal commissions on existing clients while acquiring new ones. Life and health specialists who integrate insurance into broader financial planning conversations typically earn more per policy than those selling standalone P&C products."
+    },
+    {
+      "question": "Which insurance sales tasks is AI handling, and where does the agent relationship matter?",
+      "answer": "AI tools now generate initial coverage recommendations, compare quotes across carriers, and automate policy renewal reminders without agent involvement for standard personal lines. Where agents stay essential is explaining coverage gaps to clients who do not understand what they are buying, advocating for clients during claims, and designing commercial coverage packages where a mistake can be financially catastrophic. The trust required to convince someone to spend money on something they hope never to use is still predominantly built through human relationships."
+    },
+    {
+      "question": "What credentials and skills help insurance sales agents build a durable career?",
+      "answer": "State insurance licensure is required for all agents; adding lines beyond property-casualty, specifically life and health, expands the products an agent can sell and the revenue per client. CLU designation is the primary credential for life insurance specialists; CPCU is the most recognized in property-casualty. Agents who develop a niche, such as contractors, physicians, or high-net-worth families, generate referrals within tight professional communities and build books of business that are highly defensible against direct-to-consumer competition."
     }
   ]
 }

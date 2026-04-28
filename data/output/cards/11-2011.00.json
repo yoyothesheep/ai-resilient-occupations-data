@@ -25,50 +25,54 @@
   "keyDrivers": "This role sits at the top of a function where AI is compressing the middle. The core task — planning and preparing advertising material — shows 30.8% automation across 2,700+ observed conversations, meaning the execution work that managers oversee is being increasingly automated. The role scores low because it combines AI-exposed output work with a declining market for traditional advertising management: demand for these roles was already being squeezed by programmatic advertising before AI added a second wave of pressure.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The execution layer of advertising management — media planning, copy approval, campaign trafficking, and performance reporting — is being absorbed by AI-powered platforms, reducing the headcount needed to run campaigns of the same scale. eMarketer's 2024 data shows that 91% of digital display advertising is now bought programmatically, eliminating much of the manual media buying coordination that justified mid-level advertising management roles [1]. Kantar's 2024 Media Reactions report found that advertiser budgets are shifting away from agency-managed creative production toward in-house AI tools, compressing the scope of work that flows through advertising managers [2].",
-    "stat": "91%",
-    "statLabel": "of digital display ads bought programmatically, removing manual coordination",
-    "statSourceName": "eMarketer",
-    "statSourceTitle": "US Programmatic Digital Display Ad Spending 2024",
-    "statSourceDate": "Apr 2024",
-    "statSourceUrl": "https://www.emarketer.com/content/us-programmatic-digital-display-ad-spending-2024"
+    "body": "Campaign trafficking, media buying coordination, and performance monitoring — the execution layer of advertising management — are being absorbed by AI-powered programmatic platforms, eliminating the manual coordination that justified mid-level manager roles. eMarketer reports that AI is actively reshaping how programmatic ad platforms operate, automating the optimization and trafficking work that traditionally required dedicated advertising managers [eMarketer, 2025]. BLS projects a -2% decline in advertising and promotions manager employment through 2033 — one of the few white-collar management occupations with a net projected loss — driven by platform consolidation and AI absorbing the media-buying workflow [U.S. Bureau of Labor Statistics, Sep 2024].",
+    "stat": "-2%",
+    "statLabel": "BLS projected employment decline for advertising managers through 2033",
+    "statSourceName": "U.S. Bureau of Labor Statistics",
+    "statSourceTitle": "Occupational Outlook Handbook: Advertising, Promotions, and Marketing Managers",
+    "statSourceDate": "Sep 2024",
+    "statSourceUrl": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
   },
   "opportunities": {
-    "body": "Brand strategy, agency relationships, and the judgment calls about creative direction and campaign risk remain human-accountable work. HubSpot's 2024 State of Marketing report found that 74% of marketing leaders say AI has increased the volume of campaigns their teams run, expanding the strategic coordination load rather than replacing it [1]. Advertising managers who shift from overseeing production to owning brand standards and agency performance are expanding their scope as AI handles the execution underneath them.",
-    "stat": "74%",
-    "statLabel": "of marketing leaders say AI increased their campaign volume",
+    "body": "As AI floods marketing channels with templated content, audience demand for strategically differentiated, human-directed campaigns is rising — creating a durable premium for managers who can set creative direction and brand voice rather than execute production tasks. HubSpot’s 2026 State of Marketing survey of 1,500+ global marketers found that 62.7% believe the industry needs more unique, human-centered content to compete with AI-generated material [HubSpot, 2026]. Advertising and promotions managers who redirect their time from trafficking and media-buying coordination toward brand strategy, cross-channel narrative coherence, and AI-output oversight are best positioned to capture this demand shift.",
+    "stat": "62.7%",
+    "statLabel": "of marketers say human-centered content is needed to compete with AI",
     "statSourceName": "HubSpot",
-    "statSourceTitle": "State of Marketing 2024",
-    "statSourceDate": "Mar 2024",
-    "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
+    "statSourceTitle": "2026 State of Marketing Report",
+    "statSourceDate": "2026",
+    "statSourceUrl": "https://blog.hubspot.com/marketing/hubspot-blog-marketing-industry-trends-report"
   },
   "howToAdapt": {
-    "alreadyIn": "Build fluency in AI-assisted campaign tools now so the work you oversee is produced faster and at lower cost — this matters because budget pressure is ongoing in this sector. Over six months, shift your value proposition toward the parts of the role that AI handles worst: client strategy, cross-functional coordination, and the judgment calls about creative direction that require context no tool has [2]. Managers who can operate with leaner teams by using AI effectively are more valuable than those who manage large teams producing output that AI could generate [1].",
-    "thinkingOf": "With only 2,100 annual job openings and negative projected growth, this is a competitive field to enter. Build a portfolio that demonstrates measurable campaign outcomes — not just campaign management experience — since employers are increasingly focused on ROI rather than headcount [3]. A path through digital marketing or content strategy roles provides a stronger foundation than traditional advertising agency work, which is facing the steeper structural decline [1].",
+    "alreadyIn": "Build fluency in AI-assisted campaign tools now so the work you oversee is produced faster and at lower cost — this matters because budget pressure is ongoing in this sector. Over six months, shift your value proposition toward the parts of the role that AI handles worst: client strategy, cross-functional coordination, and the judgment calls about creative direction that require context no tool has [Kantar, Sep 2024]. Managers who can operate with leaner teams by using AI effectively are more valuable than those who manage large teams producing output that AI could generate [eMarketer, Apr 2024].",
+    "thinkingOf": "With only 2,100 annual job openings and negative projected growth, this is a competitive field to enter. Build a portfolio that demonstrates measurable campaign outcomes — not just campaign management experience — since employers are increasingly focused on ROI rather than headcount [HubSpot, Mar 2024]. A path through digital marketing or content strategy roles provides a stronger foundation than traditional advertising agency work, which is facing the steeper structural decline [eMarketer, Apr 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The advertising managers who are navigating this environment well are those who have redefined their value around strategy and client relationships, while using AI tools to dramatically reduce the cost and time of production work their teams previously spent most of their time on.",
         "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "Marketing and advertising is one of the functions where generative AI creates the most economic value — which means the practitioners who adapt are those who shift from managing content production to managing AI-assisted systems and directing strategic decisions.",
         "attribution": "The economic potential of generative AI, McKinsey Global Institute",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
         "quote": "Programmatic platforms now manage 91% of U.S. digital display ad spending automatically, but the remaining strategic decisions about brand positioning, creative direction, and cross-channel budget allocation are where advertising managers justify their roles.",
         "attribution": "US Programmatic Digital Display Ad Spending 2024, eMarketer",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.emarketer.com/content/us-programmatic-digital-display-ad-spending-2024",
+        "sourceDate": "Apr 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The advertising managers most in demand combine creative judgment with data literacy — they can evaluate both the AI-generated campaign variants and the brand implications of running them.",
         "attribution": "State of Marketing 2024, HubSpot",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.hubspot.com/state-of-marketing",
+        "sourceDate": "Mar 2024"
       }
     ]
   },
@@ -217,7 +221,7 @@
     {
       "level": 3,
       "code": "27-3043.00",
-      "title": "Writer",
+      "title": "Copywriter",
       "isCurrent": false,
       "score": 2.4,
       "relationship": "less_trained",
@@ -275,7 +279,7 @@
     {
       "level": 1,
       "code": "41-3011.00",
-      "title": "Advertising Sales Agents",
+      "title": "Advertising Sales Agent",
       "isCurrent": false,
       "score": 2.0,
       "relationship": "entry_from",
@@ -293,84 +297,120 @@
   ],
   "emergingCareers": [
     {
-      "emerging_title": "Programmatic Advertising Director",
-      "description": "Leads automated media buying strategy across DSPs and real-time bidding platforms. Manages AI-driven audience targeting, bid optimization, and campaign attribution at scale.",
-      "core_tools": "The Trade Desk, Google DV360, LiveRamp",
-      "stat_text": "Programmatic advertising now accounts for 91% of all digital display ad spend in the U.S., making programmatic expertise the dominant skill requirement for senior ad roles.",
-      "stat_source": "eMarketer",
-      "stat_title": "US Programmatic Digital Display Ad Spending 2024",
-      "stat_date": "Mar 2024",
-      "stat_url": "",
-      "search_query": "\"programmatic director\" OR \"programmatic advertising director\" jobs 2025",
+      "title": "AI Campaign Strategist",
+      "description": "Directs AI-assisted campaign planning and creative development across paid, owned, and earned channels, using generative tools to accelerate production while applying human judgment to brief quality, channel mix, and brand fit. Evaluates AI-generated creative concepts and media plans before they enter market.",
+      "core_tools": "Claude API, Google Performance Max, Meta Advantage+",
+      "experience_level": 4,
+      "stat": {
+        "text": "Marketing teams using AI report 20-30% faster content origination and production, shifting advertising manager value from overseeing production to evaluating AI output and making final creative calls.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"AI campaign strategist\" OR \"campaign AI strategy\" advertising jobs 2025",
       "job_search_url": "",
-      "fit": "Campaign planning and media mix experience transfers; the shift is from managing human creative and media teams to overseeing AI-driven bidding systems and first-party data strategy.",
+      "fit": "Campaign planning, creative briefing, and channel strategy carry directly; the shift is from managing production teams to directing AI tools that handle production, with human judgment concentrated on strategy and evaluation.",
+      "steps": [
+        "Run a documented AI-assisted campaign from brief to launch using Claude for copy and Performance Max for media",
+        "Complete Google AI Essentials and Meta Blueprint certifications for AI campaign tools",
+        "Build a creative evaluation rubric that scores AI-generated concepts against brand and strategy criteria"
+      ]
+    },
+    {
+      "title": "Programmatic Advertising Specialist",
+      "description": "Manages AI-powered programmatic ad buying, audience targeting, and creative optimization across display, video, and connected TV. Configures automated bidding strategies, interprets performance signals, and adjusts campaign structure when AI optimization underperforms.",
+      "core_tools": "Google DV360, The Trade Desk, LiveRamp",
+      "experience_level": 4,
+      "stat": {
+        "text": "66% of marketing professionals now use AI in their roles, with programmatic ad optimization and audience targeting among the most rapidly automated functions in advertising operations.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "HubSpot AI Trends for Marketers Report",
+        "sourceDate": "2025",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
+      },
+      "search_query": "\"programmatic advertising specialist\" AI optimization jobs 2025",
+      "job_search_url": "",
+      "fit": "Advertising channel knowledge, audience strategy, and performance measurement carry directly; the new skill is managing AI bidding systems and diagnosing when automated optimization diverges from campaign goals.",
       "steps": [
         "Complete The Trade Desk Edge Academy certification",
-        "Build a programmatic campaign using Google DV360 with documented performance results",
-        "Learn clean room and privacy-safe targeting concepts via LiveRamp's resource library"
-      ],
-      "experience_level": 4
+        "Run a programmatic campaign on DV360 with documented audience segmentation and optimization decisions",
+        "Study LiveRamp data clean room documentation to understand privacy-safe audience targeting"
+      ]
     },
     {
-      "emerging_title": "Growth Marketing Director",
-      "description": "Owns full-funnel customer acquisition strategy using AI-powered experimentation, predictive lifetime value modeling, and paid channel optimization. Bridges brand strategy and performance marketing.",
-      "core_tools": "Northbeam, Amplitude, Claude",
-      "stat_text": "Growth marketing director roles commanding $180k+ grew 19% in 2024, with AI-fluency listed as a required skill in 67% of senior postings per LinkedIn data.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Jobs on the Rise 2025",
-      "stat_date": "Jan 2025",
-      "stat_url": "",
-      "search_query": "\"growth marketing director\" AI experimentation jobs 2025",
+      "title": "Marketing Technology Strategist",
+      "description": "Evaluates, implements, and governs the AI-powered marketing technology stack for an advertising or marketing organization. Owns vendor selection, integration architecture, and the workflow systems that connect AI tools across campaign management, creative production, and analytics.",
+      "core_tools": "Salesforce Marketing Cloud, HubSpot AI, Claude API",
+      "experience_level": 5,
+      "stat": {
+        "text": "Marketing technology spending stabilized at 24% of total marketing budgets in 2025, with AI-powered tools driving a structural shift in how advertising organizations are staffed and operated.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"marketing technology strategist\" OR \"martech\" AI stack jobs 2025",
       "job_search_url": "",
-      "fit": "Cross-channel campaign ownership and budget management experience are directly applicable; the new orientation is toward data-driven experimentation loops and predictive modeling rather than campaign creative oversight.",
+      "fit": "Campaign operations knowledge and cross-functional coordination carry directly; the new scope is owning the technology architecture decisions that determine how AI tools are selected, integrated, and governed across the advertising function.",
       "steps": [
-        "Complete Reforge's Growth Series program",
-        "Build a full-funnel attribution model using Northbeam or Triple Whale",
-        "Earn a data analytics certification via Google or Coursera"
-      ],
-      "experience_level": 5
+        "Complete Salesforce Marketing Cloud certification",
+        "Conduct a marketing tech stack audit and produce a consolidation recommendation for a current or past employer",
+        "Build familiarity with CDP architecture via Segment or Tealium documentation"
+      ]
     },
     {
-      "emerging_title": "AI Creative Director",
-      "description": "Directs creative strategy for campaigns where AI tools generate assets, copy variations, and personalized ad content at scale. Sets creative standards, tests AI output against human benchmarks, and governs brand consistency.",
-      "core_tools": "Adobe Firefly, Midjourney, Claude",
-      "stat_text": "Creative director job postings requiring generative AI tool experience grew 78% in 2024, with agencies and brands racing to formalize AI creative governance roles.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Talent Insights Q3 2024",
-      "stat_date": "Sep 2024",
-      "stat_url": "",
-      "search_query": "\"AI creative director\" advertising brand jobs 2025",
+      "title": "Creative AI Producer",
+      "description": "Oversees the production of AI-generated advertising creative at scale, managing the workflow from brief to approved asset across video, display, and social formats. Sets quality standards for AI-generated creative, manages human review processes, and measures creative performance.",
+      "core_tools": "Runway ML, Adobe Firefly, Claude API",
+      "experience_level": 5,
+      "stat": {
+        "text": "Companies using GenAI for advertising creative report 60% reduction in time-to-market for campaign assets and 25-50% lower spending on agency production, creating demand for in-house AI creative operations roles.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"AI creative producer\" OR \"AI advertising creative\" production jobs 2025",
       "job_search_url": "",
-      "fit": "Campaign creative oversight and brand standards experience are the qualifying assets; the new skill is directing AI tools as a creative production layer rather than managing human designers and copywriters.",
+      "fit": "Creative briefing, production oversight, and brand quality control carry directly; the new context is managing AI tools that produce creative assets rather than directing human creative teams.",
       "steps": [
-        "Build a campaign using Adobe Firefly and document the creative direction process",
-        "Develop a brand AI usage policy covering tone, imagery, and disclosure standards",
-        "Complete Adobe's Generative AI for Creative Professionals course"
-      ],
-      "experience_level": 5
+        "Complete Adobe Firefly and Runway ML tutorials to build hands-on AI creative production skills",
+        "Produce a multi-format AI creative campaign from brief to final assets and document the production workflow",
+        "Build a creative quality evaluation rubric covering brand fit, message clarity, and technical specs"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "src-1",
-      "name": "eMarketer",
-      "title": "US Programmatic Digital Display Ad Spending 2024",
-      "date": "Apr 2024",
-      "url": "https://www.emarketer.com/content/us-programmatic-digital-display-ad-spending-2024"
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Advertising, Promotions, and Marketing Managers",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/management/advertising-promotions-and-marketing-managers.htm"
     },
     {
-      "id": "src-2",
+      "name": "eMarketer",
+      "title": "How programmatic ad platforms are evolving with AI features",
+      "date": "Jan 2025",
+      "url": "https://www.emarketer.com/content/faq--how-programmatic-ad-platforms-evolving-with-ai-features"
+    },
+    {
+      "name": "Lightcast",
+      "title": "Global AI Skills Outlook: Beyond the Buzz",
+      "date": "Jul 2025",
+      "url": "https://lightcast.io/resources/research/the-lightcast-global-ai-skills-outlook"
+    },
+    {
       "name": "Kantar",
       "title": "Media Reactions 2024",
       "date": "Sep 2024",
-      "url": "https://www.kantar.com/campaigns/media-reactions"
+      "url": "https://www.kantar.com/north-america/company-news/kantar-us-media-reactions-2024"
     },
     {
-      "id": "src-3",
       "name": "HubSpot",
-      "title": "State of Marketing 2024",
-      "date": "Mar 2024",
-      "url": "https://www.hubspot.com/state-of-marketing"
+      "title": "2026 State of Marketing Report",
+      "date": "2026",
+      "url": "https://blog.hubspot.com/marketing/hubspot-blog-marketing-industry-trends-report"
     }
   ]
 }

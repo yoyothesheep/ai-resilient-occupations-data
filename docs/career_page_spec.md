@@ -54,6 +54,7 @@ Rules:
 - If `ai_task_coverage_pct < 20%`: note that AI hasn't made much contact with this role yet. Short risks section is correct in that case — don't pad it
 - Cite external data (BLS job growth, hiring trends) with inline `[n]` markers when available
 - `sections[]` is optional — use only when there's a distinct sub-topic worth separating out
+- **Never reference the role's AI resilience score or final ranking in prose.** Do not write "this role scores X out of 5" or "this role's resilience score reflects..." — the score is shown separately in the page header; restating it in body text is redundant and breaks the Feynman style rule.
 
 ---
 

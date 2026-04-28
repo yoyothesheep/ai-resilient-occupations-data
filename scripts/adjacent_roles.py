@@ -403,13 +403,14 @@ def generate_fit_learn(client,
         print(prompt)
         return None
     if interactive:
-        print("\n" + "="*80)
-        print(f"PROMPT — {source_occ['Occupation']} → {target_occ['Occupation']}")
-        print("="*80)
-        print(prompt)
-        print("="*80)
-        print("\nPaste JSON response, then Enter + Ctrl-D:")
-        text = sys.stdin.read().strip()
+        sys.stderr.write("\n" + "="*80 + "\n")
+        sys.stderr.write(f"PROMPT — {source_occ['Occupation']} → {target_occ['Occupation']}\n")
+        sys.stderr.write("="*80 + "\n")
+        sys.stderr.write(prompt + "\n")
+        sys.stderr.write("="*80 + "\n")
+        sys.stderr.write("\nPaste JSON response, then press Enter:\n")
+        sys.stderr.flush()
+        text = sys.stdin.readline().strip()
         return _parse_fit_learn_response(text)
     response = client.messages.create(
         model=MODEL,

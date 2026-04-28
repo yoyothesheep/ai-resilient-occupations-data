@@ -111,84 +111,89 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Data storage and retrieval work - the kind of database querying, data wrangling, and scripting that junior developers spend significant time on - shows 42.6% automation in over 2, 000 observed conversations, the clearest signal of AI handling real execution work in this role [1]. GitHub Copilot and similar tools are now used by 76% of developers, and entry-level hiring has contracted as AI handles more of the code-to-spec work that once required junior headcount [3].",
-    "stat": "76%",
-    "statLabel": "of developers now use or plan to use AI coding tools",
+    "body": "The WEF Future of Jobs 2025 report projects software and applications developers among roles facing net employment decline through 2030, as AI tools allow the same output with fewer headcount [World Economic Forum, Jan 2025]. The Anthropic Economic Index shows data retrieval and report-writing tasks — routine but time-consuming — hitting automation rates above 40%, meaning work that once justified large dev teams is increasingly machine-handled [Anthropic Economic Index, Mar 2026]. The consolidation pressure lands hardest at the entry level, where AI code generation has compressed the on-ramp that junior developers used to fill.",
+    "stat": "84%",
+    "statLabel": "of developers using or planning to use AI coding tools",
     "statSourceName": "Stack Overflow",
-    "statSourceTitle": "Stack Overflow Developer Survey 2024",
-    "statSourceDate": "Jun 2024",
-    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
+    "statSourceTitle": "Stack Overflow Developer Survey 2025",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://survey.stackoverflow.co/2025/"
   },
   "opportunities": {
-    "body": "Analyzing user needs and software requirements - the most important task with AI data - shows 44% augmentation across 4, 643 conversations, a strong signal that system design and requirements work keeps humans in the loop even as AI assists [1]. This role scores 4 out of 5 on both specialized expertise and directing AI tools, reflecting that the most valuable developer work involves architectural judgment and cross-system thinking that AI augments rather than replaces [2]. BLS projects 17% employment growth through 2034 - 40, 000+ annual openings - concentrated in roles requiring full-system ownership.",
+    "body": "The highest-weight task in the role — analyzing user needs and determining feasibility — shows augmentation outpacing automation nearly 3:2, and cross-team consultation shows 58% augmentation against 18% automation [Anthropic Economic Index, Mar 2026]. Translating ambiguous human requirements into technical constraints is where AI hits its ceiling. Developers who own that layer — requirements, architecture, stakeholder coordination — are positioned to direct AI tools across broader scope: 69% of developers using AI agents report measurable productivity gains, meaning the same person can ship more [Stack Overflow, Jun 2025].",
     "stat": "66%",
-    "statLabel": "of developers spend more time reviewing AI code than they save generating it",
+    "statLabel": "of developers frustrated with AI solutions that are almost right",
     "statSourceName": "Stack Overflow",
-    "statSourceTitle": "Stack Overflow Developer Survey 2024",
-    "statSourceDate": "Jun 2024",
-    "statSourceUrl": "https://survey.stackoverflow.co/2024/"
+    "statSourceTitle": "Stack Overflow Developer Survey 2025",
+    "statSourceDate": "Jun 2025",
+    "statSourceUrl": "https://survey.stackoverflow.co/2025/"
   },
   "howToAdapt": {
-    "alreadyIn": "The immediate move is to stop writing boilerplate code manually and start spending that time on the design decisions AI cannot make - system architecture, API contract design, cross-team requirements gathering. Over the next six months, build depth in the areas that show high augmentation rather than automation: requirements analysis, system design tradeoffs, and the stakeholder conversations that determine what gets built [1]. Developers who own the full system - requirements through deployment through operations - are more durable than those who specialize in execution [3].",
-    "thinkingOf": "The portfolio that gets hired in 2026 shows system-level thinking, not just clean code: deploy a full application with a database, API, and frontend, document the architectural decisions, and explain why you made them. Entry-level coding tasks are under the most direct AI pressure, so demonstrating judgment that goes beyond code output is how new developers differentiate [3]. BLS projects strong growth but the market has shifted - generic web development skills are less valuable than domain-specific technical depth or expertise in AI-assisted development workflows [2].",
+    "alreadyIn": "The immediate move is to stop writing boilerplate code manually and start spending that time on the design decisions AI cannot make - system architecture, API contract design, cross-team requirements gathering. Over the next six months, build depth in the areas that show high augmentation rather than automation: requirements analysis, system design tradeoffs, and the stakeholder conversations that determine what gets built [Anthropic Economic Index, Mar 2026]. Developers who own the full system - requirements through deployment through operations - are more durable than those who specialize in execution [Stack Overflow, Jun 2025].",
+    "thinkingOf": "The portfolio that gets hired in 2026 shows system-level thinking, not just clean code: deploy a full application with a database, API, and frontend, document the architectural decisions, and explain why you made them. Entry-level coding tasks are under the most direct AI pressure, so demonstrating judgment that goes beyond code output is how new developers differentiate [Stack Overflow, Jun 2025]. BLS projects strong growth but the market has shifted - generic web development skills are less valuable than domain-specific technical depth or expertise in AI-assisted development workflows [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "76% of developers are using or planning to use AI tools in their development process — but the differentiated skill is knowing when to trust the output and when to override it. Learning to prompt for specific architectural patterns and then critically review what comes back is the new core loop.",
-        "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "quote": "84% of developers are using or planning to use AI tools in their development process — but the differentiated skill is knowing when to trust the output and when to override it. Learning to prompt for specific architectural patterns and then critically review what comes back is the new core loop.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "The developers I see thriving with AI coding tools are the ones who treat the output as a first draft from a junior engineer — always reviewed, often restructured. Speed went up. So did the importance of architecture judgment, because now you're reviewing a lot more code than you used to write.",
         "attribution": "Gergely Orosz, The Pragmatic Engineer",
-        "sourceId": "src-pragmatic-eng"
+        "sourceUrl": "https://newsletter.pragmaticengineer.com/",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The entry bar has shifted from 'can you write code' to 'can you evaluate code, catch bugs in AI output, and reason about system design.' Bootcamp graduates who understand that shift — and build portfolios that demonstrate it — are getting hired. Those who treat AI tools as a substitute for fundamentals are not.",
         "attribution": "ThoughtWorks Technology Radar, 'The Changing Shape of Software Entry Roles'",
-        "sourceId": "src-thoughtworks"
+        "sourceUrl": "https://www.thoughtworks.com/radar",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Only 43% of developers who use AI coding tools say they trust the accuracy of the output most of the time. A portfolio that demonstrates debugging AI-generated code, catching subtle logic errors, and writing comprehensive tests for AI-assisted features signals exactly the judgment gap employers are trying to hire for.",
-        "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "quote": "Only 33% of developers say they trust the accuracy of AI tool output most of the time — while 46% actively distrust it. A portfolio that demonstrates debugging AI-generated code, catching subtle logic errors, and writing comprehensive tests for AI-assisted features signals exactly the judgment gap employers are trying to hire for.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Anthropic / O*NET",
-      "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Software Developers",
-      "date": "Jan 2026",
-      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
     },
     {
-      "id": "src-2",
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
+    },
+    {
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Software Developers",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
-      "title": "Stack Overflow Developer Survey 2024",
-      "date": "Jun 2024",
-      "url": "https://survey.stackoverflow.co/2024/"
+      "title": "Stack Overflow Developer Survey 2025",
+      "date": "Jun 2025",
+      "url": "https://survey.stackoverflow.co/2025/"
     },
     {
-      "id": "src-pragmatic-eng",
       "name": "The Pragmatic Engineer",
       "url": "https://newsletter.pragmaticengineer.com/",
       "title": "How AI Is Changing Software Development",
       "date": "2024"
     },
     {
-      "id": "src-thoughtworks",
       "name": "ThoughtWorks Technology Radar",
       "url": "https://www.thoughtworks.com/radar",
       "title": "Technology Radar Vol. 31",
@@ -246,7 +251,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "lateral",
@@ -262,7 +267,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -294,7 +299,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 1,
       "isCurrent": false,
       "relationship": "less_trained",
@@ -354,6 +359,23 @@
         "Build 2-3 web portfolio projects",
         "Specialize in a frontend stack: React, Vue, or similar"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Software developers understand how applications are built, which is the prerequisite for understanding how they fail. The shift is from writing code that works to writing code that can't be broken — and then testing whether it can be."
     }
   ],
   "emergingTitles": [
@@ -404,6 +426,24 @@
         "Contribute to an open-source developer tooling project on GitHub with at least one merged PR",
         "Write a public case study documenting how you reduced a specific development friction point using AI tooling"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is software development still a strong career path with AI writing more code?",
+      "answer": "Software Developer scores 62/100 on AI exposure, in solid territory, with 115,200 annual openings and 16% projected growth through 2033. AI coding tools are changing what developers spend time on but have not reduced headcount at most organizations; the 2025 Stack Overflow survey found 84% of developers use or plan to use AI tools, but demand for developers continues to grow. The clearest risk is for developers who treat AI output as final rather than as a draft that needs review."
+    },
+    {
+      "question": "What does a software developer earn, and what specializations pay the most?",
+      "answer": "The median salary is $133,080, with senior developers at top companies and those specializing in systems programming, distributed systems, or machine learning infrastructure reaching $200,000 or more in total compensation. The fastest salary growth is for developers who own system design decisions and can evaluate architectural tradeoffs, not just implement features. Developers with domain expertise in fintech, healthcare, or defense typically earn a 15 to 25% premium over general application developers at comparable seniority."
+    },
+    {
+      "question": "What development tasks is AI handling, and what still needs a senior developer?",
+      "answer": "AI tools generate boilerplate code, write unit tests, and suggest refactors reliably for well-defined problems. Where they fall short is understanding cross-system dependencies, making architectural decisions with long-term maintenance implications, and debugging subtle concurrency or state management bugs. The 66% of developers who report frustration with AI solutions that are almost right are pointing at exactly the judgment gap that senior developers fill."
+    },
+    {
+      "question": "What skills most differentiate software developers in an AI-assisted environment?",
+      "answer": "System design, the ability to structure complex software before writing a line of code, is the skill AI tools augment but cannot replace. Strong code review instincts, particularly for AI-generated output with plausible-looking but subtly wrong logic, are increasingly valuable. Developers who have shipped production systems end to end, including deployment, monitoring, and incident response, are distinguishable from those who only write features; cloud certification like AWS Solutions Architect signals deployment credibility to hiring managers."
     }
   ]
 }

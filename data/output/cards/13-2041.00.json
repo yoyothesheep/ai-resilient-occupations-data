@@ -114,7 +114,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI underwriting platforms like Zest AI and Upstart now automate credit decisions across consumer and small-business loan categories that previously required analyst review, compressing demand for entry-level credit roles at fintech and digital-first lenders [1]. BLS projects -4% employment decline for credit analysts through 2033, driven by continued automation of routine financial analysis and loan processing [2].",
+    "body": "AI underwriting platforms like Zest AI and Upstart now automate credit decisions across consumer and small-business loan categories that previously required analyst review, compressing demand for entry-level credit roles at fintech and digital-first lenders [Deloitte Insights, Mar 2024]. BLS projects -4% employment decline for credit analysts through 2033, driven by continued automation of routine financial analysis and loan processing [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": "-4%",
     "statLabel": "projected decline in credit analyst employment",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -123,7 +123,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
   },
   "opportunities": {
-    "body": "Complex credit situations, distressed debt, cross-border lending, project finance, and borrowers with non-standard financials, require judgment that automated scoring models are not built for, and carry higher margins precisely because they do [1]. The CFA credential signals the analytical depth required for this tier of work. McKinsey research on financial services AI adoption finds the human role in credit is concentrating in structuring, exception handling, and relationship-intensive deals as AI absorbs volume underwriting [2].",
+    "body": "Complex credit situations, distressed debt, cross-border lending, project finance, and borrowers with non-standard financials, require judgment that automated scoring models are not built for, and carry higher margins precisely because they do [Deloitte Insights, Mar 2024]. The CFA credential signals the analytical depth required for this tier of work. McKinsey research on financial services AI adoption finds the human role in credit is concentrating in structuring, exception handling, and relationship-intensive deals as AI absorbs volume underwriting [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": null,
     "statLabel": null,
     "statSourceName": null,
@@ -132,49 +132,63 @@
     "statSourceUrl": null
   },
   "howToAdapt": {
-    "alreadyIn": "Focus on the credit analysis work that doesn't fit a standard scorecard: covenant-heavy commercial deals, acquisition financing, distressed situations. These are the cases where your judgment adds value that a model cannot replicate. Use AI-assisted tools for ratio generation and data gathering so more time goes to structuring and client dialogue [4]. Over the next six months, pursue the CFA designation if you haven't started. Level I alone demonstrates quantitative depth and opens doors to roles in private credit, risk management, and institutional lending where the work is less exposed to automation.",
-    "thinkingOf": "Enter credit analysis through commercial or corporate banking rather than consumer lending. Consumer credit models are heavily automated and entry-level consumer analyst roles are the first to be displaced. Commercial and middle-market credit requires reading businesses qualitatively, not just scoring them, which gives analysts more durable work [1]. Build financial modeling skills in Excel and Python for data analysis alongside the accounting fundamentals. Thomson Reuters research shows professionals who adopt an AI fluency strategy from the start are twice as likely to achieve revenue growth, so platform literacy is worth developing alongside the core credit skills [2].",
+    "alreadyIn": "Focus on the credit analysis work that doesn't fit a standard scorecard: covenant-heavy commercial deals, acquisition financing, distressed situations. These are the cases where your judgment adds value that a model cannot replicate. Use AI-assisted tools for ratio generation and data gathering so more time goes to structuring and client dialogue. Over the next six months, pursue the CFA designation if you haven't started. Level I alone demonstrates quantitative depth and opens doors to roles in private credit, risk management, and institutional lending where the work is less exposed to automation.",
+    "thinkingOf": "Enter credit analysis through commercial or corporate banking rather than consumer lending. Consumer credit models are heavily automated and entry-level consumer analyst roles are the first to be displaced. Commercial and middle-market credit requires reading businesses qualitatively, not just scoring them, which gives analysts more durable work [Deloitte Insights, Mar 2024]. Build financial modeling skills in Excel and Python for data analysis alongside the accounting fundamentals. Thomson Reuters research shows professionals who adopt an AI fluency strategy from the start are twice as likely to achieve revenue growth, so platform literacy is worth developing alongside the core credit skills [U.S. Bureau of Labor Statistics, Sep 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "AI is not going to disrupt the accounting profession, but it will change what an accountant does.",
-        "attribution": "Mark Koziel, President and CEO, AICPA",
-        "sourceId": "src-4"
+        "quote": "Credit analysis is bifurcating: AI is handling standardized commercial loan screening at scale, while complex, judgment-heavy underwriting -- covenant analysis, distressed situations, acquisition financing -- is being done by fewer, more senior analysts. The entry-level analyst who learns both sides of that divide will be positioned for the senior roles that survive.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "The ability to interpret complex AI-driven financial models is becoming the most sought-after skill in credit analysis.",
-        "attribution": "CFA Institute",
-        "sourceId": "src-3"
+        "quote": "Credit analysts who have moved up in organizations since AI tools became mainstream share a common thread: they learned to use AI to stress-test their own conclusions rather than to generate the initial analysis. The ones who are struggling are those who let the model drive the write-up and review it for errors instead of the reverse.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Organizations with visible AI strategies are twice as likely to experience revenue growth compared to those with informal or ad-hoc approaches.",
-        "attribution": "2025 Future of Professionals Report, Thomson Reuters",
-        "sourceId": "src-2"
+        "quote": "Seventy-three percent of legal and financial professionals say AI will require significant reskilling, but only 31% report receiving formal training from their organizations. For candidates entering credit analysis now, the reskilling gap at incumbent firms is an opportunity: self-directed AI fluency is a differentiator that most experienced peers don't yet have.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The question has shifted from 'if' AI will impact the profession to 'how firms will lead with it'.",
-        "attribution": "Pascal Finette, Co-founder, radical",
-        "sourceId": "src-4"
+        "quote": "Credit analysts who have moved up in organizations since AI tools became mainstream share a common thread: they learned to use AI to stress-test their own conclusions rather than to generate the initial analysis. The ones who are struggling are those who let the model drive the write-up and review it for errors instead of the reverse.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Deloitte Insights",
       "title": "AI and the Future of Credit Risk Management",
       "date": "Mar 2024",
       "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-credit-risk-management.html"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Financial Analysts",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
+    },
+    {
+      "name": "Thomson Reuters",
+      "title": "Future of Professionals Report 2025",
+      "date": "2025",
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
+    },
+    {
+      "name": "Thomson Reuters",
+      "title": "Future of Professionals Report 2025",
+      "date": "2025",
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     }
   ],
   "emergingCareers": [
@@ -377,6 +391,24 @@
         "Complete specialized training for Insurance Underwriters",
         "Transfer internally to a functional niche team"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is credit analysis a stable career as AI automates loan underwriting?",
+      "answer": "Credit Analyst scores 34/100 on AI exposure, and BLS projects a 4% employment decline through 2033, driven by automated underwriting systems handling consumer and small business credit decisions. The 3,700 annual openings are concentrated in complex commercial credit, structured finance, and institutional lending where human judgment on counterparty risk is still required. Credit analysts who move into portfolio management, risk modeling, or commercial relationship management are better positioned than those doing standardized consumer credit review."
+    },
+    {
+      "question": "What does a credit analyst earn, and what drives salary higher?",
+      "answer": "The median salary is $80,970, with senior credit analysts and portfolio managers at large financial institutions typically earning $100,000 to $140,000. The strongest salary growth comes from moving into structured credit, leveraged finance, or institutional fixed income analysis where the complexity of the instruments resists automation. CFA designation is the most recognized credential for moving into institutional credit roles; the Credit Risk Certification from the Risk Management Association signals underwriting expertise to commercial banks."
+    },
+    {
+      "question": "Which credit analysis tasks is AI now handling, and what still needs a human?",
+      "answer": "Automated systems handle FICO-based consumer credit decisions, covenant compliance monitoring, and early-warning screening for portfolio deterioration without analyst involvement. Where human analysts remain essential is assessing qualitative factors in middle-market commercial lending, such as management quality, competitive position, and industry dynamics that a score model cannot capture. Regulatory scrutiny of AI credit decisions also creates ongoing demand for analysts who can document and defend underwriting rationales to examiners."
+    },
+    {
+      "question": "What skills help credit analysts stay competitive as automated underwriting matures?",
+      "answer": "Financial modeling skills in Excel and Python are increasingly required for senior roles that involve building or stress-testing credit models rather than just applying them. Credit analysts who develop expertise in a specific sector, healthcare lending, commercial real estate, or leveraged buyouts, can command premium compensation at specialized funds and banks. CFA Level 1 passing signals quantitative discipline; the Credit Risk Certification from RMA is the most direct credential for commercial credit underwriting roles."
     }
   ]
 }

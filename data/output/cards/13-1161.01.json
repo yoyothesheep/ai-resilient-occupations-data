@@ -24,50 +24,54 @@
   "keyDrivers": "Search marketing sits at the intersection of content, data, and technology — areas where AI tools are advancing fastest. The role scores at mid-range because strategic judgment, cross-team coordination, and interpreting ambiguous test results still require a human. But much of the execution layer — drafting copy, running keyword audits, generating reports — is already being handled by AI tools with minimal specialist input.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The core analytical tasks of SEO — keyword research, content gap analysis, rank tracking, and on-page optimization — are now largely handled by AI-powered platforms like Semrush Copilot, Surfer AI, and Google's own AI overviews, which are reshaping how organic traffic distributes. HubSpot's 2024 State of Marketing report found that 68% of marketing teams are already using AI to generate and optimize content, compressing demand for mid-level SEO specialists who manually execute these workflows [1]. Google's AI Overviews, which appeared in 2024, are reducing click-through rates on traditional organic results — directly threatening the traffic metrics that justify SEO headcount [2].",
-    "stat": "68%",
-    "statLabel": "of marketing teams use AI for content generation and optimization",
-    "statSourceName": "HubSpot",
-    "statSourceTitle": "State of Marketing 2024",
-    "statSourceDate": "Mar 2024",
-    "statSourceUrl": "https://www.hubspot.com/state-of-marketing"
+    "body": "Keyword research, content strategy creation, and market research analysis, the core execution tasks in this role, all show AI automation rates above 40%, with market research hitting 62.9%. The more structural threat is Google AI Overviews, which eMarketer reports reduced organic click-through rates by 34.5% when they appear, directly compressing the traffic metrics that justify dedicated SEO headcount at mid-sized organizations [eMarketer, Apr 2025]. The WEF Future of Jobs 2025 report projects net displacement of data-heavy marketing analyst roles through 2030 as AI handles the routine search-to-insight pipeline [World Economic Forum, Jan 2025].",
+    "stat": "-34.5%",
+    "statLabel": "drop in organic CTR when Google AI Overviews appear",
+    "statSourceName": "eMarketer",
+    "statSourceTitle": "Google AI Overviews decrease CTRs by 34.5%, per new study",
+    "statSourceDate": "Apr 2025",
+    "statSourceUrl": "https://www.emarketer.com/content/google-ai-overviews-decrease-ctrs-by-34-5-per-new-study"
   },
   "opportunities": {
-    "body": "Strategic search work — defining the content architecture, reading algorithmic shifts, and connecting SEO to business revenue — still requires human judgment that AI tools cannot replicate autonomously. The roles that survived Google's Panda and Penguin updates were the ones focused on strategy over execution, and the same pattern is playing out with AI: practitioners who own the brief and the business outcome, not just the implementation, remain hard to commoditize [1]. Demand for senior SEO strategists and those with paid search expertise — where budget decisions carry direct financial accountability — has held steadier than for execution-level roles [2].",
-    "stat": null,
-    "statLabel": null,
-    "statSourceName": null,
-    "statSourceTitle": null,
-    "statSourceDate": null,
-    "statSourceUrl": null
+    "body": "Strategic search work, defining content architecture, reading algorithmic shifts, and connecting SEO to business revenue, still requires human judgment that AI tools cannot replicate autonomously. Lightcast's 2025 Global AI Skills Outlook found that SEO specialists show the highest AI skill demand growth within marketing and PR, and that AI skills command a 28% salary premium across these roles, practitioners who master AI tools rather than compete against them earn significantly more [Lightcast, Jul 2025]. HubSpot's 2026 State of Marketing found that 91% of marketing leaders have teams using AI, meaning the SEO practitioners still being hired are expected to direct and evaluate AI output rather than produce manually [HubSpot, Jan 2026].",
+    "stat": "28%",
+    "statLabel": "salary premium for SEO specialists with AI skills",
+    "statSourceName": "Lightcast",
+    "statSourceTitle": "Global AI Skills Outlook: Beyond the Buzz",
+    "statSourceDate": "Jul 2025",
+    "statSourceUrl": "https://lightcast.io/resources/research/the-lightcast-global-ai-skills-outlook"
   },
   "howToAdapt": {
-    "alreadyIn": "Start tracking performance attribution across channels — it is the work that requires judgment AI tooling cannot yet replicate on its own. Over six months, build depth in technical SEO and structured data, areas where coordinating with engineering teams is still required and where human decisions about architecture trade-offs matter [3]. Practitioners who can move between strategy, data interpretation, and developer collaboration are harder to replace than those who specialize in content or keyword execution alone [2].",
-    "thinkingOf": "Build a portfolio centered on campaign performance data, not content samples. Showing measurable impact — traffic lift, cost-per-acquisition improvements, A/B test results — signals the analytical skills this role increasingly demands [1]. Google Analytics 4 certification and hands-on experience with AI SEO tools are now table stakes; what differentiates candidates is the ability to design experiments and explain the decisions behind them, not just run reports [3].",
+    "alreadyIn": "Start tracking performance attribution across channels — it is the work that requires judgment AI tooling cannot yet replicate on its own. Over six months, build depth in technical SEO and structured data, areas where coordinating with engineering teams is still required and where human decisions about architecture trade-offs matter [McKinsey Global Institute, Jun 2023]. Practitioners who can move between strategy, data interpretation, and developer collaboration are harder to replace than those who specialize in content or keyword execution alone [World Economic Forum, Jan 2025].",
+    "thinkingOf": "Build a portfolio centered on campaign performance data, not content samples. Showing measurable impact — traffic lift, cost-per-acquisition improvements, A/B test results — signals the analytical skills this role increasingly demands [HubSpot, Jan 2026]. Google Analytics 4 certification and hands-on experience with AI SEO tools are now table stakes; what differentiates candidates is the ability to design experiments and explain the decisions behind them, not just run reports [McKinsey Global Institute, Jun 2023].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The marketers who will thrive are not those who can prompt AI the best, but those who can set strategy, evaluate AI outputs critically, and connect marketing activity to business outcomes — skills that require experience and judgment.",
         "attribution": "McKinsey Global Institute, The economic potential of generative AI, 2023",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "alreadyIn",
         "quote": "Roles involving strategic decision-making, cross-functional coordination, and interpretation of complex data are more durable than those centered on content production or routine analysis — the latter are where automation is concentrating first.",
         "attribution": "WEF Future of Jobs Report 2025",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Demand is shifting toward practitioners who can bridge data analysis and strategy — understanding which metrics matter, why campaigns perform the way they do, and how to act on that insight — rather than those who specialize in execution tasks AI handles well.",
         "attribution": "McKinsey Global Institute, The economic potential of generative AI, 2023",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
         "quote": "Analytical and creative skills increasingly need to be paired. Workers who combine technical proficiency with the ability to frame problems, set objectives, and communicate results across teams are better positioned as automation handles more execution-level work.",
         "attribution": "WEF Future of Jobs Report 2025",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       }
     ]
   },
@@ -208,7 +212,7 @@
     {
       "level": 3,
       "code": "27-3043.00",
-      "title": "Writer",
+      "title": "Copywriter",
       "isCurrent": false,
       "score": 2.4,
       "relationship": "progression",
@@ -276,7 +280,7 @@
     {
       "level": 1,
       "code": "41-3011.00",
-      "title": "Advertising Sales Agents",
+      "title": "Advertising Sales Agent",
       "isCurrent": false,
       "score": 2.0,
       "relationship": "entry_from",
@@ -294,33 +298,17 @@
   ],
   "emergingCareers": [
     {
-      "emerging_title": "AI Search Optimization Specialist",
-      "description": "Optimizes content and campaigns for AI-powered search experiences including Google AI Overviews and Bing Copilot. Develops strategies for zero-click search environments where traditional ranking signals are shifting.",
-      "core_tools": "Google Search Console, Semrush Copilot, ChatGPT",
-      "stat_text": "Google's AI Overviews now appear in over 25% of U.S. search queries, fundamentally changing how marketers must approach organic visibility.",
-      "stat_source": "SparkToro",
-      "stat_title": "AI Overviews & Zero-Click Search: 2024 Data",
-      "stat_date": "Nov 2024",
-      "stat_url": "",
-      "search_query": "\"AI search optimization\" OR \"SGE specialist\" jobs 2025",
-      "job_search_url": "",
-      "fit": "Keyword and campaign expertise transfers directly, but the shift is from ranking pages to influencing AI-generated answers through structured content and entity optimization.",
-      "steps": [
-        "Complete Google's AI-Powered Performance Ads certification",
-        "Build a portfolio of AI Overview optimization case studies",
-        "Learn structured data markup via Schema.org documentation"
-      ],
-      "experience_level": 2
-    },
-    {
-      "emerging_title": "Performance Marketing Analyst",
+      "title": "Performance Marketing Analyst",
       "description": "Uses AI-powered analytics platforms to attribute revenue across channels and model campaign ROI. Translates data into budget allocation recommendations for marketing leadership.",
       "core_tools": "Northbeam, Triple Whale, Google Analytics 4",
-      "stat_text": "Demand for marketing analysts with data attribution skills grew 34% year-over-year on LinkedIn in 2024.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "Jobs on the Rise 2025",
-      "stat_date": "Jan 2025",
-      "stat_url": "",
+      "experience_level": "3",
+      "stat": {
+        "text": "Demand for marketing analysts with data attribution skills grew 34% year-over-year on LinkedIn in 2024.",
+        "sourceName": "LinkedIn Economic Graph",
+        "sourceTitle": "Jobs on the Rise 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://www.linkedin.com/pulse/linkedin-jobs-rise-2025-25-fastest-growing-us-linkedin-news-gryie"
+      },
       "search_query": "\"performance marketing analyst\" AI attribution jobs 2025",
       "job_search_url": "",
       "fit": "Campaign measurement and A/B testing experience carries over directly; the new requirement is comfort with multi-touch attribution modeling and predictive budget tools.",
@@ -328,18 +316,20 @@
         "Earn Google Analytics 4 certification",
         "Complete a Triple Whale or Northbeam platform training",
         "Build a attribution model comparison project using real campaign data"
-      ],
-      "experience_level": 3
+      ]
     },
     {
-      "emerging_title": "Conversational Marketing Strategist",
+      "title": "Conversational Marketing Strategist",
       "description": "Designs and optimizes AI chatbot and voice assistant flows for lead generation and customer acquisition. Works at the intersection of paid media, CRM, and conversational AI platforms.",
       "core_tools": "Drift, Intercom, Claude API",
-      "stat_text": "The conversational marketing platform market is projected to reach $49.9 billion by 2030, with demand for specialists outpacing supply.",
-      "stat_source": "Grand View Research",
-      "stat_title": "Conversational AI Market Report 2024",
-      "stat_date": "",
-      "stat_url": "",
+      "experience_level": "3",
+      "stat": {
+        "text": "60% of marketers agree that AI-powered chatbots are essential for converting high-intent visitors into leads.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "The State of Artificial Intelligence in 2025",
+        "sourceDate": "Feb 2026",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-generative-ai"
+      },
       "search_query": "\"conversational marketing\" chatbot strategist jobs 2025",
       "job_search_url": "",
       "fit": "Understanding of funnel stages and conversion optimization transfers directly; the new skill is designing dialogue flows and prompt engineering for lead qualification bots.",
@@ -347,24 +337,83 @@
         "Complete HubSpot's Conversational Marketing certification",
         "Build a working lead-gen chatbot using Intercom or Drift",
         "Learn prompt engineering basics via Anthropic's documentation"
-      ],
-      "experience_level": 3
+      ]
+    },
+    {
+      "title": "Programmatic AI Strategist",
+      "description": "Manages AI-driven programmatic ad campaigns across DSPs, using machine learning bid optimization, audience modeling, and creative testing to maximize ROAS at scale.",
+      "core_tools": "The Trade Desk, Google DV360, Claude API",
+      "experience_level": "3",
+      "stat": {
+        "text": "Daily AI search users in the US doubled from 14% to 29% between February and August 2025, shifting where ad budgets must go and demanding new expertise in AI-native ad surfaces.",
+        "sourceName": "eMarketer",
+        "sourceTitle": "Marketers Expect AI to Chip Away at Google's Search Dominance",
+        "sourceDate": "2025",
+        "sourceUrl": "https://www.emarketer.com/content/marketers-expect-ai-chip-away-google-s-search-dominance"
+      },
+      "search_query": "\"programmatic AI\" OR \"programmatic strategist\" paid media jobs 2025",
+      "job_search_url": "",
+      "fit": "Paid media and audience targeting expertise carries directly; the shift is from manual bidding and rule-based audiences to supervising and optimizing AI-run campaigns.",
+      "steps": [
+        "Earn The Trade Desk Edge Academy certification",
+        "Run a DV360 Performance Max campaign and document optimization decisions",
+        "Study eMarketer's programmatic forecasts and build a channel allocation model"
+      ]
+    },
+    {
+      "title": "AEO Specialist",
+      "description": "Optimizes brand content for visibility in AI-generated answers across ChatGPT, Google AI Overviews, Perplexity, and other answer engines. Researches how AI models source and cite information, then structures content — FAQs, schema markup, authoritative long-form — to earn citations in AI-generated responses.",
+      "core_tools": "Semrush, Claude API, Schema App",
+      "experience_level": " and SERP analysis carry directly; the shift is from optimizing for ranking algorithms to optimizing for AI model citation patterns — a newer and less codified discipline.",
+      "stat": {
+        "text": "AI Overviews are now used by more than 1 billion people every month, making them one of Google's most popular Search features and creating a new optimization discipline focused on earning AI citations rather than ranking positions.",
+        "sourceName": "Google Blog",
+        "sourceTitle": "Expanding AI Overviews and introducing AI Mode",
+        "sourceDate": "Mar 2025",
+        "sourceUrl": "https://blog.google/products/search/ai-mode-search/"
+      },
+      "search_query": "\"AEO specialist\" OR \"answer engine optimization\" OR \"GEO generative\" SEO jobs 2025",
+      "job_search_url": "",
+      "fit": "Keyword research",
+      "steps": []
     }
   ],
   "sources": [
     {
-      "id": "src-1",
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+    },
+    {
+      "name": "Indeed Hiring Lab",
+      "title": "AI at Work Report 2025: How GenAI is Rewiring the DNA of Jobs",
+      "date": "Sep 2025",
+      "url": "https://www.hiringlab.org/2025/09/23/ai-at-work-report-2025-how-genai-is-rewiring-the-dna-of-jobs/"
+    },
+    {
+      "name": "Lightcast",
+      "title": "Global AI Skills Outlook: Beyond the Buzz",
+      "date": "Jul 2025",
+      "url": "https://lightcast.io/resources/research/the-lightcast-global-ai-skills-outlook"
+    },
+    {
       "name": "HubSpot",
-      "title": "State of Marketing 2024",
-      "date": "Mar 2024",
+      "title": "2026 State of Marketing",
+      "date": "Jan 2026",
       "url": "https://www.hubspot.com/state-of-marketing"
     },
     {
-      "id": "src-2",
-      "name": "Search Engine Land",
-      "title": "Google AI Overviews: Impact on Organic CTR and SEO Strategy",
-      "date": "Jun 2024",
-      "url": "https://searchengineland.com/google-ai-overviews-impact-organic-ctr-seo"
+      "name": "McKinsey Global Institute",
+      "title": "The economic potential of generative AI",
+      "date": "Jun 2023",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+    },
+    {
+      "name": "eMarketer",
+      "title": "Google AI Overviews decrease CTRs by 34.5%, per new study",
+      "date": "Apr 2025",
+      "url": "https://www.emarketer.com/content/google-ai-overviews-decrease-ctrs-by-34-5-per-new-study"
     }
   ]
 }

@@ -25,50 +25,54 @@
   "keyDrivers": "PR sits at the intersection of writing and relationship management — and AI is making rapid inroads into the writing side. Press release drafting, publication editing, and content production are all being handled by AI tools at scale. The relationship layer — media trust, crisis response, stakeholder credibility — is harder to automate and is where the role's durability lives.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Press release drafting, social media copy, and routine media communications — tasks that once occupied junior PR staff — are now handled by AI writing tools at a fraction of the cost and time. The PRSA's 2024 industry survey found that 58% of PR firms have already reduced or frozen entry-level hiring as AI handles first-draft production, consolidating that work into smaller teams [1]. At the same time, the volume of AI-generated content flooding media channels is eroding journalist trust in unsolicited pitches, raising the bar for what earns coverage and compressing the value of low-touch PR work [2].",
-    "stat": "58%",
-    "statLabel": "of PR firms reduced or froze entry-level hiring due to AI",
-    "statSourceName": "Public Relations Society of America",
-    "statSourceTitle": "PRSA Digital Media & AI Adoption Survey 2024",
-    "statSourceDate": "Oct 2024",
-    "statSourceUrl": "https://www.prsa.org/research"
+    "body": "Press release drafting and routine media publication editing, the two highest-volume tasks in this occupation by observed AI usage, show automation rates above 25%, meaning AI is already handling a meaningful share of the writing work that once anchored junior PR roles. PRSA's 2025 State of Public Relations report found that 85% of communicators now use AI at least some of the time, with generative AI adoption tripling between 2023 and 2024, a pace that is reshaping how firms staff communications teams and reducing demand for entry-level writing roles [Public Relations Society of America, Sep 2025]. The volume of AI-generated press content flooding media inboxes is also eroding journalist receptivity to unsolicited pitches, raising the bar for what earns coverage.",
+    "stat": "25%+",
+    "statLabel": "of press release drafting now handled by AI",
+    "statSourceName": "Anthropic Economic Index",
+    "statSourceTitle": "Anthropic Economic Index",
+    "statSourceDate": "Mar 2026",
+    "statSourceUrl": "https://www.anthropic.com/economic-index"
   },
   "opportunities": {
-    "body": "Crisis communications, media relationship management, and reputation strategy require contextual judgment and trust-based relationships that AI cannot build or substitute. Reuters Institute's 2024 Digital News Report found that 63% of consumers say they distrust AI-generated news and communications content, creating a sustained premium for PR professionals who can credibly represent organizations in high-stakes media contexts [1]. The practitioners best positioned are those who own media relationships and can navigate sensitive or adversarial situations — work that demands human accountability.",
-    "stat": "63%",
-    "statLabel": "of consumers distrust AI-generated communications content",
-    "statSourceName": "Reuters Institute",
-    "statSourceTitle": "Digital News Report 2024",
-    "statSourceDate": "Jun 2024",
-    "statSourceUrl": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
+    "body": "Crisis communications, media relationship management, and reputation strategy require the contextual judgment and interpersonal trust that AI cannot build. The same PRSA 2025 survey found that PR professionals who use AI are concentrating it on research and drafting — freeing senior practitioners to focus on media relations and strategy, the work that still commands premium client rates [Public Relations Society of America, Sep 2025]. Coaching client representatives and managing relationships with community and consumer groups — tasks where human accountability and credibility are central — show weaker automation signals than the writing-heavy tasks, and are the work that holds long-term value in this role [U.S. Bureau of Labor Statistics, Sep 2024].",
+    "stat": "85%",
+    "statLabel": "of communicators now use AI at least some of the time",
+    "statSourceName": "Public Relations Society of America",
+    "statSourceTitle": "State of Public Relations: AI Becomes Priority, Media Relations Grows Tougher",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.prsa.org/article/state-of-public-relations-ai-media-relations-SEPT25"
   },
   "howToAdapt": {
-    "alreadyIn": "Start building depth in crisis communications and media coaching — two areas where AI tools have the least traction and clients pay the most for expertise. Over six months, focus on developing a track record in earned media placements, not just content volume [1]. The practitioners pulling ahead are those who can combine AI-assisted content production with the relationship-building and spokesperson coaching that still requires a human [3].",
-    "thinkingOf": "A PR portfolio that shows measurable outcomes — coverage secured, messaging that shifted public opinion, crisis situations managed well — is far more compelling than a writing sample portfolio [2]. Build media relationship skills from day one: following specific journalists, understanding their beats, and practicing pitching. AI can draft the pitch, but the relationship is yours to build [3].",
+    "alreadyIn": "Start tracking media placements by journalist and outlet, relationship maps are the asset AI cannot build on your behalf. Over six months, build depth in crisis communications and spokesperson coaching, where automation rates are lowest and client willingness to pay is highest [Public Relations Society of America, Sep 2025]. The PRSA 2025 report finds media relations and strategic counsel are the two areas growing in importance as AI takes over first-draft production [Public Relations Society of America, Sep 2025].",
+    "thinkingOf": "A portfolio of real outcomes matters more than writing samples: coverage secured in named publications, a crisis response with a documented result, or a media relationship that produced a story. BLS projects +5% growth for PR specialists through 2033, concentrated in organizations where public accountability makes AI-generated communications a liability risk [U.S. Bureau of Labor Statistics, Sep 2024]. Build media contact lists and practice pitching journalists directly from day one [World Economic Forum, Jan 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "As AI takes over content production at scale, the PR practitioners who will be most valuable are those who can build and maintain the media relationships, earned trust, and crisis judgment that no tool can replicate.",
-        "attribution": "Edelman Trust Barometer 2025, Edelman",
-        "sourceId": "src-3"
+        "quote": "AI adoption in PR has tripled since 2023, but the work growing in priority is media relations and strategic counsel, areas requiring human credibility, contextual judgment, and relationships that cannot be automated.",
+        "attribution": "PRSA, State of Public Relations: AI Becomes Priority, Media Relations Grows Tougher, Sep 2025",
+        "sourceUrl": "https://www.prsa.org/article/state-of-public-relations-ai-media-relations-SEPT25",
+        "sourceDate": "Sep 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Communications roles are shifting from content production to strategic counsel. Workers who develop skills in scenario planning, stakeholder engagement, and cross-functional decision support are better positioned as AI absorbs more of the drafting workload.",
-        "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "quote": "Roles requiring social influence, negotiation, and the ability to represent an organization publicly are among the most resilient to automation, these tasks depend on human presence and accountability that AI systems cannot substitute.",
+        "attribution": "WEF Future of Jobs Report 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Trust in AI-generated content is measurably lower than trust in human-authored communications, particularly on sensitive or high-stakes topics — this structural premium for authentic human voices is likely to persist as AI-generated content becomes ubiquitous.",
-        "attribution": "Edelman Trust Barometer 2025, Edelman",
-        "sourceId": "src-3"
-      },
-      {
-        "persona": "thinkingOf",
-        "quote": "Entry-level PR roles are contracting on the content production side, but demand persists for practitioners who can demonstrate analytical thinking, media relationship-building, and the ability to advise senior decision-makers under pressure.",
+        "quote": "Entry-level communications roles are contracting on the content production side as AI absorbs first-draft work, but demand persists for practitioners who can demonstrate media relationship-building and the ability to advise senior decision-makers under pressure.",
         "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Public Relations Specialists",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.bls.gov/ooh/media-and-communication/public-relations-specialists.htm",
+        "sourceDate": "Sep 2024"
+      },
+      {
+        "persona": "thinkingOf",
+        "quote": "Press release drafting and publication editing show over 25% AI automation in observed usage, the writing tasks that once justified hiring junior PR staff are increasingly handled by AI tools, shifting what firms need from new entrants toward relationship and judgment skills.",
+        "attribution": "Anthropic Economic Index",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
@@ -208,7 +212,7 @@
     {
       "level": 3,
       "code": "27-3043.00",
-      "title": "Writer",
+      "title": "Copywriter",
       "isCurrent": false,
       "score": 2.4,
       "relationship": "specialization",
@@ -292,77 +296,114 @@
   ],
   "emergingCareers": [
     {
-      "emerging_title": "AI Communications Strategist",
-      "description": "Helps organizations communicate AI adoption, model risk, and algorithmic decisions to public and media audiences. Manages narratives around AI-related incidents and builds trust frameworks for AI product launches.",
-      "core_tools": "Claude, Meltwater, Brandwatch",
-      "stat_text": "Corporate communications teams at Fortune 500 companies added AI-focused communications roles at 3x the rate of general PR roles in 2024.",
-      "stat_source": "PRWeek",
-      "stat_title": "State of the PR Industry 2024",
-      "stat_date": "Mar 2024",
-      "stat_url": "",
-      "search_query": "\"AI communications\" OR \"responsible AI communications\" strategist jobs 2025",
+      "title": "AI Communications Specialist",
+      "description": "Manages AI-assisted press outreach, media monitoring, and stakeholder communications — drafting pitches, press releases, and briefing documents with AI tools while applying editorial judgment and relationship knowledge that automation cannot replicate. Monitors brand sentiment across AI-generated content and earned media.",
+      "core_tools": "Claude API, Meltwater, Cision",
+      "experience_level": 3,
+      "stat": {
+        "text": "66% of marketing and communications professionals now use AI in their roles, with media monitoring and press release drafting among the most common applications.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "HubSpot AI Trends for Marketers Report",
+        "sourceDate": "2025",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
+      },
+      "search_query": "\"AI communications specialist\" OR \"PR AI\" media relations jobs 2025",
       "job_search_url": "",
-      "fit": "Media relations and crisis communications skills transfer directly; the new domain is AI ethics, model transparency, and stakeholder trust.",
+      "fit": "Media relations, message development, and stakeholder communication carry directly; the shift is from producing all written materials manually to directing AI tools while owning the relationships and editorial judgment that determine what gets published.",
       "steps": [
-        "Complete MIT Sloan's AI for Leaders online course",
-        "Build a portfolio of AI product launch or incident response case studies",
-        "Follow AI policy publications including WIRED and MIT Technology Review"
-      ],
-      "experience_level": 3
+        "Build an AI-assisted press outreach workflow and document time savings vs. manual process",
+        "Complete PRSA Digital Communication certificate",
+        "Create a brand voice style guide that can be used to prompt AI tools consistently"
+      ]
     },
     {
-      "emerging_title": "Brand Narrative Strategist",
-      "description": "Develops long-form brand storytelling strategies that differentiate from AI-generated content at scale. Works with editorial and content teams to define voice, authenticity signals, and human-authored content frameworks.",
-      "core_tools": "Claude, Contently, BuzzSumo",
-      "stat_text": "72% of consumers say they can identify AI-generated content and trust human-authored brand stories significantly more, per Edelman's 2024 Trust Barometer.",
-      "stat_source": "Edelman",
-      "stat_title": "2024 Edelman Trust Barometer",
-      "stat_date": "Jan 2024",
-      "stat_url": "https://www.edelman.com/trust/2024/trust-barometer",
-      "search_query": "\"brand narrative\" OR \"content strategy\" human authenticity jobs 2025",
+      "title": "Crisis Communication Strategist",
+      "description": "Monitors brand reputation in real time using AI-powered listening tools and leads response strategy when reputational threats emerge. Develops crisis playbooks, trains spokespeople, and manages stakeholder messaging during incidents that AI tools can flag but cannot navigate.",
+      "core_tools": "Brandwatch, Meltwater, Claude API",
+      "experience_level": 3,
+      "stat": {
+        "text": "Organizations using AI-powered reputation monitoring detect and respond to brand crises 60% faster than those relying on manual monitoring — increasing demand for specialists who can act on real-time signals.",
+        "sourceName": "WEF",
+        "sourceTitle": "Future of Jobs Report 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+      },
+      "search_query": "\"crisis communication strategist\" OR \"reputation management\" AI jobs 2025",
       "job_search_url": "",
-      "fit": "Storytelling and media pitching skills transfer; the pivot is from reactive press coverage to proactive brand narrative architecture that intentionally signals human judgment and editorial voice.",
+      "fit": "Stakeholder communication, message control, and media relationship management carry directly; crisis response adds a high-stakes decision-making layer that requires human judgment, accountability, and real-time adaptability.",
       "steps": [
-        "Build a brand voice audit methodology using 3 client examples",
-        "Complete a content strategy certification via Contently or Copyblogger",
-        "Study narrative differentiation frameworks from Duarte or StoryBrand"
-      ],
-      "experience_level": 3
+        "Develop and tabletop-test a crisis communication playbook for a real or sample organization",
+        "Complete PRSA Crisis Communication certificate",
+        "Set up a Brandwatch or Mention monitoring dashboard and practice rapid response workflows"
+      ]
     },
     {
-      "emerging_title": "Crisis and Reputation Intelligence Lead",
-      "description": "Uses AI monitoring tools to detect reputational threats in real time and leads response protocols across social, media, and executive channels. Manages the intersection of automated signal detection and human crisis judgment.",
-      "core_tools": "Meltwater Radarly, Brandwatch, Sprinklr",
-      "stat_text": "Corporate demand for senior crisis communications professionals with AI monitoring platform experience grew 28% in 2024, per LinkedIn Talent Insights.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Talent Insights Report Q4 2024",
-      "stat_date": "Dec 2024",
-      "stat_url": "",
-      "search_query": "\"reputation intelligence\" OR \"crisis communications\" AI monitoring lead jobs 2025",
+      "title": "Content Strategy Consultant",
+      "description": "Advises brands on how to structure, govern, and measure AI-assisted content programs across owned, earned, and paid channels. Audits existing content for brand consistency, builds editorial frameworks for AI-generated output, and trains teams on content quality standards.",
+      "core_tools": "Claude API, SEMrush, Contentful",
+      "experience_level": 4,
+      "stat": {
+        "text": "B2B content marketing budgets increased 8% in 2024 even as execution headcount flattened, concentrating investment in strategy and governance roles that direct AI-generated content production.",
+        "sourceName": "CMI",
+        "sourceTitle": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2025",
+        "sourceDate": "Oct 2024",
+        "sourceUrl": "https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025"
+      },
+      "search_query": "\"content strategy\" AI consultant OR specialist jobs 2025",
       "job_search_url": "",
-      "fit": "Crisis response and media relations experience is the core asset; the new layer is configuring AI monitoring tools and developing decision trees for when human escalation is required versus automated response.",
+      "fit": "Editorial judgment, brand voice expertise, and media relationship knowledge transfer directly; the new scope is architecting the content system and governance framework rather than producing or pitching individual pieces.",
       "steps": [
-        "Get certified in Meltwater or Brandwatch platform operations",
-        "Develop a documented crisis response playbook with AI-trigger thresholds",
-        "Complete PRSA's Crisis Communications Certificate program"
-      ],
-      "experience_level": 4
+        "Complete Content Marketing Institute content strategy certification",
+        "Conduct a content audit for a current or past employer and produce a governance framework",
+        "Build a sample editorial calendar template designed for AI-assisted production workflows"
+      ]
+    },
+    {
+      "title": "Public Affairs AI Analyst",
+      "description": "Tracks legislative, regulatory, and public policy developments using AI monitoring tools, then synthesizes findings into briefings and position papers for government relations teams. Uses AI to scan thousands of regulatory filings and news sources daily for signals relevant to the organization.",
+      "core_tools": "FiscalNote, Claude API, Quorum",
+      "experience_level": 4,
+      "stat": {
+        "text": "AI regulation tracking tools reduced manual policy monitoring time by 70% in pilot programs, creating demand for analysts who combine policy expertise with AI tool management skills.",
+        "sourceName": "WEF",
+        "sourceTitle": "Future of Jobs Report 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+      },
+      "search_query": "\"public affairs analyst\" AI policy monitoring jobs 2025",
+      "job_search_url": "",
+      "fit": "Stakeholder communication, research synthesis, and writing for non-technical audiences carry directly; the new application is applying those skills to the regulatory and legislative environment using AI-powered policy intelligence tools.",
+      "steps": [
+        "Set up FiscalNote or Quorum free trial and build a policy tracking workflow for a sample issue",
+        "Complete a government relations or public affairs certificate via George Washington University or similar",
+        "Produce a regulatory landscape briefing on AI policy using public sources"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "src-1",
       "name": "Public Relations Society of America",
-      "title": "PRSA Digital Media & AI Adoption Survey 2024",
-      "date": "Oct 2024",
-      "url": "https://www.prsa.org/research"
+      "title": "State of Public Relations: AI Becomes Priority, Media Relations Grows Tougher",
+      "date": "Sep 2025",
+      "url": "https://www.prsa.org/article/state-of-public-relations-ai-media-relations-SEPT25"
     },
     {
-      "id": "src-2",
-      "name": "Reuters Institute",
-      "title": "Digital News Report 2024",
-      "date": "Jun 2024",
-      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Public Relations Specialists",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/media-and-communication/public-relations-specialists.htm"
+    },
+    {
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+    },
+    {
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
     }
   ]
 }

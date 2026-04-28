@@ -2,7 +2,7 @@
   "onet_code": "13-2071.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Creating debt management plans and budgets, the most important task in this role by weight, shows a 24% automation rate -- AI is beginning to handle the mechanical construction of these plans [1]. Fintech platforms offering automated debt management and budgeting tools (like Tally, Bright, or YNAB's AI features) are capturing some of the lower-complexity counseling volume that previously flowed to nonprofit credit agencies [2]. The CFPB has documented a shift in consumer financial behavior toward digital self-service tools for debt repayment planning, which may reduce demand for entry-level counseling intake work over time [3].",
+    "body": "Creating debt management plans and budgets, the most important task in this role by weight, shows a 24% automation rate -- AI is beginning to handle the mechanical construction of these plans [U.S. Bureau of Labor Statistics, Sep 2024]. Fintech platforms offering automated debt management and budgeting tools (like Tally, Bright, or YNAB's AI features) are capturing some of the lower-complexity counseling volume that previously flowed to nonprofit credit agencies [Deloitte Insights, Feb 2024]. The CFPB has documented a shift in consumer financial behavior toward digital self-service tools for debt repayment planning, which may reduce demand for entry-level counseling intake work over time [Consumer Financial Protection Bureau, Jun 2024].",
     "stat": "24%",
     "statLabel": "efficiency substitution AI is beginning",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/credit-counselors.htm"
   },
   "opportunities": {
-    "body": "The strongest durability signal in this role is in client education: explaining financial concepts to clients shows a 79% augmentation rate -- among the highest of any task in the finance cluster -- indicating AI is helping counselors explain complex topics more clearly, not replacing the conversation [1]. Counselors who use AI tools to generate personalized budget projections, debt payoff timelines, and scenario analyses in real time during sessions are providing a service that fully automated apps cannot match [2]. The trust and accountability dimension of credit counseling -- especially for clients navigating bankruptcy, foreclosure, or crisis debt -- requires a licensed human counselor in most regulatory contexts, and the NFCC reports sustained demand for counselors certified in housing and bankruptcy counseling [4].",
+    "body": "The strongest durability signal in this role is in client education: explaining financial concepts to clients shows a 79% augmentation rate -- among the highest of any task in the finance cluster -- indicating AI is helping counselors explain complex topics more clearly, not replacing the conversation [U.S. Bureau of Labor Statistics, Sep 2024]. Counselors who use AI tools to generate personalized budget projections, debt payoff timelines, and scenario analyses in real time during sessions are providing a service that fully automated apps cannot match [Deloitte Insights, Feb 2024]. The trust and accountability dimension of credit counseling -- especially for clients navigating bankruptcy, foreclosure, or crisis debt -- requires a licensed human counselor in most regulatory contexts, and the NFCC reports sustained demand for counselors certified in housing and bankruptcy counseling [National Foundation for Credit Counseling, Apr 2024].",
     "stat": "79%",
     "statLabel": "efficiency gain among the highest",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/credit-counselors.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start integrating AI budget modeling tools -- platforms like Monarch Money's advisor API or eMoney Advisor -- into your client sessions so you can generate live scenarios faster and spend more time on the behavioral side of the conversation [2]. Over the next six months, build depth in the areas AI handles worst: behavioral financial coaching, crisis intervention, and navigating the human complexity of debt situations involving job loss, medical debt, or relationship changes. These require empathy and judgment that automated tools consistently fail at [4].",
-    "thinkingOf": "The NFCC-certified counselor credential and HUD-approved housing counselor certification are the clearest entry signals: they demonstrate regulatory standing and open access to clients in foreclosure prevention and bankruptcy contexts that automated tools cannot serve [4]. Candidates entering now should build fluency with AI-assisted budgeting platforms used in nonprofit credit agencies -- knowing how to run a client session with AI-generated projections rather than spreadsheets is increasingly the baseline skill [3]. Focus on the intersection of financial literacy education and behavioral coaching -- that combination is in demand and difficult to automate [2].",
+    "alreadyIn": "Start integrating AI budget modeling tools -- platforms like Monarch Money's advisor API or eMoney Advisor -- into your client sessions so you can generate live scenarios faster and spend more time on the behavioral side of the conversation [Deloitte Insights, Feb 2024]. Over the next six months, build depth in the areas AI handles worst: behavioral financial coaching, crisis intervention, and navigating the human complexity of debt situations involving job loss, medical debt, or relationship changes. These require empathy and judgment that automated tools consistently fail at [National Foundation for Credit Counseling, Apr 2024].",
+    "thinkingOf": "The NFCC-certified counselor credential and HUD-approved housing counselor certification are the clearest entry signals: they demonstrate regulatory standing and open access to clients in foreclosure prevention and bankruptcy contexts that automated tools cannot serve [National Foundation for Credit Counseling, Apr 2024]. Candidates entering now should build fluency with AI-assisted budgeting platforms used in nonprofit credit agencies -- knowing how to run a client session with AI-generated projections rather than spreadsheets is increasingly the baseline skill [Consumer Financial Protection Bureau, Jun 2024]. Focus on the intersection of financial literacy education and behavioral coaching -- that combination is in demand and difficult to automate [Deloitte Insights, Feb 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The counselors who are thriving are the ones who use AI to handle the data work -- generating the budget, running the payoff scenarios -- so they can spend the session on the actual problem: why this person keeps making the same financial decisions, and what would have to change.",
         "attribution": "National Foundation for Credit Counseling, '2024 Consumer Financial Literacy Survey'",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.nfcc.org/resources/research-and-data/2024-consumer-financial-literacy-survey/",
+        "sourceDate": "Apr 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "Automated tools are very good at generating a debt repayment plan. They are not good at helping someone who just had their wages garnished and doesn't know who to call first. That gap is where counselors continue to have a clear and defensible role.",
         "attribution": "CFPB, 'Innovation in Consumer Financial Services: Fintech and Credit Counseling' (2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.consumerfinance.gov/data-research/research-reports/innovation-consumer-financial-services/",
+        "sourceDate": "Jun 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "NFCC certification opens doors that self-service fintech platforms cannot enter -- HUD-approved counseling for foreclosure prevention, pre-bankruptcy counseling required by federal courts, and housing programs that require a certified human in the loop.",
         "attribution": "National Foundation for Credit Counseling, '2024 Consumer Financial Literacy Survey'",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.nfcc.org/resources/research-and-data/2024-consumer-financial-literacy-survey/",
+        "sourceDate": "Apr 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The best candidates entering credit counseling today combine financial literacy depth with coaching skills. Being able to generate a budget in AI tools is table stakes -- what differentiates counselors is the ability to help a client actually change behavior, which is the part that doesn't automate.",
         "attribution": "Deloitte Insights, 'AI in Consumer Financial Services: Automation and the Human Layer' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-consumer-financial-services.html",
+        "sourceDate": "Feb 2024"
       }
     ]
   },
@@ -65,28 +69,24 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Credit Counselors",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/credit-counselors.htm"
     },
     {
-      "id": "src-2",
       "name": "Deloitte Insights",
       "title": "AI in Consumer Financial Services: Automation and the Human Layer",
       "date": "Feb 2024",
       "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-consumer-financial-services.html"
     },
     {
-      "id": "src-3",
       "name": "Consumer Financial Protection Bureau",
       "title": "Innovation in Consumer Financial Services: Fintech and Credit Counseling",
       "date": "Jun 2024",
       "url": "https://www.consumerfinance.gov/data-research/research-reports/innovation-consumer-financial-services/"
     },
     {
-      "id": "src-4",
       "name": "National Foundation for Credit Counseling",
       "title": "2024 Consumer Financial Literacy Survey",
       "date": "Apr 2024",
@@ -408,5 +408,23 @@
   "emergingTitles": [
     "Financial Coach",
     "Debt Specialist"
+  ],
+  "faqs": [
+    {
+      "question": "Is credit counseling a stable career as AI tools handle more debt management planning?",
+      "answer": "Credit Counselor scores 51/100 on AI exposure, in the middle of the range, with 2,200 annual openings and 3% projected growth. AI tools can generate debt repayment schedules and budget templates automatically, but motivating clients to follow through, navigating complex creditor negotiations, and providing support during financial crisis still require a human relationship. Credit counselors at NFCC-member nonprofit agencies work with clients that commercial fintech tools typically do not serve well."
+    },
+    {
+      "question": "What does a credit counselor earn, and what advances the salary?",
+      "answer": "The median salary is $50,480, with senior counselors at large nonprofit agencies and those who add financial coaching or bankruptcy counseling specialization typically earning $60,000 to $75,000. Counselors who earn NFCC certification or AFC designation signal professional competency that nonprofit agencies and credit unions use as a hiring filter. The highest-paid roles are program directors and financial education managers who build and oversee counseling programs rather than carrying a full caseload."
+    },
+    {
+      "question": "Which credit counseling tasks is AI handling, and what still needs a human counselor?",
+      "answer": "Automated tools now generate debt management plan proposals, calculate payoff timelines, and identify eligibility for hardship programs faster than manual review. What they cannot replicate is the motivational work of keeping clients on a plan when financial stress makes compliance difficult, or the negotiation relationship with creditors that experienced counselors build over time. The behavioral support that leads to lasting financial change, understanding why clients overspend and addressing those patterns, is not substitutable by a chatbot."
+    },
+    {
+      "question": "What credentials and skills help credit counselors build a career?",
+      "answer": "NFCC-member certification is the primary quality signal in the nonprofit counseling sector; employers at NFCC agencies increasingly require it for senior roles. The Accredited Financial Counselor designation from AFCPE provides a broader financial planning credential that opens doors at credit unions, military financial readiness programs, and employee assistance programs. Counselors who develop fluency in specific debt types, student loans, medical debt, or small business credit, can specialize in programs that serve populations underserved by general consumer credit counseling."
+    }
   ]
 }

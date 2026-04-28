@@ -26,50 +26,54 @@
   "keyDrivers": "Editing sits in a difficult position: the core task of rewriting and improving copy has the highest AI usage volume of any task in this role — over 13,000 observed conversations — with 30.9% automation patterns. Editors who focus on mechanical correction are the most exposed. The role's durability comes from editorial judgment: deciding what to publish, shaping narratives, managing authors, and maintaining publication standards — work that requires institutional knowledge and contextual reasoning AI tools cannot yet replicate reliably.",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Copy editing, proofreading, and headline writing — tasks that have historically anchored entry-level editorial jobs — are now handled reliably by AI tools, accelerating the newsroom consolidation already underway. NiemanLab's 2024 coverage of editorial industry trends documents that US newsrooms shed more than 2,900 jobs in 2023, with AI-assisted production cited by publishers as a direct factor in not backfilling those positions [1]. The Reuters Institute Digital News Report 2024 found that 28% of news organizations are now using AI for content production tasks, with copy editing and summarization among the first functions automated [2].",
-    "stat": "2,900+",
-    "statLabel": "US newsroom jobs cut in 2023, with AI cited in hiring freezes",
+    "body": "Copy editing and rewriting — the most-performed task in this occupation, with over 14,000 AI usage observations — shows 30% automation alongside just 4% augmentation, meaning AI is displacing rather than assisting the most routine editing work. The displacement signal at the industry level is concrete: NiemanLab reported in May 2025 that Business Insider cut 21% of its staff, with executives explicitly citing AI disruption and extreme traffic drops as the cause — a pattern repeating across digital publishers as AI content floods search results and erodes ad-supported editorial models [NiemanLab, May 2025]. BLS projects just +1% growth for editors through 2033, flat against a broader labor market growing faster [U.S. Bureau of Labor Statistics, Sep 2024].",
+    "stat": "21%",
+    "statLabel": "of Business Insider staff cut, citing AI disruption and traffic decline",
     "statSourceName": "NiemanLab",
-    "statSourceTitle": "The State of News Industry Jobs 2024",
-    "statSourceDate": "Mar 2024",
-    "statSourceUrl": "https://www.niemanlab.org/2024/03/the-news-industry-shed-thousands-of-jobs-in-2023/"
+    "statSourceTitle": "Business Insider will lay off 21% of staff amid AI disruption and extreme traffic drops",
+    "statSourceDate": "May 2025",
+    "statSourceUrl": "https://www.niemanlab.org/2025/05/business-insider-will-lay-off-21-of-staff-amid-ai-disruption-and-extreme-traffic-drops-outside-of-our-control/"
   },
   "opportunities": {
-    "body": "Editors who shape editorial strategy, manage contributor relationships, and make judgment calls about what a publication should cover are not doing work that AI can replicate autonomously. Reuters Institute found that 63% of readers say they trust AI-generated news content less than human-edited journalism, which means publications competing on credibility still need visible human editorial accountability [1]. The role is shrinking at the volume-content end and holding — or growing — at the strategy and judgment end, particularly at brands where editorial voice is a differentiator.",
-    "stat": "63%",
-    "statLabel": "of readers trust AI-generated news less than human-edited content",
-    "statSourceName": "Reuters Institute",
-    "statSourceTitle": "Digital News Report 2024",
-    "statSourceDate": "Jun 2024",
-    "statSourceUrl": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
+    "body": "Editors who anchor their value in judgment-intensive work are insulated from the heaviest automation pressure. Fact-checking, manuscript evaluation, and author relationships have no measurable automation signal in AI usage data — and proof review shows strong human-AI collaboration, with editors retaining final authority. That human oversight carries measurable market value: 56% of Americans say they would react negatively upon learning an AI wrote a news article they found informative, meaning editorial credibility is increasingly a product differentiator [Pew Research Center, Sep 2025].",
+    "stat": "56%",
+    "statLabel": "of readers react negatively to AI-written news",
+    "statSourceName": "Pew Research Center",
+    "statSourceTitle": "From Political Speeches to Songs: How Would Americans React If They Found Out AI Was Involved?",
+    "statSourceDate": "Sep 2025",
+    "statSourceUrl": "https://www.pewresearch.org/short-reads/2025/09/17/from-political-speeches-to-songs-how-would-americans-react-if-they-found-out-ai-was-involved/"
   },
   "howToAdapt": {
-    "alreadyIn": "Use AI tools for mechanical editing tasks now — proofreading, readability improvements, headline variants — to free up time for the substantive editorial work that actually requires judgment. Over six months, build depth in the areas AI handles worst: acquisitions, author relationships, and editorial strategy decisions that require understanding an audience at an institutional level [2]. Editors who can also manage freelance contributor networks and production processes are more valuable than those who focus on copy editing alone [1].",
-    "thinkingOf": "Build a portfolio demonstrating editorial judgment, not just clean copy. Editing samples that show structural improvements, developmental feedback to authors, or content strategy decisions are more compelling than proofreading examples [3]. Specializing in a subject area where editors need substantive expertise — legal, science, technical, or financial publishing — provides more structural defense than general content editing [1].",
+    "alreadyIn": "Use AI tools for mechanical editing tasks now — proofreading, readability improvements, headline variants — to free up time for the substantive editorial work that actually requires judgment. Over six months, build depth in the areas AI handles worst: acquisitions, author relationships, and editorial strategy decisions that require understanding an audience at an institutional level [Reuters Institute, Jun 2024]. Editors who can also manage freelance contributor networks and production processes are more valuable than those who focus on copy editing alone [NiemanLab, Mar 2024].",
+    "thinkingOf": "Build a portfolio demonstrating editorial judgment, not just clean copy. Editing samples that show structural improvements, developmental feedback to authors, or content strategy decisions are more compelling than proofreading examples [World Economic Forum, Jan 2025]. Specializing in a subject area where editors need substantive expertise — legal, science, technical, or financial publishing — provides more structural defense than general content editing [NiemanLab, Mar 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The editors who are most durable are those who serve as a trusted adviser to writers — understanding voice, shaping argument, and making the judgment calls about what a publication should stand for. That relationship layer is where human editors remain irreplaceable.",
         "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "Generative AI performs well at surface-level editing tasks but struggles with the evaluation of structural quality, argument coherence, and audience fit — the decisions that define what editorial judgment actually means.",
         "attribution": "The economic potential of generative AI, McKinsey Global Institute",
-        "sourceId": "src-2"
+        "sourceUrl": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024",
+        "sourceDate": "Jun 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Entry-level positions in copy editing and content coordination are contracting as AI tools handle more mechanical work. But acquisitions roles, developmental editing, and editorial leadership positions that require domain expertise and author relationships are more resilient.",
         "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Editors",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.bls.gov/ooh/media-and-communication/editors.htm",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Subject-matter expertise is becoming the most valuable differentiator for editors. Practitioners with deep knowledge of a specific field — science, law, finance, technology — can evaluate content accuracy and relevance in ways that neither generalist editors nor AI tools can match.",
         "attribution": "Future of Jobs Report 2025, World Economic Forum",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       }
     ]
   },
@@ -219,7 +223,7 @@
     {
       "level": 3,
       "code": "27-3043.00",
-      "title": "Writer",
+      "title": "Copywriter",
       "isCurrent": false,
       "score": 2.4,
       "relationship": "specialization",
@@ -293,77 +297,120 @@
   ],
   "emergingCareers": [
     {
-      "emerging_title": "AI Output Editor",
-      "description": "Reviews, rewrites, and quality-controls content generated by AI systems before publication. Enforces factual accuracy, brand voice, and editorial standards across high-volume AI-assisted content pipelines.",
-      "core_tools": "Claude, Grammarly Business, Originality.ai",
-      "stat_text": "Job postings for editors specifically requiring AI content review experience increased 89% between January and December 2024 on LinkedIn.",
-      "stat_source": "LinkedIn Economic Graph",
-      "stat_title": "LinkedIn Workforce Report Q4 2024",
-      "stat_date": "Dec 2024",
-      "stat_url": "",
-      "search_query": "\"AI editor\" OR \"AI content reviewer\" quality control jobs 2025",
+      "title": "AI Editorial Analyst",
+      "description": "Reviews and evaluates AI-generated editorial content for accuracy, voice consistency, and structural quality before publication. Develops rubrics and feedback loops that help AI tools improve output quality over time for a specific publication or brand.",
+      "core_tools": "Claude API, Grammarly Business, Contentful",
+      "experience_level": 3,
+      "stat": {
+        "text": "B2B content marketing budgets grew 8% in 2024 while execution headcount flattened, concentrating investment in editorial oversight and governance roles.",
+        "sourceName": "CMI",
+        "sourceTitle": "B2B Content Marketing: Benchmarks, Budgets, and Trends 2025",
+        "sourceDate": "Oct 2024",
+        "sourceUrl": "https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025"
+      },
+      "search_query": "\"AI editorial analyst\" OR \"editorial quality AI\" content jobs 2025",
       "job_search_url": "",
-      "fit": "Copy editing, fact-checking, and voice consistency skills transfer directly; the shift is from editing human writers to editing AI output at significantly higher volume and speed.",
+      "fit": "Structural editing, fact-checking instincts, and publication standards carry directly; the shift is from editing individual pieces to designing quality systems that govern AI-generated content at volume.",
       "steps": [
-        "Complete a fact-checking certification via the Duke Reporters' Lab resources",
-        "Build a documented AI content quality rubric with pass/fail criteria",
-        "Practice editing AI-generated articles using Originality.ai for detection benchmarking"
-      ],
-      "experience_level": 3
+        "Build an editorial evaluation rubric for AI-generated content and test it on 30 samples",
+        "Complete a course in AI content quality evaluation via Scale AI or similar platform",
+        "Document a feedback loop process: how editor review improves AI output over 10 iterations"
+      ]
     },
     {
-      "emerging_title": "Content Operations Manager",
-      "description": "Manages the workflows, tools, and quality systems that govern how content is produced, reviewed, and published across an organization. Sits at the intersection of editorial standards and content technology.",
-      "core_tools": "Contentful, Notion, Claude",
-      "stat_text": "Content operations roles grew 40% year-over-year in 2024, driven by organizations scaling AI-assisted content programs that require human oversight infrastructure.",
-      "stat_source": "Content Marketing Institute",
-      "stat_title": "B2B Content Marketing Benchmarks 2025",
-      "stat_date": "Oct 2024",
-      "stat_url": "https://contentmarketinginstitute.com/articles/b2b-content-marketing-research/",
-      "search_query": "\"content operations manager\" editorial workflow AI tools jobs 2025",
+      "title": "Content Standards Specialist",
+      "description": "Owns the style guides, editorial policies, and fact-checking protocols that govern AI-assisted content production across a publication or brand. Audits AI-generated output for compliance with standards and trains editorial teams on AI tool use.",
+      "core_tools": "Claude API, Writer.com, Notion",
+      "experience_level": 3,
+      "stat": {
+        "text": "Marketing teams using GenAI cite brand consistency failures as their top concern, creating demand for specialists who can build editorial governance frameworks that prevent AI content from degrading publication quality.",
+        "sourceName": "BCG",
+        "sourceTitle": "Executive Perspectives: The Future of Marketing with GenAI",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://www.bcg.com/assets/2025/executive-perspectives-the-future-of-marketing-with-genai-13june.pdf"
+      },
+      "search_query": "\"content standards\" specialist OR editor AI governance jobs 2025",
       "job_search_url": "",
-      "fit": "Editorial workflow knowledge and standards-setting experience are the core assets; the pivot is into process design and tooling rather than hands-on copy editing.",
+      "fit": "Deep familiarity with what distinguishes high-quality from mediocre content carries directly; the new scope is codifying those standards into documented policies and AI prompt guidelines rather than applying them piece by piece.",
       "steps": [
-        "Learn a headless CMS platform (Contentful or Sanity) via official documentation",
-        "Document an end-to-end content workflow with AI checkpoints and human review gates",
-        "Complete a project management certification (PMP or Agile fundamentals)"
-      ],
-      "experience_level": 3
+        "Produce a complete editorial style guide formatted for AI system prompt use",
+        "Audit 50 pieces of AI-generated content against an established style guide and produce a gap report",
+        "Complete AP Style or Chicago Manual of Style refresher to ensure standards documentation is precise"
+      ]
     },
     {
-      "emerging_title": "Head of Editorial Standards",
-      "description": "Sets and enforces organization-wide editorial policies for AI-assisted and human-authored content. Develops guidelines for sourcing, fact-checking, disclosure, and voice consistency across all publishing channels.",
-      "core_tools": "Claude, Grammarly Business, custom style guide tooling",
-      "stat_text": "Senior editorial leadership roles with AI governance scope grew 33% in 2024 as publishers and brands formalized AI content policies under regulatory and audience pressure.",
-      "stat_source": "Reuters Institute",
-      "stat_title": "Digital News Report 2024",
-      "stat_date": "Jun 2024",
-      "stat_url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024",
-      "search_query": "\"editorial standards\" director AI content policy jobs 2025",
+      "title": "Digital Publishing Strategist",
+      "description": "Designs and manages the content distribution architecture for AI-assisted publishing operations, including platform selection, content repurposing workflows, and audience development strategy. Ensures AI-generated content reaches the right audiences through the right channels at optimal frequency.",
+      "core_tools": "HubSpot, Claude API, Sprout Social",
+      "experience_level": 4,
+      "stat": {
+        "text": "66% of content marketers globally use AI in their roles, with content distribution and repurposing among the fastest-growing use cases as organizations scale publishing volume.",
+        "sourceName": "HubSpot",
+        "sourceTitle": "HubSpot AI Trends for Marketers Report",
+        "sourceDate": "2025",
+        "sourceUrl": "https://blog.hubspot.com/marketing/state-of-ai-report"
+      },
+      "search_query": "\"digital publishing strategist\" OR \"content distribution strategy\" AI jobs 2025",
       "job_search_url": "",
-      "fit": "Deep editorial judgment and institutional knowledge of publishing standards are the qualifying assets; the new scope is setting policy for AI use rather than editing individual pieces.",
+      "fit": "Audience knowledge, platform editorial judgment, and content performance analysis carry directly; the new context is managing an AI-augmented publishing operation that produces and distributes far more content than traditional editorial teams.",
       "steps": [
-        "Study AP Stylebook's AI usage guidelines and draft an organizational equivalent",
-        "Build a documented AI disclosure policy modeled on NYT or BBC editorial standards",
-        "Complete a media law and ethics short course via Poynter or similar"
-      ],
-      "experience_level": 4
+        "Map an end-to-end AI-assisted content repurposing workflow from one long-form piece to 8 derivative assets",
+        "Complete HubSpot Content Marketing certification",
+        "Build a content performance dashboard comparing AI-produced and human-produced content outcomes by channel"
+      ]
+    },
+    {
+      "title": "Structured Content Architect",
+      "description": "Designs content models, taxonomy systems, and metadata frameworks that make editorial content machine-readable and reusable across AI-assisted publishing workflows. Ensures content is structured so AI tools can retrieve, remix, and repurpose it accurately without losing context or editorial intent.",
+      "core_tools": "Contentful, Sanity.io, Claude API",
+      "experience_level": 4,
+      "stat": {
+        "text": "Headless CMS and structured content architecture roles grew 40% in 2024 job postings as organizations rebuilt content infrastructure to support AI-assisted publishing and omnichannel distribution.",
+        "sourceName": "Lightcast",
+        "sourceTitle": "The Generative AI Job Market: 2025 Data Insights",
+        "sourceDate": "2025",
+        "sourceUrl": "https://lightcast.io/resources/blog/the-generative-ai-job-market-2025-data-insights"
+      },
+      "search_query": "\"structured content\" architect OR specialist headless CMS AI jobs 2025",
+      "job_search_url": "",
+      "fit": "Deep knowledge of content types, editorial relationships, and what information needs to travel with a piece of content carries directly; the technical shift is to expressing that knowledge in formal content models rather than editorial intuition.",
+      "steps": [
+        "Complete Contentful or Sanity.io certification and build a sample content model for a publication",
+        "Study DITA or structured authoring principles via free online resources",
+        "Prototype a taxonomy system for a content domain you know well and test it against 100 real pieces"
+      ]
     }
   ],
   "sources": [
     {
-      "id": "src-1",
       "name": "NiemanLab",
-      "title": "The State of News Industry Jobs 2024",
-      "date": "Mar 2024",
-      "url": "https://www.niemanlab.org/2024/03/the-news-industry-shed-thousands-of-jobs-in-2023/"
+      "title": "Business Insider will lay off 21% of staff amid AI disruption and extreme traffic drops",
+      "date": "May 2025",
+      "url": "https://www.niemanlab.org/2025/05/business-insider-will-lay-off-21-of-staff-amid-ai-disruption-and-extreme-traffic-drops-outside-of-our-control/"
     },
     {
-      "id": "src-2",
       "name": "Reuters Institute",
-      "title": "Digital News Report 2024",
+      "title": "Digital News Report 2024: United States",
       "date": "Jun 2024",
-      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024"
+      "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024/united-states"
+    },
+    {
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Editors",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/media-and-communication/editors.htm"
+    },
+    {
+      "name": "Pew Research Center",
+      "title": "From Political Speeches to Songs: How Would Americans React If They Found Out AI Was Involved?",
+      "date": "Sep 2025",
+      "url": "https://www.pewresearch.org/short-reads/2025/09/17/from-political-speeches-to-songs-how-would-americans-react-if-they-found-out-ai-was-involved/"
+    },
+    {
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
   ]
 }

@@ -117,7 +117,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The core of this job, writing and maintaining code, already shows 33% automation in real AI usage data across over 14,000 observed conversations. Revising and expanding existing programs runs even higher at 36% automation. GitHub's 2024 research found that developers using Copilot completed tasks 55% faster, which means fewer programmer-hours needed per project [1]. BLS projects computer programmer employment to decline 10% from 2023 to 2033, a loss of roughly 12,400 jobs, as companies consolidate programming work into broader software developer roles and offshore routine coding [2].",
+    "body": "The core of this job, writing and maintaining code, already shows 33% automation in real AI usage data across over 14,000 observed conversations. Revising and expanding existing programs runs even higher at 36% automation. GitHub's 2024 research found that developers using Copilot completed tasks 55% faster, which means fewer programmer-hours needed per project [GitHub Blog, Sep 2024]. BLS projects computer programmer employment to decline 10% from 2023 to 2033, a loss of roughly 12,400 jobs, as companies consolidate programming work into broader software developer roles and offshore routine coding [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": "-10%",
     "statLabel": "employment expected to shrink over the next decade",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -126,7 +126,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm"
   },
   "opportunities": {
-    "body": "The strongest augmentation signal sits in consulting with teams to resolve problems in running programs: 77% augmentation rate across 747 conversations. AI acts as a diagnostic partner here, but the human still drives the fix. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or planning to use AI tools, but only 43% trust the accuracy of the output [3]. That trust gap is where experienced programmers add value: reviewing AI-generated code, catching subtle logic errors, and understanding system context that AI misses. Roles that combine programming skill with domain knowledge, like systems analysis or DevOps, are growing even as pure coding positions shrink.",
+    "body": "The strongest augmentation signal sits in consulting with teams to resolve problems in running programs: 77% augmentation rate across 747 conversations. AI acts as a diagnostic partner here, but the human still drives the fix. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or planning to use AI tools, but only 43% trust the accuracy of the output [Stack Overflow, Jul 2024]. That trust gap is where experienced programmers add value: reviewing AI-generated code, catching subtle logic errors, and understanding system context that AI misses. Roles that combine programming skill with domain knowledge, like systems analysis or DevOps, are growing even as pure coding positions shrink.",
     "stat": "17%",
     "statLabel": "projected growth in software developer roles that programmers can transition into",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -135,32 +135,36 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI code-generation tools (GitHub Copilot, Claude, or similar) on real production tasks now, and track where they fail. The 2024 Stack Overflow survey found 43% of developers don't trust AI output accuracy [3], which means the ability to audit, debug, and correct AI-generated code is immediately valuable. Over the next six months, build depth in areas AI handles worst for this role: cross-team troubleshooting, understanding legacy system context, and translating business requirements into technical specs. Those collaborative, context-heavy tasks show the highest augmentation rates and lowest automation rates in the data.",
-    "thinkingOf": "Pure coding skills alone are a shrinking market. GitHub's research shows AI is already handling a meaningful share of routine code generation [1]. A stronger entry strategy: build a portfolio that demonstrates code review, debugging complex systems, and integrating components rather than writing greenfield code from scratch. Pair programming proficiency with a specific domain (healthcare data, financial systems, embedded hardware) to differentiate from both AI tools and generalist programmers. Consider aiming for software developer or DevOps roles rather than \"computer programmer\" titles specifically, since BLS projects software developers to grow 17% over the same period programmers decline [2].",
+    "alreadyIn": "Start using AI code-generation tools (GitHub Copilot, Claude, or similar) on real production tasks now, and track where they fail. The 2024 Stack Overflow survey found 43% of developers don't trust AI output accuracy [Stack Overflow, Jul 2024], which means the ability to audit, debug, and correct AI-generated code is immediately valuable. Over the next six months, build depth in areas AI handles worst for this role: cross-team troubleshooting, understanding legacy system context, and translating business requirements into technical specs. Those collaborative, context-heavy tasks show the highest augmentation rates and lowest automation rates in the data.",
+    "thinkingOf": "Pure coding skills alone are a shrinking market. GitHub's research shows AI is already handling a meaningful share of routine code generation [GitHub Blog, Sep 2024]. A stronger entry strategy: build a portfolio that demonstrates code review, debugging complex systems, and integrating components rather than writing greenfield code from scratch. Pair programming proficiency with a specific domain (healthcare data, financial systems, embedded hardware) to differentiate from both AI tools and generalist programmers. Consider aiming for software developer or DevOps roles rather than \"computer programmer\" titles specifically, since BLS projects software developers to grow 17% over the same period programmers decline [U.S. Bureau of Labor Statistics, Sep 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The programmers who are thriving with AI coding tools are the ones who treat the output as a first draft from a junior engineer — always reviewed, often restructured. Speed went up. So did the importance of architecture judgment, because now you are reviewing a lot more code than you used to write.",
         "attribution": "Gergely Orosz, The Pragmatic Engineer",
-        "sourceId": "src-pragmatic"
+        "sourceUrl": "https://newsletter.pragmaticengineer.com/",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI code generation has shifted the bottleneck in programming from writing code to understanding what you wrote. Programmers who can read, debug, and reason about large codebases quickly are more valuable than ever — that skill does not go away when the AI writes the first draft.",
         "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "sourceUrl": "https://survey.stackoverflow.co/2024/",
+        "sourceDate": "Jul 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The entry bar has shifted from \"can you write code\" to \"can you evaluate code, catch bugs in AI output, and reason about system design.\" Bootcamp graduates who understand that shift — and build portfolios that demonstrate it — are getting hired. Those who treat AI tools as a substitute for fundamentals are not.",
         "attribution": "ThoughtWorks Technology Radar, Vol. 31",
-        "sourceId": "src-thoughtworks"
+        "sourceUrl": "https://www.thoughtworks.com/radar",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "67% of developers report using AI coding tools in their workflow, but the survey shows senior developers are adopting them at higher rates than juniors — not because they need more help, but because they can evaluate the output critically and redirect it when it is wrong.",
         "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "sourceUrl": "https://survey.stackoverflow.co/2024/",
+        "sourceDate": "Jul 2024"
       }
     ]
   },
@@ -192,35 +196,30 @@
   ],
   "sources": [
     {
-      "id": "src-1",
       "name": "GitHub Blog",
       "title": "Research: Quantifying GitHub Copilot's impact on developer productivity and happiness",
       "date": "Sep 2024",
       "url": "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Computer Programmers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-programmers.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
       "title": "2024 Developer Survey Results",
       "date": "Jul 2024",
       "url": "https://survey.stackoverflow.co/2024/"
     },
     {
-      "id": "src-pragmatic",
       "name": "The Pragmatic Engineer",
       "title": "How AI Is Changing Software Development",
       "date": "2024",
       "url": "https://newsletter.pragmaticengineer.com/"
     },
     {
-      "id": "src-thoughtworks",
       "name": "ThoughtWorks Technology Radar",
       "title": "Technology Radar Vol. 31",
       "date": "Nov 2024",
@@ -294,7 +293,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -310,7 +309,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -342,7 +341,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 2,
       "isCurrent": false,
       "relationship": "progression",
@@ -403,6 +402,23 @@
         "Learn a backend framework like Node.js or Django"
       ],
       "salary": "$90,930"
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Programmers who understand how code executes at a low level — memory management, input handling, system calls — already think like security engineers. The shift is from building features to identifying how those features can be exploited."
     }
   ],
   "emergingCareers": [
@@ -489,6 +505,24 @@
         "Run Garak against an open-source LLM and document findings in a public GitHub repo",
         "Earn the Microsoft Azure AI Fundamentals (AI-900) certification with focus on responsible AI modules"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is computer programming a stable career with AI taking over coding?",
+      "answer": "Computer Programmer scores 23/100 on AI exposure, one of the lower scores in tech, and BLS projects a 10% employment decline through 2033 as AI tools absorb routine code generation. The role is not disappearing overnight, but the 5,500 annual openings are shrinking and concentrated in organizations that still need programmers to maintain legacy systems and review AI-generated output. Programmers who expand into software development or DevOps are better positioned than those staying in traditional coding-to-spec work."
+    },
+    {
+      "question": "What does a computer programmer earn, and what moves the salary higher?",
+      "answer": "The median salary is $98,670, but programmers who specialize in high-demand languages like Rust, Go, or embedded C, or who transition into software development roles, typically reach $120,000 to $150,000. The biggest salary jump comes from moving beyond writing specifications into owning system design and debugging complex codebases. Programmers with strong code review skills, which are in demand as teams use AI to generate more code, also command a premium."
+    },
+    {
+      "question": "Which programming tasks is AI already handling, and which still need a human?",
+      "answer": "AI tools handle a meaningful share of routine code writing, template generation, and documentation, with automation rates near 30 to 44% in observed usage data. Troubleshooting across teams and debugging complex system interactions show high augmentation rates but low full automation, meaning humans are still in the loop. The work least affected is cross-team problem solving and translating ambiguous business requirements into technical specifications."
+    },
+    {
+      "question": "What skills help a computer programmer stay competitive as AI tools improve?",
+      "answer": "The most durable skill shift is from writing code to evaluating it: catching logic errors in AI-generated output, understanding system context, and debugging across large codebases. Proficiency in AI coding tools like GitHub Copilot is now a baseline expectation, not a differentiator. Programmers who pair coding ability with a domain specialty, such as financial systems, healthcare data, or embedded hardware, are harder to replace than those doing generic application work."
     }
   ]
 }

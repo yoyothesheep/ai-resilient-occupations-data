@@ -116,16 +116,16 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The structural threat to tax preparers is not AI replacing professionals but AI-powered consumer software replacing the client. TurboTax, H&R Block, and similar platforms now handle most straightforward W-2 returns with embedded AI guidance, shrinking the addressable market for simple seasonal prep work [1]. BLS still projects faster-than-average employment growth (5–6%) overall, but that growth is concentrated in small-business, self-employment, and complex return work where software falls short [1]. Thomson Reuters found that 44% of tax firms using generative AI already deploy it daily, compressing the skill floor while raising the ceiling for what clients expect [2].",
+    "body": "The structural threat to tax preparers is not AI replacing professionals but AI-powered consumer software replacing the client. TurboTax, H&R Block, and similar platforms now handle most straightforward W-2 returns with embedded AI guidance, shrinking the addressable market for simple seasonal prep work [U.S. Bureau of Labor Statistics, Sep 2024]. BLS still projects faster-than-average employment growth (5–6%) overall, but that growth is concentrated in small-business, self-employment, and complex return work where software falls short [U.S. Bureau of Labor Statistics, Sep 2024]. Thomson Reuters found that 44% of tax firms using generative AI already deploy it daily, compressing the skill floor while raising the ceiling for what clients expect [Thomson Reuters, Jun 2025].",
     "stat": "44%",
     "statLabel": "of tax firms using generative AI deploy it daily",
     "statSourceName": "Thomson Reuters",
     "statSourceTitle": "2025 Future of Professionals Report",
     "statSourceDate": "Jun 2025",
-    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
+    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals"
   },
   "opportunities": {
-    "body": "The 72.8% augmentation rate on the explaining-tax-laws task is a durable signal: AI surfaces answers quickly, but clients need someone to interpret those answers and connect them to their specific situation [3]. Enrolled Agent (EA) and CPA credentials unlock IRS representation rights, the one category of tax work that software can't perform. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report higher revenue per client [3]. The AICPA sees the profession accelerating toward advisory, where judgment and relationship skills define the value delivered [4].",
+    "body": "The 72.8% augmentation rate on the explaining-tax-laws task is a durable signal: AI surfaces answers quickly, but clients need someone to interpret those answers and connect them to their specific situation [Intuit QuickBooks, Jul 2025]. Enrolled Agent (EA) and CPA credentials unlock IRS representation rights, the one category of tax work that software can't perform. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report higher revenue per client [Intuit QuickBooks, Jul 2025]. The AICPA sees the profession accelerating toward advisory, where judgment and relationship skills define the value delivered [CPA.com / AICPA, Jun 2025].",
     "stat": "93%",
     "statLabel": "of accounting firms use AI to enhance advisory services",
     "statSourceName": "Intuit QuickBooks",
@@ -134,63 +134,69 @@
     "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using whatever AI research tools are built into your tax software platform. Drake, Lacerte, and ProConnect all now include AI-assisted research features. Use them to handle the lookup work so your time goes to the judgment calls AI cannot make [3]. Over the next six months, pursue the Enrolled Agent credential if you do not have it. EA gives unlimited IRS representation rights and positions you for audits, collections, and appeals work that self-service software will never touch. The AICPA is clear that advisory services are where the profession is heading [4].",
-    "thinkingOf": "Do not enter tax prep as a seasonal W-2 filer. That segment is being compressed by consumer software. Instead, target small business, self-employed, and investment-income returns where the tax picture is complex enough that clients need ongoing professional help [1]. Get an AFSP (Annual Filing Season Program) designation first to establish IRS credentials, then pursue the EA exam. Thomson Reuters found that professionals who adopt a visible AI strategy are twice as likely to see revenue growth, entering with both technical credentials and AI fluency puts you ahead of incumbents who are still catching up [2].",
+    "alreadyIn": "Start using whatever AI research tools are built into your tax software platform. Drake, Lacerte, and ProConnect all now include AI-assisted research features. Use them to handle the lookup work so your time goes to the judgment calls AI cannot make [Intuit QuickBooks, Jul 2025]. Over the next six months, pursue the Enrolled Agent credential if you do not have it. EA gives unlimited IRS representation rights and positions you for audits, collections, and appeals work that self-service software will never touch. The AICPA is clear that advisory services are where the profession is heading [CPA.com / AICPA, Jun 2025].",
+    "thinkingOf": "Do not enter tax prep as a seasonal W-2 filer. That segment is being compressed by consumer software. Instead, target small business, self-employed, and investment-income returns where the tax picture is complex enough that clients need ongoing professional help [U.S. Bureau of Labor Statistics, Sep 2024]. Get an AFSP (Annual Filing Season Program) designation first to establish IRS credentials, then pursue the EA exam. Thomson Reuters found that professionals who adopt a visible AI strategy are twice as likely to see revenue growth, entering with both technical credentials and AI fluency puts you ahead of incumbents who are still catching up [Thomson Reuters, Jun 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI isn't taking over our jobs. It's giving us more room to do the work that matters.",
         "attribution": "Dan Luthi, Partner, Ignite Spot Accounting Services",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI is fundamentally reshaping the accounting profession, accelerating the move toward more strategic advisory services.",
         "attribution": "Erik Asgeirsson, President and CEO, CPA.com",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "AI is not going to disrupt the accounting profession, but it will change what an accountant does.",
         "attribution": "Mark Koziel, President and CEO, AICPA",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Organizations with visible AI strategies are twice as likely to experience revenue growth compared to those with informal or ad-hoc approaches.",
         "attribution": "2025 Future of Professionals Report, Thomson Reuters",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "Jun 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Tax Preparers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/tax-preparers.htm"
     },
     {
-      "id": "src-2",
       "name": "Thomson Reuters",
       "title": "2025 Future of Professionals Report",
       "date": "Jun 2025",
-      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     },
     {
-      "id": "src-3",
       "name": "Intuit QuickBooks",
       "title": "Accountants Embrace AI and Strategic Advisory Services to Fuel Growth, According to 2025 Intuit QuickBooks Survey",
       "date": "Jul 2025",
       "url": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
     },
     {
-      "id": "src-4",
       "name": "CPA.com / AICPA",
       "title": "CPA.com Issues 2025 AI in Accounting Report",
       "date": "Jun 2025",
       "url": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
+    },
+    {
+      "name": "Ignite Spot Accounting",
+      "title": "Empowering Accountants with AI",
+      "date": "2024",
+      "url": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent"
     }
   ],
   "emergingCareers": [
@@ -423,6 +429,24 @@
         "Complete specialized training for Bookkeeping, Accounting, and Auditing Clerks",
         "Transfer internally to a functional niche team"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is tax preparation a stable career with AI and software handling more returns?",
+      "answer": "Tax Preparer scores 40/100 on AI exposure, with 10,400 annual openings and 4% projected growth. Tax software has automated straightforward W-2 returns, but complex filings involving self-employment, rental income, trusts, or business entities still require human judgment. The roles under pressure are seasonal preparers doing simple returns; the roles growing are those who combine tax preparation with year-round planning and advisory work."
+    },
+    {
+      "question": "What does a tax preparer earn, and how does specialization affect income?",
+      "answer": "The median salary is $50,560, but enrolled agents and CPAs who specialize in small business taxes, estate planning, or IRS representation typically earn $70,000 to $100,000. Tax preparers who build a book of business with recurring clients, rather than working seasonal volume, earn more per hour and work year-round. The Enrolled Agent credential is the highest exam-based designation available without a CPA license and directly unlocks IRS representation work."
+    },
+    {
+      "question": "Which tax preparation tasks is AI handling well, and where does human expertise still matter?",
+      "answer": "AI tools now classify common deductions, identify missing forms, and flag inconsistencies in W-2 and 1099 data reliably for standard filers. Where they fall short is interpreting ambiguous IRS guidance for edge cases, advising clients on restructuring income to minimize tax liability, and representing clients in audits. The 44% of tax firms using generative AI daily are mostly using it to accelerate document review, not to replace the advisor who explains strategy to the client."
+    },
+    {
+      "question": "What credentials and skills help tax preparers stay competitive?",
+      "answer": "The IRS Annual Filing Season Program is the baseline credential for unenrolled preparers; the Enrolled Agent designation is the most direct path to year-round advisory work and IRS representation. Tax preparers who develop expertise in a specific business sector, construction, restaurants, or medical practices, can charge premium rates and build stable referral networks. Fluency in professional-grade software like Drake or Lacerte signals to CPA firms and tax practices that a candidate can handle complex client work without hand-holding."
     }
   ]
 }

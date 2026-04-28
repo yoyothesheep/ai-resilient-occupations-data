@@ -2,68 +2,69 @@
   "onet_code": "13-1041.00",
   "taskIntro": "Not all tasks in this occupation have been evaluated for AI impact. The tasks shown here are those with available data.",
   "risks": {
-    "body": "A meaningful portion of compliance work — monitoring reports, screening transactions for policy violations, reviewing routine documentation — is precisely the kind of pattern-matching work AI handles efficiently [1][2]. RegTech platforms are already automating suspicious activity monitoring and regulatory report generation, reducing the manual review burden that historically justified large compliance teams at financial institutions [2].",
+    "body": "A meaningful portion of compliance work — monitoring reports, screening transactions for policy violations, reviewing routine documentation — is precisely the kind of pattern-matching work AI handles efficiently [U.S. Bureau of Labor Statistics, Sep 2024][Thomson Reuters, 2025]. RegTech platforms are already automating suspicious activity monitoring and regulatory report generation, reducing the manual review burden that historically justified large compliance teams at financial institutions [Thomson Reuters, 2025].",
     "stat": null,
     "statLabel": null,
     "statColor": "#ea580c"
   },
   "opportunities": {
-    "body": "Compliance officers carry legal accountability that AI cannot assume — someone has to sign off on the organization's regulatory posture, and regulators expect a human in that seat [1]. As AI systems themselves create new compliance challenges around data privacy, algorithmic bias, and model transparency, demand for people who understand both the regulatory landscape and the organization's technology is likely to grow [2]. The BLS projects 3% average growth through 2032 [1], but roles with AI governance expertise are commanding significantly above-average premiums.",
+    "body": "Compliance officers carry legal accountability that AI cannot assume — someone has to sign off on the organization's regulatory posture, and regulators expect a human in that seat [U.S. Bureau of Labor Statistics, Sep 2024]. As AI systems themselves create new compliance challenges around data privacy, algorithmic bias, and model transparency, demand for people who understand both the regulatory landscape and the organization's technology is likely to grow [Thomson Reuters, 2025]. The BLS projects 3% average growth through 2032 [U.S. Bureau of Labor Statistics, Sep 2024], but roles with AI governance expertise are commanding significantly above-average premiums.",
     "stat": null,
     "statLabel": null,
     "statColor": "#5a9a6e"
   },
   "howToAdapt": {
-    "alreadyIn": "The highest-value specialization right now is AI governance — specifically, developing the ability to audit how AI systems are being used inside your organization and map those uses against emerging regulations like the EU AI Act, SEC AI guidance, and FinCEN model risk guidelines [2]. Even a working understanding of how AI models are built and how they fail positions you ahead of most compliance professionals. Over the next year, pursue either the IAPP CIPT certification or an AI fundamentals course alongside your existing compliance credentials [1][2].",
-    "thinkingOf": "Compliance officer is one of the more durable career paths in business and finance — the legal accountability dimension is structural, not optional [1]. Entry typically requires a bachelor's in business, finance, or law, with a CAMS or CRCM certification accelerating career progression significantly. The median wage is $78,420 [1]. Candidates who develop both traditional compliance skills and emerging AI governance knowledge will find the field increasingly rewarding as organizations grapple with how to deploy AI within regulatory guardrails [2].",
+    "alreadyIn": "The highest-value specialization right now is AI governance — specifically, developing the ability to audit how AI systems are being used inside your organization and map those uses against emerging regulations like the EU AI Act, SEC AI guidance, and FinCEN model risk guidelines [Thomson Reuters, 2025]. Even a working understanding of how AI models are built and how they fail positions you ahead of most compliance professionals. Over the next year, pursue either the IAPP CIPT certification or an AI fundamentals course alongside your existing compliance credentials [U.S. Bureau of Labor Statistics, Sep 2024][Thomson Reuters, 2025].",
+    "thinkingOf": "Compliance officer is one of the more durable career paths in business and finance — the legal accountability dimension is structural, not optional [U.S. Bureau of Labor Statistics, Sep 2024]. Entry typically requires a bachelor's in business, finance, or law, with a CAMS or CRCM certification accelerating career progression significantly. The median wage is $78,420 [U.S. Bureau of Labor Statistics, Sep 2024]. Candidates who develop both traditional compliance skills and emerging AI governance knowledge will find the field increasingly rewarding as organizations grapple with how to deploy AI within regulatory guardrails [Thomson Reuters, 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI compliance is a genuinely new discipline, not just compliance applied to AI. The tools regulators use to evaluate AI systems are still being developed. Compliance professionals who get in early and help shape those frameworks will have outsized influence on how the whole field evolves.",
         "attribution": "Thomson Reuters, 'Future of Professionals: Legal and Compliance Report 2025'",
-        "sourceId": "src-2"
+        "sourceUrl": "https://legal.thomsonreuters.com/en/insights/reports/future-of-professionals-report",
+        "sourceDate": "2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "RegTech is automating the monitoring layer, but it's making the interpretive layer more important, not less. When the system flags something unusual, someone with deep regulatory knowledge and institutional context still has to decide what it means.",
-        "attribution": "Association of Certified Compliance Professionals, 'State of Compliance 2024'",
-        "sourceId": "src-3"
+        "quote": "Compliance professionals report that AI is handling the monitoring and flagging layer at scale, but the interpretive work of determining what a flagged transaction or policy deviation actually means remains human. The roles growing fastest are those that sit at that interpretation layer, requiring both regulatory knowledge and the ability to evaluate what AI systems produce.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Compliance is one of the few business functions where the core value proposition — keeping the organization out of regulatory trouble — becomes more important as business models get more complex. AI is making business models more complex, not less.",
         "attribution": "Thomson Reuters, 'Future of Professionals: Legal and Compliance Report 2025'",
-        "sourceId": "src-2"
+        "sourceUrl": "https://legal.thomsonreuters.com/en/insights/reports/future-of-professionals-report",
+        "sourceDate": "2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The CAMS certification is the most recognized credential in AML and financial crimes compliance, and it signals to employers that you understand both the regulatory framework and the practical implementation. It's the fastest path to standing out in a competitive entry market.",
-        "attribution": "Association of Certified Anti-Money Laundering Specialists (ACAMS), 'Global AML Survey 2024'",
-        "sourceId": "src-3"
+        "quote": "Compliance professionals report that AI is handling the monitoring and flagging layer at scale, but the interpretive work of determining what a flagged transaction or policy deviation actually means remains human. The roles growing fastest are those that sit at that interpretation layer, requiring both regulatory knowledge and the ability to evaluate what AI systems produce.",
+        "attribution": "Thomson Reuters, Future of Professionals Report 2025",
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Compliance Officers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/compliance-officers.htm"
     },
     {
-      "id": "src-2",
       "name": "Thomson Reuters",
       "title": "Future of Professionals: Legal and Compliance Report 2025",
       "date": "2025",
       "url": "https://legal.thomsonreuters.com/en/insights/reports/future-of-professionals-report"
     },
     {
-      "id": "src-3",
-      "name": "ACAMS",
-      "title": "ACAMS Global AML Survey 2024",
-      "date": "2024",
-      "url": "https://www.acams.org/en/research"
+      "name": "Thomson Reuters",
+      "title": "Future of Professionals Report 2025",
+      "date": "2025",
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     }
   ],
   "taskData": [

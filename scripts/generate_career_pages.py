@@ -22,7 +22,7 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-from loaders import load_scores, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
+from loaders import load_scores, to_score, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
 CLUSTERS_CSV      = "data/career_clusters/clusters.csv"
 SITE_DIR          = "../ai-resilient-occupations-site"
 CAREERS_DATA_DIR  = os.path.join(SITE_DIR, "src/data/careers")
@@ -95,21 +95,49 @@ def slug_to_component(slug: str) -> str:
     return "".join(p.capitalize() for p in slug.split("-")) + "Page"
 
 
-def citations_to_jsx(text: str) -> str:
-    """Convert [1] inline citations to JSX anchor tags."""
-    def replace(m):
-        n = m.group(1)
-        return (
-            f'<sup><a href="#src-{n}" '
-            f'className="text-primary font-bold hover:underline">[{n}]</a></sup>'
-        )
-    return re.sub(r"\[(\d+)\]", replace, text)
+def citations_to_jsx(text: str, sources: list = None) -> str:
+    """Convert inline citations to JSX anchor tags.
+
+    Handles two formats:
+    - New: [Name, Date] → inline hyperlink to the source URL
+    - Legacy: [N] → superscript link to the source URL (backward compat)
+    """
+    sources = sources or []
+    url_by_name = {s["name"]: s["url"] for s in sources if s.get("name") and s.get("url")}
+
+    def replace_named(m):
+        name = m.group(1).strip()
+        date = m.group(2).strip()
+        url = url_by_name.get(name, "")
+        label = f"{name}, {date}"
+        if url:
+            return (
+                f'[<a href="{url}" target="_blank" rel="noopener noreferrer" '
+                f'className="text-primary hover:underline">{label}</a>]'
+            )
+        return f"[{label}]"
+
+    text = re.sub(r'\[([^,\]\d][^,\]]*),\s*([^\]]+)\]', replace_named, text)
+
+    def replace_numeric(m):
+        n = int(m.group(1))
+        src = sources[n - 1] if n <= len(sources) else None
+        url = src["url"] if src and src.get("url") else ""
+        if url:
+            return (
+                f'<sup><a href="{url}" target="_blank" rel="noopener noreferrer" '
+                f'className="text-primary font-bold hover:underline">[{n}]</a></sup>'
+            )
+        return f"[{n}]"
+
+    text = re.sub(r"\[(\d+)\]", replace_numeric, text)
+    return text
 
 
-def text_to_jsx_fragment(text: str, indent: int = 2) -> str:
-    """Convert plain text (with [n] citations) to a JSX fragment string."""
+def text_to_jsx_fragment(text: str, indent: int = 2, sources: list = None) -> str:
+    """Convert plain text (with inline citations) to a JSX fragment string."""
     text = text.replace("&", "&amp;").replace('"', "&quot;")
-    text = citations_to_jsx(text)
+    text = citations_to_jsx(text, sources)
     pad = "  " * indent
     return f"(\n{pad}  <>\n{pad}    {text}\n{pad}  </>\n{pad})"
 
@@ -259,13 +287,12 @@ def build_career_cluster(card: dict, cluster_roles: dict, scores: dict) -> str:
         members = get_cluster_members(cluster_id, cluster_roles)
         for m in members:
             m_code = m["onet_code"]
-            m_score = scores.get(m_code, {}).get("role_resilience_score")
             m_simple = scores.get(m_code, {}).get("altpath simple title", "").strip()
             node = {
                 "level": int(m["level"]),
                 "code": m_code,
                 "title": m_simple if m_simple else m["occupation"],
-                "score": float(m_score) if m_score else None,
+                "score": to_score(scores.get(m_code, {})),
             }
             # Merge transition data (fit, steps, relationship, openings, growth) if available
             t = transition_by_code.get(m_code, {})
@@ -286,10 +313,12 @@ def build_career_cluster(card: dict, cluster_roles: dict, scores: dict) -> str:
         adj_level = adj.get("level")
         if adj_level is None and adj_code in cluster_roles:
             adj_level = int(cluster_roles[adj_code]["level"])
-        adj_score = scores.get(adj_code, {}).get("role_resilience_score")
         node = dict(adj)
+        adj_simple = scores.get(adj_code, {}).get("altpath simple title", "").strip()
+        if adj_simple:
+            node["title"] = adj_simple
         node["level"] = adj_level
-        node["score"] = float(adj_score) if adj_score else None
+        node["score"] = to_score(scores.get(adj_code, {}))
         nodes.append(build_cluster_node(node, is_current=False, is_emerging=False))
 
     # 3. Emerging careers
@@ -312,15 +341,23 @@ def build_quote(q: dict) -> str:
     persona = q.get("persona", "alreadyIn")
     quote = q.get("quote", "")
     attribution = q.get("attribution", "")
-    source_id = q.get("sourceId", "src-1")
-    return (
-        f"      {{\n"
-        f"        persona: {str_to_tsx_string(persona)} as const,\n"
-        f"        quote: {str_to_tsx_string(quote)},\n"
-        f"        attribution: {str_to_tsx_string(attribution)},\n"
-        f"        sourceId: {str_to_tsx_string(source_id)},\n"
-        f"      }}"
-    )
+    source_url = q.get("sourceUrl", "")
+    source_date = q.get("sourceDate", "")
+    source_id = q.get("sourceId", "")  # legacy only
+    lines = [
+        f"      {{",
+        f"        persona: {str_to_tsx_string(persona)} as const,",
+        f"        quote: {str_to_tsx_string(quote)},",
+        f"        attribution: {str_to_tsx_string(attribution)},",
+    ]
+    if source_url:
+        lines.append(f"        sourceUrl: {str_to_tsx_string(source_url)},")
+    elif source_id:
+        lines.append(f"        sourceId: {str_to_tsx_string(source_id)},")
+    if source_date:
+        lines.append(f"        sourceDate: {str_to_tsx_string(source_date)},")
+    lines.append(f"      }}")
+    return "\n".join(lines)
 
 
 def build_source(s: dict) -> str:
@@ -333,6 +370,112 @@ def build_source(s: dict) -> str:
         f"      url: {str_to_tsx_string(s.get('url', ''))},\n"
         f"    }}"
     )
+
+
+
+def audit_card(card: dict, cluster_roles: dict = None, collect_urls: bool = False) -> list[dict]:
+    """Structural audit of a card before page generation. No HTTP requests.
+
+    Block A — content checks: missing sections, thin quotes, missing transition data.
+    Block B — source checks: blank URLs, orphaned quote URLs, unresolved inline citations.
+
+    If collect_urls=True, returns {code, field, url, title} dicts for all URLs in the card
+    (used by --verify). Content warnings are suppressed in that mode.
+    """
+    import re
+    code = card.get("onet_code", "?")
+    url_entries = []
+
+    # ── Block A: Content checks ───────────────────────────────────────────────
+
+    if not collect_urls:
+        hta = card.get("howToAdapt") or {}
+        if not hta.get("alreadyIn"):
+            print(f"  ⚠  {code} howToAdapt.alreadyIn is empty — run generate_next_steps.py --section howToAdapt")
+        if not hta.get("thinkingOf"):
+            print(f"  ⚠  {code} howToAdapt.thinkingOf is empty — run generate_next_steps.py --section howToAdapt")
+
+        quotes = hta.get("quotes") or []
+        for persona in ("alreadyIn", "thinkingOf"):
+            persona_quotes = [q for q in quotes if q.get("persona") == persona]
+            if len(persona_quotes) < 2:
+                print(f"  ⚠  {code} howToAdapt.quotes has {len(persona_quotes)} quote(s) for '{persona}' (expected 2)")
+
+        if not card.get("emergingCareers"):
+            print(f"  ⚠  {code} emergingCareers is empty — run generate_emerging_roles.py")
+
+        if cluster_roles:
+            cluster_row = cluster_roles.get(code)
+            if cluster_row:
+                current_level = int(cluster_row["level"])
+                cluster_id = cluster_row["cluster_id"]
+                members = get_cluster_members(cluster_id, cluster_roles)
+                transition_by_code = {n["code"]: n for n in card.get("careerCluster", []) if n.get("code")}
+                for m in members:
+                    m_code = m["onet_code"]
+                    if m_code == code:
+                        continue
+                    m_level = int(m["level"])
+                    if m_level > current_level or m_level == current_level - 1:
+                        t = transition_by_code.get(m_code, {})
+                        if not t.get("fit") or not t.get("steps"):
+                            direction = "above" if m_level > current_level else "1 below"
+                            print(f"  ⚠  {code} career map: '{m['occupation']}' (level {m_level}, {direction}) missing transition data — run adjacent_roles.py")
+
+    # ── Block B: Source checks ────────────────────────────────────────────────
+
+    sources = card.get("sources") or []
+    source_urls = {s.get("url") for s in sources if s.get("url")}
+    source_names = {s.get("name", "").lower() for s in sources if s.get("name")}
+
+    quotes = (card.get("howToAdapt") or {}).get("quotes") or []
+    for q in quotes:
+        attr = q.get("attribution", "")[:60]
+        url = q.get("sourceUrl", "")
+        if not url:
+            if not collect_urls:
+                print(f"  ⚠  {code} quote blank sourceUrl: \"{attr}\"")
+        elif collect_urls:
+            url_entries.append({"code": code, "field": "quotes.sourceUrl", "url": url, "title": attr})
+        elif url not in source_urls:
+            print(f"  ⚠  {code} quote sourceUrl orphaned (not in sources[]): {url}")
+
+    for i, s in enumerate(sources):
+        url = s.get("url", "")
+        if url and collect_urls:
+            url_entries.append({"code": code, "field": f"sources[{i}].url", "url": url,
+                                "title": s.get("title", s.get("name", ""))})
+
+    for j, ec in enumerate(card.get("emergingCareers") or []):
+        stat = ec.get("stat") or {}
+        url = stat.get("sourceUrl", "")
+        title = stat.get("sourceTitle", ec.get("title", ""))
+        if not url:
+            if not collect_urls:
+                print(f"  ⚠  {code} emergingCareers[{j}] blank stat.sourceUrl: \"{ec.get('title','')[:50]}\"")
+        elif collect_urls:
+            url_entries.append({"code": code, "field": f"emergingCareers[{j}].stat.sourceUrl",
+                                "url": url, "title": title})
+
+    body_fields = [
+        ("risks.body", (card.get("risks") or {}).get("body", "")),
+        ("opportunities.body", (card.get("opportunities") or {}).get("body", "")),
+        ("howToAdapt.alreadyIn", (card.get("howToAdapt") or {}).get("alreadyIn", "")),
+        ("howToAdapt.thinkingOf", (card.get("howToAdapt") or {}).get("thinkingOf", "")),
+    ]
+    for field, text in body_fields:
+        for match in re.finditer(r'\[([^\],]+),\s*[A-Z][a-z]{2}\s+\d{4}\]', text):
+            name = match.group(1).strip().lower()
+            if name not in source_names:
+                if not collect_urls:
+                    print(f"  ⚠  {code} {field} cites \"{match.group(1)}\" but no matching entry in sources[]")
+
+    return url_entries
+
+
+def audit_card_sources(card: dict, collect_urls: bool = False) -> list[dict]:
+    """Deprecated alias for audit_card(). Use audit_card() directly."""
+    return audit_card(card, collect_urls=collect_urls)
 
 
 def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: str, title: str = "", faq_pairs: list = None) -> str:
@@ -379,19 +522,8 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
     task_rows = card.get("taskData", [])
     sources = list(card.get("sources", []))
 
-    # Merge stat sources into sources list (dedup by url)
-    existing_urls = {s.get("url") for s in sources}
-    for section, key in [(risks, "risks"), (opps, "opportunities")]:
-        url = section.get("statSourceUrl")
-        if url and url not in existing_urls:
-            sources.append({
-                "id": f"src-stat-{key}",
-                "name": section.get("statSourceName", ""),
-                "title": section.get("statSourceTitle", ""),
-                "date": section.get("statSourceDate", ""),
-                "url": url,
-            })
-            existing_urls.add(url)
+    # Build sources lookup for citation link injection
+    sources_for_citations = sources
 
     # Build job titles lists
     titles_str = "\n".join(f"    {str_to_tsx_string(t)}," for t in job_titles)
@@ -402,9 +534,6 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
 
     # Build quotes
     quotes_str = ",\n".join(build_quote(q) for q in quotes)
-
-    # Build sources
-    sources_str = ",\n".join(build_source(s) for s in sources)
 
     # Build career cluster
     career_cluster_str = build_career_cluster(card, cluster_roles, scores)
@@ -419,6 +548,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         f"  salary: {str_to_tsx_string(salary)},",
         f"  openings: {str_to_tsx_string(openings)},",
         f"  growth: {str_to_tsx_string(growth)},",
+        f"  publishedDate: \"{__import__('datetime').date.today().isoformat()}\",",
         f"  description:",
         f"    {str_to_tsx_string(description)},",
         f"  jobTitles: [",
@@ -427,7 +557,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         f"  emergingTitles: [",
         emerging_titles_str,
         f"  ],",
-        f"  keyDrivers: {text_to_jsx_fragment(key_drivers, indent=1)},",
+        f"  keyDrivers: {text_to_jsx_fragment(key_drivers, indent=1, sources=sources_for_citations)},",
     ]
 
     if task_intro:
@@ -446,7 +576,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
             f"    statSourceDate: {risks_stat_source_date},",
             f"    statSourceUrl: {risks_stat_source_url},",
         ]
-    risks_lines.append(f"    body: {text_to_jsx_fragment(risks_body, indent=2)},")
+    risks_lines.append(f"    body: {text_to_jsx_fragment(risks_body, indent=2, sources=sources_for_citations)},")
     risks_lines.append(f"  }},")
 
     opps_lines = [
@@ -462,14 +592,14 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
             f"    statSourceDate: {opps_stat_source_date},",
             f"    statSourceUrl: {opps_stat_source_url},",
         ]
-    opps_lines.append(f"    body: {text_to_jsx_fragment(opps_body, indent=2)},")
+    opps_lines.append(f"    body: {text_to_jsx_fragment(opps_body, indent=2, sources=sources_for_citations)},")
     opps_lines.append(f"  }},")
 
     lines += risks_lines + opps_lines
     lines += [
         f"  howToAdapt: {{",
-        f"    alreadyIn: {text_to_jsx_fragment(already_in, indent=2)},",
-        f"    thinkingOf: {text_to_jsx_fragment(thinking_of, indent=2)},",
+        f"    alreadyIn: {text_to_jsx_fragment(already_in, indent=2, sources=sources_for_citations)},",
+        f"    thinkingOf: {text_to_jsx_fragment(thinking_of, indent=2, sources=sources_for_citations)},",
     ]
 
     if quotes:
@@ -485,9 +615,6 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         tasks_str,
         f"  ],",
         f"  careerCluster: {career_cluster_str},",
-        f"  sources: [",
-        sources_str,
-        f"  ],",
     ]
 
     if faq_pairs:
@@ -643,12 +770,13 @@ def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
     print(f"\n── {title} ({onet_code})")
     print(f"   slug: {slug}")
 
-    faq_pairs = []
-    if faq_mode in ("api", "inline"):
+    faq_pairs = card.get("faqs") or []
+    if faq_mode in ("api", "inline") and not faq_pairs:
         faq_pairs = generate_faqs(card, scores, is_inline=(faq_mode == "inline"),
                                   client=_api_client if faq_mode == "api" else None)
         print(f"   faqs: {len(faq_pairs)} pairs")
 
+    audit_card(card, cluster_roles=cluster_roles)
     data_content = generate_data_file(card, cluster_roles, scores, var_name, title=title, faq_pairs=faq_pairs)
     route_content = generate_route_file(slug, var_name, component_name, industry_slug, industry_display_name)
 
@@ -674,6 +802,78 @@ def process_occupation(onet_code: str, cards: dict, cluster_roles: dict,
     return True
 
 
+# ── Verify protocol ───────────────────────────────────────────────────────────
+
+def _run_verify(cards: dict) -> None:
+    """Collect all source URLs from all cards, emit VERIFY_URLS block, read results,
+    patch dead URLs in card JSON files, rerun audit.
+
+    Protocol:
+      1. Print VERIFY_URLS_START, one JSON line per URL, VERIFY_URLS_END.
+      2. Read one JSON result line per URL from stdin:
+         {"url": "...", "status": "found"|"404", "correct_url": "..."|null}
+      3. For status=404: if correct_url provided, patch card JSON; else warn.
+    """
+    from cards import load_cards as _load_cards, save_card, CARDS_DIR
+    import pathlib
+
+    all_entries = []
+    for code, card in cards.items():
+        entries = audit_card_sources(card, collect_urls=True)
+        all_entries.extend(entries)
+
+    # Deduplicate by URL
+    seen = {}
+    deduped = []
+    for e in all_entries:
+        if e["url"] not in seen:
+            seen[e["url"]] = e
+            deduped.append(e)
+
+    if not deduped:
+        print("  ✓ No URLs to verify")
+        return
+
+    print("\nVERIFY_URLS_START")
+    for e in deduped:
+        print(json.dumps(e))
+    print("VERIFY_URLS_END")
+    print(f"# {len(deduped)} URLs above. Read results from stdin (one JSON line per URL):")
+
+    results = {}
+    for _ in deduped:
+        try:
+            line = sys.stdin.readline().strip()
+            if not line:
+                continue
+            r = json.loads(line)
+            results[r["url"]] = r
+        except (json.JSONDecodeError, KeyError):
+            continue
+
+    patched_codes = set()
+    for e in deduped:
+        r = results.get(e["url"])
+        if not r:
+            continue
+        if r.get("status") == "404":
+            correct = r.get("correct_url")
+            if correct:
+                # Patch the card JSON file directly
+                p = pathlib.Path(CARDS_DIR) / f"{e['code']}.json"
+                if p.exists():
+                    text = p.read_text()
+                    text = text.replace(e["url"], correct)
+                    p.write_text(text)
+                    patched_codes.add(e["code"])
+                    print(f"  ✓ Patched {e['code']}: {e['url']} → {correct}")
+            else:
+                print(f"  ⚠  {e['code']} dead URL, no replacement: {e['url']}")
+
+    if patched_codes:
+        print(f"\n  Patched {len(patched_codes)} cards. Re-run generate_career_pages.py --force to regenerate TSX.")
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main():
@@ -683,14 +883,15 @@ def main():
     group.add_argument("--cluster", help="All occupations in a cluster")
     group.add_argument("--all", action="store_true", help="All occupations in cards JSONL")
     parser.add_argument("--force", action="store_true", help="Overwrite existing files")
-    faq_group = parser.add_mutually_exclusive_group()
-    faq_group.add_argument("--api", action="store_true", help="Generate FAQs via Claude API (haiku)")
-    faq_group.add_argument("--inline", action="store_true", help="Generate FAQs interactively via stdin")
+    parser.add_argument("--verify", action="store_true",
+                        help="Emit VERIFY_URLS block for all source URLs; read web-search results from stdin and patch dead URLs")
+    parser.add_argument("--inline", action="store_true", help="Generate FAQs interactively via stdin instead of API")
+    parser.add_argument("--skip-faqs", action="store_true", help="Skip FAQ generation (use existing faqs from card or leave empty)")
     args = parser.parse_args()
 
-    faq_mode = "api" if args.api else "inline" if args.inline else "skip"
+    faq_mode = "skip" if args.skip_faqs else ("inline" if args.inline else "api")
 
-    # Initialize API client once if needed
+    # Initialize API client unless --inline
     global _api_client
     _api_client = None
     if faq_mode == "api":
@@ -724,6 +925,9 @@ def main():
     elif args.all:
         for code in cards:
             process_occupation(code, cards, cluster_roles, scores, clusters, force=args.force, faq_mode=faq_mode)
+
+    if args.verify:
+        _run_verify(cards)
 
     _regenerate_registry()
     print("\n✓ Done")

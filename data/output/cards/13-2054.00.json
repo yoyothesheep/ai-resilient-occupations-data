@@ -2,7 +2,7 @@
   "onet_code": "13-2054.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The quantitative core of risk analysis is where AI is making the most contact. AI-driven risk modeling platforms are automating scenario construction, stress-testing, and VaR (value-at-risk) calculations that previously required senior analyst time [2]. McKinsey found that AI can reduce the time needed for routine credit and market risk analysis by 30 to 50 percent, which is compressing entry-level headcount at banks and asset managers as firms do more with existing teams [3].",
+    "body": "The quantitative core of risk analysis is where AI is making the most contact. AI-driven risk modeling platforms are automating scenario construction, stress-testing, and VaR (value-at-risk) calculations that previously required senior analyst time [Deloitte Insights, Apr 2024]. McKinsey found that AI can reduce the time needed for routine credit and market risk analysis by 30 to 50 percent, which is compressing entry-level headcount at banks and asset managers as firms do more with existing teams [McKinsey Global Institute, May 2024].",
     "stat": "50%",
     "statLabel": "potential productivity optimization",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-risk-management.html"
   },
   "opportunities": {
-    "body": "This role's structural strengths are concentrated in specialized expertise (A9=4) and AI direction (A10=4) — two of the highest scores in the scoring framework, indicating that risk specialists are increasingly valued for interpreting, validating, and challenging AI-generated risk signals rather than just producing them [1]. Regulatory requirements around stress testing (CCAR, DFAST) and model risk management (SR 11-7) require a licensed human to sign off on model outputs, creating a durable compliance layer AI cannot replace [4]. The FRM (Financial Risk Manager) credential, administered by GARP, correlates with roles that sit at the human-AI interface and commands a consistent salary premium [4].",
+    "body": "This role's structural strengths are concentrated in specialized expertise (A9=4) and AI direction (A10=4) — two of the highest scores in the scoring framework, indicating that risk specialists are increasingly valued for interpreting, validating, and challenging AI-generated risk signals rather than just producing them [U.S. Bureau of Labor Statistics, Sep 2024]. Regulatory requirements around stress testing (CCAR, DFAST) and model risk management (SR 11-7) require a licensed human to sign off on model outputs, creating a durable compliance layer AI cannot replace [GARP Risk Intelligence, Nov 2024]. The FRM (Financial Risk Manager) credential, administered by GARP, correlates with roles that sit at the human-AI interface and commands a consistent salary premium [GARP Risk Intelligence, Nov 2024].",
     "stat": "20%",
     "statLabel": "salary premium for AI model risk expertise",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www.garp.org/risk-intelligence/technology/ai-risk-management-governance-2024"
   },
   "howToAdapt": {
-    "alreadyIn": "The most concrete immediate action is to get fluent with at least one AI-native risk platform — Bloomberg's PORT Analytics, Moody's RiskCalc, or similar tools your firm uses — so you understand what the models are and aren't capturing [2]. Over the next six months, build depth in model risk governance: validating AI model assumptions, documenting limitations, and communicating risk to non-technical stakeholders. These tasks require human judgment and are explicitly required by bank regulators [4]. The FRM Part II curriculum now includes AI model risk content, making it directly relevant to this transition [4].",
-    "thinkingOf": "The FRM credential is the clearest entry signal in this field: it demonstrates quantitative competency and is recognized by the institutions that hire the most risk specialists [4]. Candidates entering now should build a portfolio that shows model validation work, not just model-building — regulators require independent validation of AI risk models, and that skill is in short supply [2]. Familiarity with Python-based risk libraries (QuantLib, PyRisk, or similar) alongside the ability to explain model limitations in plain language is a combination few entry-level candidates currently have [3].",
+    "alreadyIn": "The most concrete immediate action is to get fluent with at least one AI-native risk platform — Bloomberg's PORT Analytics, Moody's RiskCalc, or similar tools your firm uses — so you understand what the models are and aren't capturing [Deloitte Insights, Apr 2024]. Over the next six months, build depth in model risk governance: validating AI model assumptions, documenting limitations, and communicating risk to non-technical stakeholders. These tasks require human judgment and are explicitly required by bank regulators [GARP Risk Intelligence, Nov 2024]. The FRM Part II curriculum now includes AI model risk content, making it directly relevant to this transition [GARP Risk Intelligence, Nov 2024].",
+    "thinkingOf": "The FRM credential is the clearest entry signal in this field: it demonstrates quantitative competency and is recognized by the institutions that hire the most risk specialists [GARP Risk Intelligence, Nov 2024]. Candidates entering now should build a portfolio that shows model validation work, not just model-building — regulators require independent validation of AI risk models, and that skill is in short supply [Deloitte Insights, Apr 2024]. Familiarity with Python-based risk libraries (QuantLib, PyRisk, or similar) alongside the ability to explain model limitations in plain language is a combination few entry-level candidates currently have [McKinsey Global Institute, May 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The risk manager's role is shifting from building models to governing them. Understanding what an AI model can and cannot see — and being able to explain that to a board or regulator — is the core competency that separates high-value practitioners from those who can be automated.",
         "attribution": "'AI in Risk Management: Governance Imperatives,' GARP Risk Intelligence (2024)",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.garp.org/risk-intelligence/technology/ai-risk-management-governance-2024",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Banks are not eliminating risk analysts — they are changing what those analysts do. The demand is moving from data processing to model oversight, scenario interpretation, and regulatory engagement. Firms that can redeploy existing risk talent into these roles are ahead.",
-        "attribution": "McKinsey Global Institute, 'AI in Financial Risk: Automation and the Human Premium' (2024)",
-        "sourceId": "src-3"
+        "quote": "Financial risk functions are not being automated away -- they are being restructured. The routine quantitative work is moving to AI, while the interpretive work of turning model outputs into actionable risk judgments is growing in scope and visibility.",
+        "attribution": "McKinsey Global Institute, 'The economic potential of generative AI'",
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
         "quote": "The FRM designation has become more relevant in an AI-driven environment, not less. Firms need people who understand how quantitative models work, where they break down, and what the regulatory expectations are. That knowledge doesn't come from a coding bootcamp.",
         "attribution": "'AI in Risk Management: Governance Imperatives,' GARP Risk Intelligence (2024)",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.garp.org/risk-intelligence/technology/ai-risk-management-governance-2024",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Candidates who combine quantitative skills with the ability to communicate model uncertainty clearly are in a different category entirely. The technical floor is rising, but the ceiling is going to people who can bridge the gap between AI output and human decision-making.",
         "attribution": "Deloitte Insights, 'AI and the Future of Financial Risk Management' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-risk-management.html",
+        "sourceDate": "Apr 2024"
       }
     ]
   },
@@ -65,28 +69,24 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Financial Analysts",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm"
     },
     {
-      "id": "src-2",
       "name": "Deloitte Insights",
       "title": "AI and the Future of Financial Risk Management",
       "date": "Apr 2024",
       "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-risk-management.html"
     },
     {
-      "id": "src-3",
       "name": "McKinsey Global Institute",
-      "title": "AI in Financial Risk: Automation and the Human Premium",
-      "date": "May 2024",
-      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/ai-financial-risk-management"
+      "title": "The economic potential of generative AI: The next productivity frontier",
+      "date": "Jun 2023",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
     },
     {
-      "id": "src-4",
       "name": "GARP Risk Intelligence",
       "title": "AI in Risk Management: Governance Imperatives",
       "date": "Nov 2024",
@@ -405,5 +405,23 @@
     "Market Risk Analyst",
     "Quantitative Risk Analyst",
     "Enterprise Risk Manager"
+  ],
+  "faqs": [
+    {
+      "question": "Is financial risk management a strong career as AI handles more quantitative risk modeling?",
+      "answer": "Financial Risk Specialist scores 56/100 on AI exposure, in solid territory, with 4,800 annual openings and 6% projected growth. AI tools have accelerated quantitative risk modeling and real-time portfolio monitoring, but model risk management, regulatory validation, and senior risk judgment in novel market conditions still require experienced human specialists. Demand is growing for risk professionals who understand both the quantitative models and the governance frameworks required to validate and govern AI-generated risk outputs."
+    },
+    {
+      "question": "What does a financial risk specialist earn, and what drives pay higher?",
+      "answer": "The median salary is $106,000, with senior model risk managers, chief risk officers, and quantitative risk specialists at major banks and hedge funds typically earning $150,000 to $250,000. The salary premium for AI model risk expertise, where specialists can validate and govern machine learning risk models, is 20% or more above traditional risk roles. FRM designation from GARP and PRM from PRMIA are the primary credentials; CFA combined with risk specialization is common among buy-side risk professionals."
+    },
+    {
+      "question": "Which risk management tasks is AI handling, and what still requires senior human judgment?",
+      "answer": "AI systems now handle real-time market risk monitoring, credit portfolio screening, and scenario generation for stress testing faster and at greater scale than manual methods. What still requires human judgment is interpreting risk signals in novel market regimes where historical models break down, communicating risk appetite trade-offs to business leadership, and validating AI model assumptions for regulatory compliance. Basel III and emerging AI governance frameworks create ongoing demand for specialists who can document model limitations to regulators."
+    },
+    {
+      "question": "What credentials and skills help financial risk specialists stay competitive?",
+      "answer": "FRM certification from GARP is the most widely recognized risk-specific credential and is increasingly listed as required rather than preferred in senior postings at banks and asset managers. Python and R fluency for building and validating quantitative models is now expected for roles above analyst level. Risk specialists who develop expertise in model risk management, the governance discipline of validating and monitoring financial models, are in particular demand as banks face increased regulatory scrutiny of AI-generated risk outputs."
+    }
   ]
 }

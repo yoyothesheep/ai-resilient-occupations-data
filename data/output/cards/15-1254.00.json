@@ -105,7 +105,7 @@
     }
   ],
   "risks": {
-    "body": "AI can already automate core web development tasks like building sites and writing supporting code, especially boilerplate and routine implementations. Entry-level tech hiring dropped 25% year-over-year in 2024, and software developer employment for workers aged 22-25 declined nearly 20% from its 2022 peak [1]. Developers who have not yet built depth in judgment, architecture, or system design are the most exposed.",
+    "body": "AI can already automate core web development tasks like building sites and writing supporting code, especially boilerplate and routine implementations. Entry-level tech hiring dropped 25% year-over-year in 2024, and software developer employment for workers aged 22-25 declined nearly 20% from its 2022 peak [Stack Overflow Blog, Dec 2025]. Developers who have not yet built depth in judgment, architecture, or system design are the most exposed.",
     "stat": "-25%",
     "statLabel": "drop in entry-level tech hiring, year-over-year",
     "statSourceName": "Indeed Hiring Lab",
@@ -114,7 +114,7 @@
     "statSourceUrl": "https://www.hiringlab.org/2024/03/12/tech-job-postings/"
   },
   "opportunities": {
-    "body": "80% of developers now use AI tools, but trust in AI output collapsed from 40% to 29% year-over-year, and 66% say they spend more time fixing AI-generated code than they save writing it [2]. The emerging skill is knowing what to give AI, how to structure the problem, and how to catch if the output comes back wrong. Researchers are calling this context engineering [3].",
+    "body": "80% of developers now use AI tools, but trust in AI output collapsed from 40% to 29% year-over-year, and 66% say they spend more time fixing AI-generated code than they save writing it [Stack Overflow Blog, Dec 2025]. The emerging skill is knowing what to give AI, how to structure the problem, and how to catch if the output comes back wrong. Researchers are calling this context engineering [MIT Technology Review, Nov 2025].",
     "stat": "66%",
     "statLabel": "of developers spend more time fixing AI code than they save writing it",
     "statSourceName": "MIT Technology Review",
@@ -123,73 +123,71 @@
     "statSourceUrl": "https://www.technologyreview.com/2025/11/05/1127477/from-vibe-coding-to-context-engineering-2025-in-software-development/"
   },
   "howToAdapt": {
-    "alreadyIn": "The immediate move is to treat AI output like untrusted code: review every diff, question every assumption, document the decisions AI does not make for you [4]. Over the next six months, build depth where AI handles things worst - system design, cross-team architecture decisions, and requirements too ambiguous for a model to interpret reliably [3].",
-    "thinkingOf": "Companies now expect AI literacy from day one - build a GitHub portfolio of real projects that shows you can direct AI tools, review their output, and ship working systems [5]. Code review discipline and catching AI failures matter more to hiring managers than volume of code written.",
+    "alreadyIn": "The immediate move is to treat AI output like untrusted code: review every diff, question every assumption, document the decisions AI does not make for you [MIT Technology Review, Dec 2025]. Over the next six months, build depth where AI handles things worst - system design, cross-team architecture decisions, and requirements too ambiguous for a model to interpret reliably [MIT Technology Review, Nov 2025].",
+    "thinkingOf": "Companies now expect AI literacy from day one - build a GitHub portfolio of real projects that shows you can direct AI tools, review their output, and ship working systems [GitHub Blog, Aug 2025]. Code review discipline and catching AI failures matter more to hiring managers than volume of code written.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Developers are ready to push back on enterprise AI through a nuanced conversation about trust, reliability, and the enduring value of human expertise.",
         "attribution": "Stack Overflow, 2025 Developer Survey",
-        "sourceId": "src-2"
+        "sourceUrl": "https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/",
+        "sourceDate": "Dec 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "Code review is becoming the core developer skill — not writing code, but evaluating AI-generated code for security holes, performance traps, and architectural mismatches that tools like Copilot consistently miss.",
         "attribution": "Sarah Vessels, GitHub Staff Engineer",
-        "sourceId": "src-5"
+        "sourceUrl": "https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/",
+        "sourceDate": "Aug 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "We're entering an era where interns and junior developers are showing up already fluent in the best tools for AI code-gen on the market.",
         "attribution": "Thomas Dohmke, GitHub CEO",
-        "sourceId": "src-5"
+        "sourceUrl": "https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/",
+        "sourceDate": "Aug 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Junior developers who show up already fluent in AI-assisted workflows but who can also debug, test, and reason about systems without AI are the ones getting hired — the bar hasn't lowered, it's shifted.",
         "attribution": "AI vs Gen Z: How AI has changed the career pathway, Stack Overflow Blog",
-        "sourceId": "src-1"
+        "sourceUrl": "https://stackoverflow.blog/2025/12/26/ai-vs-gen-z/",
+        "sourceDate": "Dec 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Stack Overflow Blog",
       "title": "AI vs Gen Z: How AI has changed the career pathway for junior developers",
       "date": "Dec 2025",
       "url": "https://stackoverflow.blog/2025/12/26/ai-vs-gen-z/"
     },
     {
-      "id": "src-2",
       "name": "Stack Overflow Blog",
       "title": "Developers remain willing but reluctant to use AI: 2025 Developer Survey results",
       "date": "Dec 2025",
       "url": "https://stackoverflow.blog/2025/12/29/developers-remain-willing-but-reluctant-to-use-ai-the-2025-developer-survey-results-are-here/"
     },
     {
-      "id": "src-3",
       "name": "MIT Technology Review",
       "title": "From vibe coding to context engineering: 2025 in software development",
       "date": "Nov 2025",
       "url": "https://www.technologyreview.com/2025/11/05/1127477/from-vibe-coding-to-context-engineering-2025-in-software-development/"
     },
     {
-      "id": "src-4",
       "name": "MIT Technology Review",
       "title": "AI coding is now everywhere. But not everyone is convinced.",
       "date": "Dec 2025",
       "url": "https://www.technologyreview.com/2025/12/15/1128352/rise-of-ai-coding-developers-2026/"
     },
     {
-      "id": "src-5",
       "name": "GitHub Blog",
       "title": "Junior developers aren't obsolete: Here's how to thrive in the age of AI",
       "date": "Aug 2025",
       "url": "https://github.blog/ai-and-ml/generative-ai/junior-developers-arent-obsolete-heres-how-to-thrive-in-the-age-of-ai/"
     },
     {
-      "id": "src-6",
       "name": "Indeed Hiring Lab",
       "title": "Tech Hiring Trends 2024",
       "date": "2024",
@@ -349,7 +347,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -365,7 +363,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -397,7 +395,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 2,
       "isCurrent": false,
       "relationship": "specialization",
@@ -458,6 +456,23 @@
         "Expand beyond web stack to Python, Java, or C++",
         "Build non-web project portfolio"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Web developers who understand HTTP, authentication flows, and client-server architecture already have the foundation. The shift is from building web applications to securing them — OWASP Top 10 covers exactly the vulnerabilities this background exposes."
     }
   ],
   "emergingTitles": [
@@ -466,5 +481,23 @@
     "WordPress Developer",
     "React Developer"
   ],
-  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building."
+  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
+  "faqs": [
+    {
+      "question": "Is web development a good career to enter right now given AI coding tools?",
+      "answer": "Web Developer scores 39/100 on AI exposure, reflecting real but not catastrophic displacement pressure. BLS projects 8% employment growth with 5,400 annual openings, though entry-level postings dropped roughly 25% year-over-year as AI tools absorb beginner-level work. The strongest opportunity is for developers who can review, debug, and extend AI-generated code rather than those writing everything from scratch."
+    },
+    {
+      "question": "What does a web developer earn, and how does specialization affect pay?",
+      "answer": "The median salary is $90,930, but full-stack developers with cloud deployment skills typically earn $110,000 to $140,000. Developers who specialize in performance optimization, accessibility, or complex API integrations, areas where AI tools still produce inconsistent output, command a premium. Those who can demonstrate working AI-assisted workflows alongside traditional skills are increasingly preferred by hiring managers."
+    },
+    {
+      "question": "Which web development tasks are AI handling well versus where humans are still needed?",
+      "answer": "AI tools generate boilerplate HTML, CSS layouts, and basic JavaScript functions reliably, compressing the time for routine front-end work. Where they fall short is debugging cross-browser compatibility issues, optimizing performance under real traffic conditions, and integrating with non-standard APIs. The 2025 Stack Overflow survey found 66% of developers spend more time fixing AI-generated code than they save writing it, which points to code review as the highest-value human skill."
+    },
+    {
+      "question": "What credentials or skills matter most for web developers in the current market?",
+      "answer": "Fluency in at least one major framework, React, Vue, or Next.js, is now a baseline, not a differentiator. What stands out is the ability to debug AI output, write tests for AI-generated code, and explain architectural tradeoffs. GitHub profile with real deployed projects carries more weight than certifications for most employers; for those seeking structure, AWS Cloud Practitioner or Google Cloud credentials signal deployment competency that complements development skills."
+    }
+  ]
 }

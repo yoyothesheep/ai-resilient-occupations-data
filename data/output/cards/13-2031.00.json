@@ -2,7 +2,7 @@
   "onet_code": "13-2031.00",
   "taskIntro": "Not all tasks in this occupation have been evaluated for AI impact. The tasks shown here are those with available data.",
   "risks": {
-    "body": "Budget analysts spend a significant portion of their time on work that AI is already handling well: variance analysis, data aggregation, and report generation. Microsoft Copilot for Finance and similar tools can now produce first-draft budget narratives, flag anomalies, and build scenario models in minutes [1][2]. The broader structural risk is that as FP&A tools become more powerful, organizations will consolidate analyst headcount around a smaller number of higher-judgment roles — business partners and FP&A leads — and reduce the number of dedicated budget analysts required [2].",
+    "body": "Budget analysts spend a significant portion of their time on work that AI is already handling well: variance analysis, data aggregation, and report generation. Microsoft Copilot for Finance and similar tools can now produce first-draft budget narratives, flag anomalies, and build scenario models in minutes [U.S. Bureau of Labor Statistics, Sep 2024][Association for Financial Professionals, 2024]. The broader structural risk is that as FP&A tools become more powerful, organizations will consolidate analyst headcount around a smaller number of higher-judgment roles — business partners and FP&A leads — and reduce the number of dedicated budget analysts required [Association for Financial Professionals, 2024].",
     "stat": "43%",
     "statLabel": "of budget analyst tasks have meaningful AI exposure [2]",
     "statColor": "#ea580c",
@@ -12,58 +12,59 @@
     "statSourceUrl": "https://www.afponline.org/ideas-inspiration/resources/articles/Details/treasury-finance-ai"
   },
   "opportunities": {
-    "body": "The protective factors here are institutional knowledge and stakeholder relationships — understanding why a department is over budget requires context that AI cannot learn from a spreadsheet [1]. Analysts who shift from compliance-oriented budget review toward forward-looking scenario planning and business partnership are well-positioned: finance organizations are actively restructuring around FP&A skill sets, and those roles require the data literacy this occupation already provides combined with stronger communication skills [2].",
+    "body": "The protective factors here are institutional knowledge and stakeholder relationships — understanding why a department is over budget requires context that AI cannot learn from a spreadsheet [U.S. Bureau of Labor Statistics, Sep 2024]. Analysts who shift from compliance-oriented budget review toward forward-looking scenario planning and business partnership are well-positioned: finance organizations are actively restructuring around FP&A skill sets, and those roles require the data literacy this occupation already provides combined with stronger communication skills [Association for Financial Professionals, 2024].",
     "stat": null,
     "statLabel": null,
     "statColor": "#5a9a6e"
   },
   "howToAdapt": {
-    "alreadyIn": "The most valuable near-term investment is fluency with AI-augmented FP&A tools — Anaplan, Workday Adaptive Planning, and Copilot for Finance are where finance teams are adding capability [2]. The other shift worth making now is moving upstream in the planning cycle: analysts who can facilitate scenario conversations with department heads, not just track spending against budget, are significantly harder to replace. Over the next year, pursue one certification in an enterprise planning platform and document at least one project where you influenced resource decisions, not just reported on them [1][2].",
-    "thinkingOf": "Budget analyst is a reasonable entry point into corporate finance, but the role is changing quickly. Entry-level positions increasingly expect candidates to arrive with some Excel or financial modeling proficiency; the BLS reports a median annual wage of $87,930, and the occupation has stable but slow projected growth (+1%) [1]. The strongest path forward from here leads toward FP&A analyst and finance business partner roles — both require the same data literacy foundation but add strategic influence. Candidates who also invest in Power BI or Tableau early will find those skills accelerate their trajectory [2].",
+    "alreadyIn": "The most valuable near-term investment is fluency with AI-augmented FP&A tools — Anaplan, Workday Adaptive Planning, and Copilot for Finance are where finance teams are adding capability [Association for Financial Professionals, 2024]. The other shift worth making now is moving upstream in the planning cycle: analysts who can facilitate scenario conversations with department heads, not just track spending against budget, are significantly harder to replace. Over the next year, pursue one certification in an enterprise planning platform and document at least one project where you influenced resource decisions, not just reported on them [U.S. Bureau of Labor Statistics, Sep 2024][Association for Financial Professionals, 2024].",
+    "thinkingOf": "Budget analyst is a reasonable entry point into corporate finance, but the role is changing quickly. Entry-level positions increasingly expect candidates to arrive with some Excel or financial modeling proficiency; the BLS reports a median annual wage of $87,930, and the occupation has stable but slow projected growth (+1%) [U.S. Bureau of Labor Statistics, Sep 2024]. The strongest path forward from here leads toward FP&A analyst and finance business partner roles — both require the same data literacy foundation but add strategic influence. Candidates who also invest in Power BI or Tableau early will find those skills accelerate their trajectory [Association for Financial Professionals, 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The FP&A function is shifting away from being a data gatherer and toward being a trusted business adviser. AI is taking over the gathering part, which means analysts need to build the advisory part.",
         "attribution": "Association for Financial Professionals, 'Treasury & Finance in the Age of AI' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.afponline.org/ideas-inspiration/resources/articles/Details/treasury-finance-ai",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "Microsoft Copilot for Finance can generate variance commentary, flag budget anomalies, and produce first-pass forecasts. What it cannot do is walk into a budget meeting and explain the politics behind why engineering always comes in over-budget in Q3.",
         "attribution": "CFO.com, 'How AI Is Reshaping the Finance Function' (2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.cfo.com/technology/ai/how-ai-is-reshaping-the-finance-function/",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Budget analysts with strong stakeholder communication skills are more sought after than ever, even as the analytical components of the role become more automated. The job has more strategic content than it did ten years ago.",
         "attribution": "Association for Financial Professionals, 'Treasury & Finance in the Age of AI' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.afponline.org/ideas-inspiration/resources/articles/Details/treasury-finance-ai",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The analysts who will thrive are those who are genuinely curious about the business, not just the numbers. AI will handle the numbers — your value is in knowing which numbers to ask for and what to do when they look wrong.",
         "attribution": "CFO.com, 'How AI Is Reshaping the Finance Function' (2024)",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.cfo.com/technology/ai/how-ai-is-reshaping-the-finance-function/",
+        "sourceDate": "2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Budget Analysts",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/budget-analysts.htm"
     },
     {
-      "id": "src-2",
       "name": "Association for Financial Professionals",
       "title": "Treasury & Finance in the Age of AI",
       "date": "2024",
       "url": "https://www.afponline.org/ideas-inspiration/resources/articles/Details/treasury-finance-ai"
     },
     {
-      "id": "src-3",
       "name": "CFO.com",
       "title": "How AI Is Reshaping the Finance Function",
       "date": "2024",
@@ -155,7 +156,7 @@
   "careerCluster": [
     {
       "code": "13-1161.00",
-      "title": "Market Research Analyst",
+      "title": "Marketing Specialist",
       "level": 1,
       "isCurrent": false,
       "relationship": "lateral",

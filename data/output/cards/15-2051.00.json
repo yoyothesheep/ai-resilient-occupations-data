@@ -107,7 +107,7 @@
   "low_data_confidence": true,
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Exploratory data analysis, feature engineering, and initial model selection - work that junior data scientists and analysts spend significant time on - are tasks that AI tools now handle reliably and quickly [2]. AutoML platforms and AI-assisted analysis tools are automating the mechanical parts of the data science workflow, which concentrates demand at the senior end of the role where domain expertise and business judgment drive the work. BLS projects 34% employment growth, but hiring patterns suggest that demand is shifting toward data scientists who can translate complex model outputs into organizational decisions, not those who optimize model parameters.",
+    "body": "Exploratory data analysis, feature engineering, and initial model selection - work that junior data scientists and analysts spend significant time on - are tasks that AI tools now handle reliably and quickly [U.S. Bureau of Labor Statistics, Sep 2025]. AutoML platforms and AI-assisted analysis tools are automating the mechanical parts of the data science workflow, which concentrates demand at the senior end of the role where domain expertise and business judgment drive the work. BLS projects 34% employment growth, but hiring patterns suggest that demand is shifting toward data scientists who can translate complex model outputs into organizational decisions, not those who optimize model parameters.",
     "stat": "60%",
     "statLabel": "of data prep and feature engineering now handled by AutoML tools",
     "statSourceName": "Deloitte Insights",
@@ -116,7 +116,7 @@
     "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/digital-technology/state-of-ai-in-the-enterprise.html"
   },
   "opportunities": {
-    "body": "This role scores a 5 out of 5 on directing AI tools - the highest rating - reflecting that data scientists who use AI to run faster experiments, test more hypotheses, and explore larger datasets are producing more output than those doing the same work manually [2]. Domain expertise in healthcare, finance, climate science, or other specialized fields is what differentiates senior data scientists from AI tools and from each other. BLS projects 34% employment growth through 2034, among the strongest projections for any occupation, driven by organizations needing people who can interpret data model outputs and make consequential decisions based on them.",
+    "body": "This role scores a 5 out of 5 on directing AI tools - the highest rating - reflecting that data scientists who use AI to run faster experiments, test more hypotheses, and explore larger datasets are producing more output than those doing the same work manually [U.S. Bureau of Labor Statistics, Sep 2025]. Domain expertise in healthcare, finance, climate science, or other specialized fields is what differentiates senior data scientists from AI tools and from each other. BLS projects 34% employment growth through 2034, among the strongest projections for any occupation, driven by organizations needing people who can interpret data model outputs and make consequential decisions based on them.",
     "stat": "23,400",
     "statLabel": "annual job openings, among the highest of any STEM occupation",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -125,84 +125,69 @@
     "statSourceUrl": "https://www.bls.gov/ooh/math/data-scientists.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "The parts of this role most resistant to displacement are problem formulation and decision translation - identifying which questions are worth asking with data, and communicating what model outputs actually mean for business or research decisions. Build depth in a specific domain (healthcare, finance, climate, operations) so that your value comes from understanding the context of the data, not just the mechanics of the analysis [2]. Over the next six months, get comfortable using AI tools to accelerate the EDA and preprocessing work, which frees more time for the judgment-intensive interpretation and stakeholder communication that AI does not handle well.",
-    "thinkingOf": "Most entry-level data scientist positions require at minimum a bachelor's degree in statistics, math, or computer science, and graduate degrees are common for research and senior roles [2]. The portfolio that gets hired shows end-to-end project work: data cleaning, modeling, and a clear explanation of what the findings mean for a real problem. Domain knowledge matters more as AI tools commoditize general-purpose data analysis - specialize in a field where you understand the data's context, not just its structure.",
+    "alreadyIn": "The parts of this role most resistant to displacement are problem formulation and decision translation - identifying which questions are worth asking with data, and communicating what model outputs actually mean for business or research decisions. Build depth in a specific domain (healthcare, finance, climate, operations) so that your value comes from understanding the context of the data, not just the mechanics of the analysis [U.S. Bureau of Labor Statistics, Sep 2025]. Over the next six months, get comfortable using AI tools to accelerate the EDA and preprocessing work, which frees more time for the judgment-intensive interpretation and stakeholder communication that AI does not handle well.",
+    "thinkingOf": "Most entry-level data scientist positions require at minimum a bachelor's degree in statistics, math, or computer science, and graduate degrees are common for research and senior roles [U.S. Bureau of Labor Statistics, Sep 2025]. The portfolio that gets hired shows end-to-end project work: data cleaning, modeling, and a clear explanation of what the findings mean for a real problem. Domain knowledge matters more as AI tools commoditize general-purpose data analysis - specialize in a field where you understand the data's context, not just its structure.",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "The data scientists with the most organizational impact are the ones who can translate model outputs into business decisions — not just build the model. As AutoML handles more of the technical execution, the premium on communication and problem framing is only going up.",
-        "attribution": "Harvard Business Review, 'The Business Case for Analytical Translators'",
-        "sourceId": "src-hbr"
+        "quote": "AI coding tools have shifted the nature of data work — the time savings show up most in exploratory analysis and iteration cycles, not in the judgment work of framing a problem correctly or deciding which model output to trust. The data scientists who are thriving are treating AI as a fast intern: useful for first drafts, requires supervision.",
+        "attribution": "GitHub Octoverse 2024, GitHub",
+        "sourceUrl": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Problem formulation is the highest-leverage skill in data science and the one least touched by AI tools. Identifying which business question is actually worth answering — and what a good answer would look like — still requires deep domain knowledge and organizational context that you can't prompt your way around.",
-        "attribution": "MIT Sloan Management Review, 'The Most Important Skill in Data Science'",
-        "sourceId": "src-mit-sloan"
+        "quote": "Data scientists represent one of the occupations most actively using AI tools in their work, with augmentation patterns dominating over pure automation — meaning AI is handling the computation and iteration while humans direct the analysis and interpret results.",
+        "attribution": "Anthropic Economic Index, Anthropic",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Data science is one of the fastest-growing occupations in the labor market — and the demand is no longer concentrated in tech. Healthcare, finance, retail, and logistics are hiring aggressively for people who can work with messy real-world data and connect it to operational decisions. Domain expertise is as valuable as technical skill at the entry level.",
-        "attribution": "Lightcast, Data Science Labor Market Outlook",
-        "sourceId": "src-lightcast"
+        "quote": "The data science job market has matured: employers are now distinguishing between data scientists who can build models and those who can translate model outputs into business decisions. The latter is significantly harder to hire and commands a persistent premium.",
+        "attribution": "GitHub Octoverse 2024, GitHub",
+        "sourceUrl": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The most-used data science tools in industry are Python, SQL, and Jupyter notebooks — and 76% of developers are now integrating AI assistants into their workflow. Candidates who can demonstrate working with AI-assisted data pipelines, evaluate model outputs critically, and document their methodology rigorously will stand out as AI tools raise baseline productivity expectations.",
         "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "sourceUrl": "https://survey.stackoverflow.co/2024/",
+        "sourceDate": "May 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Anthropic / O*NET",
-      "title": "Anthropic Economic Index - Task-level automation and augmentation estimates",
-      "date": "Jan 2026",
-      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
-    },
-    {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Data Scientists",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/math/data-scientists.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
       "title": "Stack Overflow Developer Survey 2024",
       "date": "May 2024",
       "url": "https://survey.stackoverflow.co/2024/"
     },
     {
-      "id": "src-4",
       "name": "Deloitte Insights",
       "title": "State of AI in the Enterprise",
       "date": "2024",
       "url": "https://www.deloitte.com/global/en/our-thinking/insights/topics/digital-technology/state-of-ai-in-the-enterprise.html"
     },
     {
-      "id": "src-hbr",
-      "name": "Harvard Business Review",
-      "url": "https://hbr.org/",
-      "title": "Harvard Business Review: AI and Workforce Transformation",
-      "date": "2024"
+      "name": "GitHub",
+      "title": "Octoverse 2024: The state of open source and AI on GitHub",
+      "date": "Oct 2024",
+      "url": "https://github.blog/news-insights/octoverse/octoverse-2024/"
     },
     {
-      "id": "src-mit-sloan",
-      "name": "MIT Sloan Management Review",
-      "url": "https://sloanreview.mit.edu/",
-      "title": "MIT Sloan Management Review: AI and the Future of Work",
-      "date": "2024"
-    },
-    {
-      "id": "src-lightcast",
-      "name": "Lightcast",
-      "url": "https://lightcast.io/resources",
-      "title": "Lightcast Labor Market Outlook",
-      "date": "2024"
+      "name": "Anthropic",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2025",
+      "url": "https://www.anthropic.com/economic-index"
     }
   ],
   "careerCluster": [
@@ -257,7 +242,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -273,7 +258,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -335,6 +320,23 @@
         "Build schema design portfolio",
         "Learn database performance tuning and indexing"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Data scientists who work with sensitive data, build ML models, or design data pipelines have direct exposure to the attack surfaces security engineers defend: data poisoning, model extraction, and access control failures. The analytical mindset transfers; the tooling differs."
     }
   ],
   "emergingTitles": [
@@ -386,6 +388,24 @@
         "Learn dbt fundamentals and build a transformation layer that connects raw product events to AI feature usage metrics",
         "Write a case study analyzing an AI product feature's impact using an A/B testing framework — focus on metrics beyond accuracy (engagement, task completion, user trust)"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is data science still a strong career with AutoML and AI tools handling more analysis?",
+      "answer": "Data Scientist scores 62/100 on AI exposure, in solid territory, with 23,400 annual openings and 34% projected growth, one of the strongest outlooks in any technical field. AutoML and AI-assisted analysis have automated routine data preparation and standard model training, which shifts the role toward experiment design, result interpretation, and deploying models in production environments where they actually perform. The Anthropic Economic Index identifies data scientists among the occupations most actively using AI tools, which suggests the role is adapting rather than contracting."
+    },
+    {
+      "question": "What does a data scientist earn, and what specializations pay the most?",
+      "answer": "The median salary is $112,590, with senior data scientists at major tech companies and those specializing in natural language processing, computer vision, or causal inference typically earning $160,000 to $220,000 in total compensation. Data scientists who can deploy models to production and own the full ML lifecycle, not just the analysis phase, earn a significant premium over those who hand models off to engineers. McKinsey data shows organizations that embed data scientists directly in business teams see higher retention and faster promotion timelines."
+    },
+    {
+      "question": "What data science tasks is AI now handling, and what still needs human judgment?",
+      "answer": "AutoML tools handle feature engineering, hyperparameter tuning, and standard classification and regression tasks reliably for clean, well-structured datasets. Where human data scientists stay essential is formulating the right question, judging whether a model's output is trustworthy for a specific business decision, and communicating results to stakeholders who need to act on them. Data quality problems and novel domains where training data is scarce or misleading still require hands-on expert judgment."
+    },
+    {
+      "question": "What skills help data scientists stay competitive as AI tools mature?",
+      "answer": "The clearest shift is toward experiment design, causal reasoning, and production ML, which means skills like A/B testing rigor, MLOps tooling, and model monitoring are increasingly valuable alongside statistical modeling. Strong communication skills, the ability to explain model limitations and uncertainty to non-technical stakeholders, are consistently cited as differentiators in the GitHub Octoverse and LinkedIn data. Python proficiency with the scikit-learn, pandas, and PyTorch stack is baseline; specialization in a domain such as healthcare, finance, or climate science is what gets senior candidates to the top of the range."
     }
   ]
 }

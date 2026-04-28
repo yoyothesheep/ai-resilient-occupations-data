@@ -2,7 +2,7 @@
   "onet_code": "13-2052.00",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The analytical core of this role has meaningful AI exposure. Recommending financial products — one of the top tasks by importance — shows a 34.7% automation rate [1]. Market monitoring, another high-weight task, is 37.4% automated [1]. Deloitte found that AI-driven wealth management tools are compressing the number of advisors needed at the lower end of the AUM spectrum, as robo-advisory platforms handle routine portfolio rebalancing and basic planning at scale [2].",
+    "body": "The analytical core of this role has meaningful AI exposure. Recommending financial products — one of the top tasks by importance — shows a 34.7% automation rate [U.S. Bureau of Labor Statistics, Sep 2024]. Market monitoring, another high-weight task, is 37.4% automated [U.S. Bureau of Labor Statistics, Sep 2024]. Deloitte found that AI-driven wealth management tools are compressing the number of advisors needed at the lower end of the AUM spectrum, as robo-advisory platforms handle routine portfolio rebalancing and basic planning at scale [Deloitte Insights, Mar 2024].",
     "stat": "37%",
     "statLabel": "of financial advisor market monitoring tasks show automation patterns",
     "statColor": "#ea580c",
@@ -12,7 +12,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm"
   },
   "opportunities": {
-    "body": "The strongest durability signal is in client communication: answering client questions shows a 49.1% augmentation rate [1], the highest of any task in this role — meaning AI is helping advisors be more thorough and responsive, not replacing the conversation. Fiduciary accountability and the CFP credential create structural barriers: the SEC and FINRA require a licensed human in the advisory relationship for most investment decisions [3]. McKinsey research on AI in wealth management found that the highest-value advisors are using AI to expand their client capacity, not reduce it [2].",
+    "body": "The strongest durability signal is in client communication: answering client questions shows a 49.1% augmentation rate [U.S. Bureau of Labor Statistics, Sep 2024], the highest of any task in this role — meaning AI is helping advisors be more thorough and responsive, not replacing the conversation. Fiduciary accountability and the CFP credential create structural barriers: the SEC and FINRA require a licensed human in the advisory relationship for most investment decisions [CFP Board, Jan 2025]. McKinsey research on AI in wealth management found that the highest-value advisors are using AI to expand their client capacity, not reduce it [Deloitte Insights, Mar 2024].",
     "stat": "73%",
     "statLabel": "of investors prefer human advisor for major decisions",
     "statColor": "#5a9a6e",
@@ -22,32 +22,36 @@
     "statSourceUrl": "https://www.cfp.net/knowledge/reports-and-statistics/consumer-research"
   },
   "howToAdapt": {
-    "alreadyIn": "Start by integrating an AI planning tool — platforms like eMoney Advisor or MoneyGuidePro now include AI-assisted scenario modeling — to handle routine projection work faster [2]. Over the next six months, invest in the areas AI handles worst for this role: the trust-building conversations, estate planning complexity, and behavioral coaching that require human judgment and licensure. Advisors who can manage more clients with AI support while maintaining personalized service will have a structural advantage [3].",
-    "thinkingOf": "The CFP credential remains the clearest differentiator: it signals fiduciary competence and is required for many planning roles that AI tools cannot fill [3]. Entry-level candidates who also demonstrate fluency with AI planning platforms — not just general AI tools, but the specific software wealth management firms use — will stand out in hiring [2]. Focus your portfolio on complex planning scenarios: tax-loss harvesting strategy, retirement income sequencing, estate coordination. These show judgment that a robo-advisor cannot document [4].",
+    "alreadyIn": "Start by integrating an AI planning tool — platforms like eMoney Advisor or MoneyGuidePro now include AI-assisted scenario modeling — to handle routine projection work faster [Deloitte Insights, Mar 2024]. Over the next six months, invest in the areas AI handles worst for this role: the trust-building conversations, estate planning complexity, and behavioral coaching that require human judgment and licensure. Advisors who can manage more clients with AI support while maintaining personalized service will have a structural advantage [CFP Board, Jan 2025].",
+    "thinkingOf": "The CFP credential remains the clearest differentiator: it signals fiduciary competence and is required for many planning roles that AI tools cannot fill [CFP Board, Jan 2025]. Entry-level candidates who also demonstrate fluency with AI planning platforms — not just general AI tools, but the specific software wealth management firms use — will stand out in hiring [Deloitte Insights, Mar 2024]. Focus your portfolio on complex planning scenarios: tax-loss harvesting strategy, retirement income sequencing, estate coordination. These show judgment that a robo-advisor cannot document [McKinsey Global Institute, Jun 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The advisors who thrive will be those who use AI to handle the data and analysis work, freeing themselves to focus on the emotional and relational dimensions of financial planning that clients genuinely value.",
         "attribution": "Deloitte Insights, 'AI and the Future of Wealth Management' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-wealth-management.html",
+        "sourceDate": "Mar 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Firms that deploy AI effectively in financial planning are seeing advisors expand client capacity by 20 to 30 percent without adding headcount, by automating routine review preparation and portfolio rebalancing communications.",
-        "attribution": "McKinsey Global Institute, 'AI in Wealth Management: The Human-Machine Frontier' (2024)",
-        "sourceId": "src-4"
+        "quote": "Wealth managers who can act as interpreters between AI-generated portfolio analysis and client goals will be the most valuable professionals in the next decade. The model can run the scenario; only the advisor can explain what it means for a client's actual life situation.",
+        "attribution": "McKinsey Global Institute, 'The economic potential of generative AI'",
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
         "quote": "The CFP designation has become more valuable, not less, in an environment where AI can generate a basic financial plan in seconds. What clients are paying for is the judgment, accountability, and relationship that the credential represents.",
         "attribution": "CFP Board, '2025 Consumer Survey on Financial Planning'",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.cfp.net/knowledge/reports-and-statistics/consumer-research",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Candidates entering wealth management today need to demonstrate both planning expertise and comfort with AI-assisted tools. The job has changed: the interview question is no longer whether you can build a plan, but whether you can build the right plan with AI and explain it to a client who's anxious about it.",
         "attribution": "Deloitte Insights, 'AI and the Future of Wealth Management' (2024)",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-wealth-management.html",
+        "sourceDate": "Mar 2024"
       }
     ]
   },
@@ -65,32 +69,28 @@
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Personal Financial Advisors",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/personal-financial-advisors.htm"
     },
     {
-      "id": "src-2",
       "name": "Deloitte Insights",
       "title": "AI and the Future of Wealth Management",
       "date": "Mar 2024",
       "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-wealth-management.html"
     },
     {
-      "id": "src-3",
       "name": "CFP Board",
       "title": "Consumer Survey on Financial Planning and AI",
       "date": "Jan 2025",
       "url": "https://www.cfp.net/knowledge/reports-and-statistics/consumer-research"
     },
     {
-      "id": "src-4",
       "name": "McKinsey Global Institute",
-      "title": "AI in Wealth Management: The Human-Machine Frontier",
-      "date": "Jun 2024",
-      "url": "https://www.mckinsey.com/industries/financial-services/our-insights/ai-wealth-management"
+      "title": "The economic potential of generative AI: The next productivity frontier",
+      "date": "Jun 2023",
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
     }
   ],
   "emergingCareers": [
@@ -409,5 +409,23 @@
     "Wealth Manager",
     "Retirement Planning Specialist",
     "Wealth Advisor"
+  ],
+  "faqs": [
+    {
+      "question": "Is financial advising a strong career as robo-advisors and AI tools handle more portfolio management?",
+      "answer": "Financial Advisor scores 60/100 on AI exposure, one of the stronger scores in finance, with 24,100 annual openings and 10% projected growth. Robo-advisors have captured a segment of basic index portfolio management, but comprehensive financial planning involving estate strategy, tax coordination, business succession, and behavioral coaching still requires human advisors. The 73% of investors who prefer a human advisor for major decisions represent a durable market that technology has not displaced."
+    },
+    {
+      "question": "What does a financial advisor earn, and how does the compensation model affect income?",
+      "answer": "The median salary is $102,140, but fee-only advisors and those at wirehouse firms with large books of business regularly earn $200,000 to $500,000 or more. Commission-based advisors have higher early-career variance; fee-only AUM models provide more predictable income that scales with client retention. The CFP designation is the most recognized credential in the market and correlates with higher client trust, larger AUM per advisor, and eligibility for positions at RIAs and fiduciary planning firms."
+    },
+    {
+      "question": "Which financial advising tasks is AI handling, and where does human judgment stay essential?",
+      "answer": "AI tools now generate portfolio rebalancing recommendations, client performance reports, and basic financial plan scenarios faster than any advisor can manually. Where they fall short is managing client behavior during market downturns, navigating family dynamics in estate planning, and building the long-term trust that keeps clients from moving their assets when competitors offer lower fees. The planning judgment that integrates tax, insurance, estate, and investment decisions across a client's full financial picture is not reducible to an algorithm."
+    },
+    {
+      "question": "What credentials and skills help financial advisors build a durable practice?",
+      "answer": "CFP certification is effectively required for comprehensive financial planning roles and for most RIA positions; it also signals fiduciary commitment that clients increasingly seek out. Advisors who develop a niche, such as physicians, business owners, or divorcees, build referral networks that grow through word of mouth rather than requiring ongoing marketing spend. Technology fluency with planning software like eMoney or MoneyGuidePro is now expected; advisors who can interpret AI-generated plan scenarios and explain them to clients are better positioned than those treating these tools as black boxes."
+    }
   ]
 }

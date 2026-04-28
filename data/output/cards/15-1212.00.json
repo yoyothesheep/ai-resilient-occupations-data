@@ -110,7 +110,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI-assisted SIEM platforms and automated triage tools are absorbing tier-1 alert monitoring — the traditional on-ramp into the field — compressing entry-level hiring pipelines [1]. Security policy documentation shows 41.2% automation in observed AI usage, a sign that AI is handling a real slice of the written output work in this role [2].",
+    "body": "AI-assisted SIEM platforms and automated triage tools are absorbing tier-1 alert monitoring — the traditional on-ramp into the field — compressing entry-level hiring pipelines [Anthropic / O*NET, Jan 2026]. Security policy documentation shows 41.2% automation in observed AI usage, a sign that AI is handling a real slice of the written output work in this role [U.S. Bureau of Labor Statistics, Sep 2025].",
     "stat": "25%",
     "statLabel": "of cybersecurity teams reported layoffs in 2024",
     "statSourceName": "ISC2",
@@ -119,7 +119,7 @@
     "statSourceUrl": "https://edu.arrow.com/media/wtjfmszx/2024-isc2-wfs.pdf"
   },
   "opportunities": {
-    "body": "Every security breach carries regulatory and legal consequences that organizations cannot delegate to automated systems — a structural floor under human accountability that AI amplifies rather than replaces [1]. The global cybersecurity workforce gap remains at 3.5 million unfilled roles, meaning practitioners who can direct AI-flagged threats and lead incident response are in sustained structural demand [2].",
+    "body": "Every security breach carries regulatory and legal consequences that organizations cannot delegate to automated systems — a structural floor under human accountability that AI amplifies rather than replaces [Anthropic / O*NET, Jan 2026]. The global cybersecurity workforce gap remains at 3.5 million unfilled roles, meaning practitioners who can direct AI-flagged threats and lead incident response are in sustained structural demand [U.S. Bureau of Labor Statistics, Sep 2025].",
     "stat": "3.5M",
     "statLabel": "unfilled cybersecurity jobs globally in 2024",
     "statSourceName": "ISC2",
@@ -128,70 +128,83 @@
     "statSourceUrl": "https://edu.arrow.com/media/wtjfmszx/2024-isc2-wfs.pdf"
   },
   "howToAdapt": {
-    "alreadyIn": "Start logging time against AI-assisted detection tools - specifically learning to configure and tune SIEM alert thresholds rather than just monitoring outputs. Over the next six months, build depth in incident response and threat hunting, the work that sits above automated triage and requires judgment under real operational pressure [2]. Analysts who can direct AI tools and own the investigation layer are pulling ahead of those whose value was in manual alert review [1].",
-    "thinkingOf": "The entry bar has shifted: Security+ certification plus hands-on lab work on TryHackMe or Hack The Box now signals more than a CS degree alone, because hiring managers want evidence of practical investigation skills, not just coursework. Build a portfolio that shows you can operate in realistic attack scenarios - document a mock incident response from detection through remediation. The talent shortage is real and the growth projections are among the strongest in tech, but the jobs available increasingly require intermediate skills, not starter-level monitoring [2].",
+    "alreadyIn": "Start using AI-assisted threat detection tools in your current environment -- SIEM platforms like Microsoft Sentinel and Splunk now ship with AI triage built in, and getting hands-on with those features is the fastest way to stay current. The ISC2 2024 Workforce Study found that 48% of security professionals are actively building AI-related skills, so the window to get ahead of the curve is narrow [ISC2, Oct 2024]. Over the next six months, build depth in threat hunting and incident response -- these are the tasks where AI still requires a human to contextualize attacker behavior, prioritize findings, and make judgment calls under pressure. The areas AI handles worst in this role are the investigative and governance tasks: determining whether an anomaly is a real threat, advising on policy, and communicating risk to non-technical stakeholders [CompTIA, Jan 2025].",
+    "thinkingOf": "The entry credential that matters most right now is CompTIA Security+ or CySA+, combined with hands-on experience in a SIEM tool -- employers are looking for analysts who can work with AI-assisted detection systems, not just understand security theory. ISC2 research shows hiring managers now rank problem-solving and curiosity above technical certifications when evaluating candidates, which means a portfolio of real incident response work or a home lab with documented threat hunts will differentiate you more than credentials alone [ISC2, Nov 2024]. The cybersecurity job market remains strong -- over 514,000 U.S. job postings between May 2024 and April 2025 -- so the field is growing even as the work changes [CompTIA, Jan 2025]. Focus your learning on the intersection of AI and security: understanding how AI-powered attacks work and how to defend against them is the skill gap that will define the next five years.",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "AI-powered SIEM tools have raised the floor on detection — but they've also raised the volume of alerts analysts have to triage. The skills that matter now are knowing what to investigate and what to suppress, and that requires deep familiarity with your environment, not just the tooling.",
-        "attribution": "ISC2, Cybersecurity Workforce Study",
-        "sourceId": "src-4"
+        "quote": "45% of cybersecurity teams have implemented generative AI into their toolbox, but over half have already faced data privacy and security concerns from organizational AI adoption. The analyst who understands both how to use AI and how to secure it is the one organizations need most right now.",
+        "attribution": "ISC2, 2024 Cybersecurity Workforce Study",
+        "sourceUrl": "https://www.isc2.org/Insights/2024/10/ISC2-2024-Cybersecurity-Workforce-Study"
       },
       {
         "persona": "alreadyIn",
-        "quote": "The rule generation and anomaly detection layers are getting automated quickly. What stays human is the threat modeling — understanding the attacker's logic well enough to find what the automated systems aren't tuned to catch. That's where security professionals need to invest their development time.",
-        "attribution": "ACM Queue, 'Automation and Human Judgment in Security Operations'",
-        "sourceId": "src-acm"
+        "quote": "Nearly half of organizations currently lack a clear generative AI strategy, and 65% say they need to implement more regulations on the safe use of AI. For security analysts, that gap is not a threat -- it is the job. Governance, policy, and risk communication are exactly where human judgment is still required.",
+        "attribution": "ISC2, Research Insights: What Employers Need to Know About AI and the Cybersecurity Workforce",
+        "sourceUrl": "https://www.isc2.org/Insights/2024/11/Research-Insights-What-Employers-Need-to-Know-About-AI-and-the-Cybersecurity-Workforce"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Security+ gets you in the door, but hiring managers now want to see lab work — TryHackMe, Hack The Box, a home lab with a SIEM. Candidates who can show they've done the hands-on work, not just passed the exam, are moving through our pipeline significantly faster.",
-        "attribution": "ISC2, Cybersecurity Workforce Study",
-        "sourceId": "src-4"
+        "quote": "More than half of job postings for entry-level cybersecurity roles now reference AI competencies. The skills that matter are using large language models, evaluating AI outputs, automating tasks, and understanding AI-powered threats -- not just traditional network security fundamentals.",
+        "attribution": "CompTIA, State of Cybersecurity 2025",
+        "sourceUrl": "https://www.comptia.org/en-us/resources/research/state-of-cybersecurity/"
       },
       {
         "persona": "thinkingOf",
-        "quote": "CISA's AI roadmap identifies the ability to assess AI-enabled threats, secure AI systems, and use AI tools for cyber defense as priority competencies for the next generation of security professionals. Candidates who can speak to all three sides of that triangle — threat, defense, and tooling — will stand out in a field where AI literacy is becoming a baseline expectation.",
-        "attribution": "CISA",
-        "sourceId": "src-3"
+        "quote": "Hiring managers prioritize problem-solving (31%) and curiosity (26%) over technical skills like cloud computing security (19%) or risk analysis (14%). Candidates who can demonstrate how they think through an unfamiliar threat scenario will stand out more than those who simply list certifications.",
+        "attribution": "ISC2, Research Insights: What Employers Need to Know About AI and the Cybersecurity Workforce",
+        "sourceUrl": "https://www.isc2.org/Insights/2024/11/Research-Insights-What-Employers-Need-to-Know-About-AI-and-the-Cybersecurity-Workforce"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Anthropic / O*NET",
       "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Information Security Analysts",
       "date": "Jan 2026",
       "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Information Security Analysts",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
     },
     {
-      "id": "src-3",
       "name": "CISA",
       "title": "Roadmap for Artificial Intelligence",
       "date": "Nov 2023",
       "url": "https://www.cisa.gov/resources-tools/resources/cisa-roadmap-artificial-intelligence"
     },
     {
-      "id": "src-4",
       "name": "ISC2",
       "title": "Cybersecurity Workforce Study 2024",
       "date": "Oct 2024",
       "url": "https://edu.arrow.com/media/wtjfmszx/2024-isc2-wfs.pdf"
     },
     {
-      "id": "src-acm",
       "name": "ACM Queue",
       "url": "https://queue.acm.org/",
       "title": "ACM Queue: Practitioner Perspectives on AI in Software",
       "date": "2024"
+    },
+    {
+      "name": "ISC2",
+      "title": "2024 ISC2 Cybersecurity Workforce Study",
+      "date": "Oct 2024",
+      "url": "https://www.isc2.org/Insights/2024/10/ISC2-2024-Cybersecurity-Workforce-Study"
+    },
+    {
+      "name": "ISC2",
+      "title": "Research Insights: What Employers Need to Know About AI and the Cybersecurity Workforce",
+      "date": "Nov 2024",
+      "url": "https://www.isc2.org/Insights/2024/11/Research-Insights-What-Employers-Need-to-Know-About-AI-and-the-Cybersecurity-Workforce"
+    },
+    {
+      "name": "CompTIA",
+      "title": "State of Cybersecurity 2025",
+      "date": "Jan 2025",
+      "url": "https://www.comptia.org/en-us/resources/research/state-of-cybersecurity/"
     }
   ],
   "careerCluster": [
@@ -245,7 +258,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -261,7 +274,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -309,7 +322,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 1,
       "isCurrent": false,
       "relationship": "less_trained",
@@ -420,6 +433,24 @@
         "Build an anomaly detection model on a public network log dataset (CICIDS or KDD Cup) and deploy it as a Splunk alert",
         "Learn LangChain basics and build a prototype LLM-powered triage assistant that classifies incoming security alerts"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is information security analysis a strong career with AI on both the attack and defense sides?",
+      "answer": "Information Security Analyst scores 69/100 on AI exposure, one of the strongest scores in tech, with 16,000 annual openings and 28% projected growth. The ISC2 2024 Workforce Study found 3.5 million cybersecurity positions unfilled globally, a shortage that AI tools have not closed because the work requires contextual judgment about organizational risk, not just pattern recognition. AI is changing the tools analysts use but has not reduced demand for the role."
+    },
+    {
+      "question": "What does an information security analyst earn, and what certifications drive salary higher?",
+      "answer": "The median salary is $124,910, with analysts holding CISSP or CISM certifications and those specializing in cloud security or threat intelligence typically earning $150,000 to $180,000. The fastest salary growth is in roles at the intersection of security and AI governance, including analysts who assess AI system risks and implement controls for AI-driven products. Government and defense contractor positions often add clearance premiums of $20,000 or more on top of market rates."
+    },
+    {
+      "question": "What security tasks is AI handling well, and where do analysts stay irreplaceable?",
+      "answer": "AI-assisted SIEM platforms now handle tier-1 alert triage, routine log correlation, and known-signature detection without analyst intervention. Where humans remain essential is incident response, threat modeling for novel attack vectors, and making risk decisions that carry regulatory or legal consequences for the organization. Every security breach involves accountability that organizations cannot delegate to an automated system."
+    },
+    {
+      "question": "What skills help information security analysts stay competitive as AI-driven threats evolve?",
+      "answer": "Cloud security architecture skills, specifically for AWS, Azure, or GCP environments, are the highest-demand complement to traditional security analysis. The CISA AI Roadmap and the 2023 White House AI Executive Order are driving demand for analysts who understand AI-specific threats, including prompt injection, model poisoning, and adversarial inputs. CompTIA Security+ is the baseline credential; CISSP or cloud-specific certs like AWS Security Specialty are the path to senior roles and the strongest salary growth."
     }
   ]
 }

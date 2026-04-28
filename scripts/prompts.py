@@ -43,10 +43,10 @@ Functions:
         flag. sections is a list like ["risks", "opportunities"].
 
 Prompt rules (enforced in all section prompts):
-    - statLabel: plain text only, no [N] citations, 5-8 words, must
+    - statLabel: plain text only, no citations, 5-8 words, must
       complete a sentence after the stat number, must not end with a
       conjunction/preposition
-    - body fields: inline [N] citations required, must resolve to sources[]
+    - body fields: inline [Name, Date] citations required, must resolve to sources[] by name
     - No em dashes, no prohibited phrases (see tone guide)
 """
 
@@ -131,7 +131,8 @@ Rules:
 - Prefer sources published within the last 2 years. Flag if best available is older than 12 months.
 - BLS salary, openings, and growth data is already in our dataset — cite BLS as a source without fetching it.
 - Always include a real canonical URL for every source. Do not leave url blank. URLs will be validated automatically.
-- Do not cite the same source more than twice across the entire card (risks, opportunities, howToAdapt combined). Each section (risks.body, opportunities.body, howToAdapt.alreadyIn, howToAdapt.thinkingOf) must use at least 2 distinct sources internally — never repeat the same [N] more than once within a single section.
+- Do not cite the same source more than twice across the entire card (risks, opportunities, howToAdapt combined). Each section (risks.body, opportunities.body, howToAdapt.alreadyIn, howToAdapt.thinkingOf) must use at least 2 distinct sources internally — never repeat the same citation more than once within a single section.
+- Use [Name, Date] inline citations (e.g. [NiemanLab, Mar 2024]) where Name exactly matches the "name" field of a source in sources[]. Do NOT use numeric citations like [1] or [2].
 - NEVER cite: Gartner, IDC, Forrester, MarketsandMarkets — these are paywalled analyst firms with inflated projections and URL rot. Use the approved sources list instead.
 
 {"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (n >= 100). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}"""
@@ -150,7 +151,7 @@ def risks_opps_prompt(code: str, low_data: bool) -> str:
     """
     return f"""  "onet_code": "{code}",
   "risks": {{
-    "body": "2–3 sentences about why AI is a genuine threat to this specific role's job prospects — not 'AI is advancing' but what specifically is being automated, commoditized, or consolidated in THIS occupation. Include a concrete displacement signal (posting decline, layoffs, role consolidation, or a specific task now handled by AI tools). Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced. NEVER mention task weight values or write phrases like '(weight 20.9)' — weight is an internal metric, not user-facing content. NEVER cite the number of AI conversations or interactions (e.g. 'across 2,800 AI interactions', 'n=702 observations') — these are internal dataset counts, not user-facing evidence. If citing AEI task automation rates, summarize the pattern in one sentence rather than listing rates per individual task; PREFER leading with an external displacement signal (posting trends, layoffs, platform consolidation) over AEI percentages — use AEI data as supporting color, not the headline. AVOID: vague 'AI will transform this field' framing, generic white-collar displacement narratives, repeating the role score. PREFER: name a specific task or workflow AI handles well in this role, cite a concrete displacement signal, connect it to what practitioners in THIS role actually experience.",
+    "body": "2–3 sentences about why AI is a genuine threat to this specific role's job prospects — not 'AI is advancing' but what specifically is being automated, commoditized, or consolidated in THIS occupation. Include a concrete displacement signal (posting decline, layoffs, role consolidation, or a specific task now handled by AI tools). Do NOT frame workforce shortages as risks — a shortage drives up demand and is good for workers. {"LOW DATA: Do NOT cite external automation percentages in this section — the task chart will show no AI activity and they will directly contradict each other. Focus on hiring trends, job growth projections, or platform displacement instead." if low_data else ""}Inline citations like [1] where sourced. NEVER mention task weight values or write phrases like '(weight 20.9)' — weight is an internal metric, not user-facing content. NEVER cite the number of AI conversations or interactions (e.g. 'across 2,800 AI interactions', 'n=702 observations') — these are internal dataset counts, not user-facing evidence. If citing AEI task automation rates, summarize the pattern in one sentence rather than listing rates per individual task; PREFER leading with an external displacement signal (posting trends, layoffs, platform consolidation) over AEI percentages — use AEI data as supporting color, not the headline. AVOID: vague 'AI will transform this field' framing, generic white-collar displacement narratives, repeating the role score. NEVER write phrases like 'this role scores X out of 5' or 'this role's resilience score reflects' — the score is displayed separately in the page header and must not appear in body prose. PREFER: name a specific task or workflow AI handles well in this role, cite a concrete displacement signal, connect it to what practitioners in THIS role actually experience.",
     "stat": "Pick the single most concrete, surprising number from the risks body. Set to null if no strong non-redundant stat exists. {"LOW DATA: Must NOT be an automation rate or AI task percentage — the task chart shows no AI activity and they will directly contradict." if low_data else ""} STAT SELECTION RULES — AVOID these (redundant with other page sections): task automation/augmentation %, employment growth %, salary figures, workforce shortage counts or unfilled job figures (shortages signal demand, not risk — use in opportunities instead). PREFER (in priority order): (1) Hiring trend shifts — YoY change in job postings, time-to-fill changes (Lightcast, Indeed Hiring Lab). (2) AI tool adoption rates among practitioners in THIS specific role (HubSpot State of Marketing, CMI, Stack Overflow Survey, etc). (3) Productivity/output impact — e.g. content volume increase, time-to-draft reduction. (4) Displacement signals — layoffs, role consolidation, posting declines, freelance rate compression (Upwork Research Institute). (5) WEF Future of Jobs net decline ranking or projected job loss figure. (6) Industry ad spend or budget shift away from human production toward AI tools. (7) Contract/freelance ratio shifts. (8) Career transition rates out of this role. LAST RESORT: BLS projected growth/decline % for this occupation — always available, always citable, acceptable when nothing better exists. It is OK to set stat to null rather than use a redundant stat type.",
     "statLabel": "Required if stat is non-null. 5–8 words max. Completes the sentence naturally AFTER the number — e.g. stat '-12%' + statLabel 'drop in marketing manager postings'. Do NOT repeat the number. Do NOT include a year or date in parentheses. NO inline citations like [1] — plain text only. Must not end with a conjunction or preposition.",
     "statSourceName": "Required if stat is non-null. Publisher name, e.g. 'Lightcast' or 'World Economic Forum'.",
@@ -181,27 +182,27 @@ def how_to_adapt_prompt() -> str:
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "A quote that helps someone already in this role understand how their work is changing. Must come from sources[]. QUOTE SELECTION RULES — pick the BEST available from this priority list: (1) A named practitioner or leader describing a specific skill shift, workflow change, or strategic move in this role — e.g. 'We stopped hiring junior analysts for data cleaning and started hiring people who can interrogate what the model outputs' (HBR, named CTO). (2) A research finding that reveals HOW the role is shifting — not that it's shifting, but what specifically is different now vs. 2 years ago. E.g. 'Marketing teams that adopted AI content tools reduced production headcount 30% but increased spend on senior strategists' (McKinsey). (3) An industry-specific insight about where human judgment still wins — e.g. 'In complex commercial underwriting, AI models miss 40% of risk factors that experienced underwriters catch through relationship context' (industry report). NEVER USE: (a) Motivational platitudes ('Being good isn't good enough', 'Adapt or die'). (b) BLS statistics restated in quotation marks — 'Employment is projected to grow 7%' is not a quote. (c) Generic AI hype — 'AI will transform this field'. (d) Quotes shorter than 50 characters. (e) Bare percentages with no insight about what to DO or what's CHANGING. Good sources: HBR interviews, MIT Sloan, practitioner blogs (Pragmatic Engineer, InfoQ), industry association reports with named commentators, NYT/WSJ interviewing professionals. If no real practitioner quote exists, use a key finding from a research report — but attribute it to the report, not to a person.",
+        "quote": "A quote that helps someone already in this role understand how their work is changing. Must come from sources[]. QUOTE SELECTION RULES — pick the BEST available from this priority list: (1) A named practitioner or leader describing a specific skill shift, workflow change, or strategic move in this role — e.g. 'We stopped hiring junior analysts for data cleaning and started hiring people who can interrogate what the model outputs' (HBR, named CTO). (2) A research finding that reveals HOW the role is shifting — not that it's shifting, but what specifically is different now vs. 2 years ago. E.g. 'Marketing teams that adopted AI content tools reduced production headcount 30% but increased spend on senior strategists' (McKinsey). (3) An industry-specific insight about where human judgment still wins — e.g. 'In complex commercial underwriting, AI models miss 40% of risk factors that experienced underwriters catch through relationship context' (industry report). NEVER USE: (a) Motivational platitudes ('Being good isn't good enough', 'Adapt or die'). (b) BLS statistics restated in quotation marks — 'Employment is projected to grow 7%' is not a quote. (c) Generic AI hype — 'AI will transform this field'. (d) Quotes shorter than 50 characters. (e) Bare percentages with no insight about what to DO or what's CHANGING. Good sources: GitHub Blog (github.blog) and Stack Overflow Blog (stackoverflow.blog) frequently publish named engineer, CTO, and exec quotes about AI changing their workflows — search these first for technology roles. Also: HBR interviews, MIT Sloan, practitioner blogs (Pragmatic Engineer, InfoQ), industry association reports with named commentators, NYT/WSJ interviewing professionals. A quote attributed to 'Sarah Vessels, GitHub Staff Engineer' or 'Thomas Dohmke, GitHub CEO' is far stronger than one attributed to a report — always search for the specific article and named person before falling back to a report summary. If no real practitioner quote exists, use a key finding from a research report — but attribute it to the report, not to a person.",
         "attribution": "Person's name and title (preferred), or 'Report Title, Publisher' if no named person",
-        "sourceId": "src-N"
+        "sourceUrl": "https://..."
       },
       {
         "persona": "alreadyIn",
         "quote": "A SECOND quote covering a DIFFERENT angle than the first (e.g. first = tool adoption, second = where human judgment matters most). Same quality rules. Omit entirely if no meaningfully different second angle exists.",
         "attribution": "...",
-        "sourceId": "src-N"
+        "sourceUrl": "https://..."
       },
       {
         "persona": "thinkingOf",
         "quote": "A quote that helps someone considering this field understand the entry landscape — what skills or credentials matter now, how hiring is changing, or what distinguishes strong candidates. NOT a generic growth stat. Same selection rules as alreadyIn: prefer named practitioners, industry-specific insights about entry paths, or research findings about what hiring managers value now vs. before AI. NEVER restate BLS projections as a quote.",
         "attribution": "...",
-        "sourceId": "src-N"
+        "sourceUrl": "https://..."
       },
       {
         "persona": "thinkingOf",
         "quote": "A SECOND quote covering a DIFFERENT entry angle than the first. Same quality rules. Omit if no meaningfully different second angle exists.",
         "attribution": "...",
-        "sourceId": "src-N"
+        "sourceUrl": "https://..."
       }
     ]
   }"""
@@ -221,8 +222,9 @@ def task_labels_prompt(tasks: list[dict]) -> str:
 def sources_prompt() -> str:
     """JSON schema for sources array. Appended to every content section prompt."""
     return """  "sources": [
-    {"id": "src-1", "name": "Publisher name", "title": "Article or report title", "date": "Mon YYYY", "url": "https://..."}
-  ]"""
+    {"name": "Publisher name", "title": "Article or report title", "date": "Mon YYYY", "url": "https://..."}
+  ]
+  NOTE: Every url in sources[] must be a specific article or report page — not a homepage. Find the real URL via web search before writing it. Never guess or construct a path from a known domain pattern."""
 
 
 # ── Closing rules ─────────────────────────────────────────────────────────────
@@ -230,13 +232,15 @@ def sources_prompt() -> str:
 def _closing_rules(include_quotes: bool = True) -> str:
     """Shared rules appended after the JSON schema in every prompt."""
     rules = """Rules:
-- All [n] inline citations must resolve to an entry in sources
-- statLabel must be plain text only — NO inline citations like [1]. The stat source is tracked separately via statSourceName/statSourceTitle/statSourceUrl. The stat does NOT need to appear in the body text — it is displayed separately as a pull-stat callout above the prose.
+- All [Name, Date] inline citations must resolve to an entry in sources[] by the "name" field. Do NOT use numeric citations like [1].
+- Every inline citation [Name, Date] in risks.body, opportunities.body, howToAdapt.alreadyIn, and howToAdapt.thinkingOf must have a matching entry in sources[] with the same "name". Missing entries will cause broken links on the page.
+- statLabel must be plain text only — NO inline citations. The stat source is tracked separately via statSourceName/statSourceTitle/statSourceUrl. The stat does NOT need to appear in the body text — it is displayed separately as a pull-stat callout above the prose.
+- SOURCE URLS: Before writing any url (in sources[] or quote sourceUrl fields), find the specific article or report page via web search. Never construct or guess a URL path. If web search returns no specific article, use the approved homepage URL and note it needs manual verification. Generic homepages (e.g. hbr.org/, upwork.com/research) are not acceptable as quote sourceUrls.
 - Do not use "lean into", "AI is taking over", or other prohibited phrases from the tone guide"""
 
     if include_quotes:
         rules += """
-- Quotes: each must help the reader understand how this specific role is changing or how to navigate it. All 4 must cover different topics. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. REJECT: (a) BLS statistics in quotation marks — that's not a quote, (b) motivational platitudes under 50 characters, (c) bare percentages with no insight about what's changing or what to do, (d) static credential requirements ("typically need a bachelor's degree"). At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources. Prefer practitioner voices: HBR, MIT Sloan, Pragmatic Engineer, InfoQ, industry association reports with named commentators, NYT/WSJ interviewing professionals."""
+- Quotes: sourceUrl must be the url of a source in sources[]. Each quote must help the reader understand how this specific role is changing or how to navigate it. All 4 must cover different topics. Every quote must pass this test: "Would this quote have been different 5 years ago?" If no, it's too generic. REJECT: (a) BLS statistics in quotation marks — that's not a quote, (b) motivational platitudes under 50 characters, (c) bare percentages with no insight about what's changing or what to do, (d) static credential requirements ("typically need a bachelor's degree"). At most 1 quote across all 4 slots may come from BLS Occupational Outlook Handbook — if you use it, the other 3 must come from different sources. Prefer practitioner voices: HBR, MIT Sloan, Pragmatic Engineer, InfoQ, industry association reports with named commentators, NYT/WSJ interviewing professionals."""
 
     rules += "\n- Respond ONLY with the JSON object, no other text"
     return rules

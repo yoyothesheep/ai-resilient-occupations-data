@@ -9,6 +9,7 @@ Functions:
     load_task_table()  → dict[onet_code, list]  from onet_economic_index_task_table.csv
     load_occ_metrics() → dict[onet_code, row]   from onet_economic_index_metrics.csv
     load_a_scores()    → dict[onet_code, {a1..a10}]  parsed from score_log.txt
+    to_score(occ)      → int | None  round(final_ranking * 100) → 0-100
     load_text(path)    → str
     get_cluster_codes(cluster_id) → list[str]
 """
@@ -93,6 +94,12 @@ def load_a_scores(log_path: str = SCORE_LOG) -> dict:
                 if m2:
                     a_scores[current_code][f"a{m2.group(1)}"] = int(m2.group(2))
     return a_scores
+
+
+def to_score(occ: dict) -> int | None:
+    """Convert an occupation row to a 0-100 AI resilience score via final_ranking."""
+    val = occ.get("final_ranking")
+    return round(float(val) * 100) if val else None
 
 
 def load_text(path: str) -> str:

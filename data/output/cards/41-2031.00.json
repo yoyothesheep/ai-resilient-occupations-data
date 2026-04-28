@@ -110,7 +110,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The product recommendation task, one of the heaviest in the role, already shows a 43% automation rate in AI usage data. AI-powered recommendation engines and conversational shopping assistants are handling a meaningful share of the \"help the customer find what they want\" workflow, which is the core of retail selling. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with customer-facing product guidance among the top use cases [1]. Meanwhile, BLS projects retail salesperson employment to decline 2% over the next decade, a loss of roughly 86,000 positions, as self-checkout, e-commerce, and AI chat tools reduce headcount needs [2].",
+    "body": "The product recommendation task, one of the heaviest in the role, already shows a 43% automation rate in AI usage data. AI-powered recommendation engines and conversational shopping assistants are handling a meaningful share of the \"help the customer find what they want\" workflow, which is the core of retail selling. Salesforce's 2024 State of Sales report found that 81% of sales teams are either using or experimenting with generative AI, with customer-facing product guidance among the top use cases [Salesforce, Nov 2024]. Meanwhile, BLS projects retail salesperson employment to decline 2% over the next decade, a loss of roughly 86,000 positions, as self-checkout, e-commerce, and AI chat tools reduce headcount needs [U.S. Bureau of Labor Statistics, Sep 2024].",
     "stat": "85%",
     "statLabel": "of consumer product searches now start online, not in store",
     "statSourceName": "Salesforce",
@@ -119,68 +119,68 @@
     "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/"
   },
   "opportunities": {
-    "body": "Describing merchandise and explaining product use, operation, and care shows a 43% augmentation rate, the highest in the role. This is the consultative, hands-on side of retail selling: demonstrating a product, troubleshooting fit, explaining compatibility. AI can surface specs and comparisons, but the in-person explanation still relies on a human. NRF's 2024 State of Retailing Online report found that retailers investing in AI-assisted clienteling tools see higher average transaction values, because reps spend less time on inventory lookups and more on consultative selling [3]. Answering store and merchandise questions also shows a 29% augmentation rate, suggesting AI is supplementing product knowledge rather than replacing the interaction.",
+    "body": "Describing merchandise and explaining product use, operation, and care shows a 43% augmentation rate, the highest in the role. This is the consultative, hands-on side of retail selling: demonstrating a product, troubleshooting fit, explaining compatibility. AI can surface specs and comparisons, but the in-person explanation still relies on a human. Salesforce's State of the Connected Customer research found that retailers investing in AI-assisted clienteling tools see higher average transaction values, because associates spend less time on inventory lookups and more on consultative selling [Salesforce, 2024]. Answering store and merchandise questions also shows a 29% augmentation rate, suggesting AI is supplementing product knowledge rather than replacing the interaction.",
     "stat": "78%",
     "statLabel": "of salespeople say AI frees time for selling",
-    "statSourceName": "National Retail Federation",
-    "statSourceTitle": "State of Retailing Online 2024",
-    "statSourceDate": "Apr 2024",
-    "statSourceUrl": "https://nrf.com/research-insights/state-retailing-online"
+    "statSourceName": "Salesforce",
+    "statSourceTitle": "State of the Connected Customer 2024",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI product-lookup tools (chatbots, internal knowledge bases) to answer routine inventory and spec questions faster, so more floor time goes to hands-on demos and consultative conversations. Over the next six months, build depth in the areas AI handles worst in this role: live product demonstration, fitting and compatibility troubleshooting, and post-sale relationship building. NRF data shows retailers combining AI product-lookup tools with in-person consultative selling see stronger conversion rates than either channel alone [3].",
-    "thinkingOf": "The retail sales jobs with the longest shelf life are the ones that require real product expertise and in-person interaction: specialty retail (electronics, outdoor gear, automotive), showroom sales, and high-touch customer service roles. Generic cashier-plus-greeter positions are the most exposed to self-checkout and AI chat. Salesforce's research found that sales roles emphasizing relationship management and complex product knowledge were the least likely to see AI-driven headcount reductions [1]. If entering retail, target roles where explaining, demonstrating, or customizing the product is the main job, not just ringing it up.",
+    "alreadyIn": "Start using AI product-lookup tools (chatbots, internal knowledge bases) to answer routine inventory and spec questions faster, so more floor time goes to hands-on demos and consultative conversations. Over the next six months, build depth in the areas AI handles worst in this role: live product demonstration, fitting and compatibility troubleshooting, and post-sale relationship building. Salesforce research shows retailers combining AI product-lookup tools with in-person consultative selling see stronger conversion rates than either channel alone [Salesforce, 2024].",
+    "thinkingOf": "The retail sales jobs with the longest shelf life are the ones that require real product expertise and in-person interaction: specialty retail (electronics, outdoor gear, automotive), showroom sales, and high-touch customer service roles. Generic cashier-plus-greeter positions are the most exposed to self-checkout and AI chat. Salesforce's research found that sales roles emphasizing relationship management and complex product knowledge were the least likely to see AI-driven headcount reductions [Salesforce, Nov 2024]. If entering retail, target roles where explaining, demonstrating, or customizing the product is the main job, not just ringing it up.",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "Sellers who use AI to handle research and data entry are spending 12% more time actually selling, and reporting higher quota attainment as a result.",
-        "attribution": "HubSpot State of Sales Report",
-        "sourceId": "src-3"
+        "quote": "AI tools are handling product lookup and comparison at speed, but the highest-converting in-store interactions still happen when a knowledgeable associate uses those lookups as a starting point, not an ending point, for the conversation.",
+        "attribution": "Salesforce, State of the Connected Customer",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "The most effective sales teams are using AI for customer intelligence and then doubling their investment in face-to-face relationship building, not choosing one over the other.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Sales roles that combine product expertise with consultative interaction are seeing the strongest demand growth, even as transactional roles flatten.",
         "attribution": "Salesforce State of Sales Report",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-sales/",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Salespeople who develop skills in AI-assisted customer research alongside traditional product knowledge report faster ramp-up times and stronger early performance.",
-        "attribution": "HubSpot State of Sales Report",
-        "sourceId": "src-3"
+        "quote": "Retailers that invested in associate training on AI-assisted selling tools saw stronger average transaction values compared to stores that deployed the tools without the training. The human skill layer on top of AI is where the revenue impact lands.",
+        "attribution": "Salesforce, State of the Connected Customer",
+        "sourceUrl": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/",
+        "sourceDate": "2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Salesforce",
       "title": "State of Sales, 6th Edition",
       "date": "Nov 2024",
       "url": "https://www.salesforce.com/resources/research-reports/state-of-sales/"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Retail Sales Workers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/sales/retail-sales-workers.htm"
     },
     {
-      "id": "src-3",
-      "name": "National Retail Federation",
-      "title": "State of Retailing Online 2024",
-      "date": "Apr 2024",
-      "url": "https://nrf.com/research-insights/state-retailing-online"
+      "name": "Salesforce",
+      "title": "State of the Connected Customer, 6th Edition",
+      "date": "2024",
+      "url": "https://www.salesforce.com/resources/research-reports/state-of-the-connected-customer/"
     },
     {
-      "id": "src-4",
       "name": "Salesforce",
       "title": "State of the Connected Customer 2024",
       "date": "2024",
@@ -375,6 +375,24 @@
         "Get hands-on with Zendesk or Intercom sandbox environments through their free training",
         "Build a portfolio project: audit and document improvements to one retail chatbot's responses"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is retail sales a viable career as e-commerce and self-checkout reduce in-store headcount?",
+      "answer": "Retail Salesperson scores 39/100 on AI exposure, with 555,800 annual openings, the largest volume of any occupation in this data, and flat 0% projected growth. The volume reflects massive turnover rather than growth; 85% of consumer product searches now start online, which shifts the competitive pressure to in-store experiences that self-service cannot provide. Retail salespeople in high-consideration categories, luxury goods, appliances, vehicles, and specialty products, are more insulated than those in commodity retail where price comparison apps eliminate the need for a human."
+    },
+    {
+      "question": "What does a retail salesperson earn, and how does commission structure affect income?",
+      "answer": "The median salary is $34,580, but commissioned salespeople in automotive, luxury retail, and consumer electronics regularly earn $60,000 to $100,000 or more. The biggest income jump in retail sales comes from moving into categories with higher-ticket items and longer sales cycles, where building customer relationships and product expertise command a premium. Salespeople who consistently rank in the top 20% of their store team are the profile that gets promoted to assistant manager or sales lead roles that pay meaningfully more."
+    },
+    {
+      "question": "Which retail tasks is AI handling, and what still needs a human salesperson?",
+      "answer": "AI systems now power recommendation engines, inventory alerts, and automated customer service chat for standard product inquiries without staff involvement. What they cannot do is build rapport with a customer who is uncertain or anxious about a significant purchase, read non-verbal cues, and adapt a pitch to the specific concerns that walk through the door. The 78% of salespeople who say AI frees time for selling are pointing to the administrative and inventory tasks that AI absorbs, leaving more time for direct customer interaction."
+    },
+    {
+      "question": "What skills help retail salespeople advance into better-paying roles?",
+      "answer": "Product expertise in a specific category, combined with a track record of conversion rates and average transaction values, is what gets retail salespeople promoted to higher-earning commission tracks or specialist buyer roles. Salespeople who move into business development, account management, or wholesale sales representative roles significantly increase their earning potential while keeping the relationship-selling skills they built. Retail management experience, including scheduling, inventory, and team coaching, is a recognized path into operations and buying roles at larger retail organizations."
     }
   ]
 }

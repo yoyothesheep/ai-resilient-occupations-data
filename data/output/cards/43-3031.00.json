@@ -117,7 +117,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "BLS projects bookkeeping clerk employment to decline 6% over the next decade, a loss of roughly 100,000 positions, as accounting software increasingly handles data entry, reconciliation, and basic reporting [1]. The WEF Future of Jobs Report names accounting and bookkeeping clerks among the fastest-declining roles globally, driven by AI and automation performing the structured, repetitive work that defines the occupation [2]. The financial calculations task already shows 57.7% automation in AI usage data, and that task represents the analytical core of the role.",
+    "body": "BLS projects bookkeeping clerk employment to decline 6% over the next decade, a loss of roughly 100,000 positions, as accounting software increasingly handles data entry, reconciliation, and basic reporting [U.S. Bureau of Labor Statistics, Sep 2024]. The WEF Future of Jobs Report names accounting and bookkeeping clerks among the fastest-declining roles globally, driven by AI and automation performing the structured, repetitive work that defines the occupation [World Economic Forum, Jan 2025]. The financial calculations task already shows 57.7% automation in AI usage data, and that task represents the analytical core of the role.",
     "stat": "95%",
     "statLabel": "of accounting firms adopted automation technologies in the past year",
     "statSourceName": "Intuit QuickBooks",
@@ -126,7 +126,7 @@
     "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "opportunities": {
-    "body": "The Intuit QuickBooks 2025 survey found that 81% of accountants report AI boosts their productivity, with firms using automation reporting near-unanimous improvements in accuracy (98%) and efficiency (97%) [3]. This creates demand for bookkeepers who can operate AI-powered tools and interpret results rather than just enter data. The AICPA reports that AI is accelerating the shift from compliance-focused bookkeeping toward strategic advisory services, a transition that opens new value for clerks willing to move up the skill ladder [4].",
+    "body": "The Intuit QuickBooks 2025 survey found that 81% of accountants report AI boosts their productivity, with firms using automation reporting near-unanimous improvements in accuracy (98%) and efficiency (97%) [Intuit QuickBooks, Jul 2025]. This creates demand for bookkeepers who can operate AI-powered tools and interpret results rather than just enter data. The AICPA reports that AI is accelerating the shift from compliance-focused bookkeeping toward strategic advisory services, a transition that opens new value for clerks willing to move up the skill ladder [CPA.com / AICPA, Jun 2025].",
     "stat": "81%",
     "statLabel": "of accountants report AI boosts their productivity",
     "statSourceName": "Intuit QuickBooks",
@@ -135,63 +135,69 @@
     "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
-    "alreadyIn": "Learn the AI features in whatever accounting platform you use daily. QuickBooks, Xero, and Sage all now offer automated categorization, anomaly flagging, and reconciliation. Start there rather than chasing a separate AI certification [3]. Over the next six months, build advisory skills: interpreting reports for clients, spotting cash flow trends, and communicating financial insights. The AICPA notes that the profession is shifting from transaction processing to strategic advising, and bookkeepers who can bridge both sides are in the strongest position [4].",
-    "thinkingOf": "Target employers and roles that emphasize cloud accounting and client interaction rather than pure data entry. Those positions are the most durable. BLS still projects 170,000 annual openings for bookkeeping clerks despite the overall decline, nearly all from replacement needs as experienced workers retire [1]. The WEF Future of Jobs Report highlights that while clerical roles are declining, the skills gap in AI-literate finance workers is widening, creating an opening for new entrants who arrive with both accounting fundamentals and platform proficiency [2].",
+    "alreadyIn": "Learn the AI features in whatever accounting platform you use daily. QuickBooks, Xero, and Sage all now offer automated categorization, anomaly flagging, and reconciliation. Start there rather than chasing a separate AI certification [Intuit QuickBooks, Jul 2025]. Over the next six months, build advisory skills: interpreting reports for clients, spotting cash flow trends, and communicating financial insights. The AICPA notes that the profession is shifting from transaction processing to strategic advising, and bookkeepers who can bridge both sides are in the strongest position [CPA.com / AICPA, Jun 2025].",
+    "thinkingOf": "Target employers and roles that emphasize cloud accounting and client interaction rather than pure data entry. Those positions are the most durable. BLS still projects 170,000 annual openings for bookkeeping clerks despite the overall decline, nearly all from replacement needs as experienced workers retire [U.S. Bureau of Labor Statistics, Sep 2024]. The WEF Future of Jobs Report highlights that while clerical roles are declining, the skills gap in AI-literate finance workers is widening, creating an opening for new entrants who arrive with both accounting fundamentals and platform proficiency [World Economic Forum, Jan 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI isn't taking over our jobs. It's giving us more room to do the work that matters.",
         "attribution": "Dan Luthi, Partner, Ignite Spot Accounting Services",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI is fundamentally reshaping the accounting profession, accelerating the move toward more strategic advisory services.",
         "attribution": "Erik Asgeirsson, President and CEO, CPA.com",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "AI is not going to disrupt the accounting profession, but it will change what an accountant does.",
         "attribution": "Mark Koziel, President and CEO, AICPA",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Accountants are moving away from manual data entry to become strategic advisors as AI handles the transactional work.",
         "attribution": "2025 Intuit QuickBooks Survey",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/",
+        "sourceDate": "Jul 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Bookkeeping, Accounting, and Auditing Clerks",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/office-and-administrative-support/bookkeeping-accounting-and-auditing-clerks.htm"
     },
     {
-      "id": "src-2",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025: The Fastest Growing and Declining Jobs",
       "date": "Jan 2025",
       "url": "https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf"
     },
     {
-      "id": "src-3",
       "name": "Intuit QuickBooks",
       "title": "Accountants Embrace AI and Strategic Advisory Services to Fuel Growth, According to 2025 Intuit QuickBooks Survey",
       "date": "Jul 2025",
       "url": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
     },
     {
-      "id": "src-4",
       "name": "CPA.com / AICPA",
       "title": "CPA.com Issues 2025 AI in Accounting Report",
       "date": "Jun 2025",
       "url": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
+    },
+    {
+      "name": "Ignite Spot Accounting",
+      "title": "Empowering Accountants with AI",
+      "date": "2024",
+      "url": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent"
     }
   ],
   "emergingCareers": [
@@ -424,6 +430,24 @@
         "Earn advanced certifications related to Credit Analysts",
         "Demonstrate capability in independent decision making"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is bookkeeping a viable career as AI automates more accounting tasks?",
+      "answer": "Bookkeeper scores 28/100 on AI exposure, one of the lowest in finance, and BLS projects a 6% employment decline through 2033. The 170,000 annual openings are still substantial, but they reflect replacement demand as the workforce contracts. Bookkeepers who move into advisory and analysis work, rather than data entry and reconciliation, are better positioned than those staying in transaction-heavy roles."
+    },
+    {
+      "question": "What does a bookkeeper earn, and what raises the salary?",
+      "answer": "The median salary is $49,210, but bookkeepers who add QuickBooks Advanced, payroll certification, or CPA-track coursework typically earn $55,000 to $70,000. The clearest salary jump comes from transitioning to accounting technician or staff accountant roles at small firms, where the work shifts from data entry toward analysis. CPA firms and multi-entity small businesses pay a premium for bookkeepers who can manage accrual accounting and prepare financial statements."
+    },
+    {
+      "question": "Which bookkeeping tasks is AI handling, and what still needs a human?",
+      "answer": "Automated software now handles bank reconciliation, invoice matching, and payroll calculations without human review for straightforward transactions. Where errors appear and judgment is still needed is in classifying unusual transactions, catching fraud patterns, and preparing records for tax filing when business situations are non-standard. The 81% of accountants who report AI improving productivity are mostly describing time saved on data entry, not the elimination of the oversight role."
+    },
+    {
+      "question": "What skills help a bookkeeper stay in demand as automation takes over routine work?",
+      "answer": "Proficiency in cloud accounting platforms, QuickBooks Online and Xero in particular, is now a baseline expectation, not a differentiator. Bookkeepers who can produce monthly financial packages and speak to what the numbers mean, not just what they are, are harder to automate away. The AIPB Certified Bookkeeper credential provides a recognized standard; combining it with payroll or sales tax specialization opens roles that command a meaningful salary premium over general bookkeeping."
     }
   ]
 }

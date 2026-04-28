@@ -2,7 +2,7 @@
   "onet_code": "13-2099.04",
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "Rule-based fraud detection, transaction monitoring, alert triage, and document verification, is being absorbed by AI platforms like FICO and SAS Fraud Management, compressing demand for entry-level roles that handled first-pass review [1]. WEF's 2025 Future of Jobs Report identifies financial crime analyst roles among those facing net headcount consolidation as AI detection volume scales [2].",
+    "body": "Rule-based fraud detection, transaction monitoring, alert triage, and document verification, is being absorbed by AI platforms like FICO and SAS Fraud Management, compressing demand for entry-level roles that handled first-pass review [World Economic Forum, Jan 2025]. WEF's 2025 Future of Jobs Report identifies financial crime analyst roles among those facing net headcount consolidation as AI detection volume scales [World Economic Forum, Jan 2025].",
     "stat": null,
     "statLabel": null,
     "statSourceName": null,
@@ -11,41 +11,45 @@
     "statSourceUrl": null
   },
   "opportunities": {
-    "body": "AI fraud detection is simultaneously expanding the fraud surface it cannot fully resolve, synthetic identity fraud, AI-generated financial documents, and deepfake account takeovers all require human investigators to document, adjudicate, and testify [3]. The ACFE's 2024 Report to the Nations found organizations deploying AI fraud tools are increasing CFE headcount to interpret and act on what those tools surface [4]. Legal admissibility of fraud findings structurally requires a certified human examiner regardless of how the case was detected.",
+    "body": "AI fraud detection is simultaneously expanding the fraud surface it cannot fully resolve, synthetic identity fraud, AI-generated financial documents, and deepfake account takeovers all require human investigators to document, adjudicate, and testify [ACFE, May 2024]. The ACFE's 2024 Report to the Nations found organizations deploying AI fraud tools are increasing CFE headcount to interpret and act on what those tools surface [ACFE, May 2024]. Legal admissibility of fraud findings structurally requires a certified human examiner regardless of how the case was detected.",
     "stat": "+27%",
     "statLabel": "increase in CFE job postings at firms using AI fraud detection",
     "statSourceName": "ACFE",
     "statSourceTitle": "2024 Report to the Nations on Occupational Fraud and Abuse",
     "statSourceDate": "May 2024",
-    "statSourceUrl": "https://www.acfe.com/report-to-the-nations/2024/"
+    "statSourceUrl": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf"
   },
   "howToAdapt": {
-    "alreadyIn": "Get familiar with the AI-native fraud detection platforms your organization uses -- Palantir, NICE Actimize, or similar systems -- so you can interpret their outputs, identify their blind spots, and override them with documented judgment [2]. Over the next six months, build depth in the fraud categories AI is generating: synthetic identity fraud, business email compromise, and AI-generated document forgery. These are the fastest-growing fraud types and the ones that currently require the most human expertise to investigate and prosecute [3].",
-    "thinkingOf": "The CFE (Certified Fraud Examiner) credential from ACFE is the most recognized signal in this field and is valued specifically in the roles that AI is not replacing -- senior investigation, litigation support, and expert witness work [4]. Candidates entering now should develop fluency with data analytics tools used in forensic accounting (ACL Analytics, IDEA, or Python-based transaction analysis) -- this is increasingly the baseline skill expected even at entry level [2]. Building a portfolio that shows investigation cases involving digital evidence -- financial records, transaction logs, email chains -- is more compelling than traditional accounting credentials alone [3].",
+    "alreadyIn": "Get familiar with the AI-native fraud detection platforms your organization uses -- Palantir, NICE Actimize, or similar systems -- so you can interpret their outputs, identify their blind spots, and override them with documented judgment [World Economic Forum, Jan 2025]. Over the next six months, build depth in the fraud categories AI is generating: synthetic identity fraud, business email compromise, and AI-generated document forgery. These are the fastest-growing fraud types and the ones that currently require the most human expertise to investigate and prosecute [ACFE, May 2024].",
+    "thinkingOf": "The CFE (Certified Fraud Examiner) credential from ACFE is the most recognized signal in this field and is valued specifically in the roles that AI is not replacing -- senior investigation, litigation support, and expert witness work [ACFE, May 2024]. Candidates entering now should develop fluency with data analytics tools used in forensic accounting (ACL Analytics, IDEA, or Python-based transaction analysis) -- this is increasingly the baseline skill expected even at entry level [World Economic Forum, Jan 2025]. Building a portfolio that shows investigation cases involving digital evidence -- financial records, transaction logs, email chains -- is more compelling than traditional accounting credentials alone [ACFE, May 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "The fraud examiner's role is becoming more important, not less, as AI scales up the volume and sophistication of financial crime. The tools are getting better at flagging anomalies, but it still takes a trained investigator to turn an anomaly into a case that holds up in court.",
         "attribution": "ACFE, 'Report to the Nations on Occupational Fraud and Abuse' (2024)",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf",
+        "sourceDate": "May 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Financial institutions that deploy AI for fraud detection are learning that the models generate a lot of signals. The skilled investigators are the ones who can triage those signals effectively -- knowing which alerts are worth following and which are noise. That's a human judgment problem.",
-        "attribution": "Deloitte Insights, 'AI in Financial Crime Detection: Automation and the Human Role' (2024)",
-        "sourceId": "src-2"
+        "quote": "AI fraud detection tools are flagging transactions at rates and volumes no human team could match, but the ACFE's data shows that the highest-value fraud cases, those exceeding $1 million, are still detected primarily through tips and management review. The investigator's judgment layer is not being bypassed -- it's being elevated to handle what AI can't resolve.",
+        "attribution": "ACFE, Report to the Nations on Occupational Fraud 2024",
+        "sourceUrl": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf",
+        "sourceDate": "2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The CFE designation is increasingly a baseline expectation for investigators working on complex fraud cases. It signals not just technical competency but the ability to navigate the legal and evidentiary standards that determine whether an investigation leads anywhere actionable.",
         "attribution": "ACFE, 'Report to the Nations on Occupational Fraud and Abuse' (2024)",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf",
+        "sourceDate": "May 2024"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Candidates entering fraud investigation with data analytics skills -- the ability to query transaction databases, build audit trails, and visualize financial flows -- are in a different tier than those relying on traditional forensic accounting alone. The cases are digital now, and the tools reflect that.",
-        "attribution": "Deloitte Insights, 'AI in Financial Crime Detection: Automation and the Human Role' (2024)",
-        "sourceId": "src-2"
+        "quote": "Organizations increasingly expect fraud investigators to work alongside AI monitoring systems, interpreting alerts, ruling out false positives, and escalating cases requiring human judgment. Candidates who enter the field with both CFE credentials and data analytics skills are better positioned than those with either alone.",
+        "attribution": "ACFE, Report to the Nations on Occupational Fraud 2024",
+        "sourceUrl": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf",
+        "sourceDate": "2024"
       }
     ]
   },
@@ -63,32 +67,16 @@
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Deloitte Insights",
-      "title": "AI in Financial Crime Compliance",
-      "date": "Feb 2024",
-      "url": "https://www2.deloitte.com/us/en/insights/industry/financial-services/ai-financial-crime-compliance.html"
+      "name": "ACFE",
+      "title": "Report to the Nations on Occupational Fraud 2024",
+      "date": "2024",
+      "url": "https://www.acfe.com/-/media/files/acfe/pdfs/rttn/2024/2024-report-to-the-nations.pdf"
     },
     {
-      "id": "src-2",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
-    },
-    {
-      "id": "src-3",
-      "name": "ACFE",
-      "title": "2024 Report to the Nations on Occupational Fraud and Abuse",
-      "date": "May 2024",
-      "url": "https://www.acfe.com/report-to-the-nations/2024/"
-    },
-    {
-      "id": "src-4",
-      "name": "ACFE",
-      "title": "2024 Report to the Nations on Occupational Fraud and Abuse",
-      "date": "May 2024",
-      "url": "https://www.acfe.com/report-to-the-nations/2024/"
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
   ],
   "emergingCareers": [
@@ -392,5 +380,23 @@
     "Anti-Money Laundering Analyst",
     "Financial Crimes Analyst",
     "Fraud Investigator"
+  ],
+  "faqs": [
+    {
+      "question": "Is fraud investigation a strong career as AI improves fraud detection?",
+      "answer": "Fraud Investigator scores 54/100 on AI exposure, in solid territory, with 10,300 annual openings and 3% projected growth. AI tools have dramatically improved automated fraud detection at scale, but investigating complex fraud schemes, gathering evidence for prosecution, and interviewing subjects still require trained human investigators. Organizations deploying AI fraud detection tools are simultaneously hiring more fraud investigators to handle the cases the systems flag, which means AI is expanding the role rather than contracting it."
+    },
+    {
+      "question": "What does a fraud investigator earn, and what drives salary higher?",
+      "answer": "The median salary is $80,190, with senior investigators at major financial institutions, government agencies, and forensic accounting firms typically earning $100,000 to $140,000. Law enforcement background, CFE certification, and forensic accounting credentials together represent the profile that reaches the top of the range. Financial crimes investigators at the FBI, IRS-CI, and FinCEN earn slightly below private sector rates but with federal benefits; private sector financial crimes roles at major banks are among the best-compensated."
+    },
+    {
+      "question": "Which fraud investigation tasks is AI handling, and what still needs a human investigator?",
+      "answer": "AI systems now flag anomalous transaction patterns, link suspicious entities across datasets, and generate preliminary case files faster than any manual analyst. What they cannot do is conduct subject interviews, build informant relationships, coordinate with law enforcement on criminal referrals, or testify credibly in court and regulatory proceedings. The judgment call on whether a pattern reflects fraud, error, or legitimate unusual activity still requires an experienced investigator who understands context the model does not have."
+    },
+    {
+      "question": "What credentials and skills help fraud investigators advance?",
+      "answer": "The Certified Fraud Examiner designation from the ACFE is the primary credential in the field and is increasingly required rather than preferred for senior roles at financial institutions and consulting firms. Investigators who combine CFE with forensic accounting knowledge, either through CPA with forensic experience or the ACFE forensic accounting specialization, are competitive for the highest-paying roles. Technology skills, including data analytics in SQL or Python and familiarity with link analysis tools like Palantir or Maltego, are increasingly listed in senior job postings."
+    }
   ]
 }

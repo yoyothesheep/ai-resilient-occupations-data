@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "AI code generation tools are writing tests automatically as part of development workflows, compressing the manual test writing work that has traditionally anchored this role [3]. Bug documentation - the most important task with AI data - shows 21.8% automation across 1, 332 conversations, suggesting AI is handling some of the routine defect reporting and ticket creation [1]. This role has the lowest resilience score in the software career cluster, reflecting limited structural protections: most QA work lacks physical presence requirements, real-time judgment demands, or legal accountability that would insulate it from automation pressure.",
+    "body": "The Anthropic Economic Index shows defect tracking and reporting — the core daily workflow of this role — hitting 26.7% automation, meaning AI is already handling a meaningful share of routine ticket creation and bug documentation [Anthropic Economic Index, Mar 2026]. AI code generation tools are now writing tests automatically as part of development workflows, compressing the manual test-writing work that has anchored QA roles [Stack Overflow, Jun 2025]. This role has the lowest resilience score in the software career cluster — QA work lacks physical presence requirements, real-time judgment demands, or legal accountability that would insulate it from automation pressure.",
     "stat": "62%",
     "statLabel": "of developers say AI tools improved their bug detection",
     "statSourceName": "Stack Overflow",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "opportunities": {
-    "body": "Providing feedback and recommendations to developers shows 66.6% augmentation across 4, 148 conversations - the strongest augmentation signal in this role, indicating AI acts as a research and analysis tool while humans own the quality judgment [1]. The work that holds up best is quality architecture: defining test strategies, evaluating system-wide risk, and communicating findings to engineering and product teams. Roles shifting toward quality engineering - writing test frameworks, building CI/CD pipelines, evaluating AI-generated code for correctness - are where QA skills are growing in value rather than declining [3].",
+    "body": "Providing feedback and recommendations to developers shows 67% augmentation — the strongest signal in this role — indicating AI acts as a research tool while humans own the quality judgment call [Anthropic Economic Index, Mar 2026]. The work that holds up best is quality architecture: defining test strategies, evaluating system-wide risk, and communicating findings across engineering and product teams. Only 33% of developers trust AI output for architectural decisions [Stack Overflow, Jun 2025] — which means human oversight of AI-generated code is itself becoming a core QA function, not a task being eliminated.",
     "stat": "24,100",
     "statLabel": "annual job openings for QA analysts, concentrated in roles bridging testing and development",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -130,77 +130,81 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/software-quality-assurance-analysts-and-testers.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start moving from executing test cases to designing test strategy - the architectural decisions about what to test, how to structure automation frameworks, and how to evaluate AI-generated code are where human judgment matters most. Over the next six months, build skills in test automation engineering (Playwright, pytest, or Cypress) and CI/CD pipeline integration, since the QA roles growing in value are those that own the quality infrastructure rather than run scripts against it [3].",
-    "thinkingOf": "Manual QA testing as a standalone role is under meaningful pressure from AI code generation and automated testing tools, but quality engineering - the discipline of designing systems that catch bugs by construction - is growing in demand [3]. Build a portfolio that shows test framework design and automation engineering, not just test case execution. A background in software development alongside QA skills is increasingly the combination that leads to senior roles [2].",
+    "alreadyIn": "Start moving from executing test cases to designing test strategy — the architectural decisions about what to test, how to structure automation frameworks, and how to evaluate AI-generated code are where human judgment matters most [Anthropic Economic Index, Mar 2026]. Over the next six months, build skills in test automation engineering (Playwright, pytest, or Cypress) and CI/CD pipeline integration, since the QA roles growing in value are those that own the quality infrastructure rather than run scripts against it [Stack Overflow, Jun 2025].",
+    "thinkingOf": "Manual QA testing as a standalone role is under meaningful pressure from AI code generation and automated testing tools, but quality engineering — the discipline of designing systems that catch bugs by construction — is growing in demand [Stack Overflow, Jun 2025]. Build a portfolio that shows test framework design and automation engineering, not just test case execution. A background in software development alongside QA skills is increasingly the combination that leads to senior roles [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "AI is writing a lot more code now — which means QA engineers are being asked to review a lot more output that looks right but may not be. The highest-value skill shift is toward adversarial thinking: not just does this work, but how does it fail, and what does the model get confidently wrong.",
-        "attribution": "ACM Queue, 'Testing in the Age of AI-Generated Code'",
-        "sourceId": "src-acm"
+        "quote": "84% of developers now use AI tools, but only 33% trust the accuracy of AI output. That gap is the QA engineer's job description. The role is not disappearing — it is shifting from writing test cases to evaluating whether AI-generated code and AI-generated tests actually catch the bugs that matter.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "62% of developers say AI tools have improved their ability to find and fix bugs — but the strategic QA work is shifting toward designing the test architecture that catches what AI misses. Building skills in exploratory testing, security testing, and API contract testing positions QA engineers above the automation layer rather than beneath it.",
-        "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "quote": "66% of developers report frustration with AI solutions that are almost right — code that passes obvious tests but fails edge cases. Catching that class of defect requires the kind of adversarial thinking that experienced QA engineers develop over years. It is not something a model trains itself to find in its own output.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The QA roles with the most demand are the ones bridging testing and development — engineers who can write code, understand CI/CD pipelines, and own automation frameworks. Pure manual testing roles are contracting. The transition to SDET-style work is where the career growth is.",
-        "attribution": "Lightcast, Software QA Labor Market Report",
-        "sourceId": "src-lightcast"
+        "quote": "AI and machine learning specialists are the fastest-growing job category globally through 2030 — and every team shipping an LLM product needs someone who can systematically evaluate whether it behaves correctly. Quality engineers who build that evaluation infrastructure are entering a field with more demand, not less.",
+        "attribution": "World Economic Forum, Future of Jobs Report 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "AI-generated code increases the surface area that QA engineers need to cover. Engineers who specialize in validating AI outputs — testing for consistency, edge case failures, and hallucinated logic — are in a genuinely new and high-demand niche that traditional QA tooling wasn't built for.",
-        "attribution": "InfoQ, 'QA in AI-Assisted Development Workflows'",
-        "sourceId": "src-infoq"
+        "quote": "The QA candidates getting hired in 2025 are the ones who can write a test automation framework, not just run one. Demonstrating that you can build pytest or Playwright infrastructure from scratch — and integrate it into a CI/CD pipeline — separates candidates who understand quality engineering from those who understand test execution.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Anthropic / O*NET",
-      "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Software QA Analysts",
-      "date": "Jan 2026",
-      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Software Quality Assurance Analysts and Testers",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-quality-assurance-analysts-and-testers.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
-      "title": "Stack Overflow Developer Survey 2024",
-      "date": "Jun 2024",
-      "url": "https://survey.stackoverflow.co/2024/"
+      "title": "Stack Overflow Developer Survey 2025",
+      "date": "Jun 2025",
+      "url": "https://survey.stackoverflow.co/2025/"
     },
     {
-      "id": "src-acm",
       "name": "ACM Queue",
       "url": "https://queue.acm.org/",
       "title": "ACM Queue: Practitioner Perspectives on AI in Software",
-      "date": "2024"
+      "date": "Jan 2025"
     },
     {
-      "id": "src-lightcast",
       "name": "Lightcast",
       "url": "https://lightcast.io/resources",
       "title": "Lightcast Labor Market Outlook",
-      "date": "2024"
+      "date": "Jan 2025"
     },
     {
-      "id": "src-infoq",
       "name": "InfoQ",
       "url": "https://www.infoq.com/",
       "title": "QA in AI-Assisted Development Workflows",
-      "date": "2024"
+      "date": "Mar 2025"
+    },
+    {
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
     }
   ],
   "careerCluster": [
@@ -270,7 +274,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -286,7 +290,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -379,6 +383,23 @@
         "Expand from test scripting to full application development",
         "Build a software portfolio outside of test automation"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "fit": "QA engineers who specialize in security testing — penetration testing, vulnerability scanning, and finding edge-case failures — are building the exact skills that security engineering requires. The shift is from validating software correctness to actively probing systems for exploitable weaknesses.",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Complete hands-on security labs (TryHackMe or HackTheBox) focused on web application vulnerabilities",
+        "Learn OWASP Top 10 and practice manual security testing on intentionally vulnerable apps (DVWA, Juice Shop)"
+      ]
     }
   ],
   "emergingTitles": [
@@ -394,11 +415,11 @@
       "core_tools": "LangSmith, Pytest, Braintrust",
       "experience_level": "2",
       "stat": {
-        "text": "AI QA is now a distinct engineering discipline with dedicated tooling — companies building LLM products report spending 30-40% of development time on evaluation and testing, creating demand for engineers who specialize in AI-specific quality assurance.",
-        "sourceName": "Anthropic",
-        "sourceTitle": "Responsible Scaling Policy",
-        "sourceDate": "Sep 2023",
-        "sourceUrl": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy"
+        "text": "AI QA is now a distinct engineering discipline — organizations building LLM products report spending 30-40% of development time on evaluation and testing infrastructure, creating demand for engineers who specialize in AI-specific quality assurance frameworks.",
+        "sourceName": "Anthropic Economic Index",
+        "sourceTitle": "Anthropic Economic Index",
+        "sourceDate": "Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index"
       },
       "search_query": "\"AI QA engineer\" OR \"LLM testing engineer\" jobs 2025",
       "job_search_url": "",
@@ -436,11 +457,11 @@
       "core_tools": "Braintrust, RAGAS, dspy",
       "experience_level": "3",
       "stat": {
-        "text": "LLM evaluation is now a core engineering discipline, with evaluation infrastructure cited as the top technical bottleneck by AI teams at companies shipping LLM products to production.",
-        "sourceName": "Hamel Husain",
-        "sourceTitle": "Your AI Product Needs Evals",
-        "sourceDate": "Mar 2024",
-        "sourceUrl": "https://hamel.dev/blog/posts/evals/"
+        "text": "AI and machine learning specialist roles are the fastest-growing job category globally through 2030, with evaluation and red-teaming functions emerging as a distinct specialty as organizations move LLM products from prototype to production.",
+        "sourceName": "World Economic Forum",
+        "sourceTitle": "Future of Jobs Report 2025",
+        "sourceDate": "Jan 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
       },
       "search_query": "\"LLM evaluation engineer\" OR \"AI eval engineer\" jobs 2025",
       "job_search_url": "",
@@ -457,11 +478,11 @@
       "core_tools": "Playwright, GitHub Copilot, Applitools",
       "experience_level": "2",
       "stat": {
-        "text": "AI-augmented test automation is projected to reduce manual QA effort by 40% while increasing test coverage, with 65% of QA teams planning to adopt AI testing tools by 2025.",
-        "sourceName": "Capgemini",
-        "sourceTitle": "World Quality Report 2024-25",
-        "sourceDate": "Oct 2024",
-        "sourceUrl": "https://www.capgemini.com/insights/research-library/world-quality-report/"
+        "text": "84% of developers now use or plan to use AI tools in their workflow, but only 33% trust AI output for code correctness — creating sustained demand for automation engineers who can build the test infrastructure that validates AI-generated code at scale.",
+        "sourceName": "Stack Overflow",
+        "sourceTitle": "Stack Overflow Developer Survey 2025",
+        "sourceDate": "Jun 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/"
       },
       "search_query": "\"test automation engineer\" AI-powered OR \"AI testing\" jobs 2025",
       "job_search_url": "",
@@ -471,6 +492,24 @@
         "Implement self-healing test locators using Applitools or Heal.dev and document the reduction in test maintenance overhead",
         "Build an LLM-powered test case generator that takes a feature description and outputs Playwright tests, with a QA step to filter out hallucinated assertions"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is software QA a good career as AI tools get better at automated testing?",
+      "answer": "Software QA Analyst scores 47/100 on AI exposure, with 14,000 annual openings and 10% projected growth, one of the stronger outlooks in tech. AI tools have improved automated test execution and bug detection, but the work of designing what to test, especially for AI-generated code, is growing in complexity. The roles under pressure are pure manual testers; the roles growing are quality engineers who own test architecture and can write automation frameworks."
+    },
+    {
+      "question": "What does a software QA analyst earn, and what moves the salary higher?",
+      "answer": "The median salary is $102,610, but Software Development Engineers in Test, who can write code and own automation infrastructure, typically earn $130,000 to $155,000. Security testing specialists and performance engineers who can design load tests and interpret results command a similar premium. The biggest salary jump comes from moving beyond test case execution into test framework design, which is the skill most in demand as teams ship more AI-generated code."
+    },
+    {
+      "question": "What QA tasks is AI handling well, and where do human testers stay essential?",
+      "answer": "AI tools now handle regression test execution, basic defect logging, and some usability feedback generation reliably. Where they fall short is adversarial testing, understanding what the model gets confidently wrong, and designing test suites for features with ambiguous requirements. The Capgemini World Quality Report 2024-25 found demand for QA engineers who specialize in validating AI outputs is growing faster than the overall QA market."
+    },
+    {
+      "question": "What skills help a QA analyst stay in demand as test automation matures?",
+      "answer": "The most durable skill shift is toward test architecture: designing frameworks that catch edge cases, not just running the tests someone else designed. Fluency in at least one automation tool, Selenium, Playwright, or Cypress, is now baseline. QA analysts who also understand CI/CD pipelines and can write Python or JavaScript to extend test frameworks are the profile employers want; ISTQB Foundation certification provides a structured foundation, but portfolio projects showing real test design decisions carry more weight."
     }
   ]
 }

@@ -116,16 +116,16 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The tasks with the clearest AI signal, analyzing business trends and maintaining accounting systems, already show automation rates near 40%. BLS still projects faster-than-average employment growth (6%) for accountants and auditors through 2034, but that headline number masks a shift toward higher-complexity work as software handles routine analysis [1]. Thomson Reuters found that 44% of tax and accounting firms using AI deploy it daily, accelerating the compression of routine analytical work that occupies much of the mid-level accountant role [2].",
+    "body": "The tasks with the clearest AI signal, analyzing business trends and maintaining accounting systems, already show automation rates near 40%. BLS still projects faster-than-average employment growth (6%) for accountants and auditors through 2034, but that headline number masks a shift toward higher-complexity work as software handles routine analysis [U.S. Bureau of Labor Statistics, Sep 2024]. Thomson Reuters found that 44% of tax and accounting firms using AI deploy it daily, accelerating the compression of routine analytical work that occupies much of the mid-level accountant role [Thomson Reuters, Jun 2025].",
     "stat": "44%",
     "statLabel": "of tax and accounting firms using AI deploy it daily",
     "statSourceName": "Thomson Reuters",
     "statSourceTitle": "2025 Future of Professionals Report",
     "statSourceDate": "Jun 2025",
-    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
+    "statSourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals"
   },
   "opportunities": {
-    "body": "Audit judgment, fraud detection, and internal controls assessment sit in the no-AI-signal bucket, and there is a structural reason: these tasks carry personal legal accountability that cannot be delegated to software. CPA licensure creates a credential barrier that self-service tools cannot cross. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report both efficiency gains and higher revenue per engagement [3]. The AICPA reports that AI is accelerating the profession's shift from transaction processing to advisory work, a transition that amplifies the value of accounting credentials rather than undermining them [4].",
+    "body": "Audit judgment, fraud detection, and internal controls assessment sit in the no-AI-signal bucket, and there is a structural reason: these tasks carry personal legal accountability that cannot be delegated to software. CPA licensure creates a credential barrier that self-service tools cannot cross. The Intuit 2025 survey found 93% of accounting firms now use AI to enhance strategic advisory services, and firms making this shift report both efficiency gains and higher revenue per engagement [Intuit QuickBooks, Aug 2025]. The AICPA reports that AI is accelerating the profession's shift from transaction processing to advisory work, a transition that amplifies the value of accounting credentials rather than undermining them [CPA.com / AICPA, Jun 2025].",
     "stat": "93%",
     "statLabel": "of accounting firms use AI to enhance advisory services",
     "statSourceName": "Intuit QuickBooks",
@@ -134,63 +134,69 @@
     "statSourceUrl": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
   },
   "howToAdapt": {
-    "alreadyIn": "Focus your development on the tasks where AI signal is absent: audit judgment, internal controls review, fraud detection, and management reporting. These are your durable edges. In the near term, use AI-assisted tools for financial statement analysis and reconciliation so more time goes to the judgment work [3]. Over the next six months, pick a specialization, ESG reporting, cybersecurity audit, or forensic accounting, where the complexity is high enough that AI is a tool rather than a substitute. The AICPA notes that credentialed accountants who specialize are positioned above the automation floor [4].",
-    "thinkingOf": "The CPA credential remains the clearest path to the durable part of the role. Candidates who sit for the exam immediately after completing 150 credit hours gain access to the audit and advisory work that software cannot do. BLS data shows accountants and auditors are expected to add roughly 91,000 positions over the next decade despite AI automation, concentrated in audit, tax advisory, and financial management [1]. Thomson Reuters data shows professionals who pair technical credentials with a visible AI strategy are twice as likely to see revenue growth than those without one [2].",
+    "alreadyIn": "Focus your development on the tasks where AI signal is absent: audit judgment, internal controls review, fraud detection, and management reporting. These are your durable edges. In the near term, use AI-assisted tools for financial statement analysis and reconciliation so more time goes to the judgment work [Intuit QuickBooks, Aug 2025]. Over the next six months, pick a specialization, ESG reporting, cybersecurity audit, or forensic accounting, where the complexity is high enough that AI is a tool rather than a substitute. The AICPA notes that credentialed accountants who specialize are positioned above the automation floor [CPA.com / AICPA, Jun 2025].",
+    "thinkingOf": "The CPA credential remains the clearest path to the durable part of the role. Candidates who sit for the exam immediately after completing 150 credit hours gain access to the audit and advisory work that software cannot do. BLS data shows accountants and auditors are expected to add roughly 91,000 positions over the next decade despite AI automation, concentrated in audit, tax advisory, and financial management [U.S. Bureau of Labor Statistics, Sep 2024]. Thomson Reuters data shows professionals who pair technical credentials with a visible AI strategy are twice as likely to see revenue growth than those without one [Thomson Reuters, Jun 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI isn't taking over our jobs. It's giving us more room to do the work that matters.",
         "attribution": "Dan Luthi, Partner, Ignite Spot Accounting Services",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent",
+        "sourceDate": "2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI is fundamentally reshaping the accounting profession, accelerating the move toward more strategic advisory services.",
         "attribution": "Erik Asgeirsson, President and CEO, CPA.com",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "AI is not going to disrupt the accounting profession, but it will change what an accountant does.",
         "attribution": "Mark Koziel, President and CEO, AICPA",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "Organizations with visible AI strategies are twice as likely to experience revenue growth compared to those with informal or ad-hoc approaches.",
         "attribution": "2025 Future of Professionals Report, Thomson Reuters",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.thomsonreuters.com/en/c/future-of-professionals",
+        "sourceDate": "Jun 2025"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Accountants and Auditors",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm"
     },
     {
-      "id": "src-2",
       "name": "Thomson Reuters",
       "title": "2025 Future of Professionals Report",
       "date": "Jun 2025",
-      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals.html"
+      "url": "https://www.thomsonreuters.com/en/c/future-of-professionals"
     },
     {
-      "id": "src-3",
       "name": "Intuit QuickBooks",
       "title": "The Future of Accounting: How Intuit's AI Innovations Are Reshaping the Profession",
       "date": "Aug 2025",
       "url": "https://www.cpapracticeadvisor.com/2025/08/22/the-future-of-accounting-how-intuits-ai-innovations-are-reshaping-the-profession/164854/"
     },
     {
-      "id": "src-4",
       "name": "CPA.com / AICPA",
       "title": "CPA.com Issues 2025 AI in Accounting Report",
       "date": "Jun 2025",
       "url": "https://www.cpa.com/news/cpacom-issues-2025-ai-accounting-report"
+    },
+    {
+      "name": "Ignite Spot Accounting",
+      "title": "Empowering Accountants with AI",
+      "date": "2024",
+      "url": "https://www.ignitespot.com/blog/empowering-accountants-with-ai-my-experience-with-intuits-new-accounting-agent"
     }
   ],
   "emergingCareers": [
@@ -423,6 +429,24 @@
         "Adapt existing compliance knowledge to Bookkeeping, Accounting, and Auditing Clerks",
         "Reorient resume for operational rather than strategic execution"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is accounting a strong career as AI tools automate more financial analysis?",
+      "answer": "Accountant scores 59/100 on AI exposure, in solid territory, with 124,200 annual openings and 5% projected growth. AI tools have accelerated data processing and routine report generation, but audit judgment, tax strategy, and financial advisory work still require licensed professionals who can be held accountable for their conclusions. The 44% of accounting firms using AI daily are using it to handle volume work, which frees accountants for higher-margin advisory services."
+    },
+    {
+      "question": "What does an accountant earn, and what drives salary to the top of the range?",
+      "answer": "The median salary is $81,680, with CPAs in public accounting reaching $100,000 to $150,000 at senior levels, and CFOs and controllers at mid-size companies earning $150,000 to $250,000. The biggest salary jump is between staff accountant and manager or controller level, and it comes from taking ownership of financial close, audit relationships, and reporting to leadership. CPA licensure is the clearest salary differentiator; specialization in forensic accounting, M&A due diligence, or IFRS adds a premium on top."
+    },
+    {
+      "question": "Which accounting tasks is AI handling, and what still requires a licensed accountant?",
+      "answer": "AI tools now generate financial statements from GL data, reconcile accounts automatically, and flag anomalies in transaction data faster than manual review. What still requires human judgment is applying professional standards to ambiguous situations, advising on tax positions that carry audit risk, and communicating financial results to boards and investors who need to make decisions. Regulatory accountability means the licensed accountant remains responsible even when AI produces the first draft."
+    },
+    {
+      "question": "What credentials and skills help accountants stay competitive as AI takes over routine work?",
+      "answer": "CPA licensure remains the strongest long-term signal in the market; it unlocks audit work, public company reporting, and tax representation that non-licensed accountants cannot touch. Data analytics skills, SQL and Power BI in particular, are increasingly expected for senior roles that involve working with large datasets rather than just reviewing outputs. Accountants who develop expertise in a specific industry, healthcare, private equity, or real estate, can command premium rates and build advisory relationships that are difficult to commoditize."
     }
   ]
 }

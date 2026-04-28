@@ -47,13 +47,13 @@ from datetime import datetime
 
 from loaders import (
     load_scores, load_task_table, load_occ_metrics, load_a_scores, load_text,
-    get_cluster_codes,
+    get_cluster_codes, to_score,
     SCORES_CSV, SCORE_LOG, TONE_GUIDE, CAREER_SPEC, APPROVED_SOURCES,
 )
 from prompts import build_full_prompt, build_section_prompt
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-API_MODEL = "claude-opus-4-6"
+API_MODEL = "claude-sonnet-4-6"
 
 TOP_N_TASKS   = 10   # tasks to include in taskData
 MIN_LABEL_LEN = 15   # task labels shorter than this are considered missing/generic
@@ -194,13 +194,17 @@ def prompt_for_labels(tasks_needing_labels: list[dict]) -> dict:
 # ── Interactive (inline) generation ──────────────────────────────────────────
 
 def generate_career_page_interactive(prompt: str) -> dict:
-    """Print the prompt and read the JSON response from stdin."""
-    print("\n" + "="*80)
-    print("PROMPT — paste this into your Claude conversation:")
-    print("="*80)
-    print(prompt)
-    print("="*80)
-    print("\nPaste the JSON response below, then press Enter + Ctrl-D (or Ctrl-Z on Windows):")
+    """Print the prompt to stderr and read the JSON response from stdin.
+
+    Printing to stderr keeps stdout clean so JSON can be piped in directly:
+        echo '{...}' | python3 generate_next_steps.py --code X --section risks
+    """
+    print("\n" + "="*80, file=sys.stderr)
+    print("PROMPT — paste this into your Claude conversation:", file=sys.stderr)
+    print("="*80, file=sys.stderr)
+    print(prompt, file=sys.stderr)
+    print("="*80, file=sys.stderr)
+    print("\nPaste the JSON response below, then press Enter + Ctrl-D (or Ctrl-Z on Windows):", file=sys.stderr)
     text = sys.stdin.read().strip()
     text = re.sub(r"```json\s*", "", text)
     text = re.sub(r"```\s*", "", text)
@@ -328,7 +332,7 @@ def build_passthrough(occ: dict, task_data: list) -> dict:
     emerging_titles = [t.strip() for t in occ.get("Emerging Job Titles", "").split(";") if t.strip()]
 
     return {
-        "score":          round(final_ranking * 100),
+        "score":          to_score(occ),
         "salary":         salary,
         "openings":       openings,
         "growth":         growth,
@@ -370,68 +374,132 @@ _SOFT_404_PHRASES = [
 ]
 
 
-def check_url(url: str) -> bool:
-    """Return True if URL is reachable and not a soft 404 or cross-domain redirect."""
+def check_url_status(url: str) -> str:
+    """Return 'ok', 'forbidden' (403 — may be bot-blocked, needs manual check), or 'dead'."""
     import urllib.parse
     if not url:
-        return False
+        return "dead"
     try:
         original_domain = urllib.parse.urlparse(url).netloc
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         resp = urllib.request.urlopen(req, timeout=10)
         if not (200 <= resp.status < 300):
-            return False
-        # Check if redirected — verify final URL is not a homepage or different domain
+            return "dead"
         final_url = resp.url
         if final_url != url:
             parsed_orig  = urllib.parse.urlparse(url)
             parsed_final = urllib.parse.urlparse(final_url)
             if parsed_final.netloc and parsed_final.netloc != parsed_orig.netloc:
                 print(f"  ⚠ Cross-domain redirect: {url} → {final_url}")
-                return False
-            # Same-domain redirect: flag if final path is much shorter (likely homepage)
+                return "dead"
             if len(parsed_final.path.strip("/")) < len(parsed_orig.path.strip("/")) // 2:
                 print(f"  ⚠ Redirect to shorter path (possible homepage): {url} → {final_url}")
-                return False
+                return "dead"
         snippet = resp.read(4096).decode("utf-8", errors="replace").lower()
         for phrase in _SOFT_404_PHRASES:
             if phrase in snippet:
-                return False
-        return True
+                return "dead"
+        return "ok"
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            return "forbidden"
+        return "dead"
     except Exception:
-        return False
+        return "dead"
 
 
-TRUSTED_DOMAINS = {
-    "bls.gov", "onetcenter.org", "onetonline.org",
-    "weforum.org", "mckinsey.com", "nber.org",
-    "stackoverflow.co", "survey.stackoverflow.co",
-    "github.blog", "github.com",
-    "anthropic.com", "economicgraph.linkedin.com",
-    "nar.realtor", "realtor.org",
-}
+def check_url(url: str) -> bool:
+    """Return True if URL is reachable. Treats 403 as True (may be bot-blocked)."""
+    status = check_url_status(url)
+    return status in ("ok", "forbidden")
 
-def validate_sources(sources: list) -> list:
+
+
+def _find_replacement_source_api(quote_text: str, attribution: str, occupation_title: str) -> dict | None:
+    """Call Claude API to find a replacement source for a quote with a bad URL."""
+    prompt = f"""A career page for "{occupation_title}" has a quote with a missing or dead source URL.
+
+Quote: "{quote_text}"
+Current attribution: "{attribution}"
+
+Find a real, publicly accessible source that supports or contains this quote or finding.
+Prefer non-paywalled sources. The URL must actually exist.
+
+Return ONLY a JSON object, no other text:
+{{"name": "Publisher name", "title": "Article or report title", "date": "Mon YYYY", "url": "https://..."}}
+
+If you cannot find a real verifiable source, return:
+{{"name": "", "title": "", "date": "", "url": ""}}"""
+
+    try:
+        result = generate_career_page_api(prompt)
+        if isinstance(result, dict) and result.get("url"):
+            return result
+    except Exception as e:
+        print(f"  ⚠ API error finding replacement source: {e}")
+    return None
+
+
+def _find_replacement_source_interactive(quote_text: str, attribution: str, occupation_title: str) -> dict | None:
+    """Print prompt for agent/user to find a replacement source, read JSON from stdin."""
+    print("\n" + "─"*60)
+    print(f"FIND REPLACEMENT SOURCE for: {occupation_title}")
+    print(f"Quote: \"{quote_text[:120]}\"")
+    print(f"Attribution: {attribution}")
+    print("─"*60)
+    print("Find a real, publicly accessible source for this quote.")
+    print("Return JSON: {\"name\": \"...\", \"title\": \"...\", \"date\": \"Mon YYYY\", \"url\": \"https://...\"}")
+    print("If no real source exists: {\"name\": \"\", \"title\": \"\", \"date\": \"\", \"url\": \"\"}")
+    print("─"*60)
+    try:
+        text = sys.stdin.read().strip()
+        text = re.sub(r"```json\s*", "", text)
+        text = re.sub(r"```\s*", "", text)
+        result = json.loads(text)
+        if isinstance(result, dict) and result.get("url"):
+            return result
+    except Exception:
+        pass
+    return None
+
+
+def _ask_fix_mode(attribution: str) -> str:
+    """Ask user how to fix a blank/dead quote source. Returns '1', '2', or '3'."""
+    print(f"\n  Quote attribution: \"{attribution[:70]}\"")
+    print("  sourceUrl is blank or dead. Fix options:")
+    print("    [1] API mode  — find replacement via Claude API automatically")
+    print("    [2] Interactive — agent finds replacement (no paste needed)")
+    print("    [3] Skip — leave blank, warn only")
+    choice = input("  Choice [1/2/3]: ").strip()
+    return choice if choice in ("1", "2", "3") else "3"
+
+
+def validate_sources(sources: list, quotes: list = None, occupation_title: str = "", body_texts: list = None, verify: bool = False) -> list:
     """Check each source URL and date; warn and clear dead URLs; warn on old dates.
 
+    Also validates quote sourceUrls:
+    - Bot-blocked domain → warn, flag for manual check
+    - Blank or dead URL → offer auto-fix (API or interactive)
+
+    body_texts: list of (field_name, text) tuples to scan for [Name, Date] citations
+    not matched by any sources[] entry.
+
     Trusted domains (BLS, etc.) are still checked, but 403s are tolerated since
-    these sites block headless requests. Other failures (404, bad redirects) are
-    caught even for trusted domains.
+    these sites block headless requests.
     """
-    import urllib.parse
+    import urllib.parse, re
     cutoff_year = datetime.now().year - 2
+
+    # ── Body text sources ────────────────────────────────────────────────────
     for s in sources:
         url = s.get("url", "")
         if url:
-            domain = urllib.parse.urlparse(url).netloc.lstrip("www.")
-            is_trusted = any(domain == d or domain.endswith("." + d) for d in TRUSTED_DOMAINS)
-            if not check_url(url):
-                if is_trusted:
-                    # Trusted domains often return 403 to bots — warn but keep URL
-                    print(f"  ℹ Trusted domain URL not verifiable (likely bot-blocked): {url}")
-                else:
-                    print(f"  ⚠ Dead URL cleared: {url}")
-                    s["url"] = ""
+            status = check_url_status(url)
+            if status == "forbidden":
+                print(f"  ⚠ MANUAL CHECK REQUIRED: {url} — open in browser to verify")
+            elif status == "dead":
+                print(f"  ⚠ Dead URL cleared: {url}")
+                s["url"] = ""
         date_str = s.get("date", "")
         if date_str:
             try:
@@ -440,6 +508,116 @@ def validate_sources(sources: list) -> list:
                     print(f"  ⚠ Source older than 2 years: {date_str} — {s.get('title', s.get('name', ''))}")
             except ValueError:
                 pass
+
+    # ── Quote sourceUrls ─────────────────────────────────────────────────────
+    for q in (quotes or []):
+        url = q.get("sourceUrl", "")
+        attribution = q.get("attribution", "")
+        quote_text = q.get("quote", "")
+
+        if not url:
+            # Blank — offer fix
+            print(f"  ⚠ Quote has no sourceUrl: \"{attribution[:60]}\"")
+            choice = _ask_fix_mode(attribution)
+            replacement = None
+            if choice == "1":
+                replacement = _find_replacement_source_api(quote_text, attribution, occupation_title)
+            elif choice == "2":
+                replacement = _find_replacement_source_interactive(quote_text, attribution, occupation_title)
+            if replacement and replacement.get("url"):
+                if check_url(replacement["url"]):
+                    q["sourceUrl"] = replacement["url"]
+                    q["sourceDate"] = replacement.get("date", "")
+                    existing_urls = {s.get("url") for s in sources}
+                    if replacement["url"] not in existing_urls:
+                        sources.append({"name": replacement.get("name",""), "title": replacement.get("title",""), "date": replacement.get("date",""), "url": replacement["url"]})
+                    print(f"  ✓ Fixed: {replacement['url']}")
+                else:
+                    print(f"  ⚠ Replacement URL failed check, skipped: {replacement['url']}")
+            elif choice != "3":
+                print("  ⚠ No replacement found — left blank")
+
+        else:
+            status = check_url_status(url)
+            if status == "forbidden":
+                print(f"  ⚠ MANUAL CHECK REQUIRED: {url}")
+                print(f"    → Open in browser to verify: \"{attribution[:60]}\"")
+            elif status == "dead":
+                print(f"  ⚠ Dead quote sourceUrl: {url}")
+                print(f"    Attribution: \"{attribution[:60]}\"")
+                choice = _ask_fix_mode(attribution)
+                replacement = None
+                if choice == "1":
+                    replacement = _find_replacement_source_api(quote_text, attribution, occupation_title)
+                elif choice == "2":
+                    replacement = _find_replacement_source_interactive(quote_text, attribution, occupation_title)
+                if replacement and replacement.get("url"):
+                    if check_url(replacement["url"]):
+                        q["sourceUrl"] = replacement["url"]
+                        q["sourceDate"] = replacement.get("date", "")
+                        existing_urls = {s.get("url") for s in sources}
+                        if replacement["url"] not in existing_urls:
+                            sources.append({"name": replacement.get("name",""), "title": replacement.get("title",""), "date": replacement.get("date",""), "url": replacement["url"]})
+                        print(f"  ✓ Fixed: {replacement['url']}")
+                    else:
+                        print(f"  ⚠ Replacement URL failed check, skipped: {replacement['url']}")
+                elif choice != "3":
+                    print("  ⚠ No replacement found — left blank")
+
+    # ── Inline citation cross-check ──────────────────────────────────────────
+    source_names = {s.get("name", "").lower() for s in sources if s.get("name")}
+    for field, text in (body_texts or []):
+        for match in re.finditer(r'\[([^\]]+)\]', text):
+            # Extract source name — everything before the first comma (if present)
+            content = match.group(1).strip()
+            name = content.split(",")[0].strip().lower()
+            if name not in source_names:
+                print(f"  ⚠ {field} cites \"{content.split(',')[0].strip()}\" but no matching entry in sources[]")
+
+    # ── Web search verification ───────────────────────────────────────────────
+    if verify:
+        entries = []
+        for i, s in enumerate(sources):
+            url = s.get("url", "")
+            if url:
+                entries.append({"field": f"sources[{i}].url", "url": url,
+                                "title": s.get("title", s.get("name", ""))})
+        for q in (quotes or []):
+            url = q.get("sourceUrl", "")
+            if url:
+                entries.append({"field": "quotes.sourceUrl", "url": url,
+                                "title": q.get("attribution", "")[:60]})
+
+        if entries:
+            print("\nVERIFY_URLS_START")
+            for e in entries:
+                print(json.dumps(e))
+            print("VERIFY_URLS_END")
+            print(f"# {len(entries)} URLs above. Read results from stdin (one JSON line per URL):")
+
+            for e in entries:
+                try:
+                    line = sys.stdin.readline().strip()
+                    if not line:
+                        continue
+                    r = json.loads(line)
+                    if r.get("status") == "404":
+                        correct = r.get("correct_url")
+                        if correct:
+                            # Patch sources[] or quote in place
+                            for s in sources:
+                                if s.get("url") == e["url"]:
+                                    s["url"] = correct
+                                    print(f"  ✓ Patched source URL: {e['url']} → {correct}")
+                            for q in (quotes or []):
+                                if q.get("sourceUrl") == e["url"]:
+                                    q["sourceUrl"] = correct
+                                    print(f"  ✓ Patched quote sourceUrl: {e['url']} → {correct}")
+                        else:
+                            print(f"  ⚠ Dead URL, no replacement: {e['url']}")
+                except (json.JSONDecodeError, KeyError):
+                    continue
+
     return sources
 
 
@@ -480,9 +658,10 @@ def verify_generated(generated: dict, low_data: bool):
         if any(w in label or w in body_lower for w in automation_words):
             print(f"  ⚠ VERIFY: low-data occupation but risks.stat looks like an automation rate: '{stat} {risks.get('statLabel')}' — consider rerunning with --force")
 
-    # Citation check: all [n] markers in body/opportunities must resolve to a source
-    # Also flag sections that repeat the same source without variety
-    sources = {s["id"]: s for s in generated.get("sources", [])}
+    # Citation check: [Name, Date] markers must resolve to a source by name
+    sources_list = generated.get("sources", [])
+    source_names = {s["name"] for s in sources_list if s.get("name")}
+    source_urls = {s["url"] for s in sources_list if s.get("url")}
     sections = [
         ("risks.body", body),
         ("opportunities.body", (generated.get("opportunities") or {}).get("body") or ""),
@@ -490,14 +669,19 @@ def verify_generated(generated: dict, low_data: bool):
         ("howToAdapt.thinkingOf", (generated.get("howToAdapt") or {}).get("thinkingOf") or ""),
     ]
     for section_name, text in sections:
-        citations = re.findall(r'\[(\d+)\]', str(text))
-        for match in citations:
-            src_id = f"src-{match}"
-            if src_id not in sources:
-                print(f"  ⚠ VERIFY: {section_name} cites [{match}] but src-{match} not in sources[]")
-        unique = set(citations)
-        if len(citations) >= 2 and len(unique) == 1:
-            print(f"  ⚠ VERIFY: {section_name} repeats the same source [{citations[0]}] for all citations — needs a second source")
+        # Check for old numeric citations (should no longer appear)
+        numeric_citations = re.findall(r'\[(\d+)\]', str(text))
+        if numeric_citations:
+            print(f"  ⚠ VERIFY: {section_name} uses old numeric citations {numeric_citations} — should use [Name, Date] format")
+        # Check named citations resolve to sources[]
+        named_citations = re.findall(r'\[([^,\]\d][^,\]]*),\s*([^\]]+)\]', str(text))
+        for name, _date in named_citations:
+            name = name.strip()
+            if name not in source_names:
+                print(f"  ⚠ VERIFY: {section_name} cites [{name}, ...] but no source with that name in sources[]")
+        unique_names = {n for n, _ in named_citations}
+        if len(named_citations) >= 2 and len(unique_names) == 1:
+            print(f"  ⚠ VERIFY: {section_name} repeats the same source for all citations — needs a second source")
 
     # Redundant stat check: flag stats that duplicate info already on the page
     # Also check if risks and opportunities have exactly the same stat and label
@@ -526,25 +710,28 @@ def verify_generated(generated: dict, low_data: bool):
 
     # Quote source check
     for q in (generated.get("howToAdapt") or {}).get("quotes", []):
+        src_url = q.get("sourceUrl", "")
         src_id = q.get("sourceId", "")
-        if src_id and src_id not in sources:
-            print(f"  ⚠ VERIFY: quote sourceId '{src_id}' not in sources[]")
+        if src_url and src_url not in source_urls:
+            print(f"  ⚠ VERIFY: quote sourceUrl '{src_url}' not in sources[]")
+        elif src_id and not src_url:
+            print(f"  ⚠ VERIFY: quote uses legacy sourceId '{src_id}' — should use sourceUrl")
 
     # Quote source diversity check
     for persona in ("alreadyIn", "thinkingOf"):
         pq = [q for q in (generated.get("howToAdapt") or {}).get("quotes", [])
               if q.get("persona") == persona]
         if len(pq) >= 2:
-            ids = [q.get("sourceId") for q in pq if q.get("sourceId")]
-            if len(ids) >= 2 and len(set(ids)) == 1:
-                print(f"  ⚠ VERIFY: howToAdapt quotes[{persona}] all cite {ids[0]} — each quote needs a different source")
+            urls = [q.get("sourceUrl") for q in pq if q.get("sourceUrl")]
+            if len(urls) >= 2 and len(set(urls)) == 1:
+                print(f"  ⚠ VERIFY: howToAdapt quotes[{persona}] all cite the same sourceUrl — each quote needs a different source")
 
 
 def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: dict,
                        a_scores: dict, tone_guide: str, career_spec: str,
                        approved_sources: str = "",
                        print_prompt_only: bool = False, api_mode: bool = False,
-                       sections: list[str] | None = None):
+                       sections: list[str] | None = None, verify: bool = False):
     """Generate or patch one occupation card.
 
     sections=None generates a full card (all sections).
@@ -624,10 +811,18 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
                     words = t["full"].split()
                     t["task"] = " ".join(words[:5]).rstrip(".,;") + ("…" if len(words) > 5 else "")
 
-    # Validate source URLs and dates
+    # Validate source URLs and dates against the generated output only.
     if "sources" in generated:
         print("  Validating sources...")
-        validate_sources(generated["sources"])
+        quotes = (generated.get("howToAdapt") or {}).get("quotes", [])
+        adapt = generated.get("howToAdapt") or {}
+        body_texts = [
+            ("risks.body", (generated.get("risks") or {}).get("body", "")),
+            ("opportunities.body", (generated.get("opportunities") or {}).get("body", "")),
+            ("howToAdapt.alreadyIn", adapt.get("alreadyIn", "")),
+            ("howToAdapt.thinkingOf", adapt.get("thinkingOf", "")),
+        ]
+        validate_sources(generated["sources"], quotes=quotes, occupation_title=occ.get("Occupation", ""), body_texts=body_texts, verify=verify)
 
     tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
     low_data = len(tasks_with_signal) == 0
@@ -642,17 +837,38 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
             return
         card = existing_cards[code]
 
-        # Overwrite only the requested sections
-        if "risks" in sections or "opportunities" in sections:
-            card["risks"] = generated.get("risks", {})
-            card["opportunities"] = generated.get("opportunities", {})
+        # Overwrite only the specifically requested sections
+        if "risks" in sections and generated.get("risks"):
+            card["risks"] = generated["risks"]
+        if "opportunities" in sections and generated.get("opportunities"):
+            card["opportunities"] = generated["opportunities"]
         if "howToAdapt" in sections:
             card["howToAdapt"] = generated.get("howToAdapt", {})
 
-        # Always update sources when patching content sections
+        # Merge new sources into existing — don't replace, because other sections
+        # (e.g. howToAdapt) may cite sources not regenerated in this patch run.
         new_sources = generated.get("sources", [])
         if new_sources:
-            card["sources"] = new_sources
+            existing_sources = card.get("sources", [])
+            existing_urls = {s.get("url") for s in existing_sources if s.get("url")}
+            existing_names = {s.get("name") for s in existing_sources if s.get("name")}
+            for s in new_sources:
+                url = s.get("url")
+                name = s.get("name")
+                if url and url not in existing_urls:
+                    existing_sources.append(s)
+                    existing_urls.add(url)
+                    existing_names.add(name)
+                elif name and name not in existing_names:
+                    existing_sources.append(s)
+                    existing_names.add(name)
+                else:
+                    # Update existing entry with same URL in case title/date changed
+                    for es in existing_sources:
+                        if url and es.get("url") == url:
+                            es.update(s)
+                            break
+            card["sources"] = existing_sources
 
         save_card(card)
         r_stat = card.get("risks", {}).get("stat")
@@ -756,6 +972,9 @@ def main():
     parser.add_argument("--section",
                         help="Patch only specified sections (comma-separated): "
                              "risks,opportunities | tasks | howToAdapt")
+    parser.add_argument("--verify", action="store_true",
+                        help="Emit VERIFY_URLS block for all source URLs after generation; "
+                             "read web-search results from stdin and patch dead URLs")
     args = parser.parse_args()
 
     # Parse sections
@@ -819,6 +1038,7 @@ def main():
             print_prompt_only=args.print_prompt,
             api_mode=args.api,
             sections=sections,
+            verify=args.verify,
         )
 
     print("\n✓ Done")

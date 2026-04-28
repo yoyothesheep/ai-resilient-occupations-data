@@ -48,14 +48,14 @@ python3 scripts/generate_industry_page.py --cluster <id>
 
 Requires `ANTHROPIC_API_KEY` env var.
 
-**Occupation cards** (`data/output/occupation_cards.jsonl`) are the bridge between pipeline and site. Each `.tsx` career page in the site embeds data from the corresponding card.
+**Occupation cards** (`data/output/cards/<onet_code>.json`) are the bridge between pipeline and site. Each `.tsx` career page in the site embeds data from the corresponding card.
 
 ## Key Files
 
 - `data/input/` — raw O*NET + BLS source files
 - `data/intermediate/All_Occupations_ONET_enriched.csv` — enriched input for scoring
 - `data/output/ai_resilience_scores.csv` — final scored dataset (all occupations)
-- `data/output/occupation_cards.jsonl` — per-occupation career page data
+- `data/output/cards/` — per-occupation career page data (one `<onet_code>.json` per occupation)
 - `data/emerging_roles/emerging_roles.csv` — AI-era career pivot roles (single source of truth)
 - `data/career_clusters/` — career ladder topology (clusters, roles, branches)
 - `data/top_no_degree_careers/` — curated subset: top careers requiring ≤ associate's degree
@@ -71,6 +71,18 @@ Requires `ANTHROPIC_API_KEY` env var.
 
 See `docs/scoring-framework.md` for full rubric.
 
+## Data Conventions
+
+### Score Fields
+- **`role_resilience_score`** (1.0–5.0): raw AI resilience score from the scoring model. Used internally; never written to career page TSX files.
+- **`final_ranking`** (0.0–1.0): composite ranking (AI resilience 50% + growth 30% + openings 20%). This is the single source of truth for the 0–100 score shown everywhere on the site.
+- **`to_score(occ)`** in `scripts/loaders.py`: the canonical conversion — `round(final_ranking * 100)`. Use this everywhere a 0–100 score is needed (career page header, career map cluster nodes). Never reimplement the formula inline.
+- Career map cluster node scores are stored as 0–100 in the TSX (via `to_score()`). The site's `getTier(node.score)` receives 0–100 directly — no `* 20` conversion.
+
+### Source Validation
+- Approved sources: `docs/approved_sources.md` — the allowlist. `generate_emerging_roles.py` warns on any `stat_url` domain not in this list.
+- Never use Gartner, IDC, Forrester, MarketsandMarkets, BrightEdge, Semrush, Ahrefs, or vendor/SEO tool blogs as stat sources.
+
 ## Updating Source Data
 
 See `docs/pipeline.md` — "Source Data Updates" section for full instructions on updating O*NET, BLS, and AEI data.
@@ -83,7 +95,7 @@ Career pages live in `../ai-resilient-occupations-site`. Use the `aeo-content-wr
 
 **Before generating a career page**, run Track B pipeline for the occupation first:
 1. Check cluster exists: `grep "<CODE>" data/career_clusters/cluster_roles.csv` — if missing, use `career-clusters` skill
-2. Run `generate_next_steps.py --code <CODE>` to populate `occupation_cards.jsonl`
+2. Run `generate_next_steps.py --code <CODE>` to populate `data/output/cards/<CODE>.json`
 3. Run `adjacent_roles.py --code <CODE>` to add `careerCluster`
 4. Run `generate_emerging_roles.py --code <CODE>` to add `emergingCareers`
 5. Switch to site repo → run `aeo-content-writer` skill → run `publish-checklist` skill
@@ -93,17 +105,37 @@ Career pages live in `../ai-resilient-occupations-site`. Use the `aeo-content-wr
 ## Working Principles
 
 - **Always make fixes generalizable.** When fixing a data or formatting issue for one occupation, fix it in the script so it applies to all. Never patch individual records manually when the root cause is in the pipeline.
+- **Never write card JSON directly.** Always generate and patch occupation cards through `generate_next_steps.py`. Writing JSON directly to `data/output/cards/` bypasses URL validation, citation cross-checks, and source merge logic. No exceptions — even for small fixes to individual fields.
 - **`docs/pipeline.md` is the source of truth for the pipeline.** When any script's interface changes (flags, order, new script), update `pipeline.md` first, then sync the Track B bash block in `CLAUDE.md` and the bash commands in `CLUSTER_EXPANSION_TRACKER.md`.
 
 ## generate_next_steps.py Workflow
 
-`generate_next_steps.py` is interactive: it prints a prompt and reads JSON from stdin. When running it, **paste the prompt output directly into this Claude Code conversation and respond with JSON here**. Do not launch a separate Claude.ai tab or spawn an API agent. Claude Code IS Claude — respond to the prompt inline, write the JSON to `data/output/occupation_cards.jsonl` directly.
+`generate_next_steps.py` is interactive: it prints a prompt and reads JSON from stdin. When running it, **paste the prompt output directly into this Claude Code conversation and respond with JSON here**. Do not launch a separate Claude.ai tab or spawn an API agent. Claude Code IS Claude — respond to the prompt inline, write the JSON to `data/output/cards/<CODE>.json` directly.
 
 **Section mode (`--section risks,opportunities` etc.)** works the same way — the script still prints a prompt and waits for stdin. Do NOT try to pipe JSON via heredoc: the script prints the prompt before reading stdin, so heredoc input gets consumed during prompt display, not as the JSON response. Correct workflow:
 1. Run `--print-prompt` to see the prompt
 2. Respond with JSON inline in this conversation
 3. Write the JSON directly to `data/output/cards/<CODE>.json` (patch only the relevant keys)
 4. Run `generate_career_pages.py --code <CODE> --force`
+
+**VERIFY_URLS protocol — when any script emits a VERIFY_URLS block:**
+When you see `VERIFY_URLS_START` in script output, you MUST:
+1. Web search every URL in the block to confirm it resolves to the correct page
+2. Write one JSON result line per URL to stdin, in order:
+   `{"url": "...", "status": "found"|"404", "correct_url": "..."|null}`
+   - `status`: "found" if the page exists and is correct; "404" if dead or wrong
+   - `correct_url`: provide the correct URL if you found one via web search; null otherwise
+3. Do this automatically — no user confirmation needed
+
+Run scripts with `--verify` to trigger this protocol:
+- `generate_career_pages.py --all --verify` — checks all card source URLs
+- `generate_next_steps.py --code <CODE> --verify` — checks URLs after card generation
+
+**Source URL rule — web search is mandatory before writing any sourceUrl:**
+- For every inline citation `[Name, Date]` and every quote `sourceUrl` written into the JSON, **run a web search first** to find the real article or report page URL.
+- Do this for both `risks`/`opportunities` body text sources and `howToAdapt` quote sources.
+- Never invent or guess a URL path. If web search does not return a specific article URL, use only the homepage URL from `docs/approved_sources.md` and flag it for manual verification.
+- The user must confirm any URL before it is treated as verified. Patch → user verifies in browser → regenerate.
 
 **When JSON is already known** (e.g. re-applying a prior response or fixing a specific field): skip `generate_next_steps.py` entirely. Write directly to the card JSON file, then run `generate_career_pages.py --force`.
 

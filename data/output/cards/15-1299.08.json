@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The maintenance and installation side of this role shows real automation pressure. Routine hardware and software maintenance tasks have a 44% automation rate in AI conversations, meaning AI tools are already handling a meaningful share of patching, upgrades, and configuration work without human involvement. Infrastructure-as-code platforms and AI-assisted provisioning tools are accelerating this trend. GitHub's 2024 Octoverse report found that AI-generated code now accounts for a growing share of commits in infrastructure repositories, with Copilot adoption among DevOps and infrastructure engineers rising sharply [1]. The broader systems engineering labor market is projected to grow just 3% over the next decade according to BLS data [2], which is slower than average and suggests muted new-job creation even as existing roles shift.",
+    "body": "The maintenance and installation side of this role shows real automation pressure. Routine hardware and software maintenance tasks have a 44% automation rate in AI conversations, meaning AI tools are already handling a meaningful share of patching, upgrades, and configuration work without human involvement. Infrastructure-as-code platforms and AI-assisted provisioning tools are accelerating this trend. GitHub's 2024 Octoverse report found that AI-generated code now accounts for a growing share of commits in infrastructure repositories, with Copilot adoption among DevOps and infrastructure engineers rising sharply [GitHub, Oct 2024]. The broader systems engineering labor market is projected to grow just 3% over the next decade according to BLS data [U.S. Bureau of Labor Statistics, Sep 2024], which is slower than average and suggests muted new-job creation even as existing roles shift.",
     "stat": "77%",
     "statLabel": "of organizations adopted infrastructure-as-code, automating routine system maintenance",
     "statSourceName": "Stack Overflow",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://survey.stackoverflow.co/2024/"
   },
   "opportunities": {
-    "body": "Technical guidance and troubleshooting is the strongest augmentation signal in this role. That task shows a 63% augmentation rate across over 1,500 AI conversations, meaning engineers are using AI as a research and diagnostic partner rather than handing off the work entirely [1]. This pattern fits: designing and debugging complex distributed systems requires contextual judgment that AI assists but can't own. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or plan to use AI tools in their workflow, but only 43% trust AI output for architectural decisions [3]. Systems architecture work, where the role involves evaluating tradeoffs across security, scalability, and cost, scores high on specialized expertise (A9: 3) and AI-direction capability (A10: 5), both durable advantages.",
+    "body": "Technical guidance and troubleshooting is the strongest augmentation signal in this role. That task shows a 63% augmentation rate across over 1,500 AI conversations, meaning engineers are using AI as a research and diagnostic partner rather than handing off the work entirely [GitHub, Oct 2024]. This pattern fits: designing and debugging complex distributed systems requires contextual judgment that AI assists but can't own. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or plan to use AI tools in their workflow, but only 43% trust AI output for architectural decisions [Stack Overflow, Jul 2024].",
     "stat": "31,300",
     "statLabel": "annual job openings across computer systems roles, driven by cloud migration complexity",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -130,59 +130,59 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI coding assistants for infrastructure-as-code reviews and troubleshooting workflows now. The data shows AI is already a strong partner for technical guidance tasks, with a 63% augmentation rate [1]. Over the next six months, build depth in the areas AI handles worst for this role: cross-system architecture tradeoff analysis, security posture evaluation, and stakeholder requirement translation. These tasks involve ambiguity and organizational context that AI tools consistently struggle with.",
-    "thinkingOf": "Entry-level infrastructure work, the maintenance and provisioning layer, is the part most exposed to automation. A stronger entry point is building a portfolio around system design: document architecture decisions for real or simulated multi-service deployments, including why alternatives were rejected. The Stack Overflow survey shows employers still don't trust AI for architectural decisions [3], so demonstrated design judgment stands out. Cloud provider certifications (AWS Solutions Architect, Azure Solutions Architect Expert) remain useful signals, but pair them with hands-on projects that show tradeoff reasoning, not just configuration knowledge.",
+    "alreadyIn": "Start using AI coding assistants for infrastructure-as-code reviews and troubleshooting workflows now. The data shows AI is already a strong partner for technical guidance tasks, with a 63% augmentation rate [GitHub, Oct 2024]. Over the next six months, build depth in the areas AI handles worst for this role: cross-system architecture tradeoff analysis, security posture evaluation, and stakeholder requirement translation. These tasks involve ambiguity and organizational context that AI tools consistently struggle with.",
+    "thinkingOf": "Entry-level infrastructure work, the maintenance and provisioning layer, is the part most exposed to automation. A stronger entry point is building a portfolio around system design: document architecture decisions for real or simulated multi-service deployments, including why alternatives were rejected. The Stack Overflow survey shows employers still don't trust AI for architectural decisions [Stack Overflow, Jul 2024], so demonstrated design judgment stands out. Cloud provider certifications (AWS Solutions Architect, Azure Solutions Architect Expert) remain useful signals, but pair them with hands-on projects that show tradeoff reasoning, not just configuration knowledge.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Developers are integrating AI into their workflows at a rapid pace , 97% of respondents have used AI coding tools at some point. The shift is toward using these tools for code generation, debugging, and documentation rather than replacing design work.",
         "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "sourceUrl": "https://survey.stackoverflow.co/2024/",
+        "sourceDate": "May 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "AI-powered code generation is becoming embedded in the developer workflow, with Copilot now active in infrastructure and DevOps repositories at growing rates, but adoption is highest in routine commits, not architectural changes.",
         "attribution": "GitHub Octoverse 2024",
-        "sourceId": "src-1"
+        "sourceUrl": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Only 43% of developers trust AI tools for complex tasks like architectural decisions, compared to much higher trust for code completion and documentation, suggesting that design skills remain a differentiator.",
         "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "sourceUrl": "https://survey.stackoverflow.co/2024/",
+        "sourceDate": "May 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The fastest-growing repositories in 2024 involved infrastructure-as-code and platform engineering, areas where AI accelerates routine work but human review of system-level tradeoffs remains the norm.",
         "attribution": "GitHub Octoverse 2024",
-        "sourceId": "src-1"
+        "sourceUrl": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+        "sourceDate": "Oct 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "GitHub",
       "title": "Octoverse 2024: The state of open source and rise of AI",
       "date": "Oct 2024",
       "url": "https://github.blog/news-insights/octoverse/octoverse-2024/"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Computer and Information Technology Occupations",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/home.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
       "title": "2024 Developer Survey Results",
       "date": "Jul 2024",
       "url": "https://survey.stackoverflow.co/2024/"
     },
     {
-      "id": "src-4",
       "name": "Stack Overflow",
       "title": "Stack Overflow Developer Survey 2024",
       "date": "May 2024",
@@ -240,7 +240,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "specialization",
@@ -319,6 +319,23 @@
         "Learn SQL and NoSQL at depth",
         "Build database schema design and optimization portfolio"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Systems architects design the infrastructure that security engineers protect. Moving into security engineering means shifting from designing systems for performance and reliability to designing them for adversarial resilience — the architecture knowledge transfers completely."
     }
   ],
   "emergingTitles": [
@@ -334,11 +351,11 @@
       "core_tools": "NVIDIA CUDA, Kubernetes, Ray",
       "experience_level": "4",
       "stat": {
-        "text": "Global AI infrastructure spending is projected to reach $200 billion by 2025, with cloud providers and enterprises competing to build dedicated AI compute capacity — driving demand for architects who understand both AI workloads and distributed systems.",
-        "sourceName": "Goldman Sachs",
-        "sourceTitle": "AI Infrastructure: Sizing the Opportunity",
-        "sourceDate": "Apr 2024",
-        "sourceUrl": "https://www.goldmansachs.com/intelligence/pages/gs-research/ai-investment-forecast-to-approach-200-billion-globally-by-2025/report.pdf"
+        "text": "Global AI infrastructure investment is projected to require $5.2 trillion in data center capital expenditures by 2030 — driving demand for architects who can design and scale the compute infrastructure that AI workloads depend on.",
+        "sourceName": "McKinsey",
+        "sourceTitle": "The Cost of Compute: A $7 Trillion Race to Scale Data Centers",
+        "sourceDate": "Apr 2025",
+        "sourceUrl": "https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-cost-of-compute-a-7-trillion-dollar-race-to-scale-data-centers"
       },
       "search_query": "\"AI infrastructure architect\" OR \"ML infrastructure engineer\" jobs 2025",
       "job_search_url": "",
@@ -369,6 +386,24 @@
         "Set up a complete MLOps pipeline using MLflow + GitHub Actions that trains, versions, evaluates, and deploys a model on a push to main",
         "Implement data drift detection on a production model using Evidently AI and set up automated retraining triggers"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is computer systems architecture a stable career as cloud platforms automate infrastructure?",
+      "answer": "Computer Systems Architect scores 56/100 on AI exposure, in solid territory, with 31,300 annual openings and 7% projected growth. Infrastructure-as-code and managed cloud services have automated routine system maintenance, but designing the architecture that runs on that infrastructure still requires human judgment about tradeoffs, constraints, and organizational context. Architects who own cloud migration strategy and AI infrastructure design are seeing the strongest demand."
+    },
+    {
+      "question": "What does a computer systems architect earn, and what specializations pay more?",
+      "answer": "The median salary is $108,970, but cloud architects and those specializing in AI/ML infrastructure or edge computing typically earn $140,000 to $180,000. The premium is in roles that require designing systems across cloud, on-premise, and hybrid environments, where the complexity exceeds what automation can handle. AWS Solutions Architect Professional or Google Cloud Professional Cloud Architect certifications are the most direct credentials to the higher end of the salary range."
+    },
+    {
+      "question": "Which systems architecture tasks is AI handling, and what requires senior human judgment?",
+      "answer": "AI tools generate infrastructure-as-code templates, identify configuration drift, and propose cost optimization changes reliably for standard cloud deployments. Where they fall short is designing systems that meet contradictory requirements, such as low latency and high availability at minimum cost, and making tradeoff decisions that depend on business context the model does not have. The GitHub Octoverse 2024 report found infrastructure complexity growing faster than automation can absorb, which sustains architect demand."
+    },
+    {
+      "question": "What skills help computer systems architects stay competitive?",
+      "answer": "Cloud platform expertise across at least two major providers, AWS and Azure or GCP, is now a baseline for most senior roles. Security architecture skills, particularly zero-trust network design and identity management, are increasingly embedded in systems architect job descriptions rather than separated into a specialist role. Architects who can present business-case tradeoffs to non-technical stakeholders, not just design technically correct systems, are the profile that reaches the highest compensation bands."
     }
   ]
 }

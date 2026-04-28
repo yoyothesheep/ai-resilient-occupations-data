@@ -199,11 +199,31 @@ def generate_route_file(cluster_name: str, page_slug: str, const_name: str,
         f"Compare {cluster_name.lower()} careers by AI resilience, growth, and career level"
         " — from entry-level to principal roles."
     )
-    canonical = f"https://ai-proof-careers.com/industry/{page_slug}"
+    canonical = f"https://www.ai-proof-careers.com/industry/{page_slug}"
 
     lines = [
+        'import { Metadata } from "next";',
         f'import {{ IndustryPageLayout }} from "@/components/IndustryPageLayout";',
         f'import {{ {const_name} }} from "@/data/industries/{data_slug}";',
+        "",
+        "export const metadata: Metadata = {",
+        f'  title: "{title}",',
+        f'  description: "{meta_desc}",',
+        f'  alternates: {{ canonical: "{canonical}" }},',
+        "  openGraph: {",
+        '    type: "website",',
+        f'    title: "{title}",',
+        f'    description: "{meta_desc}",',
+        f'    url: "{canonical}",',
+        '    images: ["/career-guides-thumbnail.png"],',
+        "  },",
+        "  twitter: {",
+        '    card: "summary_large_image",',
+        f'    title: "{title}",',
+        f'    description: "{meta_desc}",',
+        '    images: ["/career-guides-thumbnail.png"],',
+        "  },",
+        "};",
         "",
         f"export default function {component_name}() {{",
         "  return (",

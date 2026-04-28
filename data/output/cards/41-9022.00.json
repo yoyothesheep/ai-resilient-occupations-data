@@ -110,7 +110,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The tasks AI hits hardest are the ones agents spend the most time on. Property matching (generating lists for buyers) shows 49% automation, marketing and listing promotion shows 41%, and answering client questions about financing and repairs shows 42%. These are core daily activities, not back-office busywork. NAR's 2024 member profile found that 35% of Realtors already use AI tools in their business, up from near zero two years prior [1]. Zillow and similar platforms are increasingly offering AI-powered home valuations and instant property recommendations directly to consumers, compressing the information advantage that agents have traditionally held [2].",
+    "body": "The tasks AI hits hardest are the ones agents spend the most time on. Property matching (generating lists for buyers) shows 49% automation, marketing and listing promotion shows 41%, and answering client questions about financing and repairs shows 42%. These are core daily activities, not back-office busywork. NAR's 2024 member profile found that 35% of Realtors already use AI tools in their business, up from near zero two years prior [National Association of Realtors, Mar 2025]. Zillow and similar platforms are increasingly offering AI-powered home valuations and instant property recommendations directly to consumers, compressing the information advantage that agents have traditionally held [Zillow Research, Oct 2024].",
     "stat": "1.5M",
     "statLabel": "active Realtors nationally, a saturated field where AI compresses agent differentiation",
     "statSourceName": "National Association of Realtors",
@@ -119,7 +119,7 @@
     "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile"
   },
   "opportunities": {
-    "body": "Negotiation, the task where agents act as intermediaries between buyers and sellers, shows a 29% automation rate That's the lowest automation rate among the core tasks with enough data, and the task itself depends on reading people, managing emotions, and navigating one-off deal structures that AI handles poorly. NAR data shows 88% of buyers purchased their home through an agent in 2024, and the top reason cited was help negotiating terms [1]. The augmentation signal on client Q&A (22%) suggests AI is useful as a research assistant for agents fielding questions about financing and appraisals, but clients still want a human explaining what it means for their specific situation. Transaction complexity also works in agents' favor: coordinating escrow, inspections, lenders, and pest control across a closing timeline involves real-time judgment calls that resist automation.",
+    "body": "Negotiation, the task where agents act as intermediaries between buyers and sellers, shows a 29% automation rate That's the lowest automation rate among the core tasks with enough data, and the task itself depends on reading people, managing emotions, and navigating one-off deal structures that AI handles poorly. NAR data shows 88% of buyers purchased their home through an agent in 2024, and the top reason cited was help negotiating terms [National Association of Realtors, Mar 2025]. The augmentation signal on client Q&A (22%) suggests AI is useful as a research assistant for agents fielding questions about financing and appraisals, but clients still want a human explaining what it means for their specific situation. Transaction complexity also works in agents' favor: coordinating escrow, inspections, lenders, and pest control across a closing timeline involves real-time judgment calls that resist automation.",
     "stat": "88%",
     "statLabel": "of buyers used an agent to purchase a home",
     "statSourceName": "National Association of Realtors",
@@ -128,56 +128,57 @@
     "statSourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI tools for the property-matching and CMA (comparative market analysis) work that already shows high automation rates. Agents who let AI handle the initial search filtering and pricing comps can spend that time on the parts AI handles worst: face-to-face negotiation, reading client anxiety during walkthroughs, and managing the multi-party coordination of a closing. NAR found that agents using AI tools reported spending more time on client relationships and less on administrative tasks [1]. Over six months, building deeper expertise in complex transactions like multi-offer situations, 1031 exchanges, or investment property analysis creates a niche that automated platforms can't replicate.",
-    "thinkingOf": "The barrier to entry in real estate is low (a state license, typically a few weeks of coursework), but that's also the problem. Low barriers mean lots of competition, and AI is making the commodity part of the job (finding listings, pulling comps) nearly free. New agents who build a reputation around a specific transaction type or neighborhood tend to survive the first two years at much higher rates. Zillow's research shows that hyperlocal market knowledge remains one of the top reasons sellers choose a specific agent [2]. Focus early on learning the negotiation and closing coordination side, not the listing side that platforms are absorbing.",
+    "alreadyIn": "Start using AI tools for the property-matching and CMA (comparative market analysis) work that already shows high automation rates. Agents who let AI handle the initial search filtering and pricing comps can spend that time on the parts AI handles worst: face-to-face negotiation, reading client anxiety during walkthroughs, and managing the multi-party coordination of a closing. NAR found that agents using AI tools reported spending more time on client relationships and less on administrative tasks [National Association of Realtors, Mar 2025]. Over six months, building deeper expertise in complex transactions like multi-offer situations, 1031 exchanges, or investment property analysis creates a niche that automated platforms can't replicate.",
+    "thinkingOf": "The barrier to entry in real estate is low (a state license, typically a few weeks of coursework), but that's also the problem. Low barriers mean lots of competition, and AI is making the commodity part of the job (finding listings, pulling comps) nearly free. New agents who build a reputation around a specific transaction type or neighborhood tend to survive the first two years at much higher rates. Zillow's research shows that hyperlocal market knowledge remains one of the top reasons sellers choose a specific agent [Zillow Research, Oct 2024]. Focus early on learning the negotiation and closing coordination side, not the listing side that platforms are absorbing.",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "Members who have integrated AI into their workflow report that they can better focus on the parts of real estate that clients most value — negotiation strategy, neighborhood expertise, and emotional support through complex transactions — rather than spending hours on property searches and CMA preparation.",
         "attribution": "National Association of Realtors",
-        "sourceId": "src-1"
+        "sourceUrl": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile",
+        "sourceDate": "Mar 2025"
       },
       {
         "persona": "alreadyIn",
         "quote": "Consumers increasingly start their search online, but they still turn to agents for the parts that require local expertise, negotiation skill, and trust. The agent value proposition is shifting from information access — which AI now provides — to judgment, relationships, and accountability through a high-stakes transaction.",
         "attribution": "Zillow Research",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.zillow.com/research/buyers-housing-trends-report-2024-34383/",
+        "sourceDate": "Oct 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "The barrier to entry in real estate is low — a state license typically requires a few weeks of coursework — but that is also the problem. AI tools are compressing the information advantage that used to differentiate agents, so new entrants who build deep expertise in a specific geographic area or property type will have a clearer value proposition from day one.",
         "attribution": "McKinsey Global Institute",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier",
+        "sourceDate": "Jun 2023"
       },
       {
         "persona": "thinkingOf",
         "quote": "The real estate landscape is shifting toward a model where technology handles discovery and initial filtering while agents handle the judgment-intensive work — evaluating properties in person, reading seller motivation, and navigating inspection and financing contingencies. New entrants who position around that judgment layer, rather than competing on access to listings, will be more durable.",
         "attribution": "Zillow Research",
-        "sourceId": "src-2"
+        "sourceUrl": "https://www.zillow.com/research/buyers-housing-trends-report-2024-34383/",
+        "sourceDate": "Oct 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "National Association of Realtors",
       "title": "2024 Member Profile",
       "date": "Mar 2025",
       "url": "https://www.nar.realtor/research-and-statistics/research-reports/member-profile"
     },
     {
-      "id": "src-2",
       "name": "Zillow Research",
       "title": "Consumer Housing Trends Report 2024",
       "date": "Oct 2024",
       "url": "https://www.zillow.com/research/buyers-housing-trends-report-2024-34383/"
     },
     {
-      "id": "src-3",
       "name": "McKinsey Global Institute",
       "title": "The Economic Potential of Generative AI: The Next Productivity Frontier",
       "date": "Jun 2023",
-      "url": "https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
+      "url": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier"
     }
   ],
   "careerCluster": [
@@ -329,7 +330,7 @@
         "sourceName": "WEF",
         "sourceTitle": "Future of Jobs Report 2025",
         "sourceDate": "Jan 2025",
-        "sourceUrl": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
       },
       "search_query": "\"property valuation\" AI machine learning jobs 2025",
       "job_search_url": "",
@@ -360,6 +361,24 @@
         "Build three sample campaigns using Jasper for real estate listing variations",
         "Create one Synthesia video property tour template end-to-end"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is real estate sales a viable career as AI tools change how buyers search for homes?",
+      "answer": "Real Estate Sales Agent scores 54/100 on AI exposure, in the middle of the range, with 36,600 annual openings and 3% projected growth. AI tools have made property search, valuation estimates, and transaction coordination faster, but 88% of buyers still used an agent in their most recent purchase, largely because the negotiation, inspection navigation, and emotional support during a major financial transaction require human judgment. The market is saturated with 1.5 million active Realtors, which means differentiation within the profession matters as much as the overall demand for agents."
+    },
+    {
+      "question": "What does a real estate sales agent earn, and how variable is the income?",
+      "answer": "The median salary is $56,320, but income is highly variable, with top-producing agents in high-price markets earning $200,000 to $500,000 or more. The first two to three years in real estate sales are typically the hardest, with many agents earning below $40,000 while building their client base; attrition in the first three years is high. Agents who develop a geographic specialty in a specific neighborhood, price point, or buyer type, such as first-time buyers or investment properties, build referral networks that produce more consistent volume than generalist agents competing for the same listings."
+    },
+    {
+      "question": "Which real estate tasks is AI handling, and where do agents still add the most value?",
+      "answer": "AI tools now generate property valuations, market reports, and listing descriptions faster than any agent can manually. What they cannot do is read a seller's true motivation during a listing presentation, negotiate effectively when an inspection reveals unexpected issues, and guide a first-time buyer through the anxiety of the biggest financial decision of their life. The relational and emotional intelligence required to keep a transaction together when something goes wrong is what justifies the agent's commission in a market where information asymmetry has largely disappeared."
+    },
+    {
+      "question": "What skills and strategies help real estate agents build a sustainable practice?",
+      "answer": "A geographic farm strategy, focusing marketing and prospecting on a specific neighborhood, produces higher conversion rates and more referrals than broad market generalism. Agents who develop a specialty in a specific transaction type, luxury properties, investment properties, or relocation, position themselves for clients who seek out expertise rather than shopping purely on commission rate. Technology fluency with CRM systems and digital marketing, combined with consistent follow-up and database management, is what separates agents who build lasting businesses from those who depend on listing market conditions."
     }
   ]
 }

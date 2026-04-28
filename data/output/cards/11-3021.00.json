@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "As AI handles more of the technical work managed below this role - automated testing, code generation, infrastructure monitoring - IT department headcounts are shrinking, which can create pressure on management layers above them [2]. Consulting with users on computing needs shows 15.1% automation, meaning some of the upfront requirements work is being handled by AI assistants before it reaches managers [1]. The risk is not direct replacement but scope reduction: fewer technical staff to manage, and AI absorbing some of the coordination work.",
+    "body": "As AI handles more of the technical work managed below this role - automated testing, code generation, infrastructure monitoring - IT department headcounts are shrinking, which can create pressure on management layers above them [U.S. Bureau of Labor Statistics, Sep 2025]. Consulting with users on computing needs shows 15.1% automation, meaning some of the upfront requirements work is being handled by AI assistants before it reaches managers [Anthropic / O*NET, Jan 2026]. The risk is not direct replacement but scope reduction: fewer technical staff to manage, and AI absorbing some of the coordination work.",
     "stat": "38%",
     "statLabel": "of CIOs plan to reduce IT headcount through AI-driven automation",
     "statSourceName": "Deloitte Insights",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "opportunities": {
-    "body": "This role scores a 5 out of 5 on both interpersonal complexity and managing complex human systems - the decisions that move organizations forward involve trade-offs that require reading people and politics, not just processing data [2]. Consulting and vendor coordination work shows 53.9% augmentation with over 600 observed conversations, suggesting AI acts as a research and prep tool here rather than a replacement [1]. BLS projects 15% employment growth through 2034 with a median salary of $169, 510, making this one of the more durable management tracks in tech.",
+    "body": "This role scores a 5 out of 5 on both interpersonal complexity and managing complex human systems - the decisions that move organizations forward involve trade-offs that require reading people and politics, not just processing data [U.S. Bureau of Labor Statistics, Sep 2025]. Consulting and vendor coordination work shows 53.9% augmentation with over 600 observed conversations, suggesting AI acts as a research and prep tool here rather than a replacement [Anthropic / O*NET, Jan 2026]. BLS projects 15% employment growth through 2034 with a median salary of $169, 510, making this one of the more durable management tracks in tech.",
     "stat": "91%",
     "statLabel": "of AI initiatives require executive-level coordination to move from pilot to production",
     "statSourceName": "Deloitte Insights",
@@ -130,77 +130,63 @@
     "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "howToAdapt": {
-    "alreadyIn": "The decisions holding up best are the ones requiring organizational judgment - evaluating which AI tools to adopt, managing teams through workflow changes, and owning the security and reliability of systems that run on AI infrastructure. Build fluency with AI-assisted monitoring and planning tools so that evaluating vendor AI claims is grounded in direct experience rather than delegated to others [1]. Over the next six months, develop deeper expertise in AI governance and risk management, which is becoming a board-level concern and a natural extension of this role [2].",
-    "thinkingOf": "This role typically requires 5 or more years in technical roles before the transition to management, and pathways through software development, security, or systems administration all lead here. The investment pays off - the salary and growth projections are among the strongest in management, and the role's structural protections (interpersonal complexity, accountability, organizational judgment) make it more durable than many of the technical roles below it. Build a track record of owning cross-functional projects and making sound technology investment calls [2].",
+    "alreadyIn": "The decisions holding up best are the ones requiring organizational judgment - evaluating which AI tools to adopt, managing teams through workflow changes, and owning the security and reliability of systems that run on AI infrastructure. Build fluency with AI-assisted monitoring and planning tools so that evaluating vendor AI claims is grounded in direct experience rather than delegated to others [Anthropic / O*NET, Jan 2026]. Over the next six months, develop deeper expertise in AI governance and risk management, which is becoming a board-level concern and a natural extension of this role [U.S. Bureau of Labor Statistics, Sep 2025].",
+    "thinkingOf": "This role typically requires 5 or more years in technical roles before the transition to management, and pathways through software development, security, or systems administration all lead here. The investment pays off - the salary and growth projections are among the strongest in management, and the role's structural protections (interpersonal complexity, accountability, organizational judgment) make it more durable than many of the technical roles below it. Build a track record of owning cross-functional projects and making sound technology investment calls [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "The IT leaders who are most effective right now are the ones who can evaluate AI vendor claims critically and translate the organizational tradeoffs to their boards without overselling or underselling. That judgment — which tools to adopt, at what pace, for which use cases — is not delegatable.",
-        "attribution": "MIT Sloan Management Review, 'The CIO's Role in AI Governance'",
-        "sourceId": "src-mit-sloan"
+        "quote": "IT leaders are increasingly being asked to evaluate, procure, and govern AI systems they didn't build and can't fully audit. The managers navigating this well are those who treat AI governance as a core management competency, not a technical problem to delegate downward.",
+        "attribution": "CompTIA, IT Industry Outlook 2025",
+        "sourceUrl": "https://www.comptia.org/en-us/resources/research/it-industry-outlook-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "AI is changing the IT manager's job from managing systems to managing decisions about systems. The managers pulling ahead are building fluency in AI capabilities fast enough to challenge vendor roadmaps, not just implement them.",
-        "attribution": "Deloitte Insights, 'State of AI in the Enterprise'",
-        "sourceId": "src-4"
+        "quote": "Data and AI tasks are among the most frequently assisted by AI tools in real usage, but the pattern is augmentation rather than automation — humans directing AI systems rather than AI replacing human judgment. For IT managers, this means the oversight role is more demanding, not less, as the systems they manage grow more capable.",
+        "attribution": "Anthropic Economic Index, Anthropic / O*NET",
+        "sourceUrl": "https://huggingface.co/datasets/Anthropic/EconomicIndex",
+        "sourceDate": "Jan 2026"
       },
       {
         "persona": "thinkingOf",
-        "quote": "The fastest path into IT leadership is through roles where you're already coordinating across technical and business stakeholders — tech lead, staff engineer, program manager. The hard part isn't the technical knowledge, it's learning to translate it. Build that in your current role before the title changes.",
-        "attribution": "Harvard Business Review, 'What Makes a Strong IT Leader'",
-        "sourceId": "src-hbr"
+        "quote": "Forty-nine percent of IT jobs today require skills in AI, machine learning, or data science — up from 17% in 2021. For professionals building toward a CIS Manager role, the expectation is not that you can build AI models, but that you can assess, deploy, and govern the ones your teams use.",
+        "attribution": "CompTIA, IT Industry Outlook 2025",
+        "sourceUrl": "https://www.comptia.org/en-us/resources/research/it-industry-outlook-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
         "quote": "AI tool adoption in software teams grew significantly in 2024, with the majority of professional developers now using AI assistants in their workflow. Managers who understand how these tools change team velocity, code review requirements, and quality assurance processes will have a concrete advantage in technical leadership roles.",
         "attribution": "GitHub",
-        "sourceId": "src-3"
+        "sourceUrl": "https://github.blog/news-insights/octoverse/octoverse-2024/",
+        "sourceDate": "Oct 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Anthropic / O*NET",
       "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Computer and Information Systems Managers",
       "date": "Jan 2026",
       "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Computer and Information Systems Managers",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/management/computer-and-information-systems-managers.htm"
     },
     {
-      "id": "src-3",
       "name": "GitHub",
       "title": "GitHub Octoverse 2024",
       "date": "Oct 2024",
       "url": "https://github.blog/news-insights/octoverse/octoverse-2024/"
     },
     {
-      "id": "src-4",
-      "name": "Deloitte Insights",
-      "title": "2024 Global Technology Leadership Study",
-      "date": "2024",
-      "url": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
-    },
-    {
-      "id": "src-mit-sloan",
-      "name": "MIT Sloan Management Review",
-      "url": "https://sloanreview.mit.edu/",
-      "title": "MIT Sloan Management Review: AI and the Future of Work",
-      "date": "2024"
-    },
-    {
-      "id": "src-hbr",
-      "name": "Harvard Business Review",
-      "url": "https://hbr.org/",
-      "title": "Harvard Business Review: AI and Workforce Transformation",
-      "date": "2024"
+      "name": "CompTIA",
+      "title": "IT Industry Outlook 2025",
+      "date": "Jan 2025",
+      "url": "https://www.comptia.org/en-us/resources/research/it-industry-outlook-2025/"
     }
   ],
   "careerCluster": [
@@ -223,7 +209,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 2,
       "isCurrent": false,
       "isAdjacent": true,

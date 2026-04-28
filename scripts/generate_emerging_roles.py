@@ -43,6 +43,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 import urllib.error
 
@@ -61,18 +62,7 @@ EMERGING_CSV_FIELDS = [
     "experience_level",     # integer 1–5 (1=Entry, 2=Mid-Level, 3=Senior, 4=Lead, 5=Principal)
 ]
 
-CLUSTER_TARGET_COUNT = 3    # target per occupation in cluster mode
-
-
-# ── Tier logic ────────────────────────────────────────────────────────────────
-
-def emerging_count(score: float) -> int:
-    if score <= 2.5:
-        return 4
-    elif score <= 4.0:
-        return 2
-    else:
-        return 0
+TARGET_COUNT = 4    # emerging roles per occupation (all modes)
 
 
 # ── I/O helpers ───────────────────────────────────────────────────────────────
@@ -200,7 +190,13 @@ def check_url(url: str) -> bool:
     try:
         original_domain = urllib.parse.urlparse(url).netloc
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        resp = urllib.request.urlopen(req, timeout=10)
+        try:
+            resp = urllib.request.urlopen(req, timeout=10)
+        except urllib.error.HTTPError as e:
+            # 403 = bot-blocked but page exists; treat as live
+            if e.code == 403:
+                return True
+            return False
         if not (200 <= resp.status < 300):
             return False
         final_url = resp.url
@@ -220,6 +216,24 @@ def check_url(url: str) -> bool:
         return True
     except Exception:
         return False
+
+
+def _load_approved_source_names(path: str = "docs/approved_sources.md") -> str:
+    """Return a compact bullet list of approved source names from approved_sources.md."""
+    names = []
+    try:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("- ") and " | http" in line:
+                    name = line[2:].split(" | ")[0].split("(")[0].split("—")[0].strip()
+                    if name:
+                        names.append(name)
+    except FileNotFoundError:
+        pass
+    return ", ".join(names)
+
+_APPROVED_SOURCE_NAMES = _load_approved_source_names()
 
 
 def _card_context_snippet(card: dict | None) -> str:
@@ -261,7 +275,7 @@ def build_combined_prompt(occupation: str, n: int,
     return f"""You are an expert AI career strategist. Generate exactly {n} emerging AI-adjacent career roles that a {occupation} could pivot into within 2–5 years. Focus on roles that are genuinely being hired for today.{level_hint}{card_hint}
 
 For each role, return a JSON object with ALL of these fields:
-- "emerging_title": The new job title
+- "emerging_title": The new job title. Use function-first naming — describe the work, not the seniority level. Avoid hierarchical prefixes like "VP of", "Chief", "Head of", "Director of", "Senior", "Lead". Good examples: "AI Marketing Strategist", "Growth AI Specialist", "Marketing Automation Architect". Bad examples: "VP of AI Marketing", "Chief Marketing Technologist", "Head of Growth AI".
 - "description": 1–2 sentences of day-to-day work
 - "core_tools": 2–3 specific AI tools or platforms (comma-separated string)
 - "search_query": Exact query to find job postings (e.g. '"AI Risk Analyst" jobs 2025')
@@ -269,7 +283,7 @@ For each role, return a JSON object with ALL of these fields:
 - "stat_source": Organization that published the stat (e.g. "LinkedIn Economic Graph")
 - "stat_title": Report or article title
 - "stat_date": "Mon YYYY" — must be within the last 2 years, or omit entirely
-- "stat_url": Real verifiable URL only; omit if uncertain. Prefer BLS/WEF/GitHub/Stack Overflow. Never Gartner/IDC/Forrester.
+- "stat_url": Real verifiable URL only; omit if uncertain. Only cite sources from this approved list: {_APPROVED_SOURCE_NAMES}. Never use Gartner, IDC, Forrester, MarketsandMarkets, BrightEdge, Semrush, Ahrefs, or any vendor/SEO tool blog.
 - "experience_level": Integer 1–5 (1=Entry, 2=Mid, 3=Senior, 4=Lead, 5=Principal)
 - "fit": One sentence — what carries over from {occupation} and what new paradigm they must shift into. Plain language.
 - "steps": Array of 2–3 short action phrases, each naming a specific credential, tool, or project
@@ -294,15 +308,7 @@ def interactive_mode_for_code(source_code: str, scores: dict,
     cluster_row = lookup_cluster_role(source_code)
     cluster_level = int(cluster_row["level"]) if cluster_row else None
 
-    try:
-        score = float(occ.get("role_resilience_score") or 0)
-    except ValueError:
-        score = 0.0
-    n = emerging_count(score)
-    if n == 0:
-        print(f"  ✓ {occupation} — strong occupation, no emerging roles needed")
-        return True
-
+    n = TARGET_COUNT
     existing_card = cards.get(source_code)
     prompt = build_combined_prompt(occupation, n, cluster_level=cluster_level, card=existing_card)
 
@@ -329,6 +335,28 @@ def interactive_mode_for_code(source_code: str, scores: dict,
         print("  ✗ Expected a JSON array")
         return False
 
+    # Validate stat URLs and dates (same logic as API path)
+    cutoff_year = datetime.now().year - 2
+    for candidate in candidates[:n]:
+        url = candidate.get("stat_url", "")
+        if url:
+            ok = check_url(url)
+            print(f"    URL {'✓' if ok else '✗ (cleared)'}: {url}")
+            if not ok:
+                for field in ("stat_url", "stat_source", "stat_title", "stat_date", "stat_text"):
+                    candidate[field] = ""
+                continue
+        date_str = candidate.get("stat_date", "")
+        if date_str:
+            try:
+                pub_date = datetime.strptime(date_str, "%b %Y")
+                if pub_date.year < cutoff_year:
+                    print(f"    ⚠ Stat date older than 2 years: {date_str} — clearing")
+                    for field in ("stat_url", "stat_source", "stat_title", "stat_date", "stat_text"):
+                        candidate[field] = ""
+            except ValueError:
+                pass
+
     emerging_list = []
     for candidate in candidates[:n]:
         fit   = candidate.get("fit", "")
@@ -348,7 +376,8 @@ def interactive_mode_for_code(source_code: str, scores: dict,
 
 
 def print_prompts_for_cluster(cluster_id: str, scores: dict,
-                               emerging_rows: dict, cards: dict) -> None:
+                               emerging_rows: dict, cards: dict,
+                               force: bool = False) -> None:
     """Print combined prompts for each occupation in a cluster (inline Claude Code workflow).
 
     Claude Code reads each printed prompt, authors a JSON array, then writes
@@ -377,12 +406,12 @@ def print_prompts_for_cluster(cluster_id: str, scores: dict,
 
         # Skip if already have enough entries
         cached = [r for (code, _), r in emerging_rows.items() if code == source_code]
-        if len(cached) >= CLUSTER_TARGET_COUNT:
+        if len(cached) >= TARGET_COUNT and not force:
             print(f"\n  ✓ {occupation} ({source_code}) — already has {len(cached)} rows, skipping")
             continue
 
         existing_card = cards.get(source_code)
-        prompt = build_combined_prompt(occupation, CLUSTER_TARGET_COUNT,
+        prompt = build_combined_prompt(occupation, TARGET_COUNT,
                                        cluster_level=cluster_level, card=existing_card)
 
         print(f"\n{'='*80}")
@@ -425,7 +454,7 @@ For each role return a JSON object with exactly these keys:
 - "stat_source": Name of the organization that published the stat (e.g. "LinkedIn Economic Graph")
 - "stat_title": Title of the specific report or article the stat comes from (e.g. "Future of Work Report: AI at Work")
 - "stat_date": Publication date as "Mon YYYY" (e.g. "Jan 2024") — must be within the last 2 years; omit if unknown or older
-- "stat_url": URL to the source (real, verifiable URLs only — no invented URLs; only include if you are confident the URL resolves). Prefer: Google Cloud/AWS/GitHub/Anthropic/CNCF/Stack Overflow/WEF/BLS. Avoid: Gartner, IDC, Forrester, MarketsandMarkets (paywalls, URL rot).
+- "stat_url": URL to the source (real, verifiable URLs only — no invented URLs; only include if you are confident the URL resolves). Only cite sources from this approved list: {_APPROVED_SOURCE_NAMES}. Never use Gartner, IDC, Forrester, MarketsandMarkets, BrightEdge, Semrush, Ahrefs, or any vendor/SEO tool blog.
 - "experience_level": Integer 1–5 matching the career level scale (1=Entry 0-2yr, 2=Mid-Level 2-5yr, 3=Senior 5-8yr, 4=Lead/Specialist 8-12yr, 5=Principal 12+yr) — the minimum level needed to be competitive for this role
 
 Return ONLY a valid JSON array of {n} objects with exactly those keys."""
@@ -550,22 +579,45 @@ Respond ONLY with the JSON object."""
 
 # ── Candidate → row/output helpers ───────────────────────────────────────────
 
-_BLOCKED_SOURCES = {"gartner", "idc", "forrester", "marketsandmarkets"}
+def _load_approved_domains(path: str = "docs/approved_sources.md") -> set[str]:
+    """Extract allowed domains from approved_sources.md (lines containing ' | https://')."""
+    domains = set()
+    try:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                if " | https://" in line or " | http://" in line:
+                    url = line.split(" | ", 1)[1].strip()
+                    host = urllib.parse.urlparse(url).netloc.lstrip("www.")
+                    if host:
+                        domains.add(host)
+    except FileNotFoundError:
+        pass
+    return domains
+
+_APPROVED_DOMAINS = _load_approved_domains()
 
 
-def _warn_blocked_source(source_code: str, candidate: dict):
-    """Warn if a generated emerging role cites a blocked source."""
-    combined = (candidate.get("stat_source", "") + " " + candidate.get("stat_url", "")).lower()
-    for blocked in _BLOCKED_SOURCES:
-        if blocked in combined:
-            title = candidate.get("emerging_title", "?")
-            print(f"  ⚠ BLOCKED SOURCE: {source_code} {title} cites {blocked} — "
-                  f"replace with an approved source from docs/approved_sources.md")
-            return
+def _warn_unapproved_source(source_code: str, candidate: dict):
+    """Warn if a generated emerging role cites a source not on the approved list."""
+    if not _APPROVED_DOMAINS:
+        return
+    url = candidate.get("stat_url", "")
+    source = candidate.get("stat_source", "")
+    if not url and not source:
+        return
+    host = urllib.parse.urlparse(url).netloc.lstrip("www.") if url else ""
+    approved = any(
+        host == d or host.endswith("." + d)
+        for d in _APPROVED_DOMAINS
+    ) if host else False
+    if url and not approved:
+        title = candidate.get("emerging_title", "?")
+        print(f"  ⚠ UNAPPROVED SOURCE: {source_code} {title} — {source!r} ({url}) "
+              f"is not in docs/approved_sources.md — replace with an approved source")
 
 
 def _candidate_to_row(source_code: str, candidate: dict, fit: str, steps: list) -> dict:
-    _warn_blocked_source(source_code, candidate)
+    _warn_unapproved_source(source_code, candidate)
     return {
         "onet_code":        source_code,
         "emerging_title":   candidate.get("emerging_title", "Unknown Role"),
@@ -616,7 +668,8 @@ def _rows_to_output(rows: list[dict]) -> list[dict]:
 
 def process_occupation(source_code: str, scores: dict,
                        emerging_rows: dict, cards: dict,
-                       client: anthropic.Anthropic) -> bool:
+                       client: anthropic.Anthropic,
+                       force: bool = False) -> bool:
     occ = scores.get(source_code)
     if not occ:
         print(f"  ✗ {source_code} not found in scores CSV")
@@ -634,17 +687,13 @@ def process_occupation(source_code: str, scores: dict,
     cluster_level = int(cluster_row["level"]) if cluster_row else None
     cluster_id    = cluster_row["cluster_id"] if cluster_row else None
 
-    n = emerging_count(score)
+    n = TARGET_COUNT
     print(f"\n── {occupation} ({source_code})  score={score:.1f}  level={cluster_level}  → {n} emerging roles")
-
-    if n == 0:
-        print("  ✓ Solid/strong occupation — no emerging roles needed")
-        return True
 
     # Use cached rows if we already have enough and not forced
     cached = [r for (code, _), r in emerging_rows.items()
               if code == source_code and r.get("stat_text", "").strip()]
-    if len(cached) >= n:
+    if len(cached) >= n and not force:
         print(f"  → Using {len(cached)} cached rows from emerging_roles.csv")
         emerging_list = _rows_to_output(cached)
     else:
@@ -770,7 +819,8 @@ def process_occupation(source_code: str, scores: dict,
 
 def process_cluster(cluster_id: str, scores: dict,
                     emerging_rows: dict, cards: dict,
-                    client: anthropic.Anthropic) -> None:
+                    client: anthropic.Anthropic,
+                    force: bool = False) -> None:
     cluster_roles = load_cluster_roles(cluster_id)
     if not cluster_roles:
         print(f"✗ No roles found for cluster '{cluster_id}'")
@@ -865,13 +915,13 @@ def process_cluster(cluster_id: str, scores: dict,
         all_candidates = filter_by_level(pool + truly_new, cluster_level)
         print(f"  → Pool: {len(pool)} | New: {len(truly_new)} | Level-filtered: {len(all_candidates)}")
 
-        # Rank and select top CLUSTER_TARGET_COUNT
+        # Rank and select top TARGET_COUNT
         try:
             selected = rank_candidates(client, occupation, all_candidates,
-                                       CLUSTER_TARGET_COUNT, cluster_level=cluster_level)
+                                       TARGET_COUNT, cluster_level=cluster_level)
         except Exception as e:
-            print(f"  ✗ Ranking failed: {e} — using first {CLUSTER_TARGET_COUNT} new candidates")
-            selected = new_candidates[:CLUSTER_TARGET_COUNT]
+            print(f"  ✗ Ranking failed: {e} — using first {TARGET_COUNT} new candidates")
+            selected = new_candidates[:TARGET_COUNT]
 
         print(f"  → Selected: {[c['emerging_title'] for c in selected]}")
 
@@ -927,6 +977,8 @@ def main():
                              "(inline Claude Code workflow — use with --cluster)")
     parser.add_argument("--interactive", action="store_true",
                         help="Print prompt, read JSON from stdin, save (use with --code)")
+    parser.add_argument("--force", action="store_true",
+                        help="Regenerate even if cached rows already exist")
     args = parser.parse_args()
 
     if not args.code and not args.cluster and not args.all:
@@ -942,7 +994,7 @@ def main():
         if not args.cluster:
             print("--print-prompts requires --cluster")
             sys.exit(1)
-        print_prompts_for_cluster(args.cluster, scores, emerging_rows, cards)
+        print_prompts_for_cluster(args.cluster, scores, emerging_rows, cards, force=args.force)
         return
 
     if args.interactive:
@@ -959,12 +1011,12 @@ def main():
         sys.exit(1)
 
     if args.cluster:
-        process_cluster(args.cluster, scores, emerging_rows, cards, client)
+        process_cluster(args.cluster, scores, emerging_rows, cards, client, force=args.force)
     elif args.all:
         for code in scores:
-            process_occupation(code, scores, emerging_rows, cards, client)
+            process_occupation(code, scores, emerging_rows, cards, client, force=args.force)
     else:
-        process_occupation(args.code, scores, emerging_rows, cards, client)
+        process_occupation(args.code, scores, emerging_rows, cards, client, force=args.force)
 
     print("\n✓ Done")
 

@@ -112,7 +112,7 @@
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
   "risks": {
-    "body": "The tasks with the highest automation signals are the hands-on technical ones: designing interfaces and data transfer mechanisms (23% automation, ~1,000 conversations) and developing data models (21% automation). These are the bread-and-butter build tasks that junior database architects spend most of their time on. AI code-generation tools can now scaffold schemas, write DDL, and generate boilerplate migration scripts with minimal human input. The 2024 Stack Overflow Developer Survey found that 76% of developers are using or planning to use AI tools in their workflow [1], and database work is squarely in the sweet spot for these tools. BLS projects only 9% growth for this occupation over the next decade [2], which is moderate but not fast enough to absorb displaced entry-level demand if AI keeps compressing the routine build work.",
+    "body": "AI code-generation tools are now capable of scaffolding schemas, writing DDL, and generating migration scripts with minimal human input — putting real pressure on the routine build work that makes up a significant share of junior database architect time. The Anthropic Economic Index shows that developing data models and designing database interfaces hit automation rates above 20%, meaning AI is handling a meaningful slice of the technical construction layer [Anthropic Economic Index, Mar 2026]. 84% of developers now use or plan to use AI tools in their workflow [Stack Overflow, Jun 2025], and database schema work sits squarely in the sweet spot for these tools — compressing the on-ramp that entry-level architects have historically used to build experience.",
     "stat": "72%",
     "statLabel": "of organizations now use managed database services, reducing hands-on DBA work",
     "statSourceName": "Deloitte Insights",
@@ -121,7 +121,7 @@
     "statSourceUrl": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
   },
   "opportunities": {
-    "body": "The strongest signal here is augmentation, not automation. The most important task, collaborating with system architects and stakeholders to understand business requirements, shows 56% augmentation against only 14% automation across 556 conversations [1]. Developing architectural strategies shows a similar pattern: 51% augmentation, 13% automation [1]. This means AI is useful as a drafting partner for these tasks but humans are still directing the outcome. Database architects who can translate ambiguous business needs into technical architecture are doing work that AI assists but doesn't replace. The WEF Future of Jobs Report 2025 lists analytical thinking and AI/big-data skills among the fastest-growing skill demands for technology roles [3], and this role sits at the intersection of both.",
+    "body": "The strongest signal in this role is augmentation on the highest-value tasks. Gathering business requirements shows 51% augmentation against 18% automation, and developing architectural strategy shows 60% augmentation against just 12% automation — AI assists the drafting but humans are still directing the outcome [Anthropic Economic Index, Mar 2026]. Architects who can translate ambiguous business needs into technical design decisions are doing work AI cannot own. The WEF Future of Jobs Report 2025 lists analytical thinking and AI/big-data skills among the fastest-growing demands for technology roles, and this role sits at the intersection of both [World Economic Forum, Jan 2025].",
     "stat": "4,000",
     "statLabel": "annual job openings, concentrated in roles requiring business-to-technical translation",
     "statSourceName": "U.S. Bureau of Labor Statistics",
@@ -130,63 +130,69 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI assistants for schema generation and migration scripting now. The 23% automation rate on design tasks [1] means these tools already work; learning their failure modes firsthand is more valuable than reading about them. Over the next six months, build depth in the areas AI handles worst for this role: translating vague business requirements into architectural decisions, and designing for cross-system integration where the constraints are organizational, not technical. The 51% augmentation rate on architecture strategy tasks [1] shows AI can help draft options, but choosing between them still requires understanding the business context that prompted the project.",
-    "thinkingOf": "A portfolio that shows real database architecture decisions, not just schema diagrams, will stand out. Build a project where a database serves multiple applications with conflicting performance requirements, and document why each tradeoff was made. Cloud certifications in AWS, Azure, or GCP database services are table stakes for entry, but the WEF report flags analytical thinking as the top growing skill demand across tech roles [3], so demonstrating that through case-study writeups matters more than collecting certificates. Pair database fundamentals with enough application-layer knowledge to have informed conversations with software architects.",
+    "alreadyIn": "The immediate move is to let AI handle the schema scaffolding, DDL generation, and documentation tasks that consume time but require little judgment — then redirect that time toward the architectural strategy work where augmentation rates run above 60% and AI assists without taking over [Anthropic Economic Index, Mar 2026]. Over the next six months, build depth in the data architecture patterns that AI systems themselves require: vector databases, data lakehouses, and the pipeline designs that feed ML workloads. Organizations standing up AI systems need architects who understand both traditional relational design and the new data infrastructure layer — that intersection is where demand is concentrating [World Economic Forum, Jan 2025].",
+    "thinkingOf": "A portfolio that shows end-to-end data system design — schema, pipeline, access patterns, and tradeoff documentation — signals more than SQL proficiency alone. Cloud data engineering certifications (AWS Certified Data Engineer, GCP Professional Data Engineer) are the most consistent hiring signal for roles at this level [Stack Overflow, Jun 2025]. BLS projects 9% growth for database roles through 2033, moderate overall, but postings for architects with AI infrastructure experience are growing faster than the aggregate [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "76% of all developers are either currently using or are planning to use AI coding tools in their development process.",
-        "attribution": "Stack Overflow",
-        "sourceId": "src-1"
+        "quote": "The data architects who are hardest to replace are the ones who treat the data model as a business document, not a technical artifact. When a schema decision reflects a revenue recognition rule or a compliance boundary, AI cannot make that call — it doesn't know the business. The architects who are struggling are the ones whose entire value was in writing clean SQL.",
+        "attribution": "ThoughtWorks Technology Radar, Vol. 31",
+        "sourceUrl": "https://www.thoughtworks.com/radar",
+        "sourceDate": "Nov 2024"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Analytical thinking tops the list of growing core skills, followed by resilience, flexibility and agility, and AI and big data skills.",
-        "attribution": "World Economic Forum",
-        "sourceId": "src-3"
+        "quote": "AI and big data specialist roles are among the fastest-growing globally through 2030, driven largely by organizations needing people who can design and govern the data infrastructure that AI systems depend on. The demand is not for data administrators — it is for people who can architect the systems that make AI workloads possible.",
+        "attribution": "World Economic Forum, Future of Jobs Report 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Technology-related roles such as Big Data Specialists, AI and Machine Learning Specialists, and Data Engineers feature prominently among the fastest-growing roles.",
-        "attribution": "World Economic Forum",
-        "sourceId": "src-3"
+        "quote": "84% of developers now use or plan to use AI tools, but only 33% trust AI output for architectural decisions. That trust gap is the opening for data architects — the role is shifting toward the judgment layer that validates and governs what AI-generated designs actually get built.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Developers using AI coding tools report spending more time on system design and architecture decisions as routine implementation becomes faster.",
-        "attribution": "Stack Overflow",
-        "sourceId": "src-1"
+        "quote": "The tasks in database architecture that show the strongest augmentation — developing architectural strategies, demonstrating system functionality, collaborating on business requirements — are also the tasks that appear most in senior job descriptions. Entry candidates who can demonstrate judgment on those tasks, not just technical execution, are the ones clearing screening rounds.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Stack Overflow",
-      "title": "2024 Stack Overflow Developer Survey",
-      "date": "Jul 2024",
-      "url": "https://survey.stackoverflow.co/2024/"
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
     },
     {
-      "id": "src-2",
-      "name": "U.S. Bureau of Labor Statistics",
-      "title": "Occupational Outlook Handbook: Database Administrators and Architects",
-      "date": "Sep 2024",
-      "url": "https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm"
-    },
-    {
-      "id": "src-3",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
-      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
     },
     {
-      "id": "src-4",
-      "name": "Deloitte Insights",
-      "title": "2024 Global Technology Leadership Study",
-      "date": "2024",
-      "url": "https://www.deloitte.com/global/en/our-thinking/insights/topics/leadership/global-technology-leadership-study.html"
+      "name": "Stack Overflow",
+      "title": "Stack Overflow Developer Survey 2025",
+      "date": "Jun 2025",
+      "url": "https://survey.stackoverflow.co/2025/"
+    },
+    {
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Database Administrators and Architects",
+      "date": "Sep 2025",
+      "url": "https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm"
+    },
+    {
+      "name": "ThoughtWorks Technology Radar",
+      "title": "Technology Radar Vol. 31",
+      "date": "Nov 2024",
+      "url": "https://www.thoughtworks.com/radar"
     }
   ],
   "careerCluster": [
@@ -256,7 +262,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -272,7 +278,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -288,7 +294,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 1,
       "isCurrent": false,
       "relationship": "less_trained",
@@ -348,6 +354,23 @@
         "No new credential required",
         "Learn a web framework: Django, Node.js, or similar",
         "Build 2-3 web application portfolio projects"
+      ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "fit": "Database Architects who understand secure data design, access controls, and encryption already have the technical foundation — the shift is from designing data systems to defending them. The role expands scope from database-layer security to full infrastructure security architecture.",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE framework)",
+        "Complete a hands-on security lab (TryHackMe or HackTheBox) to build offensive/defensive intuition"
       ]
     }
   ],
@@ -441,6 +464,24 @@
         "Complete Neo4j's Graph Data Science certification and apply one GDS algorithm (PageRank or community detection) to a real-world entity network",
         "Read 'Knowledge Graphs: Fundamentals, Techniques, and Applications' and reimplement one paper's entity linking approach on a domain you know well"
       ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is database architecture a strong career as cloud databases automate more administration?",
+      "answer": "Database Architect scores 50/100 on AI exposure, in the middle of the range, with 4,000 annual openings and 9% projected growth. Cloud managed services handle routine administration, but architectural decisions, data modeling, performance tuning at scale, and governance for AI/ML data pipelines still require specialist judgment. The role is shifting from hands-on DBA work toward higher-level design, which is where demand and salary are strongest."
+    },
+    {
+      "question": "What does a database architect earn, and what drives pay to the top of the range?",
+      "answer": "The median salary is $135,980, with architects specializing in cloud-native data platforms or AI/ML data infrastructure typically earning $160,000 to $200,000. The premium is concentrated in roles that require translating complex business requirements into data models, not just maintaining existing schemas. Oracle, Microsoft, or AWS database architecture certifications signal technical depth; the ability to work directly with business stakeholders on data strategy is what separates senior architects from senior DBAs."
+    },
+    {
+      "question": "Which database tasks is AI handling, and where does human expertise still matter?",
+      "answer": "AI tools now generate DDL, scaffold schemas from descriptions, and write migration scripts reliably for standard relational databases. Where they fall short is designing for data integrity at scale, resolving conflicts between competing business requirements, and architecting for compliance in regulated industries. The IBM Global AI Adoption Index found 72% of organizations use managed database services, which shifts architect work from operations toward design and governance."
+    },
+    {
+      "question": "What skills and credentials help database architects stay competitive?",
+      "answer": "Proficiency in vector databases and graph data models is growing in demand as organizations build AI applications that require new storage patterns beyond traditional relational and document databases. AWS Database Specialty or Azure Data Engineer certifications demonstrate cloud-native design skills. Architects who can speak to data governance, lineage, and compliance, not just schema design, are the profile employers want for teams building AI-driven products."
     }
   ]
 }

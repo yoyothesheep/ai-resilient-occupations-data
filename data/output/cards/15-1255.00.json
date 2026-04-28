@@ -106,7 +106,7 @@
     }
   ],
   "risks": {
-    "body": "AEI task data shows that core deliverables for this role - building and maintaining websites and developing style guidelines - face automation rates of 41-45%, meaning a meaningful share of routine production work can now be generated without a designer in the loop [1]. Generative design tools are compressing the time required to produce initial wireframes, style sheets, and basic UI components, which tends to reduce the number of junior and mid-level seats needed per project. BLS projects only 9,100 annual openings against a field that has grown quickly, leaving the entry-level job market tighter than the headline +8% growth rate suggests [2].",
+    "body": "AEI task data shows that core deliverables for this role - building and maintaining websites and developing style guidelines - face automation rates of 41-45%, meaning a meaningful share of routine production work can now be generated without a designer in the loop [Anthropic / O*NET, Jan 2026]. Generative design tools are compressing the time required to produce initial wireframes, style sheets, and basic UI components, which tends to reduce the number of junior and mid-level seats needed per project. BLS projects only 9,100 annual openings against a field that has grown quickly, leaving the entry-level job market tighter than the headline +8% growth rate suggests [U.S. Bureau of Labor Statistics, Sep 2025].",
     "stat": "-25%",
     "statLabel": "drop in entry-level web design job postings year-over-year",
     "statSourceName": "Indeed Hiring Lab",
@@ -115,7 +115,7 @@
     "statSourceUrl": "https://www.hiringlab.org/2024/03/12/tech-job-postings/"
   },
   "opportunities": {
-    "body": "The strongest durability signal for this role is collaboration: tasks involving working with management on strategy and coordinating with development teams show augmentation rates above 36%, meaning AI assists rather than replaces the judgment calls that happen at the intersection of business goals and user needs [1]. Designers who own the brief - conducting user research, interpreting stakeholder feedback, and setting accessibility standards - are doing work that requires contextual reasoning and accountability that AI tools still handle poorly. The Stack Overflow 2024 Developer Survey found that 63% of developers cite 'AI tools lack context of codebase' as a key obstacle, a gap that a designer with deep product knowledge can fill [3].",
+    "body": "The strongest durability signal for this role is collaboration: tasks involving working with management on strategy and coordinating with development teams show augmentation rates above 36%, meaning AI assists rather than replaces the judgment calls that happen at the intersection of business goals and user needs [Anthropic / O*NET, Jan 2026]. Designers who own the brief - conducting user research, interpreting stakeholder feedback, and setting accessibility standards - are doing work that requires contextual reasoning and accountability that AI tools still handle poorly. The Stack Overflow 2024 Developer Survey found that 63% of developers cite 'AI tools lack context of codebase' as a key obstacle, a gap that a designer with deep product knowledge can fill [Stack Overflow, Jun 2024].",
     "stat": "60%",
     "statLabel": "of developers cite design-to-dev handoff as their top friction point",
     "statSourceName": "Figma",
@@ -129,78 +129,82 @@
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "76% of developers are using or planning to use AI tools in their workflow — for web designers, that means AI is generating layout scaffolding, color palettes, and copy at scale. The irreplaceable work is the user research and stakeholder facilitation that tells you whether the AI-generated output is actually solving the right problem.",
-        "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "quote": "84% of developers now use AI tools in their workflow — for web designers, that means AI is generating layout scaffolding, color palettes, and copy at scale. The irreplaceable work is the user research and stakeholder facilitation that tells you whether the AI-generated output is actually solving the right problem.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "Generative AI has automated a meaningful share of visual production in web design. The designers who are thriving moved upstream into user research and design systems — work that requires organizational context and user empathy that tools can't replicate. The production layer is not where you want to be building your career right now.",
-        "attribution": "AIGA Design Census",
-        "sourceId": "src-aiga"
+        "quote": "Creative and design roles face meaningful pressure from generative AI on visual production tasks, while demand for human judgment in user research, accessibility evaluation, and design systems governance is expanding. The roles declining are production-focused; the roles growing require organizational context and user empathy that tools cannot replicate.",
+        "attribution": "World Economic Forum, Future of Jobs Report 2025",
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Only 43% of developers say they trust AI output accuracy most of the time. For design portfolios, this means case studies that document the gap between initial AI-generated concepts and final shipped designs — showing how user feedback, accessibility constraints, and brand guidelines shaped the outcome — carry more weight than polished visuals alone.",
-        "attribution": "Stack Overflow Developer Survey 2024",
-        "sourceId": "src-3"
+        "quote": "Only 33% of developers trust AI output accuracy most of the time. For design portfolios, case studies that document the gap between initial AI-generated concepts and final shipped designs — showing how user feedback, accessibility constraints, and brand guidelines shaped the outcome — carry more weight than polished visuals alone.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Accessibility and UX research are the growth areas in web design right now — and they require skills that can't be quickly automated. Designers entering the field who build fluency in WCAG standards and usability testing methods are differentiating themselves from those who compete primarily on visual execution speed.",
-        "attribution": "AIGA, Eye on Design",
-        "sourceId": "src-aiga"
+        "quote": "The web design tasks that show the highest augmentation in AI usage data are the ones requiring iterative human judgment — evaluating design tradeoffs, incorporating feedback, and communicating rationale across teams. Designers entering the field who can articulate those judgment calls, not just produce polished outputs, are the ones clearing hiring screens.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Anthropic / O*NET",
       "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Web and Digital Interface Designers",
       "date": "Jan 2026",
       "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
     },
     {
-      "id": "src-2",
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Web Developers and Digital Designers",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
     },
     {
-      "id": "src-3",
       "name": "Stack Overflow",
-      "title": "Stack Overflow Developer Survey 2024",
-      "date": "Jun 2024",
-      "url": "https://survey.stackoverflow.co/2024/"
+      "title": "Stack Overflow Developer Survey 2025",
+      "date": "Jun 2025",
+      "url": "https://survey.stackoverflow.co/2025/"
     },
     {
-      "id": "src-4",
       "name": "Indeed Hiring Lab",
       "title": "Tech Hiring Trends 2024",
       "date": "2024",
       "url": "https://www.hiringlab.org/2024/03/12/tech-job-postings/"
     },
     {
-      "id": "src-5",
       "name": "Figma",
       "title": "Bridging the gap between design and code",
       "date": "2024",
       "url": "https://www.figma.com/reports/bridging-design-and-code/"
     },
     {
-      "id": "src-aiga",
-      "name": "AIGA",
-      "url": "https://www.aiga.org/research-and-resources/design-census",
-      "title": "AIGA Design Census 2024",
-      "date": "2024"
+      "name": "World Economic Forum",
+      "title": "Future of Jobs Report 2025",
+      "date": "Jan 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
+    },
+    {
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
     }
   ],
   "careerCluster": [
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 2,
       "isCurrent": false,
       "relationship": "specialization",
@@ -318,7 +322,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -336,7 +340,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -403,6 +407,23 @@
         "Learn Python, Java, or C++ beyond frontend skills",
         "Build logic-focused programming portfolio (non-UI projects)"
       ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security and threat modeling (OWASP, STRIDE) via hands-on labs (TryHackMe or HackTheBox)",
+        "Build a portfolio project: document a full vulnerability assessment of a web application or network segment"
+      ],
+      "fit": "Web designers with front-end development skills have direct exposure to the attack surfaces that security engineers defend: input validation, authentication UX, and client-side data handling. The technical foundation is narrower but the path is real."
     }
   ],
   "emergingCareers": [
@@ -494,5 +515,23 @@
   "emergingTitles": [
     "Product Designer"
   ],
-  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building."
+  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
+  "faqs": [
+    {
+      "question": "Is web design a viable career with AI generating visuals and layouts?",
+      "answer": "Web and Digital Interface Designer scores 45/100 on AI exposure, placing it in shifting but not collapsing territory, with 9,100 annual openings and 7% projected growth. AI tools have automated low-complexity visual generation and simple layout tasks, which pushed entry-level postings down roughly 25% year-over-year. Designers who work at the intersection of user research, business strategy, and technical implementation are holding ground; those doing production layout work for templates are most at risk."
+    },
+    {
+      "question": "What does a web designer earn, and what drives pay higher?",
+      "answer": "The median salary is $98,090, with senior UX designers and design leads at major tech companies typically earning $130,000 to $180,000. Pay increases most sharply for designers who can conduct user research, translate findings into testable prototypes, and communicate design decisions to engineering teams. Figma proficiency is now table stakes; the premium is in the judgment behind the design, not the tool fluency itself."
+    },
+    {
+      "question": "What design tasks are AI tools handling, and where do designers stay irreplaceable?",
+      "answer": "AI generates image assets, applies brand templates, and produces layout variations faster than any human designer. The gap is in understanding why a design is confusing to a specific user, reading behavioral data, and making judgment calls that balance business goals with user needs. The Figma 2024 report found 60% of developers cite design-to-development handoff as their top friction point, which means designers who can communicate precisely with engineering teams are in demand."
+    },
+    {
+      "question": "What skills help a web designer stay competitive as generative AI improves?",
+      "answer": "User research skills, including usability testing and accessibility auditing, are the highest-value complement to AI tools because they require human observation and judgment AI cannot replicate. Designers who can write basic HTML and CSS, and who understand how their designs will be implemented, bridge a gap that pure visual designers cannot fill. Nielsen Norman Group certification or equivalent UX credentials signal research rigor to employers; AIGA membership provides benchmark data on compensation and demand trends."
+    }
+  ]
 }

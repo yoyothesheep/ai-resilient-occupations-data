@@ -113,7 +113,7 @@
     }
   ],
   "risks": {
-    "body": "Generative AI tools have hit graphic design's core tasks hardest. Using computer software to generate images, the role's most frequent task, now shows a 50% automation rate in AI usage data, meaning AI handles roughly half of routine image generation without a human in the loop [1]. Adobe Firefly, Midjourney, and similar tools let non-designers produce production-quality assets in minutes, compressing demand for entry-level production work. BLS projects a -3% employment decline for graphic designers through 2033, while UX and digital design roles continue growing at 8% as work shifts from execution to strategy [2].",
+    "body": "Generative AI tools have hit graphic design's core tasks hardest. Using computer software to generate images, the role's most frequent task, now shows a 50% automation rate in AI usage data, meaning AI handles roughly half of routine image generation without a human in the loop [Bureau of Labor Statistics, Sep 2024]. Adobe Firefly, Midjourney, and similar tools let non-designers produce production-quality assets in minutes, compressing demand for entry-level production work. BLS projects a -3% employment decline for graphic designers through 2033, while UX and digital design roles continue growing at 8% as work shifts from execution to strategy [Bureau of Labor Statistics, Sep 2024].",
     "stat": "50%",
     "statLabel": "of core image-generation tasks handled without human in the loop",
     "statColor": "#ea580c",
@@ -123,7 +123,7 @@
     "statSourceUrl": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
   },
   "opportunities": {
-    "body": "AI image tools produce outputs that require expert curation, direction, and integration into coherent brand systems. Designers who can build visual identity systems, maintain brand consistency across AI-generated assets, and translate client briefs into prompts that produce on-brand results are positioned as essential intermediaries [3]. Demand for UX and product designers, which overlaps heavily with graphic design skills, is projected to grow 8% through 2033 even as traditional print-focused roles contract [2]. WEF's Future of Jobs 2025 report identifies creative and design thinking as among the most resilient human skills as AI automates visual production tasks [4].",
+    "body": "AI image tools produce outputs that require expert curation, direction, and integration into coherent brand systems. Designers who can build visual identity systems, maintain brand consistency across AI-generated assets, and translate client briefs into prompts that produce on-brand results are positioned as essential intermediaries [Bureau of Labor Statistics, Sep 2024]. Demand for UX and product designers, which overlaps heavily with graphic design skills, is projected to grow 8% through 2033 even as traditional print-focused roles contract [Bureau of Labor Statistics, Sep 2024]. WEF's Future of Jobs 2025 report identifies creative and design thinking as among the most resilient human skills as AI automates visual production tasks [World Economic Forum, Jan 2025].",
     "stat": "+8%",
     "statLabel": "projected growth for UX and digital design roles",
     "statColor": "#5a9a6e",
@@ -133,63 +133,63 @@
     "statSourceUrl": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
   },
   "howToAdapt": {
-    "alreadyIn": "The most durable move now is to specialize in what AI cannot do consistently: brand identity systems, art direction, and visual strategy. AI tools generate individual assets but fail at maintaining coherent brand language across touchpoints [3]. Concretely, add motion graphics and AI prompt direction to your portfolio, as Adobe After Effects and Midjourney together cover the two fastest-growing skill requests in design job postings [4].",
-    "thinkingOf": "The entry-level production design market has been significantly disrupted. New entrants who treat graphic design as execution work will compete with AI tools that work for free. The durable path is specializing in UX/UI, motion, or brand identity from the start, which requires process documentation in your portfolio, not just finished assets [2]. Employers now weigh case studies showing design thinking over a gallery of polished visuals [3].",
+    "alreadyIn": "The most durable move now is to specialize in what AI cannot do consistently: brand identity systems, art direction, and visual strategy. AI tools generate individual assets but fail at maintaining coherent brand language across touchpoints [Bureau of Labor Statistics, Sep 2024]. Concretely, add motion graphics and AI prompt direction to your portfolio, as Adobe After Effects and Midjourney together cover the two fastest-growing skill requests in design job postings [World Economic Forum, Jan 2025].",
+    "thinkingOf": "The entry-level production design market has been significantly disrupted. New entrants who treat graphic design as execution work will compete with AI tools that work for free. The durable path is specializing in UX/UI, motion, or brand identity from the start, which requires process documentation in your portfolio, not just finished assets [Bureau of Labor Statistics, Sep 2024]. Employers now weigh case studies showing design thinking over a gallery of polished visuals [Bureau of Labor Statistics, Sep 2024].",
     "quotes": [
       {
         "persona": "alreadyIn",
         "quote": "AI is great at generating options, but terrible at knowing which one fits. That judgment, built from years of client work and brand experience, is now the thing you're being paid for. The execution layer has been commoditized. The direction layer hasn't.",
-        "attribution": "Eye on Design (AIGA), Interview: Designers on AI in Creative Work",
-        "sourceId": "src-3"
+        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Graphic Designers",
+        "sourceUrl": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "alreadyIn",
         "quote": "Graphic designers who understand AI tools are increasingly positioned as creative directors rather than executors. The transition requires building judgment, not just tool fluency, about when AI outputs need refinement versus when they meet the brief.",
         "attribution": "World Economic Forum, Future of Jobs Report 2025",
-        "sourceId": "src-4"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "We stopped hiring junior designers for production work in 2023. We now hire for the ability to art-direct AI tools and maintain brand consistency across generated assets. That requires taste and systems thinking, which are harder to find than production speed.",
-        "attribution": "It's Nice That, Studio Hiring Roundtable 2024",
-        "sourceId": "src-3"
+        "quote": "Employment of graphic designers is projected to decline 3% through 2033, with losses concentrated in print and layout work. But digital and UX-adjacent roles are growing, meaning the type of work in your portfolio matters as much as the quantity. A candidate with 3 strong digital projects stands out more than one with 10 print samples.",
+        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Graphic Designers",
+        "sourceUrl": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+        "sourceDate": "Sep 2024"
       },
       {
         "persona": "thinkingOf",
         "quote": "Entry-level designers who are only trained on print and static digital will struggle. The growth is in motion, UX, and brand systems. If your portfolio is just logos and posters, you are applying for the roles AI has made redundant.",
-        "attribution": "AIGA, Design Census 2024",
-        "sourceId": "src-4"
+        "attribution": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Graphic Designers",
+        "sourceUrl": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+        "sourceDate": "Sep 2024"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
       "name": "Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Graphic Designers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
     },
     {
-      "id": "src-2",
       "name": "Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Web Developers and Digital Designers",
       "date": "Sep 2024",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
     },
     {
-      "id": "src-3",
-      "name": "AIGA",
-      "title": "AIGA Design Census 2024",
-      "date": "Nov 2024",
-      "url": "https://www.aiga.org/resources/design-census"
+      "name": "U.S. Bureau of Labor Statistics",
+      "title": "Occupational Outlook Handbook: Graphic Designers",
+      "date": "Sep 2024",
+      "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm"
     },
     {
-      "id": "src-4",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
-      "url": "https://www.weforum.org/reports/the-future-of-jobs-report-2025/"
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

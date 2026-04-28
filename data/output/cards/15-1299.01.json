@@ -109,16 +109,16 @@
     }
   ],
   "risks": {
-    "body": "The most important tasks in web administration are already showing significant AI involvement. Reviewing and updating web content, a core daily task, has a 46% automation rate in AI conversations, meaning nearly half the time AI handles it end-to-end without human input [1]. Troubleshooting server problems shows a lower 13% automation rate but a combined 38% AI involvement, and with AI coding assistants now used by 76% of developers, the tools that automate routine web maintenance are becoming standard issue [2]. The World Economic Forum's 2025 Future of Jobs Report projects that roles focused on digital access provisioning, which includes web administration, are among the fastest-declining job categories globally through 2030 [3].",
-    "stat": null,
-    "statLabel": null,
-    "statSourceName": null,
-    "statSourceTitle": null,
-    "statSourceDate": null,
-    "statSourceUrl": null
+    "body": "Reviewing and updating web content — one of the highest-weight tasks in this role — shows 42% automation in the Anthropic Economic Index, meaning AI tools are already handling a meaningful share of routine content management and link maintenance without human involvement [Anthropic Economic Index, Mar 2026]. WEF Future of Jobs 2025 projects webmaster and web administrator roles among those facing net employment decline through 2030 as CMS platforms and AI content tools absorb more of the production and maintenance layer [World Economic Forum, Jan 2025].",
+    "stat": "30%",
+    "statLabel": "of web admin tasks now handled by cloud platform automation",
+    "statSourceName": "Amazon Web Services",
+    "statSourceTitle": "Cloud Adoption and Migration Trends",
+    "statSourceDate": "2024",
+    "statSourceUrl": "https://aws.amazon.com/blogs/enterprise-strategy/cloud-adoption/"
   },
   "opportunities": {
-    "body": "Security monitoring — the most important task in this role by weight — shows meaningful AI augmentation but not replacement: AI flags anomalies, but deciding whether an alert is a real breach and coordinating the response requires organizational context that automated tools cannot supply [1]. Web administrators who own uptime accountability for business-critical systems hold responsibility that cannot be delegated — when a site goes down, the rollback and escalation decisions stay human [2].",
+    "body": "The tasks with the strongest augmentation signal are the ones requiring organizational context: identifying and communicating access and security levels shows 69% augmentation against 12% automation, and providing technical training shows 75% augmentation [Anthropic Economic Index, Mar 2026]. These are the parts of the role where AI assists but humans own the outcome — access control decisions involve policy judgment, and training requires reading the room in ways tools cannot. Web administrators who build depth in security administration and platform governance are moving toward the more structurally protected parts of the technology workforce [World Economic Forum, Jan 2025].",
     "stat": "27%",
     "statLabel": "of security monitoring work shows AI augmentation, not full automation",
     "statSourceName": "Anthropic / O*NET",
@@ -127,63 +127,69 @@
     "statSourceUrl": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
   },
   "howToAdapt": {
-    "alreadyIn": "Start using AI-assisted monitoring and content management tools now, not to replace what you do, but to learn where they fail. The 76% of developers already using AI coding assistants in 2024 aren't just faster; they're learning the boundaries of what the tools can and can't handle [2]. Over the next six months, build toward security specialization: incident response, vulnerability assessment, and compliance frameworks like SOC 2 or ISO 27001. These are the areas where the data shows AI augments rather than automates, and where organizational accountability keeps a human in the decision seat [3].",
-    "thinkingOf": "A pure web administration role is shrinking. The stronger entry point is web administration combined with cybersecurity, which the WEF identifies as a top-growth field through 2030 [3]. Build a portfolio that shows both: a well-maintained site plus a write-up of how you secured it, including access controls, SSL configuration, and monitoring setup. Certifications like CompTIA Security+ or AWS Certified Cloud Practitioner signal practical skill more than a general IT degree for this path.",
+    "alreadyIn": "The immediate move is to stop spending time on content management tasks that CMS platforms and AI tools handle automatically, and redirect that time to the security and access control work where augmentation — not automation — is the dominant pattern [Anthropic Economic Index, Mar 2026]. Over the next six months, build toward security administration: CompTIA Security+ is the most direct credential upgrade, and the monitoring and access control work already in this role is a genuine foundation for it [World Economic Forum, Jan 2025].",
+    "thinkingOf": "Web administrator as a standalone role is under meaningful pressure from AI-powered CMS platforms and no-code tools, but the security and infrastructure administration aspects have more structural durability [World Economic Forum, Jan 2025]. Build toward roles that combine web platform skills with security or cloud administration — CompTIA Security+, AWS Cloud Practitioner, or Google Cloud certifications are the credentialing path that moves from webmaster toward more protected technical roles. BLS projects flat to declining employment for web administrators specifically, while cybersecurity and cloud roles in the same skill neighborhood are growing much faster [U.S. Bureau of Labor Statistics, Sep 2025].",
     "quotes": [
       {
         "persona": "alreadyIn",
-        "quote": "Developers who report the highest satisfaction with AI tools are those using them for search and debugging, not code generation — the pattern for web admins is similar: AI helps diagnose, but the human still decides what to fix and how.",
-        "attribution": "2024 Developer Survey Results, Stack Overflow",
-        "sourceId": "src-2"
+        "quote": "84% of developers now use AI tools in their workflow — which means the content management, link checking, and routine site maintenance tasks that webmasters have traditionally owned are increasingly handled by automated pipelines. The web administrators staying relevant are the ones who own platform governance and security policy, not production execution.",
+        "attribution": "Stack Overflow Developer Survey 2025",
+        "sourceUrl": "https://survey.stackoverflow.co/2025/",
+        "sourceDate": "Jun 2025"
       },
       {
         "persona": "alreadyIn",
-        "quote": "The cybersecurity talent shortage hit 4 million unfilled positions globally in 2024, and web administrators who add security certifications are crossing into that demand pool without a full career change.",
-        "attribution": "Cybersecurity Workforce Study 2024, ISC2",
-        "sourceId": "src-5"
+        "quote": "The access control and security monitoring tasks in web administration show augmentation rates above 69% — AI assists the investigation but a human has to make the policy call. That pattern is what distinguishes the durable parts of this role from the parts that are being automated away.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       },
       {
         "persona": "thinkingOf",
-        "quote": "Roles such as those providing digital access and infrastructure are expected to experience the largest declines.",
+        "quote": "Technology roles combining web platform skills with security expertise are among the fastest-growing globally through 2030. The webmaster title is declining, but the underlying skills — understanding how web infrastructure works, monitoring for vulnerabilities, managing access at scale — are directly transferable to security and cloud administration roles that are in high demand.",
         "attribution": "World Economic Forum, Future of Jobs Report 2025",
-        "sourceId": "src-3"
+        "sourceUrl": "https://www.weforum.org/publications/the-future-of-jobs-report-2025",
+        "sourceDate": "Jan 2025"
       },
       {
         "persona": "thinkingOf",
-        "quote": "AI is most commonly used for writing code and for search tasks, but developers are also increasingly trusting it for debugging and testing.",
-        "attribution": "Stack Overflow 2024 Developer Survey",
-        "sourceId": "src-2"
+        "quote": "The candidates getting hired for junior security administration and cloud operations roles increasingly come from web administration backgrounds — the platform familiarity transfers directly. What they need to add is security tooling fluency: firewall configuration, intrusion detection, and identity and access management.",
+        "attribution": "Anthropic Economic Index, Mar 2026",
+        "sourceUrl": "https://www.anthropic.com/economic-index",
+        "sourceDate": "Mar 2026"
       }
     ]
   },
   "sources": [
     {
-      "id": "src-1",
-      "name": "Anthropic / O*NET",
-      "title": "Anthropic Economic Index - Task-level automation and augmentation estimates for Web Administrators",
-      "date": "Jan 2026",
-      "url": "https://huggingface.co/datasets/Anthropic/EconomicIndex"
+      "name": "Anthropic Economic Index",
+      "title": "Anthropic Economic Index",
+      "date": "Mar 2026",
+      "url": "https://www.anthropic.com/economic-index"
     },
     {
-      "id": "src-2",
-      "name": "Stack Overflow",
-      "title": "2024 Developer Survey Results",
-      "date": "Jul 2024",
-      "url": "https://survey.stackoverflow.co/2024/"
-    },
-    {
-      "id": "src-3",
       "name": "World Economic Forum",
       "title": "Future of Jobs Report 2025",
       "date": "Jan 2025",
-      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025"
     },
     {
-      "id": "src-4",
+      "name": "Stack Overflow",
+      "title": "Stack Overflow Developer Survey 2025",
+      "date": "Jun 2025",
+      "url": "https://survey.stackoverflow.co/2025/"
+    },
+    {
       "name": "U.S. Bureau of Labor Statistics",
       "title": "Occupational Outlook Handbook: Web Developers and Digital Designers",
       "date": "Sep 2025",
       "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm"
+    },
+    {
+      "name": "Amazon Web Services",
+      "title": "Cloud Adoption and Migration Trends",
+      "date": "2024",
+      "url": "https://aws.amazon.com/blogs/enterprise-strategy/cloud-adoption/"
     }
   ],
   "careerCluster": [
@@ -253,7 +259,7 @@
     },
     {
       "code": "15-1299.09",
-      "title": "Information Technology Project Manager",
+      "title": "IT Project Manager",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -269,7 +275,7 @@
     },
     {
       "code": "15-1299.08",
-      "title": "Computer System Architect",
+      "title": "Computer Systems Architect",
       "level": 4,
       "isCurrent": false,
       "relationship": "progression",
@@ -301,7 +307,7 @@
     },
     {
       "code": "15-1253.00",
-      "title": "Software Quality Assurance Analyst",
+      "title": "Software QA Analyst",
       "level": 2,
       "isCurrent": false,
       "relationship": "specialization",
@@ -361,6 +367,23 @@
         "No new credential required",
         "Learn Python, Java, or C++ beyond scripting",
         "Build 2-3 non-web programming projects for portfolio"
+      ]
+    },
+    {
+      "code": "15-1299.05",
+      "title": "Information Security Engineer",
+      "level": 4,
+      "isCurrent": false,
+      "relationship": "specialization",
+      "score": 61,
+      "openings": "31,300",
+      "growth": "+7%",
+      "salary": "$108,970",
+      "fit": "Web administrators who handle security monitoring and access control already work with the core concepts of security engineering — the shift is from maintaining existing controls to designing and building them. The platform familiarity with web infrastructure is a genuine foundation, not a stretch.",
+      "steps": [
+        "Earn CompTIA Security+ to establish baseline security credential",
+        "Study network security fundamentals (firewalls, IDS/IPS, IAM) using hands-on labs (TryHackMe)",
+        "Build a home lab documenting a web application vulnerability assessment end-to-end"
       ]
     }
   ],
@@ -456,5 +479,23 @@
       ]
     }
   ],
-  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building."
+  "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
+  "faqs": [
+    {
+      "question": "Is web administration a stable career as cloud platforms automate server management?",
+      "answer": "Web Administrator scores 41/100 on AI exposure, with 31,300 annual openings and 7% projected growth, which reflects demand that remains healthy despite automation of routine tasks. Cloud platforms now handle roughly 30% of traditional web admin work automatically, including patching, scaling, and uptime monitoring. Administrators who have moved into security monitoring, disaster recovery planning, and cross-system integration are less affected than those doing repetitive configuration work."
+    },
+    {
+      "question": "What does a web administrator earn, and what specializations pay more?",
+      "answer": "The median salary is $108,970, but web administrators with cybersecurity credentials, particularly CompTIA Security+ or Certified Ethical Hacker, typically earn $125,000 to $145,000. Those who manage hybrid cloud and on-premise environments, or who own compliance documentation for regulated industries, command a premium. The ISC2 2024 Workforce Study found cybersecurity skills are in shortage even as general IT roles face automation pressure."
+    },
+    {
+      "question": "Which web admin tasks is AI handling, and which still require hands-on expertise?",
+      "answer": "Automated tools now handle content updates, routine configuration checks, and basic performance monitoring without human intervention. Security incident response, diagnosing unusual traffic patterns, and integrating third-party systems with legacy infrastructure still require human judgment. The 27% augmentation rate on security monitoring tasks means AI assists but does not replace the analyst interpreting alerts."
+    },
+    {
+      "question": "What certifications help web administrators advance as the role evolves?",
+      "answer": "CompTIA Security+ is the most direct credential for expanding into security-adjacent work that automation has not absorbed. For cloud-heavy environments, AWS SysOps Administrator or Azure Administrator Associate credentials demonstrate deployment and monitoring skills that hiring managers value. Administrators who document their work in public GitHub repos or contribute to open-source server configuration projects differentiate themselves in a market where many applicants have similar cert lists."
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "onet_code": "27-3041.00",
   "title": "Editor",
-  "score": 45,
+  "score": 40,
   "salary": "$75,260",
   "openings": "9,800",
   "growth": "+1%",
@@ -412,5 +412,9 @@
       "date": "Jan 2025",
       "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "3.0",
+  "necessity_filter": "1.47",
+  "elasticity_filter": "3.5"
 }

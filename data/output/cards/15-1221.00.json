@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1221.00",
   "title": "Computer and Information Research Scientists",
-  "score": 63,
+  "score": 52,
   "salary": "$140,910",
   "openings": "3,200",
   "growth": "+20%",
@@ -364,5 +364,9 @@
       "question": "What credentials and skills matter most for a career in computer science research?",
       "answer": "A PhD is effectively required for independent research positions at universities and for most staff research scientist roles at major AI labs. Publications in top venues, NeurIPS, ICML, CVPR, ICLR, carry more weight than GPA or institutional prestige in most research hiring. Researchers who combine theoretical depth with the ability to implement and benchmark systems, not just propose ideas, are the profile that gets hired into the highest-impact and best-compensated positions."
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "2.6",
+  "necessity_filter": "1.65",
+  "elasticity_filter": "4.0"
 }

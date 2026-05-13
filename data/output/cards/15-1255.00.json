@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1255.00",
   "title": "Web and Digital Interface Designers",
-  "score": 45,
+  "score": 42,
   "salary": "$98,090",
   "openings": "9,100",
   "growth": "+7%",
@@ -533,5 +533,9 @@
       "question": "What skills help a web designer stay competitive as generative AI improves?",
       "answer": "User research skills, including usability testing and accessibility auditing, are the highest-value complement to AI tools because they require human observation and judgment AI cannot replicate. Designers who can write basic HTML and CSS, and who understand how their designs will be implemented, bridge a gap that pure visual designers cannot fill. Nielsen Norman Group certification or equivalent UX credentials signal research rigor to employers; AIGA membership provides benchmark data on compensation and demand trends."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "1.47",
+  "elasticity_filter": "3.5"
 }

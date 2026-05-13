@@ -1,67 +1,44 @@
-# AI-Resilience Job Scoring Skill
+# AI-Resilience Job Scoring Framework (V2)
 
 ## Purpose
-Score any occupation on a 1–5 AI-proof scale for resilience to AI displacement, then rank using labor market data.
+Score any occupation on its resilience to AI displacement and categorize it into one of four OpenAI-defined transition archetypes.
 
-**AI-Proof Score (1–5):**
-- **1** = Highly vulnerable — most tasks automatable in near term
-- **5** = Highly resilient — protected by hard defenses and/or actively benefits from AI's rise
-
-**Final Ranking (0–1):** Composite of AI-proof score, projected growth, and job openings.
-
----
-
-## Scoring Architecture
-
-### AI-Proof Score
-
-The AI-proof score is a **weighted blend of two groups**:
-- **Resiliency Score (65% weight):** Attributes 1–8 — why AI can't take over
-- **Opportunity Score (35% weight):** Attributes 9–10 — why AI's rise actively helps this role
-
-`role_resilience_score = (Defensive Score × 0.65) + (Offensive Score × 0.35)`
-
-Normalize to 1.0–5.0 range with one decimal place.
-
-### Final Ranking
-
-The final ranking combines the AI-proof score with labor market signals into a 0.0–1.0 composite:
-
-`final_ranking = 0.50 × resilience_norm + 0.30 × growth_norm + 0.20 × openings_norm`
-
-**Normalization:**
-- `resilience_norm` = (role_resilience_score - 1) / 4
-- `growth_norm` = see below
-- `openings_norm` = log-transform + min-max scale (handles extreme skew in job opening counts)
-
-**Growth normalization** uses the best available data per occupation:
-
-1. **Preferred — `Employment Change, 2024-2034`** (numeric, from [BLS Employment Projections](https://data.bls.gov/projections/occupationProj)): Apply a sign-preserving log transform — `sign(x) × log1p(|x|)` — to compress the wide variance in percent changes (−36% to +50%). Then min-max scale across all occupations with numeric data to produce a 0–1 value.
-
-2. **Fallback — `Projected Growth`** (category string scraped from O*NET): Used when an occupation isn't listed separately in BLS projections (e.g. specialty subcodes like `29-1141.03` Critical Care Nurses). Mapped ordinally to 0–1:
-
-   | Category | Value |
-   |----------|-------|
-   | Decline | 0.0 |
-   | Little or no change | 0.2 |
-   | Slower than average | 0.4 |
-   | Average | 0.6 |
-   | Faster than average | 0.8 |
-   | Much faster than average | 1.0 |
+**The Four Categories:**
+- **Grow with AI**: High Exposure, High Demand Elasticity. (AI drives productivity and market expansion).
+- **Will Reorganize**: High Exposure, Strong Human Necessity. (AI automates tasks, but human presence/trust remains strictly necessary).
+- **Less Immediate Change**: Low Exposure. (AI cannot automate the core physical or relationship tasks).
+- **High Automation Risk**: High Exposure, Weak Human Necessity, Low Demand Elasticity. (AI automates the core output, and making it cheaper does not unlock massive new demand).
 
 ---
 
-## Attribute Weights (within Defensive group)
+## Scoring Architecture (V2)
 
-| Tier | Attributes | Weight per Attribute |
-|------|-----------|---------------------|
-| High | A1 Physical Presence, A3 Novel Judgment, A4 Legal Accountability | 1.5× |
-| Medium | A2 Trust as Core Product, A5 Deep Org Context, A8 Changed by Experience | 1.0× |
-| Low | A6 Political Navigation, A7 Creative POV | 0.7× |
+The V2 framework evaluates **12 distinct attributes** (A1–A12). 
 
-Defensive Score = weighted average of A1–A8 scores using above weights, normalized to 1–5.
+These 12 attributes are blended into **3 Core Filters**:
+1. **Exposure Filter:** `(A11 + A9 + (6 - A3) + (6 - A5) + (6 - A7)) / 5.0`
+2. **Necessity Filter:** `(A1×1.5 + A4×1.5 + A2×1.0 + A8×1.0 + A6×0.7) / 5.7`
+3. **Elasticity Filter:** `(A12 + A10) / 2.0`
 
-Offensive Score = average of A9 and A10, normalized to 1–5.
+### Categorization Matrix
+Occupations are assigned to a category using the following thresholds:
+- `is_exposed` = Exposure ≥ 3.2
+- `is_necessary` = Necessity ≥ 1.8
+- `is_elastic` = Elasticity ≥ 3.5
+
+| Exposed | Elastic | Necessary | Category |
+|---------|---------|-----------|----------|
+| Yes | Yes | — | Grow with AI |
+| Yes | No | Yes | Will Reorganize |
+| Yes | No | No | High Automation Risk |
+| No | — | — | Less Immediate Change |
+
+### Final Ranking (The Natural Math Blend)
+To rank occupations *within* their categories, we calculate a 0.0–1.0 composite score:
+
+`Final Rank = Necessity(35%) + Elasticity(25%) - Exposure Penalty(20%) + BLS Growth(15%) + BLS Openings(5%)`
+
+*Note: BLS Growth and Openings are log-transformed and min-max scaled to prevent massive job counts from skewing the underlying AI resilience metrics.*
 
 ---
 
@@ -170,12 +147,22 @@ Offensive Score = average of A9 and A10, normalized to 1–5.
 *Weight: OFFENSIVE. Will AI clearing upstream bottlenecks create more demand for this role? Or does this role sit in a position to manage, evaluate, and direct AI systems — making domain expertise more, not less, valuable?*
 
 | Score | Description |
-|-------|-------------|
 | 1 | Role is directly in the path of automation; no downstream expansion likely |
 | 2 | Limited downstream benefit; role may shrink slightly |
 | 3 | Some downstream benefit or AI management opportunity |
 | 4 | Clear downstream expansion as AI clears adjacent bottlenecks, or strong AI oversight role |
 | 5 | Role is a direct beneficiary of AI-driven market expansion OR is the domain expert who directs/validates AI — demand will grow materially |
+
+### A11 — Observed Technical Exposure (Data Pipeline)
+*Derived from O\*NET Auto-Enumerate Index (AEI).* Does not rely on LLM estimation. 
+Calculated mathematically by mapping all O\*NET tasks for the role against the LLM AEI baseline.
+- **1** = Minimal technical exposure
+- **5** = Highly exposed to technical automation
+
+### A12 — Demand Elasticity (LLM Batch Pipeline)
+*Calculated via `generate_elasticity_scores.py`.* If AI dramatically lowers the cost/time of this occupation's core output, will market demand scale up to absorb the new efficiency?
+- **1** = Inelastic. (e.g. Tax Preparation — making taxes cheaper doesn't make people file more taxes).
+- **5** = Highly Elastic. (e.g. Software Engineering — making code cheaper causes companies to demand massively more software).
 
 ---
 
@@ -216,22 +203,13 @@ For each occupation, respond ONLY with this JSON structure:
 - "Defensive score is strong due to legal accountability (A4)"
 - "Offensive advantages from A9 expertise underutilization"
 
----
+## Calculation Steps (Python Pipeline)
 
-## Calculation Steps
-
-1. Score each attribute A1–A10 on 1–5
-2. Calculate weighted defensive score:
-   - High-weight attributes (A1, A3, A4): multiply score × 1.5
-   - Medium-weight attributes (A2, A5, A8): multiply score × 1.0
-   - Low-weight attributes (A6, A7): multiply score × 0.7
-   - Sum all weighted scores, divide by sum of weights (1.5+1.0+1.5+1.5+1.0+0.7+0.7+1.0 = 8.9)
-   - This gives Defensive Score on 1–5 scale
-3. Calculate offensive score: average of A9 and A10
-4. Apply ceiling/floor rules
-5. role_resilience_score = (Defensive × 0.65) + (Offensive × 0.35)
-6. Round to one decimal place
-7. Compute final_ranking = weighted composite of role_resilience_score (50%), growth (30%), openings (20%), using numeric Employment Change where available, falling back to the Projected Growth category string
+1. **A1-A10 Generation:** The LLM evaluates the occupation and outputs JSON containing 1-5 scores for attributes A1 through A10.
+2. **A11 & A12 Loading:** The pipeline loads A11 (O*NET AEI) and A12 (Demand Elasticity).
+3. **Filter Calculation:** The 3 core filters (Exposure, Necessity, Elasticity) are calculated via the formulas.
+4. **Categorization:** Threshold logic runs to assign the occupation to one of the 4 OpenAI categories.
+5. **Final Ranking:** The 0-100 `final_ranking` is computed via the Natural Math Blend to rank occupations within their tiers.
 
 ---
 

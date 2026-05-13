@@ -1,7 +1,7 @@
 {
   "onet_code": "43-3031.00",
   "title": "Bookkeeping, Accounting, and Auditing Clerks",
-  "score": 28,
+  "score": 20,
   "salary": "$49,210",
   "openings": "170,000",
   "growth": "-6%",
@@ -449,5 +449,9 @@
       "question": "What skills help a bookkeeper stay in demand as automation takes over routine work?",
       "answer": "Proficiency in cloud accounting platforms, QuickBooks Online and Xero in particular, is now a baseline expectation, not a differentiator. Bookkeepers who can produce monthly financial packages and speak to what the numbers mean, not just what they are, are harder to automate away. The AIPB Certified Bookkeeper credential provides a recognized standard; combining it with payroll or sales tax specialization opens roles that command a meaningful salary premium over general bookkeeping."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.44",
+  "elasticity_filter": "1.5"
 }

@@ -223,7 +223,7 @@
     }
   ],
   "title": "Financial Managers",
-  "score": 3.3,
+  "score": 54,
   "salary": "$161,700",
   "openings": "74,600",
   "growth": "+15%",
@@ -354,5 +354,9 @@
       "question": "What credentials and skills help financial managers advance to CFO-level roles?",
       "answer": "CPA is the most common credential among CFOs at public companies; CFA is common among those with an investment or treasury background. Financial managers who develop operational finance experience, specifically owning a P&L and working directly with business unit leaders, advance faster than those who stay in corporate reporting functions. FP&A experience with modern planning tools like Anaplan or Workday Adaptive is increasingly required for VP Finance and CFO roles at growth-stage companies."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "2.6",
+  "elasticity_filter": "3.5"
 }

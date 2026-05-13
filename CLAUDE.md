@@ -85,7 +85,11 @@ See `docs/scoring-framework.md` for full rubric.
 
 ## Updating Source Data
 
-See `docs/pipeline.md` — "Source Data Updates" section for full instructions on updating O*NET, BLS, and AEI data.
+```bash
+python3 scripts/check_data_updates.py   # check all sources for updates
+```
+
+Reports update status for O*NET, AEI, BLS OES wages, and BLS Projections, with actionable next steps for each. See `docs/pipeline.md` — "Source Data Updates" for full instructions.
 
 ## Career Page Data Format
 

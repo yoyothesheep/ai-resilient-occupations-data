@@ -1,7 +1,7 @@
 {
   "onet_code": "27-3043.00",
   "title": "Copywriter",
-  "score": 49,
+  "score": 46,
   "salary": "$72,270",
   "openings": "13,400",
   "growth": "+4%",
@@ -403,5 +403,9 @@
       "date": "Oct 2025",
       "url": "https://reutersinstitute.politics.ox.ac.uk/generative-ai-and-news-report-2025-how-people-think-about-ais-role-journalism-and-society"
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "3.0",
+  "necessity_filter": "1.82",
+  "elasticity_filter": "3.5"
 }

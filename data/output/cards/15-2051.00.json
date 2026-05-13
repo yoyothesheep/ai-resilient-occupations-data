@@ -1,7 +1,7 @@
 {
   "onet_code": "15-2051.00",
   "title": "Data Scientists",
-  "score": 62,
+  "score": 52,
   "salary": "$112,590",
   "openings": "23,400",
   "growth": "+34%",
@@ -407,5 +407,9 @@
       "question": "What skills help data scientists stay competitive as AI tools mature?",
       "answer": "The clearest shift is toward experiment design, causal reasoning, and production ML, which means skills like A/B testing rigor, MLOps tooling, and model monitoring are increasingly valuable alongside statistical modeling. Strong communication skills, the ability to explain model limitations and uncertainty to non-technical stakeholders, are consistently cited as differentiators in the GitHub Octoverse and LinkedIn data. Python proficiency with the scikit-learn, pandas, and PyTorch stack is baseline; specialization in a domain such as healthcare, finance, or climate science is what gets senior candidates to the top of the range."
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "2.8",
+  "necessity_filter": "1.6",
+  "elasticity_filter": "4.0"
 }

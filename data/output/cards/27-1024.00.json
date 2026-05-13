@@ -1,7 +1,7 @@
 {
   "onet_code": "27-1024.00",
   "title": "Graphic Designers",
-  "score": 44,
+  "score": 40,
   "salary": "$61,300",
   "openings": "20,000",
   "growth": "+2%",
@@ -459,5 +459,9 @@
         "Learn basic Runway AI video tools for motion asset acceleration"
       ]
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "1.47",
+  "elasticity_filter": "3.5"
 }

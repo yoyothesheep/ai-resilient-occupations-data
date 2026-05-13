@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.01",
   "title": "Web Administrators",
-  "score": 41,
+  "score": 30,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -497,5 +497,9 @@
       "question": "What certifications help web administrators advance as the role evolves?",
       "answer": "CompTIA Security+ is the most direct credential for expanding into security-adjacent work that automation has not absorbed. For cloud-heavy environments, AWS SysOps Administrator or Azure Administrator Associate credentials demonstrate deployment and monitoring skills that hiring managers value. Administrators who document their work in public GitHub repos or contribute to open-source server configuration projects differentiate themselves in a market where many applicants have similar cert lists."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.6",
+  "necessity_filter": "1.12",
+  "elasticity_filter": "2.5"
 }

@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.08",
   "title": "Computer Systems Engineers/Architects",
-  "score": 56,
+  "score": 47,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -405,5 +405,9 @@
       "question": "What skills help computer systems architects stay competitive?",
       "answer": "Cloud platform expertise across at least two major providers, AWS and Azure or GCP, is now a baseline for most senior roles. Security architecture skills, particularly zero-trust network design and identity management, are increasingly embedded in systems architect job descriptions rather than separated into a specialist role. Architects who can present business-case tradeoffs to non-technical stakeholders, not just design technically correct systems, are the profile that reaches the highest compensation bands."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.2",
+  "necessity_filter": "1.86",
+  "elasticity_filter": "4.0"
 }

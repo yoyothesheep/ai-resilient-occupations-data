@@ -267,7 +267,7 @@
     }
   ],
   "title": "Fraud Examiners, Investigators and Analysts",
-  "score": 3.1,
+  "score": 46,
   "salary": "$80,190",
   "openings": "10,300",
   "growth": "+3%",
@@ -398,5 +398,9 @@
       "question": "What credentials and skills help fraud investigators advance?",
       "answer": "The Certified Fraud Examiner designation from the ACFE is the primary credential in the field and is increasingly required rather than preferred for senior roles at financial institutions and consulting firms. Investigators who combine CFE with forensic accounting knowledge, either through CPA with forensic experience or the ACFE forensic accounting specialization, are competitive for the highest-paying roles. Technology skills, including data analytics in SQL or Python and familiarity with link analysis tools like Palantir or Maltego, are increasingly listed in senior job postings."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "2.3",
+  "elasticity_filter": "3.5"
 }

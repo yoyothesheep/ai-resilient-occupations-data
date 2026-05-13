@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2041.00",
   "title": "Credit Analysts",
-  "score": 34,
+  "score": 33,
   "salary": "$80,970",
   "openings": "3,700",
   "growth": "-4%",
@@ -410,5 +410,9 @@
       "question": "What skills help credit analysts stay competitive as automated underwriting matures?",
       "answer": "Financial modeling skills in Excel and Python are increasingly required for senior roles that involve building or stress-testing credit models rather than just applying them. Credit analysts who develop expertise in a specific sector, healthcare lending, commercial real estate, or leveraged buyouts, can command premium compensation at specialized funds and banks. CFA Level 1 passing signals quantitative discipline; the Credit Risk Certification from RMA is the most direct credential for commercial credit underwriting roles."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.4",
+  "necessity_filter": "1.74",
+  "elasticity_filter": "3.0"
 }

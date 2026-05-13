@@ -1,7 +1,7 @@
 {
   "onet_code": "41-9021.00",
   "title": "Real Estate Brokers",
-  "score": 59,
+  "score": 53,
   "salary": "$72,280",
   "openings": "9,700",
   "growth": "+3%",
@@ -372,5 +372,9 @@
       "question": "What credentials and strategies help real estate brokers build a durable business?",
       "answer": "Broker licensure is the baseline; designations like CRS, ABR, and SRES signal depth in specific transaction types. Brokers who build a team and invest in systems, particularly a strong CRM and consistent lead generation, can grow a business that is less dependent on any individual's production cycle. The NAR settlement environment rewards brokers who can clearly articulate their value in writing and who coach their agents to do the same; brokerage businesses built on referral reputation and community relationships are more defensible than those built on portal leads."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.6",
+  "necessity_filter": "3.39",
+  "elasticity_filter": "3.0"
 }

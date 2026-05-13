@@ -278,5 +278,10 @@
       ]
     }
   ],
-  "growth": "+1%"
+  "growth": "+1%",
+  "score": 36,
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.2",
+  "necessity_filter": "1.86",
+  "elasticity_filter": "2.5"
 }

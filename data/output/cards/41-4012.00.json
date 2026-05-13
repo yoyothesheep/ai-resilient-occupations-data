@@ -1,7 +1,7 @@
 {
   "onet_code": "41-4012.00",
   "title": "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",
-  "score": 52,
+  "score": 36,
   "salary": "$66,780",
   "openings": "114,800",
   "growth": "0%",
@@ -380,5 +380,9 @@
       "question": "What skills help manufacturing sales representatives advance to higher-earning roles?",
       "answer": "Technical product knowledge, specifically the ability to discuss engineering specifications, materials science, or process integration with credibility, is the primary differentiator that commands premium compensation in manufacturing sales. Representatives who add formal technical education, a degree in engineering, chemistry, or operations management, can move into sales engineering roles that pay substantially more. The highest-earning path is to move from field sales into national account management or regional director roles, which require demonstrated ability to grow large accounts and coach junior representatives."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.8",
+  "necessity_filter": "2.04",
+  "elasticity_filter": "2.5"
 }

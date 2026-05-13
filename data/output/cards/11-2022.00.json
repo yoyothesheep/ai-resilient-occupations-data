@@ -1,7 +1,7 @@
 {
   "onet_code": "11-2022.00",
   "title": "Sales Managers",
-  "score": 66,
+  "score": 56,
   "salary": "$138,060",
   "openings": "49,000",
   "growth": "+5%",
@@ -335,5 +335,9 @@
       "question": "What credentials and skills help sales managers advance into VP and C-suite roles?",
       "answer": "A consistent track record of meeting or exceeding quota as an individual contributor is still the primary prerequisite for sales leadership; most VPs of Sales were top-performing account executives first. MBA from a business school with a strong sales and marketing program accelerates advancement in some industries, particularly enterprise software and financial services. Sales managers who develop skills in sales methodology design, territory planning, and compensation plan construction are competitive for director-level and above roles where the work shifts from managing deals to managing systems."
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "2.8",
+  "necessity_filter": "2.72",
+  "elasticity_filter": "3.5"
 }

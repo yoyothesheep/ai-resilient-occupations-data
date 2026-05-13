@@ -1,7 +1,7 @@
 {
   "onet_code": "11-2021.00",
   "title": "Marketing Manager",
-  "score": 59,
+  "score": 48,
   "salary": "$161,030",
   "openings": "34,300",
   "growth": "+7%",
@@ -464,5 +464,9 @@
       "date": "Jan 2025",
       "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "3.0",
+  "necessity_filter": "1.89",
+  "elasticity_filter": "3.5"
 }

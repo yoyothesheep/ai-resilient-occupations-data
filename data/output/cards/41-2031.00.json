@@ -1,7 +1,7 @@
 {
   "onet_code": "41-2031.00",
   "title": "Retail Salespersons",
-  "score": 39,
+  "score": 26,
   "salary": "$34,580",
   "openings": "555,800",
   "growth": "0%",
@@ -394,5 +394,9 @@
       "question": "What skills help retail salespeople advance into better-paying roles?",
       "answer": "Product expertise in a specific category, combined with a track record of conversion rates and average transaction values, is what gets retail salespeople promoted to higher-earning commission tracks or specialist buyer roles. Salespeople who move into business development, account management, or wholesale sales representative roles significantly increase their earning potential while keeping the relationship-selling skills they built. Retail management experience, including scheduling, inventory, and team coaching, is a recognized path into operations and buying roles at larger retail organizations."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.7",
+  "elasticity_filter": "1.5"
 }

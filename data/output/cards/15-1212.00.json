@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1212.00",
   "title": "Information Security Analysts",
-  "score": 69,
+  "score": 54,
   "salary": "$124,910",
   "openings": "16,000",
   "growth": "+28%",
@@ -452,5 +452,9 @@
       "question": "What skills help information security analysts stay competitive as AI-driven threats evolve?",
       "answer": "Cloud security architecture skills, specifically for AWS, Azure, or GCP environments, are the highest-demand complement to traditional security analysis. The CISA AI Roadmap and the 2023 White House AI Executive Order are driving demand for analysts who understand AI-specific threats, including prompt injection, model poisoning, and adversarial inputs. CompTIA Security+ is the baseline credential; CISSP or cloud-specific certs like AWS Security Specialty are the path to senior roles and the strongest salary growth."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
+  "necessity_filter": "2.3",
+  "elasticity_filter": "4.0"
 }

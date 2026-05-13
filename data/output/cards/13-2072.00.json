@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2072.00",
   "title": "Loan Officers",
-  "score": 56,
+  "score": 47,
   "salary": "$74,180",
   "openings": "20,300",
   "growth": "+2%",
@@ -412,5 +412,9 @@
       "question": "What credentials and skills help loan officers stay competitive?",
       "answer": "NMLS licensure is a regulatory requirement for mortgage loan officers; maintaining continuing education and adding state licenses expands the addressable market. Commercial loan officers who earn CFP or CFA credentials, or who develop deep knowledge of SBA lending programs, differentiate themselves from generalists. The strongest long-term differentiator is a referral network; loan officers who are consistently recommended by real estate agents, accountants, and attorneys are largely insulated from rate-shopping and AI-assisted comparison tools."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.8",
+  "necessity_filter": "2.91",
+  "elasticity_filter": "3.0"
 }

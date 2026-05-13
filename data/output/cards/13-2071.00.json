@@ -296,7 +296,7 @@
     }
   ],
   "title": "Credit Counselors",
-  "score": 2.9,
+  "score": 50,
   "salary": "$50,480",
   "openings": "2,200",
   "growth": "+3%",
@@ -426,5 +426,9 @@
       "question": "What credentials and skills help credit counselors build a career?",
       "answer": "NFCC-member certification is the primary quality signal in the nonprofit counseling sector; employers at NFCC agencies increasingly require it for senior roles. The Accredited Financial Counselor designation from AFCPE provides a broader financial planning credential that opens doors at credit unions, military financial readiness programs, and employee assistance programs. Counselors who develop fluency in specific debt types, student loans, medical debt, or small business credit, can specialize in programs that serve populations underserved by general consumer credit counseling."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
+  "necessity_filter": "2.79",
+  "elasticity_filter": "3.5"
 }

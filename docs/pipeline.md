@@ -249,17 +249,34 @@ Automation vs. augmentation classification:
 
 ## Source Data Updates
 
+**Check all sources at once:**
+```bash
+python3 scripts/check_data_updates.py
+```
+Checks O*NET, AEI, BLS OES wages, and BLS Projections. Prints update status and actionable commands for anything out of date.
+
 ### O*NET Database
 Current: v30.2 (Feb 2026). Releases ~4×/year.  
-`python3 scripts/download_onet.py --check` → check for newer version  
-`python3 scripts/download_onet.py --version XX.Y` → download + backup  
+```bash
+python3 scripts/download_onet.py --check          # check for newer version
+python3 scripts/download_onet.py --version XX.Y   # download + backup
+python3 scripts/download_onet.py --sync           # sync occupation list
+```
 Then rerun Track A.
+
+### BLS OES Wages
+Current: `all_data_M_2024.xlsx`. Annual release (typically May).  
+```bash
+wget 'https://www.bls.gov/oes/special.requests/all_data_M_{YEAR}.xlsx' \
+  -O data/input/all_data_M_{YEAR}.xlsx
+```
+Update path references in `scripts/enrich_onet.py`, then rerun Track A.
 
 ### BLS Employment Projections
 Current: 2024–2034 cycle. Next: 2025–2035 (expected late 2026).  
-Replace `data/input/Employment Projections.csv` — keep column names identical. Rerun Track A.
+Download from [BLS](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm) → replace `data/input/Employment Projections.csv` keeping column names identical → rerun Track A.
 
 ### Anthropic Economic Index
 Current: 2026-02-05 to 2026-02-12 (release 2026-03-24).  
 Source: [Hugging Face — Anthropic/EconomicIndex](https://huggingface.co/datasets/Anthropic/EconomicIndex)  
-On new release: download CSV → update `AEI_FILE` in `scripts/build_task_table.py` → rerun Stage 3 → rerun Stage 6.
+On new release: download CSV → save to `data/input/anthropic/` → update `AEI_FILE` in `scripts/build_task_table.py` → rerun Stage 3 → rerun Stage 6.

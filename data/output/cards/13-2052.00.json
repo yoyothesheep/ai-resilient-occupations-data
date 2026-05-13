@@ -296,7 +296,7 @@
     }
   ],
   "title": "Personal Financial Advisors",
-  "score": 2.9,
+  "score": 49,
   "salary": "$102,140",
   "openings": "24,100",
   "growth": "+10%",
@@ -427,5 +427,9 @@
       "question": "What credentials and skills help financial advisors build a durable practice?",
       "answer": "CFP certification is effectively required for comprehensive financial planning roles and for most RIA positions; it also signals fiduciary commitment that clients increasingly seek out. Advisors who develop a niche, such as physicians, business owners, or divorcees, build referral networks that grow through word of mouth rather than requiring ongoing marketing spend. Technology fluency with planning software like eMoney or MoneyGuidePro is now expected; advisors who can interpret AI-generated plan scenarios and explain them to clients are better positioned than those treating these tools as black boxes."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.6",
+  "necessity_filter": "2.65",
+  "elasticity_filter": "3.0"
 }

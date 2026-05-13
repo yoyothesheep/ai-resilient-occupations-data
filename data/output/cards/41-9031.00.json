@@ -1,7 +1,7 @@
 {
   "onet_code": "41-9031.00",
   "title": "Sales Engineers",
-  "score": 62,
+  "score": 53,
   "salary": "$121,520",
   "openings": "5,000",
   "growth": "+6%",
@@ -355,5 +355,9 @@
       "question": "What skills and credentials help sales engineers advance?",
       "answer": "Technical depth in the specific product category is the primary differentiator; sales engineers who can go deeper than the customer's own engineers on a critical technical issue close deals that generalist salespeople cannot. Vendor certifications from AWS, Salesforce, or Cisco are recognized signals of technical competency and are frequently required for senior pre-sales roles at those vendors and their partners. Sales engineers who develop formal communication and presentation skills, moving from technical accuracy to persuasive simplicity, are the profile that advances into sales leadership and solutions architect roles."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.2",
+  "necessity_filter": "2.77",
+  "elasticity_filter": "3.5"
 }

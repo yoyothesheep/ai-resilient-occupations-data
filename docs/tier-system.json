@@ -1,49 +1,40 @@
 {
   "tiers": [
     {
-      "id": "high-ground",
-      "label": "High Ground",
-      "range_min": 65,
+      "id": "grow-with-ai",
+      "label": "Grow with AI",
+      "range_min": 75,
       "range_max": 100,
-      "description": "AI amplifies your value. These roles benefit directly from AI handling the low-value work, freeing you to do more of what only a human can do.",
-      "for_current_workers": "Deepen your expertise — AI will amplify you",
-      "for_career_explorers": "Strong entry — commit fully and specialize"
+      "description": "High AI exposure but high demand elasticity. These roles will use AI to do more, driving up productivity and expanding the overall market for their output.",
+      "for_current_workers": "Learn to use AI tools in your specialty — they'll make you more effective and help you stand out.",
+      "for_career_explorers": "Strong entry — commit fully and specialize, embracing AI tools."
     },
     {
-      "id": "solid-ground",
-      "label": "Solid Ground",
+      "id": "less-immediate-change",
+      "label": "Less Immediate Change",
       "range_min": 50,
-      "range_max": 64,
-      "description": "Well-positioned with real protection. These roles have meaningful defenses against automation, though the ceiling isn't unlimited.",
-      "for_current_workers": "Stay current, keep building your edge",
-      "for_career_explorers": "Good choice — level up your skills before you enter"
+      "range_max": 74,
+      "description": "Low AI exposure. These roles rely heavily on physical presence, intricate human relationships, or complex physical environments that AI models cannot automate.",
+      "for_current_workers": "You have a stable foundation. AI will be a background tool rather than a central disruptor.",
+      "for_career_explorers": "Good choice for long-term stability, though wage ceilings may exist."
     },
     {
-      "id": "shifting-ground",
-      "label": "Shifting Ground",
-      "range_min": 35,
+      "id": "will-reorganize",
+      "label": "Will Reorganize",
+      "range_min": 25,
       "range_max": 49,
-      "description": "One strong factor, one real threat. These roles have protection in some areas but genuine vulnerability in others — the outcome depends on how you position yourself.",
-      "for_current_workers": "Cross-train now — add adjacent skills before you need them",
-      "for_career_explorers": "Enter with eyes open — build adjacent skills alongside this role"
+      "description": "High exposure but strong human necessity. Parts of this job will be automated, but the human-in-the-loop (for trust, regulation, or physical action) remains necessary. The job will shift, not disappear.",
+      "for_current_workers": "Cross-train now — emphasize your judgment, client relationships, and physical expertise.",
+      "for_career_explorers": "Enter with eyes open — be prepared for the day-to-day tasks of this role to shift."
     },
     {
-      "id": "thin-ice",
-      "label": "Thin Ice",
-      "range_min": 20,
-      "range_max": 34,
-      "description": "Automation is already underway. These roles are losing ground to AI and the window to act is narrowing.",
-      "for_current_workers": "Start your pivot while you still have runway",
-      "for_career_explorers": "Look elsewhere unless you have a specific reason to enter"
-    },
-    {
-      "id": "fault-line",
-      "label": "Fault Line",
+      "id": "high-automation-risk",
+      "label": "High Automation Risk",
       "range_min": 0,
-      "range_max": 19,
-      "description": "These roles may not exist in their current form within a decade. Displacement is already happening in many cases.",
-      "for_current_workers": "Time to move — transition on your terms before circumstances force it",
-      "for_career_explorers": "Skip it — redirect that training investment elsewhere"
+      "range_max": 24,
+      "description": "High exposure, weak human necessity, and low demand elasticity. AI can automate the core output of this job, and making it cheaper will not unlock massive new demand.",
+      "for_current_workers": "Start your pivot while you still have runway. Look for adjacent roles with higher necessity.",
+      "for_career_explorers": "Look elsewhere unless you have a specific, highly-specialized niche to enter."
     }
   ],
   "scoring": {

@@ -1,7 +1,7 @@
 {
   "onet_code": "11-2011.00",
   "title": "Advertising Manager",
-  "score": 35,
+  "score": 38,
   "salary": "$126,960",
   "openings": "2,100",
   "growth": "-2%",
@@ -412,5 +412,9 @@
       "date": "2026",
       "url": "https://blog.hubspot.com/marketing/hubspot-blog-marketing-industry-trends-report"
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "3.0",
+  "necessity_filter": "1.72",
+  "elasticity_filter": "3.5"
 }

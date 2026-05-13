@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.05",
   "title": "Information Security Engineers",
-  "score": 61,
+  "score": 54,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -358,5 +358,9 @@
       "question": "What skills help information security engineers advance as AI-driven threats grow?",
       "answer": "Cloud security skills, particularly for AWS, Azure, or GCP environments, are now embedded in most senior security engineering job descriptions rather than treated as a specialty. Hands-on experience with penetration testing tools and red team exercises, combined with the ability to write security controls into code, is the profile that reaches staff or principal engineer levels. CISSP is the most recognized credential for senior roles; cloud-specific certs like AWS Security Specialty or CCSP complement it for architects working in cloud-heavy environments."
     }
-  ]
+  ],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "2.6",
+  "necessity_filter": "2.3",
+  "elasticity_filter": "4.0"
 }

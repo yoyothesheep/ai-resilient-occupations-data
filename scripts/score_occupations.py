@@ -25,6 +25,7 @@ import math
 import os
 import re
 import time
+from loaders import load_a_scores
 
 # ── Configuration ────────────────────────────────────────────────────────────
 ONET_CSV       = "data/intermediate/All_Occupations_ONET_enriched.csv"
@@ -42,18 +43,25 @@ SCORE_COLUMNS = [
     "Median Wage", "Projected Growth", "Employment Change, 2024-2034", "Projected Job Openings",
     "Education", "Top Education Level", "Top Education Rate",
     "Sample Job Titles", "Job Description",
+    "exposure_filter", "necessity_filter", "elasticity_filter", "ai_category",
     "role_resilience_score", "final_ranking", "key_drivers",
     "altpath url", "altpath simple title",
     "Emerging Job Titles",
 ]
 
 # Columns preserved from existing scores during --rerank (not re-derived from enrichment)
-PRESERVE_FROM_SCORES = {"role_resilience_score", "key_drivers", "final_ranking", "Emerging Job Titles"}
+PRESERVE_FROM_SCORES = {"role_resilience_score", "key_drivers", "final_ranking", "Emerging Job Titles", "exposure_filter", "necessity_filter", "elasticity_filter", "ai_category"}
 
 # ── Ranking configuration ────────────────────────────────────────────────────
-W_RESILIENCE = 0.50
-W_GROWTH     = 0.30
-W_OPENINGS   = 0.20
+W_NECESSITY  = 0.35
+W_ELASTICITY = 0.25
+W_EXPOSURE   = 0.20
+W_GROWTH     = 0.15
+W_OPENINGS   = 0.05
+
+# File paths for A11 and A12
+A11_CSV = "data/intermediate/a11_exposure_scores.csv"
+A12_CSV = "data/intermediate/a12_elasticity_scores.csv"
 
 # Growth normalization: prefers numeric "Employment Change, 2024-2034" (log-transformed + min-max).
 # Falls back to "Projected Growth" string via GROWTH_MAP if numeric value is missing.
@@ -149,6 +157,10 @@ def write_scores_to_csv(results: list[dict], output_path: str, source_lookup: di
                 "Top Education Rate": src.get("Top Education Rate", ""),
                 "Sample Job Titles": src.get("Sample Job Titles", ""),
                 "Job Description": src.get("Job Description", ""),
+                "exposure_filter": result.get("exposure_filter", ""),
+                "necessity_filter": result.get("necessity_filter", ""),
+                "elasticity_filter": result.get("elasticity_filter", ""),
+                "ai_category": result.get("ai_category", ""),
                 "role_resilience_score": result.get("role_resilience_score", result.get("final_score", "")),
                 "key_drivers": result.get("key_drivers", ""),
                 "altpath url": src.get("altpath url", ""),
@@ -251,32 +263,111 @@ def compute_rankings(csv_path: str):
         log_max = 1.0
         log_range = 1.0
 
+    # Load A1-A10 from log
+    a_scores = load_a_scores()
+
+    # Load A11
+    a11_scores = {}
+    if os.path.exists(A11_CSV):
+        with open(A11_CSV, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                a11_scores[r["onet_code"]] = int(r["a11_score"])
+                
+    # Load A12
+    a12_scores = {}
+    if os.path.exists(A12_CSV):
+        with open(A12_CSV, newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                a12_scores[r["onet_code"]] = int(r["a12_score"])
+
     for i, row in enumerate(rows):
-        score_str = row.get("role_resilience_score", "")
+        code = row.get("Code", "")
+        
+        # Build full A1-A12 dictionary (default to 3 if missing to prevent math errors)
+        attrs = {f"a{n}": 3 for n in range(1, 13)}
+        if code in a_scores:
+            attrs.update(a_scores[code])
+        if code in a11_scores:
+            attrs["a11"] = a11_scores[code]
+        if code in a12_scores:
+            attrs["a12"] = a12_scores[code]
+            
+        # 1. Calculate Filters
+        # Exposure Filter: High value = High Exposure
+        # A11 (Observed exposure) and A9 (Admin/Expert liberation) directly increase exposure.
+        # A3, A5, A7 (Cognitive defenses) decrease exposure, so we invert them (6 - A).
+        exposure_val = (attrs["a11"] + attrs["a9"] + (6 - attrs["a3"]) + (6 - attrs["a5"]) + (6 - attrs["a7"])) / 5.0
+        
+        # Necessity Filter: High value = Strong Necessity
+        # A1 (Physical), A2 (Trust), A4 (Regulatory), A6 (Political), A8 (Relational)
+        necessity_val = (attrs["a1"] * 1.5 + attrs["a4"] * 1.5 + attrs["a2"] * 1.0 + attrs["a8"] * 1.0 + attrs["a6"] * 0.7) / 5.7
+        
+        # Elasticity Filter: High value = High Elasticity (Job Growth)
+        # A12 (Demand Elasticity), A10 (Downstream/AI Mgmt)
+        elasticity_val = (attrs["a12"] + attrs["a10"]) / 2.0
+        
+        # Format filters for output
+        row["exposure_filter"] = round(exposure_val, 2)
+        row["necessity_filter"] = round(necessity_val, 2)
+        row["elasticity_filter"] = round(elasticity_val, 2)
+        
+        # 2. Categorization Logic
+        # Thresholds tuned empirically to match OpenAI paper distribution:
+        # Less Immediate Change ~46%, Grow ~12%, Reorg ~24%, Risk ~18%
+        is_exposed = exposure_val >= 3.2
+        is_necessary = necessity_val >= 1.8
+        is_elastic = elasticity_val >= 3.5
+        
+        if is_exposed and is_elastic:
+            category = "Grow with AI"
+        elif is_exposed and is_necessary and not is_elastic:
+            category = "Will Reorganize"
+        elif is_exposed and not is_necessary and not is_elastic:
+            category = "High Automation Risk"
+        else:
+            category = "Less Immediate Change"
+            
+        row["ai_category"] = category
+
+        # 3. Natural Math Blend
         gtype, gval = growth_values[i]
         log_val = log_openings[i]
 
-        r_norm = (float(score_str) - 1.0) / 4.0 if score_str else None
         if gtype == "numeric":
-            g_norm = (gval - g_min) / g_range  # min-max normalized log-transformed value
+            g_norm = (gval - g_min) / g_range
         elif gtype == "string":
-            g_norm = gval  # already 0–1 from GROWTH_MAP
+            g_norm = gval
         else:
-            g_norm = None
-        o_norm = (log_val - log_min) / log_range if log_val is not None else None
+            g_norm = 0.5  # Neutral fallback
 
-        # Weighted composite (no re-normalization for missing data)
-        parts = []
-        if r_norm is not None:
-            parts.append(r_norm * W_RESILIENCE)
-        if g_norm is not None:
-            parts.append(g_norm * W_GROWTH)
-        if o_norm is not None:
-            parts.append(o_norm * W_OPENINGS)
+        o_norm = (log_val - log_min) / log_range if log_val is not None else 0.5
 
-        raw_score = sum(parts) if parts else 0.0
+        # Normalize filters to 0-1
+        n_norm = (necessity_val - 1.0) / 4.0
+        e_norm = (elasticity_val - 1.0) / 4.0
+        # Exposure is a penalty, so we use (5 - exposure) or just subtract it
+        exp_penalty = (exposure_val - 1.0) / 4.0
 
-        row["final_ranking"] = round(raw_score, 3)
+        parts = [
+            n_norm * W_NECESSITY,
+            e_norm * W_ELASTICITY,
+            -exp_penalty * W_EXPOSURE,
+            g_norm * W_GROWTH,
+            o_norm * W_OPENINGS
+        ]
+
+        # raw_score could be negative due to exposure penalty. Shift to 0-100 range.
+        # Max theoretical: (1 * 0.35) + (1 * 0.25) - (0 * 0.20) + (1 * 0.15) + (1 * 0.05) = 0.8
+        # Min theoretical: (0 * 0.35) + (0 * 0.25) - (1 * 0.20) + (0 * 0.15) + (0 * 0.05) = -0.2
+        # Normalize -0.2 to 0.8 -> 0 to 1
+        raw_score = sum(parts)
+        normalized_score = (raw_score + 0.2) / 1.0
+
+        # Ensure bounds
+        final_score = max(0.0, min(1.0, normalized_score))
+        
+        row["role_resilience_score"] = round(final_score * 5, 2)  # For legacy compatibility
+        row["final_ranking"] = round(final_score, 3)
 
     # Sort by final_ranking descending
     rows.sort(key=lambda r: r.get("final_ranking", 0), reverse=True)

@@ -1,7 +1,7 @@
 {
   "onet_code": "41-3011.00",
   "title": "Advertising Sales Agents",
-  "score": 29,
+  "score": 32,
   "salary": "$61,460",
   "openings": "9,300",
   "growth": "-6%",
@@ -435,5 +435,9 @@
       "question": "What skills help advertising sales agents stay competitive in a contracting market?",
       "answer": "Agents who develop expertise in high-growth media categories, connected TV, podcast advertising, and branded content, are selling into segments where demand is growing and automation has not commoditized pricing. Digital advertising fluency, including understanding attribution modeling, first-party data strategy, and programmatic buying mechanics, makes agents more credible advisors to marketers who manage complex multi-channel campaigns. Building a reputation as a strategic partner, not a rate card vendor, is what sustains a client book as automated options handle the transactional volume."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.91",
+  "elasticity_filter": "3.0"
 }

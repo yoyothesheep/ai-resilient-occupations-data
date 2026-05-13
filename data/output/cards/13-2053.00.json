@@ -287,7 +287,7 @@
     }
   ],
   "title": "Insurance Underwriters",
-  "score": 2.4,
+  "score": 34,
   "salary": "$79,880",
   "openings": "8,200",
   "growth": "-3%",
@@ -390,5 +390,9 @@
       "question": "What skills help insurance underwriters stay competitive as automation takes over standard risks?",
       "answer": "Transitioning to specialty and excess-surplus lines is the clearest path to roles where automation pressure is lower; these segments require broader industry knowledge and more case-by-case judgment. CPCU coursework provides the technical foundation for commercial underwriting roles; adding a specialty designation like CRIS for contractors or AU for commercial lines signals depth to carriers hiring for non-standard books. Underwriters who develop direct broker relationships and can explain their risk appetite clearly have a competitive advantage that automated pricing models cannot replicate."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.2",
+  "necessity_filter": "2.0",
+  "elasticity_filter": "2.5"
 }

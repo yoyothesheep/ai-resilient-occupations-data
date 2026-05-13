@@ -55,25 +55,49 @@ def verify_csv_columns(csv_path: str) -> bool:
 
 def display_results(results: list[dict]):
     """Display scored results in a formatted table."""
-    print("\n" + "="*80)
-    print("✓ SCORING RESULTS")
-    print("="*80 + "\n")
+    print("\n" + "="*100)
+    print("✓ SCORING RESULTS (A1-A10 only, pre-ranking)")
+    print("="*100 + "\n")
 
     print(f"{'O*NET Code':<12} {'Score':<8} {'Key Drivers':<60}")
-    print("-" * 80)
+    print("-" * 100)
 
     for result in results:
         code = result.get("onet_code", "")
         score = result.get("role_resilience_score", "")
         drivers = result.get("key_drivers", "")
 
-        if len(drivers) > 57:
-            drivers = drivers[:54] + "..."
+        if len(drivers) > 77:
+            drivers = drivers[:74] + "..."
 
-        print(f"{code:<12} {score:<8} {drivers:<60}")
+        print(f"{code:<12} {score:<8} {drivers:<80}")
 
-    print("-" * 80)
+    print("-" * 100)
     print(f"Total scored: {len(results)}\n")
+
+def display_final_rankings(csv_path: str):
+    """Read the final CSV and display the categories and filters."""
+    import csv
+    print("\n" + "="*100)
+    print("✓ FINAL CATEGORIZATION & RANKING (12 Attributes)")
+    print("="*100 + "\n")
+    
+    print(f"{'O*NET Code':<12} {'Rank':<6} {'Category':<22} {'Exp':<5} {'Nec':<5} {'Elast':<5}")
+    print("-" * 100)
+    
+    with open(csv_path, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            code = row.get("Code", "")
+            rank = row.get("final_ranking", "")
+            cat = row.get("ai_category", "")
+            exp = row.get("exposure_filter", "")
+            nec = row.get("necessity_filter", "")
+            ela = row.get("elasticity_filter", "")
+            
+            print(f"{code:<12} {rank:<6} {cat:<22} {exp:<5} {nec:<5} {ela:<5}")
+            
+    print("-" * 100 + "\n")
 
 def main():
     print(f"\n🧪 AI-Resilience Scoring Test (Real Scores)")
@@ -133,6 +157,8 @@ def main():
     write_scores_to_csv(results, OUTPUT_CSV, source_lookup, append=False)
     compute_rankings(OUTPUT_CSV)
     print(f"✓ Results written to: {OUTPUT_CSV}")
+    
+    display_final_rankings(OUTPUT_CSV)
 
     # Verify all columns are present
     if not verify_csv_columns(OUTPUT_CSV):

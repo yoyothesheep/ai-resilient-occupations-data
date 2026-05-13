@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1252.00",
   "title": "Software Developers",
-  "score": 62,
+  "score": 44,
   "salary": "$133,080",
   "openings": "115,200",
   "growth": "+16%",
@@ -445,5 +445,9 @@
       "question": "What skills most differentiate software developers in an AI-assisted environment?",
       "answer": "System design, the ability to structure complex software before writing a line of code, is the skill AI tools augment but cannot replace. Strong code review instincts, particularly for AI-generated output with plausible-looking but subtly wrong logic, are increasingly valuable. Developers who have shipped production systems end to end, including deployment, monitoring, and incident response, are distinguishable from those who only write features; cloud certification like AWS Solutions Architect signals deployment credibility to hiring managers."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "1.47",
+  "elasticity_filter": "3.5"
 }

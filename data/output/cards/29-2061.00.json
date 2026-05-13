@@ -1,7 +1,7 @@
 {
   "onet_code": "29-2061.00",
   "title": "Licensed Practical and Licensed Vocational Nurses",
-  "score": 66,
+  "score": 59,
   "salary": "$62,340",
   "openings": "54,400",
   "growth": "+3%",
@@ -367,5 +367,9 @@
       ]
     }
   ],
-  "emergingTitles": []
+  "emergingTitles": [],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "3.58",
+  "elasticity_filter": "3.5"
 }

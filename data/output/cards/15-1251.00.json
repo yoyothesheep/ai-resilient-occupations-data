@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1251.00",
   "title": "Computer Programmers",
-  "score": 23,
+  "score": 24,
   "salary": "$98,670",
   "openings": "5,500",
   "growth": "-6%",
@@ -524,5 +524,9 @@
       "question": "What skills help a computer programmer stay competitive as AI tools improve?",
       "answer": "The most durable skill shift is from writing code to evaluating it: catching logic errors in AI-generated output, understanding system context, and debugging across large codebases. Proficiency in AI coding tools like GitHub Copilot is now a baseline expectation, not a differentiator. Programmers who pair coding ability with a domain specialty, such as financial systems, healthcare data, or embedded hardware, are harder to replace than those doing generic application work."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.0",
+  "elasticity_filter": "3.0"
 }

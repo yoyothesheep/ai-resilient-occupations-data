@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1253.00",
   "title": "Software QA Analyst",
-  "score": 47,
+  "score": 38,
   "salary": "$102,610",
   "openings": "14,000",
   "growth": "+10%",
@@ -511,5 +511,9 @@
       "question": "What skills help a QA analyst stay in demand as test automation matures?",
       "answer": "The most durable skill shift is toward test architecture: designing frameworks that catch edge cases, not just running the tests someone else designed. Fluency in at least one automation tool, Selenium, Playwright, or Cypress, is now baseline. QA analysts who also understand CI/CD pipelines and can write Python or JavaScript to extend test frameworks are the profile employers want; ISTQB Foundation certification provides a structured foundation, but portfolio projects showing real test design decisions carry more weight."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
+  "necessity_filter": "1.12",
+  "elasticity_filter": "3.5"
 }

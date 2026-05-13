@@ -1,7 +1,7 @@
 {
   "onet_code": "41-3021.00",
   "title": "Insurance Sales Agents",
-  "score": 59,
+  "score": 48,
   "salary": "$60,370",
   "openings": "47,000",
   "growth": "+4%",
@@ -361,5 +361,9 @@
       "question": "What credentials and skills help insurance sales agents build a durable career?",
       "answer": "State insurance licensure is required for all agents; adding lines beyond property-casualty, specifically life and health, expands the products an agent can sell and the revenue per client. CLU designation is the primary credential for life insurance specialists; CPCU is the most recognized in property-casualty. Agents who develop a niche, such as contractors, physicians, or high-net-worth families, generate referrals within tight professional communities and build books of business that are highly defensible against direct-to-consumer competition."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.8",
+  "necessity_filter": "2.79",
+  "elasticity_filter": "3.0"
 }

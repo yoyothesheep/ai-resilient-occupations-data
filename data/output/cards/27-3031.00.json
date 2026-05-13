@@ -1,7 +1,7 @@
 {
   "onet_code": "27-3031.00",
   "title": "Public Relations Specialist",
-  "score": 49,
+  "score": 40,
   "salary": "$69,780",
   "openings": "27,600",
   "growth": "+5%",
@@ -405,5 +405,9 @@
       "date": "Mar 2026",
       "url": "https://www.anthropic.com/economic-index"
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.86",
+  "elasticity_filter": "3.0"
 }

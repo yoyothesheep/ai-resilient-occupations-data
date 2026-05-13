@@ -136,16 +136,24 @@ python3 scripts/adjacent_roles.py --cluster <id>
 
 ### Updating Source Data
 
+**Check all sources at once:**
+```bash
+python3 scripts/check_data_updates.py
+```
+Reports update status for O*NET, Anthropic Economic Index, BLS OES wages, and BLS Employment Projections, with actionable commands for anything out of date.
+
 **O*NET Database:**
 ```bash
-python3 scripts/download_onet.py --check     # Check for newer version
-python3 scripts/download_onet.py --version XX.Y  # Download & back up
-python3 scripts/download_onet.py --sync      # Sync occupation list
+python3 scripts/download_onet.py --check          # Check for newer version
+python3 scripts/download_onet.py --version XX.Y   # Download & back up
+python3 scripts/download_onet.py --sync           # Sync occupation list
 ```
 
-**Anthropic Economic Index:** Check [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex) for new releases, download to `data/input/anthropic/`, update `AEI_FILE` in `scripts/build_task_table.py`, and rerun the pipeline.
+**Anthropic Economic Index:** Download new CSV from [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex) → save to `data/input/anthropic/` → update `AEI_FILE` in `scripts/build_task_table.py` → rerun Stage 3.
 
-**BLS Employment Projections:** Download from [BLS](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm), replace `data/input/Employment Projections.csv` keeping the same column names, and rerun enrichment + scoring.
+**BLS OES Wages:** Download `all_data_M_{YEAR}.xlsx` from [BLS](https://www.bls.gov/oes/special.requests/) → replace `data/input/all_data_M_2024.xlsx` → update path references in `scripts/enrich_onet.py` → rerun Track A.
+
+**BLS Employment Projections:** Download from [BLS](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm) → replace `data/input/Employment Projections.csv` keeping column names identical → rerun Track A.
 
 ### Testing
 
@@ -155,11 +163,11 @@ python3 scripts/test_scoring.py
 ```
 
 
-## The Scoring Framework
+## The Scoring Framework (V2)
 
-### 10 Attributes
+### The 12 Attributes
 
-**Defensive (65% weight):** Why AI can't take over
+**Defensive (Why AI can't take over):**
 - **A1** — Physical Presence & Dexterity Required
 - **A2** — Trust is the Core Product
 - **A3** — Novel, Ambiguous Judgment in High-Stakes Situations
@@ -169,37 +177,32 @@ python3 scripts/test_scoring.py
 - **A7** — Creative Work with a Genuine Point of View
 - **A8** — Work That Requires Being Changed by the Experience
 
-**Offensive (35% weight):** How AI amplifies these roles
+**Offensive (How AI amplifies these roles):**
 - **A9** — Expertise Underutilized Due to Administrative/Volume Constraints
 - **A10** — Downstream of Bottlenecks / Manages AI Systems
 
-### AI-Proof Score (1.0-5.0)
+**Data-Driven Baseline:**
+- **A11** — Observed Technical Exposure (Derived from O*NET Auto-Enumerate Index)
+- **A12** — Demand Elasticity (Calculated via `generate_elasticity_scores.py`)
 
-```
-Defensive Score = weighted average of A1-A8 (with attribute-specific weights)
-Offensive Score = average of A9-A10
-role_resilience_score  = (Defensive x 0.65) + (Offensive x 0.35)
-```
+### The 3 Core Filters & 4 Categories
+The 12 attributes are mathematically blended into 3 core filters:
+1. **Exposure Filter:** How technically exposed are the core tasks?
+2. **Necessity Filter:** How badly does the job require a physical human or legal/trust relationship?
+3. **Elasticity Filter:** Will making the job's core output cheaper drive massive new market demand?
 
-**Special Rules:**
-- **Ceiling Rule:** If A1 + A3 + A4 all <= 2, cap score at 2.5
-- **Floor Rule:** If A9 or A10 scores 5, minimum score is 3.0
+Jobs are then sorted into 4 transition archetypes based on these filters:
+- **Grow with AI**: High Exposure, High Demand Elasticity.
+- **Will Reorganize**: High Exposure, Strong Human Necessity.
+- **Less Immediate Change**: Low Exposure.
+- **High Automation Risk**: High Exposure, Weak Human Necessity, Low Demand Elasticity.
 
 ### Final Ranking (0.0-1.0)
+The `final_ranking` is a weighted composite that scores an occupation *within* its transition category:
 
-The `final_ranking` is a weighted composite that combines the AI-proof score with labor market signals:
+`Final Rank = Necessity(35%) + Elasticity(25%) - Exposure(20%) + BLS Growth(15%) + BLS Openings(5%)`
 
-| Input | Weight | Normalization |
-|-------|--------|---------------|
-| `role_resilience_score` | 50% | Linear scale: `(score - 1) / 4` |
-| Growth | 30% | See below |
-| `Projected Job Openings` | 20% | Log-transform + min-max scale |
-
-**Growth normalization** uses the best available data per occupation:
-1. **`Employment Change, 2024-2034`** (preferred) — numeric percent change from BLS. Sign-preserving log transform applied, then min-max scaled to 0-1.
-2. **`Projected Growth`** (fallback) — scraped category string from O*NET, mapped ordinally: Decline=0, Little/none=0.2, Slower=0.4, Average=0.6, Faster=0.8, Much faster=1.0.
-
-See `docs/scoring-framework.md` for complete rubrics and calculation details.
+See `docs/scoring-framework.md` for complete formulas and threshold calculation details.
 
 ## Output Format
 
@@ -221,7 +224,10 @@ See `docs/scoring-framework.md` for complete rubrics and calculation details.
 | `Top Education Rate` | Reporting percentage for top education level |
 | `Sample Job Titles` | Real-world job titles for this occupation |
 | `Job Description` | Short description of the role |
-| `role_resilience_score` | 1.0-5.0 AI resilience score |
+| `exposure_filter` | Calculated 1-5 filter score for Technical Exposure |
+| `necessity_filter` | Calculated 1-5 filter score for Human Necessity |
+| `elasticity_filter` | Calculated 1-5 filter score for Demand Elasticity |
+| `ai_category` | The AI transition archetype (e.g. Grow with AI) |
 | `final_ranking` | 0.0-1.0 composite ranking (higher = better) |
 | `key_drivers` | 2-3 sentence explanation of the score |
 | `altpath url` | AltPath.org career page URL |

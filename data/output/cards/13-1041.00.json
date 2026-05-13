@@ -255,5 +255,10 @@
       ]
     }
   ],
-  "growth": "+3%"
+  "growth": "+3%",
+  "score": 53,
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "2.86",
+  "elasticity_filter": "3.5"
 }

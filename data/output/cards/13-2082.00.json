@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2082.00",
   "title": "Tax Preparers",
-  "score": 40,
+  "score": 34,
   "salary": "$50,560",
   "openings": "10,400",
   "growth": "+4%",
@@ -448,5 +448,9 @@
       "question": "What credentials and skills help tax preparers stay competitive?",
       "answer": "The IRS Annual Filing Season Program is the baseline credential for unenrolled preparers; the Enrolled Agent designation is the most direct path to year-round advisory work and IRS representation. Tax preparers who develop expertise in a specific business sector, construction, restaurants, or medical practices, can charge premium rates and build stable referral networks. Fluency in professional-grade software like Drake or Lacerte signals to CPA firms and tax practices that a candidate can handle complex client work without hand-holding."
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "3.8",
+  "necessity_filter": "1.61",
+  "elasticity_filter": "2.5"
 }

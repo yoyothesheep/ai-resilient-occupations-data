@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1254.00",
   "title": "Web Developers",
-  "score": 39,
+  "score": 34,
   "salary": "$90,930",
   "openings": "5,400",
   "growth": "+8%",
@@ -499,5 +499,9 @@
       "question": "What credentials or skills matter most for web developers in the current market?",
       "answer": "Fluency in at least one major framework, React, Vue, or Next.js, is now a baseline, not a differentiator. What stands out is the ability to debug AI output, write tests for AI-generated code, and explain architectural tradeoffs. GitHub profile with real deployed projects carries more weight than certifications for most employers; for those seeking structure, AWS Cloud Practitioner or Google Cloud credentials signal deployment competency that complements development skills."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "4.0",
+  "necessity_filter": "1.0",
+  "elasticity_filter": "3.5"
 }

@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.09",
   "title": "IT Project Manager",
-  "score": 57,
+  "score": 45,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -428,5 +428,9 @@
       "question": "What credentials and skills help IT project managers stay competitive?",
       "answer": "PMP certification remains the strongest market signal for mid-career IT project managers, and PMI now offers an AI in Project Management micro-credential that is growing in demand. Hands-on experience managing at least one AI or cloud migration project is increasingly required rather than preferred in senior postings. Project managers who can evaluate AI vendor claims critically and translate technical risk into business language are the profile that reaches director-level roles."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
+  "necessity_filter": "2.16",
+  "elasticity_filter": "3.5"
 }

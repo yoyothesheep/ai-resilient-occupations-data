@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2011.00",
   "title": "Accountants and Auditors",
-  "score": 59,
+  "score": 47,
   "salary": "$81,680",
   "openings": "124,200",
   "growth": "+5%",
@@ -448,5 +448,9 @@
       "question": "What credentials and skills help accountants stay competitive as AI takes over routine work?",
       "answer": "CPA licensure remains the strongest long-term signal in the market; it unlocks audit work, public company reporting, and tax representation that non-licensed accountants cannot touch. Data analytics skills, SQL and Power BI in particular, are increasingly expected for senior roles that involve working with large datasets rather than just reviewing outputs. Accountants who develop expertise in a specific industry, healthcare, private equity, or real estate, can command premium rates and build advisory relationships that are difficult to commoditize."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "3.6",
+  "necessity_filter": "2.44",
+  "elasticity_filter": "3.0"
 }

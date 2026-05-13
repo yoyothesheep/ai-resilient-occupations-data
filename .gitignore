@@ -15,6 +15,7 @@ temp/
 
 # Large input data files (auto-downloaded from source)
 data/input/anthropic/
+data/input/all_data_M_2024.xlsx
 
 # Test artifacts, logs
 data/inline_responses

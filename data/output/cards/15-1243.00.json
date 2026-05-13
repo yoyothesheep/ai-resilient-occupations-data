@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1243.00",
   "title": "Database Architects",
-  "score": 50,
+  "score": 46,
   "salary": "$135,980",
   "openings": "4,000",
   "growth": "+9%",
@@ -483,5 +483,9 @@
       "question": "What skills and credentials help database architects stay competitive?",
       "answer": "Proficiency in vector databases and graph data models is growing in demand as organizations build AI applications that require new storage patterns beyond traditional relational and document databases. AWS Database Specialty or Azure Data Engineer certifications demonstrate cloud-native design skills. Architects who can speak to data governance, lineage, and compliance, not just schema design, are the profile employers want for teams building AI-driven products."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "1.6",
+  "elasticity_filter": "4.0"
 }

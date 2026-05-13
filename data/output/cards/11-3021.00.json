@@ -1,7 +1,7 @@
 {
   "onet_code": "11-3021.00",
   "title": "Computer and Information Systems Managers",
-  "score": 69,
+  "score": 58,
   "salary": "$171,200",
   "openings": "55,600",
   "growth": "+15%",
@@ -242,5 +242,9 @@
       "salary": "$103,790"
     }
   ],
-  "emergingTitles": []
+  "emergingTitles": [],
+  "ai_category": "Less Immediate Change",
+  "exposure_filter": "3.0",
+  "necessity_filter": "2.46",
+  "elasticity_filter": "4.0"
 }

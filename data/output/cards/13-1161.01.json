@@ -1,7 +1,7 @@
 {
   "onet_code": "13-1161.01",
   "title": "Search Marketing Strategist",
-  "score": 49,
+  "score": 43,
   "salary": "$76,950",
   "openings": "87,200",
   "growth": "+7%",
@@ -415,5 +415,9 @@
       "date": "Apr 2025",
       "url": "https://www.emarketer.com/content/google-ai-overviews-decrease-ctrs-by-34-5-per-new-study"
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
+  "necessity_filter": "1.47",
+  "elasticity_filter": "4.0"
 }

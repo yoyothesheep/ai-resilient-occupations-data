@@ -1,7 +1,7 @@
 {
   "onet_code": "13-1161.00",
   "title": "Market Research Analysts and Marketing Specialists",
-  "score": 47,
+  "score": 35,
   "salary": "$76,950",
   "openings": "87,200",
   "growth": "+7%",
@@ -432,5 +432,9 @@
         "Build a financial model portfolio with publicly available data"
       ]
     }
-  ]
+  ],
+  "ai_category": "High Automation Risk",
+  "exposure_filter": "4.0",
+  "necessity_filter": "1.3",
+  "elasticity_filter": "3.0"
 }

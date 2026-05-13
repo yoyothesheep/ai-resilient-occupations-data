@@ -296,7 +296,7 @@
     }
   ],
   "title": "Financial Risk Specialists",
-  "score": 3.0,
+  "score": 48,
   "salary": "$106,000",
   "openings": "4,800",
   "growth": "+6%",
@@ -423,5 +423,9 @@
       "question": "What credentials and skills help financial risk specialists stay competitive?",
       "answer": "FRM certification from GARP is the most widely recognized risk-specific credential and is increasingly listed as required rather than preferred in senior postings at banks and asset managers. Python and R fluency for building and validating quantitative models is now expected for roles above analyst level. Risk specialists who develop expertise in model risk management, the governance discipline of validating and monitoring financial models, are in particular demand as banks face increased regulatory scrutiny of AI-generated risk outputs."
     }
-  ]
+  ],
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.4",
+  "necessity_filter": "2.3",
+  "elasticity_filter": "3.5"
 }

@@ -1,7 +1,7 @@
 {
   "onet_code": "41-9022.00",
   "title": "Real Estate Sales Agents",
-  "score": 54,
+  "score": 44,
   "salary": "$56,320",
   "openings": "36,600",
   "growth": "+3%",
@@ -380,5 +380,9 @@
       "question": "What skills and strategies help real estate agents build a sustainable practice?",
       "answer": "A geographic farm strategy, focusing marketing and prospecting on a specific neighborhood, produces higher conversion rates and more referrals than broad market generalism. Agents who develop a specialty in a specific transaction type, luxury properties, investment properties, or relocation, position themselves for clients who seek out expertise rather than shopping purely on commission rate. Technology fluency with CRM systems and digital marketing, combined with consistent follow-up and database management, is what separates agents who build lasting businesses from those who depend on listing market conditions."
     }
-  ]
+  ],
+  "ai_category": "Will Reorganize",
+  "exposure_filter": "4.0",
+  "necessity_filter": "2.82",
+  "elasticity_filter": "2.5"
 }

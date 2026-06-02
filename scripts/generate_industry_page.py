@@ -157,9 +157,10 @@ def generate_data_file(cluster_id: str, cluster_name: str, description: str,
         if lvl != current_level:
             current_level = lvl
             career_lines.append(f"    // Level {lvl} — {level_labels.get(lvl, '')}")
+        cat_field = f', aiCategory: "{c["ai_category"]}"' if c.get("ai_category") else ""
         career_lines.append(
             f'    {{ title: "{c["title"]}", slug: "{c["slug"]}", '
-            f'score: {c["score"]}, growth: "{c["growth"]}", openings: "{c["openings"]}", level: {lvl} }},'
+            f'score: {c["score"]}, growth: "{c["growth"]}", openings: "{c["openings"]}", level: {lvl}{cat_field} }},'
         )
 
     careers_block = "\n".join(career_lines)
@@ -171,6 +172,7 @@ def generate_data_file(cluster_id: str, cluster_name: str, description: str,
   growth: string;
   openings: string;
   level: 1 | 2 | 3 | 4 | 5;
+  aiCategory?: string;
 }};
 
 export const LEVEL_LABELS: Record<number, string> = {{
@@ -331,6 +333,7 @@ def main():
             "growth": growth_str,
             "openings": openings_str,
             "level": int(m.get("level", 1)),
+            "ai_category": occ.get("ai_category", ""),
         })
 
     # Generate description via Claude or inline

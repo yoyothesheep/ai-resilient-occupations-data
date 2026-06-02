@@ -494,6 +494,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         t.strip() for t in scores.get(onet_code, {}).get("Emerging Job Titles", "").split(";") if t.strip()
     ]
     key_drivers = scores.get(onet_code, {}).get("key_drivers", "") or card.get("keyDrivers", "")
+    ai_category = scores.get(onet_code, {}).get("ai_category", "") or card.get("ai_category", "")
     task_intro = card.get("taskIntro", "")
 
     risks = card.get("risks", {})
@@ -545,6 +546,7 @@ def generate_data_file(card: dict, cluster_roles: dict, scores: dict, var_name: 
         f"  title: {str_to_tsx_string(title)},",
         f"  url: {str_to_tsx_string(onet_url)},",
         f"  score: {score},",
+        *([f"  aiCategory: {str_to_tsx_string(ai_category)},"] if ai_category else []),
         f"  salary: {str_to_tsx_string(salary)},",
         f"  openings: {str_to_tsx_string(openings)},",
         f"  growth: {str_to_tsx_string(growth)},",

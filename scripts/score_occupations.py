@@ -50,7 +50,7 @@ SCORE_COLUMNS = [
 ]
 
 # Columns preserved from existing scores during --rerank (not re-derived from enrichment)
-PRESERVE_FROM_SCORES = {"role_resilience_score", "key_drivers", "final_ranking", "Emerging Job Titles", "exposure_filter", "necessity_filter", "elasticity_filter", "ai_category"}
+PRESERVE_FROM_SCORES = {"role_resilience_score", "key_drivers", "final_ranking", "Emerging Job Titles", "exposure_filter", "altpath simple title", "altpath url", "necessity_filter", "elasticity_filter", "ai_category"}
 
 # ── Ranking configuration ────────────────────────────────────────────────────
 W_NECESSITY  = 0.35

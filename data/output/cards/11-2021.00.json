@@ -468,5 +468,23 @@
   "ai_category": "Less Immediate Change",
   "exposure_filter": "3.0",
   "necessity_filter": "1.89",
-  "elasticity_filter": "4"
+  "elasticity_filter": "4",
+  "faqs": [
+    {
+      "question": "Is marketing manager a strong career given AI automating so much of the execution work?",
+      "answer": "Marketing Manager scores 59/100 on AI exposure, one of the higher scores in marketing, and BLS projects +7% growth with 34,300 annual openings through 2033. BCG projects a 15-25% reduction in marketing FTEs as AI absorbs execution tasks, but the reduction concentrates in coordination and production roles rather than senior strategy positions. Managers who own brand direction, budget allocation, and cross-functional alignment are gaining scope even as their teams shrink."
+    },
+    {
+      "question": "What does a marketing manager earn, and how does the role scale with seniority?",
+      "answer": "The median salary is $161,030, which is among the highest in marketing. Senior marketing directors and VP-level roles at mid-size companies typically earn $180,000 to $250,000. The salary premium reflects how few practitioners can combine data fluency with the organizational authority to act on it. Brand-side in-house positions have held salaries better than agency roles, which face steeper headcount pressure."
+    },
+    {
+      "question": "Which marketing manager tasks are being automated, and what still requires the manager?",
+      "answer": "Performance analysis, content production, audience segmentation, and campaign reporting show the highest automation rates in this role. BCG data shows orchestration roles (managing campaigns, coordinating agencies) dropping from roughly 70% to 40% of marketing headcount. The tasks holding value are pricing judgment under uncertainty, cross-functional alignment with product and sales, and the organizational relationships that determine what actually gets executed."
+    },
+    {
+      "question": "What makes a marketing manager harder to replace as AI handles more of the team workload?",
+      "answer": "Demonstrating measurable revenue or pipeline impact from campaigns is more important than credentials or titles. In-house brand-side roles are more durable than agency positions, which lose headcount faster as AI absorbs production work. Managers who can direct AI-assisted campaigns and connect marketing investment to business outcomes are gaining authority rather than losing it as team sizes shrink."
+    }
+  ]
 }

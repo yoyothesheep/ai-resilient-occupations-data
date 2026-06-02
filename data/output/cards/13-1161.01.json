@@ -419,5 +419,23 @@
   "ai_category": "Grow with AI",
   "exposure_filter": "3.6",
   "necessity_filter": "1.47",
-  "elasticity_filter": "5"
+  "elasticity_filter": "5",
+  "faqs": [
+    {
+      "question": "Is search marketing a strong career given how fast AI is changing SEO?",
+      "answer": "Search Marketing Strategist scores 49/100 on AI exposure, with BLS projecting +7% growth and 87,200 annual openings through 2033. AI is absorbing keyword research and routine content optimization, but strategic search work, such as technical SEO architecture, attribution modeling, and connecting organic performance to revenue, still requires human judgment. The practitioners holding ground are those who work across channels and can explain the decisions behind their results."
+    },
+    {
+      "question": "What does a search marketing strategist earn, and what drives pay higher?",
+      "answer": "The median salary is $76,950, but SEO and SEM specialists with AI tool proficiency and attribution modeling skills command a 28% salary premium per Lightcast data, putting experienced strategists at $95,000 to $130,000. Pay increases sharply for those who can demonstrate measurable revenue impact from search investment rather than just traffic metrics."
+    },
+    {
+      "question": "Which search marketing tasks is AI handling now?",
+      "answer": "Keyword research, search query trend analysis, and content strategy creation show automation rates between 41% and 63% in observed AI usage data. Google AI Overviews have also reduced organic click-through rates by 34.5% when they appear, compressing traffic metrics that justified specialist headcount at smaller organizations. Technical SEO coordination with engineering teams and cross-channel attribution remain lower-automation areas."
+    },
+    {
+      "question": "What skills matter most for search marketing strategists in 2025?",
+      "answer": "Google Analytics 4 certification and hands-on experience with AI SEO tools are now baseline. What differentiates candidates is the ability to design experiments, explain performance causally (not just correlate metrics), and work directly with developers on technical implementations. A portfolio showing cost-per-acquisition improvements or documented A/B test results is more convincing than a list of tools."
+    }
+  ]
 }

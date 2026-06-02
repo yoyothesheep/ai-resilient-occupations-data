@@ -416,5 +416,23 @@
   "ai_category": "Less Immediate Change",
   "exposure_filter": "3.0",
   "necessity_filter": "1.47",
-  "elasticity_filter": "4"
+  "elasticity_filter": "4",
+  "faqs": [
+    {
+      "question": "Is editing a stable career when AI tools can rewrite and proofread automatically?",
+      "answer": "Editor scores 45/100 on AI exposure, with BLS projecting only +1% growth and 9,800 annual openings through 2033. Copy editing and proofreading show 30% automation in observed AI data, and major publishers like Business Insider have cut editorial staff, citing AI disruption directly. Editors who focus on acquisitions, developmental editing, author relationships, and content strategy are better positioned than those whose value is primarily in mechanical copy work."
+    },
+    {
+      "question": "What do editors earn, and what specializations pay the most?",
+      "answer": "The median salary is $75,260. Technical editors in legal, science, or financial publishing typically earn $85,000 to $110,000. Managing editors and editorial directors at digital publishers or content agencies can reach $120,000 to $150,000. Editors with deep subject matter expertise in regulated industries (law, medicine, finance) command higher rates than generalist editors."
+    },
+    {
+      "question": "Which editing tasks is AI handling now, and which still require human judgment?",
+      "answer": "Copy editing and rewriting show a 30% automation rate with just 4% augmentation, meaning AI displaces rather than assists this work. Fact-checking, manuscript evaluation, and author relationship management show no measurable automation signal. Proof review shows the strongest human-AI collaboration pattern, with editors retaining final authority. Structural editing and acquisitions decisions remain the clearest areas of human advantage."
+    },
+    {
+      "question": "What makes an editor more durable as AI takes over routine copy work?",
+      "answer": "Subject matter expertise in a specific field (science, law, finance, technology) provides structural defense that general copy skills do not. Pew Research found that 56% of Americans react negatively upon learning AI wrote a news article they found informative, making editorial credibility a product differentiator for quality publishers. Editors who can also manage contributor networks and production processes are more valuable than those focused on copy editing alone."
+    }
+  ]
 }

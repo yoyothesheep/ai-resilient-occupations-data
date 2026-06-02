@@ -409,5 +409,23 @@
   "ai_category": "Grow with AI",
   "exposure_filter": "3.8",
   "necessity_filter": "1.86",
-  "elasticity_filter": "4"
+  "elasticity_filter": "4",
+  "faqs": [
+    {
+      "question": "Is public relations a viable career as AI automates press release writing?",
+      "answer": "Public Relations Specialist scores 49/100 on AI exposure, with BLS projecting +5% growth and 27,600 annual openings through 2033. AI is handling first-draft press releases and routine media monitoring, but media relationship management, crisis communications, and spokesperson coaching show lower automation pressure. PRSA found that 85% of communicators now use AI, with the most experienced practitioners concentrating on media strategy and client counsel."
+    },
+    {
+      "question": "What does a public relations specialist earn at different career stages?",
+      "answer": "The median salary is $69,780. PR specialists in corporate communications or technology sectors typically earn $80,000 to $100,000 at mid-career. Those who move into PR management or crisis communications roles can reach $130,000 to $160,000. Agency roles tend to pay less than in-house positions at similar experience levels."
+    },
+    {
+      "question": "What PR tasks are AI handling, and what still requires a human?",
+      "answer": "Press release drafting and publication editing show automation rates above 25% in observed AI usage data, meaning AI is already handling a significant share of the writing volume that once anchored junior PR roles. Crisis response, media relationship cultivation, and stakeholder coaching have lower automation signals because they depend on human credibility and real-time judgment. The work growing in value is strategic counsel and media relations, not content production."
+    },
+    {
+      "question": "What makes a public relations specialist harder to replace by AI tools?",
+      "answer": "Building a documented media contact network and a portfolio of measurable coverage outcomes (named publications, crisis responses with documented results) matters more than writing samples. APR certification from PRSA signals commitment and provides a structured framework for strategic communications work. Specialists with depth in crisis communications or a specific industry sector are more durable than generalists."
+    }
+  ]
 }

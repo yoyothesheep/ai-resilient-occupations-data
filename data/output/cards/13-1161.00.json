@@ -436,5 +436,23 @@
   "ai_category": "Grow with AI",
   "exposure_filter": "4.0",
   "necessity_filter": "1.3",
-  "elasticity_filter": "4"
+  "elasticity_filter": "4",
+  "faqs": [
+    {
+      "question": "Is marketing specialist a good career with AI taking over data tasks?",
+      "answer": "Marketing Specialist scores 47/100 on AI exposure, meaning a meaningful share of the routine work is automatable but the role is not disappearing. BLS projects +7% growth and 87,200 annual openings through 2033, which is faster than average. The roles that hold up best are those focused on interpreting research and advising business decisions, not running the data collection itself."
+    },
+    {
+      "question": "What does a marketing specialist earn, and how does seniority affect pay?",
+      "answer": "The median salary is $76,950, but senior analysts and those with specialized skills in AI-powered research tools or statistical modeling typically earn $90,000 to $115,000. Analysts at large tech or finance firms often earn above $120,000. Salary growth is tied more to analytical depth and domain expertise than years of experience alone."
+    },
+    {
+      "question": "Which marketing specialist tasks are being automated by AI?",
+      "answer": "Survey design, competitive intelligence gathering, trend forecasting, and basic report formatting show automation rates above 47% in observed AI usage data. Consumer research collaboration runs above 57%. The tasks with lower automation pressure are translating findings into business recommendations and designing the research questions that frame what gets measured."
+    },
+    {
+      "question": "What credentials make a marketing specialist harder to replace?",
+      "answer": "Google Analytics 4 certification and proficiency in at least one AI-assisted research platform (Qualtrics XM, Brandwatch, or similar) are now baseline expectations. What differentiates analysts is the ability to connect data to specific business decisions and communicate findings to non-technical stakeholders. A track record of research that changed a product or campaign decision is more valuable than any single credential."
+    }
+  ]
 }

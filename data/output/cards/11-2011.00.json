@@ -416,5 +416,23 @@
   "ai_category": "Less Immediate Change",
   "exposure_filter": "3.0",
   "necessity_filter": "1.72",
-  "elasticity_filter": "4"
+  "elasticity_filter": "4",
+  "faqs": [
+    {
+      "question": "Is advertising manager a good career path given AI automating campaign execution?",
+      "answer": "Advertising Manager scores 35/100 on AI exposure, one of the lower scores in marketing, and BLS projects a -2% decline in employment through 2033. Programmatic platforms now automate much of the media buying and campaign trafficking that justified mid-level manager roles. The positions that remain are those focused on brand strategy, creative direction, and cross-functional coordination rather than execution oversight."
+    },
+    {
+      "question": "What does an advertising manager earn, and is the salary worth the risk?",
+      "answer": "The median salary is $126,960, which is significantly higher than most other marketing roles. With only 2,100 annual openings and declining employment, competition for these positions is real. Advertising managers who can demonstrate measurable campaign ROI and manage AI-assisted production workflows are better positioned than those whose value is in coordinating manual execution teams."
+    },
+    {
+      "question": "What advertising management tasks is AI taking over?",
+      "answer": "Campaign trafficking, media buying optimization, and performance monitoring are being absorbed by AI-powered programmatic platforms. Reading trade journals and industry research shows 88.6% automation in observed data, the highest of any task in this role. The tasks with lower automation pressure are brand strategy decisions, vendor relationship management, and the judgment calls about creative direction that require organizational context."
+    },
+    {
+      "question": "What skills help advertising managers stay competitive as AI handles more execution work?",
+      "answer": "Fluency in AI-assisted campaign tools (Performance Max, Meta Advantage+) lets managers run leaner teams without losing output quality, which is increasingly a budget requirement. HubSpot found that 62.7% of marketers believe the industry needs more unique, human-centered content to compete with AI-generated material, creating demand for managers who can set creative direction rather than just coordinate production. Building expertise in brand strategy and client relationships rather than execution coordination is the most durable path."
+    }
+  ]
 }

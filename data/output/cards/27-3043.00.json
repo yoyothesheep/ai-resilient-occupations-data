@@ -407,5 +407,23 @@
   "ai_category": "Less Immediate Change",
   "exposure_filter": "3.0",
   "necessity_filter": "1.82",
-  "elasticity_filter": "5"
+  "elasticity_filter": "5",
+  "faqs": [
+    {
+      "question": "Is copywriting still a viable career with AI writing tools producing content at scale?",
+      "answer": "Copywriter scores 49/100 on AI exposure, with BLS projecting +4% growth and 13,400 annual openings through 2033. The volume content market (product descriptions, SEO articles, ad variants) has largely shifted to AI, with Upwork reporting a 30-32% drop in writing work on its platform. The positions holding value are brand voice work, long-form research writing, and UX writing where accuracy, tone, and editorial judgment are visible to audiences."
+    },
+    {
+      "question": "What do copywriters earn, and how does specialization affect pay?",
+      "answer": "The median salary is $72,270 for employed copywriters. Specialists in UX writing, technical documentation, or financial content typically earn $85,000 to $120,000. Freelance rates have compressed at the commodity end but held for writers who specialize in high-stakes content with documented performance outcomes. Brand voice strategists and content directors command the highest rates."
+    },
+    {
+      "question": "Which copywriting tasks has AI taken over, and what does AI still do poorly?",
+      "answer": "Ad copy, web content, and promotional writing show a 42% automation rate in observed AI usage data. Content Marketing Institute found that 89% of marketers use AI for drafting, but only 4% have high confidence in AI outputs without human review. AI produces plausible but undifferentiated output on brand voice calibration, persuasive long-form writing, and high-stakes messaging where tone and accuracy both matter."
+    },
+    {
+      "question": "What should a copywriter focus on to stay competitive against AI writing tools?",
+      "answer": "Specializing in work with clear accountability matters most: UX writing, technical documentation, long-form journalism, or brand voice strategy. Reuters Institute found that audiences rate AI-produced content as less trustworthy than human-produced work, which creates a structural premium for writers whose name and judgment are visible. Building a portfolio that shows editorial decisions (not just clean copy) is more defensible than volume output."
+    }
+  ]
 }

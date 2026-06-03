@@ -579,50 +579,107 @@ def build_key_drivers_prompt(row: dict, attrs: dict | None = None) -> str:
     defensive = fmt(["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"])
     offensive = fmt(["a9", "a10"])
     market    = fmt(["a11", "a12"])
+    score = round(float(row["final_ranking"]) * 100)
 
-    return f"""You are writing a 2–3 sentence plain-English explanation for a career guidance site.
-Explain why this job is resilient (or not) to AI automation.
+    g = (row.get("Projected Growth") or "").lower()
+    if "decline" in g:
+        growth_dir = "declining"
+    elif "slower" in g or "little or no" in g:
+        growth_dir = "flat"
+    else:
+        growth_dir = "growing"  # Average / Faster / Much faster
+
+    cat = row["ai_category"]
+    if cat == "High Automation Risk":
+        scenario = (
+            "AI can already do most of the day-to-day work in this job. "
+            + ("The soft job outlook is mostly that same AI effect showing up in the hiring data, not a "
+               "separate problem, so do not present it as a second reason. "
+               if growth_dir != "growing" else
+               "The field is still hiring, but AI now covers most of the core tasks. ")
+            + "Be honest that it scores low, but you MUST name the specific judgment, oversight, or "
+              "relationship part of the work that still needs a person, and point toward a nearby role "
+              "with firmer footing. Do not be bleak or write the job off."
+        )
+    elif cat == "Grow with AI":
+        scenario = (
+            "AI can do a lot of the tasks here, yet demand for this role holds up or grows. Explain the "
+            "SPECIFIC, real-world reason WHY in this particular industry, grounded in how the work actually "
+            "gets used — for example lower cost makes more projects or analyses worth doing, the field is "
+            "expanding into new applications, there is simply more data/content/infrastructure to manage, "
+            "or the human-owned part is exactly what clients pay for. "
+            "BANNED: do NOT write the generic line 'when it gets cheaper/faster, companies want more of it', "
+            "and NEVER claim people 'buy more' of something that doesn't scale that way (e.g. nobody buys "
+            "more lawn). Show real industry understanding, not a supply-demand cliche. "
+            "Name what the human still owns (judgment, direction, deep domain knowledge, the harder cases, "
+            "or running the AI tools)."
+        )
+    elif cat == "Will Evolve":
+        if growth_dir == "growing":
+            scenario = (
+                "AI is taking over a chunk of the daily tasks, but a person is still required here for a "
+                "concrete reason (legal sign-off, safety, hands-on work, or personal trust) — name the "
+                "specific one. Demand is also rising, so name the real-world reason in plain words (for "
+                "example more older people needing care, new buildings going up, rules requiring a licensed "
+                "person). The job changes shape but stays needed."
+            )
+        else:
+            scenario = (
+                "AI is taking over a chunk of the daily tasks, but a person is still required here for a "
+                "concrete reason (legal sign-off, safety, hands-on work, or personal trust) — name the "
+                "specific one. Demand is not really growing, so describe it as steady and changing rather "
+                "than booming. If the outlook is soft, say plainly what is causing that; it is usually not "
+                "AI alone."
+            )
+    else:  # Less Immediate Change
+        if growth_dir == "growing":
+            scenario = (
+                "AI cannot do the core of this work. It depends on physical skill, in-person relationships, "
+                "unpredictable real-world conditions, or genuinely novel judgment — name which one. Demand "
+                "is also rising, so name the real-world reason in plain words. This is a strong spot."
+            )
+        else:
+            scenario = (
+                "AI cannot do the core of this work. It depends on physical skill, in-person relationships, "
+                "unpredictable conditions, or novel judgment — name which one. AI is not the threat here; if "
+                "the outlook is soft, the cause is something else (work moving overseas, fewer of these roles "
+                "needed, industry consolidation) — name that plainly."
+            )
+
+    return f"""You are writing a short, plain explanation for a career guidance site read by everyday job-seekers.
+Explain, in plain words, how this job holds up against AI and why.
+(Internal context only, never state this number or any rank in your answer: it scores {score} out of 100, higher = safer.)
 
 Job: {row['Occupation']}
-AI Category: {row['ai_category']}
-BLS Projected Growth: {row['Projected Growth']}
-Job Description: {row['Job Description']}
+What they do: {row['Job Description']}
+BLS job outlook: {row['Projected Growth']}, about {row.get('Projected Job Openings', '?')} openings a year.
 
-This job's resilience profile (1=weak/low, 5=strong/high):
-  DEFENSIVE — why a human is still needed:
+THE SITUATION FOR THIS JOB:
+{scenario}
+
+This job's underlying profile (1=weak, 5=strong) — use it to ground specifics, never quote it:
+  WHY A HUMAN IS STILL NEEDED:
 {defensive}
-  OFFENSIVE — how AI amplifies the role:
+  HOW AI HELPS THE WORKER:
 {offensive}
   MARKET:
 {market}
 
-Why this category was assigned:
-  exposure={row.get('exposure_filter', '?')}, necessity={row.get('necessity_filter', '?')}, elasticity={row.get('elasticity_filter', '?')}
-  (Grow with AI = high exposure + high elasticity; Will Evolve = high exposure + strong
-   necessity; Less Immediate Change = low exposure; High Automation Risk = high exposure,
-   weak necessity, low elasticity)
+WRITE LIKE A PERSON, NOT A REPORT:
+- 2–3 sentences, 55–85 words, the way you'd explain it to a friend over coffee.
+- Always name at least one thing that still needs a human, even when the score is low. Stay fair, never bleak.
+- Do NOT mention the score or where the job ranks at all: no "scores low", "in the middle", "scores high",
+  no tiers or grades. Just explain what AI can do, what still needs a person, and the demand picture.
+- BANNED words: exposure, elasticity, necessity, tailwind, headwind, offset, automation pressure,
+  demand driver, resilience, future-proof, upskill, leverage, net.
+- BANNED filler openers (AI-writing tells): "here's the twist", "here's the interesting part",
+  "here's the thing", "here's the catch", "but here's", "the interesting part is", "the twist is".
+  Just state the point directly instead.
+- No A1–A12, no numbers, no em dashes. Plain commas and periods.
+- Ground every claim in this job's real strengths above. Don't invent niches. Don't reduce real skilled
+  judgment to "automatable".
 
-Rules:
-- No attribute names (A1–A12), no numbers, no framework jargon in your output
-- High school reading level, 2–3 sentences, 60–90 words
-- GROUND your explanation in this job's actual highest-scoring attributes above.
-  Do NOT invent a generic hedge and do NOT contradict the category.
-- "Grow with AI": the category was driven by demand elasticity. Lead with WHY cheaper or
-  faster output unlocks more demand and more workers — even if individual tasks look
-  automatable. Use the offensive factors to explain what humans do with the freed capacity.
-- "Will Evolve": name the SPECIFIC human necessity that scored highest (e.g. legal
-  accountability, hands-on care, trust) AND explain how AI reshapes daily tasks. Never say
-  the job disappears. If BLS growth is negative, frame as steady-but-restructuring, not dying.
-- "Less Immediate Change": explain the protection using whichever scored highest —
-  physical/dexterity, relational/trust, environmental unpredictability, OR cognitive
-  (novel judgment, creative point of view, deep context). Do not default to "hands-on".
-- "High Automation Risk": be honest about exposure, but you MUST name the specific judgment,
-  supervisory, contextual, or relational tasks (from the description and the highest
-  defensive attributes above) that resist automation. Never reduce real skilled judgment to
-  "automatable". No invented niches.
-- If BLS growth is positive, acknowledge the demographic/market tailwind alongside AI pressure.
-
-Respond with only the key_drivers text. No JSON, no labels, no preamble."""
+Respond with only the explanation. No labels, no preamble."""
 
 
 PATCHED_LOG = "data/intermediate/key_drivers_patched.txt"

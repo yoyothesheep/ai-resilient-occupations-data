@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1254.00",
   "title": "Web Developers",
-  "score": 44,
+  "score": 25,
   "salary": "$90,930",
   "openings": "5,400",
   "growth": "+8%",
@@ -11,7 +11,7 @@
     "Web Design Specialist",
     "Web Developer, Webmaster"
   ],
-  "keyDrivers": "When AI tools can generate website code faster and cheaper, businesses that couldn't previously afford custom web applications suddenly can, dramatically expanding demand for web development work. This surge in demand means more developers are needed, not fewer, even as AI handles routine coding tasks. With AI taking on boilerplate code and debugging, developers can focus their freed-up time on optimizing performance, integrating complex systems, and building more ambitious web applications, fueling a cycle of growing opportunity in a field already projected to expand much faster than average.",
+  "keyDrivers": "Web development involves writing code for websites and applications-exactly the kind of well-structured, pattern-based work that AI coding tools are already handling with increasing competence. The role has no physical component, no legal accountability, and delivers output where clients care about results, not who or what built it. As AI code generation continues to improve, much of the standard web development workload can be completed faster and cheaper by AI-assisted workflows, significantly reducing demand for dedicated web developers.",
   "taskData": [
     {
       "task": "Write web application code",
@@ -500,8 +500,8 @@
       "answer": "Fluency in at least one major framework, React, Vue, or Next.js, is now a baseline, not a differentiator. What stands out is the ability to debug AI output, write tests for AI-generated code, and explain architectural tradeoffs. GitHub profile with real deployed projects carries more weight than certifications for most employers; for those seeking structure, AWS Cloud Practitioner or Google Cloud credentials signal deployment competency that complements development skills."
     }
   ],
-  "ai_category": "Grow with AI",
+  "ai_category": "High Automation Risk",
   "exposure_filter": "4.0",
   "necessity_filter": "1.0",
-  "elasticity_filter": "5"
+  "elasticity_filter": "2"
 }

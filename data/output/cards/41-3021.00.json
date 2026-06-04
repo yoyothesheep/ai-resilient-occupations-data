@@ -17,7 +17,7 @@
     "Sales Representative",
     "Underwriting Sales Representative"
   ],
-  "keyDrivers": "Insurance sales agents will continue to be needed because people value personal trust and guidance when making important financial decisions about protecting their families, health, and property. However, AI is already reshaping daily tasks, automating quote comparisons, streamlining paperwork, and using data to identify potential customers, which means agents will spend less time on routine work and more time building relationships and explaining complex policies. Steady demand from population growth and evolving insurance needs should keep job growth on track even as the role shifts.",
+  "keyDrivers": "People buy insurance from someone they trust, especially for complex policies involving life, business, or major assets. The human relationship and ability to understand a client's unique situation provide real protection against automation. However, simpler insurance products are increasingly sold online without agents, and AI tools can now handle routine quoting and policy comparisons, which puts pressure on the lower end of this profession.",
   "taskData": [
     {
       "task": "Customize coverage programs",

@@ -1,7 +1,7 @@
 {
   "onet_code": "13-1161.00",
   "title": "Market Research Analysts and Marketing Specialists",
-  "score": 41,
+  "score": 29,
   "salary": "$76,950",
   "openings": "87,200",
   "growth": "+7%",
@@ -23,7 +23,7 @@
     "Email Marketing Manager",
     "Brand Strategist"
   ],
-  "keyDrivers": "When AI makes it faster and cheaper to run surveys, analyze consumer data, and test marketing messages, companies don't just do the same amount of research with fewer people, they do far more of it, launching campaigns for more products, segments, and channels than before. That surge in output drives demand for more analysts and specialists, not fewer. Humans use the time AI frees up from repetitive data gathering to interpret results, craft strategy, and manage the AI tools themselves, which is why BLS projects much-faster-than-average growth.",
+  "keyDrivers": "Much of this role-gathering data, running surveys, analyzing trends, and writing reports-falls squarely in AI's sweet spot. The work is largely desk-based with no physical component, requires no licensure, and the judgment involved often follows well-established frameworks rather than truly novel thinking. While some analysts will shift toward interpreting AI-generated insights, the overall demand for dedicated market research roles is likely to shrink as AI handles the bulk of the analytical work directly.",
   "taskData": [
     {
       "task": "Analyze customer demographics/demand",
@@ -433,10 +433,10 @@
       ]
     }
   ],
-  "ai_category": "Grow with AI",
+  "ai_category": "High Automation Risk",
   "exposure_filter": "4.0",
   "necessity_filter": "1.3",
-  "elasticity_filter": "4",
+  "elasticity_filter": "2",
   "faqs": [
     {
       "question": "Is marketing specialist a good career with AI taking over data tasks?",

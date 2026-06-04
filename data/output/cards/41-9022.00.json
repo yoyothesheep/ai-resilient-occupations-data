@@ -15,7 +15,7 @@
     "Real Estate Salesperson, Realtor",
     "Sales Agent"
   ],
-  "keyDrivers": "Real estate agents still need to physically accompany clients to properties, build personal trust during one of the biggest financial decisions people make, and navigate the interpersonal dynamics between buyers, sellers, and other parties. AI is already reshaping much of the day-to-day work, automating property searches, generating listings, and streamlining contracts, so agents will spend less time on paperwork and more time on relationship-building and negotiation. The profession isn't disappearing, and steady market demand supports average growth, but the daily routine will look quite different.",
+  "keyDrivers": "Sales agents show properties, build client relationships, and handle licensed transaction work, but much of their day-to-day involves tasks AI is rapidly improving at - lead generation, market comparisons, scheduling, and initial client matching. While licensing requirements and the importance of in-person showings provide some protection, agents face more displacement risk than brokers because they typically handle more routine transactions with less complex judgment. The large number of agents relative to market need makes this role vulnerable to consolidation as AI tools make each agent more productive.",
   "taskData": [
     {
       "task": "Match properties to buyers",

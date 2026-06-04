@@ -16,7 +16,7 @@
     "Real Estate Sales Associate, Realtor",
     "Supervising Broker"
   ],
-  "keyDrivers": "Real estate brokers will continue to be needed because buying or selling property is one of the biggest financial decisions people make, and clients rely heavily on a broker's personal trustworthiness and negotiation skills to guide them through complex, high-stakes deals. AI will reshape daily work by automating market analysis, property matching, and paperwork, but brokers still carry legal and ethical accountability for transactions and must navigate sensitive interpersonal dynamics between buyers, sellers, and lenders. Expect the role to evolve rather than disappear, with steady demand ahead.",
+  "keyDrivers": "Real estate brokers are licensed professionals who bear legal responsibility for transactions, disclosures, and fiduciary duties to their clients - requirements that won't go away regardless of AI capabilities. The role is fundamentally built on trust, as people making the biggest financial decision of their lives want a human advocate who understands their needs and can negotiate on their behalf. While AI will streamline market analysis and paperwork, the broker's value in navigating complex deals and managing relationships between buyers, sellers, and other agents remains strong.",
   "taskData": [
     {
       "task": "Run market comparisons",

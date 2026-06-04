@@ -22,7 +22,7 @@
     "AP/AR Specialist",
     "Staff Accountant"
   ],
-  "keyDrivers": "Most of the core work here, calculating, classifying, posting, and verifying financial figures, follows routine, rule-based steps that modern accounting software and AI can handle faster and more accurately. The Bureau of Labor Statistics already projects employment declines. Still, some tasks resist full automation: verifying unusual transactions, maintaining trusted relationships with clients, and applying contextual knowledge of a specific business's financial history require human oversight. However, these remaining needs are limited, making this role one of the more vulnerable to automation over time.",
+  "keyDrivers": "Bookkeeping and accounting clerk work is highly structured and rule-based-recording transactions, reconciling accounts, and generating reports-making it one of the most automatable roles as AI tools handle these tasks faster and more accurately. There is no requirement for physical presence, licensure, or high-stakes novel judgment. AI doesn't create new demand for this role; instead, it directly replaces the core tasks, leaving very little protection.",
   "taskData": [
     {
       "task": "Operate accounting software",

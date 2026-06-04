@@ -17,7 +17,7 @@
     "Systems Engineer"
   ],
   "emergingTitles": [],
-  "keyDrivers": "Information security engineers are well-protected from automation because their work demands constant judgment calls in unpredictable, high-stakes situations, every cyberattack is different, and defenders must think creatively to stay ahead of human adversaries. The role also requires close collaboration with teams across an organization to design security policies that balance protection with usability. With cyber threats growing rapidly, demand for these professionals is projected to grow much faster than average, and the need for experienced human decision-making in this field remains very difficult to replace.",
+  "keyDrivers": "Security engineers design and build the systems that protect organizations from constantly evolving cyber threats, requiring creative problem-solving in situations that have never been seen before. Their deep knowledge of specific organizational architectures and threat landscapes is hard for AI to replicate. The explosion of AI-powered tools and AI-driven attacks is creating more demand for experts who can architect defenses and oversee automated security systems-making this role a clear beneficiary of AI's rise.",
   "taskData": [
     {
       "task": "Monitor networks for breaches",

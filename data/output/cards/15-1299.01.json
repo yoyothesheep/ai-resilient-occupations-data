@@ -15,7 +15,7 @@
     "Web Site Manager",
     "Web Technologies Administrator, Webmaster"
   ],
-  "keyDrivers": "Much of what web administrators do, deploying sites, running tests, and maintaining web environments, involves routine technical tasks that AI tools can increasingly handle on their own, putting this role at significant automation risk. The area most likely to still need a human is the deep organizational knowledge built over time: understanding how a company's specific systems, legacy code, and internal workflows fit together. Despite strong projected job growth driven by expanding digital infrastructure, the limited need for high-stakes judgment or trust-based relationships means many current responsibilities could shift to automated systems rather than to additional workers.",
+  "keyDrivers": "Web administration involves managing servers, configurations, security patches, and uptime-tasks that are increasingly automated by cloud platforms and AI-driven infrastructure tools. The role requires no physical presence, no licensure, and limited novel judgment, leaving few natural defenses against automation. While organizational knowledge provides some buffer, the core tasks are well-defined and pattern-based, making this one of the more vulnerable technology roles.",
   "taskData": [
     {
       "task": "Monitor for security intrusions",

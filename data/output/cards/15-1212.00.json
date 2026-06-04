@@ -15,7 +15,7 @@
     "Security Analyst",
     "Systems Analyst"
   ],
-  "keyDrivers": "Information security analysts are a prime example of a career that grows stronger as AI advances. As cyber threats become more sophisticated, often powered by AI themselves, organizations need even more skilled professionals to defend their networks and data. AI tools actually boost these analysts' productivity by helping them detect threats faster and monitor vast systems in real time, but human judgment remains essential for assessing complex risks, designing security strategies, and responding to novel attacks. This creates a cycle where more technology means more demand for talented security professionals.",
+  "keyDrivers": "Security analysts face an ever-evolving landscape of threats where attackers constantly find novel ways to breach systems-making genuine human judgment in ambiguous, high-stakes situations essential. They spend enormous amounts of time on alert triage and log review that AI will compress, letting them focus on the harder investigative and strategic work. As AI expands the digital attack surface and creates new threat vectors, demand for skilled humans who can direct and validate AI-powered security tools will grow substantially.",
   "taskData": [
     {
       "task": "Encrypt data/configure firewalls",

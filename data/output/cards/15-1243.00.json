@@ -17,7 +17,7 @@
     "Enterprise Architect",
     "Information Architect"
   ],
-  "keyDrivers": "As organizations generate ever more data, AI tools that speed up database modeling and optimization actually drive companies to launch more data projects, boosting demand for architects who can oversee these growing systems. With AI handling routine query tuning and schema generation, database architects shift their focus to integrating new platforms with existing infrastructure, managing complex data pipelines, and making judgment calls about performance and security trade-offs. Strong projected job growth reflects this expanding need, as cheaper, faster database work simply creates appetite for more of it.",
+  "keyDrivers": "AI tools can now generate data models, write SQL, and automate a lot of routine database design work. But the reason this role keeps growing is that organizations are building out more data infrastructure than ever, adding cloud platforms, analytics pipelines, and AI systems that all need carefully architected data foundations. Someone still has to decide how all these systems fit together, navigate tradeoffs between performance and cost across a company's specific landscape, and manage the evolving architecture over time. That cross-system judgment and deep organizational knowledge is what keeps humans central here.",
   "taskData": [
     {
       "task": "Gather business requirements",

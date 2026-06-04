@@ -21,7 +21,7 @@
     "Tax Associate",
     "Tax Analyst"
   ],
-  "keyDrivers": "Most tax preparation work, gathering financial data, filling out forms, and applying standard tax rules, is increasingly handled by AI-powered software, putting this occupation at significant automation risk. That said, many clients still value a trusted human preparer who understands their personal financial situation and can navigate unusual or sensitive tax scenarios that require judgment. While demand may grow modestly thanks to tax-code complexity and an expanding workforce, the routine nature of most tasks means fewer human preparers will likely be needed over time as software improves.",
+  "keyDrivers": "Most tax preparation work follows well-defined rules that AI can already handle faster and more accurately than humans. While some clients value a personal relationship with their preparer, the core task-applying tax code to financial data-is highly automatable. This role faces significant displacement as AI-powered tax software continues to improve.",
   "taskData": [
     {
       "task": "Advise on form completion",

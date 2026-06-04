@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1253.00",
   "title": "Software QA Analyst",
-  "score": 42,
+  "score": 29,
   "salary": "$102,610",
   "openings": "14,000",
   "growth": "+10%",
@@ -17,7 +17,7 @@
     "Software Test Engineer",
     "Test Engineer"
   ],
-  "keyDrivers": "When AI handles routine test scripting and bug logging faster and cheaper, companies don't cut testers, they test more. Cheaper, faster testing means organizations can afford to check more features, devices, and edge cases than before, expanding demand for QA professionals. Freed from repetitive tasks, testers spend more time on work that benefits from deep familiarity with a product's history and architecture, overseeing AI-driven test suites, and interpreting ambiguous results. Strong projected job growth reflects this expanding need.",
+  "keyDrivers": "QA testing is heavily pattern-based work-writing test cases, running regression suites, and identifying bugs-that AI tools are already automating at increasing speed and accuracy. The role has no physical presence requirements, no licensing protections, and limited need for novel judgment, leaving few hard barriers against displacement. While some QA professionals will shift toward managing automated testing pipelines and evaluating AI-generated code, the overall number of positions is likely to shrink significantly as AI handles the bulk of testing work.",
   "taskData": [
     {
       "task": "Track/report software defects",
@@ -512,8 +512,8 @@
       "answer": "The most durable skill shift is toward test architecture: designing frameworks that catch edge cases, not just running the tests someone else designed. Fluency in at least one automation tool, Selenium, Playwright, or Cypress, is now baseline. QA analysts who also understand CI/CD pipelines and can write Python or JavaScript to extend test frameworks are the profile employers want; ISTQB Foundation certification provides a structured foundation, but portfolio projects showing real test design decisions carry more weight."
     }
   ],
-  "ai_category": "Grow with AI",
+  "ai_category": "High Automation Risk",
   "exposure_filter": "3.6",
   "necessity_filter": "1.12",
-  "elasticity_filter": "4"
+  "elasticity_filter": "2"
 }

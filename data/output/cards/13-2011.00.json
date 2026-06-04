@@ -21,7 +21,7 @@
     "Senior Accountant",
     "Audit Associate"
   ],
-  "keyDrivers": "Accountants and auditors will still be needed because their work involves professional judgment, ethical responsibility, and building trust with clients, things AI can't replace. However, many routine tasks like data entry, transaction coding, and basic report generation are already being automated, which means day-to-day work will shift toward analysis, advisory services, and interpreting complex financial situations. The field is still expected to grow faster than average due to increasing regulatory demands and business complexity, so professionals who adapt to new tools should find strong opportunities.",
+  "keyDrivers": "Much of traditional accounting work-bookkeeping, reconciliation, and routine audits-is highly automatable, which puts downward pressure on this role. However, licensed accountants carry real legal liability for the accuracy of financial statements and tax filings, which keeps a human in the loop. AI will likely handle the grunt work, freeing accountants to focus more on advisory and complex judgment calls, but the profession will need far fewer people for the same volume of work.",
   "taskData": [
     {
       "task": "Analyze business operations",

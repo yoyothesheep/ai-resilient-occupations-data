@@ -16,7 +16,7 @@
     "Software Engineer",
     "Systems Engineer"
   ],
-  "keyDrivers": "Software developers are well-positioned to grow alongside AI because AI tools actually boost their productivity, helping them write, test, and debug code faster, which lets them take on more complex projects and deliver solutions more quickly. As AI becomes embedded in virtually every industry, the demand for developers who can build, customize, and integrate AI-powered applications keeps expanding. This means AI doesn't replace the need for skilled developers; it multiplies what they can accomplish, driving even faster job growth in the field.",
+  "keyDrivers": "Software developers are in a paradoxical position: AI code generation tools are already transforming the work, compressing routine coding tasks dramatically, yet developers who can architect systems, understand business needs, and manage AI-generated code will be more productive than ever. The role lacks physical presence or legal accountability protections, making pure coding work highly vulnerable. The strongest protection is that demand for software keeps growing, and experienced developers are well-positioned to direct and validate AI coding tools-but fewer developers may be needed to produce the same output.",
   "taskData": [
     {
       "task": "Analyze requirements/feasibility",

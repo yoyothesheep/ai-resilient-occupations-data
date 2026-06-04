@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1251.00",
   "title": "Computer Programmers",
-  "score": 30,
+  "score": 18,
   "salary": "$98,670",
   "openings": "5,500",
   "growth": "-6%",
@@ -22,7 +22,7 @@
     "Backend Developer",
     "Frontend Developer"
   ],
-  "keyDrivers": "When AI can generate and test code faster and cheaper, businesses build far more software, creating demand for even more programmers to guide, refine, and integrate that output. Although many routine coding tasks are already highly exposed to AI tools, the drop in cost per line of code means companies pursue projects they never could have afforded before, expanding the overall market for programming work. Programmers who learn to leverage AI assistants can handle greater volume and complexity, keeping themselves essential even as individual tasks get automated.",
+  "keyDrivers": "Computer programmers who primarily write code to specifications are among the most directly threatened by AI, as code generation tools can already produce working software from natural-language descriptions. The role lacks physical requirements, legal protections, or deep relationship-based value-it's defined almost entirely by producing a functional output that AI is rapidly learning to deliver. While experienced programmers who architect solutions and understand complex systems will adapt, the traditional role of translating requirements into code is shrinking fast.",
   "taskData": [
     {
       "task": "Write/analyze programs",
@@ -525,8 +525,8 @@
       "answer": "The most durable skill shift is from writing code to evaluating it: catching logic errors in AI-generated output, understanding system context, and debugging across large codebases. Proficiency in AI coding tools like GitHub Copilot is now a baseline expectation, not a differentiator. Programmers who pair coding ability with a domain specialty, such as financial systems, healthcare data, or embedded hardware, are harder to replace than those doing generic application work."
     }
   ],
-  "ai_category": "Grow with AI",
+  "ai_category": "High Automation Risk",
   "exposure_filter": "3.8",
   "necessity_filter": "1.0",
-  "elasticity_filter": "4"
+  "elasticity_filter": "2"
 }

@@ -15,7 +15,7 @@
     "Sales Person",
     "Sales Representative, Salesman"
   ],
-  "keyDrivers": "Retail sales roles face significant automation pressure because much of the work, recommending products, processing transactions, and answering common questions, can increasingly be handled by online shopping tools, self-checkout systems, and AI-powered recommendation engines. The physical aspect of being present on a sales floor to demonstrate merchandise like furniture or vehicles offers some near-term protection, but it is not enough to offset the broader trend. With flat projected job growth and limited need for deep expertise or high-stakes judgment, these positions are among the more vulnerable to gradual replacement.",
+  "keyDrivers": "Retail sales is increasingly moving online, and even in-store, self-checkout and AI-powered recommendation tools are reducing the need for human salespeople. The work involves limited judgment, no legal accountability, and customers often prefer browsing independently. Physical presence on the sales floor offers some protection, but it's not enough to offset the steady erosion from e-commerce and automation.",
   "taskData": [
     {
       "task": "Greet / assess customer needs",

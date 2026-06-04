@@ -356,7 +356,7 @@
       "n": null
     }
   ],
-  "keyDrivers": "Insurance underwriting is restructuring rather than disappearing, because complex or ambiguous applications still require experienced human judgment, evaluating unusual risk profiles, weighing contextual factors built up over years, and bearing accountability when coverage decisions have serious financial or legal consequences. AI is increasingly handling routine risk assessments and data analysis, freeing underwriters to focus on these trickier cases. While overall headcount is declining, the role is evolving so that remaining underwriters handle higher-value, judgment-intensive work alongside AI tools.",
+  "keyDrivers": "Underwriting is fundamentally about risk assessment using data-a task where AI already outperforms humans in many standard scenarios. While complex or unusual cases still need human judgment, and regulatory requirements keep a human in the loop for now, the volume of routine underwriting decisions that require human involvement is shrinking rapidly. The role is likely to consolidate around fewer, more senior underwriters who handle exceptions and oversee AI systems.",
   "jobTitles": [
     "Account Underwriter",
     "Automobile and Property Underwriter",

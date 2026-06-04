@@ -19,7 +19,7 @@
     "Credit Underwriter",
     "Commercial Credit Analyst"
   ],
-  "keyDrivers": "Much of what credit analysts do, reviewing financial statements, crunching ratios, and generating risk reports, follows structured patterns that AI can already handle quickly and accurately. The Bureau of Labor Statistics projects employment will decline, reflecting this vulnerability. However, some resilience remains in situations requiring nuanced judgment about ambiguous or unusual credit cases and in understanding the deeper context of a borrower's financial history over time, tasks where experienced human analysts still add value that pure automation struggles to replicate.",
+  "keyDrivers": "Much of credit analysis involves evaluating financial data, ratios, and risk patterns-tasks that AI is already very good at. While experienced analysts add judgment on unusual deals and relationship context, the core analytical work is highly automatable. AI tools will likely handle routine credit assessments, leaving fewer but more specialized analyst roles focused on complex or novel lending situations.",
   "taskData": [
     {
       "task": "Analyze credit risk",

@@ -21,7 +21,7 @@
     "Mortgage Loan Originator",
     "Relationship Banker"
   ],
-  "keyDrivers": "Loan officers will still be needed because borrowers often want personal guidance during major financial decisions like buying a home, and complex or unusual loan situations require human judgment and relationship-building. However, AI is already reshaping daily tasks by automating credit analysis, document processing, and risk scoring, which means loan officers will spend less time on paperwork and more time advising clients. While market demand for lending keeps the profession alive, the slow projected growth reflects how efficiency gains from AI reduce the total number of positions needed.",
+  "keyDrivers": "Loan officers build trusted relationships with borrowers, guiding them through complex financial decisions where human reassurance and accountability genuinely matter-especially for large purchases like homes. They carry regulatory responsibilities and must exercise judgment on borderline cases that automated systems flag but can't resolve. AI will likely handle much of the routine underwriting and paperwork, freeing loan officers to focus on client advising and complex deal structuring, though simpler loan products may increasingly bypass them entirely.",
   "taskData": [
     {
       "task": "Explain loan options",

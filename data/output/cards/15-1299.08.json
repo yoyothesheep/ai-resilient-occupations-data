@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.08",
   "title": "Computer Systems Engineers/Architects",
-  "score": 47,
+  "score": 46,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -20,49 +20,44 @@
   "keyDrivers": "Computer systems engineers and architects are well-positioned to grow alongside AI because their work involves designing complex, large-scale technology solutions that require deep problem-solving and creative thinking. As AI tools become more powerful, these professionals can use them to analyze systems faster, test designs more efficiently, and manage increasingly complex networks - which actually increases demand for people who can oversee and architect these solutions. With technology expanding into every industry, the need for skilled systems architects is growing much faster than average.",
   "taskData": [
     {
-      "task": "Gather system requirements",
-      "full": "Communicate with staff or clients to understand specific system requirements.",
-      "weight": 20.4,
-      "auto": 54.9,
-      "aug": null,
-      "success": null,
-      "n": 71
+      "task": "Monitor system operations",
+      "full": "Monitor system operation to detect potential problems.",
+      "weight": 19.9,
+      "auto": 99.5,
+      "aug": 0.5,
+      "pct": 0.07
+    },
+    {
+      "task": "Evaluate component suitability",
+      "full": "Investigate system component suitability for specified purposes, and make recommendations regarding component use.",
+      "weight": 17.2,
+      "auto": 33.6,
+      "aug": 66.4,
+      "pct": 0.06
     },
     {
       "task": "Maintain/upgrade hardware and software",
       "full": "Perform ongoing hardware and software maintenance operations, including installing or upgrading hardware or software.",
       "weight": 14.9,
-      "auto": 31.2,
-      "aug": 26.9,
-      "success": 71.0,
-      "n": 186
+      "auto": 95.5,
+      "aug": 4.5,
+      "pct": 0.01
     },
     {
       "task": "Guide/troubleshoot systems",
       "full": "Provide technical guidance or support for the development or troubleshooting of systems.",
       "weight": 14.2,
-      "auto": 11.7,
-      "aug": 69.2,
-      "success": 82.5,
-      "n": 1838
+      "auto": 72.6,
+      "aug": 27.4,
+      "pct": 0.48
     },
     {
-      "task": "Identify system components",
-      "full": "Identify system data, hardware, or software components required to meet user needs.",
-      "weight": 14.0,
-      "auto": 43.7,
-      "aug": 25.4,
-      "success": 64.8,
-      "n": 142
-    },
-    {
-      "task": "Monitor system operations",
-      "full": "Monitor system operation to detect potential problems.",
-      "weight": 19.9,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Gather system requirements",
+      "full": "Communicate with staff or clients to understand specific system requirements.",
+      "weight": 20.4,
+      "auto": 44.9,
+      "aug": 55.1,
+      "pct": 0.0
     },
     {
       "task": "Direct systems development",
@@ -70,44 +65,39 @@
       "weight": 18.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Verify system architecture",
-      "full": "Verify stability, interoperability, portability, security, or scalability of system architecture.",
-      "weight": 12.9,
-      "auto": 45.8,
-      "aug": 24.1,
-      "success": 55.4,
-      "n": 83
+      "task": "Evaluate systems, suggest changes",
+      "full": "Evaluate existing systems to determine effectiveness, and suggest changes to meet organizational requirements.",
+      "weight": 12.4,
+      "auto": 46.8,
+      "aug": 53.2,
+      "pct": 0.08
+    },
+    {
+      "task": "Evaluate emerging technologies",
+      "full": "Evaluate current or emerging technologies to consider factors such as cost, portability, compatibility, or usability.",
+      "weight": 12.2,
+      "auto": 35.5,
+      "aug": 64.5,
+      "pct": 0.01
     },
     {
       "task": "Server Functional Configuration",
       "full": "Configure servers to meet functional specifications.",
       "weight": 12.1,
-      "auto": 19.5,
-      "aug": 31.6,
-      "success": 76.6,
-      "n": 1597
+      "auto": 87.7,
+      "aug": 12.3,
+      "pct": 0.02
     },
     {
-      "task": "Evaluate component suitability",
-      "full": "Investigate system component suitability for specified purposes, and make recommendations regarding component use.",
-      "weight": 17.2,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Direct software/hardware installs",
-      "full": "Direct the installation of operating systems, network or application software, or computer or network hardware.",
-      "weight": 16.9,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Document system specifications",
+      "full": "Document design specifications, installation instructions, and other system-related information.",
+      "weight": 11.5,
+      "auto": 49.4,
+      "aug": 50.6,
+      "pct": 0.06
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -407,7 +397,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.2",
+  "exposure_filter": "3.4",
   "necessity_filter": "1.86",
   "elasticity_filter": "4"
 }

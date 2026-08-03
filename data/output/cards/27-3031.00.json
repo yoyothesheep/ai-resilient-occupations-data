@@ -1,7 +1,7 @@
 {
   "onet_code": "27-3031.00",
   "title": "Public Relations Specialist",
-  "score": 46,
+  "score": 47,
   "salary": "$69,780",
   "openings": "27,600",
   "growth": "+5%",
@@ -78,76 +78,68 @@
   },
   "taskData": [
     {
-      "task": "Handle media inquiries",
-      "full": "Respond to requests for information from the media or designate an appropriate spokesperson or information source.",
-      "weight": 20.5,
-      "auto": 36.4,
-      "aug": 19.2,
-      "success": 72.7,
-      "n": 99
+      "task": "Post social/web content",
+      "full": "Post and update content on the company's Web site and social media outlets.",
+      "weight": 20.8,
+      "auto": 79.3,
+      "aug": 20.7,
+      "pct": 0.01
     },
     {
       "task": "Write press releases",
       "full": "Write press releases or other media communications to promote clients.",
       "weight": 18.8,
-      "auto": 27.6,
-      "aug": 1.6,
-      "success": 90.1,
-      "n": 912
-    },
-    {
-      "task": "Plan public programs",
-      "full": "Plan or direct development or communication of programs to maintain favorable public or stockholder perceptions of an organization's accomplishments, agenda, or environmental responsibility.",
-      "weight": 18.0,
-      "auto": 35.7,
-      "aug": null,
-      "success": 81.0,
-      "n": 42
+      "auto": 32.6,
+      "aug": 67.3,
+      "pct": 0.01
     },
     {
       "task": "Develop PR strategies",
       "full": "Study the objectives, promotional policies, or needs of organizations to develop public relations strategies that will influence public opinion or promote ideas, products, or services.",
       "weight": 14.1,
-      "auto": 32.5,
-      "aug": 18.8,
-      "success": 68.3,
-      "n": 388
+      "auto": 37.0,
+      "aug": 63.0,
+      "pct": 0.06
     },
     {
-      "task": "Post social/web content",
-      "full": "Post and update content on the company's Web site and social media outlets.",
-      "weight": 20.8,
+      "task": "Handle media inquiries",
+      "full": "Respond to requests for information from the media or designate an appropriate spokesperson or information source.",
+      "weight": 20.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Edit organizational publications",
       "full": "Prepare or edit organizational publications, such as employee newsletters or stockholders' reports, for internal or external audiences.",
       "weight": 13.3,
-      "auto": 27.0,
-      "aug": 3.4,
-      "success": 85.0,
-      "n": 2191
+      "auto": 39.3,
+      "aug": 60.7,
+      "pct": 0.16
     },
     {
       "task": "Coach client communicators",
       "full": "Coach client representatives in effective communication with the public or with employees.",
       "weight": 13.2,
-      "auto": 21.6,
-      "aug": 17.8,
-      "success": 89.2,
-      "n": 185
+      "auto": 36.1,
+      "aug": 63.9,
+      "pct": 0.05
     },
     {
-      "task": "Advise on communications",
-      "full": "Confer with other managers to identify trends or key group interests or concerns or to provide advice on business decisions.",
-      "weight": 14.1,
-      "auto": null,
-      "aug": 38.0,
-      "success": 72.0,
-      "n": 50
+      "task": "Plan public programs",
+      "full": "Plan or direct development or communication of programs to maintain favorable public or stockholder perceptions of an organization's accomplishments, agenda, or environmental responsibility.",
+      "weight": 18.0,
+      "auto": 31.4,
+      "aug": 68.6,
+      "pct": 0.0
+    },
+    {
+      "task": "Develop CSR communications",
+      "full": "Develop plans or materials to communicate organizational activities that are beneficial to the environment, public safety, or other important social issues.",
+      "weight": 11.8,
+      "auto": 37.7,
+      "aug": 62.3,
+      "pct": 0.04
     },
     {
       "task": "Maintain stakeholder relationships",
@@ -155,17 +147,15 @@
       "weight": 15.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Develop CSR communications",
-      "full": "Develop plans or materials to communicate organizational activities that are beneficial to the environment, public safety, or other important social issues.",
-      "weight": 11.8,
+      "task": "Advise on communications",
+      "full": "Confer with other managers to identify trends or key group interests or concerns or to provide advice on business decisions.",
+      "weight": 14.1,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "careerCluster": [
@@ -407,7 +397,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.8",
+  "exposure_filter": "3.6",
   "necessity_filter": "1.86",
   "elasticity_filter": "4",
   "faqs": [

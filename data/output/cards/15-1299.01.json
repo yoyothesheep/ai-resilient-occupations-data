@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.01",
   "title": "Web Administrators",
-  "score": 33,
+  "score": 32,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -18,94 +18,84 @@
   "keyDrivers": "Web administration involves managing servers, configurations, security patches, and uptime-tasks that are increasingly automated by cloud platforms and AI-driven infrastructure tools. The role requires no physical presence, no licensure, and limited novel judgment, leaving few natural defenses against automation. While organizational knowledge provides some buffer, the core tasks are well-defined and pattern-based, making this one of the more vulnerable technology roles.",
   "taskData": [
     {
-      "task": "Monitor for security intrusions",
-      "full": "Monitor systems for intrusions or denial of service attacks, and report security breaches to appropriate personnel.",
-      "weight": 24.0,
-      "auto": 19.7,
-      "aug": 30.3,
-      "success": 66.9,
-      "n": 142
-    },
-    {
       "task": "Diagnose/fix server problems",
       "full": "Determine sources of Web page or server problems, and take action to correct such problems.",
       "weight": 20.9,
-      "auto": 13.5,
-      "aug": 27.2,
-      "success": 66.1,
-      "n": 4404
-    },
-    {
-      "task": "Update web content/links",
-      "full": "Review or update Web page content or links in a timely manner, using appropriate tools.",
-      "weight": 18.4,
-      "auto": 42.1,
-      "aug": 22.8,
-      "success": 57.9,
-      "n": 228
-    },
-    {
-      "task": "Gather/analyze user feedback",
-      "full": "Gather, analyze, or document user feedback to locate or resolve sources of problems.",
-      "weight": 15.2,
-      "auto": 39.3,
-      "aug": 29.2,
-      "success": 68.5,
-      "n": 89
+      "auto": 92.4,
+      "aug": 7.6,
+      "pct": 0.01
     },
     {
       "task": "Resolve test-identified issues",
       "full": "Correct testing-identified problems, or recommend actions for their resolution.",
       "weight": 20.9,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 74.8,
+      "aug": 25.2,
+      "pct": 0.05
     },
     {
-      "task": "Analyze website usage data",
-      "full": "Track, compile, and analyze Web site usage data.",
-      "weight": 15.6,
-      "auto": 44.3,
-      "aug": 29.5,
-      "success": 50.8,
-      "n": 61
+      "task": "Update web content/links",
+      "full": "Review or update Web page content or links in a timely manner, using appropriate tools.",
+      "weight": 18.4,
+      "auto": 76.0,
+      "aug": 24.0,
+      "pct": 0.06
     },
     {
-      "task": "Access and Security Standardization",
-      "full": "Identify, standardize, and communicate levels of access and security.",
-      "weight": 12.2,
-      "auto": 12.5,
-      "aug": 69.0,
-      "success": 80.4,
-      "n": 377
+      "task": "Monitor for security intrusions",
+      "full": "Monitor systems for intrusions or denial of service attacks, and report security breaches to appropriate personnel.",
+      "weight": 24.0,
+      "auto": 95.2,
+      "aug": 4.8,
+      "pct": 0.0
+    },
+    {
+      "task": "Gather/analyze user feedback",
+      "full": "Gather, analyze, or document user feedback to locate or resolve sources of problems.",
+      "weight": 15.2,
+      "auto": 64.5,
+      "aug": 35.5,
+      "pct": 0.02
+    },
+    {
+      "task": "Check system log files",
+      "full": "Check and analyze operating system or application log files regularly to verify proper system performance.",
+      "weight": 12.5,
+      "auto": 88.8,
+      "aug": 11.2,
+      "pct": 0.02
     },
     {
       "task": "Web Site Training and Support",
       "full": "Provide training or technical assistance in Web site implementation or use.",
       "weight": 11.1,
-      "auto": 14.3,
-      "aug": 75.0,
-      "success": 74.1,
-      "n": 112
+      "auto": 64.5,
+      "aug": 35.5,
+      "pct": 0.04
     },
     {
       "task": "Back up apps/data",
       "full": "Back up or modify applications and related data to provide for disaster recovery.",
       "weight": 16.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 91.7,
+      "aug": 8.3,
+      "pct": 0.0
+    },
+    {
+      "task": "Analyze website usage data",
+      "full": "Track, compile, and analyze Web site usage data.",
+      "weight": 15.6,
+      "auto": 72.2,
+      "aug": 27.8,
+      "pct": 0.0
     },
     {
       "task": "Document site changes",
       "full": "Document application and Web site changes or change procedures.",
       "weight": 15.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 83.1,
+      "aug": 16.9,
+      "pct": 0.0
     }
   ],
   "risks": {
@@ -499,7 +489,7 @@
     }
   ],
   "ai_category": "High Automation Risk",
-  "exposure_filter": "3.6",
+  "exposure_filter": "3.8",
   "necessity_filter": "1.12",
   "elasticity_filter": "3"
 }

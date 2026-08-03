@@ -129,7 +129,7 @@ python3 scripts/adjacent_roles.py --cluster <id>
   - `ETE Categories.xlsx` — category-to-label mapping for education levels
   - `Task Statements.xlsx` — task statements with O*NET-SOC codes; used to map AEI tasks to occupations
   - `Task Ratings.xlsx` — task importance and frequency ratings
-- **`data/input/anthropic/`** — Anthropic Economic Index data (auto-downloaded from [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex), release_2026_03_24). **Not committed to git.** To download:
+- **`data/input/anthropic/`** — Anthropic Economic Index data (auto-downloaded from [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex), release_2026_06_26). **Not committed to git.** To download:
   ```bash
   python3 scripts/download_economic_index.py
   ```
@@ -150,7 +150,7 @@ python3 scripts/download_onet.py --version XX.Y   # Download & back up
 python3 scripts/download_onet.py --sync           # Sync occupation list
 ```
 
-**Anthropic Economic Index:** Download new CSV from [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex) → save to `data/input/anthropic/` → update `AEI_FILE` in `scripts/build_task_table.py` → rerun Stage 3.
+**Anthropic Economic Index:** Download new CSV from [HuggingFace](https://huggingface.co/datasets/Anthropic/EconomicIndex) → save to `data/input/anthropic/` → update `RELEASE`/`FILES_TO_DOWNLOAD` in `scripts/download_economic_index.py` and `INPUT_FILE`/`PERIOD` in `scripts/extract_economic_index.py` → rerun Stage 3 → review `scripts/compare_aei_migration.py` report before regenerating cards. See `docs/pipeline.md` — "Anthropic Economic Index".
 
 **BLS OES Wages:** Download `all_data_M_{YEAR}.xlsx` from [BLS](https://www.bls.gov/oes/special.requests/) → replace `data/input/all_data_M_2024.xlsx` → update path references in `scripts/enrich_onet.py` → rerun Track A.
 

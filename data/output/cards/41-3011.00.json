@@ -25,58 +25,28 @@
   "keyDrivers": "Advertising sales increasingly moves to automated programmatic platforms that match buyers and sellers without a human middleman. While relationship-building with clients offers some protection, the core transaction-matching ad inventory to buyers-is highly automatable. The role lacks legal accountability requirements and doesn't demand the kind of novel judgment that would keep AI at bay.",
   "taskData": [
     {
-      "task": "Explain ad options to clients",
-      "full": "Explain to customers how specific types of advertising will help promote their products or services in the most effective way possible.",
-      "weight": 23.1,
-      "auto": null,
-      "aug": 70.1,
-      "success": 88.5,
-      "n": 87
-    },
-    {
-      "task": "Research client needs",
-      "full": "Obtain and study information about clients' products, needs, problems, advertising history, and business practices to offer effective sales presentations and appropriate product assistance.",
-      "weight": 21.8,
-      "auto": 62.4,
-      "aug": 13.8,
-      "success": 55.0,
-      "n": 109
-    },
-    {
-      "task": "Provide cost estimates",
-      "full": "Provide clients with estimates of the costs of advertising products or services.",
-      "weight": 24.1,
-      "auto": 42.9,
-      "aug": 32.7,
-      "success": 67.3,
-      "n": 49
-    },
-    {
-      "task": "Deliver sales presentations",
-      "full": "Prepare and deliver sales presentations to new and existing customers to sell new advertising programs and to protect and increase existing advertising.",
-      "weight": 22.4,
-      "auto": 36.8,
-      "aug": null,
-      "success": 78.9,
-      "n": 57
-    },
-    {
       "task": "Prepare sales materials",
       "full": "Prepare promotional plans, sales literature, media kits, and sales contracts, using computer.",
       "weight": 21.7,
-      "auto": 41.2,
-      "aug": null,
-      "success": 62.7,
-      "n": 51
+      "auto": 44.4,
+      "aug": 55.6,
+      "pct": 0.01
     },
     {
-      "task": "Handle account admin",
-      "full": "Process all correspondence and paperwork related to accounts.",
-      "weight": 23.5,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 18
+      "task": "Write layout copy",
+      "full": "Write copy as part of layout.",
+      "weight": 20.2,
+      "auto": 26.9,
+      "aug": 73.1,
+      "pct": 0.09
+    },
+    {
+      "task": "Prepare sample ads",
+      "full": "Determine advertising medium to be used, and prepare sample advertisements within the selected medium for presentation to customers.",
+      "weight": 19.9,
+      "auto": 35.5,
+      "aug": 64.5,
+      "pct": 0.01
     },
     {
       "task": "Manage and grow accounts",
@@ -84,8 +54,15 @@
       "weight": 25.3,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Provide cost estimates",
+      "full": "Provide clients with estimates of the costs of advertising products or services.",
+      "weight": 24.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Prospect new clients",
@@ -93,26 +70,39 @@
       "weight": 23.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Recommend ad formats",
-      "full": "Recommend appropriate sizes and formats for advertising, depending on medium used.",
-      "weight": 21.5,
+      "task": "Handle account admin",
+      "full": "Process all correspondence and paperwork related to accounts.",
+      "weight": 23.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Deliver proofs for approval",
-      "full": "Deliver advertising or illustration proofs to customers for approval.",
-      "weight": 20.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Explain ad options to clients",
+      "full": "Explain to customers how specific types of advertising will help promote their products or services in the most effective way possible.",
+      "weight": 23.1,
+      "auto": 22.7,
+      "aug": 77.3,
+      "pct": 0.0
+    },
+    {
+      "task": "Deliver sales presentations",
+      "full": "Prepare and deliver sales presentations to new and existing customers to sell new advertising programs and to protect and increase existing advertising.",
+      "weight": 22.4,
+      "auto": 56.5,
+      "aug": 43.5,
+      "pct": 0.0
+    },
+    {
+      "task": "Research client needs",
+      "full": "Obtain and study information about clients' products, needs, problems, advertising history, and business practices to offer effective sales presentations and appropriate product assistance.",
+      "weight": 21.8,
+      "auto": 57.8,
+      "aug": 42.2,
+      "pct": 0.0
     }
   ],
   "risks": {

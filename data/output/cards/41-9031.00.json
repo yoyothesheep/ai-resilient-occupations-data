@@ -25,55 +25,25 @@
       "task": "Develop/present proposals",
       "full": "Develop, present, or respond to proposals for specific customer requirements, including request for proposal responses and industry-specific solutions.",
       "weight": 20.3,
-      "auto": 43.1,
-      "aug": null,
-      "success": 70.7,
-      "n": 174
-    },
-    {
-      "task": "Assess customer/system needs",
-      "full": "Confer with customers and engineers to assess equipment needs and to determine system requirements.",
-      "weight": 16.8,
-      "auto": 30.3,
-      "aug": 37.0,
-      "success": 63.3,
-      "n": 433
-    },
-    {
-      "task": "Collaborate with sales teams",
-      "full": "Collaborate with sales teams to understand customer requirements, to promote the sale of company products, and to provide sales support.",
-      "weight": 18.9,
-      "auto": 42.1,
-      "aug": null,
-      "success": 80.7,
-      "n": 57
-    },
-    {
-      "task": "Track industry/competitor trends",
-      "full": "Keep informed on industry news and trends, products, services, competitors, relevant information about legacy, existing, and emerging technologies, and the latest product-line developments.",
-      "weight": 18.1,
-      "auto": 35.4,
-      "aug": 46.2,
-      "success": 50.8,
-      "n": 65
+      "auto": 36.0,
+      "aug": 64.0,
+      "pct": 0.05
     },
     {
       "task": "Client Technical Support",
       "full": "Provide technical and non-technical support and services to clients or other staff members regarding the use, operation, and maintenance of equipment.",
       "weight": 14.5,
-      "auto": 25.2,
-      "aug": 39.8,
-      "success": 65.0,
-      "n": 274
+      "auto": 59.6,
+      "aug": 40.4,
+      "pct": 0.12
     },
     {
       "task": "Customer Prospecting and Research",
       "full": "Research and identify potential customers for products or services.",
       "weight": 14.3,
-      "auto": 50.4,
-      "aug": 10.5,
-      "success": 52.9,
-      "n": 601
+      "auto": 74.5,
+      "aug": 25.5,
+      "pct": 0.01
     },
     {
       "task": "Sell complex technical products",
@@ -81,17 +51,47 @@
       "weight": 21.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Collaborate with sales teams",
+      "full": "Collaborate with sales teams to understand customer requirements, to promote the sale of company products, and to provide sales support.",
+      "weight": 18.9,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Track industry/competitor trends",
+      "full": "Keep informed on industry news and trends, products, services, competitors, relevant information about legacy, existing, and emerging technologies, and the latest product-line developments.",
+      "weight": 18.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Document accounts/transactions",
       "full": "Document account activities, generate reports, and keep records of business transactions with customers and suppliers.",
       "weight": 17.1,
-      "auto": null,
-      "aug": null,
-      "success": 71.4,
-      "n": 21
+      "auto": 62.5,
+      "aug": 37.5,
+      "pct": 0.0
+    },
+    {
+      "task": "Assess customer/system needs",
+      "full": "Confer with customers and engineers to assess equipment needs and to determine system requirements.",
+      "weight": 16.8,
+      "auto": 71.4,
+      "aug": 28.6,
+      "pct": 0.0
+    },
+    {
+      "task": "Deliver technical presentations",
+      "full": "Prepare and deliver technical presentations that explain products or services to customers and prospective customers.",
+      "weight": 11.0,
+      "auto": 31.1,
+      "aug": 68.9,
+      "pct": 0.03
     },
     {
       "task": "Identify resale opportunities",
@@ -99,17 +99,7 @@
       "weight": 16.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Create sales/service contracts",
-      "full": "Create sales or service contracts for products or services.",
-      "weight": 15.8,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

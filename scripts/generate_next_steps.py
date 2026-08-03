@@ -47,8 +47,9 @@ from datetime import datetime
 
 from loaders import (
     load_scores, load_task_table, load_occ_metrics, load_a_scores, load_text,
-    get_cluster_codes, to_score,
+    get_cluster_codes, to_score, is_true,
     SCORES_CSV, SCORE_LOG, TONE_GUIDE, CAREER_SPEC, APPROVED_SOURCES,
+    MIN_PCT_SIGNAL,
 )
 from prompts import build_full_prompt, build_section_prompt
 
@@ -82,38 +83,41 @@ def build_task_data(onet_code: str, task_rows: list) -> list:
         except (ValueError, TypeError):
             return None
 
-    def safe_int(val):
+    def safe_pct(val):
+        # 2dp, not 1dp like safe_float — onet_task_pct values are small (0-5%
+        # typical) and MIN_PCT_SIGNAL is a 2dp threshold (0.01); rounding to
+        # 1dp would collapse most real signal to a stored 0.0 that always
+        # fails the MIN_PCT_SIGNAL gate downstream.
         try:
-            return int(float(val)) if val not in ("", None) else None
+            return round(float(val), 2) if val not in ("", None) else None
         except (ValueError, TypeError):
             return None
 
     def aei_boost(r):
-        """Confidence-scaled AEI boost: 1.0 → 1.5 as n goes 0 → 100."""
+        """Confidence-scaled AEI boost: 1.0 → 1.5 as onet_task_pct goes 0 → MIN_PCT_SIGNAL."""
         base = float(r["task_weight"]) if r["task_weight"] else 0
-        if r.get("in_aei", "").lower() != "true":
+        if not is_true(r.get("in_aei")):
             return base
         try:
-            n = int(float(r["onet_task_count"]))
+            pct = float(r["onet_task_pct"])
         except (ValueError, TypeError):
-            n = 0
-        boost = 1.0 + 0.5 * min(n / 100.0, 1.0)
+            pct = 0
+        boost = 1.0 + 0.5 * min(pct / MIN_PCT_SIGNAL, 1.0)
         return base * boost
 
     sorted_rows = sorted(task_rows, key=aei_boost, reverse=True)[:TOP_N_TASKS]
 
     result = []
     for r in sorted_rows:
-        n = safe_int(r.get("onet_task_count"))
-        has_signal = r.get("in_aei", "").lower() == "true" and n is not None
+        pct = safe_pct(r.get("onet_task_pct"))
+        has_signal = is_true(r.get("in_aei")) and pct is not None
         result.append({
             "task":    r["task_text"],
             "full":    r["task_text"],
             "weight":  round(float(r["task_weight"]), 1) if r.get("task_weight") else None,
             "auto":    safe_float(r.get("automation_pct"))    if has_signal else None,
             "aug":     safe_float(r.get("augmentation_pct"))  if has_signal else None,
-            "success": safe_float(r.get("task_success_pct"))  if has_signal else None,
-            "n":       n if has_signal else None,
+            "pct":     pct if has_signal else None,
         })
     return result
 
@@ -824,7 +828,7 @@ def process_occupation(code: str, scores: dict, task_table: dict, occ_metrics: d
         ]
         validate_sources(generated["sources"], quotes=quotes, occupation_title=occ.get("Occupation", ""), body_texts=body_texts, verify=verify)
 
-    tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
+    tasks_with_signal = [t for t in tasks if t.get("pct") is not None and t["pct"] >= MIN_PCT_SIGNAL]
     low_data = len(tasks_with_signal) == 0
     verify_generated(generated, low_data)
 

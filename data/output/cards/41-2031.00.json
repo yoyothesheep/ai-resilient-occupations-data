@@ -21,46 +21,33 @@
       "task": "Greet / assess customer needs",
       "full": "Greet customers and ascertain what each customer wants or needs.",
       "weight": 31.4,
-      "auto": null,
-      "aug": null,
-      "success": 69.8,
-      "n": 1276
+      "auto": 79.2,
+      "aug": 20.8,
+      "pct": 0.01
     },
     {
       "task": "Recommend / locate merchandise",
       "full": "Recommend, select, and help locate or obtain merchandise based on customer needs and desires.",
       "weight": 28.0,
-      "auto": 39.5,
-      "aug": 8.3,
-      "success": 64.5,
-      "n": 1157
+      "auto": 43.9,
+      "aug": 56.1,
+      "pct": 0.22
     },
     {
       "task": "Answer store / product questions",
       "full": "Answer questions regarding the store and its merchandise.",
       "weight": 27.8,
-      "auto": 67.2,
-      "aug": 19.9,
-      "success": 51.8,
-      "n": 467
+      "auto": 69.6,
+      "aug": 30.4,
+      "pct": 0.01
     },
     {
       "task": "Explain product use / care",
       "full": "Describe merchandise and explain use, operation, and care of merchandise to customers.",
       "weight": 25.2,
-      "auto": 24.8,
-      "aug": 47.0,
-      "success": 81.7,
-      "n": 432
-    },
-    {
-      "task": "Prepare merchandise for sale",
-      "full": "Prepare merchandise for purchase or rental.",
-      "weight": 26.7,
-      "auto": 50.0,
-      "aug": null,
-      "success": 87.5,
-      "n": 48
+      "auto": 35.2,
+      "aug": 64.8,
+      "pct": 0.16
     },
     {
       "task": "Process sales and payments",
@@ -68,8 +55,15 @@
       "weight": 27.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Prepare merchandise for sale",
+      "full": "Prepare merchandise for purchase or rental.",
+      "weight": 26.7,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Operate / balance cash registers",
@@ -77,8 +71,7 @@
       "weight": 26.6,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Package purchases / wrap gifts",
@@ -86,8 +79,7 @@
       "weight": 25.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Track promotions and policies",
@@ -95,8 +87,7 @@
       "weight": 25.7,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Prepare sales contracts / slips",
@@ -104,8 +95,7 @@
       "weight": 24.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

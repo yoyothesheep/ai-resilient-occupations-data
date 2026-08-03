@@ -25,7 +25,7 @@ import math
 import os
 import re
 import time
-from loaders import load_a_scores
+from loaders import load_a_scores, to_score
 
 # ── Configuration ────────────────────────────────────────────────────────────
 ONET_CSV       = "data/intermediate/All_Occupations_ONET_enriched.csv"
@@ -579,7 +579,7 @@ def build_key_drivers_prompt(row: dict, attrs: dict | None = None) -> str:
     defensive = fmt(["a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8"])
     offensive = fmt(["a9", "a10"])
     market    = fmt(["a11", "a12"])
-    score = round(float(row["final_ranking"]) * 100)
+    score = to_score(row)
 
     g = (row.get("Projected Growth") or "").lower()
     if "decline" in g:

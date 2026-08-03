@@ -104,7 +104,7 @@ def check_aei() -> dict:
     up_to_date = (latest_release is None) or (latest_release == current_release)
 
     # Find latest local data file for display
-    local_files = sorted(AEI_DIR.glob("aei_raw_*.csv")) if AEI_DIR.exists() else []
+    local_files = sorted(AEI_DIR.glob("aei_*.csv")) if AEI_DIR.exists() else []
     latest_local = local_files[-1].name if local_files else "none"
 
     result = {
@@ -115,10 +115,11 @@ def check_aei() -> dict:
     if not up_to_date:
         result["action"] = (
             f"1. Download new CSV from HuggingFace ({latest_release})\n"
-            "   → save to data/input/anthropic/\n"
-            "   2. Update RELEASE in scripts/download_economic_index.py\n"
-            "   3. Update AEI_FILE in scripts/build_task_table.py\n"
-            "   4. Rerun Stage 3: python3 scripts/build_task_table.py"
+            "   → save to data/input/anthropic/ (path is {RELEASE}/data/{filename})\n"
+            "   2. Update RELEASE and FILES_TO_DOWNLOAD in scripts/download_economic_index.py\n"
+            "   3. Update INPUT_FILE and PERIOD in scripts/extract_economic_index.py\n"
+            "   4. Rerun Stage 3, rerank, then scripts/compare_aei_migration.py <backup_dir>\n"
+            "      before regenerating cards — see docs/pipeline.md 'Anthropic Economic Index'"
         )
     return result
 

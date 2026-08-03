@@ -10,11 +10,20 @@ Functions:
     load_occ_metrics() → dict[onet_code, row]   from onet_economic_index_metrics.csv
     load_a_scores()    → dict[onet_code, {a1..a10}]  parsed from score_log.txt
     to_score(occ)      → int | None  round(final_ranking * 100) → 0-100
+    is_true(v)         → bool  tolerant parser for CSV-round-tripped boolean flags
     load_text(path)    → str
     get_cluster_codes(cluster_id) → list[str]
+
+Constants:
+    MIN_PCT_SIGNAL     → float  minimum AEI onet_task_pct for a task to carry
+                          usage signal (bars, badges, model prompts). Replaces
+                          the pre-2026-06-26 `onet_task_count >= 100` gate —
+                          onet_task_pct == onet_task_count / 10,000 exactly in
+                          the prior release, so 0.01 is a bit-for-bit continuation.
 """
 
 import csv
+import math
 import re
 
 # ── Path constants ────────────────────────────────────────────────────────────
@@ -27,6 +36,8 @@ TONE_GUIDE       = "docs/tone_guide_career_pages.md"
 CAREER_SPEC      = "docs/career_page_spec.md"
 APPROVED_SOURCES = "docs/approved_sources.md"
 CLUSTER_ROLES    = "data/career_clusters/cluster_roles.csv"
+
+MIN_PCT_SIGNAL = 0.01  # onet_task_pct threshold; see module docstring
 
 
 # ── Loaders ───────────────────────────────────────────────────────────────────
@@ -47,7 +58,7 @@ def load_task_table() -> dict:
 
     Each row has: task_id, task_text, task_weight, freq_score,
     importance_score, in_aei, automation_pct, augmentation_pct,
-    task_success_pct, onet_task_count, etc.
+    onet_task_pct, ai_autonomy_mean, speedup_factor, etc.
 
     See docs/pipeline.md 'Task table schema' for full column list.
     """
@@ -63,7 +74,8 @@ def load_occ_metrics() -> dict:
     """Load occupation-level AEI metrics keyed by onet_code.
 
     Each row has: ai_task_coverage_pct, weighted_automation_pct,
-    weighted_augmentation_pct, weighted_task_success_pct, etc.
+    weighted_augmentation_pct, weighted_ai_autonomy_mean,
+    weighted_speedup_factor, etc.
 
     See docs/pipeline.md 'Occupation metrics schema' for full column list.
     """
@@ -97,9 +109,30 @@ def load_a_scores(log_path: str = SCORE_LOG) -> dict:
 
 
 def to_score(occ: dict) -> int | None:
-    """Convert an occupation row to a 0-100 AI resilience score via final_ranking."""
+    """Convert an occupation row to a 0-100 AI resilience score via final_ranking.
+
+    Uses round-half-up (matches JS Math.round on the site), not Python's
+    round() which is round-half-to-even. final_ranking is always >= 0.
+    """
     val = occ.get("final_ranking")
-    return round(float(val) * 100) if val else None
+    return int(math.floor(float(val) * 100 + 0.5)) if val else None
+
+
+def is_true(v) -> bool:
+    """Tolerant boolean parser for flags that round-trip through CSV as strings.
+
+    Accepts True, "True", "true", 1, "1". Everything else (None, "", "False",
+    pandas <NA>, nullable-boolean NaN) is False. Use this instead of an exact
+    string compare against "True" — a merge that produces a pandas nullable
+    boolean dtype writes "1.0"/"<NA>" to CSV, which an exact compare misses
+    silently (see docs/pipeline.md AEI migration notes).
+    """
+    if isinstance(v, bool):
+        return v
+    if v is None:
+        return False
+    s = str(v).strip().lower()
+    return s in ("true", "1", "1.0")
 
 
 def load_text(path: str) -> str:

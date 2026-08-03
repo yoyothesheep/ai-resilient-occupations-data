@@ -1,7 +1,7 @@
 {
   "onet_code": "13-1161.01",
   "title": "Search Marketing Strategist",
-  "score": 49,
+  "score": 50,
   "salary": "$76,950",
   "openings": "87,200",
   "growth": "+7%",
@@ -77,85 +77,44 @@
   },
   "taskData": [
     {
-      "task": "Optimize keyword placement",
-      "full": "Optimize Web site exposure by analyzing search engine patterns to direct online placement of keywords or other content.",
-      "weight": 18.4,
-      "auto": 45.3,
-      "aug": 18.9,
-      "success": 66.3,
-      "n": 95
-    },
-    {
       "task": "Optimize assets for SEO",
       "full": "Optimize digital assets, such as text, graphics, or multimedia assets, for search engine optimization (SEO) or for display and usability on internet-connected devices.",
       "weight": 20.6,
-      "auto": 41.5,
-      "aug": null,
-      "success": 79.2,
-      "n": 53
-    },
-    {
-      "task": "Coordinate web architecture",
-      "full": "Coordinate with developers to optimize Web site architecture, server configuration, or page construction for search engine consumption and optimal visibility.",
-      "weight": 16.3,
-      "auto": 36.9,
-      "aug": 24.2,
-      "success": 59.7,
-      "n": 149
+      "auto": 54.0,
+      "aug": 46.0,
+      "pct": 0.01
     },
     {
       "task": "Analyze web metrics",
       "full": "Collect and analyze Web metrics, such as visits, time on site, page views per visit, transaction volume and revenue, traffic mix, click-through rates, conversion rates, cost per acquisition, or cost per click.",
       "weight": 19.5,
-      "auto": 52.0,
-      "aug": null,
-      "success": 50.0,
-      "n": 50
+      "auto": 67.8,
+      "aug": 32.2,
+      "pct": 0.01
     },
     {
-      "task": "Create content strategies",
-      "full": "Create content strategies for digital media.",
-      "weight": 14.9,
-      "auto": 48.9,
-      "aug": 7.3,
-      "success": 61.8,
-      "n": 427
-    },
-    {
-      "task": "Run marketing campaigns",
-      "full": "Conduct online marketing initiatives, such as paid ad placement, affiliate programs, sponsorship programs, email promotions, or viral marketing campaigns on social media Web sites.",
-      "weight": 15.4,
-      "auto": 35.3,
-      "aug": null,
-      "success": 67.1,
-      "n": 85
-    },
-    {
-      "task": "Track Campaign KPIs",
-      "full": "Identify appropriate Key Performance Indicators (KPIs) and report key metrics from digital campaigns.",
-      "weight": 13.6,
-      "auto": 40.2,
-      "aug": null,
-      "success": 63.0,
-      "n": 92
-    },
-    {
-      "task": "Run A/B optimization tests",
-      "full": "Improve search-related activities through ongoing analysis, experimentation, or optimization tests, using A/B or multivariate methods.",
-      "weight": 14.2,
-      "auto": 35.1,
-      "aug": 19.5,
-      "success": 66.2,
-      "n": 77
+      "task": "Optimize keyword placement",
+      "full": "Optimize Web site exposure by analyzing search engine patterns to direct online placement of keywords or other content.",
+      "weight": 18.4,
+      "auto": 63.5,
+      "aug": 36.5,
+      "pct": 0.01
     },
     {
       "task": "Search Query Trend Analysis",
       "full": "Conduct market research analysis to identify search query trends, real-time search and news media activity, popular social media topics, electronic commerce trends, market opportunities, or competitor performance.",
       "weight": 12.9,
-      "auto": 62.9,
+      "auto": 58.8,
+      "aug": 41.2,
+      "pct": 0.02
+    },
+    {
+      "task": "Track/report search activities",
+      "full": "Manage tracking and reporting of search-related activities and provide analyses to marketing executives.",
+      "weight": 18.1,
+      "auto": null,
       "aug": null,
-      "success": 42.2,
-      "n": 116
+      "pct": null
     },
     {
       "task": "Develop marketing strategy",
@@ -163,8 +122,39 @@
       "weight": 16.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 16
+      "pct": null
+    },
+    {
+      "task": "Coordinate web architecture",
+      "full": "Coordinate with developers to optimize Web site architecture, server configuration, or page construction for search engine consumption and optimal visibility.",
+      "weight": 16.3,
+      "auto": 35.0,
+      "aug": 65.0,
+      "pct": 0.0
+    },
+    {
+      "task": "Run marketing campaigns",
+      "full": "Conduct online marketing initiatives, such as paid ad placement, affiliate programs, sponsorship programs, email promotions, or viral marketing campaigns on social media Web sites.",
+      "weight": 15.4,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Create content strategies",
+      "full": "Create content strategies for digital media.",
+      "weight": 14.9,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Integrate cross-channel marketing",
+      "full": "Collaborate with other marketing staff to integrate and complement marketing strategies across multiple sales channels.",
+      "weight": 14.8,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "careerCluster": [
@@ -417,7 +407,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.6",
+  "exposure_filter": "3.4",
   "necessity_filter": "1.47",
   "elasticity_filter": "5",
   "faqs": [

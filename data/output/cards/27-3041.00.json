@@ -1,7 +1,7 @@
 {
   "onet_code": "27-3041.00",
   "title": "Editor",
-  "score": 44,
+  "score": 43,
   "salary": "$75,260",
   "openings": "9,800",
   "growth": "+1%",
@@ -79,67 +79,52 @@
   },
   "taskData": [
     {
-      "task": "Rewrite/edit copy",
-      "full": "Prepare, rewrite and edit copy to improve readability, or supervise others who do this work.",
-      "weight": 21.8,
-      "auto": 30.5,
-      "aug": 3.8,
-      "success": 83.8,
-      "n": 14107
-    },
-    {
-      "task": "Develop story ideas",
-      "full": "Develop story or content ideas, considering reader or audience appeal.",
-      "weight": 21.6,
-      "auto": 42.9,
-      "aug": null,
-      "success": 77.3,
-      "n": 119
-    },
-    {
-      "task": "Verify facts/statistics",
-      "full": "Verify facts, dates, and statistics, using standard reference sources.",
-      "weight": 23.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 26
-    },
-    {
       "task": "Proofread and Correct Copy",
       "full": "Read copy or proof to detect and correct errors in spelling, punctuation, and syntax.",
       "weight": 25.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Review and Approve Proofs",
-      "full": "Review and approve proofs submitted by composing room prior to publication production.",
-      "weight": 15.6,
-      "auto": 21.8,
-      "aug": 39.6,
-      "success": 69.0,
-      "n": 500
+      "auto": 28.7,
+      "aug": 71.3,
+      "pct": 0.23
     },
     {
       "task": "Edit and confer with authors",
       "full": "Read, evaluate and edit manuscripts or other materials submitted for publication, and confer with authors regarding changes in content, style or organization, or publication.",
       "weight": 23.2,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 10.5,
+      "aug": 89.5,
+      "pct": 0.11
     },
     {
-      "task": "Oversee publication production",
-      "full": "Oversee publication production, including artwork, layout, computer typesetting, and printing, ensuring adherence to deadlines and budget requirements.",
-      "weight": 20.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 22
+      "task": "Verify facts/statistics",
+      "full": "Verify facts, dates, and statistics, using standard reference sources.",
+      "weight": 23.0,
+      "auto": 33.7,
+      "aug": 66.3,
+      "pct": 0.08
+    },
+    {
+      "task": "Rewrite/edit copy",
+      "full": "Prepare, rewrite and edit copy to improve readability, or supervise others who do this work.",
+      "weight": 21.8,
+      "auto": 35.3,
+      "aug": 64.7,
+      "pct": 0.61
+    },
+    {
+      "task": "Develop story ideas",
+      "full": "Develop story or content ideas, considering reader or audience appeal.",
+      "weight": 21.6,
+      "auto": 29.8,
+      "aug": 70.2,
+      "pct": 0.75
+    },
+    {
+      "task": "Write stories and articles",
+      "full": "Write text, such as stories, articles, editorials, or newsletters.",
+      "weight": 18.4,
+      "auto": 40.3,
+      "aug": 59.7,
+      "pct": 0.78
     },
     {
       "task": "Monitor news gathering",
@@ -147,8 +132,7 @@
       "weight": 21.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Supervise reporters/editors",
@@ -156,17 +140,23 @@
       "weight": 20.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Oversee publication production",
+      "full": "Oversee publication production, including artwork, layout, computer typesetting, and printing, ensuring adherence to deadlines and budget requirements.",
+      "weight": 20.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Wire Service News Selection",
       "full": "Select local, state, national, and international news items received from wire services, based on assessment of items' significance and interest value.",
       "weight": 19.7,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 60.6,
+      "aug": 39.4,
+      "pct": 0.0
     }
   ],
   "careerCluster": [
@@ -413,8 +403,8 @@
       "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/"
     }
   ],
-  "ai_category": "Less Immediate Change",
-  "exposure_filter": "3.0",
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.2",
   "necessity_filter": "1.47",
   "elasticity_filter": "4",
   "faqs": [

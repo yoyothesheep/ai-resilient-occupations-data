@@ -1,7 +1,7 @@
 {
   "onet_code": "13-1161.00",
   "title": "Market Research Analysts and Marketing Specialists",
-  "score": 29,
+  "score": 31,
   "salary": "$76,950",
   "openings": "87,200",
   "growth": "+7%",
@@ -29,82 +29,49 @@
       "task": "Analyze customer demographics/demand",
       "full": "Collect and analyze data on customer demographics, preferences, needs, and buying habits to identify potential markets and factors affecting product demand.",
       "weight": 16.8,
-      "auto": 47.3,
-      "aug": 13.4,
-      "success": 53.5,
-      "n": 949
-    },
-    {
-      "task": "Research consumer opinions/strategies",
-      "full": "Conduct research on consumer opinions and marketing strategies, collaborating with marketing professionals, statisticians, pollsters, and other professionals.",
-      "weight": 16.6,
-      "auto": 57.6,
-      "aug": 15.2,
-      "success": 44.4,
-      "n": 99
+      "auto": 40.1,
+      "aug": 59.9,
+      "pct": 0.02
     },
     {
       "task": "Write/visualize research reports",
       "full": "Prepare reports of findings, illustrating data graphically and translating complex findings into written text.",
       "weight": 16.5,
-      "auto": 26.7,
-      "aug": 22.3,
-      "success": 76.2,
-      "n": 202
-    },
-    {
-      "task": "Design surveys/data collection",
-      "full": "Devise and evaluate methods and procedures for collecting data, such as surveys, opinion polls, or questionnaires, or arrange to obtain existing data.",
-      "weight": 16.1,
-      "auto": 56.4,
-      "aug": null,
-      "success": 56.4,
-      "n": 39
-    },
-    {
-      "task": "Evaluate marketing effectiveness",
-      "full": "Measure the effectiveness of marketing, advertising, and communications programs and strategies.",
-      "weight": 12.5,
-      "auto": 39.7,
-      "aug": 24.0,
-      "success": 66.9,
-      "n": 499
+      "auto": 60.5,
+      "aug": 39.5,
+      "pct": 0.05
     },
     {
       "task": "Forecast marketing/sales trends",
       "full": "Forecast and track marketing and sales trends, analyzing collected data.",
       "weight": 11.7,
-      "auto": 48.4,
-      "aug": 16.3,
-      "success": 58.8,
-      "n": 153
+      "auto": 42.5,
+      "aug": 57.5,
+      "pct": 0.02
     },
     {
       "task": "Analyze competitor data",
       "full": "Gather data on competitors and analyze their prices, sales, and method of marketing and distribution.",
       "weight": 11.3,
-      "auto": 54.1,
-      "aug": 15.9,
-      "success": 39.1,
-      "n": 711
+      "auto": 42.1,
+      "aug": 57.9,
+      "pct": 0.09
     },
     {
-      "task": "Assess market positioning",
-      "full": "Seek and provide information to help companies determine their position in the marketplace.",
-      "weight": 11.0,
-      "auto": 52.8,
-      "aug": 28.9,
-      "success": 50.4,
-      "n": 506
-    },
-    {
-      "task": "Track industry trends",
-      "full": "Monitor industry statistics and follow trends in trade literature.",
-      "weight": 13.3,
+      "task": "Research consumer opinions/strategies",
+      "full": "Conduct research on consumer opinions and marketing strategies, collaborating with marketing professionals, statisticians, pollsters, and other professionals.",
+      "weight": 16.6,
       "auto": null,
-      "aug": 51.4,
-      "success": 54.1,
-      "n": 37
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Design surveys/data collection",
+      "full": "Devise and evaluate methods and procedures for collecting data, such as surveys, opinion polls, or questionnaires, or arrange to obtain existing data.",
+      "weight": 16.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Measure satisfaction levels",
@@ -112,8 +79,31 @@
       "weight": 13.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Track industry trends",
+      "full": "Monitor industry statistics and follow trends in trade literature.",
+      "weight": 13.3,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Evaluate marketing effectiveness",
+      "full": "Measure the effectiveness of marketing, advertising, and communications programs and strategies.",
+      "weight": 12.5,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Assess market positioning",
+      "full": "Seek and provide information to help companies determine their position in the marketplace.",
+      "weight": 11.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "risks": {
@@ -434,7 +424,7 @@
     }
   ],
   "ai_category": "High Automation Risk",
-  "exposure_filter": "4.0",
+  "exposure_filter": "3.6",
   "necessity_filter": "1.3",
   "elasticity_filter": "2",
   "faqs": [

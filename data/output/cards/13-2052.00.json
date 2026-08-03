@@ -302,67 +302,68 @@
   "growth": "+10%",
   "taskData": [
     {
-      "task": "Manage client portfolios",
-      "full": "Manage client portfolios, keeping client plans up-to-date.",
-      "weight": 16.9,
-      "auto": 29.4,
-      "aug": 28.8,
-      "success": 66.7,
-      "n": 306
-    },
-    {
-      "task": "Analyze client finances",
-      "full": "Analyze financial information obtained from clients to determine strategies for meeting clients' financial objectives.",
-      "weight": 16.7,
-      "auto": 27.5,
-      "aug": 38.9,
-      "success": 68.4,
-      "n": 1537
+      "task": "Recommend planning strategies",
+      "full": "Recommend to clients strategies in cash management, insurance coverage, investment planning, or other areas to help them achieve their financial goals.",
+      "weight": 15.0,
+      "auto": 40.0,
+      "aug": 60.0,
+      "pct": 0.02
     },
     {
       "task": "Recommend financial products",
       "full": "Recommend financial products, such as stocks, bonds, mutual funds, or insurance.",
       "weight": 14.7,
-      "auto": 35.7,
-      "aug": 26.3,
-      "success": 60.5,
-      "n": 1842
+      "auto": 51.0,
+      "aug": 49.0,
+      "pct": 0.05
     },
     {
-      "task": "Answer client questions",
-      "full": "Answer clients' questions about the purposes and details of financial plans and strategies.",
-      "weight": 14.7,
-      "auto": 20.3,
-      "aug": 50.2,
-      "success": 80.3,
-      "n": 801
+      "task": "Prepare client reports",
+      "full": "Prepare or interpret for clients information, such as investment performance reports, financial document summaries, or income projections.",
+      "weight": 14.1,
+      "auto": 33.1,
+      "aug": 66.9,
+      "pct": 0.15
     },
     {
       "task": "Monitor market trends",
       "full": "Monitor financial market trends to ensure that client plans are responsive.",
       "weight": 12.4,
-      "auto": 37.2,
-      "aug": 45.1,
-      "success": 51.1,
-      "n": 317
+      "auto": 62.0,
+      "aug": 38.0,
+      "pct": 0.04
     },
     {
-      "task": "Recommend planning strategies",
-      "full": "Recommend to clients strategies in cash management, insurance coverage, investment planning, or other areas to help them achieve their financial goals.",
-      "weight": 15.0,
+      "task": "Guide clients gathering records",
+      "full": "Guide clients in the gathering of information, such as bank account records, income tax returns, life and disability insurance records, pension plans, or wills.",
+      "weight": 11.7,
+      "auto": 62.3,
+      "aug": 37.7,
+      "pct": 0.01
+    },
+    {
+      "task": "Manage client portfolios",
+      "full": "Manage client portfolios, keeping client plans up-to-date.",
+      "weight": 16.9,
       "auto": null,
-      "aug": 44.1,
-      "success": 88.2,
-      "n": 34
+      "aug": null,
+      "pct": null
     },
     {
-      "task": "Financial Services Explanation",
-      "full": "Explain to clients the personal financial advisor's responsibilities and the types of services to be provided.",
-      "weight": 11.0,
-      "auto": 23.1,
-      "aug": 43.2,
-      "success": 72.5,
-      "n": 229
+      "task": "Analyze client finances",
+      "full": "Analyze financial information obtained from clients to determine strategies for meeting clients' financial objectives.",
+      "weight": 16.7,
+      "auto": 48.5,
+      "aug": 51.5,
+      "pct": 0.0
+    },
+    {
+      "task": "Answer client questions",
+      "full": "Answer clients' questions about the purposes and details of financial plans and strategies.",
+      "weight": 14.7,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Implement plan recommendations",
@@ -370,8 +371,7 @@
       "weight": 14.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Review/reassess client plans",
@@ -379,17 +379,7 @@
       "weight": 14.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Prepare client reports",
-      "full": "Prepare or interpret for clients information, such as investment performance reports, financial document summaries, or income projections.",
-      "weight": 14.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "keyDrivers": "People often choose a financial advisor because they want a trusted human guiding them through major life decisions-retirement, college savings, estate planning-where emotional reassurance matters as much as the numbers. The role carries meaningful regulatory accountability and requires understanding each client's full personal picture. However, robo-advisors and AI tools are already automating portfolio management and basic planning, and the work is fully remote-compatible, which creates real competitive pressure on advisors who don't offer deep relationship value.",

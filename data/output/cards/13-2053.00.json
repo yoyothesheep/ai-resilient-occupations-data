@@ -298,8 +298,7 @@
       "weight": 27.3,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": 0.0
     },
     {
       "task": "Communicate with field reps",
@@ -307,8 +306,7 @@
       "weight": 24.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Decline excessive risks",
@@ -316,8 +314,7 @@
       "weight": 20.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 35
+      "pct": null
     },
     {
       "task": "Evaluate catastrophe risk",
@@ -325,8 +322,7 @@
       "weight": 20.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Review insurance records",
@@ -334,8 +330,7 @@
       "weight": 19.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Rate substandard risks",
@@ -343,8 +338,7 @@
       "weight": 19.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Authorize reinsurance",
@@ -352,8 +346,7 @@
       "weight": 13.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "keyDrivers": "Underwriting is fundamentally about risk assessment using data-a task where AI already outperforms humans in many standard scenarios. While complex or unusual cases still need human judgment, and regulatory requirements keep a human in the loop for now, the volume of routine underwriting decisions that require human involvement is shrinking rapidly. The role is likely to consolidate around fewer, more senior underwriters who handle exceptions and oversee AI systems.",

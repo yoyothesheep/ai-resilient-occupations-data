@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2072.00",
   "title": "Loan Officers",
-  "score": 47,
+  "score": 48,
   "salary": "$74,180",
   "openings": "20,300",
   "growth": "+2%",
@@ -24,13 +24,28 @@
   "keyDrivers": "Loan officers build trusted relationships with borrowers, guiding them through complex financial decisions where human reassurance and accountability genuinely matter-especially for large purchases like homes. They carry regulatory responsibilities and must exercise judgment on borderline cases that automated systems flag but can't resolve. AI will likely handle much of the routine underwriting and paperwork, freeing loan officers to focus on client advising and complex deal structuring, though simpler loan products may increasingly bypass them entirely.",
   "taskData": [
     {
-      "task": "Explain loan options",
-      "full": "Explain to customers the different types of loans and credit options that are available, as well as the terms of those services.",
-      "weight": 20.7,
-      "auto": 24.0,
-      "aug": 58.5,
-      "success": 79.3,
-      "n": 881
+      "task": "Identify clients' financial goals",
+      "full": "Work with clients to identify their financial goals and to find ways of reaching those goals.",
+      "weight": 17.7,
+      "auto": 35.4,
+      "aug": 64.6,
+      "pct": 0.02
+    },
+    {
+      "task": "Personal Finance Counseling",
+      "full": "Counsel clients on personal and family financial problems, such as excessive spending or borrowing of funds.",
+      "weight": 16.3,
+      "auto": 49.7,
+      "aug": 50.3,
+      "pct": 0.02
+    },
+    {
+      "task": "Maintain/update account records",
+      "full": "Maintain and review account records, updating and recategorizing them according to status changes.",
+      "weight": 16.3,
+      "auto": 85.8,
+      "aug": 14.2,
+      "pct": 0.04
     },
     {
       "task": "Analyze loan applications",
@@ -38,26 +53,7 @@
       "weight": 22.6,
       "auto": null,
       "aug": null,
-      "success": 89.7,
-      "n": 29
-    },
-    {
-      "task": "Debt and Payoff Calculation",
-      "full": "Calculate amount of debt and funds available to plan methods of payoff and to estimate time for debt liquidation.",
-      "weight": 16.3,
-      "auto": 37.1,
-      "aug": 13.3,
-      "success": 81.1,
-      "n": 264
-    },
-    {
-      "task": "Personal Finance Counseling",
-      "full": "Counsel clients on personal and family financial problems, such as excessive spending or borrowing of funds.",
-      "weight": 16.3,
-      "auto": 17.5,
-      "aug": 49.4,
-      "success": 80.4,
-      "n": 664
+      "pct": null
     },
     {
       "task": "Meet with applicants",
@@ -65,44 +61,15 @@
       "weight": 21.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Billing Accuracy Review",
-      "full": "Review billing for accuracy.",
-      "weight": 16.3,
-      "auto": 26.6,
-      "aug": 35.9,
-      "success": 73.4,
-      "n": 64
-    },
-    {
-      "task": "Gather applicant documents",
-      "full": "Obtain and compile copies of loan applicants' credit histories, corporate financial statements, and other financial information.",
-      "weight": 18.3,
-      "auto": 66.7,
-      "aug": null,
-      "success": 62.5,
-      "n": 24
-    },
-    {
-      "task": "Bank Product Marketing",
-      "full": "Market bank products to individuals and firms, promoting bank services that may meet customers' needs.",
-      "weight": 15.8,
-      "auto": 39.3,
-      "aug": 39.3,
-      "success": 82.1,
-      "n": 56
-    },
-    {
-      "task": "Student Financial Aid Outreach",
-      "full": "Inform individuals and groups about the financial assistance available to college or university students.",
-      "weight": 16.3,
+      "task": "Explain loan options",
+      "full": "Explain to customers the different types of loans and credit options that are available, as well as the terms of those services.",
+      "weight": 20.7,
       "auto": null,
-      "aug": 55.6,
-      "success": 75.6,
-      "n": 45
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Approve/refer loans",
@@ -110,8 +77,31 @@
       "weight": 19.3,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Review credit and loan files",
+      "full": "Review and update credit and loan files.",
+      "weight": 18.4,
+      "auto": 93.8,
+      "aug": 6.2,
+      "pct": 0.0
+    },
+    {
+      "task": "Gather applicant documents",
+      "full": "Obtain and compile copies of loan applicants' credit histories, corporate financial statements, and other financial information.",
+      "weight": 18.3,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Supervise loan personnel",
+      "full": "Supervise loan personnel.",
+      "weight": 18.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -414,7 +404,7 @@
     }
   ],
   "ai_category": "Will Evolve",
-  "exposure_filter": "3.8",
+  "exposure_filter": "3.6",
   "necessity_filter": "2.91",
   "elasticity_filter": "3"
 }

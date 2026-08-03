@@ -399,22 +399,20 @@
   "growth": "+18%",
   "taskData": [
     {
+      "task": "Recommend compliance actions",
+      "full": "Recommend actions to ensure compliance with laws and regulations, or to protect solvency of institutions.",
+      "weight": 14.4,
+      "auto": 36.2,
+      "aug": 63.8,
+      "pct": 0.06
+    },
+    {
       "task": "Meet with bank leadership",
       "full": "Direct and participate in formal and informal meetings with bank directors, trustees, senior management, counsels, outside accountants, and consultants to gather information and discuss findings.",
       "weight": 17.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Recommend compliance actions",
-      "full": "Recommend actions to ensure compliance with laws and regulations, or to protect solvency of institutions.",
-      "weight": 14.4,
-      "auto": null,
-      "aug": null,
-      "success": 75.0,
-      "n": 20
+      "pct": null
     },
     {
       "task": "Review financial statements",
@@ -422,8 +420,7 @@
       "weight": 15.1,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Supervise exam staff",
@@ -431,26 +428,23 @@
       "weight": 14.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Prepare examination reports",
       "full": "Prepare reports, exhibits, and other supporting schedules that detail an institution's safety and soundness, compliance with laws and regulations, and recommended solutions to questionable financial conditions.",
       "weight": 13.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 43.2,
+      "aug": 56.8,
+      "pct": 0.0
     },
     {
       "task": "Law and Regulation Impact Analysis",
       "full": "Review and analyze new, proposed, or revised laws, regulations, policies, and procedures to interpret their meaning and determine their impact.",
       "weight": 8.9,
-      "auto": 27.2,
-      "aug": 49.9,
-      "success": 67.4,
-      "n": 559
+      "auto": 38.7,
+      "aug": 61.3,
+      "pct": 0.02
     },
     {
       "task": "Investigate institution activities",
@@ -458,8 +452,7 @@
       "weight": 12.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Review audit reports",
@@ -467,8 +460,7 @@
       "weight": 11.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Examine governance records",
@@ -476,8 +468,7 @@
       "weight": 11.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Resolve integrity problems",
@@ -485,8 +476,7 @@
       "weight": 11.3,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "keyDrivers": "Financial examiners carry real legal authority-they must make enforcement judgments and hold institutions accountable under banking and securities law, which society won't delegate to machines. They regularly encounter novel fraud schemes and complex compliance situations that require genuine investigative reasoning. As AI generates more financial activity and complexity, demand for human oversight and examination is likely to grow rather than shrink.",

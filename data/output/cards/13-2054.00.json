@@ -296,91 +296,74 @@
     }
   ],
   "title": "Financial Risk Specialists",
-  "score": 51,
+  "score": 50,
   "salary": "$106,000",
   "openings": "4,800",
   "growth": "+6%",
   "taskData": [
     {
-      "task": "Build risk models",
-      "full": "Develop or implement risk-assessment models or methodologies.",
+      "task": "Analyze organizational risk areas",
+      "full": "Analyze areas of potential risk to the assets, earning capacity, or success of organizations.",
       "weight": 17.0,
-      "auto": 50.9,
-      "aug": 16.6,
-      "success": 49.1,
-      "n": 163
+      "auto": 46.5,
+      "aug": 53.5,
+      "pct": 0.04
     },
     {
-      "task": "Technical Data Charting",
-      "full": "Draw charts and graphs, using computer spreadsheets, to illustrate technical reports.",
+      "task": "Devise severe market scenarios",
+      "full": "Devise scenario analyses reflecting possible severe market events.",
       "weight": 17.0,
-      "auto": 43.2,
-      "aug": null,
-      "success": 62.8,
-      "n": 148
-    },
-    {
-      "task": "Investment Trend Interpretation",
-      "full": "Interpret data on price, yield, stability, future investment-risk trends, economic influences, and other factors affecting investment programs.",
-      "weight": 17.0,
-      "auto": 27.7,
-      "aug": 55.6,
-      "success": 78.0,
-      "n": 354
-    },
-    {
-      "task": "Risk Position Reporting",
-      "full": "Produce reports or presentations that outline findings, explain risk positions, or recommend changes.",
-      "weight": 17.0,
-      "auto": 30.4,
-      "aug": null,
-      "success": 66.1,
-      "n": 115
-    },
-    {
-      "task": "Investment Timing Recommendations",
-      "full": "Recommend investments and investment timing to companies, investment firm staff, or the public.",
-      "weight": 17.0,
-      "auto": 48.5,
-      "aug": 21.1,
-      "success": 58.1,
-      "n": 270
-    },
-    {
-      "task": "Securities Quality Comparison",
-      "full": "Evaluate and compare the relative quality of various securities in a given industry.",
-      "weight": 17.0,
-      "auto": 32.9,
-      "aug": null,
-      "success": 47.9,
-      "n": 73
+      "auto": 42.0,
+      "aug": 58.0,
+      "pct": 0.01
     },
     {
       "task": "Investment Risk Identification",
       "full": "Identify key risks and mitigating factors of potential investments, such as asset types and values, legal and ownership structures, professional reputations, customer bases, or industry segments.",
       "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": 73.3,
-      "n": 30
+      "auto": 46.7,
+      "aug": 53.3,
+      "pct": 0.06
     },
     {
-      "task": "Investment Action Planning",
-      "full": "Prepare plans of action for investment, using financial analyses.",
+      "task": "Risk Position Reporting",
+      "full": "Produce reports or presentations that outline findings, explain risk positions, or recommend changes.",
       "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": 64.3,
-      "n": 28
+      "auto": 53.0,
+      "aug": 47.0,
+      "pct": 0.01
     },
     {
       "task": "Statistical Modeling Consultation",
       "full": "Provide statistical modeling advice to other departments.",
       "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": 87.0,
-      "n": 23
+      "auto": 14.3,
+      "aug": 85.7,
+      "pct": 0.01
+    },
+    {
+      "task": "Recommend risk reduction",
+      "full": "Recommend ways to control or reduce risk.",
+      "weight": 17.0,
+      "auto": 38.0,
+      "aug": 62.0,
+      "pct": 0.11
+    },
+    {
+      "task": "Analyze legislation's risk impact",
+      "full": "Analyze new legislation to determine impact on risk exposure.",
+      "weight": 17.0,
+      "auto": 37.8,
+      "aug": 62.2,
+      "pct": 0.0
+    },
+    {
+      "task": "Run statistical risk analyses",
+      "full": "Conduct statistical analyses to quantify risk, using statistical analysis software or econometric models.",
+      "weight": 17.0,
+      "auto": 41.4,
+      "aug": 58.6,
+      "pct": 0.0
     },
     {
       "task": "Advise on trading risk",
@@ -388,8 +371,15 @@
       "weight": 17.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 15
+      "pct": null
+    },
+    {
+      "task": "Consult latest risk models",
+      "full": "Consult financial literature to ensure use of the latest models or statistical techniques.",
+      "weight": 17.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "keyDrivers": "Risk specialists must make judgment calls about emerging threats and tail-risk scenarios that don't fit neatly into historical patterns-the kind of novel, high-stakes reasoning that AI struggles with. Regulatory frameworks increasingly require human accountability for risk assessments, providing some legal protection. As AI drives more complex financial products and faster markets, the need for human risk oversight will likely grow, and AI tools will help these specialists monitor far more ground.",
@@ -425,7 +415,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.4",
+  "exposure_filter": "3.6",
   "necessity_filter": "2.3",
   "elasticity_filter": "4"
 }

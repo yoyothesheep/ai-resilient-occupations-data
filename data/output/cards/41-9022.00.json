@@ -1,7 +1,7 @@
 {
   "onet_code": "41-9022.00",
   "title": "Real Estate Sales Agents",
-  "score": 40,
+  "score": 41,
   "salary": "$56,320",
   "openings": "36,600",
   "growth": "+3%",
@@ -18,67 +18,52 @@
   "keyDrivers": "Sales agents show properties, build client relationships, and handle licensed transaction work, but much of their day-to-day involves tasks AI is rapidly improving at - lead generation, market comparisons, scheduling, and initial client matching. While licensing requirements and the importance of in-person showings provide some protection, agents face more displacement risk than brokers because they typically handle more routine transactions with less complex judgment. The large number of agents relative to market need makes this role vulnerable to consolidation as AI tools make each agent more productive.",
   "taskData": [
     {
+      "task": "Advise clients on market conditions",
+      "full": "Advise clients on market conditions, prices, mortgages, legal requirements, and related matters.",
+      "weight": 18.9,
+      "auto": 47.4,
+      "aug": 52.6,
+      "pct": 0.03
+    },
+    {
       "task": "Match properties to buyers",
       "full": "Generate lists of properties that are compatible with buyers' needs and financial resources.",
       "weight": 25.2,
-      "auto": 47.1,
+      "auto": null,
       "aug": null,
-      "success": 30.6,
-      "n": 121
+      "pct": null
     },
     {
       "task": "Market/promote listings",
       "full": "Promote sales of properties through advertisements, open houses, and participation in multiple listing services.",
       "weight": 23.0,
-      "auto": 35.9,
+      "auto": null,
       "aug": null,
-      "success": 76.7,
-      "n": 412
+      "pct": null
     },
     {
-      "task": "Answer client questions",
-      "full": "Answer clients' questions regarding construction work, financing, maintenance, repairs, and appraisals.",
-      "weight": 21.5,
-      "auto": 30.6,
-      "aug": 28.5,
-      "success": 86.1,
-      "n": 144
-    },
-    {
-      "task": "Run comp analysis",
-      "full": "Compare a property with similar properties that have recently sold to determine its competitive market price.",
-      "weight": 21.3,
-      "auto": 48.3,
-      "aug": null,
-      "success": 54.0,
-      "n": 87
+      "task": "Prepare transaction documents",
+      "full": "Prepare documents such as representation contracts, purchase agreements, closing statements, deeds, and leases.",
+      "weight": 22.8,
+      "auto": 42.1,
+      "aug": 57.9,
+      "pct": 0.0
     },
     {
       "task": "Negotiate between parties",
       "full": "Act as an intermediary in negotiations between buyers and sellers, generally representing one or the other.",
       "weight": 21.8,
-      "auto": 33.8,
+      "auto": null,
       "aug": null,
-      "success": 75.7,
-      "n": 74
+      "pct": null
     },
     {
-      "task": "Property Display and Explanation",
-      "full": "Display commercial, industrial, agricultural, and residential properties to clients and explain their features.",
-      "weight": 19.6,
-      "auto": 50.0,
-      "aug": null,
-      "success": 67.9,
-      "n": 78
-    },
-    {
-      "task": "Interview buyer clients",
-      "full": "Interview clients to determine what kinds of properties they are seeking.",
-      "weight": 20.2,
-      "auto": 35.0,
-      "aug": null,
-      "success": 66.7,
-      "n": 60
+      "task": "Answer client questions",
+      "full": "Answer clients' questions regarding construction work, financing, maintenance, repairs, and appraisals.",
+      "weight": 21.5,
+      "auto": 38.9,
+      "aug": 61.1,
+      "pct": 0.0
     },
     {
       "task": "Coordinate closing parties",
@@ -86,26 +71,31 @@
       "weight": 21.4,
       "auto": null,
       "aug": null,
-      "success": 100.0,
-      "n": 19
+      "pct": null
     },
     {
-      "task": "Prepare transaction documents",
-      "full": "Prepare documents such as representation contracts, purchase agreements, closing statements, deeds, and leases.",
-      "weight": 22.8,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Run comp analysis",
+      "full": "Compare a property with similar properties that have recently sold to determine its competitive market price.",
+      "weight": 21.3,
+      "auto": 60.3,
+      "aug": 39.7,
+      "pct": 0.0
     },
     {
-      "task": "Closing Coordination",
-      "full": "Coordinate property closings, overseeing signing of documents and disbursement of funds.",
-      "weight": 19.4,
+      "task": "Present purchase offers",
+      "full": "Present purchase offers to sellers for consideration.",
+      "weight": 20.7,
       "auto": null,
       "aug": null,
-      "success": 60.7,
-      "n": 28
+      "pct": null
+    },
+    {
+      "task": "Coordinate home showings",
+      "full": "Coordinate appointments to show homes to prospective buyers.",
+      "weight": 20.4,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -382,7 +372,7 @@
     }
   ],
   "ai_category": "Will Evolve",
-  "exposure_filter": "4.0",
+  "exposure_filter": "3.8",
   "necessity_filter": "2.82",
   "elasticity_filter": "2"
 }

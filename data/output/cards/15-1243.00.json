@@ -20,94 +20,84 @@
   "keyDrivers": "AI tools can now generate data models, write SQL, and automate a lot of routine database design work. But the reason this role keeps growing is that organizations are building out more data infrastructure than ever, adding cloud platforms, analytics pipelines, and AI systems that all need carefully architected data foundations. Someone still has to decide how all these systems fit together, navigate tradeoffs between performance and cost across a company's specific landscape, and manage the evolving architecture over time. That cross-system judgment and deep organizational knowledge is what keeps humans central here.",
   "taskData": [
     {
-      "task": "Gather business requirements",
-      "full": "Collaborate with system architects, software architects, design analysts, and others to understand business or industry requirements.",
-      "weight": 20.3,
-      "auto": 17.6,
-      "aug": 50.9,
-      "success": 69.8,
-      "n": 715
-    },
-    {
       "task": "Document DB architectures",
       "full": "Develop and document database architectures.",
       "weight": 17.4,
-      "auto": 24.5,
-      "aug": 38.9,
-      "success": 74.3,
-      "n": 339
+      "auto": 51.3,
+      "aug": 48.7,
+      "pct": 0.02
     },
     {
-      "task": "Develop architecture strategy",
-      "full": "Develop database architectural strategies at the modeling, design and implementation stages to address business or industry requirements.",
-      "weight": 16.1,
-      "auto": 11.5,
-      "aug": 60.3,
-      "success": 82.8,
-      "n": 685
+      "task": "Design scalable databases",
+      "full": "Design databases to support business applications, ensuring system scalability, security, performance, and reliability.",
+      "weight": 16.6,
+      "auto": 62.5,
+      "aug": 37.5,
+      "pct": 0.01
     },
     {
       "task": "Design DB interfaces/indexes",
       "full": "Design database applications, such as interfaces, data transfer mechanisms, global temporary tables, data partitions, and function-based indexes to enable efficient access of the generic database structure.",
       "weight": 15.4,
-      "auto": 22.4,
-      "aug": 24.4,
-      "success": 77.9,
-      "n": 745
+      "auto": 36.1,
+      "aug": 63.9,
+      "pct": 0.01
     },
     {
-      "task": "Develop data models",
-      "full": "Develop data models for applications, metadata tables, views or related database structures.",
-      "weight": 15.0,
-      "auto": 26.6,
-      "aug": 28.2,
-      "success": 75.2,
-      "n": 319
+      "task": "Gather business requirements",
+      "full": "Collaborate with system architects, software architects, design analysts, and others to understand business or industry requirements.",
+      "weight": 20.3,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
-      "task": "Document/share schemas",
-      "full": "Document and communicate database schemas, using accepted notations.",
-      "weight": 13.7,
-      "auto": 24.9,
-      "aug": 43.4,
-      "success": 70.9,
-      "n": 429
-    },
-    {
-      "task": "Database Testing and Error Correction",
-      "full": "Test programs or databases, correct errors, and make necessary modifications.",
-      "weight": 13.3,
-      "auto": 19.1,
-      "aug": 27.9,
-      "success": 60.1,
-      "n": 2932
-    },
-    {
-      "task": "Database Industry Trend Analysis",
-      "full": "Identify and evaluate industry trends in database systems to serve as a source of information and advice for upper management.",
-      "weight": 13.1,
-      "auto": 28.0,
-      "aug": 23.0,
-      "success": 69.0,
-      "n": 100
+      "task": "Code database descriptions",
+      "full": "Write and code logical and physical database descriptions, and specify identifiers of database to management system or direct others in coding descriptions.",
+      "weight": 12.8,
+      "auto": 60.6,
+      "aug": 39.4,
+      "pct": 0.02
     },
     {
       "task": "Junior Staff Technical Support",
       "full": "Provide technical support to junior staff or clients.",
       "weight": 12.5,
-      "auto": 23.0,
-      "aug": 29.7,
-      "success": 72.3,
-      "n": 148
+      "auto": 56.2,
+      "aug": 43.8,
+      "pct": 0.04
     },
     {
-      "task": "Database Functionality Demonstration",
-      "full": "Demonstrate database technical functionality, such as performance, security and reliability.",
-      "weight": 11.8,
-      "auto": 15.6,
-      "aug": 69.4,
-      "success": 89.6,
-      "n": 807
+      "task": "Coordinate database project scope",
+      "full": "Work as part of a project team to coordinate database development and determine project scope and limitations.",
+      "weight": 16.2,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Develop architecture strategy",
+      "full": "Develop database architectural strategies at the modeling, design and implementation stages to address business or industry requirements.",
+      "weight": 16.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Develop data models",
+      "full": "Develop data models for applications, metadata tables, views or related database structures.",
+      "weight": 15.0,
+      "auto": 43.6,
+      "aug": 56.4,
+      "pct": 0.0
+    },
+    {
+      "task": "Develop data models",
+      "full": "Develop data model describing data elements and their use, following procedures and using pen, template or computer software.",
+      "weight": 14.5,
+      "auto": 27.6,
+      "aug": 72.4,
+      "pct": 0.0
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

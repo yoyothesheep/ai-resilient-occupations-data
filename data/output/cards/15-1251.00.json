@@ -28,64 +28,57 @@
       "task": "Write/analyze programs",
       "full": "Write, analyze, review, and rewrite programs, using workflow chart and diagram, and applying knowledge of computer capabilities, subject matter, and symbolic logic.",
       "weight": 22.8,
-      "auto": 27.0,
-      "aug": 33.2,
-      "success": 79.8,
-      "n": 2612
+      "auto": 62.1,
+      "aug": 37.9,
+      "pct": 0.28
     },
     {
       "task": "Debug/correct errors",
       "full": "Correct errors by making appropriate changes and rechecking the program to ensure that the desired results are produced.",
       "weight": 22.5,
-      "auto": 20.1,
-      "aug": 14.6,
-      "success": 63.3,
-      "n": 8870
+      "auto": 74.1,
+      "aug": 25.9,
+      "pct": 0.33
     },
     {
       "task": "Revise/expand programs",
       "full": "Perform or direct revision, repair, or expansion of existing programs to increase operating efficiency or adapt to new requirements.",
       "weight": 20.6,
-      "auto": 44.2,
-      "aug": 11.1,
-      "success": 58.4,
-      "n": 729
+      "auto": 66.6,
+      "aug": 33.4,
+      "pct": 0.15
     },
     {
       "task": "Maintain software packages",
       "full": "Write, update, and maintain computer programs or software packages to handle specific jobs such as tracking inventory, storing or retrieving data, or controlling other equipment.",
       "weight": 20.3,
-      "auto": 37.9,
-      "aug": 11.5,
-      "success": 66.8,
-      "n": 11705
+      "auto": 71.8,
+      "aug": 28.2,
+      "pct": 0.28
+    },
+    {
+      "task": "Test programs/applications",
+      "full": "Conduct trial runs of programs and software applications to be sure they will produce the desired information and that the instructions are correct.",
+      "weight": 16.3,
+      "auto": 89.4,
+      "aug": 10.6,
+      "pct": 0.01
     },
     {
       "task": "Write documentation",
       "full": "Compile and write documentation of program development and subsequent revisions, inserting comments in the coded instructions so others can understand the program.",
       "weight": 15.0,
-      "auto": 41.5,
-      "aug": 14.0,
-      "success": 73.1,
-      "n": 7597
-    },
-    {
-      "task": "Troubleshoot with teams",
-      "full": "Consult with and assist computer operators or system analysts to define and resolve problems in running computer programs.",
-      "weight": 13.7,
-      "auto": 10.9,
-      "aug": 73.7,
-      "success": 66.8,
-      "n": 788
+      "auto": 77.0,
+      "aug": 23.0,
+      "pct": 0.03
     },
     {
       "task": "Create workflow diagrams",
       "full": "Prepare detailed workflow charts and diagrams that describe input, output, and logical operation, and convert them into a series of instructions coded in a computer language.",
       "weight": 13.3,
-      "auto": 41.6,
-      "aug": 9.1,
-      "success": 70.8,
-      "n": 815
+      "auto": 51.2,
+      "aug": 48.8,
+      "pct": 0.01
     },
     {
       "task": "Consult with stakeholders",
@@ -93,26 +86,23 @@
       "weight": 18.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Test programs/applications",
-      "full": "Conduct trial runs of programs and software applications to be sure they will produce the desired information and that the instructions are correct.",
-      "weight": 16.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Develop websites",
+      "full": "Develop Web sites.",
+      "weight": 12.0,
+      "auto": 51.8,
+      "aug": 48.2,
+      "pct": 0.52
     },
     {
-      "task": "System Response Investigation",
-      "full": "Investigate whether networks, workstations, the central processing unit of the system, or peripheral equipment are responding to a program's instructions.",
-      "weight": 11.6,
-      "auto": 30.0,
-      "aug": 24.3,
-      "success": 31.4,
-      "n": 70
+      "task": "Write end-user manuals",
+      "full": "Write or contribute to instructions or manuals to guide end users.",
+      "weight": 9.2,
+      "auto": 65.4,
+      "aug": 34.6,
+      "pct": 0.01
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

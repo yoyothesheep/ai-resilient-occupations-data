@@ -13,16 +13,14 @@ regenerated separately via score_occupations.py --patch-key-drivers).
 Prints the comma-separated tension code list for the regen step.
 """
 import csv
+from loaders import to_score
 
 CUR = "data/output/ai_resilience_scores.csv"
 V1  = "data/backup/v1/ai_resilience_scores.csv"
 
 
 def score(row):
-    try:
-        return round(float(row["final_ranking"]) * 100)
-    except (ValueError, KeyError):
-        return 0
+    return to_score(row) or 0
 
 
 def is_tension(row):

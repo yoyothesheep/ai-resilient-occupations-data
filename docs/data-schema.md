@@ -108,10 +108,9 @@ One JSON file per occupation (e.g. `data/output/cards/27-3043.00.json`). Written
     {
       "task": "Short label",            // display label
       "full": "Full O*NET task text.",
-      "auto": 47.7,                     // automation_pct; null if no AEI data or n < 100
-      "aug": null,                      // augmentation_pct; null if no AEI data or n < 100
-      "success": 61.5,                  // task_success_pct; null if no AEI data
-      "n": 65                           // AEI conversation count; null if no AEI data
+      "auto": 47.7,                     // automation_pct; null if no AEI data or pct < MIN_PCT_SIGNAL
+      "aug": null,                      // augmentation_pct; null if no AEI data or pct < MIN_PCT_SIGNAL
+      "pct": 0.02                       // onet_task_pct (share of global AEI conversations); null if no AEI data
     }
   ],
 
@@ -221,13 +220,11 @@ Full task-level table. 18,796 rows, one per O*NET task. Used to generate occupat
 | `importance_score` | float | Importance score from O*NET Task Ratings (IM scale, 1–5) |
 | `task_weight` | float | `freq_score × importance_score`; fallback = occupation mean (global mean 16.97) |
 | `weight_source` | string | `rated` or `mean_fallback` |
-| `in_aei` | bool | Whether this task matched an AEI task |
-| `match_type` | string | `exact`, `fuzzy`, or null |
-| `onet_task_count` | int | Number of AEI conversations matching this task (n=) |
-| `onet_task_pct` | float | % of AEI conversations for this occupation matching this task |
-| `automation_pct` | float | % of matching conversations classified as automation |
-| `augmentation_pct` | float | % of matching conversations classified as augmentation |
-| `task_success_pct` | float | % of matching conversations where task was completed |
+| `in_aei` | bool | Whether this task matched an AEI task (exact Task ID join) |
+| `match_type` | string | `id`, or null (not in AEI) |
+| `onet_task_pct` | float | % of all global Claude conversations this task represents |
+| `automation_pct` | float | `collaboration_bucket_automation_pct` |
+| `augmentation_pct` | float | `collaboration_bucket_augmentation_pct` |
 | `ai_autonomy_mean` | float | Mean AI autonomy rating (1–5) across matching conversations |
 | `speedup_factor` | float | `(human_only_time_hours × 60) / human_with_ai_time_minutes` |
 
@@ -245,7 +242,6 @@ Occupation-level AEI rollups. 923 occupations. Weighted means over AEI-matched t
 | `ai_task_coverage_pct` | float | `aei_tasks / total_tasks × 100` |
 | `weighted_automation_pct` | float | Weighted mean automation % across AEI tasks |
 | `weighted_augmentation_pct` | float | Weighted mean augmentation % across AEI tasks |
-| `weighted_task_success_pct` | float | Weighted mean task success % across AEI tasks |
 | `weighted_ai_autonomy_mean` | float | Weighted mean AI autonomy score across AEI tasks |
 | `weighted_speedup_factor` | float | Weighted mean speedup factor across AEI tasks |
 
@@ -296,6 +292,6 @@ One row per from→to career transition.
 ## Notes
 
 - **Low data confidence**: set `low_data_confidence: true` in JSON when `ai_task_coverage_pct < 20%`. The site should display a caveat for these occupations.
-- **Null AEI metrics**: 343 occupations have no AEI coverage at all (not in O*NET v30.2 task match). Their AEI fields will be null in both CSV and JSON.
+- **Null AEI metrics**: occupations with no AEI coverage have null AEI fields in both CSV and JSON. See `docs/AEI_MIGRATION_2026_06_26.md` for the current coverage count and which occupations changed after the 2026-06-26 release migration.
 - **A-scores source**: parsed from `data/output/score_log.txt` during Phase 5 JSON generation. Not currently in the scored CSV.
 - **task_weight fallback**: 845 tasks across 86 occupations had no Task Ratings in O*NET v30.2. These use occupation mean weight (global mean 16.97 for fully-unrated occupations). Tracked via `weight_source = mean_fallback`.

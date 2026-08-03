@@ -4,7 +4,9 @@ Phase 3a: Build full task table with importance weights + AEI coverage.
 
 Joins the complete O*NET task universe (v30.2, 18,796 tasks) with:
 - Task Ratings (freq_score, importance_score → task_weight)
-- AEI mapped data (in_aei flag + all intersection facet metrics)
+- AEI mapped data (in_aei flag + collaboration/timing metrics), joined on
+  (onet_code, task_id) — an exact join, since AEI release 2026-06-26
+  publishes the O*NET Task ID directly. See map_economic_index.py.
 
 task_weight = freq_score × importance_score for rated tasks.
 For 29 occupations missing Task Ratings data (new in v30.2), falls back
@@ -21,7 +23,6 @@ import sys
 
 TASK_STATEMENTS_FILE = Path("data/input/onet_db/Task Statements.xlsx")
 TASK_RATINGS_FILE = Path("data/input/onet_db/Task Ratings.xlsx")
-AEI_TASKS_RAW_FILE = Path("data/intermediate/economic_index_tasks_raw.csv")
 AEI_TASKS_MAPPED_FILE = Path("data/intermediate/economic_index_tasks_mapped.csv")
 OUTPUT_DIR = Path("data/intermediate")
 
@@ -77,15 +78,13 @@ def main():
     print("\nLoading inputs...")
     statements = pd.read_excel(TASK_STATEMENTS_FILE, usecols=['O*NET-SOC Code', 'Task ID', 'Task'])
     statements.columns = ['onet_code', 'task_id', 'task_text']
+    statements['task_id'] = statements['task_id'].astype('Int64').astype('string')
     print(f"  Task statements: {len(statements):,} rows, {statements['onet_code'].nunique():,} occupations")
 
     ratings = pd.read_excel(TASK_RATINGS_FILE)
     print(f"  Task ratings: {len(ratings):,} rows, {ratings['O*NET-SOC Code'].nunique():,} occupations")
 
-    aei_raw = pd.read_csv(AEI_TASKS_RAW_FILE)
-    print(f"  AEI tasks (raw): {len(aei_raw):,} tasks")
-
-    aei_mapped = pd.read_csv(AEI_TASKS_MAPPED_FILE)
+    aei_mapped = pd.read_csv(AEI_TASKS_MAPPED_FILE, dtype={'task_id': 'string'})
     aei_mapped = aei_mapped[aei_mapped['onet_code'].notna() & (aei_mapped['match_type'] != 'unmatched')].copy()
     print(f"  AEI tasks (mapped): {len(aei_mapped):,} rows, {aei_mapped['onet_code'].nunique():,} occupations")
 
@@ -93,6 +92,8 @@ def main():
     print("\nComputing task weights...")
     freq = compute_freq_score(ratings)
     importance = compute_importance_score(ratings)
+    freq['task_id'] = freq['task_id'].astype('Int64').astype('string')
+    importance['task_id'] = importance['task_id'].astype('Int64').astype('string')
 
     # --- Build base task table ---
     print("\nBuilding task table...")
@@ -130,21 +131,14 @@ def main():
 
     # --- Join AEI metrics ---
     print("\nJoining AEI metrics...")
-    aei_mapped['task_lower'] = aei_mapped['task_text'].str.lower().str.strip()
-    match_lookup = aei_mapped[['onet_code', 'task_lower', 'match_type']].drop_duplicates()
+    aei_metrics = aei_mapped[[
+        'onet_code', 'task_id', 'match_type', 'onet_task_pct',
+        'automation_pct', 'augmentation_pct', 'ai_autonomy_mean', 'speedup_factor'
+    ]].drop_duplicates(subset=['onet_code', 'task_id'])
 
-    aei_metrics = aei_raw[[
-        'task_text', 'onet_task_count', 'onet_task_pct',
-        'automation_pct', 'augmentation_pct', 'task_success_pct',
-        'ai_autonomy_mean', 'speedup_factor'
-    ]].copy()
-    aei_metrics['task_lower'] = aei_metrics['task_text'].str.lower().str.strip()
-
-    task_table['task_lower'] = task_table['task_text'].str.lower().str.strip()
-    task_table = task_table.merge(match_lookup, on=['onet_code', 'task_lower'], how='left')
-    task_table = task_table.merge(aei_metrics.drop(columns='task_text'), on='task_lower', how='left')
-    task_table['in_aei'] = task_table['match_type'].notna()
-    task_table = task_table.drop(columns='task_lower')
+    task_table = task_table.merge(aei_metrics, on=['onet_code', 'task_id'], how='left')
+    task_table['in_aei'] = task_table['match_type'].notna().astype(bool)
+    assert task_table['in_aei'].dtype == bool
 
     aei_count = task_table['in_aei'].sum()
     print(f"  Tasks in AEI: {aei_count:,} of {len(task_table):,} ({aei_count/len(task_table)*100:.1f}%)")
@@ -154,9 +148,9 @@ def main():
         'onet_code', 'task_id', 'task_text',
         'freq_score', 'importance_score', 'task_weight', 'weight_source',
         'in_aei', 'match_type',
-        'onet_task_count', 'onet_task_pct',
+        'onet_task_pct',
         'automation_pct', 'augmentation_pct',
-        'task_success_pct', 'ai_autonomy_mean', 'speedup_factor'
+        'ai_autonomy_mean', 'speedup_factor'
     ]
     task_table = task_table[col_order]
     task_table_path = OUTPUT_DIR / "onet_economic_index_task_table.csv"
@@ -180,7 +174,6 @@ def main():
             'onet_code': onet_code,
             'weighted_automation_pct': weighted_mean(group, 'automation_pct'),
             'weighted_augmentation_pct': weighted_mean(group, 'augmentation_pct'),
-            'weighted_task_success_pct': weighted_mean(group, 'task_success_pct'),
             'weighted_ai_autonomy_mean': weighted_mean(group, 'ai_autonomy_mean'),
             'weighted_speedup_factor': weighted_mean(group, 'speedup_factor'),
         })
@@ -219,10 +212,9 @@ def main():
             ws = task_table[task_table['onet_code']==code]['weight_source'].iloc[0]
             auto = f"{r['weighted_automation_pct']:.0f}%" if pd.notna(r['weighted_automation_pct']) else 'n/a'
             aug  = f"{r['weighted_augmentation_pct']:.0f}%" if pd.notna(r['weighted_augmentation_pct']) else 'n/a'
-            succ = f"{r['weighted_task_success_pct']:.0f}%" if pd.notna(r['weighted_task_success_pct']) else 'n/a'
             print(f"  {label} ({code}) [{ws}]: "
                   f"{int(r['aei_tasks'])}/{int(r['total_tasks'])} tasks={r['ai_task_coverage_pct']:.1f}%  "
-                  f"auto={auto}  aug={aug}  success={succ}")
+                  f"auto={auto}  aug={aug}")
         else:
             print(f"  {label} ({code}): NOT FOUND")
 

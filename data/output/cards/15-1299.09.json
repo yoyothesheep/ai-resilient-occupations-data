@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.09",
   "title": "IT Project Manager",
-  "score": 42,
+  "score": 43,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -19,49 +19,44 @@
   "keyDrivers": "IT project managers succeed primarily through navigating complex stakeholder relationships, managing competing priorities, and keeping diverse teams aligned-skills that are deeply human and context-dependent. Their value comes from understanding specific organizational dynamics, politics, and histories that AI cannot observe. While AI will automate much of their scheduling, reporting, and status tracking, the lack of physical presence requirements and legal accountability means the role has some vulnerability as AI project management tools grow more capable.",
   "taskData": [
     {
+      "task": "Review/approve plan changes",
+      "full": "Initiate, review, or approve modifications to project plans.",
+      "weight": 16.6,
+      "auto": 39.8,
+      "aug": 60.2,
+      "pct": 0.02
+    },
+    {
       "task": "Develop/update project plans",
       "full": "Develop or update project plans for information technology projects including information such as project objectives, technologies, systems, information specifications, schedules, funding, and staffing.",
       "weight": 15.8,
-      "auto": 43.8,
-      "aug": null,
-      "success": 66.2,
-      "n": 130
+      "auto": 71.2,
+      "aug": 28.9,
+      "pct": 0.03
     },
     {
       "task": "Prepare status reports",
       "full": "Prepare project status reports by collecting, analyzing, and summarizing information and trends.",
       "weight": 15.6,
-      "auto": 37.5,
-      "aug": null,
-      "success": 67.5,
-      "n": 323
+      "auto": 67.1,
+      "aug": 32.9,
+      "pct": 0.02
+    },
+    {
+      "task": "Develop project work breakdown",
+      "full": "Develop and manage work breakdown structure (WBS) of information technology projects.",
+      "weight": 14.7,
+      "auto": 58.0,
+      "aug": 42.0,
+      "pct": 0.01
     },
     {
       "task": "Resolve project problems",
       "full": "Confer with project personnel to identify and resolve problems.",
       "weight": 21.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 17
-    },
-    {
-      "task": "Coordinate project personnel",
-      "full": "Direct or coordinate activities of project personnel.",
-      "weight": 19.7,
-      "auto": null,
-      "aug": null,
-      "success": 74.1,
-      "n": 27
-    },
-    {
-      "task": "Track milestones/deliverables",
-      "full": "Monitor or track project milestones and deliverables.",
-      "weight": 18.8,
-      "auto": 42.9,
-      "aug": null,
-      "success": null,
-      "n": 35
+      "auto": 95.0,
+      "aug": 5.0,
+      "pct": 0.0
     },
     {
       "task": "Facilitate project meetings",
@@ -69,8 +64,7 @@
       "weight": 20.6,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Manage budget/schedule/scope",
@@ -78,26 +72,23 @@
       "weight": 20.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Review/approve plan changes",
-      "full": "Initiate, review, or approve modifications to project plans.",
-      "weight": 16.6,
+      "task": "Coordinate project personnel",
+      "full": "Direct or coordinate activities of project personnel.",
+      "weight": 19.7,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 15
+      "pct": null
     },
     {
-      "task": "Cost-Benefit Implementation Planning",
-      "full": "Develop implementation plans that include analyses such as cost-benefit or return on investment (ROI).",
-      "weight": 11.9,
-      "auto": 39.2,
-      "aug": null,
-      "success": 56.8,
-      "n": 74
+      "task": "Track milestones/deliverables",
+      "full": "Monitor or track project milestones and deliverables.",
+      "weight": 18.8,
+      "auto": 100.0,
+      "aug": 0.0,
+      "pct": 0.0
     },
     {
       "task": "Assess customer needs",
@@ -105,8 +96,7 @@
       "weight": 15.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -430,7 +420,7 @@
     }
   ],
   "ai_category": "Will Evolve",
-  "exposure_filter": "3.6",
+  "exposure_filter": "3.4",
   "necessity_filter": "2.16",
   "elasticity_filter": "3"
 }

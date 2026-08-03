@@ -164,17 +164,15 @@ def build_task_row(task: dict) -> str:
     full = escape_tsx(task.get("full", task.get("task", "")))
     auto = task.get("auto")
     aug = task.get("aug")
-    success = task.get("success")
-    n = task.get("n")
+    pct = task.get("pct")
 
     auto_s = str(auto) if auto is not None else "null"
     aug_s = str(aug) if aug is not None else "null"
-    success_s = str(success) if success is not None else "null"
-    n_s = str(int(n)) if n is not None else "null"
+    pct_s = str(pct) if pct is not None else "null"
 
     return (
         f'    {{ task: "{task_label}", full: "{full}", '
-        f'auto: {auto_s}, aug: {aug_s}, success: {success_s}, n: {n_s} }}'
+        f'auto: {auto_s}, aug: {aug_s}, pct: {pct_s} }}'
     )
 
 

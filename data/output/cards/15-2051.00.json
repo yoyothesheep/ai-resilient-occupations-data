@@ -1,7 +1,7 @@
 {
   "onet_code": "15-2051.00",
   "title": "Data Scientists",
-  "score": 58,
+  "score": 54,
   "salary": "$112,590",
   "openings": "23,400",
   "growth": "+34%",
@@ -17,10 +17,73 @@
       "task": "Analyze large datasets",
       "full": "Analyze, manipulate, or process large sets of data using statistical software.",
       "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 50.0,
+      "aug": 50.0,
+      "pct": 0.03
+    },
+    {
+      "task": "Raw Data Cleaning and Manipulation",
+      "full": "Clean and manipulate raw data using statistical software.",
+      "weight": 17.0,
+      "auto": 58.6,
+      "aug": 41.4,
+      "pct": 0.02
+    },
+    {
+      "task": "Visualize analysis results",
+      "full": "Create graphs, charts, or other visualizations to convey the results of data analysis using specialized software.",
+      "weight": 17.0,
+      "auto": 42.6,
+      "aug": 57.4,
+      "pct": 0.36
+    },
+    {
+      "task": "Identify trends/relationships",
+      "full": "Identify relationships and trends or any factors that could affect the results of research.",
+      "weight": 17.0,
+      "auto": 34.6,
+      "aug": 65.4,
+      "pct": 0.01
+    },
+    {
+      "task": "Solve business problems with data",
+      "full": "Identify solutions to business problems, such as budgeting, staffing, and marketing decisions, using the results of data analysis.",
+      "weight": 17.0,
+      "auto": 61.4,
+      "aug": 38.6,
+      "pct": 0.02
+    },
+    {
+      "task": "Propose math-based solutions",
+      "full": "Propose solutions in engineering, the sciences, and other fields using mathematical theories and techniques.",
+      "weight": 17.0,
+      "auto": 52.3,
+      "aug": 47.7,
+      "pct": 0.04
+    },
+    {
+      "task": "Recommend data-driven solutions",
+      "full": "Recommend data-driven solutions to key stakeholders.",
+      "weight": 17.0,
+      "auto": 30.4,
+      "aug": 69.6,
+      "pct": 0.01
+    },
+    {
+      "task": "Validate predictive models",
+      "full": "Test, validate, and reformulate models to ensure accurate prediction of outcomes of interest.",
+      "weight": 17.0,
+      "auto": 44.9,
+      "aug": 55.1,
+      "pct": 0.01
+    },
+    {
+      "task": "Write analysis functions/apps",
+      "full": "Write new functions or applications in programming languages to conduct analyses.",
+      "weight": 17.0,
+      "auto": 58.4,
+      "aug": 41.6,
+      "pct": 0.12
     },
     {
       "task": "Apply feature selection algorithms",
@@ -28,80 +91,7 @@
       "weight": 17.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Apply sampling techniques",
-      "full": "Apply sampling techniques to determine groups to be surveyed or use complete enumeration methods.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Raw Data Cleaning and Manipulation",
-      "full": "Clean and manipulate raw data using statistical software.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Compare model performance",
-      "full": "Compare models using statistical performance metrics, such as loss functions or proportion of explained variance.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Visualize analysis results",
-      "full": "Create graphs, charts, or other visualizations to convey the results of data analysis using specialized software.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Present analysis findings",
-      "full": "Deliver oral or written presentations of the results of mathematical modeling and data analysis to management or other end users.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Design data collection instruments",
-      "full": "Design surveys, opinion polls, or other instruments to collect data.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Identify problems for analysis",
-      "full": "Identify business problems or management objectives that can be addressed through data analysis.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Identify trends/relationships",
-      "full": "Identify relationships and trends or any factors that could affect the results of research.",
-      "weight": 17.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "low_data_confidence": true,
@@ -408,8 +398,8 @@
       "answer": "The clearest shift is toward experiment design, causal reasoning, and production ML, which means skills like A/B testing rigor, MLOps tooling, and model monitoring are increasingly valuable alongside statistical modeling. Strong communication skills, the ability to explain model limitations and uncertainty to non-technical stakeholders, are consistently cited as differentiators in the GitHub Octoverse and LinkedIn data. Python proficiency with the scikit-learn, pandas, and PyTorch stack is baseline; specialization in a domain such as healthcare, finance, or climate science is what gets senior candidates to the top of the range."
     }
   ],
-  "ai_category": "Less Immediate Change",
-  "exposure_filter": "2.8",
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.6",
   "necessity_filter": "1.6",
   "elasticity_filter": "5"
 }

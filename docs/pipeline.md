@@ -93,16 +93,14 @@ pytest scripts/test_data_integrity.py -m network -v               # + live URL v
 | `task_weight` | `freq_score × importance_score` if rated; occupation mean rated weight if unrated. Never null. |
 | `weight_source` | `rated` or `mean_fallback` |
 | `in_aei` | Whether task appears in AEI observed data |
-| `match_type` | `exact`, `fuzzy`, or null (not in AEI) |
-| `onet_task_count` | Claude conversations involving this task (global, 1 week) |
-| `onet_task_pct` | % of all Claude conversations this task represents |
-| `automation_pct` | % of classifiable usage showing automation patterns (directive + feedback_loop) |
-| `augmentation_pct` | % showing augmentation patterns (learning + task_iteration + validation) |
-| `task_success_pct` | % of conversations where AI successfully completed the task |
+| `match_type` | `id` (exact Task ID match), or null (not in AEI) |
+| `onet_task_pct` | % of all global Claude conversations this task represents (May 2026) |
+| `automation_pct` | `collaboration_bucket_automation_pct` — % of classifiable usage in the automation bucket |
+| `augmentation_pct` | `collaboration_bucket_augmentation_pct` — % in the augmentation bucket |
 | `ai_autonomy_mean` | Mean AI autonomy score 1–5 (higher = more delegation) |
-| `speedup_factor` | `(human_only_time_hours × 60) / human_with_ai_time_minutes`. Median ~11.5x globally. **Note:** human_only_time is in hours, human_with_ai_time is in minutes — confirmed in aei_v4_appendix.pdf. |
+| `speedup_factor` | `(human_only_time_hours × 60) / human_with_ai_time_minutes`. **Note:** human_only_time is in hours, human_with_ai_time is in minutes. |
 
-**Evidence strength:** Weight recommendation confidence by `onet_task_count`. Tasks with <100 conversations are weak signal; >1,000 are strong.
+**Evidence strength:** Weight recommendation confidence by `onet_task_pct`. `MIN_PCT_SIGNAL = 0.01` (defined in `scripts/loaders.py`) is the minimum for a task to carry usage signal — a bit-for-bit continuation of the pre-2026-06-26 `onet_task_count >= 100` gate, since `onet_task_pct == onet_task_count / 10,000` exactly in that release. No task_success or conversation-count metric exists in release 2026-06-26 — see "AEI Background" below.
 
 #### Occupation metrics schema (`onet_economic_index_metrics.csv`)
 
@@ -115,17 +113,16 @@ All weighted metrics use `sum(task_weight × metric) / sum(task_weight)` over AE
 | `ai_task_coverage_pct` | `aei_tasks / total_tasks × 100` | Low = less signal confidence; don't overstate risk |
 | `weighted_automation_pct` | Weighted mean automation % | High → downward pressure on resilience score |
 | `weighted_augmentation_pct` | Weighted mean augmentation % | High → raise A10 (Manages/Directs AI) |
-| `weighted_task_success_pct` | Weighted mean AI success rate | High → lower A3 (Novel Judgment) |
 | `weighted_ai_autonomy_mean` | Weighted mean autonomy score (1–5) | High → raise A10; AI operates independently |
 | `weighted_speedup_factor` | Weighted mean speedup factor | Context for next steps narrative — magnitude of productivity shift |
 
 #### AEI extraction audit findings
 
-**speedup_factor:** Original script had a unit mismatch — `human_only_time` is in hours, `human_with_ai_time` in minutes. Fixed formula: `(hours × 60) / minutes`. Corrected median = 11.5x (range 2.2x–103x), matching README's stated 9–12x range.
+**speedup_factor:** `human_only_time` is in hours, `human_with_ai_time` in minutes. Formula: `(hours × 60) / minutes`.
 
-**Task mapping:** 2,917/3,168 tasks matched (92.1%). 251 unmatched due to O*NET version drift — AEI was built against a pre-v30.2 version. Unmatched tasks include high-signal ones (e.g. "develop instructional materials" = 10,035 conversations). Fuzzy match threshold = 95; spot-checked and sound.
+**Task mapping (release 2026-06-26):** AEI now publishes `node_external_id` = the O*NET numeric Task ID directly at the task hierarchy level, so mapping is an exact join on Task ID — no fuzzy text matching. Match rate: 2,713/2,713 (100%). This is a **strict** join: a Task ID identifies an (occupation, task) pair, not a task text, so when two occupations share identical task text under different Task IDs, only the occupation AEI published under is matched — no propagation to sibling Task IDs. This is a deliberate choice (see "AEI Background" below), not a limitation to work around.
 
-**automation_pct global average:** Our task-level unweighted avg = 37.9%; Anthropic's stated 43% is conversation-weighted (high-volume software tasks have higher automation rates). Expected difference — use task-level averages consistently.
+Migrating from the prior release (`release_2026_03_24`, fuzzy text matching) changed AEI coverage for a meaningful share of occupations — see `docs/AEI_MIGRATION_2026_06_26.md` for the full before/after report (task coverage deltas, A11/score distribution shifts, top movers).
 
 ### Stage 4 — Build Career Clusters (Track B)
 **Skill:** `.claude/skills/career-clusters/SKILL.md`  
@@ -218,15 +215,15 @@ Writes `src/data/industries/<slug>.ts` + `app/industry/<slug>/page.tsx`. Descrip
 
 ## AEI Background
 
-The **Anthropic Economic Index (AEI)** maps anonymized Claude usage to 3,170 O*NET task statements, showing which tasks AI is helping with, how often, and whether in automation or augmentation mode (43%/57% global split).
+The **Anthropic Economic Index (AEI)** maps anonymized Claude usage to O*NET task statements, showing which tasks AI is helping with, how often, and whether in automation or augmentation mode.
 
-AEI tasks are verbatim O*NET task statements — enabling near-exact string matching (92.1% match rate). 251 tasks unmatched due to O*NET version drift (AEI uses pre-v30.2 wording).
+**Release 2026-06-26 schema change:** AEI now publishes `node_external_id`, which at the task hierarchy level is the O*NET numeric **Task ID** — enabling an exact join instead of the prior fuzzy text match. This is a strict join: a Task ID identifies an *(occupation, task)* pair, not a task text, so when two occupations share identical task text under different Task IDs (398 such texts exist), only the occupation AEI published under is matched — no propagation to occupations sharing the text. We deliberately take AEI data at face value rather than reconstructing the old fan-out. This shifts per-occupation AEI coverage (down for occupations that relied on shared-text fan-out, up for the 251 tasks previously lost to O*NET version drift); see `docs/AEI_MIGRATION_2026_06_26.md` for the full before/after.
+
+The release also dropped `task_success` (no equivalent metric exists) and the raw conversation-count metric — only `onet_task_pct` (share of global conversations) remains. `automation_pct` / `augmentation_pct` now come directly from `collaboration_bucket_automation_pct` / `collaboration_bucket_augmentation_pct`, replacing the prior five-pattern manual sum.
+
+Two monthly periods are published per release (currently April and May 2026); the pipeline uses **May only** (`PERIOD` in `scripts/extract_economic_index.py`).
 
 **Important caveat:** AEI tracks which tasks appear in Claude conversations, not which occupations use Claude. Interpret as: *how AI-integrated are the tasks that define this occupation* — not *how much do workers use AI*.
-
-Automation vs. augmentation classification:
-- **Automation** — `directive` + `feedback loop` patterns: AI does the task
-- **Augmentation** — `learning` + `task iteration` + `validation` patterns: human in loop
 
 ---
 
@@ -277,6 +274,13 @@ Current: 2024–2034 cycle. Next: 2025–2035 (expected late 2026).
 Download from [BLS](https://www.bls.gov/emp/tables/occupational-projections-and-characteristics.htm) → replace `data/input/Employment Projections.csv` keeping column names identical → rerun Track A.
 
 ### Anthropic Economic Index
-Current: 2026-02-05 to 2026-02-12 (release 2026-03-24).  
+Current: May 2026 (release 2026-06-26; two monthly periods published, April and May — we use May only).  
 Source: [Hugging Face — Anthropic/EconomicIndex](https://huggingface.co/datasets/Anthropic/EconomicIndex)  
-On new release: download CSV → save to `data/input/anthropic/` → update `AEI_FILE` in `scripts/build_task_table.py` → rerun Stage 3 → rerun Stage 6.
+On new release:
+1. Download CSV → save to `data/input/anthropic/`
+2. Update `RELEASE` and `FILES_TO_DOWNLOAD` in `scripts/download_economic_index.py`
+3. Update `INPUT_FILE` and `PERIOD` in `scripts/extract_economic_index.py`
+4. Rerun Stage 3 (`extract_economic_index.py` → `map_economic_index.py` → `build_task_table.py` → `enrich_with_economic_index.py` → `generate_a11_scores.py`)
+5. Rerun `score_occupations.py --rerank`
+6. Run `scripts/compare_aei_migration.py <backup_dir>` and review the before/after report before regenerating cards — see "AEI Background" above
+7. Rerun Stage 7a (`generate_next_steps.py --section tasks`) and Stage 8 (`generate_career_pages.py`)

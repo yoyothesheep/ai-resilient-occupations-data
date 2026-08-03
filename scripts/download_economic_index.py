@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """
-Download Anthropic Economic Index 2026-03-24 release data.
+Download Anthropic Economic Index 2026-06-26 release data.
 
 Source: https://huggingface.co/datasets/Anthropic/EconomicIndex
-Release: 2026-03-24
+Release: 2026-06-26
+
+Note: this release moved the data files from `{RELEASE}/data/intermediate/`
+to `{RELEASE}/data/` and renamed them from `aei_raw_*` to `aei_*`.
 """
 
 import os
@@ -13,12 +16,12 @@ import urllib.request
 
 # Configuration
 REPO_ID = "Anthropic/EconomicIndex"
-RELEASE = "release_2026_03_24"
+RELEASE = "release_2026_06_26"
 DATA_DIR = Path(__file__).parent.parent / "data" / "input" / "anthropic"
 
 # Files to download
 FILES_TO_DOWNLOAD = [
-    "aei_raw_claude_ai_2026-02-05_to_2026-02-12.csv",
+    "aei_claude_ai_2026-06-26.csv",
 ]
 
 def download_file(repo_id, filename, local_path):
@@ -51,7 +54,7 @@ def download_economic_index():
     print("=" * 70)
 
     for filename in FILES_TO_DOWNLOAD:
-        filepath = f"{RELEASE}/data/intermediate/{filename}"
+        filepath = f"{RELEASE}/data/{filename}"
         local_path = DATA_DIR / filename
 
         # Skip if already exists
@@ -70,7 +73,7 @@ def download_economic_index():
     print("Download complete!")
 
     # List downloaded files
-    files = list(DATA_DIR.glob("aei_raw*.csv"))
+    files = list(DATA_DIR.glob("aei_*.csv"))
     print(f"\nFiles in {DATA_DIR}:")
     for f in sorted(files):
         size_mb = f.stat().st_size / (1024 * 1024)

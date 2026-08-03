@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1212.00",
   "title": "Information Security Analysts",
-  "score": 54,
+  "score": 56,
   "salary": "$124,910",
   "openings": "16,000",
   "growth": "+28%",
@@ -18,85 +18,60 @@
   "keyDrivers": "Security analysts face an ever-evolving landscape of threats where attackers constantly find novel ways to breach systems-making genuine human judgment in ambiguous, high-stakes situations essential. They spend enormous amounts of time on alert triage and log review that AI will compress, letting them focus on the harder investigative and strategic work. As AI expands the digital attack surface and creates new threat vectors, demand for skilled humans who can direct and validate AI-powered security tools will grow substantially.",
   "taskData": [
     {
-      "task": "Encrypt data/configure firewalls",
-      "full": "Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.",
-      "weight": 16.0,
-      "auto": 15.3,
-      "aug": 59.5,
-      "success": 86.5,
-      "n": 111
-    },
-    {
-      "task": "Develop data safeguard plans",
-      "full": "Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs.",
-      "weight": 16.8,
-      "auto": 30.2,
-      "aug": 38.1,
-      "success": 77.8,
-      "n": 63
-    },
-    {
-      "task": "Perform risk assessments/tests",
-      "full": "Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.",
-      "weight": 13.5,
-      "auto": 18.2,
-      "aug": 48.2,
-      "success": 73.9,
-      "n": 280
-    },
-    {
       "task": "Monitor virus/threat reports",
       "full": "Monitor current reports of computer viruses to determine when to update virus protection systems.",
       "weight": 18.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 20
+      "pct": null
     },
     {
-      "task": "Document security policies",
-      "full": "Document computer security and emergency measures policies, procedures, and tests.",
-      "weight": 13.0,
-      "auto": 35.5,
-      "aug": 24.6,
-      "success": 67.4,
-      "n": 561
+      "task": "Develop data safeguard plans",
+      "full": "Develop plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure and to meet emergency data processing needs.",
+      "weight": 16.8,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Modify security files/access",
+      "full": "Modify computer security files to incorporate new software, correct errors, or change individual access status.",
+      "weight": 16.1,
+      "auto": 90.0,
+      "aug": 10.0,
+      "pct": 0.0
+    },
+    {
+      "task": "Encrypt data/configure firewalls",
+      "full": "Encrypt data transmissions and erect firewalls to conceal confidential information as it is being transmitted and to keep out tainted digital transfers.",
+      "weight": 16.0,
+      "auto": 86.7,
+      "aug": 13.3,
+      "pct": 0.0
     },
     {
       "task": "Regulate data file access",
       "full": "Monitor use of data files and regulate access to safeguard information in computer files.",
       "weight": 16.0,
       "auto": null,
-      "aug": 50.0,
-      "success": 78.6,
-      "n": 42
-    },
-    {
-      "task": "Coordinate system implementation",
-      "full": "Coordinate implementation of computer system plan with establishment personnel and outside vendors.",
-      "weight": 12.4,
-      "auto": 30.8,
-      "aug": 24.6,
-      "success": 73.5,
-      "n": 650
-    },
-    {
-      "task": "Modify security files/access",
-      "full": "Modify computer security files to incorporate new software, correct errors, or change individual access status.",
-      "weight": 16.1,
-      "auto": null,
       "aug": null,
-      "success": 70.4,
-      "n": 27
+      "pct": null
     },
     {
       "task": "Confer on security issues",
       "full": "Confer with users to discuss issues such as computer data access needs, security violations, and programming changes.",
       "weight": 15.9,
+      "auto": 79.3,
+      "aug": 20.7,
+      "pct": 0.0
+    },
+    {
+      "task": "Perform risk assessments/tests",
+      "full": "Perform risk assessments and execute tests of data processing system to ensure functioning of data processing activities and security measures.",
+      "weight": 13.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Review/address security violations",
@@ -104,8 +79,23 @@
       "weight": 13.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Document security policies",
+      "full": "Document computer security and emergency measures policies, procedures, and tests.",
+      "weight": 13.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Coordinate system implementation",
+      "full": "Coordinate implementation of computer system plan with establishment personnel and outside vendors.",
+      "weight": 12.4,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -454,7 +444,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.6",
+  "exposure_filter": "3.2",
   "necessity_filter": "2.3",
   "elasticity_filter": "4"
 }

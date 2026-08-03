@@ -765,6 +765,9 @@ def patch_key_drivers(codes_filter: set | None = None, skip_existing: bool = Fal
 
 if __name__ == "__main__":
     import sys
+    if "-h" in sys.argv or "--help" in sys.argv:
+        print(__doc__)
+        exit(0)
     if "--rerank" in sys.argv:
         success = rerank()
     elif "--patch-key-drivers" in sys.argv:

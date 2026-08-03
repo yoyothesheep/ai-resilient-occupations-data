@@ -79,55 +79,49 @@
       "task": "Direct marketing activities",
       "full": "Formulate, direct, or coordinate marketing activities or policies to promote products or services, working with advertising or promotion managers.",
       "weight": 19.7,
-      "auto": 37.9,
-      "aug": 17.1,
-      "success": 66.7,
-      "n": 369
+      "auto": 34.9,
+      "aug": 65.1,
+      "pct": 0.01
     },
     {
       "task": "Develop marketing strategy",
       "full": "Identify, develop, or evaluate marketing strategy, based on knowledge of establishment objectives, market characteristics, and cost and markup factors.",
       "weight": 18.1,
-      "auto": 25.1,
-      "aug": 17.2,
-      "success": 75.6,
-      "n": 546
-    },
-    {
-      "task": "Develop pricing strategies",
-      "full": "Develop pricing strategies, balancing firm objectives and customer satisfaction.",
-      "weight": 12.7,
-      "auto": 20.2,
-      "aug": 13.3,
-      "success": 73.4,
-      "n": 173
-    },
-    {
-      "task": "Compile product descriptions",
-      "full": "Compile lists describing product or service offerings.",
-      "weight": 12.6,
-      "auto": 60.6,
-      "aug": null,
-      "success": 78.8,
-      "n": 33
+      "auto": 37.6,
+      "aug": 62.4,
+      "pct": 0.35
     },
     {
       "task": "Evaluate financial aspects",
       "full": "Evaluate the financial aspects of product development, such as budgets, expenditures, research and development appropriations, or return-on-investment and profit-loss projections.",
       "weight": 13.8,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 29.9,
+      "aug": 70.1,
+      "pct": 0.01
     },
     {
-      "task": "Forecast sales/market trends",
-      "full": "Use sales forecasting or strategic planning to ensure the sale and profitability of products, lines, or services, analyzing business developments and monitoring market trends.",
-      "weight": 11.1,
-      "auto": 36.7,
+      "task": "Compile product descriptions",
+      "full": "Compile lists describing product or service offerings.",
+      "weight": 12.6,
+      "auto": 56.7,
+      "aug": 43.3,
+      "pct": 0.01
+    },
+    {
+      "task": "Initiate market research",
+      "full": "Initiate market research studies, or analyze their findings.",
+      "weight": 9.0,
+      "auto": 51.0,
+      "aug": 49.0,
+      "pct": 0.02
+    },
+    {
+      "task": "Develop pricing strategies",
+      "full": "Develop pricing strategies, balancing firm objectives and customer satisfaction.",
+      "weight": 12.7,
+      "auto": null,
       "aug": null,
-      "success": 63.3,
-      "n": 49
+      "pct": null
     },
     {
       "task": "Manage marketing staff",
@@ -135,8 +129,15 @@
       "weight": 12.3,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Advise business or other groups on local",
+      "full": "Advise business or other groups on local, national, or international factors affecting the buying or selling of products or services.",
+      "weight": 8.1,
+      "auto": 36.6,
+      "aug": 63.4,
+      "pct": 0.12
     },
     {
       "task": "Advise on product design",
@@ -144,26 +145,15 @@
       "weight": 12.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Advise business or other groups on local",
-      "full": "Advise business or other groups on local, national, or international factors affecting the buying or selling of products or services.",
-      "weight": 8.1,
-      "auto": 28.3,
-      "aug": 45.3,
-      "success": 67.9,
-      "n": 53
-    },
-    {
-      "task": "Coordinate trade shows/promotions",
-      "full": "Coordinate or participate in promotional activities or trade shows, working with developers, advertisers, or production managers, to market products or services.",
-      "weight": 9.7,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Forecast sales/market trends",
+      "full": "Use sales forecasting or strategic planning to ensure the sale and profitability of products, lines, or services, analyzing business developments and monitoring market trends.",
+      "weight": 11.1,
+      "auto": 39.2,
+      "aug": 60.8,
+      "pct": 0.0
     }
   ],
   "careerCluster": [

@@ -232,37 +232,17 @@
       "task": "Manage customer relationships",
       "full": "Establish and maintain relationships with individual or business customers or provide assistance with problems these customers may encounter.",
       "weight": 22.3,
-      "auto": null,
-      "aug": null,
-      "success": 84.6,
-      "n": 52
+      "auto": 59.3,
+      "aug": 40.7,
+      "pct": 0.01
     },
     {
-      "task": "Analyze financial status",
-      "full": "Develop or analyze information to assess the current or future financial status of firms.",
-      "weight": 18.5,
-      "auto": 41.7,
-      "aug": 28.6,
-      "success": 54.8,
-      "n": 683
-    },
-    {
-      "task": "Process loan applications",
-      "full": "Examine, evaluate, or process loan applications.",
-      "weight": 18.1,
-      "auto": 44.7,
-      "aug": null,
-      "success": 66.0,
-      "n": 47
-    },
-    {
-      "task": "Oversee cash flow",
-      "full": "Oversee the flow of cash or financial instruments.",
-      "weight": 19.2,
-      "auto": null,
-      "aug": null,
-      "success": 72.4,
-      "n": 29
+      "task": "Review collection reports",
+      "full": "Review collection reports to determine the status of collections and the amounts of outstanding balances.",
+      "weight": 13.8,
+      "auto": 64.9,
+      "aug": 35.1,
+      "pct": 0.01
     },
     {
       "task": "Direct branch/department operations",
@@ -270,8 +250,55 @@
       "weight": 19.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Oversee cash flow",
+      "full": "Oversee the flow of cash or financial instruments.",
+      "weight": 19.2,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Analyze financial status",
+      "full": "Develop or analyze information to assess the current or future financial status of firms.",
+      "weight": 18.5,
+      "auto": 63.2,
+      "aug": 36.8,
+      "pct": 0.0
+    },
+    {
+      "task": "Financial Systems Evaluation and Recommendations",
+      "full": "Evaluate financial reporting systems, accounting or collection procedures, or investment activities and make recommendations for changes to procedures, operating systems, budgets, or other financial control functions.",
+      "weight": 12.3,
+      "auto": 41.0,
+      "aug": 59.0,
+      "pct": 0.01
+    },
+    {
+      "task": "Process loan applications",
+      "full": "Examine, evaluate, or process loan applications.",
+      "weight": 18.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Prepare risk reports",
+      "full": "Prepare operational or risk reports for management analysis.",
+      "weight": 11.5,
+      "auto": 83.6,
+      "aug": 16.4,
+      "pct": 0.01
+    },
+    {
+      "task": "Evaluate costs for budgets",
+      "full": "Evaluate data pertaining to costs to plan budgets.",
+      "weight": 10.4,
+      "auto": 35.2,
+      "aug": 64.8,
+      "pct": 0.06
     },
     {
       "task": "Approve/reject credit decisions",
@@ -279,44 +306,7 @@
       "weight": 15.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Develop new business",
-      "full": "Network within communities to find and attract new business.",
-      "weight": 14.5,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Regulatory Financial Report Preparation",
-      "full": "Prepare financial or regulatory reports required by laws, regulations, or boards of directors.",
-      "weight": 12.7,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 25
-    },
-    {
-      "task": "Financial Systems Evaluation and Recommendations",
-      "full": "Evaluate financial reporting systems, accounting or collection procedures, or investment activities and make recommendations for changes to procedures, operating systems, budgets, or other financial control functions.",
-      "weight": 12.3,
-      "auto": null,
-      "aug": null,
-      "success": 50.0,
-      "n": 32
-    },
-    {
-      "task": "Establish asset controls",
-      "full": "Establish procedures for custody or control of assets, records, loan collateral, or securities to ensure safekeeping.",
-      "weight": 14.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "keyDrivers": "Financial managers make high-stakes strategic decisions that depend on deep knowledge of their organization's people, history, and risk appetite-context that AI can't easily replicate. They spend significant time navigating competing priorities across departments and building consensus with leadership, which is inherently human work. AI will supercharge their analytical capabilities and free them from routine reporting, making each manager more effective rather than replaceable.",

@@ -1,7 +1,7 @@
 {
   "onet_code": "41-4012.00",
   "title": "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",
-  "score": 39,
+  "score": 40,
   "salary": "$66,780",
   "openings": "114,800",
   "growth": "0%",
@@ -21,73 +21,41 @@
       "task": "Answer product/pricing questions",
       "full": "Answer customers' questions about products, prices, availability, product uses, and credit terms.",
       "weight": 23.9,
-      "auto": 40.0,
-      "aug": 42.3,
-      "success": 59.5,
-      "n": 1780
+      "auto": 45.3,
+      "aug": 54.7,
+      "pct": 0.07
     },
     {
       "task": "Recommend products to customers",
       "full": "Recommend products to customers, based on customers' needs and interests.",
       "weight": 23.7,
-      "auto": 38.9,
-      "aug": null,
-      "success": 77.8,
-      "n": 108
-    },
-    {
-      "task": "Monitor market / competitors",
-      "full": "Monitor market conditions, product innovations, and competitors' products, prices, and sales.",
-      "weight": 20.6,
-      "auto": 50.7,
-      "aug": 22.7,
-      "success": 40.0,
-      "n": 75
-    },
-    {
-      "task": "Prepare contracts / order forms",
-      "full": "Prepare sales contracts and order forms.",
-      "weight": 20.4,
-      "auto": 30.0,
-      "aug": null,
-      "success": 80.0,
-      "n": 60
-    },
-    {
-      "task": "Sales Administration and Reporting",
-      "full": "Perform administrative duties, such as preparing sales budgets and reports, keeping sales records, and filing expense account reports.",
-      "weight": 17.2,
-      "auto": 45.7,
-      "aug": null,
-      "success": 73.2,
-      "n": 127
+      "auto": 46.9,
+      "aug": 53.1,
+      "pct": 1.28
     },
     {
       "task": "Quote prices / contract terms",
       "full": "Estimate or quote prices, credit or contract terms, warranties, and delivery dates.",
       "weight": 22.5,
-      "auto": null,
-      "aug": null,
-      "success": 80.8,
-      "n": 26
+      "auto": 50.7,
+      "aug": 49.3,
+      "pct": 0.01
     },
     {
-      "task": "Plan retail displays / promotions",
-      "full": "Plan, assemble, and stock product displays in retail stores, or make recommendations to retailers regarding product displays, promotional programs, and advertising.",
-      "weight": 22.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 17
+      "task": "Resolve post-sale client issues",
+      "full": "Consult with clients after sales or contract signings to resolve problems and to provide ongoing support.",
+      "weight": 19.5,
+      "auto": 61.9,
+      "aug": 38.1,
+      "pct": 0.01
     },
     {
-      "task": "Prospecting New Customers",
-      "full": "Identify prospective customers by using business directories, following leads from existing clients, participating in organizations and clubs, and attending trade shows and conferences.",
-      "weight": 16.0,
-      "auto": 57.8,
-      "aug": null,
-      "success": 57.8,
-      "n": 102
+      "task": "Prepare drawings/estimates/bids",
+      "full": "Prepare drawings, estimates, and bids that meet specific customer needs.",
+      "weight": 19.4,
+      "auto": 29.1,
+      "aug": 70.9,
+      "pct": 0.01
     },
     {
       "task": "Check stock / reorder inventory",
@@ -95,17 +63,39 @@
       "weight": 23.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Product Demonstration and Solicitation",
-      "full": "Contact regular and prospective customers to demonstrate products, explain product features, and solicit orders.",
-      "weight": 18.4,
+      "task": "Plan retail displays / promotions",
+      "full": "Plan, assemble, and stock product displays in retail stores, or make recommendations to retailers regarding product displays, promotional programs, and advertising.",
+      "weight": 22.1,
       "auto": null,
       "aug": null,
-      "success": 83.3,
-      "n": 36
+      "pct": null
+    },
+    {
+      "task": "Monitor market / competitors",
+      "full": "Monitor market conditions, product innovations, and competitors' products, prices, and sales.",
+      "weight": 20.6,
+      "auto": 97.8,
+      "aug": 2.2,
+      "pct": 0.0
+    },
+    {
+      "task": "Negotiate retail product placement",
+      "full": "Negotiate with retail merchants to improve product exposure, such as shelf positioning and advertising.",
+      "weight": 20.6,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Prepare contracts / order forms",
+      "full": "Prepare sales contracts and order forms.",
+      "weight": 20.4,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -382,7 +372,7 @@
     }
   ],
   "ai_category": "Will Evolve",
-  "exposure_filter": "3.8",
+  "exposure_filter": "3.6",
   "necessity_filter": "2.04",
   "elasticity_filter": "3"
 }

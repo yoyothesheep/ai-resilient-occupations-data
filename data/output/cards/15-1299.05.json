@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1299.05",
   "title": "Information Security Engineers",
-  "score": 60,
+  "score": 57,
   "salary": "$108,970",
   "openings": "31,300",
   "growth": "+7%",
@@ -20,13 +20,52 @@
   "keyDrivers": "Security engineers design and build the systems that protect organizations from constantly evolving cyber threats, requiring creative problem-solving in situations that have never been seen before. Their deep knowledge of specific organizational architectures and threat landscapes is hard for AI to replicate. The explosion of AI-powered tools and AI-driven attacks is creating more demand for experts who can architect defenses and oversee automated security systems-making this role a clear beneficiary of AI's rise.",
   "taskData": [
     {
+      "task": "Solve security problems",
+      "full": "Identify or implement solutions to information security problems.",
+      "weight": 16.9,
+      "auto": 71.6,
+      "aug": 28.4,
+      "pct": 0.01
+    },
+    {
+      "task": "Troubleshoot security issues",
+      "full": "Troubleshoot security and network problems.",
+      "weight": 16.7,
+      "auto": 89.6,
+      "aug": 10.4,
+      "pct": 0.01
+    },
+    {
+      "task": "Provide technical support",
+      "full": "Provide technical support to computer users for installation and use of security products.",
+      "weight": 14.6,
+      "auto": 57.3,
+      "aug": 42.7,
+      "pct": 0.05
+    },
+    {
+      "task": "Recommend security enhancements",
+      "full": "Recommend information security enhancements to management.",
+      "weight": 14.1,
+      "auto": 46.9,
+      "aug": 53.1,
+      "pct": 0.01
+    },
+    {
       "task": "Monitor networks for breaches",
       "full": "Coordinate monitoring of networks or systems for security breaches or intrusions.",
       "weight": 20.5,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Build security detection tools",
+      "full": "Develop or implement software tools to assist in the detection, prevention, and analysis of security threats.",
+      "weight": 13.3,
+      "auto": 67.0,
+      "aug": 33.0,
+      "pct": 0.02
     },
     {
       "task": "Assess security controls",
@@ -34,26 +73,15 @@
       "weight": 19.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Solve security problems",
-      "full": "Identify or implement solutions to information security problems.",
-      "weight": 16.9,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Troubleshoot security issues",
-      "full": "Troubleshoot security and network problems.",
-      "weight": 16.7,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Install firewalls/encryption tools",
+      "full": "Develop or install software, such as firewalls and data encryption programs, to protect sensitive information.",
+      "weight": 12.6,
+      "auto": 59.6,
+      "aug": 40.4,
+      "pct": 0.01
     },
     {
       "task": "Scan for vulnerabilities",
@@ -61,53 +89,15 @@
       "weight": 16.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Train staff on security",
       "full": "Train staff on, and oversee the use of, information security standards, policies, and best practices.",
       "weight": 15.5,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Computer File Safeguard Planning",
-      "full": "Oversee development of plans to safeguard computer files against accidental or unauthorized modification, destruction, or disclosure or to meet emergency data processing needs.",
-      "weight": 15.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Run penetration tests",
-      "full": "Identify security system weaknesses, using penetration tests.",
-      "weight": 15.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Provide technical support",
-      "full": "Provide technical support to computer users for installation and use of security products.",
-      "weight": 14.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Oversee risk assessments",
-      "full": "Oversee performance of risk assessment or execution of system tests to ensure the functioning of data processing activities or security measures.",
-      "weight": 14.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 41.9,
+      "aug": 58.1,
+      "pct": 0.0
     }
   ],
   "risks": {
@@ -359,8 +349,8 @@
       "answer": "Cloud security skills, particularly for AWS, Azure, or GCP environments, are now embedded in most senior security engineering job descriptions rather than treated as a specialty. Hands-on experience with penetration testing tools and red team exercises, combined with the ability to write security controls into code, is the profile that reaches staff or principal engineer levels. CISSP is the most recognized credential for senior roles; cloud-specific certs like AWS Security Specialty or CCSP complement it for architects working in cloud-heavy environments."
     }
   ],
-  "ai_category": "Less Immediate Change",
-  "exposure_filter": "2.6",
+  "ai_category": "Grow with AI",
+  "exposure_filter": "3.2",
   "necessity_filter": "2.3",
   "elasticity_filter": "5"
 }

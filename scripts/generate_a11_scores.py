@@ -10,7 +10,7 @@ Outputs: data/intermediate/a11_exposure_scores.csv
 
 import csv
 from pathlib import Path
-from loaders import load_task_table
+from loaders import load_task_table, is_true
 
 OUTPUT_FILE = Path("data/intermediate/a11_exposure_scores.csv")
 
@@ -28,7 +28,7 @@ def main():
             weight = float(task.get("task_weight") or 0.0)
             total_weight += weight
             
-            if task.get("in_aei") == "True":
+            if is_true(task.get("in_aei")):
                 aei_weight += weight
                 
         # Calculate weighted coverage percentage

@@ -1,7 +1,7 @@
 {
   "onet_code": "15-1255.00",
   "title": "Web and Digital Interface Designers",
-  "score": 51,
+  "score": 52,
   "salary": "$98,090",
   "openings": "9,100",
   "growth": "+7%",
@@ -15,94 +15,84 @@
   "keyDrivers": "Web and digital interface design is one of the fields most directly disrupted by AI-tools can already generate layouts, prototypes, and even production-ready code from simple prompts. The work is fully remote, requires no licensing, and while human taste and user empathy still matter, clients are increasingly comfortable with AI-assisted or AI-generated design. Without strong legal protections or physical presence requirements, the typical practitioner in this role faces significant displacement pressure as AI design tools continue to improve rapidly.",
   "taskData": [
     {
-      "task": "Develop e-commerce strategies",
-      "full": "Collaborate with management or users to develop e-commerce strategies and to integrate these strategies with Web sites.",
-      "weight": 17.0,
-      "auto": 27.6,
-      "aug": 35.9,
-      "success": 70.5,
-      "n": 474
-    },
-    {
-      "task": "Design/build/maintain websites",
-      "full": "Design, build, or maintain Web sites, using authoring or scripting languages, content creation tools, management tools, and digital media.",
-      "weight": 17.0,
-      "auto": 42.4,
-      "aug": 5.0,
-      "success": 66.5,
-      "n": 15900
-    },
-    {
       "task": "Develop style guidelines",
       "full": "Develop and document style guidelines for Web site content.",
       "weight": 17.0,
-      "auto": 46.5,
-      "aug": 6.5,
-      "success": 62.6,
-      "n": 430
+      "auto": 36.5,
+      "aug": 63.5,
+      "pct": 0.02
     },
     {
-      "task": "Site Revision Procedures",
-      "full": "Develop or implement procedures for ongoing Web site revision.",
+      "task": "Develop visual design concepts",
+      "full": "Develop new visual design concepts and modify concepts based on stakeholder feedback.",
       "weight": 17.0,
-      "auto": 30.2,
-      "aug": 27.7,
-      "success": 67.6,
-      "n": 1219
-    },
-    {
-      "task": "Interaction Sequence Diagrams",
-      "full": "Develop system interaction or sequence diagrams.",
-      "weight": 17.0,
-      "auto": 34.3,
-      "aug": 8.3,
-      "success": 68.1,
-      "n": 216
+      "auto": 19.0,
+      "aug": 81.0,
+      "pct": 0.39
     },
     {
       "task": "Site Maps and Page Templates",
       "full": "Develop Web site maps, application models, image templates, or page templates that meet project goals, user needs, or industry standards.",
       "weight": 17.0,
-      "auto": 44.3,
-      "aug": 7.3,
-      "success": 62.1,
-      "n": 549
+      "auto": 56.8,
+      "aug": 43.2,
+      "pct": 0.03
     },
     {
-      "task": "Web Technology Continuing Education",
-      "full": "Maintain understanding of current Web technologies or programming practices through continuing education, reading, or participation in professional conferences, workshops, or groups.",
+      "task": "Direct pre-production activities",
+      "full": "Direct and execute pre-production activities, such as creating moodboards or storyboards and establishing a project timeline.",
       "weight": 17.0,
-      "auto": 8.5,
-      "aug": 84.6,
-      "success": 82.3,
-      "n": 915
+      "auto": 38.8,
+      "aug": 61.2,
+      "pct": 0.09
     },
     {
-      "task": "Web Site Specification Documentation",
-      "full": "Provide clear, detailed descriptions of Web site specifications, such as product features, activities, software, communication protocols, programming languages, and operating systems software and hardware.",
+      "task": "Fix testing/feedback issues",
+      "full": "Identify problems uncovered by testing or customer feedback, and correct problems or refer problems to appropriate personnel for correction.",
       "weight": 17.0,
-      "auto": 33.2,
-      "aug": 29.8,
-      "success": 72.5,
-      "n": 265
+      "auto": 87.3,
+      "aug": 12.7,
+      "pct": 0.35
     },
     {
-      "task": "User Email Response Setup",
-      "full": "Respond to user email inquiries, or set up automated systems to send responses.",
+      "task": "Incorporate technical design constraints",
+      "full": "Incorporate technical considerations into Web site design plans, such as budgets, equipment, performance requirements, or legal issues including accessibility and privacy.",
       "weight": 17.0,
-      "auto": 48.3,
+      "auto": 44.1,
+      "aug": 55.9,
+      "pct": 0.01
+    },
+    {
+      "task": "Research innovative UX solutions",
+      "full": "Research and apply innovative solutions for product design, visuals, and user experience to meet the needs of individual Web development projects.",
+      "weight": 17.0,
+      "auto": 41.5,
+      "aug": 58.5,
+      "pct": 0.3
+    },
+    {
+      "task": "Develop e-commerce strategies",
+      "full": "Collaborate with management or users to develop e-commerce strategies and to integrate these strategies with Web sites.",
+      "weight": 17.0,
+      "auto": null,
       "aug": null,
-      "success": 44.1,
-      "n": 118
+      "pct": null
     },
     {
-      "task": "Web Application Code Writing",
-      "full": "Write supporting code for Web applications or Web sites.",
+      "task": "Collaborate with dev teams",
+      "full": "Collaborate with web development professionals, such as front-end or back-end developers, to complete the full scope of Web development projects.",
       "weight": 17.0,
-      "auto": 36.4,
-      "aug": 9.9,
-      "success": 76.0,
-      "n": 4734
+      "auto": 67.9,
+      "aug": 32.1,
+      "pct": 0.0
+    },
+    {
+      "task": "Coordinate with hosting/network staff",
+      "full": "Communicate with network personnel or Web site hosting agencies to address hardware or software issues affecting Web sites.",
+      "weight": 17.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "risks": {
@@ -535,7 +525,7 @@
     }
   ],
   "ai_category": "Grow with AI",
-  "exposure_filter": "3.4",
+  "exposure_filter": "3.2",
   "necessity_filter": "1.47",
   "elasticity_filter": "5"
 }

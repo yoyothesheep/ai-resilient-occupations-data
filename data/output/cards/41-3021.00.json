@@ -1,7 +1,7 @@
 {
   "onet_code": "41-3021.00",
   "title": "Insurance Sales Agents",
-  "score": 48,
+  "score": 50,
   "salary": "$60,370",
   "openings": "47,000",
   "growth": "+4%",
@@ -20,67 +20,36 @@
   "keyDrivers": "People buy insurance from someone they trust, especially for complex policies involving life, business, or major assets. The human relationship and ability to understand a client's unique situation provide real protection against automation. However, simpler insurance products are increasingly sold online without agents, and AI tools can now handle routine quoting and policy comparisons, which puts pressure on the lower end of this profession.",
   "taskData": [
     {
-      "task": "Customize coverage programs",
-      "full": "Customize insurance programs to suit individual customers, often covering a variety of risks.",
-      "weight": 21.6,
-      "auto": 30.3,
-      "aug": 18.2,
-      "success": 65.7,
-      "n": 99
-    },
-    {
-      "task": "Interview/assess client needs",
-      "full": "Interview prospective clients to obtain data about their financial resources and needs, the physical condition of the person or property to be insured, and to discuss any existing coverage.",
-      "weight": 17.6,
-      "auto": 52.7,
-      "aug": 23.7,
-      "success": 63.4,
-      "n": 93
-    },
-    {
-      "task": "Prospect/develop clients",
-      "full": "Seek out new clients and develop clientele by networking to find new customers and generate lists of prospective clients.",
-      "weight": 19.6,
-      "auto": 35.7,
-      "aug": null,
-      "success": 69.0,
-      "n": 42
-    },
-    {
-      "task": "Claims Information Intake",
-      "full": "Confer with clients to obtain and provide information when claims are made on a policy.",
-      "weight": 16.3,
-      "auto": 29.4,
-      "aug": 41.2,
-      "success": 77.6,
-      "n": 85
-    },
-    {
-      "task": "Review/update policies",
-      "full": "Call on policyholders to deliver and explain policy, to analyze insurance program and suggest additions or changes, or to change beneficiaries.",
-      "weight": 18.3,
-      "auto": 44.2,
-      "aug": 34.9,
-      "success": 86.0,
-      "n": 43
-    },
-    {
       "task": "Sell insurance policies",
       "full": "Sell various types of insurance policies to businesses and individuals on behalf of insurance companies, including automobile, fire, life, property, medical and dental insurance, or specialized policies, such as marine, farm/crop, and medical malpractice.",
       "weight": 21.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Customize coverage programs",
+      "full": "Customize insurance programs to suit individual customers, often covering a variety of risks.",
+      "weight": 21.6,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Explain policy features",
       "full": "Explain features, advantages, and disadvantages of various policies to promote sale of insurance plans.",
       "weight": 20.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 33.3,
+      "aug": 66.7,
+      "pct": 0.0
+    },
+    {
+      "task": "Prospect/develop clients",
+      "full": "Seek out new clients and develop clientele by networking to find new customers and generate lists of prospective clients.",
+      "weight": 19.6,
+      "auto": 70.6,
+      "aug": 29.4,
+      "pct": 0.0
     },
     {
       "task": "Handle records/renewals",
@@ -88,17 +57,15 @@
       "weight": 19.1,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Insurance Marketing Strategy",
-      "full": "Develop marketing strategies to compete with other individuals or companies who sell insurance.",
-      "weight": 15.9,
+      "task": "Review/update policies",
+      "full": "Call on policyholders to deliver and explain policy, to analyze insurance program and suggest additions or changes, or to change beneficiaries.",
+      "weight": 18.3,
       "auto": null,
       "aug": null,
-      "success": 77.4,
-      "n": 31
+      "pct": null
     },
     {
       "task": "Select carrier/underwriter",
@@ -106,8 +73,31 @@
       "weight": 18.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Calculate premiums/payment method",
+      "full": "Calculate premiums and establish payment method.",
+      "weight": 18.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Interview/assess client needs",
+      "full": "Interview prospective clients to obtain data about their financial resources and needs, the physical condition of the person or property to be insured, and to discuss any existing coverage.",
+      "weight": 17.6,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Integrate insurance into bookkeeping",
+      "full": "Plan and oversee incorporation of insurance program into bookkeeping system of company.",
+      "weight": 17.0,
+      "auto": null,
+      "aug": null,
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -363,7 +353,7 @@
     }
   ],
   "ai_category": "Will Evolve",
-  "exposure_filter": "3.8",
+  "exposure_filter": "3.4",
   "necessity_filter": "2.79",
   "elasticity_filter": "3"
 }

@@ -18,9 +18,9 @@ See `docs/data-schema.md` for the full JSON schema.
 5. **Risks** — pull-stat callout + prose. Orange left border.
 6. **Opportunities** — pull-stat callout + prose, optional subsections. Green left border.
 7. **How AI Is Changing This Role, Task by Task** — section title is `text-sm font-extrabold` (larger than subsection titles). Three task groups, each with colored left border:
-   - Automation group (orange): tasks where `auto > aug` and `n >= 100`
-   - Augmentation group (blue): tasks where `aug > auto` and `n >= 100`
-   - No-data group (gray): tasks where `n < 100` or null
+   - Automation group (orange): tasks where `auto > aug` and `pct >= MIN_PCT_SIGNAL`
+   - Augmentation group (blue): tasks where `aug > auto` and `pct >= MIN_PCT_SIGNAL`
+   - No-data group (gray): tasks where `pct < MIN_PCT_SIGNAL` or null
    - Group headers should be Feynman-style observations, not instructions.
 8. **Find [Role] Jobs** — state selector + O*NET link. Visually distinct CTA card.
 9. **Explore Related Careers** — `relatedCareers`, sorted by AI score desc. See `relatedCareers` section.
@@ -50,7 +50,7 @@ Schema: `{ summary: string, sections: [] }`
 Rules:
 - Name specific tasks. Never say "some tasks are being automated."
 - Use `automation_pct` on high-weight tasks as the primary signal
-- Exclude tasks where `onet_task_count < 100` — not enough real usage data
+- Exclude tasks where `onet_task_pct < MIN_PCT_SIGNAL` — not enough real usage data
 - If `ai_task_coverage_pct < 20%`: note that AI hasn't made much contact with this role yet. Short risks section is correct in that case — don't pad it
 - Cite external data (BLS job growth, hiring trends) with inline `[n]` markers when available
 - `sections[]` is optional — use only when there's a distinct sub-topic worth separating out
@@ -76,7 +76,7 @@ Rules for what to include, in priority order:
 
 Rules for what to exclude:
 - **Do not cite tasks as "untouched opportunities" based on weight alone.** A high-weight task that AI simply hasn't automated yet is not automatically a strength — it may just be next. Only call out untouched tasks if there's a structural reason AI is unlikely to touch them (physical presence, judgment, accountability, etc.)
-- Tasks with `onet_task_count < 100`: exclude
+- Tasks with `onet_task_pct < MIN_PCT_SIGNAL`: exclude
 - Low-weight automated tasks: skip or mention briefly in Risks, not here
 
 **Example of what not to do:**
@@ -89,11 +89,11 @@ Rules for what to exclude:
 
 Unified list of top tasks by `task_weight`, regardless of AEI coverage. Used to power the "How AI Is Changing This Role" chart on the career page.
 
-Fields: `task` (short label), `full` (full O*NET text, shown on hover), `auto`, `aug`, `success`, `n` (all null when no AEI data)
+Fields: `task` (short label), `full` (full O*NET text, shown on hover), `auto`, `aug`, `pct` (all null when no AEI data)
 
 - Sort by `task_weight` descending
 - Include tasks with and without AEI coverage — `auto` / `aug` are null when no AEI data
-- Exclude tasks where `n < 100` (insufficient signal)
+- Exclude tasks where `pct < MIN_PCT_SIGNAL` (insufficient signal)
 - Suggested max: top 10 by weight
 - The chart renders null AEI fields as the "No data" group
 
@@ -102,7 +102,7 @@ Fields: `task` (short label), `full` (full O*NET text, shown on hover), `auto`, 
 ### `top_automated_tasks`
 
 Include up to 3 tasks. Requirements:
-- `onet_task_count ≥ 100`
+- `onet_task_pct ≥ MIN_PCT_SIGNAL`
 - `automation_pct > 0`
 - Sort by `task_weight` descending (highest-impact first)
 
@@ -113,7 +113,7 @@ Fields: `task_text`, `automation_pct`, `task_weight`
 ### `top_augmented_tasks`
 
 Include up to 3 tasks. Requirements:
-- `onet_task_count ≥ 100`
+- `onet_task_pct ≥ MIN_PCT_SIGNAL`
 - `augmentation_pct > 0`
 - Sort by `task_weight` descending
 
@@ -126,7 +126,7 @@ Fields: `task_text`, `augmentation_pct`, `task_weight`
 Tasks with no AEI signal (neither automated nor augmented) but high weight. Top 3 by `task_weight`.
 
 Requirements:
-- `onet_task_count ≥ 100`
+- `onet_task_pct ≥ MIN_PCT_SIGNAL`
 - No AEI coverage (not in automated or augmented lists)
 
 Note: these appear in the data but should **not** be framed as opportunities in prose unless there's a structural reason they're durable (see opportunities rules above).

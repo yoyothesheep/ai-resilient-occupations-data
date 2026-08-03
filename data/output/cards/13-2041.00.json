@@ -1,7 +1,7 @@
 {
   "onet_code": "13-2041.00",
   "title": "Credit Analysts",
-  "score": 33,
+  "score": 31,
   "salary": "$80,970",
   "openings": "3,700",
   "growth": "-4%",
@@ -25,10 +25,9 @@
       "task": "Analyze credit risk",
       "full": "Analyze credit data and financial statements to determine the degree of risk involved in extending credit or lending money.",
       "weight": 29.2,
-      "auto": 34.2,
-      "aug": 27.4,
-      "success": 75.3,
-      "n": 73
+      "auto": 58.3,
+      "aug": 41.7,
+      "pct": 0.0
     },
     {
       "task": "Prepare credit submissions",
@@ -36,8 +35,7 @@
       "weight": 25.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Generate financial ratios",
@@ -45,8 +43,7 @@
       "weight": 25.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Evaluate loan profitability",
@@ -54,35 +51,31 @@
       "weight": 23.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Write credit risk reports",
-      "full": "Prepare reports that include the degree of risk involved in extending credit or lending money.",
-      "weight": 23.2,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Benchmark credit profiles",
-      "full": "Compare liquidity, profitability, and credit histories of establishments being evaluated with those of similar establishments in the same industries and geographic locations.",
-      "weight": 21.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Recommend payment plans",
       "full": "Evaluate customer records and recommend payment plans, based on earnings, savings data, payment history, and purchase activity.",
       "weight": 15.6,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 46.5,
+      "aug": 53.5,
+      "pct": 0.01
+    },
+    {
+      "task": "Write credit risk reports",
+      "full": "Prepare reports that include the degree of risk involved in extending credit or lending money.",
+      "weight": 23.2,
+      "auto": 42.1,
+      "aug": 57.9,
+      "pct": 0.0
+    },
+    {
+      "task": "Benchmark credit profiles",
+      "full": "Compare liquidity, profitability, and credit histories of establishments being evaluated with those of similar establishments in the same industries and geographic locations.",
+      "weight": 21.3,
+      "auto": 55.1,
+      "aug": 44.9,
+      "pct": 0.0
     },
     {
       "task": "Identify delinquent accounts",
@@ -90,8 +83,7 @@
       "weight": 10.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Confer with credit peers",
@@ -99,8 +91,7 @@
       "weight": 10.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Resolve credit disputes",
@@ -108,8 +99,7 @@
       "weight": 8.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",
@@ -412,7 +402,7 @@
     }
   ],
   "ai_category": "High Automation Risk",
-  "exposure_filter": "3.4",
+  "exposure_filter": "3.8",
   "necessity_filter": "1.74",
   "elasticity_filter": "3"
 }

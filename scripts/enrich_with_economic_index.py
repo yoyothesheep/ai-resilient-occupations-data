@@ -24,7 +24,7 @@ OUTPUT_FILE = Path("data/intermediate/All_Occupations_ONET_enriched_aei.csv")
 AEI_COLS = [
     'total_tasks', 'aei_tasks', 'ai_task_coverage_pct',
     'weighted_automation_pct', 'weighted_augmentation_pct',
-    'weighted_task_success_pct', 'weighted_ai_autonomy_mean', 'weighted_speedup_factor'
+    'weighted_ai_autonomy_mean', 'weighted_speedup_factor'
 ]
 
 
@@ -47,6 +47,7 @@ def main():
     # Drop old AEI columns if present (from a previous partial integration)
     old_aei_cols = [c for c in enriched.columns if c in AEI_COLS or c in [
         'num_tasks_measured', 'ai_task_coverage_pct', 'ai_task_success_pct',
+        'weighted_task_success_pct',
         'ai_autonomy_mean', 'automation_pct', 'augmentation_pct',
         'speedup_factor', 'work_use_pct', 'ai_education_gap'
     ]]

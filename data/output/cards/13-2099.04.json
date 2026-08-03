@@ -273,13 +273,20 @@
   "growth": "+3%",
   "taskData": [
     {
-      "task": "Gather financial evidence",
-      "full": "Gather financial documents related to investigations.",
-      "weight": 21.7,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 23
+      "task": "Prepare investigation reports",
+      "full": "Prepare written reports of investigation findings.",
+      "weight": 16.1,
+      "auto": 40.5,
+      "aug": 59.5,
+      "pct": 0.01
+    },
+    {
+      "task": "Recommend case actions",
+      "full": "Recommend actions in fraud cases.",
+      "weight": 15.1,
+      "auto": 52.0,
+      "aug": 48.0,
+      "pct": 0.01
     },
     {
       "task": "Document investigative activities",
@@ -287,8 +294,15 @@
       "weight": 21.9,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Gather financial evidence",
+      "full": "Gather financial documents related to investigations.",
+      "weight": 21.7,
+      "auto": 68.8,
+      "aug": 31.2,
+      "pct": 0.0
     },
     {
       "task": "Maintain fraud databases",
@@ -296,17 +310,7 @@
       "weight": 20.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Prepare investigation reports",
-      "full": "Prepare written reports of investigation findings.",
-      "weight": 16.1,
-      "auto": 51.0,
-      "aug": null,
-      "success": 72.5,
-      "n": 51
+      "pct": null
     },
     {
       "task": "Lead investigation teams",
@@ -314,26 +318,7 @@
       "weight": 18.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Triage fraud reports",
-      "full": "Review reports of suspected fraud to determine need for further investigation.",
-      "weight": 15.4,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 32
-    },
-    {
-      "task": "Fraud Trends and Techniques Monitoring",
-      "full": "Maintain knowledge of current events and trends in such areas as money laundering and criminal tools and techniques.",
-      "weight": 13.9,
-      "auto": null,
-      "aug": 52.3,
-      "success": 63.6,
-      "n": 44
+      "pct": null
     },
     {
       "task": "Coordinate with law enforcement",
@@ -341,8 +326,23 @@
       "weight": 16.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
+    },
+    {
+      "task": "Triage fraud reports",
+      "full": "Review reports of suspected fraud to determine need for further investigation.",
+      "weight": 15.4,
+      "auto": null,
+      "aug": null,
+      "pct": null
+    },
+    {
+      "task": "Interview witnesses or suspects",
+      "full": "Interview witnesses or suspects and take statements.",
+      "weight": 15.1,
+      "auto": null,
+      "aug": null,
+      "pct": null
     },
     {
       "task": "Analyze financial irregularities",
@@ -350,17 +350,7 @@
       "weight": 14.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 15
-    },
-    {
-      "task": "Recommend case actions",
-      "full": "Recommend actions in fraud cases.",
-      "weight": 15.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "keyDrivers": "AI tools are already speeding up a lot of the pattern-detection and data-crunching that fraud examiners used to do manually, like scanning thousands of transactions for red flags. But the job still requires a real person to interview witnesses, weigh ambiguous evidence, and testify in legal proceedings where accountability matters. Courts and regulators need a named human standing behind the findings. Meanwhile, fraud itself keeps growing as more money moves online, so organizations are actually hiring more examiners, not fewer.",

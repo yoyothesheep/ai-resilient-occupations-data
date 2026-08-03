@@ -18,46 +18,33 @@
       "task": "Analyze hardware/software problems",
       "full": "Analyze problems to develop solutions involving computer hardware and software.",
       "weight": 20.7,
-      "auto": 46.6,
-      "aug": 32.9,
-      "success": 67.1,
-      "n": 73
-    },
-    {
-      "task": "Model technical problems mathematically",
-      "full": "Conduct logical analyses of business, scientific, engineering, and other technical problems, formulating mathematical models of problems for solution by computers.",
-      "weight": 14.0,
-      "auto": 29.9,
-      "aug": 40.9,
-      "success": 71.7,
-      "n": 5036
-    },
-    {
-      "task": "Schedule/prioritize tasks",
-      "full": "Assign or schedule tasks to meet work priorities and goals.",
-      "weight": 15.8,
-      "auto": null,
-      "aug": null,
-      "success": 71.4,
-      "n": 28
+      "auto": 74.7,
+      "aug": 25.3,
+      "pct": 0.05
     },
     {
       "task": "Apply theory to new technology",
       "full": "Apply theoretical expertise and innovation to create or apply new technology, such as adapting principles for applying computers to new uses.",
       "weight": 16.3,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 42.7,
+      "aug": 57.3,
+      "pct": 0.01
     },
     {
-      "task": "Computing Needs Consultation",
-      "full": "Consult with users, management, vendors, and technicians to determine computing needs and system requirements.",
-      "weight": 10.1,
-      "auto": 26.9,
-      "aug": 47.1,
-      "success": 70.8,
-      "n": 733
+      "task": "Assess project plan feasibility",
+      "full": "Evaluate project plans and proposals to assess feasibility issues.",
+      "weight": 10.9,
+      "auto": 35.6,
+      "aug": 64.4,
+      "pct": 0.01
+    },
+    {
+      "task": "Schedule/prioritize tasks",
+      "full": "Assign or schedule tasks to meet work priorities and goals.",
+      "weight": 15.8,
+      "auto": 50.0,
+      "aug": 50.0,
+      "pct": 0.0
     },
     {
       "task": "Design computers/software",
@@ -65,17 +52,23 @@
       "weight": 15.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Organizational Goals Interpretation",
       "full": "Develop and interpret organizational goals, policies, and procedures.",
       "weight": 9.9,
-      "auto": 35.0,
-      "aug": 17.5,
-      "success": 65.0,
-      "n": 137
+      "auto": 31.4,
+      "aug": 68.6,
+      "pct": 0.01
+    },
+    {
+      "task": "Model technical problems mathematically",
+      "full": "Conduct logical analyses of business, scientific, engineering, and other technical problems, formulating mathematical models of problems for solution by computers.",
+      "weight": 14.0,
+      "auto": 44.2,
+      "aug": 55.8,
+      "pct": 0.0
     },
     {
       "task": "Meet to resolve problems",
@@ -83,8 +76,7 @@
       "weight": 12.7,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Maintain/secure networks",
@@ -92,8 +84,7 @@
       "weight": 12.7,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
       "task": "Contribute to multidisciplinary projects",
@@ -101,8 +92,7 @@
       "weight": 11.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

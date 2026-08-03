@@ -76,76 +76,68 @@
   },
   "taskData": [
     {
-      "task": "Develop ad campaigns",
-      "full": "Develop advertising campaigns for a wide range of clients, working with an advertising agency's creative director and art director to determine the best way to present advertising information.",
-      "weight": 20.5,
-      "auto": 35.6,
-      "aug": null,
-      "success": 82.2,
-      "n": 45
-    },
-    {
       "task": "Vary language/tone by medium",
       "full": "Vary language and tone of messages based on product and medium.",
       "weight": 21.4,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 19
-    },
-    {
-      "task": "Write Marketing Copy",
-      "full": "Write articles, bulletins, sales letters, speeches, and other related informative, marketing and promotional material.",
-      "weight": 15.4,
-      "auto": 41.9,
-      "aug": 2.7,
-      "success": 83.5,
-      "n": 786
-    },
-    {
-      "task": "Discuss copy with clients",
-      "full": "Discuss with the client the product, advertising themes and methods, and any changes that should be made in advertising copy.",
-      "weight": 19.0,
-      "auto": null,
-      "aug": null,
-      "success": 87.2,
-      "n": 39
-    },
-    {
-      "task": "Plan project outlines",
-      "full": "Plan project arrangements or outlines, and organize material accordingly.",
-      "weight": 16.0,
-      "auto": 63.3,
-      "aug": null,
-      "success": 54.4,
-      "n": 79
-    },
-    {
-      "task": "Revise written material",
-      "full": "Revise written material to meet personal standards and to satisfy needs of clients, publishers, directors, or producers.",
-      "weight": 16.0,
-      "auto": 28.2,
-      "aug": null,
-      "success": 70.5,
-      "n": 78
+      "auto": 31.5,
+      "aug": 68.5,
+      "pct": 0.2
     },
     {
       "task": "Present drafts to clients",
       "full": "Present drafts and ideas to clients.",
       "weight": 18.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 33.9,
+      "aug": 66.1,
+      "pct": 0.02
     },
     {
-      "task": "Research source material",
-      "full": "Conduct research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, and interviews.",
+      "task": "Edit/submit written material",
+      "full": "Edit or rewrite existing written material as necessary, and submit written material for approval by supervisor, editor, or publisher.",
       "weight": 16.0,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 18
+      "auto": 27.9,
+      "aug": 72.0,
+      "pct": 0.94
+    },
+    {
+      "task": "Write ad copy for media",
+      "full": "Write advertising material for use by publication, broadcast, or internet media to promote the sale of goods and services.",
+      "weight": 16.0,
+      "auto": 40.5,
+      "aug": 59.5,
+      "pct": 0.14
+    },
+    {
+      "task": "Write to customer's level",
+      "full": "Write to customers in their terms and on their level so that the script, story, or advertisement message is more readily received.",
+      "weight": 16.0,
+      "auto": 32.5,
+      "aug": 67.5,
+      "pct": 0.07
+    },
+    {
+      "task": "Write Marketing Copy",
+      "full": "Write articles, bulletins, sales letters, speeches, and other related informative, marketing and promotional material.",
+      "weight": 15.4,
+      "auto": 43.6,
+      "aug": 56.4,
+      "pct": 0.17
+    },
+    {
+      "task": "Develop ad campaigns",
+      "full": "Develop advertising campaigns for a wide range of clients, working with an advertising agency's creative director and art director to determine the best way to present advertising information.",
+      "weight": 20.5,
+      "auto": 29.2,
+      "aug": 70.8,
+      "pct": 0.0
+    },
+    {
+      "task": "Discuss copy with clients",
+      "full": "Discuss with the client the product, advertising themes and methods, and any changes that should be made in advertising copy.",
+      "weight": 19.0,
+      "auto": 9.0,
+      "aug": 91.0,
+      "pct": 0.0
     },
     {
       "task": "Collaborate with writers",
@@ -153,17 +145,15 @@
       "weight": 16.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Consult with marketing reps",
-      "full": "Consult with sales, media and marketing representatives to obtain information on product or service and discuss style and length of advertising written material.",
+      "task": "Research source material",
+      "full": "Conduct research to obtain factual information and authentic detail, using sources such as newspaper accounts, diaries, and interviews.",
       "weight": 16.0,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     }
   ],
   "careerCluster": [

@@ -50,6 +50,8 @@ Prompt rules (enforced in all section prompts):
     - No em dashes, no prohibited phrases (see tone guide)
 """
 
+from loaders import MIN_PCT_SIGNAL
+
 
 # ── Shared context ────────────────────────────────────────────────────────────
 
@@ -59,7 +61,7 @@ def occupation_context(occ: dict, tasks: list, metrics: dict, a_scores: dict,
     """Build the shared occupation context block prepended to every prompt.
 
     Returns (context_str, low_data) where low_data is True when no tasks
-    have sufficient AEI signal (n >= 100).
+    have sufficient AEI signal (onet_task_pct >= MIN_PCT_SIGNAL).
     """
     code = occ["Code"]
     title = occ["Occupation"]
@@ -76,16 +78,16 @@ def occupation_context(occ: dict, tasks: list, metrics: dict, a_scores: dict,
     w_auto = m.get("weighted_automation_pct", "unknown")
     w_aug = m.get("weighted_augmentation_pct", "unknown")
 
-    tasks_with_signal = [t for t in tasks if t.get("n") is not None and t["n"] >= 100]
+    tasks_with_signal = [t for t in tasks if t.get("pct") is not None and t["pct"] >= MIN_PCT_SIGNAL]
     low_data = len(tasks_with_signal) == 0
 
     task_lines = []
     for t in tasks:
-        if t["n"] is not None:
+        if t["pct"] is not None:
             task_lines.append(
                 f"  - {t['full']}\n"
                 f"    weight={t.get('weight', '?')} | auto={t['auto']}% aug={t['aug']}% "
-                f"success={t['success']}% n={t['n']}"
+                f"usage={t['pct']}%"
             )
         else:
             task_lines.append(f"  - {t['full']}\n    weight=? | no AEI data")
@@ -135,7 +137,7 @@ Rules:
 - Use [Name, Date] inline citations (e.g. [NiemanLab, Mar 2024]) where Name exactly matches the "name" field of a source in sources[]. Do NOT use numeric citations like [1] or [2].
 - NEVER cite: Gartner, IDC, Forrester, MarketsandMarkets — these are paywalled analyst firms with inflated projections and URL rot. Use the approved sources list instead.
 
-{"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (n >= 100). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}"""
+{"⚠ LOW DATA WARNING: None of the tasks for this occupation have sufficient AEI data (usage % >= "+str(MIN_PCT_SIGNAL)+"). The task chart on the career page will show ALL tasks in the 'AI hasn't figured these out' bucket. DO NOT cite external automation percentages (e.g. McKinsey industry estimates) as the risks stat — they will directly contradict the chart. Instead: (1) Keep risks.body brief and acknowledge limited AEI signal. (2) Use a hiring trend, job growth, or demand stat for risks.stat instead of an automation rate. (3) For opportunities, cite augmentation demand or skill premium stats." if low_data else ""}"""
 
     return context, low_data
 

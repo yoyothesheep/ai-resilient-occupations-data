@@ -20,13 +20,12 @@
   "keyDrivers": "Sales managers lead teams, set strategy, and navigate complex organizational politics-work that depends heavily on reading people, building coalitions, and making high-stakes judgment calls about markets and talent. Their deep knowledge of their company's culture, clients, and competitive landscape is hard for AI to replicate. AI will enhance their effectiveness by automating forecasting and reporting, letting them focus more on coaching and strategic decisions.",
   "taskData": [
     {
-      "task": "Resolve customer complaints",
-      "full": "Resolve customer complaints regarding sales and service.",
-      "weight": 18.3,
-      "auto": 21.4,
-      "aug": null,
-      "success": 61.4,
-      "n": 145
+      "task": "Advise customers on equipment",
+      "full": "Confer with potential customers regarding equipment needs, and advise customers on types of equipment to purchase.",
+      "weight": 18.1,
+      "auto": 41.3,
+      "aug": 58.7,
+      "pct": 0.05
     },
     {
       "task": "Oversee sales managers/staff",
@@ -34,17 +33,23 @@
       "weight": 21.2,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Advise customers on equipment",
-      "full": "Confer with potential customers regarding equipment needs, and advise customers on types of equipment to purchase.",
-      "weight": 18.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "task": "Review records/project sales",
+      "full": "Review operational records and reports to project sales and determine profitability.",
+      "weight": 12.8,
+      "auto": 52.0,
+      "aug": 48.0,
+      "pct": 0.06
+    },
+    {
+      "task": "Resolve customer complaints",
+      "full": "Resolve customer complaints regarding sales and service.",
+      "weight": 18.3,
+      "auto": 58.7,
+      "aug": 41.3,
+      "pct": 0.0
     },
     {
       "task": "Direct sales activities",
@@ -52,26 +57,23 @@
       "weight": 16.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Review records/project sales",
-      "full": "Review operational records and reports to project sales and determine profitability.",
-      "weight": 12.8,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": 18
+      "pct": null
     },
     {
       "task": "Monitor customer preferences",
       "full": "Monitor customer preferences to determine focus of sales efforts.",
       "weight": 12.1,
-      "auto": null,
-      "aug": null,
-      "success": null,
-      "n": null
+      "auto": 59.1,
+      "aug": 40.9,
+      "pct": 0.0
+    },
+    {
+      "task": "Advise dealers on policies",
+      "full": "Advise dealers and distributors on policies and operating procedures to ensure functional effectiveness of business.",
+      "weight": 7.8,
+      "auto": 49.0,
+      "aug": 51.0,
+      "pct": 0.01
     },
     {
       "task": "Plan staffing/training programs",
@@ -79,17 +81,7 @@
       "weight": 11.4,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
-    },
-    {
-      "task": "Trade Association Representation",
-      "full": "Represent company at trade association meetings to promote products.",
-      "weight": 6.8,
-      "auto": 33.3,
-      "aug": 25.2,
-      "success": 66.7,
-      "n": 111
+      "pct": null
     },
     {
       "task": "Coordinate with department heads",
@@ -97,17 +89,15 @@
       "weight": 9.8,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": null
+      "pct": null
     },
     {
-      "task": "Pricing and Discount Determination",
-      "full": "Determine price schedules and discount rates.",
-      "weight": 8.5,
+      "task": "Visit dealers to drive leasing",
+      "full": "Visit franchised dealers to stimulate interest in establishment or expansion of leasing programs.",
+      "weight": 9.1,
       "auto": null,
       "aug": null,
-      "success": null,
-      "n": 16
+      "pct": null
     }
   ],
   "taskIntro": "Not all tasks are affected equally. Knowing which ones AI handles well, and which still need a human, is how to focus skill-building.",

@@ -32,7 +32,7 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-from loaders import load_scores, load_task_table, SCORES_CSV, TASK_TABLE, CLUSTER_ROLES
+from loaders import load_scores, load_task_table, to_score, SCORES_CSV, TASK_TABLE, CLUSTER_ROLES
 CLUSTER_BRANCHES = "data/career_clusters/cluster_branches.csv"
 
 MAX_RELATED      = 6    # max related careers to show per occupation
@@ -591,7 +591,7 @@ def process_occupation(source_code: str, scores: dict,
             "relationship": rel_type,
             "category":     transition_category,
             "training_duration_years": training_duration,
-            "score":        round(final_ranking * 100),
+            "score":        to_score({"final_ranking": final_ranking}),
             "salary":       format_salary(target_occ),
             "openings":     format_openings(target_occ),
             "growth":       format_growth(target_occ),

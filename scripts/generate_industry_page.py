@@ -22,7 +22,7 @@ import re
 import sys
 
 # ── Config ────────────────────────────────────────────────────────────────────
-from loaders import load_scores, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
+from loaders import load_scores, to_score, SCORES_CSV, CLUSTER_ROLES as CLUSTER_ROLES_CSV
 CLUSTERS_CSV      = "data/career_clusters/clusters.csv"
 CARDS_DIR         = "data/output/cards"
 TONE_GUIDE        = "docs/tone_guide_career_pages.md"
@@ -319,11 +319,7 @@ def main():
         except (ValueError, TypeError):
             openings_str = openings or "N/A"
 
-        score_raw = occ.get("final_ranking", "0")
-        try:
-            score_int = round(float(score_raw) * 100)
-        except (ValueError, TypeError):
-            score_int = 0
+        score_int = to_score(occ) or 0
 
         simple_title = occ.get("altpath simple title", "").strip()
         careers.append({
